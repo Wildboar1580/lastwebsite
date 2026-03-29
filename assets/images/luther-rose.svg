@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">Luther rose badge</title>
+  <desc id="desc">A simplified Luther rose badge with a black field, gold ring, white rose, red heart, and black cross.</desc>
+  <rect width="360" height="360" rx="18" fill="#0d0907"/>
+
+  <circle cx="180" cy="180" r="145" fill="#0d0907" stroke="#b88a2c" stroke-width="4"/>
+  <circle cx="180" cy="180" r="86" fill="#d0a54a" stroke="#f0ddb0" stroke-width="5"/>
+
+  <g fill="#fffdf7" stroke="#d7c291" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M180 120
+      C195 136 203 149 206 160
+      C224 147 240 141 260 139
+      C253 158 247 174 235 191
+      C253 195 268 201 281 211
+      C264 220 250 225 234 228
+      C245 247 251 263 255 282
+      C236 275 220 267 205 257
+      C201 269 193 284 180 300
+      C167 284 159 269 155 257
+      C140 267 124 275 105 282
+      C109 263 115 247 126 228
+      C110 225 96 220 79 211
+      C92 201 107 195 125 191
+      C113 174 107 158 100 139
+      C120 141 136 147 154 160
+      C157 149 165 136 180 120Z"/>
+  </g>
+
+  <path d="M180 151c15-20 40-24 57-8 16 15 16 39 0 54l-57 54-57-54c-16-15-16-39 0-54 17-16 42-12 57 8Z" fill="#b51f26" stroke="#fffdf7" stroke-width="4"/>
+  <path d="M180 164v60" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
+  <path d="M150 194h60" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Traditional ecclesial banner with Bible and cross</title>
+  <desc id="desc">A more traditional title-page style illustration of an open Bible beneath a cross and radiant glory, framed like an old church print.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" x2="1">
+      <stop offset="0" stop-color="#f8f1df"/>
+      <stop offset="1" stop-color="#e8d5ae"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#f0d28f"/>
+      <stop offset="1" stop-color="#b88a2c"/>
+    </linearGradient>
+    <linearGradient id="red" x1="0" x2="1">
+      <stop offset="0" stop-color="#7d0f12"/>
+      <stop offset="1" stop-color="#ad1e24"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" rx="24" fill="#0d0907"/>
+  <rect x="42" y="42" width="816" height="816" fill="none" stroke="#d7b66e" stroke-width="8"/>
+  <rect x="62" y="62" width="776" height="776" fill="none" stroke="#7d0f12" stroke-width="3"/>
+  <g opacity=".78" fill="none" stroke="#d7b66e" stroke-linecap="round">
+    <path d="M450 84v120" stroke-width="10"/>
+    <path d="M450 324v90" stroke-width="8"/>
+    <path d="M330 204h62" stroke-width="8"/>
+    <path d="M508 204h62" stroke-width="8"/>
+    <path d="M364 118 402 156" stroke-width="7"/>
+    <path d="M536 118 498 156" stroke-width="7"/>
+    <path d="M364 290 402 252" stroke-width="7"/>
+    <path d="M536 290 498 252" stroke-width="7"/>
+  </g>
+  <circle cx="450" cy="204" r="114" fill="url(#gold)" opacity=".92"/>
+  <circle cx="450" cy="204" r="74" fill="#0d0907"/>
+  <path d="M450 135v140" stroke="#f7efdc" stroke-width="16" stroke-linecap="round"/>
+  <path d="M390 190h120" stroke="#f7efdc" stroke-width="16" stroke-linecap="round"/>
+  <path d="M190 650c106-125 214-183 325-174 72 7 139 35 201 82V275c-70-71-155-109-256-115-113-6-209 30-290 108Z" fill="url(#paper)" stroke="#d7b66e" stroke-width="9"/>
+  <path d="M710 650c-106-125-214-183-325-174-72 7-139 35-201 82V275c70-71 155-109 256-115 113-6 209 30 290 108Z" fill="url(#paper)" stroke="#d7b66e" stroke-width="9"/>
+  <path d="M194 650c90-47 177-70 261-70 90 0 177 23 261 70" fill="none" stroke="#cab081" stroke-width="30" stroke-linecap="round"/>
+  <path d="M196 651c91-29 177-43 259-43 86 0 170 14 253 43" fill="none" stroke="#f7efdc" stroke-width="5" opacity=".92"/>
+  <rect x="424" y="257" width="52" height="438" rx="16" fill="url(#red)"/>
+  <g fill="none" stroke="#8b1014" stroke-width="3" opacity=".42">
+    <path d="M238 352c74-45 145-65 212-61"/>
+    <path d="M238 390c74-45 145-65 212-61"/>
+    <path d="M238 428c74-45 145-65 212-61"/>
+    <path d="M238 466c74-45 145-65 212-61"/>
+    <path d="M662 352c-74-45-145-65-212-61"/>
+    <path d="M662 390c-74-45-145-65-212-61"/>
+    <path d="M662 428c-74-45-145-65-212-61"/>
+    <path d="M662 466c-74-45-145-65-212-61"/>
+  </g>
+  <path d="M450 698h10c23 0 42 19 42 42v82l-52-31-52 31v-82c0-23 19-42 42-42Z" fill="url(#red)"/>
+  <g fill="none" stroke="#d7b66e" stroke-width="4">
+    <path d="M146 760c24 0 24-20 48-20s24 20 48 20 24-20 48-20 24 20 48 20 24-20 48-20"/>
+    <path d="M562 760c24 0 24-20 48-20s24 20 48 20 24-20 48-20 24 20 48 20 24-20 48-20"/>
+  </g>
+</svg>

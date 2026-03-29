@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 720">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#151515"/>
+      <stop offset="55%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#f0cb66" stop-opacity=".75"/>
+      <stop offset="55%" stop-color="#f0cb66" stop-opacity=".14"/>
+      <stop offset="100%" stop-color="#f0cb66" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="red" x1="0" x2="1">
+      <stop offset="0%" stop-color="#741115"/>
+      <stop offset="100%" stop-color="#ef2b2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)"/>
+  <rect width="960" height="720" fill="url(#glow)"/>
+  <ellipse cx="480" cy="212" rx="168" ry="120" fill="url(#glow)" opacity=".9"/>
+  <path d="M480 154v170" stroke="#f5e4b8" stroke-width="20" stroke-linecap="round"/>
+  <path d="M410 224h140" stroke="#f5e4b8" stroke-width="20" stroke-linecap="round"/>
+  <g fill="#181818" stroke="#2f2f2f" stroke-width="3">
+    <path d="M170 525c102-89 213-130 335-123 89 6 180 38 275 96v93c-92-43-183-64-274-64-116 0-228 31-336 94Z"/>
+    <path d="M190 504c86-116 186-173 302-173 90 0 180 34 269 101v72c-87-47-173-70-260-70-104 0-208 23-311 70Z"/>
+    <path d="M770 525c-102-89-213-130-335-123-89 6-180 38-275 96v93c92-43 183-64 274-64 116 0 228 31 336 94Z"/>
+    <path d="M750 504c-86-116-186-173-302-173-90 0-180 34-269 101v72c87-47 173-70 260-70 104 0 208 23 311 70Z"/>
+  </g>
+  <rect x="457" y="196" width="46" height="367" rx="18" fill="url(#red)"/>
+  <g stroke="#d7a62c" stroke-width="4" opacity=".35">
+    <path d="M255 390c81-44 156-64 225-60"/>
+    <path d="M255 428c81-44 156-64 225-60"/>
+    <path d="M255 466c81-44 156-64 225-60"/>
+    <path d="M705 390c-81-44-156-64-225-60"/>
+    <path d="M705 428c-81-44-156-64-225-60"/>
+    <path d="M705 466c-81-44-156-64-225-60"/>
+  </g>
+  <rect x="54" y="54" width="852" height="612" rx="24" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+</svg>
