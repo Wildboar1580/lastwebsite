@@ -5,6 +5,7 @@ const FALLBACK_FEED_PROXIES = [
   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
   (url) => `https://r.jina.ai/http://${url.replace(/^https?:\/\//, "")}`
 ];
+const ARCHIVE_BATCH_SIZE = 12;
 
 document.addEventListener("DOMContentLoaded", () => {
   renderCampaignCards();
@@ -21,7 +22,7 @@ function renderCampaignCards() {
 
   grid.innerHTML = campaigns.map((campaign) => `
     <article class="campaign-card">
-      <img src="${campaign.image}" alt="${campaign.imageAlt}">
+      <img src="${campaign.image}" alt="${campaign.imageAlt}" loading="lazy" decoding="async">
       <div class="campaign-body">
         <p class="campaign-goal">${campaign.goal}</p>
         <h3>${campaign.title}</h3>
@@ -140,15 +141,18 @@ async function initPodcastFeed() {
   let episodes = [];
   let archiveLoaded = false;
   let loadPromise;
+  let archiveCount = ARCHIVE_BATCH_SIZE;
+  let archiveQuery = "";
 
   const renderArchiveResults = (query = "") => {
+    archiveQuery = query;
     const normalized = query.trim().toLowerCase();
     const filtered = normalized
       ? episodes.filter((episode) =>
           `${episode.title} ${episode.description}`.toLowerCase().includes(normalized)
         )
       : episodes;
-    renderArchive(archiveRoot, filtered);
+    renderArchive(archiveRoot, filtered, archiveCount);
     archiveLoaded = true;
   };
 
@@ -186,7 +190,15 @@ async function initPodcastFeed() {
 
   search.addEventListener("input", () => {
     if (!episodes.length) return;
+    archiveCount = ARCHIVE_BATCH_SIZE;
     renderArchiveResults(search.value);
+  });
+
+  archiveRoot.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-load-more-archive]");
+    if (!button) return;
+    archiveCount += ARCHIVE_BATCH_SIZE;
+    renderArchiveResults(archiveQuery);
   });
 
   if ("IntersectionObserver" in window) {
@@ -283,13 +295,17 @@ function renderFeaturedEpisodes(root, episodes) {
   initCardPlayers(root);
 }
 
-function renderArchive(root, episodes) {
+function renderArchive(root, episodes, limit = episodes.length) {
   if (!episodes.length) {
     root.innerHTML = `<article class="archive-item"><h3>No matching episodes</h3><p>Try a different search term.</p></article>`;
     return;
   }
 
-  root.innerHTML = episodes.map((episode) => `
+  const visibleEpisodes = episodes.slice(0, limit);
+  const hasMore = episodes.length > visibleEpisodes.length;
+
+  root.innerHTML = `
+    ${visibleEpisodes.map((episode) => `
     <article class="episode-card archive-card">
       <div class="episode-card-media">
         <button class="episode-art-button" type="button" data-episode-play aria-label="Play ${escapeHtml(episode.title)}">
@@ -304,7 +320,9 @@ function renderArchive(root, episodes) {
         <a class="read-more-link" href="${episode.pageUrl}">Read more</a>
       </div>
     </article>
-  `).join("");
+  `).join("")}
+    ${hasMore ? `<div class="archive-more"><button class="button button-outline" type="button" data-load-more-archive>Load More Episodes</button></div>` : ""}
+  `;
 
   initCardPlayers(root);
 }

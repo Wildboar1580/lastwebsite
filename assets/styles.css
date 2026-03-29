@@ -533,6 +533,12 @@ textarea {
   gap: 1.5rem;
 }
 
+.archive-more {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+}
+
 .episode-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
