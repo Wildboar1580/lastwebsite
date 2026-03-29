@@ -1,4 +1,4 @@
-import { campaigns, FEED_URL, libraryHighlights } from "./data.js";
+import { campaigns, FEED_URL } from "./data.js";
 
 const FALLBACK_FEED_PROXIES = [
   (url) => url,
@@ -8,35 +8,12 @@ const FALLBACK_FEED_PROXIES = [
 const ARCHIVE_BATCH_SIZE = 12;
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderCampaignCards();
   hydrateCampaignPage();
   initCountdowns();
   initPodcastFeed();
-  injectLibraryHighlights();
   initAudioPlayers();
   initVideoEmbeds();
 });
-
-function renderCampaignCards() {
-  const grid = document.querySelector("#campaign-grid");
-  if (!grid) return;
-
-  grid.innerHTML = campaigns.map((campaign) => `
-    <article class="campaign-card">
-      <img src="${campaign.image}" alt="${campaign.imageAlt}" loading="lazy" decoding="async">
-      <div class="campaign-body">
-        <p class="campaign-goal">${campaign.goal}</p>
-        <h3>${campaign.title}</h3>
-        <p>${campaign.summary}</p>
-        ${renderCountdownBlock(campaign.endDate)}
-        <div class="campaign-actions">
-          <a class="button button-outline" href="/campaigns/${campaign.slug}.html">Learn More</a>
-          <a class="button button-red" href="${campaign.donationUrl}" target="_blank" rel="noreferrer">Donate</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
 
 function hydrateCampaignPage() {
   const page = document.body.dataset.campaign;
@@ -112,19 +89,6 @@ function renderCountdown(milliseconds) {
   return `
     <span class="countdown-label">Campaign ends in</span>
     <strong>${days}d ${hours}h ${minutes}m ${seconds}s</strong>
-  `;
-}
-
-function renderCountdownBlock(endDate) {
-  if (!endDate) {
-    return `<div class="countdown"><span class="countdown-label">Campaign timing</span><strong>Ongoing campaign</strong></div>`;
-  }
-
-  return `
-    <div class="countdown" data-countdown="${endDate}">
-      <span class="countdown-label">Campaign ends in</span>
-      <strong>Loading countdown...</strong>
-    </div>
   `;
 }
 
@@ -326,12 +290,6 @@ function renderArchive(root, episodes, limit = episodes.length) {
   `;
 
   initCardPlayers(root);
-}
-
-function injectLibraryHighlights() {
-  const footer = document.querySelector(".site-footer p");
-  if (!footer) return;
-  footer.textContent = `${footer.textContent} ${libraryHighlights[0]}`;
 }
 
 function readText(root, selector) {
