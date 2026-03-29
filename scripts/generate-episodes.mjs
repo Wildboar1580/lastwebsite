@@ -80,25 +80,35 @@ function formatDuration(duration) {
 }
 
 function buildPage(episode) {
-  const encodedUrl = encodeURIComponent(episode.link || episode.canonicalUrl);
+  const encodedUrl = encodeURIComponent(episode.canonicalUrl);
   const encodedTitle = encodeURIComponent(`${episode.title} | Last Christian Ministries`);
+  const metaDescription = escapeHtml(
+    episode.description.length > 157
+      ? `${episode.description.slice(0, 154).trimEnd()}...`
+      : episode.description
+  );
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(episode.title)} | Last Christian Ministries</title>
-  <meta name="description" content="${escapeHtml(episode.description.slice(0, 155))}">
+  <meta name="description" content="${metaDescription}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(episode.title)}">
-  <meta property="og:description" content="${escapeHtml(episode.description.slice(0, 155))}">
+  <meta property="og:description" content="${metaDescription}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${episode.canonicalUrl}">
   <meta property="og:image" content="${episode.imageUrl}">
+  <meta property="article:published_time" content="${episode.isoDate}">
+  <meta property="article:author" content="Pastor Charles Wiese">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(episode.title)}">
-  <meta name="twitter:description" content="${escapeHtml(episode.description.slice(0, 155))}">
+  <meta name="twitter:description" content="${metaDescription}">
   <meta name="twitter:image" content="${episode.imageUrl}">
   <link rel="canonical" href="${episode.canonicalUrl}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -122,6 +132,11 @@ function buildPage(episode) {
         "@type": "PodcastSeries",
         "name": "Last Christian Ministries",
         "url": "https://lastchristian.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Last Christian Ministries",
+        "url": "https://lastchristian.com/"
       }
     }
   </script>
@@ -138,6 +153,7 @@ function buildPage(episode) {
         <a href="/index.html#campaigns">Campaigns</a>
         <a href="/index.html#library">Library</a>
         <a href="/index.html#about">About</a>
+        <a href="/contact.html">Contact</a>
       </nav>
       <a class="button button-red" href="/index.html#campaigns">Give Now</a>
     </header>
@@ -234,6 +250,7 @@ fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.string
 
 const sitemapUrls = [
   { loc: "https://lastchristian.com/", changefreq: "weekly", priority: "1.0" },
+  { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html", changefreq: "weekly", priority: "0.9" },

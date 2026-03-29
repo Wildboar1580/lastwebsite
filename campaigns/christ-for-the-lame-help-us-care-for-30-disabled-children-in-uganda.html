@@ -6,6 +6,10 @@
   <title>Christ for the Lame | Last Christian Ministries</title>
   <meta name="description" content="Donate to help care for 30 disabled children in Uganda through Last Christian Ministries. Support Christian mercy through a secure Zeffy fundraiser ending Easter Sunday, April 5, 2026.">
   <meta name="robots" content="index, follow">
+  <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Christ for the Lame | Care for 30 Disabled Children in Uganda">
   <meta property="og:description" content="Support care for 30 disabled children in Uganda through Last Christian Ministries and give securely through Zeffy before Easter Sunday, April 5, 2026.">
   <meta property="og:type" content="website">
@@ -23,19 +27,40 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "DonateAction",
-      "name": "Christ for the Lame",
-      "description": "Donate to help care for 30 disabled children in Uganda through Last Christian Ministries.",
-      "endTime": "2026-04-05T23:59:59-04:00",
-      "recipient": {
-        "@type": "Organization",
-        "name": "Last Christian Ministries",
-        "url": "https://lastchristian.com/"
-      },
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://www.zeffy.com/en-US/donation-form/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda"
-      }
+      "@graph": [
+        {
+          "@type": "DonateAction",
+          "name": "Christ for the Lame",
+          "description": "Donate to help care for 30 disabled children in Uganda through Last Christian Ministries.",
+          "endTime": "2026-04-05T23:59:59-04:00",
+          "recipient": {
+            "@type": "Organization",
+            "name": "Last Christian Ministries",
+            "url": "https://lastchristian.com/"
+          },
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.zeffy.com/en-US/donation-form/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lastchristian.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Christ for the Lame",
+              "item": "https://lastchristian.com/campaigns/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda.html"
+            }
+          ]
+        }
+      ]
     }
   </script>
 </head>
