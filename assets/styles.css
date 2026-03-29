@@ -515,6 +515,16 @@ textarea {
   border-bottom: 1px solid var(--line-soft);
 }
 
+.campaigns-section,
+.impact-section,
+.library-section,
+.about-section,
+.faq-section,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 .episode-grid,
 .campaign-grid,
 .library-grid,

@@ -127,6 +127,7 @@ function renderCountdownBlock(endDate) {
 }
 
 async function initPodcastFeed() {
+  const section = document.querySelector("#podcast");
   const featuredRoot = document.querySelector("#featured-episodes");
   const archiveRoot = document.querySelector("#archive-results");
   const status = document.querySelector("#podcast-status");
@@ -134,41 +135,81 @@ async function initPodcastFeed() {
   const toggle = document.querySelector("#podcast-toggle");
   const panel = document.querySelector("#podcast-archive-panel");
 
-  if (!featuredRoot || !archiveRoot || !status || !search || !toggle || !panel) return;
+  if (!section || !featuredRoot || !archiveRoot || !status || !search || !toggle || !panel) return;
 
-  try {
-    const xmlText = await fetchFeed(FEED_URL);
-    const episodes = parseFeed(xmlText);
+  let episodes = [];
+  let archiveLoaded = false;
+  let loadPromise;
 
-    if (!episodes.length) {
-      throw new Error("No podcast episodes were found in the feed.");
+  const renderArchiveResults = (query = "") => {
+    const normalized = query.trim().toLowerCase();
+    const filtered = normalized
+      ? episodes.filter((episode) =>
+          `${episode.title} ${episode.description}`.toLowerCase().includes(normalized)
+        )
+      : episodes;
+    renderArchive(archiveRoot, filtered);
+    archiveLoaded = true;
+  };
+
+  const loadFeed = async () => {
+    if (loadPromise) return loadPromise;
+
+    loadPromise = (async () => {
+      try {
+        const xmlText = await fetchFeed(FEED_URL);
+        episodes = parseFeed(xmlText);
+
+        if (!episodes.length) {
+          throw new Error("No podcast episodes were found in the feed.");
+        }
+
+        status.textContent = `Podcast archive loaded with ${episodes.length} episodes.`;
+        renderFeaturedEpisodes(featuredRoot, episodes.slice(0, 3));
+      } catch (error) {
+        status.textContent = "The podcast feed could not be loaded right now.";
+        featuredRoot.innerHTML = `<article class="episode-card fallback-card"><h3>Podcast temporarily unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
+        archiveRoot.innerHTML = "";
+      }
+    })();
+
+    return loadPromise;
+  };
+
+  wirePodcastToggle(toggle, panel, async (expanded) => {
+    if (!expanded) return;
+    await loadFeed();
+    if (episodes.length && !archiveLoaded) {
+      renderArchiveResults(search.value);
     }
+  });
 
-    status.textContent = `Podcast archive loaded with ${episodes.length} episodes.`;
-    renderFeaturedEpisodes(featuredRoot, episodes.slice(0, 3));
-    renderArchive(archiveRoot, episodes);
-    wirePodcastToggle(toggle, panel);
+  search.addEventListener("input", () => {
+    if (!episodes.length) return;
+    renderArchiveResults(search.value);
+  });
 
-    search.addEventListener("input", () => {
-      const query = search.value.trim().toLowerCase();
-      const filtered = episodes.filter((episode) =>
-        `${episode.title} ${episode.description}`.toLowerCase().includes(query)
-      );
-      renderArchive(archiveRoot, filtered);
-    });
-  } catch (error) {
-    status.textContent = "The podcast feed could not be loaded right now.";
-    featuredRoot.innerHTML = `<article class="episode-card fallback-card"><h3>Podcast temporarily unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
-    archiveRoot.innerHTML = "";
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) {
+        loadFeed();
+        observer.disconnect();
+      }
+    }, { rootMargin: "300px 0px" });
+
+    observer.observe(section);
+  } else {
+    loadFeed();
   }
 }
 
-function wirePodcastToggle(toggle, panel) {
-  toggle.addEventListener("click", () => {
+function wirePodcastToggle(toggle, panel, onToggle = () => {}) {
+  toggle.addEventListener("click", async () => {
     const expanded = toggle.getAttribute("aria-expanded") === "true";
     toggle.setAttribute("aria-expanded", String(!expanded));
     panel.hidden = expanded;
     toggle.textContent = expanded ? "Explore the Full Podcast Archive" : "Hide the Full Podcast Archive";
+    await onToggle(!expanded);
   });
 }
 
@@ -227,7 +268,7 @@ function renderFeaturedEpisodes(root, episodes) {
       <div class="episode-card-media">
         <button class="episode-art-button" type="button" data-episode-play aria-label="Play ${escapeHtml(episode.title)}">
           <audio preload="none" src="${episode.audioUrl}"></audio>
-          <img src="${episode.imageUrl}" alt="">
+          <img src="${episode.imageUrl}" alt="" loading="lazy" decoding="async">
           <span class="episode-play-badge">Play</span>
         </button>
       </div>
@@ -253,7 +294,7 @@ function renderArchive(root, episodes) {
       <div class="episode-card-media">
         <button class="episode-art-button" type="button" data-episode-play aria-label="Play ${escapeHtml(episode.title)}">
           <audio preload="none" src="${episode.audioUrl}"></audio>
-        <img src="${episode.imageUrl}" alt="">
+          <img src="${episode.imageUrl}" alt="" loading="lazy" decoding="async">
           <span class="episode-play-badge">Play</span>
         </button>
       </div>
