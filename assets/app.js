@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initPodcastFeed();
   injectLibraryHighlights();
   initAudioPlayers();
+  initVideoEmbeds();
 });
 
 function renderCampaignCards() {
@@ -460,6 +461,30 @@ function initCardPlayers(root = document) {
     audio.addEventListener("pause", () => {
       button.classList.remove("is-playing");
       badge.textContent = "Play";
+    });
+  });
+}
+
+function initVideoEmbeds(root = document) {
+  const buttons = root.querySelectorAll("[data-video-id]");
+
+  buttons.forEach((button) => {
+    if (button.dataset.ready === "true") return;
+    button.dataset.ready = "true";
+
+    button.addEventListener("click", () => {
+      const videoId = button.dataset.videoId;
+      const title = button.dataset.videoTitle || "Video";
+      if (!videoId) return;
+
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      iframe.title = title;
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      iframe.loading = "eager";
+
+      button.replaceWith(iframe);
     });
   });
 }

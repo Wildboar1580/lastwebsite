@@ -1202,11 +1202,44 @@ textarea {
   background: var(--panel);
 }
 
+.video-embed-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.video-embed-button img,
 .video-card iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   display: block;
+}
+
+.video-embed-button img {
+  object-fit: cover;
+  background: linear-gradient(180deg, #1a1a1a, #111111);
+}
+
+.video-play-badge {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.72rem 1.05rem;
+  border-radius: 999px;
+  border: 1px solid rgba(213, 166, 41, 0.4);
+  background: rgba(10, 10, 10, 0.84);
+  color: var(--white);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .library-grid {
