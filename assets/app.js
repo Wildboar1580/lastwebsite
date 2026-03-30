@@ -30,6 +30,7 @@ function hydrateCampaignPage() {
   const goal = document.querySelector("[data-campaign-goal]");
   const donate = document.querySelector("[data-campaign-donate]");
   const canonical = document.querySelector("link[rel='canonical']");
+  const thermometer = document.querySelector("[data-campaign-thermometer]");
 
   if (title) title.textContent = campaign.title;
   if (summary) summary.textContent = campaign.summary;
@@ -40,6 +41,7 @@ function hydrateCampaignPage() {
   if (goal) goal.textContent = campaign.goal;
   if (donate) donate.setAttribute("href", campaign.donationUrl);
   if (canonical) canonical.setAttribute("href", campaign.canonicalUrl);
+  if (thermometer) thermometer.setAttribute("src", campaign.thermometerUrl);
   if (story) {
     story.innerHTML = campaign.story.map((paragraph) => `<p>${paragraph}</p>`).join("");
   }
