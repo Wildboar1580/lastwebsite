@@ -182,7 +182,7 @@ textarea {
 
 .hero {
   position: relative;
-  min-height: calc(92vh - 3.5rem);
+  min-height: calc(84vh - 3.5rem);
   width: min(1180px, calc(100% - 2rem));
   margin: 1rem auto 0;
   padding: 6rem 1.5rem 5rem;
@@ -250,10 +250,10 @@ textarea {
 }
 
 .rose-frame {
-  width: 126px;
-  height: 126px;
-  margin: 0 auto 1.5rem;
-  padding: 12px;
+  width: 104px;
+  height: 104px;
+  margin: 0 auto 1.15rem;
+  padding: 10px;
   border-radius: 999px;
   border: 2px solid rgba(213, 166, 41, 0.88);
   background:
@@ -391,11 +391,13 @@ textarea {
   border: 1px solid var(--line);
   background: var(--panel);
   box-shadow: var(--shadow);
+  max-width: 420px;
+  justify-self: center;
 }
 
 .about-image-frame img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 42 / 43;
   object-fit: cover;
 }
 
@@ -575,7 +577,7 @@ textarea {
 .episode-card img,
 .campaign-card img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 8 / 5;
   object-fit: cover;
   background: linear-gradient(180deg, #1a1a1a, #111111);
 }
@@ -1160,8 +1162,8 @@ textarea {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 120px;
-  padding-top: 120px;
+  min-height: 108px;
+  padding-top: 108px;
   border: 1px solid var(--line-soft);
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.02);
@@ -1171,7 +1173,7 @@ textarea {
   position: absolute;
   inset: 0;
   width: 100%;
-  height: 120px;
+  height: 108px;
   border: 0;
   display: block;
 }
@@ -1372,7 +1374,7 @@ textarea {
   gap: 1.5rem;
   align-items: center;
   position: relative;
-  min-height: 420px;
+  min-height: 360px;
   overflow: hidden;
   border: 1px solid var(--line-soft);
   border-radius: 0.5rem;
@@ -1408,8 +1410,14 @@ textarea {
   border: 1px solid var(--line);
   border-radius: 0.5rem;
   background: rgba(0, 0, 0, 0.2);
-  max-width: 420px;
+  max-width: 320px;
   justify-self: center;
+}
+
+.campaign-image-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .campaign-layout {
@@ -1522,11 +1530,18 @@ textarea {
 
 @media (max-width: 640px) {
   .hero {
-    padding: 5.3rem 1rem 4rem;
+    min-height: auto;
+    padding: 5rem 1rem 3.6rem;
   }
 
   .hero h1 {
     font-size: 3rem;
+  }
+
+  .rose-frame {
+    width: 88px;
+    height: 88px;
+    padding: 8px;
   }
 
   .hero-points {
