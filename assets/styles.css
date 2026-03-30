@@ -1469,6 +1469,10 @@ textarea {
     width: 100%;
   }
 
+  .archive-grid {
+    grid-template-columns: 1fr;
+  }
+
   .campaign-sidebar {
     position: static;
   }
@@ -1512,5 +1516,10 @@ textarea {
 
   .footer-newsletter {
     flex-direction: column;
+  }
+
+  .archive-grid,
+  .episode-grid {
+    grid-template-columns: 1fr;
   }
 }

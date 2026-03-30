@@ -6,7 +6,7 @@ export const campaigns = [
     title: "Feed 100 People in Uganda This Easter",
     summary: "Provide Easter meals for Christians and families in Uganda so the feast of the resurrection is met with real food, fellowship, and relief.",
     goal: "Fund food support for 100 people during Easter",
-    endDate: "2026-03-29T23:59:59-04:00",
+    endDate: "2026-04-03T23:59:59-04:00",
     donationUrl: "https://www.zeffy.com/en-US/donation-form/feed-100-people-in-uganda-this-easter",
     image: "/assets/images/campaign-easter.svg",
     imageAlt: "An illustrated table with bread, fish, fruit, and a cross motif symbolizing Easter meals in Uganda.",
