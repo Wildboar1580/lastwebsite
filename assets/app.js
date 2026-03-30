@@ -309,31 +309,6 @@ function extractImageFromHtml(html) {
   return match ? match[1] : "";
 }
 
-function truncate(text, maxLength) {
-  if (text.length <= maxLength) return text;
-  return `${text.slice(0, maxLength - 1).trim()}...`;
-}
-
-function renderAudioPlayer(audioUrl, title, duration = "") {
-  return `
-    <div class="audio-player" data-audio-player>
-      <audio preload="metadata" src="${audioUrl}"></audio>
-      <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play ${escapeHtml(title)}">
-        <span data-audio-icon>Play</span>
-      </button>
-      <div class="audio-meta">
-        <div class="audio-progress-shell">
-          <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Episode progress">
-        </div>
-        <div class="audio-time">
-          <span data-audio-current>0:00</span>
-          <span data-audio-duration>${escapeHtml(duration || "0:00")}</span>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
 function initAudioPlayers(root = document) {
   const players = root.querySelectorAll("[data-audio-player]");
 
