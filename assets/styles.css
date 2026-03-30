@@ -16,7 +16,7 @@
   --gold-bright: #ffd879;
   --white: #ffffff;
   --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
-  --hero-banner: url("https://media.base44.com/images/public/69c601b08d96e4d6d2a7671c/9906ffca2_generated_f5063c26.png");
+  --hero-banner: url("/assets/images/base44-banner.jpg");
 }
 
 * {
