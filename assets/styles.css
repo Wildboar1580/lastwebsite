@@ -4,15 +4,16 @@
   --panel: #141414;
   --panel-soft: #171717;
   --panel-alt: #111111;
-  --text: #f2f2f2;
-  --text-soft: rgba(242, 242, 242, 0.78);
-  --text-muted: rgba(242, 242, 242, 0.54);
-  --line: #2c2c2c;
-  --line-soft: #212121;
+  --text: #fbf7ef;
+  --text-soft: rgba(251, 247, 239, 0.9);
+  --text-muted: rgba(251, 247, 239, 0.74);
+  --line: #3a3327;
+  --line-soft: #2a241b;
   --red: #ef2b2d;
   --red-deep: #bc191d;
   --gold: #d5a629;
   --gold-soft: #f0cb66;
+  --gold-bright: #ffd879;
   --white: #ffffff;
   --shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
   --hero-banner: url("https://media.base44.com/images/public/69c601b08d96e4d6d2a7671c/9906ffca2_generated_f5063c26.png");
@@ -120,8 +121,8 @@ textarea {
   align-items: center;
   gap: 1.2rem;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.86rem;
+  color: var(--text-soft);
 }
 
 .site-nav a:hover,
@@ -169,15 +170,15 @@ textarea {
 }
 
 .button-outline {
-  border-color: rgba(213, 166, 41, 0.5);
-  color: var(--gold);
-  background: transparent;
+  border-color: rgba(240, 203, 102, 0.72);
+  color: var(--gold-bright);
+  background: rgba(255, 214, 120, 0.06);
 }
 
 .button-outline:hover,
 .button-outline:focus-visible {
-  background: rgba(213, 166, 41, 0.1);
-  color: var(--gold-soft);
+  background: rgba(255, 214, 120, 0.14);
+  color: #fff4d7;
 }
 
 .hero {
@@ -230,11 +231,11 @@ textarea {
 .countdown-label {
   margin: 0 0 0.75rem;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.73rem;
+  font-size: 0.79rem;
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-bright);
 }
 
 .hero .eyebrow {
@@ -308,10 +309,10 @@ textarea {
 .hero-verse {
   margin: 0 0 2rem;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.24em;
-  color: var(--gold);
+  letter-spacing: 0.18em;
+  color: var(--gold-bright);
 }
 
 .hero-actions {
@@ -339,8 +340,9 @@ textarea {
 .hero-points li {
   max-width: 190px;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.76rem;
+  font-size: 0.9rem;
   line-height: 1.45;
+  color: var(--text-soft);
 }
 
 .section {
@@ -647,9 +649,9 @@ textarea {
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--gold);
+  color: var(--gold-bright);
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   cursor: pointer;
@@ -1112,7 +1114,7 @@ textarea {
 }
 
 .search-field input::placeholder {
-  color: var(--text-muted);
+  color: var(--text-soft);
 }
 
 .archive-grid {
@@ -1164,9 +1166,12 @@ textarea {
   width: 100%;
   min-height: 108px;
   padding-top: 108px;
-  border: 1px solid var(--line-soft);
+  border: 1px solid rgba(240, 203, 102, 0.34);
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.02);
+  background:
+    linear-gradient(180deg, rgba(255, 214, 120, 0.08), rgba(239, 43, 45, 0.04)),
+    #111111;
+  box-shadow: inset 0 0 0 1px rgba(255, 214, 120, 0.06);
 }
 
 .thermometer-embed iframe {
@@ -1192,7 +1197,7 @@ textarea {
 .countdown strong {
   display: block;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   color: var(--white);
 }
 
@@ -1213,8 +1218,8 @@ textarea {
 
 .text-link {
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.82rem;
-  color: var(--gold);
+  font-size: 0.88rem;
+  color: var(--gold-bright);
 }
 
 .text-link:hover,
@@ -1323,7 +1328,7 @@ textarea {
 .site-footer p,
 .site-footer a,
 .footer-col p {
-  color: var(--text-muted);
+  color: var(--text-soft);
 }
 
 .site-footer a:hover,
@@ -1334,11 +1339,11 @@ textarea {
 .footer-col h3 {
   margin: 0 0 0.75rem;
   font-family: "Inter", Arial, sans-serif;
-  font-size: 0.73rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-bright);
 }
 
 .footer-links,
@@ -1401,8 +1406,9 @@ textarea {
 }
 
 .campaign-copy p {
-  color: var(--text-soft);
-  font-size: 1.1rem;
+  color: var(--text);
+  font-size: 1.14rem;
+  line-height: 1.65;
 }
 
 .campaign-image-frame {
@@ -1550,6 +1556,11 @@ textarea {
 
   .hero-points li {
     max-width: none;
+    font-size: 0.96rem;
+  }
+
+  .site-nav {
+    font-size: 0.92rem;
   }
 
   .button,
@@ -1565,5 +1576,16 @@ textarea {
   .archive-grid,
   .episode-grid {
     grid-template-columns: 1fr;
+  }
+
+  .eyebrow,
+  .panel-label,
+  .campaign-goal,
+  .episode-date,
+  .countdown-label,
+  .footer-col h3,
+  .read-more-link,
+  .text-link {
+    font-size: 0.86rem;
   }
 }
