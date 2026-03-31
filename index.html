@@ -55,7 +55,7 @@
         {
           "@type": "PodcastSeries",
           "name": "Last Christian Ministries Podcast",
-          "url": "https://lastchristian.com/#podcast",
+          "url": "https://lastchristian.com/podcast.html",
           "feedUrl": "https://media.rss.com/last-christian-ministries/feed.xml",
           "description": "Sermons, Scripture readings, and readings from historic Lutheran theology."
         },
@@ -65,7 +65,7 @@
           "url": "https://lastchristian.com/",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://lastchristian.com/#podcast",
+            "target": "https://lastchristian.com/podcast.html",
             "query-input": "required name=search_term_string"
           }
         },
@@ -152,7 +152,7 @@
           <p class="hero-verse">Proverbs 19:17</p>
           <div class="hero-actions">
             <a class="button button-red" href="https://www.zeffy.com/en-US/donation-form/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry" target="_blank" rel="noreferrer">Support Our Mission</a>
-            <a class="button button-outline" href="#podcast">Listen to Podcast</a>
+            <a class="button button-outline" href="/podcast.html">Listen to Podcast</a>
           </div>
           <ul class="hero-points" aria-label="Ministry focus">
             <li>Scripture &amp; Confessions</li>
@@ -188,27 +188,12 @@
         <div class="section-heading">
           <p class="eyebrow">Podcast</p>
           <h2>All Episodes</h2>
-          <p>Hear the newest sermons and readings first, then open the archive to search the full feed.</p>
+          <p>Hear the six newest sermons and readings, then open the full archive for every episode.</p>
         </div>
         <div id="podcast-status" class="sr-only" aria-live="polite">Loading the latest episodes...</div>
         <div id="featured-episodes" class="episode-grid" aria-live="polite"></div>
-        <div class="podcast-expander">
-          <button id="podcast-toggle" class="button button-outline podcast-toggle" type="button" aria-expanded="false" aria-controls="podcast-archive-panel">
-            Explore the Full Podcast Archive
-          </button>
-          <div id="podcast-archive-panel" class="podcast-archive-panel" hidden>
-            <div class="archive-header">
-              <div>
-                <p class="eyebrow">Archive</p>
-                <h3>Search the podcast archive</h3>
-              </div>
-              <label class="search-field">
-                <span class="sr-only">Search podcast archive</span>
-                <input id="podcast-search" type="search" placeholder="Search sermons, Scripture, theology, and topics">
-              </label>
-            </div>
-            <div id="archive-results" class="archive-grid" aria-live="polite"></div>
-          </div>
+        <div class="podcast-actions">
+          <a class="button button-outline podcast-toggle" href="/podcast.html">View All Episodes</a>
         </div>
       </section>
 
@@ -399,7 +384,7 @@
       <div class="footer-col">
         <h3>Navigation</h3>
         <div class="footer-list">
-          <a href="#podcast">Podcast</a>
+          <a href="/podcast.html">Podcast</a>
           <a href="#campaigns">Campaigns</a>
           <a href="#library">Library</a>
           <a href="/contact.html">Contact</a>

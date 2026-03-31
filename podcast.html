@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Podcast Archive | Last Christian Ministries</title>
+  <meta name="description" content="Browse the full Last Christian Ministries podcast archive with sermons, Scripture readings, and readings from historic Lutheran theology, paginated for easier listening and searching.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Podcast Archive | Last Christian Ministries">
+  <meta property="og:description" content="Browse every episode from the Last Christian Ministries podcast archive.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lastchristian.com/podcast.html">
+  <meta property="og:image" content="https://media.rss.com/last-christian-ministries/podcast_cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Podcast Archive | Last Christian Ministries">
+  <meta name="twitter:description" content="Browse every episode from the Last Christian Ministries podcast archive.">
+  <meta name="twitter:image" content="https://media.rss.com/last-christian-ministries/podcast_cover.jpg">
+  <link rel="canonical" href="https://lastchristian.com/podcast.html">
+  <link rel="alternate" type="application/rss+xml" title="Last Christian Ministries Podcast Feed" href="https://media.rss.com/last-christian-ministries/feed.xml">
+  <link rel="preconnect" href="https://media.rss.com" crossorigin>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "Last Christian Ministries Podcast Archive",
+          "url": "https://lastchristian.com/podcast.html",
+          "description": "A paginated archive of podcast episodes from Last Christian Ministries."
+        },
+        {
+          "@type": "PodcastSeries",
+          "name": "Last Christian Ministries Podcast",
+          "url": "https://lastchristian.com/podcast.html",
+          "feedUrl": "https://media.rss.com/last-christian-ministries/feed.xml",
+          "description": "Sermons, Scripture readings, and readings from historic Lutheran theology."
+        }
+      ]
+    }
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
+        </span>
+        <span>
+          <strong>Last Christian Ministries</strong>
+          <em>Faithful in the last days</em>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/podcast.html">Podcast</a>
+        <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/index.html#library">Library</a>
+        <a href="/index.html#mission">Mission</a>
+        <a href="/index.html#about">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="button button-gold" href="/index.html#campaigns">Give Now</a>
+    </header>
+
+    <main>
+      <section class="section podcast-archive-page">
+        <div class="section-heading">
+          <p class="eyebrow">Podcast Archive</p>
+          <h2>Every Episode in One Place</h2>
+          <p>Search the full Last Christian Ministries feed and browse the archive twenty-four episodes at a time.</p>
+        </div>
+        <div id="archive-status" class="sr-only" aria-live="polite">Loading the podcast archive...</div>
+        <div class="archive-header archive-header-page">
+          <div>
+            <p class="eyebrow">Archive</p>
+            <h3 data-archive-count>Loading episodes...</h3>
+          </div>
+          <label class="search-field">
+            <span class="sr-only">Search podcast archive</span>
+            <input id="podcast-search" type="search" placeholder="Search sermons, Scripture, theology, and topics">
+          </label>
+        </div>
+        <div id="archive-results" class="archive-grid" aria-live="polite"></div>
+        <div id="archive-pagination" class="archive-pagination" aria-label="Podcast archive pagination"></div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>

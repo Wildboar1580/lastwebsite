@@ -5,7 +5,8 @@ const FALLBACK_FEED_PROXIES = [
   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
   (url) => `https://r.jina.ai/http://${url.replace(/^https?:\/\//, "")}`
 ];
-const ARCHIVE_BATCH_SIZE = 12;
+const HOMEPAGE_EPISODE_COUNT = 6;
+const ARCHIVE_PAGE_SIZE = 24;
 
 document.addEventListener("DOMContentLoaded", () => {
   hydrateCampaignPage();
@@ -95,101 +96,53 @@ function renderCountdown(milliseconds) {
 }
 
 async function initPodcastFeed() {
-  const section = document.querySelector("#podcast");
   const featuredRoot = document.querySelector("#featured-episodes");
+  const homepageStatus = document.querySelector("#podcast-status");
   const archiveRoot = document.querySelector("#archive-results");
-  const status = document.querySelector("#podcast-status");
+  const archiveStatus = document.querySelector("#archive-status");
   const search = document.querySelector("#podcast-search");
-  const toggle = document.querySelector("#podcast-toggle");
-  const panel = document.querySelector("#podcast-archive-panel");
+  const pagination = document.querySelector("#archive-pagination");
+  const pageTitle = document.querySelector("[data-archive-count]");
 
-  if (!section || !featuredRoot || !archiveRoot || !status || !search || !toggle || !panel) return;
+  const needsHomepage = Boolean(featuredRoot && homepageStatus);
+  const needsArchive = Boolean(archiveRoot && archiveStatus && search && pagination);
+  if (!needsHomepage && !needsArchive) return;
 
-  let episodes = [];
-  let archiveLoaded = false;
-  let loadPromise;
-  let archiveCount = ARCHIVE_BATCH_SIZE;
-  let archiveQuery = "";
+  try {
+    const xmlText = await fetchFeed(FEED_URL);
+    const episodes = parseFeed(xmlText);
 
-  const renderArchiveResults = (query = "") => {
-    archiveQuery = query;
-    const normalized = query.trim().toLowerCase();
-    const filtered = normalized
-      ? episodes.filter((episode) =>
-          `${episode.title} ${episode.description}`.toLowerCase().includes(normalized)
-        )
-      : episodes;
-    renderArchive(archiveRoot, filtered, archiveCount);
-    archiveLoaded = true;
-  };
-
-  const loadFeed = async () => {
-    if (loadPromise) return loadPromise;
-
-    loadPromise = (async () => {
-      try {
-        const xmlText = await fetchFeed(FEED_URL);
-        episodes = parseFeed(xmlText);
-
-        if (!episodes.length) {
-          throw new Error("No podcast episodes were found in the feed.");
-        }
-
-        status.textContent = `Podcast archive loaded with ${episodes.length} episodes.`;
-        renderFeaturedEpisodes(featuredRoot, episodes.slice(0, 3));
-      } catch (error) {
-        status.textContent = "The podcast feed could not be loaded right now.";
-        featuredRoot.innerHTML = `<article class="episode-card fallback-card"><h3>Podcast temporarily unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
-        archiveRoot.innerHTML = "";
-      }
-    })();
-
-    return loadPromise;
-  };
-
-  wirePodcastToggle(toggle, panel, async (expanded) => {
-    if (!expanded) return;
-    await loadFeed();
-    if (episodes.length && !archiveLoaded) {
-      renderArchiveResults(search.value);
+    if (!episodes.length) {
+      throw new Error("No podcast episodes were found in the feed.");
     }
-  });
 
-  search.addEventListener("input", () => {
-    if (!episodes.length) return;
-    archiveCount = ARCHIVE_BATCH_SIZE;
-    renderArchiveResults(search.value);
-  });
+    if (needsHomepage) {
+      homepageStatus.textContent = `Loaded ${Math.min(HOMEPAGE_EPISODE_COUNT, episodes.length)} recent episodes.`;
+      renderEpisodeCards(featuredRoot, episodes.slice(0, HOMEPAGE_EPISODE_COUNT));
+    }
 
-  archiveRoot.addEventListener("click", (event) => {
-    const button = event.target.closest("[data-load-more-archive]");
-    if (!button) return;
-    archiveCount += ARCHIVE_BATCH_SIZE;
-    renderArchiveResults(archiveQuery);
-  });
+    if (needsArchive) {
+      initArchivePage({
+        episodes,
+        root: archiveRoot,
+        status: archiveStatus,
+        search,
+        pagination,
+        countLabel: pageTitle
+      });
+    }
+  } catch (error) {
+    if (needsHomepage) {
+      homepageStatus.textContent = "The podcast feed could not be loaded right now.";
+      featuredRoot.innerHTML = `<article class="episode-card fallback-card"><h3>Podcast temporarily unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
+    }
 
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries.some((entry) => entry.isIntersecting)) {
-        loadFeed();
-        observer.disconnect();
-      }
-    }, { rootMargin: "300px 0px" });
-
-    observer.observe(section);
-  } else {
-    loadFeed();
+    if (needsArchive) {
+      archiveStatus.textContent = "The podcast archive could not be loaded right now.";
+      archiveRoot.innerHTML = `<article class="archive-item"><h3>Podcast archive unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
+      pagination.innerHTML = "";
+    }
   }
-}
-
-function wirePodcastToggle(toggle, panel, onToggle = () => {}) {
-  toggle.addEventListener("click", async () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!expanded));
-    panel.hidden = expanded;
-    toggle.textContent = expanded ? "Explore the Full Podcast Archive" : "Hide the Full Podcast Archive";
-    await onToggle(!expanded);
-  });
 }
 
 async function fetchFeed(url) {
@@ -241,7 +194,7 @@ function parseFeed(xmlText) {
   });
 }
 
-function renderFeaturedEpisodes(root, episodes) {
+function renderEpisodeCards(root, episodes) {
   root.innerHTML = episodes.map((episode) => `
     <article class="episode-card">
       <div class="episode-card-media">
@@ -262,36 +215,99 @@ function renderFeaturedEpisodes(root, episodes) {
   initCardPlayers(root);
 }
 
-function renderArchive(root, episodes, limit = episodes.length) {
+function renderArchive(root, episodes) {
   if (!episodes.length) {
     root.innerHTML = `<article class="archive-item"><h3>No matching episodes</h3><p>Try a different search term.</p></article>`;
     return;
   }
 
-  const visibleEpisodes = episodes.slice(0, limit);
-  const hasMore = episodes.length > visibleEpisodes.length;
+  renderEpisodeCards(root, episodes);
+}
+
+function initArchivePage({ episodes, root, status, search, pagination, countLabel }) {
+  let query = search.value.trim().toLowerCase();
+
+  const update = () => {
+    const params = new URLSearchParams(window.location.search);
+    const requestedPage = Number(params.get("page") || "1");
+    const filtered = query
+      ? episodes.filter((episode) =>
+          `${episode.title} ${episode.description}`.toLowerCase().includes(query)
+        )
+      : episodes;
+    const totalPages = Math.max(1, Math.ceil(filtered.length / ARCHIVE_PAGE_SIZE));
+    const currentPage = Math.min(Math.max(requestedPage, 1), totalPages);
+    const start = (currentPage - 1) * ARCHIVE_PAGE_SIZE;
+    const visibleEpisodes = filtered.slice(start, start + ARCHIVE_PAGE_SIZE);
+
+    if (requestedPage !== currentPage) {
+      params.set("page", String(currentPage));
+      window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
+    }
+
+    if (countLabel) {
+      countLabel.textContent = `${filtered.length} episodes`;
+    }
+
+    status.textContent = `Showing page ${currentPage} of ${totalPages} from ${filtered.length} episodes.`;
+    renderArchive(root, visibleEpisodes);
+    renderPagination(pagination, currentPage, totalPages, query);
+  };
+
+  search.addEventListener("input", () => {
+    query = search.value.trim().toLowerCase();
+    const params = new URLSearchParams(window.location.search);
+    params.set("page", "1");
+    window.history.replaceState({}, "", `${window.location.pathname}?${params.toString()}`);
+    update();
+  });
+
+  pagination.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-page]");
+    if (!button) return;
+    const nextPage = Number(button.dataset.page);
+    if (!Number.isFinite(nextPage)) return;
+    const params = new URLSearchParams(window.location.search);
+    params.set("page", String(nextPage));
+    window.history.pushState({}, "", `${window.location.pathname}?${params.toString()}`);
+    update();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("popstate", update);
+  update();
+}
+
+function renderPagination(root, currentPage, totalPages, query) {
+  if (totalPages <= 1) {
+    root.innerHTML = "";
+    return;
+  }
+
+  const pages = [];
+  for (let page = 1; page <= totalPages; page += 1) {
+    if (
+      page === 1 ||
+      page === totalPages ||
+      Math.abs(page - currentPage) <= 1
+    ) {
+      pages.push(page);
+    } else if (pages[pages.length - 1] !== "...") {
+      pages.push("...");
+    }
+  }
 
   root.innerHTML = `
-    ${visibleEpisodes.map((episode) => `
-    <article class="episode-card archive-card">
-      <div class="episode-card-media">
-        <button class="episode-art-button" type="button" data-episode-play aria-label="Play ${escapeHtml(episode.title)}">
-          <audio preload="none" src="${episode.audioUrl}"></audio>
-          <img src="${episode.imageUrl}" alt="" loading="lazy" decoding="async">
-          <span class="episode-play-badge">Play</span>
-        </button>
-      </div>
-      <div class="episode-content">
-        <p class="episode-date">${episode.date}</p>
-        <h3><a class="episode-title-link" href="${episode.pageUrl}">${episode.title}</a></h3>
-        <a class="read-more-link" href="${episode.pageUrl}">Read more</a>
-      </div>
-    </article>
-  `).join("")}
-    ${hasMore ? `<div class="archive-more"><button class="button button-outline" type="button" data-load-more-archive>Load More Episodes</button></div>` : ""}
+    <button class="button button-outline pagination-button" type="button" data-page="${Math.max(1, currentPage - 1)}" ${currentPage === 1 ? "disabled" : ""}>Previous</button>
+    ${pages.map((page) => {
+      if (page === "...") {
+        return `<span class="pagination-ellipsis" aria-hidden="true">…</span>`;
+      }
+      const active = page === currentPage;
+      return `<button class="button ${active ? "button-red" : "button-outline"} pagination-button" type="button" data-page="${page}" ${active ? 'aria-current="page"' : ""}>${page}</button>`;
+    }).join("")}
+    <button class="button button-outline pagination-button" type="button" data-page="${Math.min(totalPages, currentPage + 1)}" ${currentPage === totalPages ? "disabled" : ""}>Next</button>
   `;
-
-  initCardPlayers(root);
 }
 
 function readText(root, selector) {

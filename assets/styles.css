@@ -941,16 +941,14 @@ textarea {
   font-size: 0.76rem;
 }
 
-.podcast-expander {
-  margin-top: 1.25rem;
+.podcast-actions {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
 }
 
 .podcast-toggle {
   width: auto;
-}
-
-.podcast-archive-panel {
-  margin-top: 1rem;
 }
 
 .archive-header {
@@ -982,6 +980,34 @@ textarea {
 
 .archive-item {
   padding: 1.15rem;
+}
+
+.archive-header-page {
+  margin-bottom: 1rem;
+}
+
+.archive-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 2rem;
+}
+
+.archive-pagination .button {
+  width: auto;
+}
+
+.pagination-button[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.pagination-ellipsis {
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--text-muted);
 }
 
 .campaigns-section .section-heading,
