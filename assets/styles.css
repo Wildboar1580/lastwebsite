@@ -803,6 +803,26 @@ textarea {
   resize: vertical;
 }
 
+.contact-form button[disabled] {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.contact-status {
+  min-height: 1.4rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.82rem;
+  color: var(--text-soft);
+}
+
+.contact-status[data-state="success"] {
+  color: var(--gold-bright);
+}
+
+.contact-status[data-state="error"] {
+  color: #ff9d9d;
+}
+
 .contact-sidebar {
   align-self: start;
   display: grid;

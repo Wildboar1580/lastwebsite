@@ -36,11 +36,11 @@
           "@type": "Organization",
           "name": "Last Christian Ministries",
           "url": "https://lastchristian.com/",
-          "email": "lastchristianchurch@gmail.com",
+          "email": "pastor@lastchristian.com",
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer support",
-            "email": "lastchristianchurch@gmail.com",
+            "email": "pastor@lastchristian.com",
             "areaServed": "US"
           }
         },
@@ -90,7 +90,7 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Contact</p>
           <h1>Get in touch with Last Christian Ministries</h1>
-          <p>Use the form below to send an email to Pastor Charles Wiese and Last Christian Ministries. This opens your email app addressed to <strong>lastchristianchurch@gmail.com</strong>.</p>
+          <p>Use the form below to send a message directly to Pastor Charles Wiese and Last Christian Ministries. Messages are delivered to <strong>pastor@lastchristian.com</strong>.</p>
         </div>
       </section>
 
@@ -99,6 +99,7 @@
           <article class="contact-card">
             <h2>Send a message</h2>
             <form id="contact-form" class="contact-form">
+              <input type="text" name="company" autocomplete="off" tabindex="-1" class="sr-only" aria-hidden="true">
               <label>
                 <span>Name</span>
                 <input type="text" name="name" required>
@@ -115,13 +116,14 @@
                 <span>Message</span>
                 <textarea name="message" rows="8" required></textarea>
               </label>
-              <button class="button button-red" type="submit">Open Email Message</button>
+              <button class="button button-red" type="submit">Send Message</button>
+              <p id="contact-status" class="contact-status" aria-live="polite"></p>
             </form>
           </article>
 
           <aside class="contact-card contact-sidebar">
             <h2>Contact details</h2>
-            <p>Email: <a class="text-link" href="mailto:lastchristianchurch@gmail.com">lastchristianchurch@gmail.com</a></p>
+            <p>Email: <a class="text-link" href="mailto:pastor@lastchristian.com">pastor@lastchristian.com</a></p>
             <p>Location: Michigan</p>
             <p>You can use this form for podcast questions, ministry inquiries, speaking requests, or questions about supporting Christians in Uganda.</p>
           </aside>

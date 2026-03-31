@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "last-christian-ministries",
+  "compatibility_date": "2026-03-31",
+  "pages_build_output_dir": ".",
+  "send_email": [
+    {
+      "name": "CONTACT_EMAIL",
+      "destination_address": "pastor@lastchristian.com"
+    }
+  ]
+}
