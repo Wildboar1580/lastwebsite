@@ -111,10 +111,6 @@ function buildPage(episode) {
   <meta name="twitter:description" content="${metaDescription}">
   <meta name="twitter:image" content="${episode.imageUrl}">
   <link rel="canonical" href="${episode.canonicalUrl}">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;600&display=swap"></noscript>
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
     {
