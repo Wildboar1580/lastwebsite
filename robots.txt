@@ -1,4 +1,6 @@
+# Last Christian Ministries robots policy
 User-agent: *
 Allow: /
+Allow: /.well-known/security.txt
 
 Sitemap: https://lastchristian.com/sitemap.xml
