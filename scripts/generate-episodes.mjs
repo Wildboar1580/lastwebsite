@@ -148,7 +148,7 @@ function buildPage(episode) {
       <nav class="site-nav" aria-label="Primary">
         <a href="/podcast.html">Podcast</a>
         <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/index.html#library">Library</a>
+        <a href="/library.html">Library</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
         <a href="/contact.html">Contact</a>
@@ -250,6 +250,7 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/", changefreq: "weekly", priority: "1.0" },
   { loc: "https://lastchristian.com/about.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/podcast.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
