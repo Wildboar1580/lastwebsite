@@ -187,7 +187,7 @@ function buildPage(episode) {
             <a class="button button-outline icon-button" href="${subscribeLinks.rss}" target="_blank" rel="noreferrer"><span>RSS Feed</span></a>
           </div>
           <div class="episode-page-actions">
-            <a class="button button-red icon-button" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" rel="noreferrer"><span>Facebook</span></a>
+            <a class="button button-outline icon-button" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" rel="noreferrer"><span>Facebook</span></a>
             <a class="button button-outline icon-button" href="https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}" target="_blank" rel="noreferrer"><span>X</span></a>
             <a class="button button-outline icon-button" href="mailto:?subject=${encodedTitle}&body=${encodedUrl}"><span>Email</span></a>
           </div>
