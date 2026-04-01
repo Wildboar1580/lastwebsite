@@ -146,23 +146,26 @@ textarea {
 }
 
 .button-red {
-  background: var(--red);
+  background: linear-gradient(180deg, #cf1d22, #9c1317);
   color: var(--white);
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .button-red:hover,
 .button-red:focus-visible {
-  background: #ff383a;
+  background: linear-gradient(180deg, #dd252a, #aa171c);
 }
 
 .button-gold {
-  background: var(--gold);
-  color: #111111;
+  background: linear-gradient(180deg, #e0b54a, #c99418);
+  color: #14110b;
+  border-color: rgba(20, 17, 11, 0.18);
 }
 
 .button-gold:hover,
 .button-gold:focus-visible {
-  background: var(--gold-soft);
+  background: linear-gradient(180deg, #ebc35b, #d8a426);
+  color: #100d08;
 }
 
 .button-outline {
