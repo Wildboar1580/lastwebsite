@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const feedPath = path.join(root, "rss-feed.xml");
 const outputDir = path.join(root, "episodes");
+const bibleManifestPath = path.join(root, "assets", "bible", "chapter-manifest.json");
 
 const feedXml = fs.readFileSync(feedPath, "utf8");
 const items = [...feedXml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
@@ -146,6 +147,7 @@ function buildPage(episode) {
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
+        <a href="/bible.html">Bible</a>
         <a href="/podcast.html">Podcast</a>
         <a href="/index.html#campaigns">Campaigns</a>
         <a href="/library.html">Library</a>
@@ -246,8 +248,13 @@ for (const episode of episodes) {
 const manifest = episodes.map(({ slug, title, link, canonicalUrl }) => ({ slug, title, link, canonicalUrl }));
 fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.stringify(manifest, null, 2));
 
+const bibleManifest = fs.existsSync(bibleManifestPath)
+  ? JSON.parse(fs.readFileSync(bibleManifestPath, "utf8"))
+  : [];
+
 const sitemapUrls = [
   { loc: "https://lastchristian.com/", changefreq: "weekly", priority: "1.0" },
+  { loc: "https://lastchristian.com/bible.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/about.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },
@@ -256,6 +263,11 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html", changefreq: "weekly", priority: "0.9" },
+  ...bibleManifest.map((chapter) => ({
+    loc: chapter.url,
+    changefreq: "monthly",
+    priority: "0.7"
+  })),
   ...episodes.map((episode) => ({
     loc: episode.canonicalUrl,
     changefreq: "weekly",

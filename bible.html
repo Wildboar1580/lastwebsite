@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bible | Last Christian Ministries</title>
+  <meta name="description" content="Read the Bible in the Majority Standard Bible, KJV, and Tyndale Bible with chapter pages, audio, search, and LCMS one-year and daily lectionary readings.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Bible | Last Christian Ministries">
+  <meta property="og:description" content="Read the Bible with searchable static chapter pages, themed audio, and today’s LCMS one-year and daily lectionary readings.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lastchristian.com/bible.html">
+  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Bible | Last Christian Ministries">
+  <meta name="twitter:description" content="Read the Bible with searchable static chapter pages, themed audio, and today’s LCMS one-year and daily lectionary readings.">
+  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://lastchristian.com/bible.html">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="campaign-page bible-page" data-bible-view="msb">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
+        </span>
+        <span><strong>Last Christian Ministries</strong></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/bible.html">Bible</a>
+        <a href="/podcast.html">Podcast</a>
+        <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/library.html">Library</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/security.html">Security</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+    </header>
+
+    <main>
+      <section class="contact-hero bible-hero">
+        <div class="contact-hero-copy">
+          <p class="eyebrow">Bible</p>
+          <h1>Read Scripture, hear it aloud, and follow today’s lectionary</h1>
+          <p>Use the Majority Standard Bible as the default text, switch to the KJV and Tyndale Bible, compare them in multiple columns, and jump to any chapter through static pages built for speed and mobile readability.</p>
+        </div>
+      </section>
+
+      <section class="section bible-controls-section">
+        <div class="section-heading">
+          <p class="eyebrow">Open the Bible</p>
+          <h2>Jump to any book and chapter</h2>
+          <p>Choose a book and chapter to open a static reading page with text comparison and chapter audio.</p>
+        </div>
+        <div class="bible-toolbar">
+          <div class="bible-selectors">
+            <label class="bible-select">
+              <span>Book</span>
+              <select data-bible-book-select></select>
+            </label>
+            <label class="bible-select">
+              <span>Chapter</span>
+              <select data-bible-chapter-select></select>
+            </label>
+          </div>
+          <div class="bible-nav-buttons">
+            <a class="button button-outline" href="/bible/genesis/1.html">Start at Genesis 1</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section bible-lectionary-grid">
+        <div data-one-year-reading></div>
+        <div data-daily-reading></div>
+      </section>
+
+      <section class="section bible-search-section">
+        <div class="section-heading">
+          <p class="eyebrow">Search Scripture</p>
+          <h2>Search the Majority Standard Bible</h2>
+          <p>Search verse text or references, then open the matching chapter page and compare it with the KJV and Tyndale translations.</p>
+        </div>
+        <div class="bible-search-shell">
+          <label class="sr-only" for="bible-search">Search the Bible</label>
+          <input id="bible-search" class="podcast-search" type="search" placeholder="Search by verse text or reference" data-bible-search>
+          <div class="bible-search-results" data-bible-search-results></div>
+        </div>
+      </section>
+
+      <section class="section bible-notes-section">
+        <div class="bible-note-grid">
+          <article class="faq-card">
+            <h3>Texts Included</h3>
+            <p>Majority Standard Bible, KJV, and Tyndale Bible chapter pages are prepared as static pages for speed, search visibility, and easier mobile reading.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Audio Included</h3>
+            <p>Chapter audio is provided for the Majority Standard Bible and KJV. Tyndale text is included for comparison but does not have chapter audio on this site.</p>
+          </article>
+          <article class="faq-card">
+            <h3>Lectionary Source</h3>
+            <p>The LCMS one-year and daily lectionary readings on this page are calculated from Lutheran Service Book lectionary data made available through the Sanctus/lectionary-js project.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/assets/app.js"></script>
+  <script type="module" src="/assets/bible.js"></script>
+</body>
+</html>
