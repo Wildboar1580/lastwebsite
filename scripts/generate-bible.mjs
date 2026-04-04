@@ -377,7 +377,8 @@ function main() {
   }));
 
   const chapterManifest = [];
-  const searchIndex = [];
+  const msbSearchIndex = [];
+  const kjvSearchIndex = [];
 
   bookNames.forEach((bookName, index) => {
     const bookSlug = slugifyBook(bookName);
@@ -407,11 +408,27 @@ function main() {
         msbVerses.slice(0, 3).map((verse) => `${bookName} ${chapterNumber}:${verse.verse} ${verse.text}`).join(" ")
       ).slice(0, 155);
 
-      searchIndex.push(
+      msbSearchIndex.push(
         ...msbVerses.map((verse) => ({
           reference: `${bookName} ${chapterNumber}:${verse.verse}`,
           text: verse.text,
-          url: `${chapterUrl}#msb-${verse.verse}`
+          url: `${chapterUrl}#msb-${verse.verse}`,
+          bookSlug,
+          chapter: chapterNumber,
+          verse: verse.verse,
+          version: "msb"
+        }))
+      );
+
+      kjvSearchIndex.push(
+        ...kjvVerses.map((verse) => ({
+          reference: `${bookName} ${chapterNumber}:${verse.verse}`,
+          text: verse.text,
+          url: `${chapterUrl}#kjv-${verse.verse}`,
+          bookSlug,
+          chapter: chapterNumber,
+          verse: verse.verse,
+          version: "kjv"
         }))
       );
 
@@ -444,7 +461,8 @@ function main() {
   });
 
   fs.writeFileSync(path.join(assetsDir, "books.json"), JSON.stringify(booksManifest, null, 2));
-  fs.writeFileSync(path.join(assetsDir, "search-index.json"), JSON.stringify(searchIndex));
+  fs.writeFileSync(path.join(assetsDir, "search-index.json"), JSON.stringify(msbSearchIndex));
+  fs.writeFileSync(path.join(assetsDir, "search-index-kjv.json"), JSON.stringify(kjvSearchIndex));
   fs.writeFileSync(path.join(assetsDir, "chapter-manifest.json"), JSON.stringify(chapterManifest, null, 2));
 
   console.log(`Generated ${chapterManifest.length} Bible chapter pages.`);

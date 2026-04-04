@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBibleChapterPage();
 });
 
-let searchIndexPromise;
+const searchIndexPromises = new Map();
 let booksPromise;
 
 function escapeHtml(text = "") {
@@ -174,11 +174,20 @@ function loadBooks() {
   return booksPromise;
 }
 
-function loadSearchIndex() {
-  if (!searchIndexPromise) {
-    searchIndexPromise = fetch("/assets/bible/search-index.json").then((response) => response.json());
+function loadSearchIndex(view = "msb") {
+  const normalizedView = normalizeBibleView(view);
+  const searchIndexPath = normalizedView === "kjv"
+    ? "/assets/bible/search-index-kjv.json"
+    : "/assets/bible/search-index.json";
+
+  if (!searchIndexPromises.has(searchIndexPath)) {
+    searchIndexPromises.set(
+      searchIndexPath,
+      fetch(searchIndexPath).then((response) => response.json())
+    );
   }
-  return searchIndexPromise;
+
+  return searchIndexPromises.get(searchIndexPath);
 }
 
 async function initBibleControls() {
@@ -236,8 +245,16 @@ async function initBibleControls() {
   if (!chapterPlayer) {
     toggleButtons.forEach((button) => {
       button.addEventListener("click", () => {
-        body.dataset.bibleView = button.dataset.viewMode;
+        const nextView = normalizeBibleView(button.dataset.viewMode);
+        body.dataset.bibleView = nextView;
+        setStoredBibleView(nextView);
         toggleButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+        updateBibleChapterLinks(nextView);
+        document.querySelector("[data-bible-open-selected]")?.setAttribute(
+          "href",
+          buildBibleChapterHref(bookSelect?.value || "genesis", chapterSelect?.value || 1, nextView)
+        );
+        document.querySelector("[data-bible-search]")?.dispatchEvent(new Event("input", { bubbles: true }));
       });
     });
   }
@@ -511,13 +528,14 @@ async function initBibleSearch() {
       return;
     }
 
-    const index = await loadSearchIndex();
+    const activeView = getStoredBibleView();
+    const index = await loadSearchIndex(activeView);
     const matches = index
       .filter((entry) => `${entry.reference} ${entry.text}`.toLowerCase().includes(query))
       .slice(0, 25);
 
     if (!matches.length) {
-      results.innerHTML = `<p class="search-empty">No matching verses found in the default MSB text.</p>`;
+      results.innerHTML = `<p class="search-empty">No matching verses found in the selected ${activeView === "kjv" ? "KJV" : "MSB"} text.</p>`;
       return;
     }
 
