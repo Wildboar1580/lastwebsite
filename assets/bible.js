@@ -8,6 +8,7 @@ const ONE_YEAR_TYPES = {
   color: 25
   ,
   gradual: 35,
+  specialRubric: 34,
   verse: 36
 };
 
@@ -749,6 +750,7 @@ function renderDaily(propers, books, searchIndex, date) {
 
 function renderProperBlock(label, htmlText) {
   if (!htmlText) return "";
+
   return `
     <article class="lectionary-proper">
       <p class="lectionary-proper-label">${escapeHtml(label)}</p>
