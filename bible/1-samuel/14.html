@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/1-samuel/14.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-samuel" data-bible-chapter="14" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-samuel" data-bible-chapter="14" data-bible-chapter-index="13" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>1 Samuel 14</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -261,53 +261,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/1-samuel/13.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/1-samuel/15.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_09_1Sa_014_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 1 Samuel 14">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 1 Samuel 14</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_09_1Sa_014_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 1 Samuel 14">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/09_1Samuel014.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 1 Samuel 14">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -854,281 +837,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>One day Jonathan son of Saul said to the young man bearing his armor, “Come, let us cross over to the Philistine outpost on the other side.” But Jonathan did not tell his father.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Meanwhile, Saul was staying under the pomegranate tree in Migron on the outskirts of Gibeah. And the troops who were with him numbered about six hundred men,</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>including Ahijah, who was wearing an ephod. He was the son of Ichabod’s brother Ahitub son of Phinehas, the son of Eli the priest of the LORD in Shiloh. But the troops did not know that Jonathan had left.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Now there were cliffs on both sides of the pass that Jonathan intended to cross to reach the Philistine outpost. One was named Bozez and the other Seneh.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>One cliff stood to the north toward Michmash, and the other to the south toward Geba.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>Jonathan said to the young man bearing his armor, “Come, let us cross over to the outpost of these uncircumcised men. Perhaps the LORD will work on our behalf. Nothing can hinder the LORD from saving, whether by many or by few.”</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>His armor-bearer replied, “Do all that is in your heart. Go ahead; I am with you heart and soul.”</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>“Very well,” said Jonathan, “we will cross over toward these men and show ourselves to them.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>If they say, ‘Wait until we come to you,’ then we will stay where we are and will not go up to them.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>But if they say, ‘Come on up,’ then we will go up, because this will be our sign that the LORD has delivered them into our hands.”</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>So the two of them showed themselves to the outpost of the Philistines, who exclaimed, “Look, the Hebrews are coming out of the holes in which they were hiding!”</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>So the men of the outpost called out to Jonathan and his armor-bearer, “Come on up, and we will teach you a lesson!” “Follow me,” Jonathan told his armor-bearer, “for the LORD has delivered them into the hand of Israel.”</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>So Jonathan climbed up on his hands and feet, with his armor-bearer behind him. And the Philistines fell before Jonathan, and his armor-bearer followed and finished them off.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>In that first assault, Jonathan and his armor-bearer struck down about twenty men in about half an acre of land.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Then panic struck the Philistines in the camp, in the field, and among all the people. Even those in the outposts and raiding parties trembled. Indeed, the earth quaked, and panic spread from God.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Now when Saul’s watchmen at Gibeah in Benjamin looked and saw the troops melting away and scattering in every direction,</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Saul said to the troops who were with him, “Call the roll and see who has left us.” And when they had called the roll, they saw that Jonathan and his armor-bearer were not there.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Then Saul said to Ahijah, “Bring the ark of God.” (For at that time it was with the Israelites.)</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>While Saul was talking to the priest, the commotion in the Philistine camp continued to increase. So Saul said to the priest, “Withdraw your hand.”</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Then Saul and all his troops assembled and marched to the battle, and they found the Philistines in total confusion, with each man wielding the sword against his neighbor.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And the Hebrews who had previously gone up into the surrounding camps to join the Philistines now went over to the Israelites who were with Saul and Jonathan.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>When all the Israelites who had been hiding in the hill country of Ephraim heard that the Philistines were fleeing, they also joined the battle in close pursuit.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>So the LORD saved Israel that day, and the battle moved on beyond Beth-aven.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Now the men of Israel were in distress that day, for Saul had placed the troops under an oath, saying, “Cursed is the man who eats any food before evening, before I have taken vengeance on my enemies.” So none of the troops tasted any food.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Then all the troops entered the forest, and there was honey on the ground.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>And when they entered the forest and saw the flowing honey, not one of them put his hand to his mouth, because they feared the oath.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Jonathan, however, had not heard that his father had bound the people with the oath. So he reached out the end of the staff in his hand, dipped it into the honeycomb, and put his hand to his mouth, and his eyes brightened.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Then one of the soldiers told him, “Your father bound the troops with a solemn oath, saying, ‘Cursed is the man who eats food today.’ That is why the people are faint.”</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>“My father has brought trouble to the land,” Jonathan replied. “Just look at how my eyes have brightened because I tasted a little of this honey.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>How much better it would have been if the troops had eaten freely today from the plunder they took from their enemies! Would not the slaughter of the Philistines have been much greater?”</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>That day, after the Israelites had struck down the Philistines from Michmash to Aijalon, the people were very faint.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>So they rushed greedily to the plunder, taking sheep, cattle, and calves. They slaughtered them on the ground and ate meat with the blood still in it.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>Then someone reported to Saul: “Look, the troops are sinning against the LORD by eating meat with the blood still in it.” “You have broken faith,” said Saul. “Roll a large stone over here at once.”</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Then he said, “Go among the troops and tell them, ‘Each man must bring me his ox or his sheep, slaughter them in this place, and then eat. Do not sin against the LORD by eating meat with the blood still in it.’” So that night everyone brought his ox and slaughtered it there.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Then Saul built an altar to the LORD; it was the first time he had built an altar to the LORD.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>And Saul said, “Let us go down after the Philistines by night and plunder them until dawn, leaving no man alive!” “Do what seems good to you,” the troops replied. But the priest said, “We must consult God here.”</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>So Saul inquired of God, “Shall I go down after the Philistines? Will You give them into the hand of Israel?” But God did not answer him that day.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>Therefore Saul said, “Come here, all you leaders of the troops, and let us investigate how this sin has occurred today.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>As surely as the LORD who saves Israel lives, even if it is my son Jonathan, he must die!” But not one of the troops said a word.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>Then Saul said to all Israel, “You stand on one side, and I and my son Jonathan will stand on the other side.” “Do what seems good to you,” the troops replied.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>So Saul said to the LORD, the God of Israel, “Why have You not answered Your servant this day? If the fault is with me or my son Jonathan, respond with Urim, but if the fault is with the men of Israel, respond with Thummim.” And Jonathan and Saul were selected, but the people were cleared of the charge.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>Then Saul said, “Cast the lot between me and my son Jonathan.” And Jonathan was selected.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>“Tell me what you have done,” Saul commanded him. So Jonathan told him, “I only tasted a little honey with the end of the staff that was in my hand. And now I must die?”</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>And Saul declared, “May God punish me, and ever so severely, if you, Jonathan, do not surely die!”</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>But the people said to Saul, “Must Jonathan die—he who accomplished such a great deliverance for Israel? Never! As surely as the LORD lives, not a hair of his head will fall to the ground, for with God’s help he has accomplished this today.” So the people rescued Jonathan, and he did not die.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>Then Saul gave up his pursuit of the Philistines, and the Philistines returned to their own land.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>After Saul had assumed the kingship over Israel, he fought against all his enemies on every side—the Moabites, the Ammonites, the Edomites, the kings of Zobah, and the Philistines. Wherever he turned, he routed them.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>He fought valiantly and defeated the Amalekites, delivering Israel from the hands of its plunderers.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>Now the sons of Saul were Jonathan, Ishvi, and Malchishua. His two daughters were named Merab (his firstborn) and Michal (his younger daughter).</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>His wife’s name was Ahinoam daughter of Ahimaaz. The name of the commander of his army was Abner, the son of Saul’s uncle Ner.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>Saul’s father Kish and Abner’s father Ner were sons of Abiel.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>And the war with the Philistines was fierce for all the days of Saul. So whenever he noticed any strong or brave man, Saul would enlist him.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/1-samuel/15.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Samuel","chapter":1,"pageUrl":"/bible/1-samuel/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/001.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":2,"pageUrl":"/bible/1-samuel/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/002.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":3,"pageUrl":"/bible/1-samuel/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/003.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":4,"pageUrl":"/bible/1-samuel/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/004.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":5,"pageUrl":"/bible/1-samuel/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/005.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":6,"pageUrl":"/bible/1-samuel/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/006.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":7,"pageUrl":"/bible/1-samuel/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/007.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":8,"pageUrl":"/bible/1-samuel/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/008.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":9,"pageUrl":"/bible/1-samuel/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/009.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":10,"pageUrl":"/bible/1-samuel/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/010.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":11,"pageUrl":"/bible/1-samuel/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/011.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":12,"pageUrl":"/bible/1-samuel/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/012.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":13,"pageUrl":"/bible/1-samuel/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/013.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":14,"pageUrl":"/bible/1-samuel/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/014.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":15,"pageUrl":"/bible/1-samuel/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/015.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":16,"pageUrl":"/bible/1-samuel/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/016.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":17,"pageUrl":"/bible/1-samuel/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/017.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":18,"pageUrl":"/bible/1-samuel/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/018.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":19,"pageUrl":"/bible/1-samuel/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/019.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":20,"pageUrl":"/bible/1-samuel/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/020.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":21,"pageUrl":"/bible/1-samuel/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/021.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":22,"pageUrl":"/bible/1-samuel/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/022.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":23,"pageUrl":"/bible/1-samuel/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/023.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":24,"pageUrl":"/bible/1-samuel/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/024.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":25,"pageUrl":"/bible/1-samuel/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/025.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":26,"pageUrl":"/bible/1-samuel/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/026.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":27,"pageUrl":"/bible/1-samuel/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/027.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":28,"pageUrl":"/bible/1-samuel/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/028.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":29,"pageUrl":"/bible/1-samuel/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/029.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":30,"pageUrl":"/bible/1-samuel/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/030.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":31,"pageUrl":"/bible/1-samuel/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/031.mp3","slug":"1-samuel"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

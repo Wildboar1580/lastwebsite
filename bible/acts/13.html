@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/acts/13.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="acts" data-bible-chapter="13" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="acts" data-bible-chapter="13" data-bible-chapter-index="12" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Acts 13</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -255,53 +255,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/acts/12.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/acts/14.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_44_Act_013_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Acts 13">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Acts 13</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_44_Act_013_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Acts 13">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/44_Acts013.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Acts 13">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -848,281 +831,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>There were at Antioche in the congregacion certayne Prophetes and teachers: as Barnabas and Simon called Niger and Lucius of Cerene and Manahen Herode the Tetrarkes norsfelowe and Saul.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>As they mynistred to the Lorde and fasted the holy goost sayde: separate me Barnabas and Saul for ye worke where vnto I have called them.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Then fasted they and prayed and put their hondes on them and let them goo.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>And they after they were sent of the holy goost came vnto Seleutia and from thence they sayled to Cyprus.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>And when they were come to Salamine they shewed ye worde of God in ye synagoges of ye Iewes. And they had Iohn to their minister.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>When they had gone thorowout ye yle vnto ye cite of Paphos they foude a certayne sorserer a falce prophet which was a Iewe named Bariesu</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>which was with ye ruler of the countre won Sergius Paulus a prudet man. The same ruler called vnto him Barnabas and Saul and desyred to heare the worde of God.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>But Elemas the sorcerar (for so was his name by interpretacion) wt stode them and sought to turne awaye the ruler fro the fayth.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Then Saul which also is called Paul beinge full of the holy goost set his eyes on him</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>and sayde: O full of all sutteltie and disseytfulnes the chylde of the devyll and ye enemye of all righteousnes thou ceasest not to pervert the strayght wayes of the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And now beholde the honde of the Lorde is vpon the and thou shalt be blinde and not se the sunne for a season. And immediatly ther fell on him a myste and a darcknes and he went aboute sekinge them that shuld leade him by the honde.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Then the rular when he sawe what had happened beleved and wodred at the doctryne of the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>When they that were with Paule were departed by shyppe fro Paphus they cam to Perga a cite of Pamphilia: and there Iohn departed from them and returned to Ierusalem.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>But they wandred thorowe the countres fro Perga to Antioche a cite of the coutre of Pisidia and wet in to the synagoge on the saboth daye and sate doune.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>And after the lawe and ye Prophetes were redde ye rulers of the synagoge sent vnto them sayinge: Ye men and brethren yf ye have eny sermo to exhorte ye people saye on.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Then Paul stode vp and beckened with the honde and sayde: Men of Israel and ye that feare God geve audiece.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>The God of this people chose oure fathers and exalted the people whe they dwelt as straugers in ye londe of Egypt and with a mighty arme brought them oute of i</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>and aboute the tyme of.xl. yeares suffred he their maners in the wyldernes.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And he destroyed. vii nacios in the londe of Canaan and devided their londe to them by lot.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And after warde he gave vnto them iudges aboute the space of.iiii.C. and.l. yeres vnto the tyme of Samuel ye Prophet.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And after that they desyred a kinge and God gave vnto them Saul the sonne of Cis a man of the tribe of Beniamin by the space of.xl. yeres.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And after he had put him doune he set vp David to be their kynge of whome he reported sayinge: I have founde David the sonne of Iesse a man after myne awne hert he shall fulfill all my will.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Of this manes seed hath God (accordinge to his promes) brought forth to the people of Israel a saviour one Iesus</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>when Iohn had fyrst preached before his cominge the baptyme of repentauce to Israel.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>And when Iohn had fulfylled his course he sayde: whome ye thinke that I am the same am I not. But beholde ther cometh one after me whose shewes of his fete I am not worthy to lowse.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Ye men and brethren chyldren of the generacion of Abraham and whosoever amoge you feareth God to you is this worde of salvacio sent.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>The inhabiters of Ierusalem and their rulers because they knewe him not nor yet the voyces of the Prophetes which are redde every Saboth daye they have fulfilled them in condepninge him.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>And when they founde no cause of deeth in him yet desyred they Pylate to kyll him.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And when they had fulfilled all that were written of him they toke him doune from the tree and put him in a sepulcre.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>But God raysed him agayne from deeth</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>and he was sene many dayes of them which came wt him fro Galile to Ierusalem. Which are his witnesses vnto the people.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And we declare vnto you how that ye promes made vnto the fathers</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>God hath fulfilled vnto vs their chyldre in that he reysed vp Iesus agayne eve as it is written in the fyrste psalme: Thou arte my sonne this same daye begat I the.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>As concernynge that he reysed him vp from deeth now no more to returne to corrupcion he sayde on this wyse: The holy promyses made to David I will geve them faithfully to you.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Wherfore he saith also in another place: Thou shalt not soffre thyne holye to se corrupcion.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Howbe it David after he had in his tyme fulfilled the will of God he slepte and was layde with his fathers and sawe corrupcion.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>But he whom God reysed agayne sawe no corrupcion.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>Be it knowne vnto you therfore ye men and brethre that thorow this man is preached vnto you the forgevenes of synnes</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>and yt by him are all yt beleve iustified fro all thinges fro the which ye coulde not be iustified by ye lawe of Moses.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>Beware therfore lest that fall on you which is spoken of in the Prophetes:</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Beholde ye despisers and wonder and perishe ye: for I do aworke in youre dayes which ye shall not beleve yf a ma wolde declare it you.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>When they were come out of the Synagoge of the Iewes the getyls besought yt they wolde preache the worde to them bitwene the Saboth dayes.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>When the congregacion was broken vp many of the Iewes and verteous covertes folowed Paul and Barnabas which spake to them and exhorted them to cotinue in the grace of God.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>And ye nexte Saboth daye came almoste the whole cite to gether to heare the worde of God.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>When ye Iewes sawe the people they were full of indignacion and spake agaynst those thinges which were spoken of Paul spekinge agaynst it and raylinge on it.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>Then Paul and Barnabas wexed bolde and sayde: it was mete that the worde of God shulde fyrst have bene preached to you. But seinge ye put it from you and thinke youre selfes onworthy of everlastinge lyfe: lo we turne to the gentyls.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>For so hath the Lorde comaunded vs: I have made ye a light to the getyls yt thou be salvacio vnto ye ende of ye worlde.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>The getyls hearde and were glad and glorified the worde of ye Lorde and beleved: eve as many as were ordeyned vnto eternall lyfe.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>And ye worde of the Lorde was publisshed thorowe oute all the region.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>But the Iewes moved ye worshypfull and honorable wemen and the chefe men of the cyte and reysed persecucio agaynst Paul and Barnabas and expelled them oute of their costes.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>And they shouke of ye duste of their fete agaynst them and came vnto Iconiu.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>And the disciples were filled with ioye and with the holy goost.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/acts/14.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Acts","chapter":1,"pageUrl":"/bible/acts/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/001.mp3","slug":"acts"},{"book":"Acts","chapter":2,"pageUrl":"/bible/acts/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/002.mp3","slug":"acts"},{"book":"Acts","chapter":3,"pageUrl":"/bible/acts/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/003.mp3","slug":"acts"},{"book":"Acts","chapter":4,"pageUrl":"/bible/acts/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/004.mp3","slug":"acts"},{"book":"Acts","chapter":5,"pageUrl":"/bible/acts/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/005.mp3","slug":"acts"},{"book":"Acts","chapter":6,"pageUrl":"/bible/acts/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/006.mp3","slug":"acts"},{"book":"Acts","chapter":7,"pageUrl":"/bible/acts/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/007.mp3","slug":"acts"},{"book":"Acts","chapter":8,"pageUrl":"/bible/acts/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/008.mp3","slug":"acts"},{"book":"Acts","chapter":9,"pageUrl":"/bible/acts/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/009.mp3","slug":"acts"},{"book":"Acts","chapter":10,"pageUrl":"/bible/acts/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/010.mp3","slug":"acts"},{"book":"Acts","chapter":11,"pageUrl":"/bible/acts/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/011.mp3","slug":"acts"},{"book":"Acts","chapter":12,"pageUrl":"/bible/acts/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/012.mp3","slug":"acts"},{"book":"Acts","chapter":13,"pageUrl":"/bible/acts/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/013.mp3","slug":"acts"},{"book":"Acts","chapter":14,"pageUrl":"/bible/acts/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/014.mp3","slug":"acts"},{"book":"Acts","chapter":15,"pageUrl":"/bible/acts/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/015.mp3","slug":"acts"},{"book":"Acts","chapter":16,"pageUrl":"/bible/acts/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/016.mp3","slug":"acts"},{"book":"Acts","chapter":17,"pageUrl":"/bible/acts/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/017.mp3","slug":"acts"},{"book":"Acts","chapter":18,"pageUrl":"/bible/acts/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/018.mp3","slug":"acts"},{"book":"Acts","chapter":19,"pageUrl":"/bible/acts/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/019.mp3","slug":"acts"},{"book":"Acts","chapter":20,"pageUrl":"/bible/acts/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/020.mp3","slug":"acts"},{"book":"Acts","chapter":21,"pageUrl":"/bible/acts/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/021.mp3","slug":"acts"},{"book":"Acts","chapter":22,"pageUrl":"/bible/acts/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/022.mp3","slug":"acts"},{"book":"Acts","chapter":23,"pageUrl":"/bible/acts/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/023.mp3","slug":"acts"},{"book":"Acts","chapter":24,"pageUrl":"/bible/acts/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/024.mp3","slug":"acts"},{"book":"Acts","chapter":25,"pageUrl":"/bible/acts/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/025.mp3","slug":"acts"},{"book":"Acts","chapter":26,"pageUrl":"/bible/acts/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/026.mp3","slug":"acts"},{"book":"Acts","chapter":27,"pageUrl":"/bible/acts/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/027.mp3","slug":"acts"},{"book":"Acts","chapter":28,"pageUrl":"/bible/acts/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/028.mp3","slug":"acts"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

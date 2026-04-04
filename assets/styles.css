@@ -1362,6 +1362,10 @@ textarea {
   align-items: end;
 }
 
+.bible-toolbar-compact {
+  grid-template-columns: 1fr;
+}
+
 .bible-selectors {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -1389,8 +1393,9 @@ textarea {
 }
 
 .bible-view-toggle {
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 220px));
   margin-top: 1.2rem;
+  justify-content: start;
 }
 
 .bible-view-toggle .button.is-active {
@@ -1403,6 +1408,10 @@ textarea {
 .bible-lectionary-grid,
 .bible-note-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bible-audio-grid-single {
+  grid-template-columns: 1fr;
 }
 
 .bible-audio-card,
@@ -1419,6 +1428,28 @@ textarea {
 .lectionary-card,
 .bible-search-shell {
   padding: 1.25rem;
+}
+
+.bible-audio-player {
+  display: grid;
+  gap: 1rem;
+}
+
+.bible-continuous-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.bible-continuous-toggle input {
+  inline-size: 1rem;
+  block-size: 1rem;
+  accent-color: var(--red);
 }
 
 .lectionary-card h3 {
@@ -1473,6 +1504,13 @@ textarea {
   gap: 1rem;
 }
 
+.bible-bottom-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.4rem;
+}
+
 .bible-column {
   padding: 1.15rem;
 }
@@ -1510,22 +1548,8 @@ textarea {
 }
 
 .bible-page[data-bible-view="msb"] .bible-column:not([data-translation="msb"]),
-.bible-page[data-bible-view="kjv"] .bible-column:not([data-translation="kjv"]),
-.bible-page[data-bible-view="tyndale"] .bible-column:not([data-translation="tyndale"]) {
+.bible-page[data-bible-view="kjv"] .bible-column:not([data-translation="kjv"]) {
   display: none;
-}
-
-.bible-page[data-bible-view="parallel-two"] .bible-columns,
-.bible-page[data-bible-view="parallel-three"] .bible-columns {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.bible-page[data-bible-view="parallel-two"] .bible-column[data-translation="tyndale"] {
-  display: none;
-}
-
-.bible-page[data-bible-view="parallel-three"] .bible-columns {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 @media (max-width: 980px) {
@@ -1548,8 +1572,7 @@ textarea {
   .bible-audio-grid,
   .bible-lectionary-grid,
   .bible-note-grid,
-  .bible-page[data-bible-view="parallel-two"] .bible-columns,
-  .bible-page[data-bible-view="parallel-three"] .bible-columns {
+  .bible-bottom-nav {
     grid-template-columns: 1fr;
   }
 

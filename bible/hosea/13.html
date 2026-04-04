@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/hosea/13.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="hosea" data-bible-chapter="13" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="hosea" data-bible-chapter="13" data-bible-chapter-index="12" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Hosea 13</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -227,53 +227,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/hosea/12.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/hosea/14.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_28_Hos_013_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Hosea 13">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Hosea 13</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_28_Hos_013_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Hosea 13">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/28_Hosea013.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Hosea 13">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -460,101 +443,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>When Ephraim spoke, there was trembling; he was exalted in Israel. But he incurred guilt through Baal, and he died.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Now they sin more and more and make for themselves cast images, idols skillfully made from their silver, all of them the work of craftsmen. People say of them, “They offer human sacrifice and kiss the calves!”</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Therefore they will be like the morning mist, like the early dew that vanishes, like chaff blown from a threshing floor, like smoke through an open window.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Yet I am the LORD your God ever since the land of Egypt; you know no God but Me, for there is no Savior besides Me.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>I knew you in the wilderness, in the land of drought.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>When they had pasture, they became satisfied; when they were satisfied, their hearts became proud, and as a result they forgot Me.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>So like a lion I will pounce on them; like a leopard I will lurk by the path.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Like a bear robbed of her cubs I will attack them, and I will tear open their chests. There I will devour them like a lion, like a wild beast tearing them apart.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>You are destroyed, O Israel, because you are against Me—against your helper.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Where is your king now to save you in all your cities, and the rulers to whom you said, “Give me a king and princes”?</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>So in My anger I gave you a king, and in My wrath I took him away.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>The iniquity of Ephraim is bound up; his sin is stored up.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Labor pains come upon him, but he is an unwise son. When the time arrives, he fails to present himself at the opening of the womb.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>I will ransom them from the power of Sheol; I will redeem them from Death. Where, O Death, are your plagues? Where, O Sheol, is your sting? Compassion is hidden from My eyes.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Although he flourishes among his brothers, an east wind will come—a wind from the LORD rising up from the desert. His fountain will fail, and his spring will run dry. The wind will plunder his treasury of every precious article.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Samaria will bear her guilt because she has rebelled against her God. They will fall by the sword; their little ones will be dashed to pieces, and their pregnant women ripped open.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/hosea/14.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Hosea","chapter":1,"pageUrl":"/bible/hosea/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/001.mp3","slug":"hosea"},{"book":"Hosea","chapter":2,"pageUrl":"/bible/hosea/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/002.mp3","slug":"hosea"},{"book":"Hosea","chapter":3,"pageUrl":"/bible/hosea/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/003.mp3","slug":"hosea"},{"book":"Hosea","chapter":4,"pageUrl":"/bible/hosea/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/004.mp3","slug":"hosea"},{"book":"Hosea","chapter":5,"pageUrl":"/bible/hosea/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/005.mp3","slug":"hosea"},{"book":"Hosea","chapter":6,"pageUrl":"/bible/hosea/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/006.mp3","slug":"hosea"},{"book":"Hosea","chapter":7,"pageUrl":"/bible/hosea/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/007.mp3","slug":"hosea"},{"book":"Hosea","chapter":8,"pageUrl":"/bible/hosea/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/008.mp3","slug":"hosea"},{"book":"Hosea","chapter":9,"pageUrl":"/bible/hosea/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/009.mp3","slug":"hosea"},{"book":"Hosea","chapter":10,"pageUrl":"/bible/hosea/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/010.mp3","slug":"hosea"},{"book":"Hosea","chapter":11,"pageUrl":"/bible/hosea/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/011.mp3","slug":"hosea"},{"book":"Hosea","chapter":12,"pageUrl":"/bible/hosea/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/012.mp3","slug":"hosea"},{"book":"Hosea","chapter":13,"pageUrl":"/bible/hosea/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/013.mp3","slug":"hosea"},{"book":"Hosea","chapter":14,"pageUrl":"/bible/hosea/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_28_Hos_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hosea/014.mp3","slug":"hosea"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

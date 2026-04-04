@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/leviticus/25.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="leviticus" data-bible-chapter="25" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="leviticus" data-bible-chapter="25" data-bible-chapter-index="24" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Leviticus 25</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -253,53 +253,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/leviticus/24.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/leviticus/26.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_03_Lev_025_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Leviticus 25">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Leviticus 25</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_03_Lev_025_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Leviticus 25">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/03_Leviticus025.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Leviticus 25">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -876,296 +859,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>And the Lorde spake vnto Moses in mount Sinai sayenge,</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>speake vnto the childern of Israel and saye vnto the. When ye be come in to the lande whiche I geue you, let the londe rest a Sabbath vnto the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Sixe yeres thou shalt sowe thi felde, and sixe yere thou shalt cut thi vynes and gather in thi frutes.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>But the seuenth yere shall be a Sabbath of rest vnto the londe. The Lordes Sabbath it shalbe, ad thou shalt nether sowe thi felde, nor cut thy vynes.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>The corne that groweth by it selfe thou shalt not repe, nether gather the grapes that growe without thy dressynge: but it shalbe a Sabbath of rest vnto the londe.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>Neuerthelesse the Sabbath of the londe shalbe meate for you: euen for the and thy servaunte and for thy mayde and for thy hyred servaunte and for the straunger that dwelleth with the:</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>and for thi catell and for the beestes that are in thy londe, shall all the encrease thereof be meate.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Then numbre seuen wekes of yeres, that is, seuen tymes seuen yere: and the space of the seuen wekes of yeres will be vnto the.xlix. yere.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>And then thou shalt make an horne blowe: euen in the tenth daye of the seuenth moneth, which is the daye of attonement. And then shall ye make the horne blowe, euen thorowe out all youre lande.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And ye shall halowe the fiftith yere, and proclayme libertie thorowe out the lande vnto all the inhabiters thereof, It shalbe a yere of hornes blowynge vnto you and ye shall returne: euery man vnto his possession and euery man vnto his kynred agayne.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>A yere of hornes blowynge shall that fiftieth yere be vnto you. Ye shall not sowe nether repe the corne that groweth by it selfe, nor gather the grapes that growe without thi labour</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>For it is a yere of hornes blowinge and shalbe holy vnto you: how be it, yet ye shall eate of the encrease of the felde.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>And in this yere of hornes blowinge ye shall returne, euery man vnto his possession agayne.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>When thou sellest oughte vnto thy neyghboure or byest off thy neyghboures hande, ye shall not oppresse one another:</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>but accordynge to the numbre of yeres after the trompett yere, thou shalt bye of thy neyghboure, and accordynge vnto the numbre off fruteyeres, he shall sell vnto the.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Accordinge vnto the multitude of yeres, thou shalt encrease the price thereof and accordinge to the fewnesse of yeres, thou shalt mynish the price: for the numbre of frute he shall sell vnto the.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>And see that no ma oppresse his neyghboure, but feare thi God. For I am the Lorde youre God.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Wherfore do after myne ordinaunces and kepe my lawes ad doo them, that ye maye dwell in the lande in saftie.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And the lande shall geue her frute, and ye shall eate youre fille and dwell therein in saftie.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Yf ye shall saye, what shall we eate the seuenth yere in as moche as we shall not sowe nor gether in oure encrease.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>I wyll sende my blessynge apon you in the sixte yere,</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>and it shall brynge forth frute for thre yeres: and ye shall sowe the eyghte yere and eate of olde frute vntill the.ix. yere, and euen vntyll hir frutes come, ye shall eate of olde stoare.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Wherfore the londe shall not be solde for euer, because that the lande is myne, and ye but straungers and soiourners with me:</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>and ye shall thorowe oute all the lande of youre possession, let the londe go home fre agayne.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>When thy brother is waxed poore and hath solde awaye of his possession: yf any off his kyn come to redeme it, he shall by out that whiche his brother solde.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>And though he haue no man to redeme it for him, yet yf hys hande can get sufficyent to bye it oute agayne,</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>then let him counte how longe it hath bene solde, and delyuer the rest vnto him to whome he solde it, ad so he shall returne vnto his possession agayne.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>But and yf his hande ca not get sufficiet to restore it to him agayne, then that whiche is solde shall remayne in the hande of him that hath boughte it, vntyll the horneyere: and in the horne yere it shall come out, and he shall returne vnto his possession agayne.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>Yf a man sell a dwellynge house in a walled cytie he maye bye it out agayne any tyme withi a hole yere after it is solde: and that shalbe the space in which he maye redeme it agayne.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>But and yf it be not bought out agayne within the space of a full yere then the housse in the walled cytie shalbe stablished for euer vnto him that boughte it and to his successoures after hi and shall not goo out in the trompet yere.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>But the housses in villagies which haue no walles rounde aboute them shalbe counted like vnto the feldes of the cuntre and maye be boughte out agayne at any season and shall goo out fre in the trompett yere.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Notwithstondynge the cityes of the leuytes and the housses in the cyties of their possessios the leuites maye redeme at all ceasons.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And yf a man purchace ought of the leuytes: whether it be house or citie that they possesse, the bargayne shall goo out in the tropet yere. for the housses of the cyties of the leuites are their possessions amonge the childern of Israel.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>But the feldes that lye rounde aboute their cyties shall not be bought: for they are their possessions for euer.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Yf thi brother be waxed poore and falle in decaye with the receaue him as a straunger or a soiourner and let him lyue by the.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>And thou shalt take none vsurye of him nor yet vantage. But shalt feare thi God that thi brother maye lyue with the.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Thou shalt not lende him thi money apon vsurye nor lende him of thi fode to haue avantage by it for</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>I am the Lorde youre God which broughte you out of the lande of Egipte, to geue you the lande of Canaan and to be youre God.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>Yf thi brother that dwelleth by the waxe poore and sell him selfe vnto the thou shalt not let him laboure as a bondseruaunte doeth:</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>but as an hyred seruaunte and as a soiourner he shalbe with the and shall serue the vnto the trompetyer</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>and then shall he departe fro the: both he and his childern with him and shall returne vnto his awne kynred agayne and vnto the possessions of his fathers.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>for they are my seruauntes which I brought out of the lande of Egipte and shall not be solde as bondmen.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>Se therfore that thou reigne not ouer him cruelly but feare thi God.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>Yf thou wilt haue bondseruauntes and maydens thou shalt bye them of the heythen that are rounde aboute you</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>and of the childern of the straungers that are soiorners amonge you ad of their generacios that are with you, which they begate in youre lade.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>And ye shall possesse them and geue them vnto youre childern after you, to possesse them for euer: and they shalbe youre bond men: But ouer youre brethern the childern of Israel ye shall not reigne one ouer another cruelly.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>When a straunger and a soiourner waxeth rych by the ad thi brother that dwelleth by him waxeth poore and sell him selfe vnto the straunger that dwelleth by the or to any of the straungers kyn:</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>after that he is solde he maye be redemed agayne. one of his brethren maye bye him out:</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>whether it be his vncle or his vncles sonne or any that is nye of kynne vnto him of his kynred: ether yf his hande can get so moch he maye be loosed.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>And he shall reken with him that boughte him from the yere that he was solde in vnto the trompet yere and the pryce of his byenge shalbe acordynge vnto the numbre of yeres and he shalbe with him as a hyred seruaunte.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>Yf there be yet many yeres behynde acordynge vnto them he shall geue agayne for his delyueraunce of the money that he was solde for.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>Yf there remayne but few yeres vnto the trompet yere he shall so counte with him and acordynge vnto his yeres geue him agayne for his redempcion</span>
-              </p>
-            
-              <p id="tyndale-53" class="bible-verse">
-                <span class="verse-num">53</span>
-                <span>and shalbe with him yere by yere as an hyred seruaunte and the other shall not reygne cruelly ouer him in thi syghte.</span>
-              </p>
-            
-              <p id="tyndale-54" class="bible-verse">
-                <span class="verse-num">54</span>
-                <span>Yf he be not bought fre in the meane tyme then he shall goo out in the trompet yere and his childern with him.</span>
-              </p>
-            
-              <p id="tyndale-55" class="bible-verse">
-                <span class="verse-num">55</span>
-                <span>for the childern of Israel are my seruauntes which I broughte out of the lande of Egipte. I am the Lorde youre God.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/leviticus/26.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Leviticus","chapter":1,"pageUrl":"/bible/leviticus/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/001.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":2,"pageUrl":"/bible/leviticus/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/002.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":3,"pageUrl":"/bible/leviticus/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/003.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":4,"pageUrl":"/bible/leviticus/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/004.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":5,"pageUrl":"/bible/leviticus/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/005.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":6,"pageUrl":"/bible/leviticus/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/006.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":7,"pageUrl":"/bible/leviticus/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/007.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":8,"pageUrl":"/bible/leviticus/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/008.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":9,"pageUrl":"/bible/leviticus/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/009.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":10,"pageUrl":"/bible/leviticus/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/010.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":11,"pageUrl":"/bible/leviticus/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/011.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":12,"pageUrl":"/bible/leviticus/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/012.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":13,"pageUrl":"/bible/leviticus/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/013.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":14,"pageUrl":"/bible/leviticus/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/014.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":15,"pageUrl":"/bible/leviticus/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/015.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":16,"pageUrl":"/bible/leviticus/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/016.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":17,"pageUrl":"/bible/leviticus/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/017.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":18,"pageUrl":"/bible/leviticus/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/018.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":19,"pageUrl":"/bible/leviticus/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/019.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":20,"pageUrl":"/bible/leviticus/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/020.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":21,"pageUrl":"/bible/leviticus/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/021.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":22,"pageUrl":"/bible/leviticus/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/022.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":23,"pageUrl":"/bible/leviticus/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/023.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":24,"pageUrl":"/bible/leviticus/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/024.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":25,"pageUrl":"/bible/leviticus/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/025.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":26,"pageUrl":"/bible/leviticus/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/026.mp3","slug":"leviticus"},{"book":"Leviticus","chapter":27,"pageUrl":"/bible/leviticus/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_03_Lev_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/leviticus/027.mp3","slug":"leviticus"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

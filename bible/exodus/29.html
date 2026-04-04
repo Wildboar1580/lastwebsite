@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/exodus/29.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="exodus" data-bible-chapter="29" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="exodus" data-bible-chapter="29" data-bible-chapter-index="28" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Exodus 29</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -279,53 +279,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/exodus/28.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/exodus/30.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_02_Exo_029_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Exodus 29">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Exodus 29</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_02_Exo_029_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Exodus 29">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/02_Exodus029.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Exodus 29">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -812,251 +795,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>This is the thinge that thou shalt doo vnto them when thou halowest them to be my preastes. Take one oxe and two rammes that are without blemysh,</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>ad vnleueded bred and cakes of swete bred tempered with oyle and wafers of swete bred anoynted with oyle (of wheten floure shalt thou make them)</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>and put them in a maunde and brynge the in the maunde with the oyle and the.ij. rammes.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>And brynge Aaron ad his sonnes vnto the doore of the tabernacle of wytnesse, ad wassh them with water,</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>and take the garmentes, and put apon Aaron: the strayte cote, and the tunycle of the Ephod, and the Ephod ad the brestlappe: and gerth the to him with the brodered girdel of the Ephod.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And put the mitre vppo his heed and put the holy crowne vpon the mytre.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Then take the anoyntynge oyle and poure it apon his heed and anoynte him.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>And brynge his sonnes and put albes apon them,</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>ad gerth them with girdels: as well Aaron as his sonnes, And put the bonettes on them that the preastes office maye be theirs for a perpetuall lawe. And fyll the handes of Aaron and of hys sonnes,</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>and brynge the oxe before the tabernacle of witnesse. And let Aaro ad his sones put their hades apo his heed</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>ad kyll hi before the Lord in the dore of the tabernacle of witnesse</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>And take of the bloud of the oxe ad put it apo the hornes of the alter with thi finger ad poure all the bloude apon the botome of the alter,</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>ad take all the fatt that couereth the inwardes, ad the kall that is on the lyuer and the.ij. kydneys with the fatt that is apo the: and burne the apo the alter.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>But the flesh of the oxe and his skynne and his donge, shalt thou burne with fyre, without the hoste. For it is a synneofferynge.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Then take one of the rammes, ad let Aaron and his sonnes put their hondes apon the heade of the ram,</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>and cause him to be slayne, ad take of his bloude and sprenkell it rounde aboute apon the alter,</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>and cutt the ram in peces and whesh the inwardes of him and his legges, ad put them vnto the peces ad vnto his heed,</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>ad burne the hole ram apon the alter. For it is a burntofferyng vnto the Lorde, and a swete sauoure of the Lordes sacrifice.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And take the other ram and let Aaron and hys sonnes, put their hondes apon hys heed</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>and let him than be kylled. And take of his bloude and put it apon the typpe of the righte eare of Aaron and of his sonnes, and apon the thombe of their righte handes, and apon the great too of their ryghte fete: and sprenkell the bloude apon the alter rounde aboute.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Than take of the bloude that is apon the alter and of the anoyntynge oyle, ad sprekell it apon Aaron and his vestimetes, ad apo his sonnes ad apo their garmetes also. Tha is he ad his clothes holy ad his sonnes ad their clothes holye als</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Than take the fatt of the ram and hys rompe and the fatt that couereth the inwardes and the kall of the lyuer and the two kydneys and the fatt that is apon them and the righte shulder (for that ram is a fulloffrynge)</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>and a symnell of bred ad a cake of oyled bred ad a wafer out of the baskett of swete bred that is before the Lorde,</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>and put all apon the handes of Aaron and on the handes of his sonnes: and waue the in ad out a waueoffrynge vnto the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Than take it from of their handes and burne it apon the alter: euen apon the burntoffringe, to be a sauoure of swetnesse before the Lorde. For it is a sacrifice vnto the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Then take the brest of the ram that is Aarons fulloffrynge and waue it a waueoffrynge before the Lorde, ad let that be thy parte.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>And sanctifie the brest of the waueoffrynge and the shulder of the heueoffrynge whiche is waued and heued vp of the ram whiche is the fulloffrynge of Aaron ad of his sonnes.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>And it shalbe Aarons ad his sonnes dutye for euer, of the childre of Israel: for it is an heueoffrynge. And the heueoffrynge shalbe the Lordes dutie of the childern of Israel: euen of the sacrifice of their peaceoffrynges which they heue vnto the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And the holye garmentes of Aaron shalbe his sonnes after him, to anoynte them therin, and to fyll their handes therin.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>And that sonne that is preast in his stede after him, shall put them on seuen dayes: that he goo in to the tabernacle of witnesse, to ministre in the holye place.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Tha take the ram that is the fullofferyng ad seth his flesh in an holye place.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And Aaro and his sonnes shall eate the flesh of hi, ad the bred that is in the basket: euen in the dore of the tabernacle of witnesse.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And they shall eat the, because the attonmet was made therewith to fyll their handes and to sanctifie the: but a straunger shal not eate therof, because they are holie</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Yf oughte of the flesh of the fulloffrynges, or of the bred remayne vnto the mornyng, thou shalt burne it with fyre: for it shall not be eaten, because it is holye.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>And se thou do vnto Aaron and his sonnes: euen so in all thynges as I haue commaunded the: that thou fyll their handes seuen dayes</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>and offre euery daye an oxe for a synneoffrynge for to recocyle with all. And thou shalt halowe the alter when thou reconcyclest it, and shalt anoynte it to sanctifie it.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Seue dayes thou shalt reconcyle the alter and sanctifie it, that it maye be an alter most holye: so that no ma maye twich it but thei that be consecrate.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>This is that which thou shalt offre vpo the alter: ij. lambes of one yere olde daye by daye for euer,</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>the one thou shalt offre in the morninge and the other at euen.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>And vnto the one labe take a tenth deale of floure myngled wyth the fourth parte of an hin of beaten oyle, and the fourt parte of an hin of wyne, for a drinckeoffrynge.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>And the other lambe thou shalt offer at euen and shall doo thereto acordynge to the meateoffrynge and drinkeoffrynge in the mornynge, to be an odoure of a swete sauoure of the sacrifice of the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>And it shalbe a continuall burntoffrynge amonge youre children after you, in the doore of the tabernacle of witnesse before the Lorde, where I will mete you to spake vnto you there.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>There I will mete wyth the childern of Israel, and wilbe sanctified in myne honoure.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>And I will sanctifie the tabernacle of witnesse and the alter: and I will sanctifie also both Aaron and his sonnes to be my preastes.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>And moreouer I will dwell amoge the children of Israel and wilbe their God.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>And they shal knowe that I am the Lorde their God that broughte them out of the lond of Egipte for to dwell amonge them: euen I the Lorde their God,</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/exodus/30.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Exodus","chapter":1,"pageUrl":"/bible/exodus/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/001.mp3","slug":"exodus"},{"book":"Exodus","chapter":2,"pageUrl":"/bible/exodus/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/002.mp3","slug":"exodus"},{"book":"Exodus","chapter":3,"pageUrl":"/bible/exodus/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/003.mp3","slug":"exodus"},{"book":"Exodus","chapter":4,"pageUrl":"/bible/exodus/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/004.mp3","slug":"exodus"},{"book":"Exodus","chapter":5,"pageUrl":"/bible/exodus/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/005.mp3","slug":"exodus"},{"book":"Exodus","chapter":6,"pageUrl":"/bible/exodus/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/006.mp3","slug":"exodus"},{"book":"Exodus","chapter":7,"pageUrl":"/bible/exodus/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/007.mp3","slug":"exodus"},{"book":"Exodus","chapter":8,"pageUrl":"/bible/exodus/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/008.mp3","slug":"exodus"},{"book":"Exodus","chapter":9,"pageUrl":"/bible/exodus/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/009.mp3","slug":"exodus"},{"book":"Exodus","chapter":10,"pageUrl":"/bible/exodus/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/010.mp3","slug":"exodus"},{"book":"Exodus","chapter":11,"pageUrl":"/bible/exodus/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/011.mp3","slug":"exodus"},{"book":"Exodus","chapter":12,"pageUrl":"/bible/exodus/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/012.mp3","slug":"exodus"},{"book":"Exodus","chapter":13,"pageUrl":"/bible/exodus/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/013.mp3","slug":"exodus"},{"book":"Exodus","chapter":14,"pageUrl":"/bible/exodus/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/014.mp3","slug":"exodus"},{"book":"Exodus","chapter":15,"pageUrl":"/bible/exodus/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/015.mp3","slug":"exodus"},{"book":"Exodus","chapter":16,"pageUrl":"/bible/exodus/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/016.mp3","slug":"exodus"},{"book":"Exodus","chapter":17,"pageUrl":"/bible/exodus/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/017.mp3","slug":"exodus"},{"book":"Exodus","chapter":18,"pageUrl":"/bible/exodus/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/018.mp3","slug":"exodus"},{"book":"Exodus","chapter":19,"pageUrl":"/bible/exodus/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/019.mp3","slug":"exodus"},{"book":"Exodus","chapter":20,"pageUrl":"/bible/exodus/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/020.mp3","slug":"exodus"},{"book":"Exodus","chapter":21,"pageUrl":"/bible/exodus/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/021.mp3","slug":"exodus"},{"book":"Exodus","chapter":22,"pageUrl":"/bible/exodus/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/022.mp3","slug":"exodus"},{"book":"Exodus","chapter":23,"pageUrl":"/bible/exodus/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/023.mp3","slug":"exodus"},{"book":"Exodus","chapter":24,"pageUrl":"/bible/exodus/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/024.mp3","slug":"exodus"},{"book":"Exodus","chapter":25,"pageUrl":"/bible/exodus/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/025.mp3","slug":"exodus"},{"book":"Exodus","chapter":26,"pageUrl":"/bible/exodus/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/026.mp3","slug":"exodus"},{"book":"Exodus","chapter":27,"pageUrl":"/bible/exodus/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/027.mp3","slug":"exodus"},{"book":"Exodus","chapter":28,"pageUrl":"/bible/exodus/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/028.mp3","slug":"exodus"},{"book":"Exodus","chapter":29,"pageUrl":"/bible/exodus/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/029.mp3","slug":"exodus"},{"book":"Exodus","chapter":30,"pageUrl":"/bible/exodus/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/030.mp3","slug":"exodus"},{"book":"Exodus","chapter":31,"pageUrl":"/bible/exodus/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/031.mp3","slug":"exodus"},{"book":"Exodus","chapter":32,"pageUrl":"/bible/exodus/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/032.mp3","slug":"exodus"},{"book":"Exodus","chapter":33,"pageUrl":"/bible/exodus/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/033.mp3","slug":"exodus"},{"book":"Exodus","chapter":34,"pageUrl":"/bible/exodus/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/034.mp3","slug":"exodus"},{"book":"Exodus","chapter":35,"pageUrl":"/bible/exodus/35.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_035_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/035.mp3","slug":"exodus"},{"book":"Exodus","chapter":36,"pageUrl":"/bible/exodus/36.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_036_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/036.mp3","slug":"exodus"},{"book":"Exodus","chapter":37,"pageUrl":"/bible/exodus/37.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_037_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/037.mp3","slug":"exodus"},{"book":"Exodus","chapter":38,"pageUrl":"/bible/exodus/38.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_038_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/038.mp3","slug":"exodus"},{"book":"Exodus","chapter":39,"pageUrl":"/bible/exodus/39.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_039_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/039.mp3","slug":"exodus"},{"book":"Exodus","chapter":40,"pageUrl":"/bible/exodus/40.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_040_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/040.mp3","slug":"exodus"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

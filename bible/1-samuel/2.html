@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/1-samuel/2.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-samuel" data-bible-chapter="2" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-samuel" data-bible-chapter="2" data-bible-chapter-index="1" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>1 Samuel 2</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -261,53 +261,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/1-samuel/1.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/1-samuel/3.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_09_1Sa_002_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 1 Samuel 2">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 1 Samuel 2</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_09_1Sa_002_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 1 Samuel 2">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/09_1Samuel002.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 1 Samuel 2">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -694,201 +677,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>At that time Hannah prayed: “My heart rejoices in the LORD; my horn is exalted in the LORD. My mouth speaks boldly against my enemies, for I rejoice in Your salvation.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>There is no one holy like the LORD. Indeed, there is no one besides You! And there is no Rock like our God.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Do not boast so proudly, or let arrogance come from your mouth, for the LORD is a God who knows, and by Him actions are weighed.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>The bows of the mighty are broken, but the feeble are equipped with strength.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>The well-fed hire themselves out for food, but the starving hunger no more. The barren woman gives birth to seven, but she who has many sons pines away.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>The LORD brings death and gives life; He brings down to Sheol and raises up.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>The LORD sends poverty and wealth; He humbles and He exalts.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>He raises the poor from the dust and lifts the needy from the ash heap. He seats them among princes and bestows on them a throne of honor. For the foundations of the earth are the LORD’s, and upon them He has set the world.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>He guards the steps of His faithful ones, but the wicked perish in darkness; for by his own strength shall no man prevail.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Those who oppose the LORD will be shattered. He will thunder from heaven against them. The LORD will judge the ends of the earth and will give power to His king. He will exalt the horn of His anointed.”</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Then Elkanah went home to Ramah, but the boy began ministering to the LORD before Eli the priest.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Now the sons of Eli were wicked men; they had no regard for the LORD</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>or for the custom of the priests with the people. When any man offered a sacrifice, the servant of the priest would come with a three-pronged meat fork while the meat was boiling</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>and plunge it into the pan or kettle or cauldron or cooking pot. And the priest would claim for himself whatever the meat fork brought up. This is how they treated all the Israelites who came to Shiloh.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Even before the fat was burned, the servant of the priest would come and say to the man who was sacrificing, “Give the priest some meat to roast, because he will not accept boiled meat from you, but only raw.”</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And if any man said to him, “The fat must be burned first; then you may take whatever you want,” the servant would reply, “No, you must give it to me right now. If you refuse, I will take it by force!”</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Thus the sin of these young men was severe in the sight of the LORD, for they were treating the LORD’s offering with contempt.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Now Samuel was ministering before the LORD—a boy wearing a linen ephod.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Each year his mother would make him a little robe and bring it to him when she went with her husband to offer the annual sacrifice.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And Eli would bless Elkanah and his wife, saying, “May the LORD give you children by this woman in place of the one she dedicated to the LORD.” Then they would go home.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>So the LORD attended to Hannah, and she conceived and gave birth to three sons and two daughters. Meanwhile, the boy Samuel grew up in the presence of the LORD.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Now Eli was very old, and he heard about everything his sons were doing to all Israel and how they were sleeping with the women who served at the entrance to the Tent of Meeting.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>“Why are you doing these things?” Eli said to his sons. “I hear about your wicked deeds from all these people.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>No, my sons; it is not a good report I hear circulating among the LORD’s people.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>If a man sins against another man, God can intercede for him; but if a man sins against the LORD, who can intercede for him?” But they would not listen to their father, since the LORD intended to put them to death.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>And the boy Samuel continued to grow in stature and in favor with the LORD and with man.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Then a man of God came to Eli and told him, “This is what the LORD says: ‘Did I not clearly reveal Myself to your father’s house when they were in Egypt under Pharaoh’s house?</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>And out of all the tribes of Israel I selected your father to be My priest, to offer sacrifices on My altar, to burn incense, and to wear an ephod in My presence. I also gave to the house of your father all the food offerings of the Israelites.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>Why then do you kick at My sacrifice and offering that I have prescribed for My dwelling place? You have honored your sons more than Me by fattening yourselves with the best of all the offerings of My people Israel.’</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Therefore, the LORD, the God of Israel, declares: ‘I did indeed say that your house and the house of your father would walk before Me forever. But now the LORD declares: Far be it from Me! For I will honor those who honor Me, but those who despise Me will be disdained.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Behold, the days are coming when I will cut off your strength and the strength of your father’s house, so that no one in it will reach old age.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>You will see distress in My dwelling place. Despite all that is good in Israel, no one in your house will ever again reach old age.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And every one of you that I do not cut off from My altar, I will cause your eyes to fail and your heart to grieve. All your descendants will die by the sword of men.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>And this sign shall come to you concerning your two sons Hophni and Phinehas: They will both die on the same day.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Then I will raise up for Myself a faithful priest. He will do whatever is in My heart and mind. And I will build for him an enduring house, and he will walk before My anointed one for all time.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>And everyone left in your house will come and bow down to him for a piece of silver or a morsel of bread, pleading, “Please appoint me to some priestly office so that I can eat a piece of bread.”’”</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/1-samuel/3.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Samuel","chapter":1,"pageUrl":"/bible/1-samuel/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/001.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":2,"pageUrl":"/bible/1-samuel/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/002.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":3,"pageUrl":"/bible/1-samuel/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/003.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":4,"pageUrl":"/bible/1-samuel/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/004.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":5,"pageUrl":"/bible/1-samuel/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/005.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":6,"pageUrl":"/bible/1-samuel/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/006.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":7,"pageUrl":"/bible/1-samuel/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/007.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":8,"pageUrl":"/bible/1-samuel/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/008.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":9,"pageUrl":"/bible/1-samuel/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/009.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":10,"pageUrl":"/bible/1-samuel/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/010.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":11,"pageUrl":"/bible/1-samuel/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/011.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":12,"pageUrl":"/bible/1-samuel/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/012.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":13,"pageUrl":"/bible/1-samuel/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/013.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":14,"pageUrl":"/bible/1-samuel/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/014.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":15,"pageUrl":"/bible/1-samuel/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/015.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":16,"pageUrl":"/bible/1-samuel/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/016.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":17,"pageUrl":"/bible/1-samuel/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/017.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":18,"pageUrl":"/bible/1-samuel/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/018.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":19,"pageUrl":"/bible/1-samuel/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/019.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":20,"pageUrl":"/bible/1-samuel/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/020.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":21,"pageUrl":"/bible/1-samuel/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/021.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":22,"pageUrl":"/bible/1-samuel/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/022.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":23,"pageUrl":"/bible/1-samuel/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/023.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":24,"pageUrl":"/bible/1-samuel/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/024.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":25,"pageUrl":"/bible/1-samuel/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/025.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":26,"pageUrl":"/bible/1-samuel/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/026.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":27,"pageUrl":"/bible/1-samuel/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/027.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":28,"pageUrl":"/bible/1-samuel/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/028.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":29,"pageUrl":"/bible/1-samuel/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/029.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":30,"pageUrl":"/bible/1-samuel/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/030.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":31,"pageUrl":"/bible/1-samuel/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/031.mp3","slug":"1-samuel"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

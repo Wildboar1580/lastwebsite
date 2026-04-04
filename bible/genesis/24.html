@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/genesis/24.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="genesis" data-bible-chapter="24" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="genesis" data-bible-chapter="24" data-bible-chapter-index="23" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Genesis 24</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -299,53 +299,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/genesis/23.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/genesis/25.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_01_Gen_024_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Genesis 24">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Genesis 24</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_01_Gen_024_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Genesis 24">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/01_Genesis024.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Genesis 24">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -1042,356 +1025,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Abraham was olde and stryken in dayes and the LORde had blessed him in all thinges.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>And he sayde vnto his eldest servaunte of his house which had the rule over all that he had: Put thy hande vnder my thye that</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>I maye make the swere by the LORde that is God of heauen and God of the erth that thou shalt not take a wyfe vnto my sonne of the doughters of the canaanytes amonge which I dwell.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>But shalt goo vnto my contre and to my kynred and there take a wyfe vnto my sonne Isaac.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Tha sayde the seruaunte vnto him: what ad yf the woma wyll not agree to come with me vnto this lade shall I brynge thy sonne agayne vnto the lande which thou camest out of:</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And Abraha sayde vnto him: bewarre of that that thou brige not my sonne thither.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>The LORde God of heauen which toke me from my fathers house and from the lande where I was borne and which spake vnto me and sware vnto me saynge: vnto thy seed wyll I geue this lande he shall sende his angell before the yt thou mayst take a wife vnto my sonne from thence.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Neuerthelesse yf the woma will not agree to come with the than shalt thou be with out daunger of this ooth. But aboue all thinge brynge not my sonne thyther agayne.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>And the seruaunte put his hand vnder the thye of Abraham and sware to him as concernynge that matter.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And the seruaunte toke.x. camels of the camels of his master and departed and had of all maner goodes of his master with him and stode vp and went to Mesopotamia vnto the cytie of Nahor.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And made his camels to lye doune with out the cytie by a wels syde of water at euen: aboute the tyme that women come out to drawe water</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>and he sayde. LORde God of my master Abraha sende me good spede this daye and shewe mercy vnto my master Abraham.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Lo I stonde here by the well of water and the doughters of the men of this citie will come out to drawe water:</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>Now the damsell to whome I saye stoupe doune thy pytcher and let me drynke. Yf she saye drynke and I will geue thy camels drynke also yt same is she that thou hast ordened for they servaunte Isaac: yee and therby shall I knowe that thou hast shewed mercy on my master.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>And it came to passe yer he had leeft spakynge that Rebecca came out the doughter of Bethuell sonne to Melcha the wife of Nahor Abrahams brother and hir pytcher apon hir shulder:</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>The damsell was very fayre to loke apon and yet a mayde and vnknowen of man. And she went doune to the well and fylled hyr pytcher and came vp agayne.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Then the seruaunte ranne vnto her and sayde: let me syppe a litle water of thi pither.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>And she sayde: drynke my LORde. And she hasted and late downe her pytcher apon hyr arme and gaue him drinke.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And whe she had geven hym drynke she sayde: I will drawe water for thy camels also vntill they haue dronke ynough.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And she poured out hyr pitcher in to the trough hastely and ranne agayne vnto the well to fett water: and drewe for all his camels.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And the felowe wondred at her. But helde his peace to wete whether the LORde had made his iourney prosperous or not.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And as the camels had lefte drynckynge he toke an earynge of halfe a sicle weght and.ij golden bracelettes for hyr hades of.x. sycles weyght of gold</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>and sayde vnto her: whose doughter art thou? tell me: ys there rowme in thy fathers house for vs to lodge in?</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>And she sayde vnto him: I am the doughter of Bethuell the sonne of Milcha which she bare vnto Nahor:</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>and sayde moreouer vnto him: we haue litter and prauonder ynough and also rowme to lodge in.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>And the man bowed himselfe and worshipped the LORd</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>and sayde: blessed be the LORde God of my master Abraham which ceasseth not to deale mercyfully and truly with my master And hath brought me the waye to my masters brothers house.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>And the damsell ranne and tolde them of her mothers house these thinges.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And Rebecca had a brother called Laban. And Laban ranne out vnto the man to the well:</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>for as soone as he had sene the earynges and the bracelettes apon his sisters handes ad herde the wordes of Rebecca his sister saynge thus sayde the man vnto me than he went out vnto the man. And loo he stode yet with the camels by the well syde.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>And Laban sayde: come in thou blessed of the LORde. Wherfore stondest thou without? I haue dressed the house and made rowme for the camels.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And than the ma came in to the house. And he vnbrydeld the camels: and brought litter and prauonder for the camels and water to weshe his fete and their fete that were with him</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>and there was meate sett before him to eate. But he sayde: I will not eate vntill I haue sayde myne earede: And he sayde saye on.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>And he sayde: I am Abrahas servaunt</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>and the LORDE hath blessed my master out of measure that he is become greate and hath geven him shepe oxen syluer and golde menservauntes maydeservauntes camels ad asses.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>And Sara my masters wyfe bare him a sonne whe she was olde: and vnto him hath he geven all that he hath.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And my master made me swere saynge: Thou shalt not take a wyfe to my sonne amonge the doughters of the cananytes in whose lade I dwell.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>But thou shalt goo vnto my fathers house and to my kynred and there take a wyfe vnto my sonne.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>And I sayde vnto my master. What yf the wyfe will not folowe me?</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>And he sayde vnto me: The LORde before whome I walke wyll sende his angell with the and prosper thy iourney that thou shalt take a wyfe for my sonne of my kynred and of my fathers house.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>But and yf (when thou comest vnto my kynred) they will not geue the one tha shalt thou bere no perell of myne oothe.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>And I came this daye vnto the well and sayed: O LORde the God of my master Abraha yf it be so that thou makest my iourney which I go prosperous:</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>beholde I stode by this well of water And when a virgyn cometh forth to drawe water and I saye to her: geue me a litle water of thi pitcher to drynk</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>and she saye agayne to me: dryncke thou and I will also drawe water for thy camels: that same is the wife whom the LORde hath prepared for my masters sonne.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>And before I had made an ende of speakynge in myne harte: beholde Rebecca came forth and hir pitcher on hir shulder and she went doune vnto the well and drewe. And I sayde vnto her geue me drynke.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>And she made hast and toke doune hir pitcher from of hir ad sayd: drinke and I will geue thy camels drynke also. And I dranke and she gaue the camels drynke also.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>And I asked her saynge: whose doughter art thou? And she answered: the doughter of Bathuell Nahors sonne whome Milca bare vnto him. And I put the earynge vpon hir face and the bracelettes apon hir hondes.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>And I bowed my selfe and worshepped the LORde and blessed the LORde God of my master Abraha which had brought me the right waye to take my masters brothers doughter vnto his sonne.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>Now therfore yf ye will deall mercyfully and truly with my master tell me. And yf no tell me also: that I maye turne me to the right hande or to the left.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>Than answered Laban and Bathuel saynge: The thinge is proceded even out of the LORde we can not therfore saye vnto the ether good or bad:</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>Beholde Rebecca before thy face take her and goo and let her be thy masters sonnes wife euen as the LORde hath sayde.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>And whe Abrahams servaunte herde their wordes he bowed him selfe vnto the LORde flatt vpon the erth.</span>
-              </p>
-            
-              <p id="tyndale-53" class="bible-verse">
-                <span class="verse-num">53</span>
-                <span>And the servaunte toke forth iewells of syluer and iewelles of gold and rayment and gaue them to Rebecca: But vnto hir brother and to hir mother he gaue spyces.</span>
-              </p>
-            
-              <p id="tyndale-54" class="bible-verse">
-                <span class="verse-num">54</span>
-                <span>And then they ate and dranke both he and the men that were with him and taried all nyghte and rose vp in the mornynge. And he sayde: let me departe vnto my master.</span>
-              </p>
-            
-              <p id="tyndale-55" class="bible-verse">
-                <span class="verse-num">55</span>
-                <span>But hir brother and hir mother sayde: let the damsell abyde with vs a while ad it be but even.x. dayes and than goo thy wayes.</span>
-              </p>
-            
-              <p id="tyndale-56" class="bible-verse">
-                <span class="verse-num">56</span>
-                <span>And he sayde vnto them hinder me not: for the LORde hath prospered my iourney. Sende me awaye yt I maye goo vnto my master.</span>
-              </p>
-            
-              <p id="tyndale-57" class="bible-verse">
-                <span class="verse-num">57</span>
-                <span>And they sayde: let vs call the damsell and witt what she sayth to the matter.</span>
-              </p>
-            
-              <p id="tyndale-58" class="bible-verse">
-                <span class="verse-num">58</span>
-                <span>And they called forth Rebecca ad sayde vnto her: wilt thou goo with this ma? And she sayde: Yee.</span>
-              </p>
-            
-              <p id="tyndale-59" class="bible-verse">
-                <span class="verse-num">59</span>
-                <span>Than they broughte Rebecca their sister on the waye and her norse and Abrahas servaunte and the men that were wyth him.</span>
-              </p>
-            
-              <p id="tyndale-60" class="bible-verse">
-                <span class="verse-num">60</span>
-                <span>And they blessed Rebecca and sayde vnto her: Thou art oure sister growe in to thousande thousandes and thy seed possesse ye gates of their emnies.</span>
-              </p>
-            
-              <p id="tyndale-61" class="bible-verse">
-                <span class="verse-num">61</span>
-                <span>And Rebecca arose and hir damsels and satt the vp apo the camels and went their waye after the man. And ye servaunte toke Rebecca and went his way</span>
-              </p>
-            
-              <p id="tyndale-62" class="bible-verse">
-                <span class="verse-num">62</span>
-                <span>And Isaac was a comige from the well of ye lyvynge and seynge for he dwelt in the south cotr</span>
-              </p>
-            
-              <p id="tyndale-63" class="bible-verse">
-                <span class="verse-num">63</span>
-                <span>and was gone out to walke in his meditatios before ye eue tyde. And he lyfte vp his eyes and loked and beholde ye camels were cominge.</span>
-              </p>
-            
-              <p id="tyndale-64" class="bible-verse">
-                <span class="verse-num">64</span>
-                <span>And Rebecca lyfte vp hir eyes and whe she sawe Isaac she lyghted of the camel</span>
-              </p>
-            
-              <p id="tyndale-65" class="bible-verse">
-                <span class="verse-num">65</span>
-                <span>ad sayde vnto ye servaunte: what ma is this yt cometh agenst vs in the feld? And the servaute sayde: it is my master. And then she toke hir mantell ad put it aboute her.</span>
-              </p>
-            
-              <p id="tyndale-66" class="bible-verse">
-                <span class="verse-num">66</span>
-                <span>And the servaute tolde Isaac all that he had done.</span>
-              </p>
-            
-              <p id="tyndale-67" class="bible-verse">
-                <span class="verse-num">67</span>
-                <span>The Isaac broughte her in to his mother Saras tente ad toke Rebecca and she became his wife and he loved her: and so was Isaac coforted over his mother.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/genesis/25.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Genesis","chapter":1,"pageUrl":"/bible/genesis/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/001.mp3","slug":"genesis"},{"book":"Genesis","chapter":2,"pageUrl":"/bible/genesis/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/002.mp3","slug":"genesis"},{"book":"Genesis","chapter":3,"pageUrl":"/bible/genesis/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/003.mp3","slug":"genesis"},{"book":"Genesis","chapter":4,"pageUrl":"/bible/genesis/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/004.mp3","slug":"genesis"},{"book":"Genesis","chapter":5,"pageUrl":"/bible/genesis/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/005.mp3","slug":"genesis"},{"book":"Genesis","chapter":6,"pageUrl":"/bible/genesis/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/006.mp3","slug":"genesis"},{"book":"Genesis","chapter":7,"pageUrl":"/bible/genesis/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/007.mp3","slug":"genesis"},{"book":"Genesis","chapter":8,"pageUrl":"/bible/genesis/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/008.mp3","slug":"genesis"},{"book":"Genesis","chapter":9,"pageUrl":"/bible/genesis/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/009.mp3","slug":"genesis"},{"book":"Genesis","chapter":10,"pageUrl":"/bible/genesis/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/010.mp3","slug":"genesis"},{"book":"Genesis","chapter":11,"pageUrl":"/bible/genesis/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/011.mp3","slug":"genesis"},{"book":"Genesis","chapter":12,"pageUrl":"/bible/genesis/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/012.mp3","slug":"genesis"},{"book":"Genesis","chapter":13,"pageUrl":"/bible/genesis/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/013.mp3","slug":"genesis"},{"book":"Genesis","chapter":14,"pageUrl":"/bible/genesis/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/014.mp3","slug":"genesis"},{"book":"Genesis","chapter":15,"pageUrl":"/bible/genesis/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/015.mp3","slug":"genesis"},{"book":"Genesis","chapter":16,"pageUrl":"/bible/genesis/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/016.mp3","slug":"genesis"},{"book":"Genesis","chapter":17,"pageUrl":"/bible/genesis/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/017.mp3","slug":"genesis"},{"book":"Genesis","chapter":18,"pageUrl":"/bible/genesis/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/018.mp3","slug":"genesis"},{"book":"Genesis","chapter":19,"pageUrl":"/bible/genesis/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/019.mp3","slug":"genesis"},{"book":"Genesis","chapter":20,"pageUrl":"/bible/genesis/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/020.mp3","slug":"genesis"},{"book":"Genesis","chapter":21,"pageUrl":"/bible/genesis/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/021.mp3","slug":"genesis"},{"book":"Genesis","chapter":22,"pageUrl":"/bible/genesis/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/022.mp3","slug":"genesis"},{"book":"Genesis","chapter":23,"pageUrl":"/bible/genesis/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/023.mp3","slug":"genesis"},{"book":"Genesis","chapter":24,"pageUrl":"/bible/genesis/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/024.mp3","slug":"genesis"},{"book":"Genesis","chapter":25,"pageUrl":"/bible/genesis/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/025.mp3","slug":"genesis"},{"book":"Genesis","chapter":26,"pageUrl":"/bible/genesis/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/026.mp3","slug":"genesis"},{"book":"Genesis","chapter":27,"pageUrl":"/bible/genesis/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/027.mp3","slug":"genesis"},{"book":"Genesis","chapter":28,"pageUrl":"/bible/genesis/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/028.mp3","slug":"genesis"},{"book":"Genesis","chapter":29,"pageUrl":"/bible/genesis/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/029.mp3","slug":"genesis"},{"book":"Genesis","chapter":30,"pageUrl":"/bible/genesis/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/030.mp3","slug":"genesis"},{"book":"Genesis","chapter":31,"pageUrl":"/bible/genesis/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/031.mp3","slug":"genesis"},{"book":"Genesis","chapter":32,"pageUrl":"/bible/genesis/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/032.mp3","slug":"genesis"},{"book":"Genesis","chapter":33,"pageUrl":"/bible/genesis/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/033.mp3","slug":"genesis"},{"book":"Genesis","chapter":34,"pageUrl":"/bible/genesis/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/034.mp3","slug":"genesis"},{"book":"Genesis","chapter":35,"pageUrl":"/bible/genesis/35.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_035_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/035.mp3","slug":"genesis"},{"book":"Genesis","chapter":36,"pageUrl":"/bible/genesis/36.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_036_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/036.mp3","slug":"genesis"},{"book":"Genesis","chapter":37,"pageUrl":"/bible/genesis/37.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_037_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/037.mp3","slug":"genesis"},{"book":"Genesis","chapter":38,"pageUrl":"/bible/genesis/38.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_038_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/038.mp3","slug":"genesis"},{"book":"Genesis","chapter":39,"pageUrl":"/bible/genesis/39.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_039_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/039.mp3","slug":"genesis"},{"book":"Genesis","chapter":40,"pageUrl":"/bible/genesis/40.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_040_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/040.mp3","slug":"genesis"},{"book":"Genesis","chapter":41,"pageUrl":"/bible/genesis/41.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_041_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/041.mp3","slug":"genesis"},{"book":"Genesis","chapter":42,"pageUrl":"/bible/genesis/42.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_042_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/042.mp3","slug":"genesis"},{"book":"Genesis","chapter":43,"pageUrl":"/bible/genesis/43.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_043_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/043.mp3","slug":"genesis"},{"book":"Genesis","chapter":44,"pageUrl":"/bible/genesis/44.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_044_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/044.mp3","slug":"genesis"},{"book":"Genesis","chapter":45,"pageUrl":"/bible/genesis/45.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_045_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/045.mp3","slug":"genesis"},{"book":"Genesis","chapter":46,"pageUrl":"/bible/genesis/46.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_046_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/046.mp3","slug":"genesis"},{"book":"Genesis","chapter":47,"pageUrl":"/bible/genesis/47.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_047_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/047.mp3","slug":"genesis"},{"book":"Genesis","chapter":48,"pageUrl":"/bible/genesis/48.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_048_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/048.mp3","slug":"genesis"},{"book":"Genesis","chapter":49,"pageUrl":"/bible/genesis/49.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_049_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/049.mp3","slug":"genesis"},{"book":"Genesis","chapter":50,"pageUrl":"/bible/genesis/50.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_01_Gen_050_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/genesis/050.mp3","slug":"genesis"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

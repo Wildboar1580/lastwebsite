@@ -7,7 +7,11 @@ const assetsDir = path.join(root, "assets", "bible");
 const msbStringsPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "sharedStrings.xml");
 const msbSheetPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "worksheets", "sheet1.xml");
 const kjvPath = path.join(root, "tmp", "bible", "json", "EN-English", "kjv.json");
-const tyndalePath = path.join(root, "tmp", "bible", "json", "EN-English", "tyndale.json");
+const AUDIO_BASE_URL = "https://media.lastchristian.com";
+const AUDIO_CONFIG = {
+  msbPattern: "legacy-r2",
+  kjvPattern: "normalized-r2"
+};
 
 const MSB_BOOK_CODES = [
   "Gen", "Exo", "Lev", "Num", "Deu", "Jos", "Jdg", "Rut", "1Sa", "2Sa", "1Ki", "2Ki",
@@ -156,12 +160,26 @@ function buildKjvAudioSlug(bookName) {
   return bookName.replaceAll(" ", "");
 }
 
-function buildMsbAudioUrl(bookIndex, chapter, msbCode) {
-  return `https://openbible.com/audio/msb/MSB_${pad2(bookIndex)}_${msbCode}_${pad3(chapter)}_D.mp3`;
+function buildMsbAudioUrl(bookIndex, chapter, msbCode, bookSlug) {
+  switch (AUDIO_CONFIG.msbPattern) {
+    case "normalized-r2":
+      return `${AUDIO_BASE_URL}/msb/${bookSlug}/${pad3(chapter)}.mp3`;
+    case "legacy-r2":
+      return `${AUDIO_BASE_URL}/msb/MSB_${pad2(bookIndex)}_${msbCode}_${pad3(chapter)}_D.mp3`;
+    default:
+      return `https://openbible.com/audio/msb/MSB_${pad2(bookIndex)}_${msbCode}_${pad3(chapter)}_D.mp3`;
+  }
 }
 
-function buildKjvAudioUrl(bookIndex, chapter, kjvAudioSlug) {
-  return `https://www.audiotreasure.com/content/KJV_AT/${pad2(bookIndex)}_${kjvAudioSlug}${pad3(chapter)}.mp3`;
+function buildKjvAudioUrl(bookIndex, chapter, kjvAudioSlug, bookSlug) {
+  switch (AUDIO_CONFIG.kjvPattern) {
+    case "normalized-r2":
+      return `${AUDIO_BASE_URL}/kjv/${bookSlug}/${pad3(chapter)}.mp3`;
+    case "legacy-r2":
+      return `${AUDIO_BASE_URL}/kjv/${pad2(bookIndex)}_${kjvAudioSlug}${pad3(chapter)}.mp3`;
+    default:
+      return `https://www.audiotreasure.com/content/KJV_AT/${pad2(bookIndex)}_${kjvAudioSlug}${pad3(chapter)}.mp3`;
+  }
 }
 
 function renderColumn(versionLabel, versionKey, verses) {
@@ -186,13 +204,14 @@ function renderPage({
   bookName,
   bookSlug,
   chapter,
+  chapterIndex,
   prevUrl,
   nextUrl,
   msbVerses,
   kjvVerses,
-  tyndaleVerses,
   msbAudioUrl,
   kjvAudioUrl,
+  audioSequence,
   selectorOptions,
   metaDescription
 }) {
@@ -222,7 +241,7 @@ function renderPage({
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="${escapeHtml(bookSlug)}" data-bible-chapter="${chapter}" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="${escapeHtml(bookSlug)}" data-bible-chapter="${chapter}" data-bible-chapter-index="${chapterIndex}" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -248,11 +267,11 @@ function renderPage({
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>${escapeHtml(bookName)} ${chapter}</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -267,53 +286,36 @@ function renderPage({
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             ${prevUrl ? `<a class="button button-outline" href="${prevUrl}">Previous Chapter</a>` : ""}
-            ${nextUrl ? `<a class="button button-outline" href="${nextUrl}">Next Chapter</a>` : ""}
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="${msbAudioUrl}"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for ${escapeHtml(bookName)} ${chapter}">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · ${escapeHtml(bookName)} ${chapter}</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="${msbAudioUrl}" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for ${escapeHtml(bookName)} ${chapter}">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="${kjvAudioUrl}"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for ${escapeHtml(bookName)} ${chapter}">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -322,12 +324,18 @@ function renderPage({
         <div class="bible-columns">
 ${renderColumn("Majority Standard Bible", "msb", msbVerses)}
 ${renderColumn("KJV", "kjv", kjvVerses)}
-${renderColumn("Tyndale Bible", "tyndale", tyndaleVerses)}
+        </div>
+        <div class="bible-bottom-nav">
+          ${nextUrl ? `<a class="button button-red" href="${nextUrl}">Next Chapter</a>` : ""}
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">${JSON.stringify(selectorOptions.allBooks)}</script>
+  <script type="application/json" id="bible-audio-sequence">${JSON.stringify(audioSequence.map((entry) => ({
+    ...entry,
+    slug: bookSlug
+  })))}</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>
@@ -350,16 +358,13 @@ function main() {
   ensureSource(msbStringsPath);
   ensureSource(msbSheetPath);
   ensureSource(kjvPath);
-  ensureSource(tyndalePath);
 
   const sharedStrings = parseSharedStrings(fs.readFileSync(msbStringsPath, "utf8"));
   const msbSourceVerses = parseSheetRows(fs.readFileSync(msbSheetPath, "utf8"), sharedStrings);
   const kjvSourceVerses = JSON.parse(fs.readFileSync(kjvPath, "utf8")).verses;
-  const tyndaleSourceVerses = JSON.parse(fs.readFileSync(tyndalePath, "utf8")).verses;
 
   const msbBooks = normalizeVerses(msbSourceVerses);
   const kjvBooks = normalizeVerses(kjvSourceVerses);
-  const tyndaleBooks = normalizeVerses(tyndaleSourceVerses);
   const bookNames = getBookList(kjvSourceVerses);
 
   fs.mkdirSync(outputDir, { recursive: true });
@@ -381,16 +386,22 @@ function main() {
     const chapterNumbers = [...(msbBooks.get(bookName)?.keys() || [])].sort((a, b) => a - b);
     const bookDir = path.join(outputDir, bookSlug);
     fs.mkdirSync(bookDir, { recursive: true });
+    const audioSequence = chapterNumbers.map((chapterNumber) => ({
+      book: bookName,
+      chapter: chapterNumber,
+      pageUrl: `/bible/${bookSlug}/${chapterNumber}.html`,
+      msbAudioUrl: buildMsbAudioUrl(index + 1, chapterNumber, msbCode, bookSlug),
+      kjvAudioUrl: buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug)
+    }));
 
     chapterNumbers.forEach((chapterNumber, chapterIndex) => {
       const msbVerses = (msbBooks.get(bookName)?.get(chapterNumber) || []).sort((a, b) => a.verse - b.verse);
       const kjvVerses = (kjvBooks.get(bookName)?.get(chapterNumber) || msbVerses).sort((a, b) => a.verse - b.verse);
-      const tyndaleVerses = (tyndaleBooks.get(bookName)?.get(chapterNumber) || msbVerses).sort((a, b) => a.verse - b.verse);
       const selectorOptions = buildSelectorData(booksManifest, bookSlug, chapterNumber);
       const prevUrl = chapterIndex === 0 ? "" : `/bible/${bookSlug}/${chapterNumber - 1}.html`;
       const nextUrl = chapterIndex === chapterNumbers.length - 1 ? "" : `/bible/${bookSlug}/${chapterNumber + 1}.html`;
-      const msbAudioUrl = buildMsbAudioUrl(index + 1, chapterNumber, msbCode);
-      const kjvAudioUrl = buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug);
+      const msbAudioUrl = buildMsbAudioUrl(index + 1, chapterNumber, msbCode, bookSlug);
+      const kjvAudioUrl = buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug);
       const chapterUrl = `/bible/${bookSlug}/${chapterNumber}.html`;
       const metaDescription = stripHtml(
         msbVerses.slice(0, 3).map((verse) => `${bookName} ${chapterNumber}:${verse.verse} ${verse.text}`).join(" ")
@@ -417,13 +428,14 @@ function main() {
           bookName,
           bookSlug,
           chapter: chapterNumber,
+          chapterIndex,
           prevUrl,
           nextUrl,
           msbVerses,
           kjvVerses,
-          tyndaleVerses,
           msbAudioUrl,
           kjvAudioUrl,
+          audioSequence,
           selectorOptions,
           metaDescription
         })

@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/romans/8.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="romans" data-bible-chapter="8" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="romans" data-bible-chapter="8" data-bible-chapter-index="7" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Romans 8</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -231,53 +231,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/romans/7.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/romans/9.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_45_Rom_008_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Romans 8">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Romans 8</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_45_Rom_008_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Romans 8">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/45_Romans008.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Romans 8">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -694,216 +677,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Ther is then no damnacion to them which are in Christ Iesu which walke not after ye flesshe: but after ye sprete.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>For the lawe of the sprete yt bringeth life thorowe Iesus Christ hath delivered me fro the lawe of synne and deeth.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>For what the lawe coulde not doo in as moche it was weake because of the flesshe: that performed God and sent his sonne in the similitude of synfull flesshe and by synne daned synne in ye flesshe:</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>that the rightewesnes requyred of the lawe myght be fulfilled in vs which walke not after the flesshe but after the sprete.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>For they that are carnall are carnally mynded. But they that are spirituall are gostly mynded.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>To be carnally mynded is deeth. But to be spiritually mynded is lyfe and peace.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Because that the flesshly mynde is emnyte agaynst God: for it is not obedient to the lawe of God nether can be.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>So then they yt are geven to the flesshe canot please God.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>But ye are not geven to the flesshe but to the sprete: yf so be that ye sprite of God dwell in you. If ther be eny man yt hath not ye sprite of Christ ye same is none of his.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Yf Christ be in you the body is deed because of synne: but the sprite is lyfe for rightewesnes sake.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Wherfore if the sprite of him that raysed vppe Iesus fro deeth dwell in you: even he that raysed vp Christ from deeth shall quycken youre mortall bodyes because that this sprite dwelleth in you.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Therfore brethren we are nowe detters not to the flesshe to live after the flesshe.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>For if ye live after the flesshe ye must dye. But yf ye mortifie the dedes of the body by the helpe of the sprite ye shall lyve.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>For as many as are led by the sprete of God: they are the sonnes of god.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>For ye have no receaved the sprete of bondage to feare eny moare but ye have receaved the sprite of adopcion wherby we crye Abba father.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>The same sprete certifieth oure sprete yt we are the sonnes of God.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Yf we be sonnes we are also heyres the heyres I meane of God and heyres anexed with Christ: if so be that we suffer togedder that we maye be glorified to gedder.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>For I suppose that the affliccions of this lyfe are not worthy of the glory which shalbe shewed vpon vs.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Also the fervent desyre of the creatures abideth lokynge when the sonnes of God shall appere</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>because the creatures are subdued to vanyte agaynst their will: but for his will which subdueth them in hope.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>For ye very creatures shalbe delivered from the bondage of corrupcion into the glorious lybertie of the sonnes of God.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>For we knowe that every creature groneth with vs also and travayleth in payne even vnto this tyme.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Not they only but even we also which have the fyrst frutes of the sprite morne in oureselves and wayte for the (adopcio) and loke for the delivraunce of oure bodyes.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>For we are savyd by hope. But hope that is sene is no hope. For how can a ma hope for that which he seyth?</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>But and yf we hope for that we se not then do we with pacience abyde for it.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Lyke wyse ye sprite also helpeth oure infirmities. For we knowe not what to desyre as we ought: but the sprete maketh intercession mightely for vs with gronynges which canot be expressid with tonge.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>And he that searcheth the hertes knoweth what is ye meaninge of the sprite: for he maketh intercession for the sayntes accordinge to ye pleasure of god.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>For we knowe that all thinges worke for the best vnto them yt love God which also are called of purpose.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>For those which he knewe before he also ordeyned before yt they shuld be lyke fassioned vnto the shape of his sonne that he myght be ye fyrst begotten sonne amoge many brethren.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Morover which he apoynted before them he also called. And which he called them also he iustified which he iustified them he also glorified.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>What shall we then saye vnto these thinges? yf god be on oure syde: who can be agaynst vs?</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>which spared not his awne sonne but gave him for vs all: how shall he not wt him geve vs all thinges also?</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>Who shall laye eny thinge to ye charge of goddes chosen? it is god that iustifieth:</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>who then shall condempne? it is Christ which is deed ye rather which is rysen agayne which is also on the ryght honde of God and maketh intercession for vs.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Who shall seperate vs fro the love of god? shall tribulacion? or anguysshe? or persecucion? other honger? other nakednesse? other parell? other swearde?</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>As it is written: For thy sake are we kylled all daye longe and are counted as shepe apoynted to be slayne.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Neverthelesse in all these thinges we overcome strongly thorow his helpe that loved vs.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>Ye and I am sure that nether deeth nether lyfe nether angels nor rule nether power nether thinges present nether thinges to come</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>nether heyth nether loweth nether eny other creature shalbe able to departe vs fro ye love of God shewed in Christ Iesu oure LORde.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/romans/9.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Romans","chapter":1,"pageUrl":"/bible/romans/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/001.mp3","slug":"romans"},{"book":"Romans","chapter":2,"pageUrl":"/bible/romans/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/002.mp3","slug":"romans"},{"book":"Romans","chapter":3,"pageUrl":"/bible/romans/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/003.mp3","slug":"romans"},{"book":"Romans","chapter":4,"pageUrl":"/bible/romans/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/004.mp3","slug":"romans"},{"book":"Romans","chapter":5,"pageUrl":"/bible/romans/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/005.mp3","slug":"romans"},{"book":"Romans","chapter":6,"pageUrl":"/bible/romans/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/006.mp3","slug":"romans"},{"book":"Romans","chapter":7,"pageUrl":"/bible/romans/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/007.mp3","slug":"romans"},{"book":"Romans","chapter":8,"pageUrl":"/bible/romans/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/008.mp3","slug":"romans"},{"book":"Romans","chapter":9,"pageUrl":"/bible/romans/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/009.mp3","slug":"romans"},{"book":"Romans","chapter":10,"pageUrl":"/bible/romans/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/010.mp3","slug":"romans"},{"book":"Romans","chapter":11,"pageUrl":"/bible/romans/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/011.mp3","slug":"romans"},{"book":"Romans","chapter":12,"pageUrl":"/bible/romans/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/012.mp3","slug":"romans"},{"book":"Romans","chapter":13,"pageUrl":"/bible/romans/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/013.mp3","slug":"romans"},{"book":"Romans","chapter":14,"pageUrl":"/bible/romans/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/014.mp3","slug":"romans"},{"book":"Romans","chapter":15,"pageUrl":"/bible/romans/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/015.mp3","slug":"romans"},{"book":"Romans","chapter":16,"pageUrl":"/bible/romans/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_45_Rom_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/romans/016.mp3","slug":"romans"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

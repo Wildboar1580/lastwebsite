@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/mark/5.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="mark" data-bible-chapter="5" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="mark" data-bible-chapter="5" data-bible-chapter-index="4" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Mark 5</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -231,53 +231,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/mark/4.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/mark/6.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_41_Mrk_005_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Mark 5">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Mark 5</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_41_Mrk_005_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Mark 5">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/41_Mark005.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Mark 5">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -734,236 +717,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>And they cam over to the other syde of ye see in to the coutre of ye Gaderenites.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>And when he was come out of ye shippe there met him out of the graves a man possessyd of an vncleane sprete</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>which had his abydinge amoge the graves. And no man coulde bynde him: no not with cheynes</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>because that when he was often bounde wt fetters and cheynes he plucked ye chaynes asundre and brake the fetters in peaces. Nether coulde eny man tame him.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>And alwayes bothe nyght and daye he cryed in ye moutaynes and in ye graves and bet himsilfe wt stones.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>When he had spied Iesus afarre of he rane and worshipped him</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>and cryed wt a lowde voyce and sayde: what have I to do wt the Iesus ye sonne of the moost hyest God? I requyre ye in the name of God yt thou tormet me not.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>For he had sayd vnto hym: come out of the man thou fowle sprete.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>And he axed him: what is thy name? And he answered sayinge: my name is Legion for we are many.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And he prayd him instantly that he wolde not sende the awaye out of the countre.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And ther was there nye vnto ye moutayns a greate heerd of swyne fedinge</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>and all the devyls besought him sayinge: sende vs into the heerde of swyne yt we maye enter in to them.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>And anone Iesus gave them leave. And the vnclene spretes wet out and entred into ye swyne. And the heerd starteled and ran hedling into the see. They were about.ii.M. swyne and they were drouned in the see.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And the swyne heerdes fleed and tolde it in ye cyte and in the countre. And they came out for to se what had hapened:</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>and came to Iesus and sawe hym that was vexed wt the fende and had the legio syt both clothed and in his right mynde and were afrayed.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And they that sawe it tolde them how it had happened vnto him that was possessed with the devyll: and also of the swyne.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>And they begane to praye him that he wolde departe fro their coostes.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>And when he was come in to the shyppe he that had ye devyll prayed him that he myght be with him.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Howbeit Iesus wolde not suffre him but sayde vnto him: goo home in to thyne awne housse and to thy frendes and shewe the what great thinges ye Lorde hath done vnto the and how he had copassion on the.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And he departed and begane to publisshe in ye ten cyties what greate thinges Iesus had done vnto him and all me dyd merveyle.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And when Iesus was come over agayne by shyp vnto the other syde moche people gadered vnto him and he was nye vnto the see.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And beholde ther came one of the rulers of ye Synagoge whose name was Iairus: and when he sawe him he fell doune at his fete</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>and besought hym greatly sayinge: my doughter lyith at poynt of deeth I wolde thou woldest come and laye thy honde on her that she myght be safe and live.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>And he wet with him and moche people folowed him and thronged him.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>And ther was a certen woman which was diseased of an yssue of bloude.xii. yeres</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>and had suffred many thinges of many phisicios and had spet all yt she had and felte none amendmet at all but wexed worsse and worsse.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>When she had herde of Iesus: she came into the preace behynde him and touched his garmet.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>For she thought: yf I maye but touche his clothes I shall be whole.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And streyght waye her foutayne of bloude was dryed vp aud she felt in her body that she was healed of the plage.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>And Iesus immediatly felt in him silfe ye vertue that wet out of him and tourned him roude aboute in the preace and sayde: who touched my clothes?</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>And his disciples sayde vnto him: seist thou ye people thrust the and yet axest who dyd touche me?</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And he loked roud about for to se her that had done that thinge.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>The woman feared and trembled (for she knew what was done with in her) and she came and fell doune before him and tolde him ye truth of everythinge.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>And he sayde to her: Doughter thy fayth hath made the whoale: goo in peace and be whole of thy plage.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Whyll he yet spake ther came fro the ruler of ye synagoges housse certayne which sayde: thy doughter is deed: why diseasest thou ye master eny further?</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Assone as Iesus herde that worde spoke he sayde vnto the ruler of ye synagoge: be not afrayed only beleve.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And he suffred no man to folowe him moo then Peter and Iames and Ihon the brother of Iames.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>And he came vnto the housse of the ruler of ye synagoge and sawe ye wondrynge and them that wepte and wayled greatly</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>and went in and sayde vnto them: why make ye this adoo and wepe? The mayde is not deed but slepith.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>And they lawght him to scorne. Then he put them all out and toke ye father and the mother of ye mayden and them that were with him and entred in where the mayden laye</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>and toke the mayden by the honde and sayde vnto hyr: Tabitha cumi: which is by interpretacion: mayde I saye vnto the aryse.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>And streyght the mayden arose and went on her fete. For she was of the age of twelve yeres. And they were astonied at it out of measure.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>And he charged the straytely that no man shuld knowe of it and comaunded to geve her meate.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/mark/6.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Mark","chapter":1,"pageUrl":"/bible/mark/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/001.mp3","slug":"mark"},{"book":"Mark","chapter":2,"pageUrl":"/bible/mark/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/002.mp3","slug":"mark"},{"book":"Mark","chapter":3,"pageUrl":"/bible/mark/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/003.mp3","slug":"mark"},{"book":"Mark","chapter":4,"pageUrl":"/bible/mark/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/004.mp3","slug":"mark"},{"book":"Mark","chapter":5,"pageUrl":"/bible/mark/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/005.mp3","slug":"mark"},{"book":"Mark","chapter":6,"pageUrl":"/bible/mark/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/006.mp3","slug":"mark"},{"book":"Mark","chapter":7,"pageUrl":"/bible/mark/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/007.mp3","slug":"mark"},{"book":"Mark","chapter":8,"pageUrl":"/bible/mark/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/008.mp3","slug":"mark"},{"book":"Mark","chapter":9,"pageUrl":"/bible/mark/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/009.mp3","slug":"mark"},{"book":"Mark","chapter":10,"pageUrl":"/bible/mark/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/010.mp3","slug":"mark"},{"book":"Mark","chapter":11,"pageUrl":"/bible/mark/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/011.mp3","slug":"mark"},{"book":"Mark","chapter":12,"pageUrl":"/bible/mark/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/012.mp3","slug":"mark"},{"book":"Mark","chapter":13,"pageUrl":"/bible/mark/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/013.mp3","slug":"mark"},{"book":"Mark","chapter":14,"pageUrl":"/bible/mark/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/014.mp3","slug":"mark"},{"book":"Mark","chapter":15,"pageUrl":"/bible/mark/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/015.mp3","slug":"mark"},{"book":"Mark","chapter":16,"pageUrl":"/bible/mark/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_41_Mrk_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/mark/016.mp3","slug":"mark"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

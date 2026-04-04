@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/deuteronomy/1.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="deuteronomy" data-bible-chapter="1" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="deuteronomy" data-bible-chapter="1" data-bible-chapter-index="0" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Deuteronomy 1</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -267,53 +267,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             
-            <a class="button button-outline" href="/bible/deuteronomy/2.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_05_Deu_001_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Deuteronomy 1">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Deuteronomy 1</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_05_Deu_001_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Deuteronomy 1">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/05_Deuteronomy001.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Deuteronomy 1">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -800,251 +783,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>¶ These be the wordes which Moses spake vnto all Israel, on the other syde Iordayne in the wildernesse and in the feldes by the red see, betwene Phara ad Tophel, Laban, Hazeroth and Disahab</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>.xij. dayes iurney from Horeb vnto Cades bernea, by the waye that leadeth vnto mount Seir.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>And it fortuned the first daye of the.xi. moneth in the fortieth yere, that Moses spake vnto the childern of Israel acordinge vnto all that the Lorde had geuen him in commaundment vnto them,</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>after that he had smote Sihon the kynge of the Amorites which dwelt in Hesbon, and Og kinge of Basan which dwelt at Astaroth in Edrei.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>On the other syde Iordayne in the londe of Moab, Moses begane to declare this lawe saynge:</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>the Lorde oure God spake vnto us in Horeb sayenge: Ye haue dwelt longe ynough in this mount:</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>departe therfore and take youre iurney and goo vnto the hilles of the Amorites and vnto all places nye there vnto: both feldes, hilles and dales: and vnto the south and vnto the sees syde in the londe of Canaan, and vnto libanon: euen vnto the greate ryuer Euphrates.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Beholde, I haue set the londe before you: goo in therfore and possesse the londe which the Lord sware vnto youre fathers Abraham, Isaac and Iacob, to geue vnto them and their seed after them.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>And I sayde vnto yov the same season: I am not able to bere you myselfe alone.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>For the Lorde youre God hath multiplyed you: so that ye are this daye as the starres of heauen in numbr</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>(the Lorde god of youre fathers make you a thousande tymes so many moo as ye are, and blesse you as he hath promysed you)</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>how (sayde I) can I myselfe alone, beare the combraunce, charge and stryffe that is amonge you:</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>brynge therfore men of wisdome and of vnderstondinge and expert knowne amonge youre trybes, that I maye make them ruelars ouer you.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And ye answered me and sayed: that which thou hast spoken is good to be done.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>And then I toke the heedes of youre trybes, men of wysdome and that were expert, and made them ruelers ouer you: captaynes ouer thousandes and ouer hundredes ouer fyftye and ouer ten, and officers amonge youre trybes.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And I charged youre Iudges the same tyme sayenge: heare youre brethern and iudge righteously betwene euery man and his brother and the straunges that is with him.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Se that ye knowe no man in Iudgement: but heare the small as well as the greate and be afrayed of no man, for the lawe is Gods. And the cause that is to harde for you, brynge vnto me and I will heare it.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>And I commaunded you the same season, all the thinges which ye shulde doo.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And then we departed from Horeb and walked thorow all that greate and terreble wildernesse as ye haue sene alonge by the waye that ledeth vnto the hilles of the Amorites, as the Lorde oure God commaunded us, and came to Cades bernea.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And there I sayed vnto you: Ye are come vnto the hilles of the Amorites, which the Lorde oure God doth geue vnto us.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Beholde the Lorde thi God hath sett the londe before the, goo vpp and conquere it, as the Lorde God of thy fathers sayeth vnto the: feare not, nether be discoraged.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And then ye came vnto me euery one and sayed: Let us sende men before us, to serche us out the londe and to brynge us worde agayne, both what waye we shall goo vpp by, and vnto what cities we shall come.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>And the sayenge pleassed me well and I toke.xij. men of you, of euery trybe one.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>And they departed and went vp in to the hye contre and came vnto the ryuer Escoll, and serched it out,</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>and toke of the frute of the londe in their hondes and brought it doune vnto us and brought us worde agayne and sayde: it is a good lande which the Lorde oure God doeth geue us.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Notwithstondinge ye wolde not consente to goo vpp, but were dishobedient vnto the mouth of the Lorde youre God,</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>ad murmured in youre tentes and sayde: because the Lorde hateth us, therfore he hath brought us out of the londe of Egipte, to delyuer us in to the handes of the Amorites and to destroye us.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>How shall we goo vpp? Oure brethern haue discoraged oure hartes sayenge: the people is greater and taller than we, ad the cities are greatte and walked euen vpp to heauen, and moreouer we haue sene the sonnes of the Enakimes there.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And I sayed vnto you: dreade not nor be afrayed of the:</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>The Lorde youre God which goeth before you, he shall fyghte for you, acordynge to all that he dyd vnto you in Egipte before youre eies</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>ad in the wildernesse: as thou hast sene how that the Lorde thy God bare the as a man shulde beare his sonne, thorow out all the waye which ye haue gone, vntill ye came vnto this place.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And yet for all this sayenge ye dyd not beleue the Lorde youre God</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>which goeth the waye before you, to serche you out a place to pitche youre tentes in, in fyre by nyght, that ye myghte se what waye to go and in a cloude by daye.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>And the Lorde herde the voyce of youre wordes and was wroth and swore sayenge,</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>there shall not one of these men of this frowarde generacion se that good londe which I sware to geue vnto youre fathers,</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>saue Caleb the sonne of Iephune, he shall se it, and to him I will geue the londe which he hath walked in ad to his childern, because he hath contynually folowed the Lorde.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Likewise the Lorde was angrye with me for youre sakes sayenge: thou also shalt not go in thiter.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>But Iosua the sone of Nun which stondeth before the, he shall go in thither. Bolde him therfore for he shall deuyde it vnto Israel.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>Moreouer youre childern which ye sayed shulde be a praye, and youre sonnes which knowe nether good nor bad this daye, they shall goo in thither ad vnto them I will geue it, ad they shall enioye it.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>But as for you, turne backe and take youre iurneye in to the wildernesse: euen the waye to the reed see.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Than ye answered and sayed vnto me: We haue synned agenst the Lorde: we will goo vp and fyghte, acordinge to all that the Lorde oure God comaunded us. And whe ye had gyrde on euery man his wepons of warre and were ready to goo vp in to the hilles,</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>the Lorde sayed vnto me: saye vnto the, se that ye go not vp and that ye fighte not, for I am not amoge you: lest ye be plaged before youre enemies.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>And whe I told you ye wold not heare: but disobeyed the mouth of the Lorde, and went presumptously vp in to the hilles.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>The the Amorites which dwelt in those hilles, came out agenst you and chased you as bees doo, and hewed you in Seir, eue vnto Horma.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>And ye came agayne and wepte before the Lorde: but the Lorde wolde not heare youre voyce nor geue you audience.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>And so ye abode in Cades aloge season, acordinge vnto the tyme that ye there dwelt.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/deuteronomy/2.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Deuteronomy","chapter":1,"pageUrl":"/bible/deuteronomy/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/001.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":2,"pageUrl":"/bible/deuteronomy/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/002.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":3,"pageUrl":"/bible/deuteronomy/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/003.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":4,"pageUrl":"/bible/deuteronomy/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/004.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":5,"pageUrl":"/bible/deuteronomy/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/005.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":6,"pageUrl":"/bible/deuteronomy/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/006.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":7,"pageUrl":"/bible/deuteronomy/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/007.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":8,"pageUrl":"/bible/deuteronomy/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/008.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":9,"pageUrl":"/bible/deuteronomy/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/009.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":10,"pageUrl":"/bible/deuteronomy/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/010.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":11,"pageUrl":"/bible/deuteronomy/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/011.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":12,"pageUrl":"/bible/deuteronomy/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/012.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":13,"pageUrl":"/bible/deuteronomy/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/013.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":14,"pageUrl":"/bible/deuteronomy/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/014.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":15,"pageUrl":"/bible/deuteronomy/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/015.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":16,"pageUrl":"/bible/deuteronomy/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/016.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":17,"pageUrl":"/bible/deuteronomy/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/017.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":18,"pageUrl":"/bible/deuteronomy/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/018.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":19,"pageUrl":"/bible/deuteronomy/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/019.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":20,"pageUrl":"/bible/deuteronomy/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/020.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":21,"pageUrl":"/bible/deuteronomy/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/021.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":22,"pageUrl":"/bible/deuteronomy/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/022.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":23,"pageUrl":"/bible/deuteronomy/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/023.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":24,"pageUrl":"/bible/deuteronomy/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/024.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":25,"pageUrl":"/bible/deuteronomy/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/025.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":26,"pageUrl":"/bible/deuteronomy/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/026.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":27,"pageUrl":"/bible/deuteronomy/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/027.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":28,"pageUrl":"/bible/deuteronomy/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/028.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":29,"pageUrl":"/bible/deuteronomy/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/029.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":30,"pageUrl":"/bible/deuteronomy/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/030.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":31,"pageUrl":"/bible/deuteronomy/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/031.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":32,"pageUrl":"/bible/deuteronomy/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/032.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":33,"pageUrl":"/bible/deuteronomy/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/033.mp3","slug":"deuteronomy"},{"book":"Deuteronomy","chapter":34,"pageUrl":"/bible/deuteronomy/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_05_Deu_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/deuteronomy/034.mp3","slug":"deuteronomy"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

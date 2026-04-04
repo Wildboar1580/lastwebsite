@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/john/1.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="john" data-bible-chapter="1" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="john" data-bible-chapter="1" data-bible-chapter-index="0" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>John 1</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -241,53 +241,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             
-            <a class="button button-outline" href="/bible/john/2.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_43_Jhn_001_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for John 1">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · John 1</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_43_Jhn_001_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for John 1">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/43_John001.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for John 1">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -824,276 +807,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>¶ In the beginnynge was the worde and the worde was with God: and the worde was God.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>The same was in the beginnynge with God.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>All thinges were made by it and with out it was made nothinge that was made.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>In it was lyfe and the lyfe was ye lyght of men</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>and the lyght shyneth in the darcknes but the darcknes comprehended it not.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>There was a man sent from God whose name was Iohn.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>The same cam as a witnes to beare witnes of the lyght that all men through him myght beleve.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>He was not that lyght: but to beare witnes of the lyght.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>That was a true lyght which lyghteth all men that come into the worlde.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>He was in ye worlde and the worlde was made by him: and yet the worlde knewe him not.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>He cam amonge his (awne) and his awne receaved him not.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>But as meny as receaved him to them he gave power to be the sonnes of God in yt they beleved on his name:</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>which were borne not of bloude nor of the will of the flesshe nor yet of the will of man: but of God.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And the worde was made flesshe and dwelt amonge vs and we sawe the glory of it as the glory of the only begotten sonne of ye father which worde was full of grace and verite.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Iohn bare witnes of him and cryed sayinge: This was he of whome I spake he that cometh after me was before me because he was yer then I.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And of his fulnes have all we receaved even (grace) for grace.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>For the lawe was geven by Moses but grace and truthe came by Iesus Christ.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>No ma hath sene God at eny tyme. The only begotte sonne which is in ye bosome of ye father he hath declared him.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And this is the recorde of Iohn: When the Iewes sent Prestes and Levites from Ierusalem to axe him what arte thou?</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And he confessed and denyed not and sayde playnly: I am not Christ.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And they axed him: what then? arte thou Helyas? And he sayde: I am not. Arte thou a Prophete? And he answered no.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Then sayd they vnto him: what arte thou that we maye geve an answer to them that sent vs: What sayest thou of thy selfe?</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>He sayde: I am the voyce of a cryar in the wyldernes make strayght the waye of the Lorde as sayde the Prophete Esaias.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>And they which were sent were of the pharises.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>And they axed him and sayde vnto him: why baptisest thou then yf thou be not Christ nor Helyas nether a Prophet?</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Iohn answered them sayinge: I baptise with water: but one is come amonge you whom ye knowe not</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>he it is that cometh after me whiche was before me whose sho latchet I am not worthy to vnlose.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>These thinges were done in Bethabara beyonde Iordan where Iohn dyd baptyse.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>The nexte daye Iohn sawe Iesus commyge vnto him and sayde: beholde the lambe of God which taketh awaye the synne of the worlde.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>This is he of whom I sayde. After me cometh a man which was before me for he was yer then I</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>and I knew him not: but that he shuld be declared to Israell therfore am I come baptisynge with water.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And Iohn bare recorde sayinge: I sawe the sprete descende from heven lyke vnto a dove and abyde apon him</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>and I knewe him not. But he that sent me to baptise in water the same sayde vnto me: apon whom thou shalt se the sprete descende and tary styll on him the same is he which baptiseth with the holy goost.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>And I sawe and bare recorde that this is the sonne of God.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>The next daye after Iohn stode agayne and two of his disciples.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>And he behelde Iesus as he walked by and sayde: beholde the lambe of God.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And the two disciples hearde him speake and folowed Iesus.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>And Iesus turned about and sawe them folowe and sayde vnto them: what seke ye? They sayde vnto him: Rabbi (which is to saye by interpretacion Master) where dwellest thou?</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>He sayde vnto them: come and se. They came and sawe where he dwelt: and abode with him that daye. For it was about the tenthe houre.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>One of the two which hearde Iohn speake and folowed Iesus was Andrew Simon Peters brother.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>The same founde his brother Simon fyrst and sayde vnto him: we have founde Messias which is by interpretacion annoynted:</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>and brought him to Iesus. And Iesus behelde him and sayde: thou arte Simon the sonne of Ionas thou shalt be called Cephas: which is by interpretacion a stone.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>The daye folowynge Iesus wolde goo into Galile and founde Philip and sayde vnto him folowe me.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>Philip was of Bethsaida the cite of Andrew and Peter.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>And Philip founde Nathanael and sayde vnto him. We have founde him of whom Moses in the lawe and the prophetes dyd wryte. Iesus the sonne of Ioseph of Nazareth.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>And Nathanael sayde vnto him: can ther eny good thinge come out of Nazareth? Philip sayde to him: come and se.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>Iesus sawe Nathanael commynge to him and sayde of him. Beholde a ryght Israelite in who is no gyle.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>Nathanael sayd vnto him: where knewest thou me? Iesus answered and sayde vnto him: Before that Philip called the when thou wast vnder ye fygge tree I sawe the.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>Nathanael answered and sayde vnto him: Rabbi thou arte the sonne of God thou arte the kynge of Israel.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>Iesus answered and sayd vnto him: Because I sayde vnto the I sawe the vnder the fygge tree thou belevest. Thou shalt se greater thinges then these.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>And he sayde vnto him: Verely verely I saye vnto you: herafter shall ye se heven open and the angels of God ascendynge and descendynge over the sonne of man.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/john/2.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"John","chapter":1,"pageUrl":"/bible/john/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/001.mp3","slug":"john"},{"book":"John","chapter":2,"pageUrl":"/bible/john/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/002.mp3","slug":"john"},{"book":"John","chapter":3,"pageUrl":"/bible/john/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/003.mp3","slug":"john"},{"book":"John","chapter":4,"pageUrl":"/bible/john/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/004.mp3","slug":"john"},{"book":"John","chapter":5,"pageUrl":"/bible/john/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/005.mp3","slug":"john"},{"book":"John","chapter":6,"pageUrl":"/bible/john/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/006.mp3","slug":"john"},{"book":"John","chapter":7,"pageUrl":"/bible/john/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/007.mp3","slug":"john"},{"book":"John","chapter":8,"pageUrl":"/bible/john/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/008.mp3","slug":"john"},{"book":"John","chapter":9,"pageUrl":"/bible/john/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/009.mp3","slug":"john"},{"book":"John","chapter":10,"pageUrl":"/bible/john/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/010.mp3","slug":"john"},{"book":"John","chapter":11,"pageUrl":"/bible/john/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/011.mp3","slug":"john"},{"book":"John","chapter":12,"pageUrl":"/bible/john/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/012.mp3","slug":"john"},{"book":"John","chapter":13,"pageUrl":"/bible/john/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/013.mp3","slug":"john"},{"book":"John","chapter":14,"pageUrl":"/bible/john/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/014.mp3","slug":"john"},{"book":"John","chapter":15,"pageUrl":"/bible/john/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/015.mp3","slug":"john"},{"book":"John","chapter":16,"pageUrl":"/bible/john/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/016.mp3","slug":"john"},{"book":"John","chapter":17,"pageUrl":"/bible/john/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/017.mp3","slug":"john"},{"book":"John","chapter":18,"pageUrl":"/bible/john/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/018.mp3","slug":"john"},{"book":"John","chapter":19,"pageUrl":"/bible/john/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/019.mp3","slug":"john"},{"book":"John","chapter":20,"pageUrl":"/bible/john/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/020.mp3","slug":"john"},{"book":"John","chapter":21,"pageUrl":"/bible/john/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/021.mp3","slug":"john"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

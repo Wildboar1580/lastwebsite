@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/1-chronicles/7.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-chronicles" data-bible-chapter="7" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-chronicles" data-bible-chapter="7" data-bible-chapter-index="6" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>1 Chronicles 7</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -257,53 +257,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/1-chronicles/6.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/1-chronicles/8.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_13_1Ch_007_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 1 Chronicles 7">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 1 Chronicles 7</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_13_1Ch_007_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 1 Chronicles 7">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/13_1Chronicles007.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 1 Chronicles 7">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -730,221 +713,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>The sons of Issachar: Tola, Puah, Jashub, and Shimron—four in all.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>The sons of Tola: Uzzi, Rephaiah, Jeriel, Jahmai, Ibsam, and Shemuel, the heads of their families. In the days of David, 22,600 descendants of Tola were numbered in their genealogies as mighty men of valor.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>The son of Uzzi: Izrahiah. The sons of Izrahiah: Michael, Obadiah, Joel, and Isshiah. All five of them were chiefs.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>In addition to them, according to their genealogy, they had 36,000 troops for battle, for they had many wives and children.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Their kinsmen belonging to all the families of Issachar who were mighty men of valor totaled 87,000, as listed in their genealogies.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>The three sons of Benjamin: Bela, Becher, and Jediael.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>The sons of Bela: Ezbon, Uzzi, Uzziel, Jerimoth, and Iri, heads of their families—five in all. There were 22,034 mighty men of valor listed in their genealogies.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>The sons of Becher: Zemirah, Joash, Eliezer, Elioenai, Omri, Jeremoth, Abijah, Anathoth, and Alemeth; all these were Becher’s sons.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Their genealogies were recorded according to the heads of their families—20,200 mighty men of valor.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>The son of Jediael: Bilhan. The sons of Bilhan: Jeush, Benjamin, Ehud, Chenaanah, Zethan, Tarshish, and Ahishahar.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>All these sons of Jediael were heads of their families, mighty men of valor; there were 17,200 fit for battle.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>The Shuppites and Huppites were descendants of Ir, and the Hushites were descendants of Aher.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>The sons of Naphtali: Jahziel, Guni, Jezer, and Shallum—the descendants of Bilhah.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>The descendants of Manasseh: Asriel through his Aramean concubine. She also gave birth to Machir the father of Gilead.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Machir took a wife from among the Huppites and Shuppites. The name of his sister was Maacah. Another descendant was named Zelophehad, who had only daughters.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Machir’s wife Maacah gave birth to a son, and she named him Peresh. His brother was named Sheresh, and his sons were Ulam and Rekem.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>The son of Ulam: Bedan. These were the sons of Gilead son of Machir, the son of Manasseh.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>His sister Hammolecheth gave birth to Ishhod, Abiezer, and Mahlah.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And these were the sons of Shemida: Ahian, Shechem, Likhi, and Aniam.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>The descendants of Ephraim: Shuthelah, Bered his son, Tahath his son, Eleadah his son, Tahath his son,</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Zabad his son, and Shuthelah his son. Ezer and Elead were killed by the natives of Gath, because they went down to steal their livestock.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Their father Ephraim mourned for many days, and his relatives came to comfort him.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>And again he slept with his wife, and she conceived and gave birth to a son. So he named him Beriah, because tragedy had come upon his house.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>His daughter was Sheerah, who built Lower and Upper Beth-horon, as well as Uzzen-sheerah.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Additionally, Rephah was his son, Resheph his son, Telah his son, Tahan his son,</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Ladan his son, Ammihud his son, Elishama his son,</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Nun his son, and Joshua his son.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Their holdings and settlements included Bethel and its villages, Naaran to the east, Gezer and its villages to the west, and Shechem and its villages as far as Ayyah and its villages.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And along the borders of Manasseh were Beth-shean, Taanach, Megiddo, and Dor, together with their villages. The descendants of Joseph son of Israel lived in these towns.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>The children of Asher: Imnah, Ishvah, Ishvi, Beriah, and their sister Serah.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>The sons of Beriah: Heber, as well as Malchiel, who was the father of Birzaith.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Heber was the father of Japhlet, Shomer, and Hotham, and of their sister Shua.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>The sons of Japhlet: Pasach, Bimhal, and Ashvath. These were Japhlet’s sons.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>The sons of Shemer: Ahi, Rohgah, Hubbah, and Aram.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>The sons of his brother Helem: Zophah, Imna, Shelesh, and Amal.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>The sons of Zophah: Suah, Harnepher, Shual, Beri, Imrah,</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Bezer, Hod, Shamma, Shilshah, Ithran, and Beera.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>The sons of Jether: Jephunneh, Pispa, and Ara.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>The sons of Ulla: Arah, Hanniel, and Rizia.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>All these were the descendants of Asher—heads of their families, choice and mighty men of valor, and chiefs among the leaders. The number of men fit for battle, recorded in their genealogies, was 26,000.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/1-chronicles/8.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Chronicles","chapter":1,"pageUrl":"/bible/1-chronicles/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/001.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":2,"pageUrl":"/bible/1-chronicles/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/002.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":3,"pageUrl":"/bible/1-chronicles/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/003.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":4,"pageUrl":"/bible/1-chronicles/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/004.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":5,"pageUrl":"/bible/1-chronicles/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/005.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":6,"pageUrl":"/bible/1-chronicles/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/006.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":7,"pageUrl":"/bible/1-chronicles/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/007.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":8,"pageUrl":"/bible/1-chronicles/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/008.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":9,"pageUrl":"/bible/1-chronicles/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/009.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":10,"pageUrl":"/bible/1-chronicles/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/010.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":11,"pageUrl":"/bible/1-chronicles/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/011.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":12,"pageUrl":"/bible/1-chronicles/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/012.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":13,"pageUrl":"/bible/1-chronicles/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/013.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":14,"pageUrl":"/bible/1-chronicles/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/014.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":15,"pageUrl":"/bible/1-chronicles/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/015.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":16,"pageUrl":"/bible/1-chronicles/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/016.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":17,"pageUrl":"/bible/1-chronicles/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/017.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":18,"pageUrl":"/bible/1-chronicles/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/018.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":19,"pageUrl":"/bible/1-chronicles/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/019.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":20,"pageUrl":"/bible/1-chronicles/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/020.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":21,"pageUrl":"/bible/1-chronicles/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/021.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":22,"pageUrl":"/bible/1-chronicles/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/022.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":23,"pageUrl":"/bible/1-chronicles/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/023.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":24,"pageUrl":"/bible/1-chronicles/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/024.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":25,"pageUrl":"/bible/1-chronicles/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/025.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":26,"pageUrl":"/bible/1-chronicles/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/026.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":27,"pageUrl":"/bible/1-chronicles/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/027.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":28,"pageUrl":"/bible/1-chronicles/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/028.mp3","slug":"1-chronicles"},{"book":"1 Chronicles","chapter":29,"pageUrl":"/bible/1-chronicles/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_13_1Ch_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-chronicles/029.mp3","slug":"1-chronicles"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

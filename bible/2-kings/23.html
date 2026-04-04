@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-kings/23.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="23" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="23" data-bible-chapter-index="22" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Kings 23</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -249,53 +249,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-kings/22.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-kings/24.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_12_2Ki_023_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Kings 23">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Kings 23</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_12_2Ki_023_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Kings 23">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/12_2Kings023.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Kings 23">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -692,206 +675,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Then the king summoned all the elders of Judah and Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>And he went up to the house of the LORD with all the people of Judah and Jerusalem, as well as the priests and the prophets—all the people small and great—and in their hearing he read all the words of the Book of the Covenant that had been found in the house of the LORD.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>So the king stood by the pillar and made a covenant before the LORD to follow the LORD and to keep His commandments, decrees, and statutes with all his heart and all his soul, and to carry out the words of the covenant that were written in this book. And all the people entered into the covenant.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Then the king commanded Hilkiah the high priest, the priests second in rank, and the doorkeepers to remove from the temple of the LORD all the articles made for Baal, Asherah, and all the host of heaven. And he burned them outside Jerusalem in the fields of Kidron and carried their ashes to Bethel.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Josiah also did away with the idolatrous priests ordained by the kings of Judah to burn incense on the high places of the cities of Judah and in the places all around Jerusalem—those who had burned incense to Baal, to the sun and moon, to the constellations, and to all the host of heaven.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>He brought the Asherah pole from the house of the LORD to the Kidron Valley outside Jerusalem, and there he burned it, ground it to powder, and threw its dust on the graves of the common people.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>He also tore down the quarters of the male shrine prostitutes that were in the house of the LORD, where the women had woven tapestries for Asherah.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Then Josiah brought all the priests from the cities of Judah and desecrated the high places, from Geba to Beersheba, where the priests had burned incense. He tore down the high places of the gates at the entrance of the gate of Joshua the governor of the city, which was to the left of the city gate.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Although the priests of the high places did not come up to the altar of the LORD in Jerusalem, they ate unleavened bread with their fellow priests.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>He also desecrated Topheth in the Valley of Ben-hinnom so that no one could sacrifice his son or daughter in the fire to Molech.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And he removed from the entrance to the house of the LORD the horses that the kings of Judah had dedicated to the sun. They were in the court near the chamber of an official named Nathan-melech. And Josiah burned up the chariots of the sun.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>He pulled down the altars that the kings of Judah had set up on the roof near the upper chamber of Ahaz, and the altars that Manasseh had set up in the two courtyards of the house of the LORD. The king pulverized them there and threw their dust into the Kidron Valley.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>The king also desecrated the high places east of Jerusalem, to the south of the Mount of Corruption, which King Solomon of Israel had built for Ashtoreth the abomination of the Sidonians, for Chemosh the abomination of the Moabites, and for Milcom the abomination of the Ammonites.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>He smashed the sacred pillars to pieces, cut down the Asherah poles, and covered the sites with human bones.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>He even pulled down the altar at Bethel, the high place set up by Jeroboam son of Nebat, who had caused Israel to sin. Then he burned the high place, ground it to powder, and burned the Asherah pole.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And as Josiah turned, he saw the tombs there on the hillside, and he sent someone to take the bones out of the tombs, and he burned them on the altar to defile it, according to the word of the LORD proclaimed by the man of God who had foretold these things.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Then the king asked, “What is this monument I see?” And the men of the city replied, “It is the tomb of the man of God who came from Judah and proclaimed these things that you have done to the altar of Bethel.”</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>“Let him rest,” said Josiah. “Do not let anyone disturb his bones.” So they left his bones undisturbed, along with those of the prophet who had come from Samaria.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Just as Josiah had done at Bethel, so also in the cities of Samaria he removed all the shrines of the high places set up by the kings of Israel who had provoked the LORD to anger.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>On the altars he slaughtered all the priests of the high places, and he burned human bones on them. Then he returned to Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>The king commanded all the people, “Keep the Passover of the LORD your God, as it is written in this Book of the Covenant.”</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>No such Passover had been observed from the days of the judges who had governed Israel through all the days of the kings of Israel and Judah.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>But in the eighteenth year of Josiah’s reign, this Passover was observed to the LORD in Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Furthermore, Josiah removed the mediums and spiritists, the household gods and idols, and all the abominations that were seen in the land of Judah and in Jerusalem. He did this to carry out the words of the law written in the book that Hilkiah the priest had found in the house of the LORD.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Neither before nor after Josiah was there any king like him, who turned to the LORD with all his heart and with all his soul and with all his strength, according to all the Law of Moses.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Nevertheless, the LORD did not turn away from the fury of His burning anger, which was kindled against Judah because of all that Manasseh had done to provoke Him to anger.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>For the LORD had said, “I will remove Judah from My sight, just as I removed Israel. I will reject this city Jerusalem, which I chose, and the temple of which I said, ‘My Name shall be there.’”</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>As for the rest of the acts of Josiah and all his accomplishments, are they not written in the Book of the Chronicles of the Kings of Judah?</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>During Josiah’s reign, Pharaoh Neco king of Egypt marched up to help the king of Assyria at the Euphrates River. King Josiah went out to confront him, but Neco faced him and killed him at Megiddo.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>From Megiddo his servants carried his body in a chariot, brought him to Jerusalem, and buried him in his own tomb. Then the people of the land took Jehoahaz son of Josiah, anointed him, and made him king in place of his father.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Jehoahaz was twenty-three years old when he became king, and he reigned in Jerusalem three months. His mother’s name was Hamutal daughter of Jeremiah; she was from Libnah.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And he did evil in the sight of the LORD, just as his fathers had done.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And Pharaoh Neco imprisoned Jehoahaz at Riblah in the land of Hamath so that he could not reign in Jerusalem, and he imposed on Judah a levy of a hundred talents of silver and a talent of gold.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Then Pharaoh Neco made Eliakim son of Josiah king in place of his father Josiah, and he changed Eliakim’s name to Jehoiakim. But Neco took Jehoahaz and carried him off to Egypt, where he died.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>So Jehoiakim paid the silver and gold to Pharaoh Neco, but to meet Pharaoh’s demand he taxed the land and exacted the silver and the gold from the people, each according to his wealth.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Jehoiakim was twenty-five years old when he became king, and he reigned in Jerusalem eleven years. His mother’s name was Zebidah daughter of Pedaiah; she was from Rumah.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And he did evil in the sight of the LORD, just as his fathers had done.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-kings/24.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Kings","chapter":1,"pageUrl":"/bible/2-kings/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/001.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":2,"pageUrl":"/bible/2-kings/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/002.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":3,"pageUrl":"/bible/2-kings/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/003.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":4,"pageUrl":"/bible/2-kings/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/004.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":5,"pageUrl":"/bible/2-kings/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/005.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":6,"pageUrl":"/bible/2-kings/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/006.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":7,"pageUrl":"/bible/2-kings/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/007.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":8,"pageUrl":"/bible/2-kings/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/008.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":9,"pageUrl":"/bible/2-kings/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/009.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":10,"pageUrl":"/bible/2-kings/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/010.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":11,"pageUrl":"/bible/2-kings/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/011.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":12,"pageUrl":"/bible/2-kings/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/012.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":13,"pageUrl":"/bible/2-kings/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/013.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":14,"pageUrl":"/bible/2-kings/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/014.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":15,"pageUrl":"/bible/2-kings/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/015.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":16,"pageUrl":"/bible/2-kings/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/016.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":17,"pageUrl":"/bible/2-kings/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/017.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":18,"pageUrl":"/bible/2-kings/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/018.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":19,"pageUrl":"/bible/2-kings/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/019.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":20,"pageUrl":"/bible/2-kings/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/020.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":21,"pageUrl":"/bible/2-kings/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/021.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":22,"pageUrl":"/bible/2-kings/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/022.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":23,"pageUrl":"/bible/2-kings/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/023.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":24,"pageUrl":"/bible/2-kings/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/024.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":25,"pageUrl":"/bible/2-kings/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/025.mp3","slug":"2-kings"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

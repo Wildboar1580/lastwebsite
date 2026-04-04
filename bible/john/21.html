@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/john/21.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="john" data-bible-chapter="21" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="john" data-bible-chapter="21" data-bible-chapter-index="20" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>John 21</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -241,53 +241,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/john/20.html">Previous Chapter</a>
-            
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_43_Jhn_021_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for John 21">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · John 21</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_43_Jhn_021_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for John 21">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/43_John021.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for John 21">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -564,146 +547,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>After that Iesus shewed him selfe agayne at the see of Tyberias. And on this wyse shewed he him selfe.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>There were to geder Simon Peter and Thomas which is called Didymus: and Nathanael of Cana a citie of Galile and the sonnes of Zebedei and two other of the disciples.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Simon Peter sayde vnto them: I goo a fysshynge. They sayde vnto him: we also will goo with the. They wet their waye and entred into a shippe strayght waye and that nyght caught they nothinge.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>But when the mornynge was now come Iesus stode on the shore: neverthelesse the disciples knewe not yt it was Iesus.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Iesus sayde vnto the: syrs have ye eny meate? They answered him no.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And he sayde vnto them: cast out ye net on the ryght syde of the ship and ye shall fynde. They cast out and anone they were not able to drawe it for ye multitude of fysshes</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Then sayde the disciple whom Iesus loved vnto Peter: It is the Lorde. When Simon Peter hearde that it was ye LORde he gyrde his mantell to him (for he was naked) and sprange into the see</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>The other disciples came by ship: for they were not farre from londe but as it were two hondred cubites and they drewe the net with fysshes.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Assone as they were come to londe they sawe hoot coles and fysshe layd ther on and breed.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Iesus sayde vnto them: bringe of the fysshe which ye have now caught.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Simon Peter stepped forthe and drewe the net to londe full of greate fysshes an hondred and.liii. And for all ther were so many yet was not the net broken.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Iesus sayde vnto them: come and dyne. And none of the disciples durste axe him: what arte thou? For they knewe that it was the LORde.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Iesus then came and toke breed and gave them and fysshe lykwyse</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And this is now the thyrde tyme that Iesus appered to his disciples after that he was rysen agayne from deeth.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>When they had dyned Iesus sayde to Simon Peter: Simon Ioana lovest thou me more then these? He sayde vnto him: ye Lorde thou knowest that I love the. He sayde vnto him: fede my lambes.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>He sayde to him agayne the seconde tyme: Simo Ioana lovest thou me? He sayde vnto him: ye LORde thou knowest that I love ye. He sayde vnto him: fede my shepe.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>He sayde vnto him ye thyrde tyme: Simon Ioanna lovest thou me? And Peter sorowed because he sayde to him ye thyrde tyme lovest thou me and sayde vnto him: Lorde thou knowest all thinge thou knowest that I love the. Iesus sayde vnto him: fede my shepe.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Verely verely I saye vnto the when thou wast yonge thou gerdedst thy selfe and walkedst whyther thou woldest: but when thou arte olde thou shalt stretche forthe thy hondes and a nother shall gyrde ye and leade the whyther thou woldest not.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>That spake he signifyinge by what deeth he shuld glorify God. And whe he had sayde thus he sayd to him folowe me.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Peter turned about and sawe that disciple who Iesus loved folowynge: which also lened on his brest at supper and sayde: Lorde which is he yt shall betraye the?</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>When Peter sawe him he sayde to Iesus: Lorde what shall he here do?</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Iesus sayd vnto him Yf I will have him to tary tyll I come what is that to the? folowe thou me.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Then went this sayinge a broode amonge the brethren that that disciple shulde not dye. Yet Iesus sayde not to him he shall not dye: but yf I will that he tary tyll I come what is that to the?</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>The same disciple is he which testifieth of these thinges and wrote these thinges. And we knowe that his testimony is true.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>There are also many other thinges which Iesus dyd: the which yf they shuld be written every won I suppose the worlde coulde not cotayne the bokes that shuld be written.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"John","chapter":1,"pageUrl":"/bible/john/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/001.mp3","slug":"john"},{"book":"John","chapter":2,"pageUrl":"/bible/john/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/002.mp3","slug":"john"},{"book":"John","chapter":3,"pageUrl":"/bible/john/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/003.mp3","slug":"john"},{"book":"John","chapter":4,"pageUrl":"/bible/john/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/004.mp3","slug":"john"},{"book":"John","chapter":5,"pageUrl":"/bible/john/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/005.mp3","slug":"john"},{"book":"John","chapter":6,"pageUrl":"/bible/john/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/006.mp3","slug":"john"},{"book":"John","chapter":7,"pageUrl":"/bible/john/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/007.mp3","slug":"john"},{"book":"John","chapter":8,"pageUrl":"/bible/john/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/008.mp3","slug":"john"},{"book":"John","chapter":9,"pageUrl":"/bible/john/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/009.mp3","slug":"john"},{"book":"John","chapter":10,"pageUrl":"/bible/john/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/010.mp3","slug":"john"},{"book":"John","chapter":11,"pageUrl":"/bible/john/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/011.mp3","slug":"john"},{"book":"John","chapter":12,"pageUrl":"/bible/john/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/012.mp3","slug":"john"},{"book":"John","chapter":13,"pageUrl":"/bible/john/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/013.mp3","slug":"john"},{"book":"John","chapter":14,"pageUrl":"/bible/john/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/014.mp3","slug":"john"},{"book":"John","chapter":15,"pageUrl":"/bible/john/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/015.mp3","slug":"john"},{"book":"John","chapter":16,"pageUrl":"/bible/john/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/016.mp3","slug":"john"},{"book":"John","chapter":17,"pageUrl":"/bible/john/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/017.mp3","slug":"john"},{"book":"John","chapter":18,"pageUrl":"/bible/john/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/018.mp3","slug":"john"},{"book":"John","chapter":19,"pageUrl":"/bible/john/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/019.mp3","slug":"john"},{"book":"John","chapter":20,"pageUrl":"/bible/john/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/020.mp3","slug":"john"},{"book":"John","chapter":21,"pageUrl":"/bible/john/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_43_Jhn_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/john/021.mp3","slug":"john"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

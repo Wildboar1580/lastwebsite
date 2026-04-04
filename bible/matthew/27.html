@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/matthew/27.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="matthew" data-bible-chapter="27" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="matthew" data-bible-chapter="27" data-bible-chapter-index="26" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Matthew 27</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -255,53 +255,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/matthew/26.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/matthew/28.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_40_Mat_027_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Matthew 27">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Matthew 27</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_40_Mat_027_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Matthew 27">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/40_Matthew027.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Matthew 27">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -988,351 +971,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>When the mornynge was come all ye chefe prestes and the elders of ye people helde a counsayle agenst Iesu to put him to deeth</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>and brought him bounde and delivered him vnto Poncius Pilate the debite.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Then when Iudas which betrayed him sawe that he was condempned he repented him sylfe and brought ageyne the.xxx. plattes of sylver to ye chefe prestes and elders</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>sayinge: I have synned betrayinge the innocent bloud. And they sayde: what is that to vs? Se thou to that.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>And he cast doune the sylver plattes in the temple and departed and went and hounge him sylfe.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And the chefe prestes toke the sylver plattes and sayd: it is not lawfull for to put them in to the treasury because it is the pryce of bloud.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>And they toke counsell and bought with them a potters felde to bury strangers in.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Wherfore that felde is called the felde of bloud vntyll this daye.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Then was fulfylled that which was spoken by Ieremy the Prophet sayinge: and they toke.xxx. sylver plattes the prise of him that was valued whom they bought of the chyldren of Israel</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>and they gave them for the potters felde as the Lorde appoynted me.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Iesus stode before the debite: and the debite axed him sayinge: Arte thou the kynge of ye Iues? Iesus sayd vnto him: Thou sayes</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>and when he was accused of ye chefe prestes and elders he answered nothinge.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Then sayd Pilate vnto him: hearest thou not how many thinges they laye ageynste ye?</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And he answered him to never a worde: in so moche that the debite marveylled greatlie.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>At that feest the debite was wonte to deliver vnto ye people a presoner whom they wolde desyer.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>He had then a notable presoner called Barrabas.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>And when they were gadered together Pilate sayde vnto the: whether wyll ye that I geve losse vnto you Barrabas or Iesus which is called Christ?</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>For he knewe well that for envie they had delivred him.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>When he was set doune to geve iudgemet his wyfe sent to him sayinge: have thou nothinge to do with that iuste man. For I have suffered many thinges this daye in a dreame about him.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>But the chefe preestes and the elders had parswaded the people that they shulde axe Barrabas and shulde destroye Iesus.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Then the debite answered and sayde vnto them: whether of the twayne wyll ye that I let loosse vnto you? And they sayde Barrabas.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Pilate sayde vnto them: what shall I do then with Iesus which is called Christ? They all sayde to him: let him be crucified.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Then sayde the debite: what evyll hath he done? And they cryed the more sayinge: let him be crucified.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>When Pilate sawe that he prevayled nothinge but that moare busines was made he toke water and wasshed his hondes before ye people sayinge: I am innocent of the bloud of this iuste person and that ye shall se.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Then answered all the people and sayde: his bloud be on vs and on oure chyldren.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Then let he Barrabas loose vnto them and scourged Iesus and delivered him to be crucified.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Then the soudeours of the debite toke Iesus vnto the comen hall and gaddered vnto him all the company.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>And they stripped him and put on him a purpyll roobe</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>and platted a croune of thornes and put vpon his heed and a rede in his ryght honde: and bowed their knees before him and mocked him saying: hayle kinge of the Iewes:</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>and spitted vpon him and toke the rede and smoote him on the heed.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>And when they had mocked him they toke the robe of him ageyne and put his awne reymet on him and leed him awaye to crucify him.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And as they came out they fonnde a man of Cyren named Simon: him they compelled to beare his crosse.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And whe they cam vnto ye place called Golgotha (that is to saye a place of deed mens sculles)</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>they gave him veneger to drinke mengled with gall. And when he had tasted therof he wolde not drinke.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>When they had crucified him they parted his garmentes and did cast lottes: to fulfyll that was spoken by the prophet. They deuyded my garmetes amonge them: and apon my vesture did cast loottes.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>And they sate and watched him there.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And they set vp over his heed the cause of his deeth written. This is Iesus the kynge of the Iewes.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>And ther were two theves crucified with him one on ye right honde and another on the lyfte.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>They that passed by revyled him waggynge ther heeddes</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>and sayinge: Thou that destroyest the temple of God and byldest it in thre dayes save thy sylfe. If thou be ye sonne of God come doune from the crosse.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Lykwyse also the hye prestes mockinge him with the scribes aud elders sayde:</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>He saved other him sylfe he can not save. If he be ye kynge of Israel: let him now come doune from the crosse and we will beleve him.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>He trusted in God let him deliver him now yf he will have him: for he sayde I am the sonne of God.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>That same also the theves which were crucified with him cast in his tethe.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>From the sixte houre was there dercknes over all the londe vnto the nynth houre.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>And about ye nynth houre Iesus cryed with a loude voyce sayinge: Eli Eli lama asbathani. That is to saye my God my God why hast thou forsaken me?</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>Some of them that stode there when they herde that sayde: This man calleth for Helyas.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>And streyght waye one of them ranne and toke a sponge and filled it full of veneger and put it on a rede and gave him to drinke.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>Other sayde let be: let vs se whyther Helyas will come and deliver him.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>Iesus cryed agayne with a lowde voyce and yelded vp the goost.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>And beholde the vayle of the temple dyd rent in twayne from ye toppe to the bottome and the erth dyd quake and the stones dyd ren</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>and graves dyd open: and the bodies of many sainctes which slept arose</span>
-              </p>
-            
-              <p id="tyndale-53" class="bible-verse">
-                <span class="verse-num">53</span>
-                <span>and came out of ye graves after his resurreccion and came into the holy cite and appered vnto many.</span>
-              </p>
-            
-              <p id="tyndale-54" class="bible-verse">
-                <span class="verse-num">54</span>
-                <span>When the Centurion and they that were with him watchinge Iesus sawe ye erth quake and those thinges which hapened they feared greatly sayinge. Of a surete this was the sonne of God.</span>
-              </p>
-            
-              <p id="tyndale-55" class="bible-verse">
-                <span class="verse-num">55</span>
-                <span>And many wemen were there beholdinge him a farre of which folowed Iesus fro Galile ministringe vnto him.</span>
-              </p>
-            
-              <p id="tyndale-56" class="bible-verse">
-                <span class="verse-num">56</span>
-                <span>Amonge which was Mary Magdalen and Mary the mother of Iames and Ioses and ye mother of zebedes chyldren.</span>
-              </p>
-            
-              <p id="tyndale-57" class="bible-verse">
-                <span class="verse-num">57</span>
-                <span>When the even was come there came a ryche man of Aramathia named Ioseph which same also was Iesus disciple.</span>
-              </p>
-            
-              <p id="tyndale-58" class="bible-verse">
-                <span class="verse-num">58</span>
-                <span>He went to Pilate and begged the body of Iesus. Then Pilate commaunded the body to be delivered.</span>
-              </p>
-            
-              <p id="tyndale-59" class="bible-verse">
-                <span class="verse-num">59</span>
-                <span>And Ioseph toke the body and wrapped it in a clene lynnyn clooth</span>
-              </p>
-            
-              <p id="tyndale-60" class="bible-verse">
-                <span class="verse-num">60</span>
-                <span>and put it in his newe tombe which he had hewen out even in the roke and rolled a greate stone to the dore of ye sepulcre and departed.</span>
-              </p>
-            
-              <p id="tyndale-61" class="bible-verse">
-                <span class="verse-num">61</span>
-                <span>And there was Mary Magdalene and the other Mary sittynge over ageynste the sepulcre.</span>
-              </p>
-            
-              <p id="tyndale-62" class="bible-verse">
-                <span class="verse-num">62</span>
-                <span>The nexte daye that foloweth good frydaye the hye prestes and pharises got them selves to Pilate</span>
-              </p>
-            
-              <p id="tyndale-63" class="bible-verse">
-                <span class="verse-num">63</span>
-                <span>and sayde: Syr we remember yt this deceaver sayde whyll he was yet alyve After thre dayes I will aryse agayne.</span>
-              </p>
-            
-              <p id="tyndale-64" class="bible-verse">
-                <span class="verse-num">64</span>
-                <span>Commaunde therfore that the sepulcre be made sure vntyll ye thyrd daye lest paraventure his disciples come and steale him awaye and saye vnto the people he is rysen from deeth and the laste erroure be worsse then the fyrst.</span>
-              </p>
-            
-              <p id="tyndale-65" class="bible-verse">
-                <span class="verse-num">65</span>
-                <span>Pilate sayde vnto them. Take watche men: Go and make it as sure as ye can.</span>
-              </p>
-            
-              <p id="tyndale-66" class="bible-verse">
-                <span class="verse-num">66</span>
-                <span>And they went and made the sepulcre sure with watche men and sealed the stone.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/matthew/28.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Matthew","chapter":1,"pageUrl":"/bible/matthew/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/001.mp3","slug":"matthew"},{"book":"Matthew","chapter":2,"pageUrl":"/bible/matthew/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/002.mp3","slug":"matthew"},{"book":"Matthew","chapter":3,"pageUrl":"/bible/matthew/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/003.mp3","slug":"matthew"},{"book":"Matthew","chapter":4,"pageUrl":"/bible/matthew/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/004.mp3","slug":"matthew"},{"book":"Matthew","chapter":5,"pageUrl":"/bible/matthew/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/005.mp3","slug":"matthew"},{"book":"Matthew","chapter":6,"pageUrl":"/bible/matthew/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/006.mp3","slug":"matthew"},{"book":"Matthew","chapter":7,"pageUrl":"/bible/matthew/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/007.mp3","slug":"matthew"},{"book":"Matthew","chapter":8,"pageUrl":"/bible/matthew/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/008.mp3","slug":"matthew"},{"book":"Matthew","chapter":9,"pageUrl":"/bible/matthew/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/009.mp3","slug":"matthew"},{"book":"Matthew","chapter":10,"pageUrl":"/bible/matthew/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/010.mp3","slug":"matthew"},{"book":"Matthew","chapter":11,"pageUrl":"/bible/matthew/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/011.mp3","slug":"matthew"},{"book":"Matthew","chapter":12,"pageUrl":"/bible/matthew/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/012.mp3","slug":"matthew"},{"book":"Matthew","chapter":13,"pageUrl":"/bible/matthew/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/013.mp3","slug":"matthew"},{"book":"Matthew","chapter":14,"pageUrl":"/bible/matthew/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/014.mp3","slug":"matthew"},{"book":"Matthew","chapter":15,"pageUrl":"/bible/matthew/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/015.mp3","slug":"matthew"},{"book":"Matthew","chapter":16,"pageUrl":"/bible/matthew/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/016.mp3","slug":"matthew"},{"book":"Matthew","chapter":17,"pageUrl":"/bible/matthew/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/017.mp3","slug":"matthew"},{"book":"Matthew","chapter":18,"pageUrl":"/bible/matthew/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/018.mp3","slug":"matthew"},{"book":"Matthew","chapter":19,"pageUrl":"/bible/matthew/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/019.mp3","slug":"matthew"},{"book":"Matthew","chapter":20,"pageUrl":"/bible/matthew/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/020.mp3","slug":"matthew"},{"book":"Matthew","chapter":21,"pageUrl":"/bible/matthew/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/021.mp3","slug":"matthew"},{"book":"Matthew","chapter":22,"pageUrl":"/bible/matthew/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/022.mp3","slug":"matthew"},{"book":"Matthew","chapter":23,"pageUrl":"/bible/matthew/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/023.mp3","slug":"matthew"},{"book":"Matthew","chapter":24,"pageUrl":"/bible/matthew/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/024.mp3","slug":"matthew"},{"book":"Matthew","chapter":25,"pageUrl":"/bible/matthew/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/025.mp3","slug":"matthew"},{"book":"Matthew","chapter":26,"pageUrl":"/bible/matthew/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/026.mp3","slug":"matthew"},{"book":"Matthew","chapter":27,"pageUrl":"/bible/matthew/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/027.mp3","slug":"matthew"},{"book":"Matthew","chapter":28,"pageUrl":"/bible/matthew/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_40_Mat_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/matthew/028.mp3","slug":"matthew"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/exodus/14.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="exodus" data-bible-chapter="14" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="exodus" data-bible-chapter="14" data-bible-chapter-index="13" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Exodus 14</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -279,53 +279,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/exodus/13.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/exodus/15.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_02_Exo_014_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Exodus 14">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Exodus 14</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_02_Exo_014_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Exodus 14">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/02_Exodus014.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Exodus 14">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -662,176 +645,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Than the Lorde spake vnto Moses saynge:</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>byd the childern of Israel that they turne and pytch their tentes before the entrynge of Hiroth betwene Migdole and the se toward Baal zephon: euen before that shall ye pytch apon the see.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>For Pharao will saye of the childern of Israel: they are tagled in the lod the wildernesse hath shott the in.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>And I will harde his harte, that he shall folowe after the, that I maye gett me honoure vppo Pharao ad vppo all his hoste, that the Egiptians maye knowe that I am the Lorde. And they dyd euen so.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>And whe it was tolde the kynge of Egipte that the people fled, tha Pharaos harte and all his seruautes turned vnto the people ad. sayde why haue we this done, that we haue let Israel go out of oure seruyce?</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>and he made redie his charettes ad toke his people with hym</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>ad toke vi. hudred chosen charettes ad all the charettes of Egipte ad captaynes vppo all his people.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>For the Lorde hardened the harte of Pharao kynge of Egipte, that he folowed after the childern of Israel which for all that went out thorow an hye hade,</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>And the Egiptias folowed after the ad ouertoke the where they pitched by the see, with all the horsses ad charettes of Pharao ad with his horsseme ad his hoste: eue fast by the entrynge of Hiroth before Baal Zephon.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And Pharao drewe nye, ad whe the childern of Isreal lyft vp their eyes and sawe how the Egiptias folowed after the, they were sore a fraide ad cried out vnto the Lorde</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Tha sayde they vnto Moses? were there no graues for us in Egipte, but thou must bringe us awaye for to dye in the wyldernesse? wherfore hast thou serued us thus, for to carie us out of Egipte?</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Dyd not we tell the this in Egipte saynge, let us be in rest and serue the Egiptians? For it had bene better for us to haue serued the Egiptians, than for to dye in the wildernesse.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>And Moses sayde vnto the people: feare ye not but stonde still and beholde how the Lorde shall saue you this daye: For as ye se the Egiptians this daye, shall ye see them nomore for euer till the worldes ende.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>The Lorde shall fighte for you and ye shall holde youre peace.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>The Lorde sayde vnto Moses: wherfore criest thou vnto me? speake vnto the childern of Israel that they goo forwarde.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>But lifte thou vp thi rodd and stretch out thi hande ouer the see and deuyde it a sondre, that the childern of Israel may goo on drye groude thorow the myddest thereof.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>And beholde I will harden the hertes of the Egiptians that they maye folowe you. And I will gett me honoure vpon Pharao and vpon all his hoste, vpon his charettes ad vpon his horse me.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>And the Egiptians shall knowe that I am the Lord whan I haue gotten me honoure vpo Pharao vpon his charettes and vpon his horsemen.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And the angell of God which went before the hoste of Israel, remoued ad went behinde them. And the cloudepiler that was before them remoued ad stode behinde them</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>ad wet betwene the hoste of the Egiptians ad the hoste of Israel. Yt was a darke clowde, and gaue lighte by nyghte: so that all the nyghte long the one coude not come at the other.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>when now Moses stretched forth his honde ouer the see, the Lorde caried awaye the see with a stronge east wynde that blewe all nyghte, and made the see drie londe ad the water deuyded it silfe.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And the childern of Israel went in thorow the myddest of the see vppon the drie grounde. And the water was a walle vnto them, both on their righthande ad on their lefte hande.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>And the Egiptians folowed ad went in after them to the myddest of the see, with all Pharaos horses, and his charettes and his horssemen.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>And in the mornynge watch, the Lorde loked vnto the hoste of the Egiptias out of the fyery and clowdie piler, and troubled their hoste</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>and smote of their charett wheles and cast them doune to the grounde. Than sayde the Egiptians: Let vs fle from Israel, for the Lorde fyghteth for them agaynst vs.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Than sayde the Lorde vnto Moses: stretch out thine hand ouer the see, that the water maye come agayne vppo the Egiptians vppon their charettes ad horsemen.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Than stretched forth Moses his hande ouer the see, and it came agayne to his course erly i the mornig, ad the Egiptias fledd agaynst it. Thus the Lorde ouerthrewe the Egiptians in the middest of the see,</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>ad the water returned and couered the charettes and the houseme: so that of all the hoste of Pharao that came in to the see after them, there remayned not one.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>But the children of Israel went vpon drie lode in the myddest of the see, ad the water was a walle vnto them: both on the righte hand of them and also on the lifte.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Thus the Lorde delyuered Israel the selfe same daye out of the honde of the Egiptians, and Israell sawe the Egiptians deade vpo the see syde.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>And when Israel sawe that myghtye hande which the Lorde had shewed vppo the Egiptians, they feared the Lorde: and beleued both the Lorde and also his servaunte Moses</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/exodus/15.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Exodus","chapter":1,"pageUrl":"/bible/exodus/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/001.mp3","slug":"exodus"},{"book":"Exodus","chapter":2,"pageUrl":"/bible/exodus/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/002.mp3","slug":"exodus"},{"book":"Exodus","chapter":3,"pageUrl":"/bible/exodus/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/003.mp3","slug":"exodus"},{"book":"Exodus","chapter":4,"pageUrl":"/bible/exodus/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/004.mp3","slug":"exodus"},{"book":"Exodus","chapter":5,"pageUrl":"/bible/exodus/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/005.mp3","slug":"exodus"},{"book":"Exodus","chapter":6,"pageUrl":"/bible/exodus/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/006.mp3","slug":"exodus"},{"book":"Exodus","chapter":7,"pageUrl":"/bible/exodus/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/007.mp3","slug":"exodus"},{"book":"Exodus","chapter":8,"pageUrl":"/bible/exodus/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/008.mp3","slug":"exodus"},{"book":"Exodus","chapter":9,"pageUrl":"/bible/exodus/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/009.mp3","slug":"exodus"},{"book":"Exodus","chapter":10,"pageUrl":"/bible/exodus/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/010.mp3","slug":"exodus"},{"book":"Exodus","chapter":11,"pageUrl":"/bible/exodus/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/011.mp3","slug":"exodus"},{"book":"Exodus","chapter":12,"pageUrl":"/bible/exodus/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/012.mp3","slug":"exodus"},{"book":"Exodus","chapter":13,"pageUrl":"/bible/exodus/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/013.mp3","slug":"exodus"},{"book":"Exodus","chapter":14,"pageUrl":"/bible/exodus/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/014.mp3","slug":"exodus"},{"book":"Exodus","chapter":15,"pageUrl":"/bible/exodus/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/015.mp3","slug":"exodus"},{"book":"Exodus","chapter":16,"pageUrl":"/bible/exodus/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/016.mp3","slug":"exodus"},{"book":"Exodus","chapter":17,"pageUrl":"/bible/exodus/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/017.mp3","slug":"exodus"},{"book":"Exodus","chapter":18,"pageUrl":"/bible/exodus/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/018.mp3","slug":"exodus"},{"book":"Exodus","chapter":19,"pageUrl":"/bible/exodus/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/019.mp3","slug":"exodus"},{"book":"Exodus","chapter":20,"pageUrl":"/bible/exodus/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/020.mp3","slug":"exodus"},{"book":"Exodus","chapter":21,"pageUrl":"/bible/exodus/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/021.mp3","slug":"exodus"},{"book":"Exodus","chapter":22,"pageUrl":"/bible/exodus/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/022.mp3","slug":"exodus"},{"book":"Exodus","chapter":23,"pageUrl":"/bible/exodus/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/023.mp3","slug":"exodus"},{"book":"Exodus","chapter":24,"pageUrl":"/bible/exodus/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/024.mp3","slug":"exodus"},{"book":"Exodus","chapter":25,"pageUrl":"/bible/exodus/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/025.mp3","slug":"exodus"},{"book":"Exodus","chapter":26,"pageUrl":"/bible/exodus/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/026.mp3","slug":"exodus"},{"book":"Exodus","chapter":27,"pageUrl":"/bible/exodus/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/027.mp3","slug":"exodus"},{"book":"Exodus","chapter":28,"pageUrl":"/bible/exodus/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/028.mp3","slug":"exodus"},{"book":"Exodus","chapter":29,"pageUrl":"/bible/exodus/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/029.mp3","slug":"exodus"},{"book":"Exodus","chapter":30,"pageUrl":"/bible/exodus/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/030.mp3","slug":"exodus"},{"book":"Exodus","chapter":31,"pageUrl":"/bible/exodus/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/031.mp3","slug":"exodus"},{"book":"Exodus","chapter":32,"pageUrl":"/bible/exodus/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/032.mp3","slug":"exodus"},{"book":"Exodus","chapter":33,"pageUrl":"/bible/exodus/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/033.mp3","slug":"exodus"},{"book":"Exodus","chapter":34,"pageUrl":"/bible/exodus/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/034.mp3","slug":"exodus"},{"book":"Exodus","chapter":35,"pageUrl":"/bible/exodus/35.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_035_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/035.mp3","slug":"exodus"},{"book":"Exodus","chapter":36,"pageUrl":"/bible/exodus/36.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_036_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/036.mp3","slug":"exodus"},{"book":"Exodus","chapter":37,"pageUrl":"/bible/exodus/37.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_037_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/037.mp3","slug":"exodus"},{"book":"Exodus","chapter":38,"pageUrl":"/bible/exodus/38.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_038_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/038.mp3","slug":"exodus"},{"book":"Exodus","chapter":39,"pageUrl":"/bible/exodus/39.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_039_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/039.mp3","slug":"exodus"},{"book":"Exodus","chapter":40,"pageUrl":"/bible/exodus/40.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_02_Exo_040_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/exodus/040.mp3","slug":"exodus"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

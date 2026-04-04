@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/judges/7.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="judges" data-bible-chapter="7" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="judges" data-bible-chapter="7" data-bible-chapter-index="6" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Judges 7</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -241,53 +241,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/judges/6.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/judges/8.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_07_Jdg_007_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Judges 7">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Judges 7</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_07_Jdg_007_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Judges 7">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/07_Judges007.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Judges 7">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -564,146 +547,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Early in the morning Jerubbaal (that is, Gideon) and all the men with him camped beside the spring of Harod. And the camp of Midian was north of them in the valley near the hill of Moreh.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Then the LORD said to Gideon, “You have too many men for Me to deliver Midian into their hands, lest Israel glorify themselves over Me, saying, ‘My own hand has saved me.’</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Now, therefore, proclaim in the hearing of the men: ‘Whoever is fearful and trembling may turn back and leave Mount Gilead.’” So twenty-two thousand of them turned back, but ten thousand remained.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Then the LORD said to Gideon, “There are still too many men. Take them down to the water, and I will sift them for you there. If I say to you, ‘This one shall go with you,’ he shall go. But if I say, ‘This one shall not go with you,’ he shall not go.”</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>So Gideon brought the men down to the water, and the LORD said to him, “Separate those who lap the water with their tongues like a dog from those who kneel to drink.”</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And the number of those who lapped the water with their hands to their mouths was three hundred men; all the others knelt to drink.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Then the LORD said to Gideon, “With the three hundred men who lapped the water I will save you and deliver the Midianites into your hand. But all the others are to go home.”</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>So Gideon sent the rest of the Israelites to their tents but kept the three hundred men, who took charge of the provisions and rams’ horns of the others. And the camp of Midian lay below him in the valley.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>That night the LORD said to Gideon, “Get up and go down against the camp, for I have delivered it into your hand.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>But if you are afraid to do so, then go down to the camp with your servant Purah</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>and listen to what they are saying. Then your hands will be strengthened to attack the camp.” So he went with Purah his servant to the outposts where armed men were guarding the camp.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Now the Midianites, Amalekites, and all the other people of the east had settled in the valley like a swarm of locusts, and their camels were as countless as the sand on the seashore.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>And as Gideon arrived, a man was telling his friend about a dream. “Behold, I had a dream,” he said, “and I saw a loaf of barley bread come tumbling into the Midianite camp. It struck the tent so hard that the tent overturned and collapsed.”</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>His friend replied: “This is nothing less than the sword of Gideon son of Joash, the Israelite. God has delivered Midian and the whole camp into his hand.”</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>When Gideon heard the dream and its interpretation, he bowed in worship. He returned to the camp of Israel and said, “Get up, for the LORD has delivered the camp of Midian into your hand.”</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And he divided the three hundred men into three companies and gave each man a ram’s horn in one hand and a large jar in the other, containing a torch.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>“Watch me and do as I do,” Gideon said. “When I come to the outskirts of the camp, do exactly as I do.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>When I and all who are with me blow our horns, then you are also to blow your horns from all around the camp and shout, ‘For the LORD and for Gideon!’”</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Gideon and the hundred men with him reached the outskirts of the camp at the beginning of the middle watch, just after the changing of the guard. They blew their horns and broke the jars that were in their hands.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>The three companies blew their horns and shattered their jars. Holding the torches in their left hands and the horns in their right hands, they shouted, “A sword for the LORD and for Gideon!”</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Each Israelite took his position around the camp, and the entire Midianite army fled, crying out as they ran.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And when the three hundred rams’ horns sounded, the LORD set all the men in the camp against one another with their swords. The army fled to Beth-shittah toward Zererah as far as the border of Abel-meholah near Tabbath.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Then the men of Israel were called out from Naphtali, Asher, and all Manasseh, and they pursued the Midianites.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Gideon sent messengers throughout the hill country of Ephraim to say, “Come down against the Midianites and seize the waters of the Jordan ahead of them as far as Beth-barah.” So all the men of Ephraim were called out, and they captured the waters of the Jordan as far as Beth-barah.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>They also captured Oreb and Zeeb, the two princes of Midian; and they killed Oreb at the rock of Oreb and Zeeb at the winepress of Zeeb. So they pursued the Midianites and brought the heads of Oreb and Zeeb to Gideon on the other side of the Jordan.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/judges/8.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Judges","chapter":1,"pageUrl":"/bible/judges/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/001.mp3","slug":"judges"},{"book":"Judges","chapter":2,"pageUrl":"/bible/judges/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/002.mp3","slug":"judges"},{"book":"Judges","chapter":3,"pageUrl":"/bible/judges/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/003.mp3","slug":"judges"},{"book":"Judges","chapter":4,"pageUrl":"/bible/judges/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/004.mp3","slug":"judges"},{"book":"Judges","chapter":5,"pageUrl":"/bible/judges/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/005.mp3","slug":"judges"},{"book":"Judges","chapter":6,"pageUrl":"/bible/judges/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/006.mp3","slug":"judges"},{"book":"Judges","chapter":7,"pageUrl":"/bible/judges/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/007.mp3","slug":"judges"},{"book":"Judges","chapter":8,"pageUrl":"/bible/judges/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/008.mp3","slug":"judges"},{"book":"Judges","chapter":9,"pageUrl":"/bible/judges/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/009.mp3","slug":"judges"},{"book":"Judges","chapter":10,"pageUrl":"/bible/judges/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/010.mp3","slug":"judges"},{"book":"Judges","chapter":11,"pageUrl":"/bible/judges/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/011.mp3","slug":"judges"},{"book":"Judges","chapter":12,"pageUrl":"/bible/judges/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/012.mp3","slug":"judges"},{"book":"Judges","chapter":13,"pageUrl":"/bible/judges/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/013.mp3","slug":"judges"},{"book":"Judges","chapter":14,"pageUrl":"/bible/judges/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/014.mp3","slug":"judges"},{"book":"Judges","chapter":15,"pageUrl":"/bible/judges/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/015.mp3","slug":"judges"},{"book":"Judges","chapter":16,"pageUrl":"/bible/judges/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/016.mp3","slug":"judges"},{"book":"Judges","chapter":17,"pageUrl":"/bible/judges/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/017.mp3","slug":"judges"},{"book":"Judges","chapter":18,"pageUrl":"/bible/judges/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/018.mp3","slug":"judges"},{"book":"Judges","chapter":19,"pageUrl":"/bible/judges/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/019.mp3","slug":"judges"},{"book":"Judges","chapter":20,"pageUrl":"/bible/judges/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/020.mp3","slug":"judges"},{"book":"Judges","chapter":21,"pageUrl":"/bible/judges/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/021.mp3","slug":"judges"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

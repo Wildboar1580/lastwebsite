@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/acts/27.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="acts" data-bible-chapter="27" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="acts" data-bible-chapter="27" data-bible-chapter-index="26" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Acts 27</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -255,53 +255,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/acts/26.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/acts/28.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_44_Act_027_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Acts 27">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Acts 27</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_44_Act_027_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Acts 27">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/44_Acts027.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Acts 27">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -768,241 +751,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>When it was cocluded that we shuld sayle into Italy they delivered Paul and certayne other presoners vnto one named Iulius an vnder captayne of Cesars soudiars.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>And we entred into a ship of Adramicium and lowsed from lond apoynted to sayle by the costes of Asia one Aristarcus out of Macedonia of the contre of Thessalia beinge with vs.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>And the nexte daye we came to Sidon. And Iulius courteously entreated Paul and gave him liberte to goo vnto his frendes and to refresshe him selfe.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>And from thence lanched we and sayled harde by Cypers because the wyndes were contrarye.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Then sayled we over the see of Cilicia and Pamphylia and came to Myra a cite in Lycia.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And there ye vnder captayne founde a shippe of Alexander redy to sayle into Italy and put vs therin.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>And when we had sayled slowly many dayes and scace were come over agaynst Gnydon (because the wynde with stode vs) we sayled harde by the costes of Candy over agaynste Salmo</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>and with moche worke sayled beyonde yt and came vnto a place called good porte. Nye whervnto was a citie called Lasea.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>When moche tyme was spent and saylinge was now ieoperdeous because also that we had overlonge fasted Paul put them in remembraunce</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>and sayde vnto them Syrs I perceave that this vyage wilbe with hurte and moche domage not of the ladynge and ship only: but also of oure lyves.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Neverthelather the vndercaptayne beleved the governer and the master better then tho thinges which were spoken of Paul.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>And because the haven was not comodius to wynter in many toke counsell to departe thence yf by eny meanes they myght attayne to Phenices and there to wynter which is an haven of Candy and servith to the southwest and northwest wynde.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>When the south wynde blewe they supposynge to obtayne their purpose lowsed vnto Asson and sayled paste all Candy.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>But anone after ther arose agaynste their purpose a flawe of wynde out of the northeeste.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>And when the ship was caught and coulde not resist the wynde we let her goo and drave with the wether.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And we came vnto an yle named Clauda and had moche worke to come by abote</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>which they toke vp and vsed helpe vndergerdynge the shippe fearynge lest we shuld have fallen into Syrtes and we let doune a vessell and so were caryed.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>The nexte daye when we were tossed wt an exceadynge tempest they lyghtened ye ship</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>and the thyrde daye we cast out with oure awne hondes the tacklynge of the shippe.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>When at the last nether sunne nor starre in many dayes appered and no small tempest laye apon vs all hope that we shuld be saved was then taken awaye.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Then after longe abstinence Paul stode forth in the myddes of them and sayde: Syrs ye shulde have harkened to me and not have lowsed from Candy nether to have brought vnto vs this harme and losse.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And nowe I exhorte you to be of good chere. For ther shalbe no losse of eny mas lyfe amonge you save of the ship only.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>For ther stode by me this nyght the angell of God whose I am and whom I serve</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>sayinge: feare not Paul for thou must be brought before Cesar. And lo God hath geven vnto the all that sayle with ye.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Wherfore Syrs be of good chere: for I beleve God that so it shalbe even as it was tolde me.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>How be it we must be cast into a certayne ylonde.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>But when ye fourtethe nyght was come as we were caryed in Adria about mydnyght the shipmen demed that ther appered some countre vnto the:</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>and sounded and founde it.xx. feddoms. And when they had gone a lytell further they sounded agayne and founde.xv. feddoms.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>Then fearinge lest they shuld have fallen on some Rocke they cast.iiii. ancres out of the sterne and wysshed for ye daye.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>As the shipmen were about to fle out of the ship and had let doune the bote into the see vnder a coloure as though they wolde have cast ancres out of the forshippe:</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Paul sayd vnto ye vnder captayne and the soudiers: excepte these abyde in the ship ye cannot be safe.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Then the soudiers cut of the rope of the bote and let it fall awaye.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And in ye meane tyme betwixt that and daye Paul besought them all to take meate sayinge: this is ye fourtenthe daye that ye have taried and continued fastynge receavinge nothinge at all.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Wherfore I praye you to take meate: for this no dout is for youre helth: for ther shall not an heere fall fro the heed of eny of you.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>And when he had thus spoke he toke breed and gave thankes to God in presence of the all and brake it and begane to eate.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Then were they all of good cheare and they also toke meate.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>We were all together in ye ship two hundred thre score and sixtene soules.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>And whe they had eate ynough they lightened ye ship and cast out the wheate into the see.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>Whe yt was daye they knew not ye lande but they spied a certayne haven with a banke into ye which they were mynded (yf yt were possible) to thrust in the ship.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>And when they had taken vp the ancres they comytted them selves vnto the see and lowsed the rudder bondes and hoysed vp ye mayne sayle to the wynde and drue to londe.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>But they chaunsed on a place which had the see on bothe the sydes and thrust in the ship. And the foore parte stucke fast and moved not but ye hynder brake with the violence of the waves.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>The soudears counsell was to kyll ye presoners lest eny of them when he had swome out shulde fle awaye.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>But the vndercaptayne willinge to save Paul kept the from their purpose and commaunded that they yt could swyme shulde cast the selves first in to ye see and scape to londe.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>And the other he comaunded to goo some on bordes and some on broken peces of the ship. And so it came to passe that they came all safe to londe.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/acts/28.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Acts","chapter":1,"pageUrl":"/bible/acts/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/001.mp3","slug":"acts"},{"book":"Acts","chapter":2,"pageUrl":"/bible/acts/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/002.mp3","slug":"acts"},{"book":"Acts","chapter":3,"pageUrl":"/bible/acts/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/003.mp3","slug":"acts"},{"book":"Acts","chapter":4,"pageUrl":"/bible/acts/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/004.mp3","slug":"acts"},{"book":"Acts","chapter":5,"pageUrl":"/bible/acts/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/005.mp3","slug":"acts"},{"book":"Acts","chapter":6,"pageUrl":"/bible/acts/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/006.mp3","slug":"acts"},{"book":"Acts","chapter":7,"pageUrl":"/bible/acts/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/007.mp3","slug":"acts"},{"book":"Acts","chapter":8,"pageUrl":"/bible/acts/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/008.mp3","slug":"acts"},{"book":"Acts","chapter":9,"pageUrl":"/bible/acts/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/009.mp3","slug":"acts"},{"book":"Acts","chapter":10,"pageUrl":"/bible/acts/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/010.mp3","slug":"acts"},{"book":"Acts","chapter":11,"pageUrl":"/bible/acts/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/011.mp3","slug":"acts"},{"book":"Acts","chapter":12,"pageUrl":"/bible/acts/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/012.mp3","slug":"acts"},{"book":"Acts","chapter":13,"pageUrl":"/bible/acts/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/013.mp3","slug":"acts"},{"book":"Acts","chapter":14,"pageUrl":"/bible/acts/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/014.mp3","slug":"acts"},{"book":"Acts","chapter":15,"pageUrl":"/bible/acts/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/015.mp3","slug":"acts"},{"book":"Acts","chapter":16,"pageUrl":"/bible/acts/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/016.mp3","slug":"acts"},{"book":"Acts","chapter":17,"pageUrl":"/bible/acts/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/017.mp3","slug":"acts"},{"book":"Acts","chapter":18,"pageUrl":"/bible/acts/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/018.mp3","slug":"acts"},{"book":"Acts","chapter":19,"pageUrl":"/bible/acts/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/019.mp3","slug":"acts"},{"book":"Acts","chapter":20,"pageUrl":"/bible/acts/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/020.mp3","slug":"acts"},{"book":"Acts","chapter":21,"pageUrl":"/bible/acts/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/021.mp3","slug":"acts"},{"book":"Acts","chapter":22,"pageUrl":"/bible/acts/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/022.mp3","slug":"acts"},{"book":"Acts","chapter":23,"pageUrl":"/bible/acts/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/023.mp3","slug":"acts"},{"book":"Acts","chapter":24,"pageUrl":"/bible/acts/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/024.mp3","slug":"acts"},{"book":"Acts","chapter":25,"pageUrl":"/bible/acts/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/025.mp3","slug":"acts"},{"book":"Acts","chapter":26,"pageUrl":"/bible/acts/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/026.mp3","slug":"acts"},{"book":"Acts","chapter":27,"pageUrl":"/bible/acts/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/027.mp3","slug":"acts"},{"book":"Acts","chapter":28,"pageUrl":"/bible/acts/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_44_Act_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/acts/028.mp3","slug":"acts"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-chronicles/20.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-chronicles" data-bible-chapter="20" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-chronicles" data-bible-chapter="20" data-bible-chapter-index="19" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Chronicles 20</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -271,53 +271,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-chronicles/19.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-chronicles/21.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_14_2Ch_020_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Chronicles 20">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Chronicles 20</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_14_2Ch_020_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Chronicles 20">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/14_2Chronicles020.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Chronicles 20">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -714,206 +697,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>After this, the Moabites and Ammonites, together with some of the Meunites, came to make war against Jehoshaphat.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Then some men came and told Jehoshaphat, “A vast army is coming against you from Edom, from beyond the Sea; they are already in Hazazon-tamar” (that is, En-gedi).</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Jehoshaphat was alarmed and set his face to seek the LORD. And he proclaimed a fast throughout Judah.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>So the people of Judah gathered to seek the LORD, and indeed, they came from all the cities of Judah to seek Him.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Then Jehoshaphat stood in the assembly of Judah and Jerusalem in the house of the LORD in front of the new courtyard</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>and said, “O LORD, God of our fathers, are You not the God who is in heaven, and do You not rule over all the kingdoms of the nations? Power and might are in Your hand, and no one can stand against You.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Our God, did You not drive out the inhabitants of this land before Your people Israel and give it forever to the descendants of Abraham Your friend?</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>They have lived in the land and have built in it a sanctuary for Your Name, saying,</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>‘If disaster comes upon us—whether sword or judgment, plague or famine—we will stand before this temple and before You, for Your Name is in this temple. We will cry out to You in our distress, and You will hear us and save us.’</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And now, here are the men of Ammon, Moab, and Mount Seir, whom You did not let Israel invade when they came out of the land of Egypt. So Israel turned away from them and did not destroy them.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>See how they are repaying us by coming to drive us out of the possession that You gave us as an inheritance.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Our God, will You not judge them? For we are powerless before this vast army that comes against us. We do not know what to do, but our eyes are upon You.”</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Meanwhile all the men of Judah, with their wives and children and little ones, were standing before the LORD.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>Then the Spirit of the LORD came upon Jahaziel son of Zechariah, the son of Benaiah, the son of Jeiel, the son of Mattaniah, a Levite from Asaph’s descendants, as he stood in the midst of the assembly.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>And he said, “Listen, all you people of Judah and Jerusalem! Listen, King Jehoshaphat! This is what the LORD says: ‘Do not be afraid or discouraged because of this vast army, for the battle does not belong to you, but to God.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Tomorrow you are to march down against them. You will see them coming up the Ascent of Ziz, and you will find them at the end of the valley facing the Wilderness of Jeruel.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>You need not fight this battle. Take up your positions, stand firm, and see the salvation of the LORD on your behalf, O Judah and Jerusalem. Do not be afraid or discouraged. Go out and face them tomorrow, for the LORD is with you.’”</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Then Jehoshaphat bowed facedown, and all the people of Judah and Jerusalem fell down before the LORD to worship Him.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>And the Levites from the Kohathites and Korahites stood up to praise the LORD, the God of Israel, shouting in a very loud voice.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Early in the morning they got up and left for the Wilderness of Tekoa. As they set out, Jehoshaphat stood up and said, “Hear me, O people of Judah and Jerusalem. Believe in the LORD your God, and you will be upheld; believe in His prophets, and you will succeed.”</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Then Jehoshaphat consulted with the people and appointed those who would sing to the LORD and praise the splendor of His holiness. As they went out before the army, they were singing: “Give thanks to the LORD, for His loving devotion endures forever.”</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>The moment they began their shouts and praises, the LORD set ambushes against the men of Ammon, Moab, and Mount Seir who had come against Judah, and they were defeated.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>The Ammonites and Moabites rose up against the inhabitants of Mount Seir, devoting them to destruction. And when they had finished off the inhabitants of Seir, they helped to destroy one another.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>When the men of Judah came to a place overlooking the wilderness, they looked for the vast army, but there were only corpses lying on the ground; no one had escaped.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Then Jehoshaphat and his people went to carry off the plunder, and they found on the bodies an abundance of goods and valuables—more than they could carry away. They were gathering the plunder for three days because there was so much.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>On the fourth day they assembled in the Valley of Beracah, where they blessed the LORD. Therefore that place is called the Valley of Beracah to this day.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Then all the men of Judah and Jerusalem, with Jehoshaphat at their head, returned joyfully to Jerusalem, for the LORD had made them rejoice over their enemies.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>So they entered Jerusalem and went into the house of the LORD with harps, lyres, and trumpets.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And the fear of God came upon all the kingdoms of the lands when they heard that the LORD had fought against the enemies of Israel.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Then Jehoshaphat’s kingdom was at peace, for his God had given him rest on every side.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>So Jehoshaphat reigned over Judah. He was thirty-five years old when he became king, and he reigned in Jerusalem twenty-five years. His mother’s name was Azubah daughter of Shilhi.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And Jehoshaphat walked in the way of his father Asa and did not turn away from it; he did what was right in the eyes of the LORD.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>The high places, however, were not removed; the people had not yet set their hearts on the God of their fathers.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>As for the rest of the acts of Jehoshaphat, from beginning to end, they are indeed written in the Chronicles of Jehu son of Hanani, which are recorded in the Book of the Kings of Israel.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Later, Jehoshaphat king of Judah made an alliance with Ahaziah king of Israel, who acted wickedly.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>They agreed to make ships to go to Tarshish, and these were built in Ezion-geber.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Then Eliezer son of Dodavahu of Mareshah prophesied against Jehoshaphat, saying, “Because you have allied yourself with Ahaziah, the LORD has destroyed your works.” So the ships were wrecked and were unable to sail to Tarshish.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-chronicles/21.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Chronicles","chapter":1,"pageUrl":"/bible/2-chronicles/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/001.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":2,"pageUrl":"/bible/2-chronicles/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/002.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":3,"pageUrl":"/bible/2-chronicles/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/003.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":4,"pageUrl":"/bible/2-chronicles/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/004.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":5,"pageUrl":"/bible/2-chronicles/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/005.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":6,"pageUrl":"/bible/2-chronicles/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/006.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":7,"pageUrl":"/bible/2-chronicles/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/007.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":8,"pageUrl":"/bible/2-chronicles/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/008.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":9,"pageUrl":"/bible/2-chronicles/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/009.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":10,"pageUrl":"/bible/2-chronicles/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/010.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":11,"pageUrl":"/bible/2-chronicles/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/011.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":12,"pageUrl":"/bible/2-chronicles/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/012.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":13,"pageUrl":"/bible/2-chronicles/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/013.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":14,"pageUrl":"/bible/2-chronicles/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/014.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":15,"pageUrl":"/bible/2-chronicles/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/015.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":16,"pageUrl":"/bible/2-chronicles/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/016.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":17,"pageUrl":"/bible/2-chronicles/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/017.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":18,"pageUrl":"/bible/2-chronicles/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/018.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":19,"pageUrl":"/bible/2-chronicles/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/019.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":20,"pageUrl":"/bible/2-chronicles/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/020.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":21,"pageUrl":"/bible/2-chronicles/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/021.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":22,"pageUrl":"/bible/2-chronicles/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/022.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":23,"pageUrl":"/bible/2-chronicles/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/023.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":24,"pageUrl":"/bible/2-chronicles/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/024.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":25,"pageUrl":"/bible/2-chronicles/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/025.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":26,"pageUrl":"/bible/2-chronicles/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/026.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":27,"pageUrl":"/bible/2-chronicles/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/027.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":28,"pageUrl":"/bible/2-chronicles/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/028.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":29,"pageUrl":"/bible/2-chronicles/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/029.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":30,"pageUrl":"/bible/2-chronicles/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/030.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":31,"pageUrl":"/bible/2-chronicles/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/031.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":32,"pageUrl":"/bible/2-chronicles/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/032.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":33,"pageUrl":"/bible/2-chronicles/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/033.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":34,"pageUrl":"/bible/2-chronicles/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/034.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":35,"pageUrl":"/bible/2-chronicles/35.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_035_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/035.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":36,"pageUrl":"/bible/2-chronicles/36.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_036_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/036.mp3","slug":"2-chronicles"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

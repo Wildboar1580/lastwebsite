@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/1-samuel/17.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-samuel" data-bible-chapter="17" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-samuel" data-bible-chapter="17" data-bible-chapter-index="16" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>1 Samuel 17</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -261,53 +261,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/1-samuel/16.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/1-samuel/18.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_09_1Sa_017_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 1 Samuel 17">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 1 Samuel 17</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_09_1Sa_017_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 1 Samuel 17">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/09_1Samuel017.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 1 Samuel 17">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -914,311 +897,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Now the Philistines gathered their forces for war at Socoh in Judah, and they camped between Socoh and Azekah in Ephes-dammim.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Saul and the men of Israel assembled and camped in the Valley of Elah, arraying themselves for battle against the Philistines.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>The Philistines stood on one hill and the Israelites stood on another, with the valley between them.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Then a champion named Goliath, who was from Gath, came out from the Philistine camp. He was six cubits and a span in height,</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>and he had a bronze helmet on his head. He wore a bronze coat of mail weighing five thousand shekels,</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>and he had armor of bronze on his legs and a javelin of bronze slung between his shoulders.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>The shaft of his spear was like a weaver’s beam, and its iron point weighed six hundred shekels. In addition, his shield bearer went before him.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>And Goliath stood and shouted to the ranks of Israel, “Why do you come out and array yourselves for battle? Am I not a Philistine, and are you not servants of Saul? Choose one of your men and have him come down against me.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>If he is able to fight me and kill me, then we will be your servants. But if I prevail against him and kill him, then you shall be our servants and work for us.”</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Then the Philistine said, “I defy the ranks of Israel this day! Give me a man to fight!”</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>On hearing the words of the Philistine, Saul and all the Israelites were dismayed and greatly afraid.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Now David was the son of a man named Jesse, an Ephrathite from Bethlehem of Judah who had eight sons. And in the days of Saul, Jesse was old and well along in years.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>The three older sons of Jesse had followed Saul into battle: The firstborn was Eliab, the second was Abinadab, and the third was Shammah.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And David was the youngest. The three oldest had followed Saul,</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>but David went back and forth from Saul to tend his father’s sheep in Bethlehem.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>For forty days the Philistine came forward every morning and evening to take his stand.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>One day Jesse said to his son David, “Take this ephah of roasted grain and these ten loaves of bread for your brothers and hurry to their camp.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Take also these ten portions of cheese to the commander of their unit. Check on the welfare of your brothers and bring back an assurance from them.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>They are with Saul and all the men of Israel in the Valley of Elah, fighting against the Philistines.”</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>So David got up early in the morning, left the flock with a keeper, loaded up, and set out as Jesse had instructed him. He reached the camp as the army was marching out to its position and shouting the battle cry.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And Israel and the Philistines arrayed in formation against each other.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Then David left his supplies in the care of the quartermaster and ran to the battle line. When he arrived, he asked his brothers how they were doing.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>And as he was speaking with them, suddenly the champion named Goliath, the Philistine from Gath, came forward from the ranks of the Philistines and shouted his usual words, which David also heard.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>When all the men of Israel saw Goliath, they fled from him in great fear.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Now the men of Israel had been saying, “Do you see how this man keeps coming out to defy Israel? To the man who kills him the king will give great riches. And he will give him his daughter in marriage and exempt his father’s house from taxation in Israel.”</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>David asked the men who were standing with him, “What will be done for the man who kills this Philistine and removes this disgrace from Israel? Just who is this uncircumcised Philistine, that he should defy the armies of the living God?”</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>The people told him about the offer, saying, “That is what will be done for the man who kills him.”</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Now when David’s oldest brother Eliab heard him speaking to the men, his anger burned against David. “Why have you come down here?” he asked. “And with whom did you leave those few sheep in the wilderness? I know your pride and wickedness of heart—you have come down to see the battle!”</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>“What have I done now?” said David. “Was it not just a question?”</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Then he turned from him toward another and asked about the offer, and those people answered him just as the first ones had answered.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Now David’s words were overheard and reported to Saul, who sent for him.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And David said to Saul, “Let no man’s heart fail on account of this Philistine. Your servant will go and fight him!”</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>But Saul replied, “You cannot go out against this Philistine to fight him. You are just a boy, and he has been a warrior from his youth.”</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>David replied, “Your servant has been tending his father’s sheep, and whenever a lion or a bear came and carried off a lamb from the flock,</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>I went after it, struck it down, and delivered the lamb from its mouth. If it reared up against me, I would grab it by its fur, strike it down, and kill it.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Your servant has killed lions and bears; this uncircumcised Philistine will be like one of them, for he has defied the armies of the living God.”</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>David added, “The LORD, who delivered me from the claws of the lion and the bear, will deliver me from the hand of this Philistine.” “Go,” said Saul, “and may the LORD be with you.”</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>Then Saul clothed David in his own tunic, put a bronze helmet on his head, and dressed him in armor.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>David strapped his sword over the tunic and tried to walk, but he was not accustomed to them. “I cannot walk in these,” David said to Saul. “I am not accustomed to them.” So David took them off.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>And David took his staff in his hand, selected five smooth stones from the brook, and put them in the pouch of his shepherd’s bag. And with his sling in hand, he approached the Philistine.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Now the Philistine came closer and closer to David, with his shield-bearer before him.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>When the Philistine looked and saw David, he despised him because he was just a boy, ruddy and handsome.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>“Am I a dog,” he said to David, “that you come at me with sticks?” And the Philistine cursed David by his gods.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>“Come here,” he called to David, “and I will give your flesh to the birds of the air and the beasts of the field!”</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>But David said to the Philistine, “You come against me with sword and spear and javelin, but I come against you in the name of the LORD of Hosts, the God of the armies of Israel, whom you have defied.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>This day the LORD will deliver you into my hand. This day I will strike you down, cut off your head, and give the carcasses of the Philistine army to the birds of the air and the creatures of the earth. Then the whole world will know that there is a God in Israel.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>And all those assembled here will know that it is not by sword or spear that the LORD saves; for the battle is the LORD’s, and He will give all of you into our hands.”</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>As the Philistine started forward to attack him, David ran quickly toward the battle line to meet him.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>Then David reached into his bag, took out a stone, and slung it, striking the Philistine on the forehead. The stone sank into his forehead, and he fell facedown on the ground.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>Thus David prevailed over the Philistine with a sling and a stone; without a sword in his hand he struck down the Philistine and killed him.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>David ran and stood over him. He grabbed the Philistine’s sword and pulled it from its sheath and killed him, and he cut off his head with the sword. When the Philistines saw that their hero was dead, they turned and ran.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>Then the men of Israel and Judah charged forward with a shout and pursued the Philistines to the entrance of Gath and to the gates of Ekron. And the bodies of the Philistines were strewn along the Shaaraim road to Gath and Ekron.</span>
-              </p>
-            
-              <p id="tyndale-53" class="bible-verse">
-                <span class="verse-num">53</span>
-                <span>When the Israelites returned from their pursuit of the Philistines, they plundered their camps.</span>
-              </p>
-            
-              <p id="tyndale-54" class="bible-verse">
-                <span class="verse-num">54</span>
-                <span>David took the head of the Philistine and brought it to Jerusalem, and he put Goliath’s weapons in his own tent.</span>
-              </p>
-            
-              <p id="tyndale-55" class="bible-verse">
-                <span class="verse-num">55</span>
-                <span>As Saul had watched David going out to confront the Philistine, he said to Abner the commander of the army, “Abner, whose son is this young man?” “As surely as you live, O king,” Abner replied, “I do not know.”</span>
-              </p>
-            
-              <p id="tyndale-56" class="bible-verse">
-                <span class="verse-num">56</span>
-                <span>“Find out whose son this young man is!” said the king.</span>
-              </p>
-            
-              <p id="tyndale-57" class="bible-verse">
-                <span class="verse-num">57</span>
-                <span>So when David returned from killing the Philistine, still holding his head in his hand, Abner took him and brought him before Saul.</span>
-              </p>
-            
-              <p id="tyndale-58" class="bible-verse">
-                <span class="verse-num">58</span>
-                <span>“Whose son are you, young man?” asked Saul. “I am the son of your servant Jesse of Bethlehem,” David replied.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/1-samuel/18.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Samuel","chapter":1,"pageUrl":"/bible/1-samuel/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/001.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":2,"pageUrl":"/bible/1-samuel/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/002.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":3,"pageUrl":"/bible/1-samuel/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/003.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":4,"pageUrl":"/bible/1-samuel/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/004.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":5,"pageUrl":"/bible/1-samuel/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/005.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":6,"pageUrl":"/bible/1-samuel/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/006.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":7,"pageUrl":"/bible/1-samuel/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/007.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":8,"pageUrl":"/bible/1-samuel/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/008.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":9,"pageUrl":"/bible/1-samuel/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/009.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":10,"pageUrl":"/bible/1-samuel/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/010.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":11,"pageUrl":"/bible/1-samuel/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/011.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":12,"pageUrl":"/bible/1-samuel/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/012.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":13,"pageUrl":"/bible/1-samuel/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/013.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":14,"pageUrl":"/bible/1-samuel/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/014.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":15,"pageUrl":"/bible/1-samuel/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/015.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":16,"pageUrl":"/bible/1-samuel/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/016.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":17,"pageUrl":"/bible/1-samuel/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/017.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":18,"pageUrl":"/bible/1-samuel/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/018.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":19,"pageUrl":"/bible/1-samuel/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/019.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":20,"pageUrl":"/bible/1-samuel/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/020.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":21,"pageUrl":"/bible/1-samuel/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/021.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":22,"pageUrl":"/bible/1-samuel/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/022.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":23,"pageUrl":"/bible/1-samuel/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/023.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":24,"pageUrl":"/bible/1-samuel/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/024.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":25,"pageUrl":"/bible/1-samuel/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/025.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":26,"pageUrl":"/bible/1-samuel/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/026.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":27,"pageUrl":"/bible/1-samuel/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/027.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":28,"pageUrl":"/bible/1-samuel/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/028.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":29,"pageUrl":"/bible/1-samuel/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/029.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":30,"pageUrl":"/bible/1-samuel/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/030.mp3","slug":"1-samuel"},{"book":"1 Samuel","chapter":31,"pageUrl":"/bible/1-samuel/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_09_1Sa_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-samuel/031.mp3","slug":"1-samuel"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

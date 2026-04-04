@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-samuel/12.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-samuel" data-bible-chapter="12" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-samuel" data-bible-chapter="12" data-bible-chapter-index="11" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Samuel 12</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -247,53 +247,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-samuel/11.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-samuel/13.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_10_2Sa_012_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Samuel 12">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Samuel 12</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_10_2Sa_012_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Samuel 12">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/10_2Samuel012.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Samuel 12">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -630,176 +613,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Then the LORD sent Nathan to David, and when he arrived, he said, “There were two men in a certain city, one rich and the other poor.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>The rich man had a great number of sheep and cattle,</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>but the poor man had nothing except one small ewe lamb that he had bought. He raised it, and it grew up with him and his children. It shared his food and drank from his cup; it slept in his arms and was like a daughter to him.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Now a traveler came to the rich man, who refrained from taking one of his own sheep or cattle to prepare for the traveler who had come to him. Instead, he took the poor man’s lamb and prepared it for his guest.”</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>David burned with anger against the man and said to Nathan: “As surely as the LORD lives, the man who did this deserves to die!</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>Because he has done this thing and has shown no pity, he must pay for the lamb four times over.”</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Then Nathan said to David, “You are that man! This is what the LORD, the God of Israel, says: ‘I anointed you king over Israel, and I delivered you from the hand of Saul.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>I gave your master’s house to you and your master’s wives into your arms. I gave you the house of Israel and Judah, and if that was not enough, I would have given you even more.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Why then have you despised the command of the LORD by doing evil in His sight? You put Uriah the Hittite to the sword and took his wife as your own. You have slain him with the sword of the Ammonites.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Now, therefore, the sword will never depart from your house, because you have despised Me and have taken the wife of Uriah the Hittite to be your own.’</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>This is what the LORD says: ‘I will raise up adversity against you from your own house. Before your very eyes I will take your wives and give them to another, and he will lie with them in broad daylight.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>You have acted in secret, but I will do this thing in broad daylight before all Israel.’”</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Then David said to Nathan, “I have sinned against the LORD.” “The LORD has taken away your sin,” Nathan replied. “You will not die.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>Nevertheless, because by this deed you have shown utter contempt for the word of the LORD, the son born to you will surely die.”</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>After Nathan had gone home, the LORD struck the child that Uriah’s wife had borne to David, and he became ill.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>David pleaded with God for the boy. He fasted and went into his house and spent the night lying in sackcloth on the ground.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>The elders of his household stood beside him to help him up from the ground, but he was unwilling and would not eat anything with them.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>On the seventh day the child died. But David’s servants were afraid to tell him that the child was dead, for they said, “Look, while the child was alive, we spoke to him, and he would not listen to us. So how can we tell him the child is dead? He may even harm himself.”</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>When David saw that his servants were whispering to one another, he perceived that the child was dead. So he asked his servants, “Is the child dead?” “He is dead,” they replied.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Then David got up from the ground, washed and anointed himself, changed his clothes, and went into the house of the LORD and worshiped. Then he went to his own house, and at his request they set food before him, and he ate.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>“What is this you have done?” his servants asked. “While the child was alive, you fasted and wept, but when he died, you got up and ate.”</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>David answered, “While the child was alive, I fasted and wept, for I said, ‘Who knows? The LORD may be gracious to me and let him live.’</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>But now that he is dead, why should I fast? Can I bring him back again? I will go to him, but he will not return to me.”</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Then David comforted his wife Bathsheba, and he went to her and lay with her. So she gave birth to a son, and they named him Solomon. Now the LORD loved the child</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>and sent word through Nathan the prophet to name him Jedidiah because the LORD loved him.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Meanwhile, Joab fought against Rabbah of the Ammonites and captured the royal fortress.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Then Joab sent messengers to David to say, “I have fought against Rabbah and have captured the water supply of the city.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Now, therefore, assemble the rest of the troops, lay siege to the city, and capture it. Otherwise I will capture the city, and it will be named after me.”</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>So David assembled all the troops and went to Rabbah; and he fought against it and captured it.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Then he took the crown from the head of their king. It weighed a talent of gold and was set with precious stones, and it was placed on David’s head. And David took a great amount of plunder from the city.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>David brought out the people who were there and put them to work with saws, iron picks, and axes, and he made them work at the brick kilns. He did the same to all the Ammonite cities. Then David and all his troops returned to Jerusalem.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-samuel/13.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Samuel","chapter":1,"pageUrl":"/bible/2-samuel/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/001.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":2,"pageUrl":"/bible/2-samuel/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/002.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":3,"pageUrl":"/bible/2-samuel/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/003.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":4,"pageUrl":"/bible/2-samuel/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/004.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":5,"pageUrl":"/bible/2-samuel/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/005.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":6,"pageUrl":"/bible/2-samuel/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/006.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":7,"pageUrl":"/bible/2-samuel/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/007.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":8,"pageUrl":"/bible/2-samuel/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/008.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":9,"pageUrl":"/bible/2-samuel/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/009.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":10,"pageUrl":"/bible/2-samuel/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/010.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":11,"pageUrl":"/bible/2-samuel/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/011.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":12,"pageUrl":"/bible/2-samuel/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/012.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":13,"pageUrl":"/bible/2-samuel/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/013.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":14,"pageUrl":"/bible/2-samuel/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/014.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":15,"pageUrl":"/bible/2-samuel/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/015.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":16,"pageUrl":"/bible/2-samuel/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/016.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":17,"pageUrl":"/bible/2-samuel/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/017.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":18,"pageUrl":"/bible/2-samuel/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/018.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":19,"pageUrl":"/bible/2-samuel/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/019.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":20,"pageUrl":"/bible/2-samuel/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/020.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":21,"pageUrl":"/bible/2-samuel/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/021.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":22,"pageUrl":"/bible/2-samuel/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/022.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":23,"pageUrl":"/bible/2-samuel/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/023.mp3","slug":"2-samuel"},{"book":"2 Samuel","chapter":24,"pageUrl":"/bible/2-samuel/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_10_2Sa_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-samuel/024.mp3","slug":"2-samuel"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

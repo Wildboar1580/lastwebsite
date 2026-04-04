@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/nehemiah/12.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="nehemiah" data-bible-chapter="12" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="nehemiah" data-bible-chapter="12" data-bible-chapter-index="11" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Nehemiah 12</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -225,53 +225,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/nehemiah/11.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/nehemiah/13.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_16_Neh_012_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Nehemiah 12">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Nehemiah 12</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_16_Neh_012_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Nehemiah 12">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/16_Nehemiah012.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Nehemiah 12">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -768,256 +751,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Now these are the priests and Levites who went up with Zerubbabel son of Shealtiel and with Jeshua: Seraiah, Jeremiah, Ezra,</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Amariah, Malluch, Hattush,</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Shecaniah, Rehum, Meremoth,</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Iddo, Ginnethon, Abijah,</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Mijamin, Maadiah, Bilgah,</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>Shemaiah, Joiarib, Jedaiah,</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Sallu, Amok, Hilkiah, and Jedaiah. These were the leaders of the priests and their associates in the days of Jeshua.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>The Levites were Jeshua, Binnui, Kadmiel, Sherebiah, Judah, and Mattaniah, who, with his associates, led the songs of thanksgiving.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Bakbukiah and Unni, their associates, stood across from them in the services.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Jeshua was the father of Joiakim, Joiakim was the father of Eliashib, Eliashib was the father of Joiada,</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Joiada was the father of Jonathan, and Jonathan was the father of Jaddua.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>In the days of Joiakim, these were the heads of the priestly families: of the family of Seraiah, Meraiah; of Jeremiah, Hananiah;</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>of Ezra, Meshullam; of Amariah, Jehohanan;</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>of Malluchi, Jonathan; of Shebaniah, Joseph;</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>of Harim, Adna; of Meraioth, Helkai;</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>of Iddo, Zechariah; of Ginnethon, Meshullam;</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>of Abijah, Zichri; of Miniamin and of Moadiah, Piltai;</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>of Bilgah, Shammua; of Shemaiah, Jonathan;</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>of Joiarib, Mattenai; of Jedaiah, Uzzi;</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>of Sallai, Kallai; of Amok, Eber;</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>of Hilkiah, Hashabiah; and of Jedaiah, Nethanel.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>In the days of Eliashib, Joiada, Johanan, and Jaddua, during the reign of Darius the Persian, the heads of the families of the Levites and priests were recorded.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>As for the descendants of Levi, the family heads up to the days of Johanan son of Eliashib were recorded in the Book of the Chronicles.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>The leaders of the Levites were Hashabiah, Sherebiah, and Jeshua son of Kadmiel, along with their associates, who stood across from them to give praise and thanksgiving as one section alternated with the other, as prescribed by David the man of God.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Mattaniah, Bakbukiah, Obadiah, Meshullam, Talmon, and Akkub were gatekeepers who guarded the storerooms at the gates.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>They served in the days of Joiakim son of Jeshua, the son of Jozadak, and in the days of Nehemiah the governor and Ezra the priest and scribe.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>At the dedication of the wall of Jerusalem, the Levites were sought out from all their homes and brought to Jerusalem to celebrate the joyous dedication with thanksgiving and singing, accompanied by cymbals, harps, and lyres.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>The singers were also assembled from the region around Jerusalem, from the villages of the Netophathites,</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>from Beth-gilgal, and from the fields of Geba and Azmaveth, for they had built villages for themselves around Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>After the priests and Levites had purified themselves, they purified the people, the gates, and the wall.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Then I brought the leaders of Judah up on the wall, and I appointed two great thanksgiving choirs. One was to proceed along the top of the wall to the right, toward the Dung Gate.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Hoshaiah and half the leaders of Judah followed,</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>along with Azariah, Ezra, Meshullam,</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Judah, Benjamin, Shemaiah, Jeremiah,</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>and some of the priests with trumpets, and also Zechariah son of Jonathan, the son of Shemaiah, the son of Mattaniah, the son of Micaiah, the son of Zaccur, the son of Asaph,</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>and his associates—Shemaiah, Azarel, Milalai, Gilalai, Maai, Nethanel, Judah, and Hanani—with the musical instruments prescribed by David the man of God. Ezra the scribe led the procession.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>At the Fountain Gate they went directly up the steps of the City of David on the ascent to the wall and passed above the house of David to the Water Gate on the east.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>The second thanksgiving choir proceeded to the left, and I followed it with half the people along the top of the wall, past the Tower of the Ovens to the Broad Wall,</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>over the Gate of Ephraim, the Jeshanah Gate, the Fish Gate, the Tower of Hananel, and the Tower of the Hundred, as far as the Sheep Gate. And they stopped at the Gate of the Guard.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>The two thanksgiving choirs then stood in the house of God, as did I, along with the half of the officials accompanying me,</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>as well as the priests with their trumpets—Eliakim, Maaseiah, Miniamin, Micaiah, Elioenai, Zechariah, and Hananiah—</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>and also Maaseiah, Shemaiah, Eleazar, Uzzi, Jehohanan, Malchijah, Elam, and Ezer. Then the choirs sang out under the direction of Jezrahiah.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>On that day they offered great sacrifices, rejoicing because God had given them great joy. The women and children also rejoiced, so that the joy of Jerusalem was heard from afar.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>And on that same day men were appointed over the rooms that housed the supplies, contributions, firstfruits, and tithes. The portions specified by the Law for the priests and Levites were gathered into these storerooms from the fields of the villages, because Judah rejoiced over the priests and Levites who were serving.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>They performed the service of their God and the service of purification, along with the singers and gatekeepers, as David and his son Solomon had prescribed.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>For long ago, in the days of David and Asaph, there were directors for the singers and for the songs of praise and thanksgiving to God.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>So in the days of Zerubbabel and Nehemiah, all Israel contributed the daily portions for the singers and gatekeepers. They also set aside daily portions for the Levites, and the Levites set aside daily portions for the descendants of Aaron.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/nehemiah/13.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Nehemiah","chapter":1,"pageUrl":"/bible/nehemiah/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/001.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":2,"pageUrl":"/bible/nehemiah/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/002.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":3,"pageUrl":"/bible/nehemiah/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/003.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":4,"pageUrl":"/bible/nehemiah/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/004.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":5,"pageUrl":"/bible/nehemiah/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/005.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":6,"pageUrl":"/bible/nehemiah/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/006.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":7,"pageUrl":"/bible/nehemiah/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/007.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":8,"pageUrl":"/bible/nehemiah/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/008.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":9,"pageUrl":"/bible/nehemiah/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/009.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":10,"pageUrl":"/bible/nehemiah/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/010.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":11,"pageUrl":"/bible/nehemiah/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/011.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":12,"pageUrl":"/bible/nehemiah/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/012.mp3","slug":"nehemiah"},{"book":"Nehemiah","chapter":13,"pageUrl":"/bible/nehemiah/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_16_Neh_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/nehemiah/013.mp3","slug":"nehemiah"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

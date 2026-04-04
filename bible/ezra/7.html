@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/ezra/7.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="ezra" data-bible-chapter="7" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="ezra" data-bible-chapter="7" data-bible-chapter-index="6" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Ezra 7</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -219,53 +219,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/ezra/6.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/ezra/8.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_15_Ezr_007_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Ezra 7">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Ezra 7</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_15_Ezr_007_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Ezra 7">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/15_Ezra007.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Ezra 7">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -572,161 +555,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Many years later, during the reign of Artaxerxes king of Persia, Ezra son of Seraiah, the son of Azariah, the son of Hilkiah,</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>the son of Shallum, the son of Zadok, the son of Ahitub,</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>the son of Amariah, the son of Azariah, the son of Meraioth,</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>the son of Zerahiah, the son of Uzzi, the son of Bukki,</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>the son of Abishua, the son of Phinehas, the son of Eleazar, the son of Aaron the chief priest—</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>this Ezra came up from Babylon. He was a scribe skilled in the Law of Moses, which the LORD, the God of Israel, had given. The king had granted Ezra all his requests, for the hand of the LORD his God was upon him.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>So in the seventh year of King Artaxerxes, he went up to Jerusalem with some of the Israelites, including priests, Levites, singers, gatekeepers, and temple servants.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Ezra arrived in Jerusalem in the fifth month of the seventh year of the king.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>He had begun the journey from Babylon on the first day of the first month, and he arrived in Jerusalem on the first day of the fifth month, for the gracious hand of his God was upon him.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>For Ezra had set his heart to study the Law of the LORD, to practice it, and to teach its statutes and ordinances in Israel.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>This is the text of the letter King Artaxerxes had given to Ezra the priest and scribe, an expert in the commandments and statutes of the LORD to Israel:</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Artaxerxes, king of kings. To Ezra the priest, the scribe of the Law of the God of heaven: Greetings.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>I hereby decree that any volunteers among the Israelites in my kingdom, including the priests and Levites, may go up with you to Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>You are sent by the king and his seven counselors to evaluate Judah and Jerusalem according to the Law of your God, which is in your hand.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Moreover, you are to take with you the silver and gold that the king and his counselors have freely offered to the God of Israel, whose dwelling is in Jerusalem,</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>together with all the silver and gold you may find in all the province of Babylon, as well as the freewill offerings of the people and priests to the house of their God in Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>With this money, therefore, you are to buy as many bulls, rams, and lambs as needed, together with their grain offerings and drink offerings, and offer them on the altar at the house of your God in Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>You and your brothers may do whatever seems best with the rest of the silver and gold, according to the will of your God.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>You must deliver to the God of Jerusalem all the articles given to you for the service of the house of your God.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>And if anything else is needed for the house of your God that you may have occasion to supply, you may pay for it from the royal treasury.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>I, King Artaxerxes, decree to all the treasurers west of the Euphrates: Whatever Ezra the priest, the scribe of the Law of the God of heaven, may require of you, it must be provided promptly,</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>up to a hundred talents of silver, a hundred cors of wheat, a hundred baths of wine, a hundred baths of olive oil, and salt without limit.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Whatever is commanded by the God of heaven must be done diligently for His house. For why should wrath fall on the realm of the king and his sons?</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>And be advised that you have no authority to impose tribute, duty, or toll on any of the priests, Levites, singers, doorkeepers, temple servants, or other servants of this house of God.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>And you, Ezra, according to the wisdom of your God, which you possess, are to appoint magistrates and judges to judge all the people west of the Euphrates—all who know the laws of your God. And you are to teach these laws to anyone who does not know them.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>If anyone does not keep the law of your God and the law of the king, let a strict judgment be executed against him, whether death, banishment, confiscation of property, or imprisonment.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Blessed be the LORD, the God of our fathers, who has put into the heart of the king to so honor the house of the LORD in Jerusalem,</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>and who has shown me favor before the king, his counselors, and all his powerful officials. And because the hand of the LORD my God was upon me, I took courage and gathered the leaders of Israel to return with me.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/ezra/8.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Ezra","chapter":1,"pageUrl":"/bible/ezra/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/001.mp3","slug":"ezra"},{"book":"Ezra","chapter":2,"pageUrl":"/bible/ezra/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/002.mp3","slug":"ezra"},{"book":"Ezra","chapter":3,"pageUrl":"/bible/ezra/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/003.mp3","slug":"ezra"},{"book":"Ezra","chapter":4,"pageUrl":"/bible/ezra/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/004.mp3","slug":"ezra"},{"book":"Ezra","chapter":5,"pageUrl":"/bible/ezra/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/005.mp3","slug":"ezra"},{"book":"Ezra","chapter":6,"pageUrl":"/bible/ezra/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/006.mp3","slug":"ezra"},{"book":"Ezra","chapter":7,"pageUrl":"/bible/ezra/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/007.mp3","slug":"ezra"},{"book":"Ezra","chapter":8,"pageUrl":"/bible/ezra/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/008.mp3","slug":"ezra"},{"book":"Ezra","chapter":9,"pageUrl":"/bible/ezra/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/009.mp3","slug":"ezra"},{"book":"Ezra","chapter":10,"pageUrl":"/bible/ezra/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_15_Ezr_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezra/010.mp3","slug":"ezra"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-kings/9.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="9" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="9" data-bible-chapter-index="8" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Kings 9</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -249,53 +249,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-kings/8.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-kings/10.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_12_2Ki_009_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Kings 9">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Kings 9</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_12_2Ki_009_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Kings 9">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/12_2Kings009.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Kings 9">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -692,206 +675,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Now Elisha the prophet summoned one of the sons of the prophets and said to him, “Tuck your cloak under your belt, take this flask of oil, and go to Ramoth-gilead.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>When you arrive, look for Jehu son of Jehoshaphat, the son of Nimshi. Go in, get him away from his companions, and take him to an inner room.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Then take the flask of oil, pour it on his head, and declare, ‘This is what the LORD says: I anoint you king over Israel.’ Then open the door and run. Do not delay!”</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>So the young prophet went to Ramoth-gilead,</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>and when he arrived, the army commanders were sitting there. “I have a message for you, commander,” he said. “For which of us?” asked Jehu. “For you, commander,” he replied.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>So Jehu got up and went into the house, where the young prophet poured the oil on his head and declared, “This is what the LORD, the God of Israel, says: ‘I anoint you king over the LORD’s people Israel.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>And you are to strike down the house of your master Ahab, so that I may avenge the blood of My servants the prophets and the blood of all the servants of the LORD shed by the hand of Jezebel.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>The whole house of Ahab will perish, and I will cut off from Ahab every male, both slave and free, in Israel.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>I will make the house of Ahab like the houses of Jeroboam son of Nebat and Baasha son of Ahijah.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And on the plot of ground at Jezreel the dogs will devour Jezebel, and there will be no one to bury her.’” Then the young prophet opened the door and ran.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>When Jehu went out to the servants of his master, they asked, “Is everything all right? Why did this madman come to you?” “You know his kind and their babble,” he replied.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>“That is a lie!” they said. “Tell us now!” So Jehu answered, “He talked to me about this and that, saying, ‘This is what the LORD says: I anoint you king over Israel.’”</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Quickly, each man took his garment and put it under Jehu on the bare steps. Then they blew the ram’s horn and proclaimed, “Jehu is king!”</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>Thus Jehu son of Jehoshaphat, the son of Nimshi, conspired against Joram. (Now Joram and all Israel had been defending Ramoth-gilead against Hazael king of Aram,</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>but King Joram had returned to Jezreel to recover from the wounds he had suffered at the hands of the Arameans in the battle against Hazael their king.) So Jehu said, “If you commanders wish to make me king, then do not let anyone escape from the city to go and tell it in Jezreel.”</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Then Jehu got into his chariot and went to Jezreel, because Joram was laid up there. And Ahaziah king of Judah had gone down to see him.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Now the watchman standing on the tower in Jezreel saw Jehu’s troops approaching, and he called out, “I see a company of troops!” “Choose a rider,” Joram commanded. “Send him out to meet them and ask, ‘Have you come in peace?’”</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>So a horseman rode off to meet Jehu and said, “This is what the king asks: ‘Have you come in peace?’” “What do you know about peace?” Jehu replied. “Fall in behind me.” And the watchman reported, “The messenger reached them, but he is not coming back.”</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>So the king sent out a second horseman, who went to them and said, “This is what the king asks: ‘Have you come in peace?’” “What do you know about peace?” Jehu replied. “Fall in behind me.”</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Again the watchman reported, “He reached them, but he is not coming back. And the charioteer is driving like Jehu son of Nimshi—he is driving like a madman!”</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>“Harness!” Joram shouted, and they harnessed his chariot. Then Joram king of Israel and Ahaziah king of Judah set out, each in his own chariot, and met Jehu on the property of Naboth the Jezreelite.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>When Joram saw Jehu, he asked, “Have you come in peace, Jehu?” “How can there be peace,” he replied, “as long as the idolatry and witchcraft of your mother Jezebel abound?”</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Joram turned around and fled, calling out to Ahaziah, “Treachery, Ahaziah!”</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Then Jehu drew his bow and shot Joram between the shoulders. The arrow pierced his heart, and he slumped down in his chariot.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>And Jehu said to Bidkar his officer, “Pick him up and throw him into the field of Naboth the Jezreelite. For remember that when you and I were riding together behind his father Ahab, the LORD lifted up this burden against him:</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>‘As surely as I saw the blood of Naboth and the blood of his sons yesterday, declares the LORD, so will I repay you on this plot of ground, declares the LORD.’ Now then, according to the word of the LORD, pick him up and throw him on the plot of ground.”</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>When King Ahaziah of Judah saw this, he fled up the road toward Beth-haggan. And Jehu pursued him, shouting, “Shoot him too!” So they shot Ahaziah in his chariot on the Ascent of Gur, near Ibleam, and he fled to Megiddo and died there.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Then his servants carried him by chariot to Jerusalem and buried him with his fathers in his tomb in the City of David.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>(In the eleventh year of Joram son of Ahab, Ahaziah had become king over Judah.)</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Now when Jehu arrived in Jezreel, Jezebel heard of it. So she painted her eyes, adorned her head, and looked down from a window.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>And as Jehu entered the gate, she asked, “Have you come in peace, O Zimri, murderer of your master?”</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>He looked up at the window and called out, “Who is on my side? Who?” And two or three eunuchs looked down at him.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>“Throw her down!” yelled Jehu. So they threw her down, and her blood splattered on the wall and on the horses as they trampled her underfoot.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Then Jehu went in and ate and drank. “Take care of this cursed woman,” he said, “and bury her, for she was the daughter of a king.”</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>But when they went out to bury her, they found nothing but her skull, her feet, and the palms of her hands.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>So they went back and told Jehu, who replied, “This is the word of the LORD, which He spoke through His servant Elijah the Tishbite: ‘On the plot of ground at Jezreel the dogs will devour the flesh of Jezebel.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And Jezebel’s body will lie like dung in the field on the plot of ground at Jezreel, so that no one can say: This is Jezebel.’”</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-kings/10.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Kings","chapter":1,"pageUrl":"/bible/2-kings/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/001.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":2,"pageUrl":"/bible/2-kings/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/002.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":3,"pageUrl":"/bible/2-kings/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/003.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":4,"pageUrl":"/bible/2-kings/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/004.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":5,"pageUrl":"/bible/2-kings/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/005.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":6,"pageUrl":"/bible/2-kings/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/006.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":7,"pageUrl":"/bible/2-kings/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/007.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":8,"pageUrl":"/bible/2-kings/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/008.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":9,"pageUrl":"/bible/2-kings/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/009.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":10,"pageUrl":"/bible/2-kings/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/010.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":11,"pageUrl":"/bible/2-kings/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/011.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":12,"pageUrl":"/bible/2-kings/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/012.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":13,"pageUrl":"/bible/2-kings/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/013.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":14,"pageUrl":"/bible/2-kings/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/014.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":15,"pageUrl":"/bible/2-kings/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/015.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":16,"pageUrl":"/bible/2-kings/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/016.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":17,"pageUrl":"/bible/2-kings/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/017.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":18,"pageUrl":"/bible/2-kings/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/018.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":19,"pageUrl":"/bible/2-kings/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/019.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":20,"pageUrl":"/bible/2-kings/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/020.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":21,"pageUrl":"/bible/2-kings/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/021.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":22,"pageUrl":"/bible/2-kings/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/022.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":23,"pageUrl":"/bible/2-kings/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/023.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":24,"pageUrl":"/bible/2-kings/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/024.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":25,"pageUrl":"/bible/2-kings/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/025.mp3","slug":"2-kings"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

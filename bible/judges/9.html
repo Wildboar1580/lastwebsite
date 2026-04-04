@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/judges/9.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="judges" data-bible-chapter="9" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="judges" data-bible-chapter="9" data-bible-chapter-index="8" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Judges 9</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -241,53 +241,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/judges/8.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/judges/10.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_07_Jdg_009_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Judges 9">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Judges 9</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_07_Jdg_009_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Judges 9">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/07_Judges009.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Judges 9">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -884,306 +867,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Now Abimelech son of Jerubbaal went to his mother’s brothers at Shechem and said to them and to all the clan of his mother,</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>“Please ask all the leaders of Shechem, ‘Is it better for you that seventy men, all the sons of Jerubbaal, rule over you, or just one man?’ Remember that I am your own flesh and blood.”</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>And when his mother’s brothers spoke all these words about him in the presence of all the leaders of Shechem, their hearts were inclined to follow Abimelech, for they said, “He is our brother.”</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>So they gave him seventy shekels of silver from the temple of Baal-berith, with which Abimelech hired some worthless and reckless men to follow him.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>He went to his father’s house in Ophrah, and on one stone murdered his seventy brothers, the sons of Jerubbaal. But Jotham, the youngest son of Jerubbaal, survived, because he hid himself.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>Then all the leaders of Shechem and Beth-millo gathered beside the oak at the pillar in Shechem and proceeded to make Abimelech their king.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>When this was reported to Jotham, he climbed to the top of Mount Gerizim, raised his voice, and cried out: “Listen to me, O leaders of Shechem, and may God listen to you.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>One day the trees set out to anoint a king for themselves. They said to the olive tree, ‘Reign over us.’</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>But the olive tree replied, ‘Should I stop giving my oil that honors both God and man, to hold sway over the trees?’</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Then the trees said to the fig tree, ‘Come and reign over us.’</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>But the fig tree replied, ‘Should I stop giving my sweetness and my good fruit, to hold sway over the trees?’</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Then the trees said to the grapevine, ‘Come and reign over us.’</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>But the grapevine replied, ‘Should I stop giving my wine that cheers both God and man, to hold sway over the trees?’</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>Finally all the trees said to the thornbush, ‘Come and reign over us.’</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>But the thornbush replied, ‘If you really are anointing me as king over you, come and find refuge in my shade. But if not, may fire come out of the thornbush and consume the cedars of Lebanon.’</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Now if you have acted faithfully and honestly in making Abimelech king, if you have done well by Jerubbaal and his family, and if you have done to him as he deserves—</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>for my father fought for you and risked his life to deliver you from the hand of Midian,</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>but you have risen up against my father’s house this day and killed his seventy sons on a single stone, and you have made Abimelech, the son of his maidservant, king over the leaders of Shechem because he is your brother—</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>if you have acted faithfully and honestly toward Jerubbaal and his house this day, then may you rejoice in Abimelech, and he in you.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>But if not, may fire come from Abimelech and consume the leaders of Shechem and Beth-millo, and may fire come from the leaders of Shechem and Beth-millo and consume Abimelech.”</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Then Jotham ran away, escaping to Beer, and he lived there for fear of his brother Abimelech.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>After Abimelech had reigned over Israel for three years,</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>God sent a spirit of animosity between Abimelech and the leaders of Shechem and caused them to treat Abimelech deceitfully,</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>in order that the crime against the seventy sons of Jerubbaal might come to justice and their blood be avenged on their brother Abimelech and on the leaders of Shechem, who had helped him murder his brothers.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>The leaders of Shechem set up an ambush against Abimelech on the hilltops, and they robbed all who passed by them on the road. So this was reported to Abimelech.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Meanwhile, Gaal son of Ebed came with his brothers and crossed into Shechem, and the leaders of Shechem put their confidence in him.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>And after they had gone out into the fields, gathered grapes from their vineyards, and trodden them, they held a festival and went into the house of their god; and as they ate and drank, they cursed Abimelech.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Then Gaal son of Ebed said, “Who is Abimelech, and who is Shechem, that we should serve him? Is he not the son of Jerubbaal, and is not Zebul his officer? You are to serve the men of Hamor, the father of Shechem. Why should we serve Abimelech?</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>If only this people were under my authority, I would remove Abimelech; I would say to him, ‘Muster your army and come out!’”</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>When Zebul the governor of the city heard the words of Gaal son of Ebed, he burned with anger.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>So he covertly sent messengers to Abimelech to say, “Look, Gaal son of Ebed and his brothers have come to Shechem and are stirring up the city against you.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Now then, tonight you and the people with you are to come and lie in wait in the fields.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>And in the morning at sunrise, get up and advance against the city. When Gaal and his men come out against you, do to them whatever you are able.”</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>So Abimelech and all his troops set out by night and lay in wait against Shechem in four companies.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Now Gaal son of Ebed went out and stood at the entrance of the city gate just as Abimelech and his men came out from their hiding places.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>When Gaal saw the people, he said to Zebul, “Look, people are coming down from the mountains!” But Zebul replied, “The shadows of the mountains look like men to you.”</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Then Gaal spoke up again, “Look, people are coming down from the center of the land, and one company is coming by way of the Diviners’ Oak.”</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>“Where is your gloating now?” Zebul replied. “You said, ‘Who is Abimelech that we should serve him?’ Are these not the people you ridiculed? Go out now and fight them!”</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>So Gaal went out before the leaders of Shechem and fought against Abimelech,</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>but Abimelech pursued him, and Gaal fled before him. And many Shechemites fell wounded all the way to the entrance of the gate.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Abimelech stayed in Arumah, and Zebul drove Gaal and his brothers out of Shechem.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>The next day the people of Shechem went out into the fields, and this was reported to Abimelech.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>So he took his men, divided them into three companies, and lay in wait in the fields. When he saw the people coming out of the city, he rose up against them and attacked them.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>Then Abimelech and the companies with him rushed forward and took their stand at the entrance of the city gate. The other two companies rushed against all who were in the fields and struck them down.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>And all that day Abimelech fought against the city until he had captured it and killed its people. Then he demolished the city and sowed it with salt.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>On hearing of this, all the leaders in the tower of Shechem entered the inner chamber of the temple of El-berith.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>And when Abimelech was told that all the leaders in the tower of Shechem were gathered there,</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>he and all his men went up to Mount Zalmon. Abimelech took his axe in his hand and cut a branch from the trees, which he lifted to his shoulder, saying to his men, “Hurry and do what you have seen me do.”</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>So each man also cut his own branch and followed Abimelech. Then they piled the branches against the inner chamber and set it on fire above them, killing everyone in the tower of Shechem, about a thousand men and women.</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>Then Abimelech went to Thebez, encamped against it, and captured it.</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>But there was a strong tower inside the city, and all the men, women, and leaders of the city fled there. They locked themselves in and went up to the roof of the tower.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>When Abimelech came to attack the tower, he approached its entrance to set it on fire.</span>
-              </p>
-            
-              <p id="tyndale-53" class="bible-verse">
-                <span class="verse-num">53</span>
-                <span>But a woman dropped an upper millstone on Abimelech’s head, crushing his skull.</span>
-              </p>
-            
-              <p id="tyndale-54" class="bible-verse">
-                <span class="verse-num">54</span>
-                <span>He quickly called his armor-bearer, saying, “Draw your sword and kill me, lest they say of me, ‘A woman killed him.’” So Abimelech’s armor-bearer ran his sword through him, and he died.</span>
-              </p>
-            
-              <p id="tyndale-55" class="bible-verse">
-                <span class="verse-num">55</span>
-                <span>And when the Israelites saw that Abimelech was dead, they all went home.</span>
-              </p>
-            
-              <p id="tyndale-56" class="bible-verse">
-                <span class="verse-num">56</span>
-                <span>In this way God repaid the wickedness that Abimelech had done to his father in murdering his seventy brothers.</span>
-              </p>
-            
-              <p id="tyndale-57" class="bible-verse">
-                <span class="verse-num">57</span>
-                <span>And God also brought all the wickedness of the men of Shechem back upon their own heads. So the curse of Jotham son of Jerubbaal came upon them.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/judges/10.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Judges","chapter":1,"pageUrl":"/bible/judges/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/001.mp3","slug":"judges"},{"book":"Judges","chapter":2,"pageUrl":"/bible/judges/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/002.mp3","slug":"judges"},{"book":"Judges","chapter":3,"pageUrl":"/bible/judges/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/003.mp3","slug":"judges"},{"book":"Judges","chapter":4,"pageUrl":"/bible/judges/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/004.mp3","slug":"judges"},{"book":"Judges","chapter":5,"pageUrl":"/bible/judges/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/005.mp3","slug":"judges"},{"book":"Judges","chapter":6,"pageUrl":"/bible/judges/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/006.mp3","slug":"judges"},{"book":"Judges","chapter":7,"pageUrl":"/bible/judges/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/007.mp3","slug":"judges"},{"book":"Judges","chapter":8,"pageUrl":"/bible/judges/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/008.mp3","slug":"judges"},{"book":"Judges","chapter":9,"pageUrl":"/bible/judges/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/009.mp3","slug":"judges"},{"book":"Judges","chapter":10,"pageUrl":"/bible/judges/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/010.mp3","slug":"judges"},{"book":"Judges","chapter":11,"pageUrl":"/bible/judges/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/011.mp3","slug":"judges"},{"book":"Judges","chapter":12,"pageUrl":"/bible/judges/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/012.mp3","slug":"judges"},{"book":"Judges","chapter":13,"pageUrl":"/bible/judges/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/013.mp3","slug":"judges"},{"book":"Judges","chapter":14,"pageUrl":"/bible/judges/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/014.mp3","slug":"judges"},{"book":"Judges","chapter":15,"pageUrl":"/bible/judges/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/015.mp3","slug":"judges"},{"book":"Judges","chapter":16,"pageUrl":"/bible/judges/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/016.mp3","slug":"judges"},{"book":"Judges","chapter":17,"pageUrl":"/bible/judges/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/017.mp3","slug":"judges"},{"book":"Judges","chapter":18,"pageUrl":"/bible/judges/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/018.mp3","slug":"judges"},{"book":"Judges","chapter":19,"pageUrl":"/bible/judges/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/019.mp3","slug":"judges"},{"book":"Judges","chapter":20,"pageUrl":"/bible/judges/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/020.mp3","slug":"judges"},{"book":"Judges","chapter":21,"pageUrl":"/bible/judges/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_07_Jdg_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/judges/021.mp3","slug":"judges"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

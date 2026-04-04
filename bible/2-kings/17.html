@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-kings/17.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="17" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="17" data-bible-chapter-index="16" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Kings 17</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -249,53 +249,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-kings/16.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-kings/18.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_12_2Ki_017_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Kings 17">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Kings 17</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_12_2Ki_017_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Kings 17">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/12_2Kings017.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Kings 17">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -732,226 +715,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>In the twelfth year of the reign of Ahaz over Judah, Hoshea son of Elah became king of Israel, and he reigned in Samaria nine years.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>And he did evil in the sight of the LORD, but not like the kings of Israel who preceded him.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Shalmaneser king of Assyria attacked him, and Hoshea became his vassal and paid him tribute.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>But the king of Assyria discovered that Hoshea had conspired to send envoys to King So of Egypt, and that he had not paid tribute to the king of Assyria as in previous years. Therefore the king of Assyria arrested Hoshea and put him in prison.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Then the king of Assyria invaded the whole land, marched up to Samaria, and besieged it for three years.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>In the ninth year of Hoshea, the king of Assyria captured Samaria and carried away the Israelites to Assyria, where he settled them in Halah, in Gozan by the Habor River, and in the cities of the Medes.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>All this happened because the people of Israel had sinned against the LORD their God, who had brought them out of the land of Egypt from under the hand of Pharaoh king of Egypt. They had worshiped other gods</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>and walked in the customs of the nations that the LORD had driven out before the Israelites, as well as in the practices introduced by the kings of Israel.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>The Israelites secretly did things against the LORD their God that were not right. From watchtower to fortified city, they built high places in all their cities.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>They set up for themselves sacred pillars and Asherah poles on every high hill and under every green tree.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>They burned incense on all the high places like the nations that the LORD had driven out before them. They did wicked things, provoking the LORD to anger.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>They served idols, although the LORD had told them, “You shall not do this thing.”</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Yet through all His prophets and seers, the LORD warned Israel and Judah, saying, “Turn from your wicked ways and keep My commandments and statutes, according to the entire Law that I commanded your fathers and delivered to you through My servants the prophets.”</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>But they would not listen, and they stiffened their necks like their fathers, who did not believe the LORD their God.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>They rejected His statutes and the covenant He had made with their fathers, as well as the decrees He had given them. They pursued worthless idols and became worthless themselves, going after the surrounding nations that the LORD had commanded them not to imitate.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>They abandoned all the commandments of the LORD their God and made for themselves two cast idols of calves and an Asherah pole. They bowed down to all the host of heaven and served Baal.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>They sacrificed their sons and daughters in the fire and practiced divination and soothsaying. They devoted themselves to doing evil in the sight of the LORD, provoking Him to anger.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>So the LORD was very angry with Israel, and He removed them from His presence. Only the tribe of Judah remained,</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>and even Judah did not keep the commandments of the LORD their God, but lived according to the customs Israel had introduced.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>So the LORD rejected all the descendants of Israel. He afflicted them and delivered them into the hands of plunderers, until He had banished them from His presence.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>When the LORD had torn Israel away from the house of David, they made Jeroboam son of Nebat king, and Jeroboam led Israel away from following the LORD and caused them to commit a great sin.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>The Israelites persisted in all the sins that Jeroboam had committed and did not turn away from them.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Finally, the LORD removed Israel from His presence, as He had declared through all His servants the prophets. So Israel was exiled from their homeland into Assyria, where they are to this day.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Then the king of Assyria brought people from Babylon, Cuthah, Avva, Hamath, and Sepharvaim and settled them in the towns of Samaria to replace the Israelites. They took possession of Samaria and lived in its towns.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Now when the settlers first lived there, they did not worship the LORD, so He sent lions among them, which killed some of them.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>So they spoke to the king of Assyria, saying, “The peoples that you have removed and placed in the cities of Samaria do not know the requirements of the God of the land. Because of this, He has sent lions among them, which are indeed killing them off.”</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Then the king of Assyria commanded: “Send back one of the priests you carried off from Samaria, and have him go back to live there and teach the requirements of the God of the land.”</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Thus one of the priests they had carried away came and lived in Bethel, and he began to teach them how they should worship the LORD.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>Nevertheless, the people of each nation continued to make their own gods in the cities where they had settled, and they set them up in the shrines that the people of Samaria had made on the high places.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>The men of Babylon made Succoth-benoth, the men of Cuth made Nergal, the men of Hamath made Ashima,</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>the Avvites made Nibhaz and Tartak, and the Sepharvites burned their children in the fire to Adrammelech and Anammelech the gods of Sepharvaim.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>So the new residents worshiped the LORD, but they also appointed for themselves priests of all sorts to serve in the shrines of the high places.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>They worshiped the LORD, but they also served their own gods according to the customs of the nations from which they had been carried away.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>To this day they are still practicing their former customs. None of them worship the LORD or observe the statutes, ordinances, laws, and commandments that the LORD gave the descendants of Jacob, whom He named Israel.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>For the LORD had made a covenant with the Israelites and commanded them, “Do not worship other gods or bow down to them; do not serve them or sacrifice to them.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Instead, worship the LORD, who brought you out of the land of Egypt with great power and an outstretched arm. You are to bow down to Him and offer sacrifices to Him.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>And you must always be careful to observe the statutes, ordinances, laws, and commandments He wrote for you. Do not worship other gods.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>Do not forget the covenant I have made with you. Do not worship other gods,</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>but worship the LORD your God, and He will deliver you from the hands of all your enemies.”</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>But they would not listen, and they persisted in their former customs.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>So these nations worshiped the LORD but also served their idols, and to this day their children and grandchildren continue to do as their fathers did.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-kings/18.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Kings","chapter":1,"pageUrl":"/bible/2-kings/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/001.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":2,"pageUrl":"/bible/2-kings/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/002.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":3,"pageUrl":"/bible/2-kings/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/003.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":4,"pageUrl":"/bible/2-kings/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/004.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":5,"pageUrl":"/bible/2-kings/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/005.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":6,"pageUrl":"/bible/2-kings/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/006.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":7,"pageUrl":"/bible/2-kings/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/007.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":8,"pageUrl":"/bible/2-kings/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/008.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":9,"pageUrl":"/bible/2-kings/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/009.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":10,"pageUrl":"/bible/2-kings/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/010.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":11,"pageUrl":"/bible/2-kings/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/011.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":12,"pageUrl":"/bible/2-kings/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/012.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":13,"pageUrl":"/bible/2-kings/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/013.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":14,"pageUrl":"/bible/2-kings/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/014.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":15,"pageUrl":"/bible/2-kings/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/015.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":16,"pageUrl":"/bible/2-kings/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/016.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":17,"pageUrl":"/bible/2-kings/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/017.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":18,"pageUrl":"/bible/2-kings/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/018.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":19,"pageUrl":"/bible/2-kings/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/019.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":20,"pageUrl":"/bible/2-kings/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/020.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":21,"pageUrl":"/bible/2-kings/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/021.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":22,"pageUrl":"/bible/2-kings/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/022.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":23,"pageUrl":"/bible/2-kings/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/023.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":24,"pageUrl":"/bible/2-kings/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/024.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":25,"pageUrl":"/bible/2-kings/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/025.mp3","slug":"2-kings"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/luke/12.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="luke" data-bible-chapter="12" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="luke" data-bible-chapter="12" data-bible-chapter-index="11" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Luke 12</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -247,53 +247,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/luke/11.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/luke/13.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_42_Luk_012_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Luke 12">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Luke 12</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_42_Luk_012_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Luke 12">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/42_Luke012.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Luke 12">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -910,316 +893,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>As ther gadered together an innumerable multitude of people (in so moche that they trood one another) he began to saye vnto his disciples: Fyrst of all beware of the leve of the Pharises which is ypocrisy.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>For ther is no thinge covered that shall not be vncovered: nether hyd that shall not be knowen.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>For whatsoever ye have spoken in in darknes: that same shalbe hearde in light. And that which ye have spoken in the the eare eve in secret places shalbe preached even on the toppe of the housses.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>I saye vnto you my fredes: Be not afrayde of them that kyll the body and after that have no moare that they can do.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>But I will shewe you whom ye shall feare. Feare him which after he hath killed hath power to cast into hell. Ye I saye vnto you him feare.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>Are not five sparowes bought for two farthinges? And yet not one of them is forgotten of God.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Also even the very heres of youre heedes are nombred. Feare not therfore: ye are moare of value then many sparowes.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>I saye vnto you: Whosoever confesseth me before men eve him shall ye sonne of man confesse also before ye angels of God.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>And he that denyeth me before men: shalbe denyed before ye angels of God.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And whosoever speaketh a worde agaynst ye sonne of ma it shalbe forgeven him. But vnto him yt blasphemeth the holy goost it shall not be forgeven.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>When they bringe you vnto the synagoges and vnto the rulers and officers take no thought how or what thinge ye shall answer or what ye shall speake.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>For the holy goost shall teache you in the same houre what ye ought to saye.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>One of the company sayde vnto hym: Master byd my brother devide the enheritauce with me.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>And he sayde vnto him: Man who made me a iudge or a devider over you?</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Wherfore he sayde vnto them: take hede and beware of covetousnes. For no mannes lyfe stondeth in the aboundaunce of the thinges which he possesseth.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And he put forth a similitude vnto them sayinge: The groude of a certayne riche ma brought forth frutes plenteously</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>and he thought in himsilfe sayinge: what shall I do? because I have noo roume where to bestowe my frutes?</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>And he sayde: This will I do. I will destroye my barnes and bilde greater and therin will I gadder all my frutes and my goodes:</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>and I will saye to my soule: Soule thou hast moch goodes layde vp in stoore for many yeares take thyne ease: eate drinke and be mery.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>But God sayde vnto him: Thou fole this night will they fetche awaye thy soule agayne from the. Then whose shall thoose thinges be which thou hast provyded?</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>So is it with him that gadereth ryches and is not ryche in God.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>And he spake vnto his disciples: Therfore I saye vnto you: take no thought for youre lyfe what ye shall eate nether for youre body what ye shall put on.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>The lyfe is moare then meate and the bodye is moare then rayment.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>Considre the ravens for they nether sowe nor repe which nether have stoorehousse ner barne and yet God fedeth them. How moche are ye better then the foules.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>Which of you with takynge thought can adde to his stature one cubit?</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Yf ye then be not able to do that thinge which is least: why take ye thought for the remmaunt?</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Considre the lylies how they growe: They laboure not: they spyn not: and yet I saye vnto you that Salomon in all this royalte was not clothed lyke to one of these.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Yf the grasse which is todaye in the felde and tomorowe shalbe cast into the fornace God so clothe: how moche moore will he clothe you o ye endued wt litell faith?</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>And axe not what ye shall eate or what ye shall drinke nether clyme ye vp an hye</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>for all suche thinges the hethen people of the worlde seke for. Youre father knoweth that ye have nede of suche thinges.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Wherfore seke ye after the kyngedome of God and all these thinges shalbe ministred vnto you.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Feare not litell floocke for it is youre fathers pleasure to geve you a kingdome.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>Sell that ye have and geve almes. And make you bagges which wexe not olde and treasure that fayleth not in heaven where noo these commeth nether moth corrupteth.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>For where youre treasure is there will youre hertes be also.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Let youre loynes be gerdde about and youre lightes brennynge</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>and ye youre selves lyke vnto men that wayte for their master when he will returne fro a weddinge: that assone as he cometh and knocketh they maye ope vnto him.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Happy are those servauntes which the Lorde when he cometh shall fynde wakynge. Verely I saye vnto you he will gerdde him selfe about and make them sit doune to meate and walke by and minister vnto them.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>And yf he come in the seconde watche ye if he come in the thyrde watche and shall fynde them soo happy are those servauntes.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>This vnderstonde that yf the good man of the housse knewe what houre ye these wolde come he wolde suerly watche: and not suffer his housse to be broken vp.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>Be ye prepared therfore: for the sonne of man will come at an houre when ye thinke not.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Then Peter sayde vnto him: Master tellest thou this similitude vnto vs or to all men?</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>And the Lorde sayde: If there be any faith full servaut and wise whom his Lorde shall make ruler over his housholde to geve them their duetie of meate at due season:</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>happy is that servaunt whom his master when he cometh shall finde soo doinge.</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>Of a trueth I saye vnto you: that he will make him ruler over all that he hath.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>But and yf the evyll servaunt shall saye in his hert: My master wyll differre his cominge and shall beginne to smyte the servauntes and maydens and to eate and drinke and to be dronken:</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>the Lorde of that servaunt will come in a daye when he thinketh not and at an houre when he is not ware and will devyde him and will geve him his rewarde with the vnbelevers.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>The servaut that knewe his masters will and prepared not him selfe nether dyd accordinge to his will shalbe bete with many strypes.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>But he that knewe not and yet dyd committe thinges worthy of strypes shalbe beaten with feawe strypes. For vnto whom moche is geven of him shalbe moche requyred. And to whom men moche commyt the moare of him will they axe.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>I am come to sende fyre on erth: and what is my dysyre but that it were all redy kyndled?</span>
-              </p>
-            
-              <p id="tyndale-50" class="bible-verse">
-                <span class="verse-num">50</span>
-                <span>Not with stondinge I must de baptised with a baptyme: and how am I payned till it be ended?</span>
-              </p>
-            
-              <p id="tyndale-51" class="bible-verse">
-                <span class="verse-num">51</span>
-                <span>Suppose ye that I am come to sende peace on erth? I tell you naye: but rather debate.</span>
-              </p>
-            
-              <p id="tyndale-52" class="bible-verse">
-                <span class="verse-num">52</span>
-                <span>For fro hence forthe ther shalbe five in one housse devided thre agaynst two and two agaynst thre.</span>
-              </p>
-            
-              <p id="tyndale-53" class="bible-verse">
-                <span class="verse-num">53</span>
-                <span>The father shalbe devided agaynst the sonne and the sonne agaynst the father. The mother agaynst the doughter and the doughter agaynst the mother. The motereleawe agaynst hir doughterelawe and the doughterelawe agaynst hir motherelawe.</span>
-              </p>
-            
-              <p id="tyndale-54" class="bible-verse">
-                <span class="verse-num">54</span>
-                <span>Then sayde he to the people: when ye se a cloude ryse out of the west strayght waye ye saye: we shall have a shower and soo it is.</span>
-              </p>
-            
-              <p id="tyndale-55" class="bible-verse">
-                <span class="verse-num">55</span>
-                <span>And when ye se the south wynde blow ye saye: we shall have heet and it cometh to passe.</span>
-              </p>
-            
-              <p id="tyndale-56" class="bible-verse">
-                <span class="verse-num">56</span>
-                <span>Ypocrites ye can skyll of the fassion of the erth and of the skye: but what is ye cause that ye canot skyll of this time?</span>
-              </p>
-            
-              <p id="tyndale-57" class="bible-verse">
-                <span class="verse-num">57</span>
-                <span>Ye and why iudge ye not of youre selves what is righte?</span>
-              </p>
-            
-              <p id="tyndale-58" class="bible-verse">
-                <span class="verse-num">58</span>
-                <span>Whill thou goest with thyne adversary to the ruler: as thou arte in the waye geve diligence that thou mayst be delivered fro him least he bringe the to the iudge and the iudge delyver the to the iaylar and the iaylar cast the in to preson.</span>
-              </p>
-            
-              <p id="tyndale-59" class="bible-verse">
-                <span class="verse-num">59</span>
-                <span>I tell ye thou departest not thence tyll thou have made good ye vtmost myte.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/luke/13.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Luke","chapter":1,"pageUrl":"/bible/luke/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/001.mp3","slug":"luke"},{"book":"Luke","chapter":2,"pageUrl":"/bible/luke/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/002.mp3","slug":"luke"},{"book":"Luke","chapter":3,"pageUrl":"/bible/luke/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/003.mp3","slug":"luke"},{"book":"Luke","chapter":4,"pageUrl":"/bible/luke/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/004.mp3","slug":"luke"},{"book":"Luke","chapter":5,"pageUrl":"/bible/luke/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/005.mp3","slug":"luke"},{"book":"Luke","chapter":6,"pageUrl":"/bible/luke/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/006.mp3","slug":"luke"},{"book":"Luke","chapter":7,"pageUrl":"/bible/luke/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/007.mp3","slug":"luke"},{"book":"Luke","chapter":8,"pageUrl":"/bible/luke/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/008.mp3","slug":"luke"},{"book":"Luke","chapter":9,"pageUrl":"/bible/luke/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/009.mp3","slug":"luke"},{"book":"Luke","chapter":10,"pageUrl":"/bible/luke/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/010.mp3","slug":"luke"},{"book":"Luke","chapter":11,"pageUrl":"/bible/luke/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/011.mp3","slug":"luke"},{"book":"Luke","chapter":12,"pageUrl":"/bible/luke/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/012.mp3","slug":"luke"},{"book":"Luke","chapter":13,"pageUrl":"/bible/luke/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/013.mp3","slug":"luke"},{"book":"Luke","chapter":14,"pageUrl":"/bible/luke/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/014.mp3","slug":"luke"},{"book":"Luke","chapter":15,"pageUrl":"/bible/luke/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/015.mp3","slug":"luke"},{"book":"Luke","chapter":16,"pageUrl":"/bible/luke/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/016.mp3","slug":"luke"},{"book":"Luke","chapter":17,"pageUrl":"/bible/luke/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/017.mp3","slug":"luke"},{"book":"Luke","chapter":18,"pageUrl":"/bible/luke/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/018.mp3","slug":"luke"},{"book":"Luke","chapter":19,"pageUrl":"/bible/luke/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/019.mp3","slug":"luke"},{"book":"Luke","chapter":20,"pageUrl":"/bible/luke/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/020.mp3","slug":"luke"},{"book":"Luke","chapter":21,"pageUrl":"/bible/luke/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/021.mp3","slug":"luke"},{"book":"Luke","chapter":22,"pageUrl":"/bible/luke/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/022.mp3","slug":"luke"},{"book":"Luke","chapter":23,"pageUrl":"/bible/luke/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/023.mp3","slug":"luke"},{"book":"Luke","chapter":24,"pageUrl":"/bible/luke/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_42_Luk_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/luke/024.mp3","slug":"luke"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

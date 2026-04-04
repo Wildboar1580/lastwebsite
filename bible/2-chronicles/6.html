@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-chronicles/6.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-chronicles" data-bible-chapter="6" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-chronicles" data-bible-chapter="6" data-bible-chapter-index="5" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Chronicles 6</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -271,53 +271,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-chronicles/5.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-chronicles/7.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_14_2Ch_006_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Chronicles 6">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Chronicles 6</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_14_2Ch_006_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Chronicles 6">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/14_2Chronicles006.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Chronicles 6">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -764,231 +747,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Then Solomon declared: “The LORD has said that He would dwell in the thick cloud.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>But I have built You an exalted house, a place for You to dwell forever.”</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>And as the whole assembly of Israel stood there, the king turned around and blessed them all</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>and said: “Blessed be the LORD, the God of Israel, who has fulfilled with His own hand what He spoke with His mouth to my father David, saying,</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>‘Since the day I brought My people out of the land of Egypt, I have not chosen a city from any tribe of Israel in which to build a house so that My Name would be there, nor have I chosen anyone to be ruler over My people Israel.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>But now I have chosen Jerusalem for My Name to be there, and I have chosen David to be over My people Israel.’</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Now it was in the heart of my father David to build a house for the Name of the LORD, the God of Israel.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>But the LORD said to my father David, ‘Since it was in your heart to build a house for My Name, you have done well to have this in your heart.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Nevertheless, you are not the one to build it; but your son, your own offspring, will build the house for My Name.’</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>Now the LORD has fulfilled the word that He spoke. I have succeeded my father David, and I sit on the throne of Israel, as the LORD promised. I have built the house for the Name of the LORD, the God of Israel.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And there I have placed the ark, which contains the covenant of the LORD that He made with the children of Israel.”</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>Then Solomon stood before the altar of the LORD in front of the whole assembly of Israel and spread out his hands.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>Now Solomon had made a bronze platform five cubits long, five cubits wide, and three cubits high and had placed it in the middle of the courtyard. He stood on it, knelt down before the whole assembly of Israel, spread out his hands toward heaven,</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>and said: “O LORD, God of Israel, there is no God like You in heaven or on earth, keeping Your covenant of loving devotion with Your servants who walk before You with all their hearts.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>You have kept Your promise to Your servant, my father David. What You spoke with Your mouth You have fulfilled with Your hand this day.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>Therefore now, O LORD, God of Israel, keep for Your servant, my father David, what You promised when You said: ‘You will never fail to have a man to sit before Me on the throne of Israel, if only your descendants guard their way to walk in My law as you have walked before Me.’</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>And now, O LORD, God of Israel, please confirm what You promised to Your servant David.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>But will God indeed dwell with man upon the earth? The heavens, even the highest heavens, cannot contain You, much less this temple I have built.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Yet regard the prayer and plea of Your servant, O LORD my God, so that You may hear the cry and the prayer that Your servant is praying before You.</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>May Your eyes be open toward this temple day and night, toward the place where You said You would put Your Name, so that You may hear the prayer that Your servant prays toward this place.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Hear the plea of Your servant and of Your people Israel when they pray toward this place. May You hear from heaven, Your dwelling place. May You hear and forgive.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>When a man sins against his neighbor and is required to take an oath, and he comes to take an oath before Your altar in this temple,</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>then may You hear from heaven and act. May You judge Your servants, condemning the wicked man by bringing down on his own head what he has done, and justifying the righteous man by rewarding him according to his righteousness.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>When Your people Israel are defeated before an enemy because they have sinned against You, and they return to You and confess Your name, praying and pleading before You in this temple,</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>then may You hear from heaven and forgive the sin of Your people Israel. May You restore them to the land You gave to them and their fathers.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>When the skies are shut and there is no rain because Your people have sinned against You, and they pray toward this place and confess Your name, and they turn from their sins because You have afflicted them,</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>then may You hear from heaven and forgive the sin of Your servants, Your people Israel, so that You may teach them the good way in which they should walk. May You send rain on the land that You gave Your people as an inheritance.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>When famine or plague comes upon the land, or blight or mildew or locusts or grasshoppers, or when their enemies besiege them in their cities, whatever plague or sickness may come,</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>then may whatever prayer or plea Your people Israel make—each knowing his own afflictions and spreading out his hands toward this temple—</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>be heard by You from heaven, Your dwelling place. And may You forgive and repay each man according to all his ways, since You know his heart—for You alone know the hearts of men—</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>so that they may fear You and walk in Your ways all the days they live in the land that You gave to our fathers.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>And as for the foreigner who is not of Your people Israel but has come from a distant land because of Your great name and Your mighty hand and outstretched arm—when he comes and prays toward this temple,</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>then may You hear from heaven, Your dwelling place, and do according to all for which the foreigner calls to You. Then all the peoples of the earth will know Your name and fear You, as do Your people Israel, and they will know that this house I have built is called by Your Name.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>When Your people go to war against their enemies, wherever You send them, and when they pray to You in the direction of this city You have chosen and the house I have built for Your Name,</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>then may You hear from heaven their prayer and their plea, and may You uphold their cause.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>When they sin against You—for there is no one who does not sin—and You become angry with them and deliver them to an enemy who takes them as captives to a land far or near,</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>and when they come to their senses in the land to which they were taken, and they repent and plead with You in the land of their captors, saying, ‘We have sinned and done wrong; we have acted wickedly,’</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>and when they return to You with all their heart and soul in the land of the enemies who took them captive, and when they pray in the direction of the land that You gave to their fathers, the city You have chosen, and the house I have built for Your Name,</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>then may You hear from heaven, Your dwelling place, their prayer and pleas, and may You uphold their cause. May You forgive Your people who sinned against You.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>Now, my God, may Your eyes be open and Your ears attentive to the prayer offered in this place.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>Now therefore, arise, O LORD God, and enter Your resting place, You and the ark of Your might. May Your priests, O LORD God, be clothed with salvation, and may Your godly ones rejoice in goodness.</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>O LORD God, do not reject Your anointed one. Remember Your loving devotion to Your servant David.”</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-chronicles/7.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Chronicles","chapter":1,"pageUrl":"/bible/2-chronicles/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/001.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":2,"pageUrl":"/bible/2-chronicles/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/002.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":3,"pageUrl":"/bible/2-chronicles/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/003.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":4,"pageUrl":"/bible/2-chronicles/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/004.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":5,"pageUrl":"/bible/2-chronicles/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/005.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":6,"pageUrl":"/bible/2-chronicles/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/006.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":7,"pageUrl":"/bible/2-chronicles/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/007.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":8,"pageUrl":"/bible/2-chronicles/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/008.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":9,"pageUrl":"/bible/2-chronicles/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/009.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":10,"pageUrl":"/bible/2-chronicles/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/010.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":11,"pageUrl":"/bible/2-chronicles/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/011.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":12,"pageUrl":"/bible/2-chronicles/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/012.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":13,"pageUrl":"/bible/2-chronicles/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/013.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":14,"pageUrl":"/bible/2-chronicles/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/014.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":15,"pageUrl":"/bible/2-chronicles/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/015.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":16,"pageUrl":"/bible/2-chronicles/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/016.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":17,"pageUrl":"/bible/2-chronicles/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/017.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":18,"pageUrl":"/bible/2-chronicles/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/018.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":19,"pageUrl":"/bible/2-chronicles/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/019.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":20,"pageUrl":"/bible/2-chronicles/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/020.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":21,"pageUrl":"/bible/2-chronicles/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/021.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":22,"pageUrl":"/bible/2-chronicles/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/022.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":23,"pageUrl":"/bible/2-chronicles/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/023.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":24,"pageUrl":"/bible/2-chronicles/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/024.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":25,"pageUrl":"/bible/2-chronicles/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/025.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":26,"pageUrl":"/bible/2-chronicles/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/026.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":27,"pageUrl":"/bible/2-chronicles/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/027.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":28,"pageUrl":"/bible/2-chronicles/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/028.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":29,"pageUrl":"/bible/2-chronicles/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/029.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":30,"pageUrl":"/bible/2-chronicles/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/030.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":31,"pageUrl":"/bible/2-chronicles/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/031.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":32,"pageUrl":"/bible/2-chronicles/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/032.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":33,"pageUrl":"/bible/2-chronicles/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/033.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":34,"pageUrl":"/bible/2-chronicles/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/034.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":35,"pageUrl":"/bible/2-chronicles/35.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_035_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/035.mp3","slug":"2-chronicles"},{"book":"2 Chronicles","chapter":36,"pageUrl":"/bible/2-chronicles/36.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_14_2Ch_036_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-chronicles/036.mp3","slug":"2-chronicles"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

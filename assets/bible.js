@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initBibleControls();
   initBibleSearch();
   initLectionaryPanels();
+  initBibleChapterPage();
 });
 
 let searchIndexPromise;
@@ -118,6 +119,7 @@ async function initBibleControls() {
   const bookDataScript = document.querySelector("#bible-book-options");
   const toggleButtons = [...document.querySelectorAll("[data-view-mode]")];
   const body = document.body;
+  const chapterPlayer = document.querySelector("[data-bible-audio-player]");
 
   if (bookSelect && chapterSelect) {
     const books = bookDataScript ? JSON.parse(bookDataScript.textContent) : await loadBooks();
@@ -150,11 +152,258 @@ async function initBibleControls() {
     });
   }
 
+  if (!chapterPlayer) {
+    toggleButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        body.dataset.bibleView = button.dataset.viewMode;
+        toggleButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      });
+    });
+  }
+}
+
+function initBibleChapterPage() {
+  const player = document.querySelector("[data-bible-audio-player]");
+  const sequenceScript = document.querySelector("#bible-audio-sequence");
+  if (!player || !sequenceScript) return;
+
+  const body = document.body;
+  const toggleButtons = [...document.querySelectorAll("[data-view-mode]")];
+  const audio = player.querySelector("[data-bible-audio]");
+  const preloadAudio = player.querySelector("[data-bible-preload-audio]");
+  const toggle = player.querySelector("[data-audio-toggle]");
+  const icon = player.querySelector("[data-audio-icon]");
+  const progress = player.querySelector("[data-audio-progress]");
+  const current = player.querySelector("[data-audio-current]");
+  const duration = player.querySelector("[data-audio-duration]");
+  const label = player.closest(".bible-audio-card")?.querySelector("[data-bible-audio-label]");
+  const continuousToggle = player.querySelector("[data-bible-continuous-toggle]");
+
+  if (!audio || !preloadAudio || !toggle || !icon || !progress || !current || !duration || !label || !continuousToggle) {
+    return;
+  }
+
+  audio.crossOrigin = "anonymous";
+  preloadAudio.crossOrigin = "anonymous";
+
+  const sequence = JSON.parse(sequenceScript.textContent);
+  const params = new URLSearchParams(window.location.search);
+  const initialBook = body.dataset.bibleBook;
+  const initialChapter = Number(body.dataset.bibleChapter || "1");
+  let view = body.dataset.bibleView || "msb";
+  let currentIndex = Math.max(
+    0,
+    sequence.findIndex((entry) => entry.slug === initialBook && Number(entry.chapter) === initialChapter)
+  );
+  let continuous = params.get("continuous") === "1" || continuousToggle.checked;
+  const shouldAutoplay = params.get("autoplay") === "1";
+  const requestedView = params.get("version");
+  let rafId = 0;
+  let resolvingDuration = false;
+  if (requestedView === "kjv" || requestedView === "msb") {
+    view = requestedView;
+  }
+  continuousToggle.checked = continuous;
+
+  const getAudioUrl = (entry, mode) => mode === "kjv" ? entry.kjvAudioUrl : entry.msbAudioUrl;
+  const getLabel = (entry, mode) => `${mode === "kjv" ? "KJV" : "MSB"} Audio · ${entry.book} ${entry.chapter}`;
+
+  const setProgress = (value) => {
+    progress.value = String(value);
+    progress.style.setProperty("--progress", `${value}%`);
+  };
+
+  const refreshTimeUi = () => {
+    const currentValue = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+    const durationValue = Number.isFinite(audio.duration) && audio.duration > 0 ? audio.duration : 0;
+    current.textContent = formatTime(currentValue);
+    duration.textContent = durationValue > 0 ? formatTime(durationValue) : "…";
+    const progressValue = durationValue > 0 ? (currentValue / durationValue) * 100 : 0;
+    setProgress(progressValue);
+  };
+
+  const tickWhilePlaying = () => {
+    refreshTimeUi();
+    if (!audio.paused) {
+      rafId = window.requestAnimationFrame(tickWhilePlaying);
+    }
+  };
+
+  const stopTicking = () => {
+    if (rafId) {
+      window.cancelAnimationFrame(rafId);
+      rafId = 0;
+    }
+  };
+
+  const resolveStreamDuration = () => {
+    if (resolvingDuration || (Number.isFinite(audio.duration) && audio.duration > 0)) return;
+    resolvingDuration = true;
+    const resumeFrom = audio.currentTime || 0;
+
+    const handleResolved = () => {
+      audio.currentTime = resumeFrom;
+      resolvingDuration = false;
+      refreshTimeUi();
+      audio.removeEventListener("timeupdate", handleResolved);
+    };
+
+    audio.addEventListener("timeupdate", handleResolved);
+    try {
+      audio.currentTime = 1e101;
+    } catch {
+      resolvingDuration = false;
+      audio.removeEventListener("timeupdate", handleResolved);
+    }
+  };
+
+  const syncActiveToggle = () => {
+    toggleButtons.forEach((button) => {
+      button.classList.toggle("is-active", button.dataset.viewMode === view);
+    });
+    body.dataset.bibleView = view;
+  };
+
+  const primeNextChapter = () => {
+    const nextEntry = sequence[currentIndex + 1];
+    if (!continuous || !nextEntry) {
+      preloadAudio.removeAttribute("src");
+      preloadAudio.preload = "none";
+      preloadAudio.load();
+      return;
+    }
+    preloadAudio.src = getAudioUrl(nextEntry, view);
+    preloadAudio.preload = "auto";
+    preloadAudio.load();
+  };
+
+  const loadCurrentChapterAudio = ({ preserveTime = false, autoplay = false } = {}) => {
+    const entry = sequence[currentIndex];
+    if (!entry) return;
+    const priorTime = preserveTime ? audio.currentTime : 0;
+    const wasPaused = audio.paused;
+    const nextSource = getAudioUrl(entry, view);
+
+    audio.src = nextSource;
+    audio.preload = "metadata";
+    audio.load();
+    label.textContent = getLabel(entry, view);
+    current.textContent = "0:00";
+    duration.textContent = "…";
+    setProgress(0);
+    primeNextChapter();
+
+    if (preserveTime && priorTime > 0) {
+      audio.addEventListener("loadedmetadata", () => {
+        audio.currentTime = Math.min(priorTime, audio.duration || priorTime);
+        if (autoplay || !wasPaused) {
+          audio.play().catch(() => {});
+        }
+      }, { once: true });
+      return;
+    }
+
+    if (autoplay) {
+      audio.addEventListener("loadedmetadata", () => {
+        audio.play().catch(() => {});
+      }, { once: true });
+    }
+  };
+
+  syncActiveToggle();
+  loadCurrentChapterAudio({ autoplay: shouldAutoplay });
+
   toggleButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      body.dataset.bibleView = button.dataset.viewMode;
-      toggleButtons.forEach((item) => item.classList.toggle("is-active", item === button));
+      if (!button.dataset.viewMode || button.dataset.viewMode === view) return;
+      view = button.dataset.viewMode;
+      syncActiveToggle();
+      loadCurrentChapterAudio({ preserveTime: true, autoplay: !audio.paused });
     });
+  });
+
+  continuousToggle.addEventListener("change", () => {
+    continuous = continuousToggle.checked;
+    primeNextChapter();
+  });
+
+  toggle.addEventListener("click", () => {
+    if (!audio.src) {
+      loadCurrentChapterAudio();
+    }
+    if (audio.paused) {
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
+  });
+
+  audio.addEventListener("play", () => {
+    icon.textContent = "Pause";
+    player.classList.add("is-playing");
+    stopTicking();
+    tickWhilePlaying();
+  });
+
+  audio.addEventListener("pause", () => {
+    icon.textContent = "Play";
+    player.classList.remove("is-playing");
+    stopTicking();
+    refreshTimeUi();
+  });
+
+  audio.addEventListener("loadedmetadata", () => {
+    refreshTimeUi();
+    if (!Number.isFinite(audio.duration) || audio.duration <= 0) {
+      resolveStreamDuration();
+    }
+  });
+
+  audio.addEventListener("durationchange", () => {
+    refreshTimeUi();
+  });
+
+  audio.addEventListener("canplay", () => {
+    refreshTimeUi();
+  });
+
+  audio.addEventListener("loadeddata", () => {
+    refreshTimeUi();
+  });
+
+  audio.addEventListener("canplaythrough", () => {
+    refreshTimeUi();
+  });
+
+  audio.addEventListener("timeupdate", () => {
+    refreshTimeUi();
+  });
+
+  audio.addEventListener("seeking", refreshTimeUi);
+  audio.addEventListener("seeked", refreshTimeUi);
+
+  progress.addEventListener("input", () => {
+    if (!audio.duration) return;
+    audio.currentTime = (Number(progress.value) / 100) * audio.duration;
+  });
+
+  audio.addEventListener("ended", () => {
+    if (continuous && sequence[currentIndex + 1]) {
+      const nextEntry = sequence[currentIndex + 1];
+      const nextUrl = new URL(nextEntry.pageUrl, window.location.origin);
+      nextUrl.searchParams.set("autoplay", "1");
+      nextUrl.searchParams.set("version", view);
+      nextUrl.searchParams.set("continuous", "1");
+      window.location.href = nextUrl.toString();
+      return;
+    }
+    current.textContent = "0:00";
+    duration.textContent = Number.isFinite(audio.duration) && audio.duration > 0 ? formatTime(audio.duration) : "…";
+    setProgress(0);
+  });
+
+  audio.addEventListener("error", () => {
+    label.textContent = `${getLabel(sequence[currentIndex], view)} unavailable`;
   });
 }
 

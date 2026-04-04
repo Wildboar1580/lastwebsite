@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/2-kings/18.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="18" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="2-kings" data-bible-chapter="18" data-bible-chapter-index="17" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>2 Kings 18</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -249,53 +249,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/2-kings/17.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/2-kings/19.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_12_2Ki_018_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 2 Kings 18">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 2 Kings 18</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_12_2Ki_018_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 2 Kings 18">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/12_2Kings018.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 2 Kings 18">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -692,206 +675,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>In the third year of the reign of Hoshea son of Elah over Israel, Hezekiah son of Ahaz became king of Judah.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>He was twenty-five years old when he became king, and he reigned in Jerusalem twenty-nine years. His mother’s name was Abi, the daughter of Zechariah.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>And he did what was right in the eyes of the LORD, just as his father David had done.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>He removed the high places, shattered the sacred pillars, and cut down the Asherah poles. He also demolished the bronze snake called Nehushtan that Moses had made, for up to that time the Israelites had burned incense to it.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Hezekiah trusted in the LORD, the God of Israel. No king of Judah was like him, either before him or after him.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>He remained faithful to the LORD and did not turn from following Him; he kept the commandments that the LORD had given Moses.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>And the LORD was with Hezekiah, and he prospered wherever he went. He rebelled against the king of Assyria and refused to serve him.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>He defeated the Philistines as far as Gaza and its borders, from watchtower to fortified city.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>In the fourth year of Hezekiah’s reign, which was the seventh year of the reign of Hoshea son of Elah over Israel, Shalmaneser king of Assyria marched against Samaria and besieged it.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>And at the end of three years, the Assyrians captured it. So Samaria was captured in the sixth year of Hezekiah, which was the ninth year of Hoshea king of Israel.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>The king of Assyria exiled the Israelites to Assyria and settled them in Halah, in Gozan by the Habor River, and in the cities of the Medes.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>This happened because they did not listen to the voice of the LORD their God, but violated His covenant—all that Moses the servant of the LORD had commanded—and would neither listen nor obey.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>In the fourteenth year of Hezekiah’s reign, Sennacherib king of Assyria attacked and captured all the fortified cities of Judah.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>So Hezekiah king of Judah sent word to the king of Assyria at Lachish, saying, “I have done wrong; withdraw from me, and I will pay whatever you demand from me.” And the king of Assyria exacted from Hezekiah king of Judah three hundred talents of silver and thirty talents of gold.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Hezekiah gave him all the silver that was found in the house of the LORD and in the treasuries of the royal palace.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>At that time Hezekiah stripped the gold with which he had plated the doors and doorposts of the temple of the LORD, and he gave it to the king of Assyria.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Nevertheless, the king of Assyria sent the Tartan, the Rabsaris, and the Rabshakeh, along with a great army, from Lachish to King Hezekiah at Jerusalem. They advanced up to Jerusalem and stationed themselves by the aqueduct of the upper pool, on the road to the Launderer’s Field.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>Then they called for the king. And Eliakim son of Hilkiah the palace administrator, Shebnah the scribe, and Joah son of Asaph the recorder, went out to them.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>The Rabshakeh said to them, “Tell Hezekiah that this is what the great king, the king of Assyria, says: What is the basis of this confidence of yours?</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>You claim to have a strategy and strength for war, but these are empty words. In whom are you now trusting, that you have rebelled against me?</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>Look now, you are trusting in Egypt, that splintered reed of a staff that will pierce the hand of anyone who leans on it. Such is Pharaoh king of Egypt to all who trust in him.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>But if you say to me, ‘We trust in the LORD our God,’ is He not the One whose high places and altars Hezekiah has removed, saying to Judah and Jerusalem: ‘You must worship before this altar in Jerusalem’?</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>Now, therefore, make a bargain with my master, the king of Assyria. I will give you two thousand horses—if you can put riders on them!</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>For how can you repel a single officer among the least of my master’s servants when you depend on Egypt for chariots and horsemen?</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>So now, was it apart from the LORD that I have come up against this place to destroy it? The LORD Himself said to me, ‘Go up against this land and destroy it.’”</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>Then Eliakim son of Hilkiah, along with Shebnah and Joah, said to the Rabshakeh, “Please speak to your servants in Aramaic, since we understand it. Do not speak with us in Hebrew in the hearing of the people on the wall.”</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>But the Rabshakeh replied, “Has my master sent me to speak these words only to you and your master, and not to the men sitting on the wall, who are destined with you to eat their own dung and drink their own urine?”</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>Then the Rabshakeh stood and called out loudly in Hebrew: “Hear the word of the great king, the king of Assyria!</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>This is what the king says: Do not let Hezekiah deceive you; he cannot deliver you from my hand.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Do not let Hezekiah persuade you to trust in the LORD when he says, ‘The LORD will surely deliver us; this city will not be given into the hand of the king of Assyria.’</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Do not listen to Hezekiah, for this is what the king of Assyria says: Make peace with me and come out to me. Then every one of you will eat from his own vine and his own fig tree and drink water from his own cistern,</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>until I come and take you away to a land like your own—a land of grain and new wine, a land of bread and vineyards, a land of olive trees and honey—so that you may live and not die. But do not listen to Hezekiah, for he misleads you when he says, ‘The LORD will deliver us.’</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>Has the god of any nation ever delivered his land from the hand of the king of Assyria?</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>Where are the gods of Hamath and Arpad? Where are the gods of Sepharvaim, Hena, and Ivvah? Have they delivered Samaria from my hand?</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Who among all the gods of these lands has delivered his land from my hand? How then can the LORD deliver Jerusalem from my hand?”</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>But the people remained silent and did not answer a word, for Hezekiah had commanded, “Do not answer him.”</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>Then Hilkiah’s son Eliakim the palace administrator, Shebna the scribe, and Asaph’s son Joah the recorder came to Hezekiah with their clothes torn, and they relayed to him the words of the Rabshakeh.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/2-kings/19.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"2 Kings","chapter":1,"pageUrl":"/bible/2-kings/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/001.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":2,"pageUrl":"/bible/2-kings/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/002.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":3,"pageUrl":"/bible/2-kings/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/003.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":4,"pageUrl":"/bible/2-kings/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/004.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":5,"pageUrl":"/bible/2-kings/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/005.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":6,"pageUrl":"/bible/2-kings/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/006.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":7,"pageUrl":"/bible/2-kings/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/007.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":8,"pageUrl":"/bible/2-kings/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/008.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":9,"pageUrl":"/bible/2-kings/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/009.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":10,"pageUrl":"/bible/2-kings/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/010.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":11,"pageUrl":"/bible/2-kings/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/011.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":12,"pageUrl":"/bible/2-kings/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/012.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":13,"pageUrl":"/bible/2-kings/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/013.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":14,"pageUrl":"/bible/2-kings/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/014.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":15,"pageUrl":"/bible/2-kings/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/015.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":16,"pageUrl":"/bible/2-kings/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/016.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":17,"pageUrl":"/bible/2-kings/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/017.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":18,"pageUrl":"/bible/2-kings/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/018.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":19,"pageUrl":"/bible/2-kings/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/019.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":20,"pageUrl":"/bible/2-kings/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/020.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":21,"pageUrl":"/bible/2-kings/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/021.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":22,"pageUrl":"/bible/2-kings/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/022.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":23,"pageUrl":"/bible/2-kings/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/023.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":24,"pageUrl":"/bible/2-kings/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/024.mp3","slug":"2-kings"},{"book":"2 Kings","chapter":25,"pageUrl":"/bible/2-kings/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_12_2Ki_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/2-kings/025.mp3","slug":"2-kings"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

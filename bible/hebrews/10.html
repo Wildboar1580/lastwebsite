@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/hebrews/10.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="hebrews" data-bible-chapter="10" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="hebrews" data-bible-chapter="10" data-bible-chapter-index="9" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Hebrews 10</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -225,53 +225,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/hebrews/9.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/hebrews/11.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_58_Heb_010_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Hebrews 10">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Hebrews 10</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_58_Heb_010_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Hebrews 10">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/58_Hebrews010.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Hebrews 10">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -688,216 +671,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>For the lawe which hath but the shadowe of good thynges to come and not the thynges in their awne fassion can never with ye sacryfises which they offer yere by yere continually make the comers thervnto parfayte.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>For wolde not then those sacrifises have ceased to have bene offered because that the offerers once pourged shuld have had no moare conscieces of sinnes.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Neverthelesse in those sacrifises is ther mencion made of synnes every yeare.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>For it is vnpossible that the bloud of oxen and of gotes shuld take awaye synnes.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Wherfore when he commeth into the worlde he sayth: Sacrifice and offeringe thou woldest not have: but a bodie hast thou ordeyned me.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>In sacrifices and synne offerynges thou hast no lust.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>Then I sayde: Lo I come in the chefest of the boke it is written of me that I shuld doo thy will o god.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>Above when he had sayed sacrifice and offerynge and burnt sacrifices and synne offerynges thou woldest not have nether hast alowed (which yet are offered by the lawe)</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>and then sayde: Lo I come to do thy will o god: he taketh awaye the fyrst to stablisshe the latter.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>By the which will we are sanctified by the offeringe of the body of Iesu Christe once for all.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And every prest is redy dayly ministrynge and ofte tymes offereth one maner of offerynge which can never take awaye synnes.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>But this man after he had offered one sacrifyce for synnes sat him doune for ever on the right honde of god</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>and from hence forth tarieth till his foes be made his fotestole.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>For with one offerynge hath he made parfecte for ever them yt are sanctified.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>And ye holy goost also beareth vs recorde of this even when he tolde before:</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>This is the testament that I will make vnto them after those dayes sayth the LORde. I will put my lawes in their hertes and in their mynde I will write them</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>and their synnes and iniquyties will I remember no moare.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>And where remission of these thinges is there is no moare offerynge for synne.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Seynge brethren that by the meanes of the bloud of Iesu we maye be bolde to enter into that holy plac</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>by the newe and livynge waye which he hath prepared for vs through the vayle that is to saye by his flesshe.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And seynge also that we have an hye prest which is ruler over ye housse of god</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>let vs drawe nye with a true herte in a full fayth sprynckeled in oure hertes from an evyll conscience and wesshed in oure bodies with pure water</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>and let vs kepe the profession of oure hope with oute waveringe (for he is faythfull that promysed)</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>and let vs consyder one another to provoke vnto love and to good workes:</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>and let vs not forsake the felishippe that we have amoge oure selves as the maner of some is: but let vs exhorte one another and that so moche the more because ye se that the daye draweth nye.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>For yf we synne willyngly after that we have receaved the knowledge of the trueth there remayneth no more sacrifice for synnes</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>but a fearfull lokynge for iudgement and violent fyre which shall devoure the adversaries</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>He that despiseth Moses lawe dyeth with out mercy vnder two or thre witnesses.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>Of how moche sorer punyshment suppose ye shall he be counted worthy which treadeth vnderfote the sonne of god: and counteth the bloude of the testament as an vnholy thynge wherwith he was sanctified and doth dishonoure to the sprete of grace.</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>For we knowe him that hath sayde vengeaunce belongeth vnto me I will recompence sayth the LORde. And agayne: the LORde shall iudge his people.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>It is a fearfull thynge to faule into the hondes of the livynge God.</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>Call to remebraunce the dayes that are passed in the which after ye had receaved light ye endured a greate fyght in adversities</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>partly whill all men wondred and gased at you for the shame and trioulacion that was done vnto you and partly whill ye became companyons of the which so passed their tyme.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>For ye suffered also with my bondes and toke a worth the spoylynge of youre goodes and that with gladnes knowynge in youre selves how that ye had in heven a better and an endurynge substaunc</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Cast not awaye therfore youre confidence which hath great rewarde to recopence.</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>For ye have nede of paciece that after ye have done ye will of god ye myght receave the promes.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>For yet a very lytell whyle and he that shall come will come and will not tary.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>But the iust shall live by faith. And yf he withdrawe him silfe my soule shall have no pleasure in him.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>We are not whiche withdrawe oure selves vnto dampnacio but partayne to fayth to the wynnynge of the soule.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/hebrews/11.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Hebrews","chapter":1,"pageUrl":"/bible/hebrews/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/001.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":2,"pageUrl":"/bible/hebrews/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/002.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":3,"pageUrl":"/bible/hebrews/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/003.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":4,"pageUrl":"/bible/hebrews/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/004.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":5,"pageUrl":"/bible/hebrews/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/005.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":6,"pageUrl":"/bible/hebrews/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/006.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":7,"pageUrl":"/bible/hebrews/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/007.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":8,"pageUrl":"/bible/hebrews/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/008.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":9,"pageUrl":"/bible/hebrews/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/009.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":10,"pageUrl":"/bible/hebrews/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/010.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":11,"pageUrl":"/bible/hebrews/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/011.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":12,"pageUrl":"/bible/hebrews/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/012.mp3","slug":"hebrews"},{"book":"Hebrews","chapter":13,"pageUrl":"/bible/hebrews/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_58_Heb_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/hebrews/013.mp3","slug":"hebrews"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

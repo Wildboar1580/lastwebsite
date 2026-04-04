@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/1-corinthians/12.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-corinthians" data-bible-chapter="12" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="1-corinthians" data-bible-chapter="12" data-bible-chapter-index="11" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>1 Corinthians 12</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -231,53 +231,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/1-corinthians/11.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/1-corinthians/13.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_46_1Co_012_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for 1 Corinthians 12">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · 1 Corinthians 12</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_46_1Co_012_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for 1 Corinthians 12">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/46_1Corinthians012.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for 1 Corinthians 12">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -614,176 +597,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>In spirituall thinges brethren I wolde not have you ignoraunt.</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>Ye knowe that ye were gentyls and went youre wayes vnto domme ydoles even as ye were ledde.</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>Wherfore I declare vnto you that no man speakynge in the sprete of god defieth Iesus. Also no man can saye that Iesus is the LORde: but by the holy goost.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>Ther are diversities of gyftes verely yet but one sprete.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>And ther are differences of administracions and yet but one LORde.</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>And ther are divers maners of operacions and yet but one God which worketh all thinges that are wrought in all creatures.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>The gyftes of ye sprete are geven to every man to proffit ye congregacion.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>To one is geven thorow the spirite the vtteraunce of wisdome? To another is geven the vtteraunce of knowledge by ye same sprete.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>To another is geuen fayth by ye same sprete. To another ye gyftes of healynge by the same sprete.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>To another power to do myracles. To another prophesie? To another iudgement of spretes. To another divers tonges. To another the interpretacion of toges.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>And these all worketh eve ye silfe same sprete devydynge to every man severall gyftes even as he will.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>For as the body is one and hath many mebres and all the membres of one body though they be many yet are but one body: even so is Christ.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>For in one sprete are we all baptysed to make one body whether we be Iewes or getyls whether we be bonde or fre: and have all dronke of one sprete.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>For the body is not one member but many.</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>Yf the fote saye: I am not the honde therfore I am not of the body: is he therfore not of ye body:</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>And if ye eare saye I am not the eye: therfore I am not of the body: is he therfore not of the body?</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>If all the body were an eye where were then the eare? If all were hearynge: where were the smellynge?</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>But now hath god disposed the membres every one of them in the body at his awne pleasure.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>If they were all one member: where were the body?</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>Now are ther many membres yet but one body.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>And the eye can not saye vnto the honde I have no nede of the: nor ye heed also to the fete. I have no nede of you.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Ye rather a greate deale those mebres of the body which seme to be most feble are most necessary.</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>And apo those mebres of yt body which we thinke lest honest put we most honestie on. And oure vngodly parties have most beauty on.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>For oure honest members nede it not. But God hath so disposed the body ad hath geven most honoure to that parte which laked</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>lest there shuld be eny stryfe in the body: but that the members shuld indifferetly care one for another.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>And yf one member suffer all suffer with him: yf one member be had in honoure all members be glad also.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>Ye are the body of Christ and members one of another.</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>And God hath also ordeyned in the congregacion fyrst the Apostels secodarely prophetes thyrdly teachers then the that do miracles: after that the gyftes of healynge helpers governers diversite of tonges.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>Are all Apostles? Are all Prophetes? Are all teachers? Are all doars of miracles?</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>Have all the gyftes of healinge? Do all speake wt tonges? Do all interprete?</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Covet after ye best giftes. Amd yet shewe I vnto you a moare excellent waye.</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/1-corinthians/13.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Corinthians","chapter":1,"pageUrl":"/bible/1-corinthians/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/001.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":2,"pageUrl":"/bible/1-corinthians/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/002.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":3,"pageUrl":"/bible/1-corinthians/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/003.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":4,"pageUrl":"/bible/1-corinthians/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/004.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":5,"pageUrl":"/bible/1-corinthians/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/005.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":6,"pageUrl":"/bible/1-corinthians/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/006.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":7,"pageUrl":"/bible/1-corinthians/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/007.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":8,"pageUrl":"/bible/1-corinthians/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/008.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":9,"pageUrl":"/bible/1-corinthians/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/009.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":10,"pageUrl":"/bible/1-corinthians/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/010.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":11,"pageUrl":"/bible/1-corinthians/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/011.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":12,"pageUrl":"/bible/1-corinthians/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/012.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":13,"pageUrl":"/bible/1-corinthians/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/013.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":14,"pageUrl":"/bible/1-corinthians/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/014.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":15,"pageUrl":"/bible/1-corinthians/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/015.mp3","slug":"1-corinthians"},{"book":"1 Corinthians","chapter":16,"pageUrl":"/bible/1-corinthians/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_46_1Co_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-corinthians/016.mp3","slug":"1-corinthians"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

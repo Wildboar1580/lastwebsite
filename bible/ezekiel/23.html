@@ -22,7 +22,7 @@
   <link rel="canonical" href="https://lastchristian.com/bible/ezekiel/23.html">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page bible-chapter-page" data-bible-book="ezekiel" data-bible-chapter="23" data-bible-view="msb">
+<body class="campaign-page bible-page bible-chapter-page" data-bible-book="ezekiel" data-bible-chapter="23" data-bible-chapter-index="22" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
@@ -48,11 +48,11 @@
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
           <h1>Ezekiel 23</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV and Tyndale views, or compare multiple columns side by side.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
-        <div class="bible-toolbar">
+        <div class="bible-toolbar bible-toolbar-compact">
           <div class="bible-selectors">
             <label class="bible-select">
               <span>Book</span>
@@ -295,53 +295,36 @@
               </select>
             </label>
           </div>
-          <div class="bible-nav-buttons">
+          <div class="bible-nav-buttons bible-nav-buttons-top">
             <a class="button button-outline" href="/bible/ezekiel/22.html">Previous Chapter</a>
-            <a class="button button-outline" href="/bible/ezekiel/24.html">Next Chapter</a>
           </div>
         </div>
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="tyndale">Tyndale</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-two">MSB + KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="parallel-three">Three Columns</button>
         </div>
-        <div class="bible-audio-grid">
+        <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
-            <p class="eyebrow">MSB Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://openbible.com/audio/msb/MSB_26_Ezk_023_D.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play Majority Standard Bible audio for Ezekiel 23">
+            <p class="eyebrow" data-bible-audio-label>MSB Audio · Ezekiel 23</p>
+            <div class="audio-player bible-audio-player" data-bible-audio-player>
+              <audio preload="metadata" crossorigin="anonymous" src="https://media.lastchristian.com/msb/MSB_26_Ezk_023_D.mp3" data-bible-audio></audio>
+              <audio preload="none" crossorigin="anonymous" data-bible-preload-audio aria-hidden="true"></audio>
+              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play chapter audio for Ezekiel 23">
                 <span data-audio-icon>Play</span>
               </button>
               <div class="audio-meta">
                 <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Majority Standard Bible chapter progress">
+                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Chapter audio progress">
                 </div>
                 <div class="audio-time">
                   <span data-audio-current>0:00</span>
                   <span data-audio-duration>0:00</span>
                 </div>
               </div>
-            </div>
-          </article>
-          <article class="bible-audio-card">
-            <p class="eyebrow">KJV Audio</p>
-            <div class="audio-player" data-audio-player>
-              <audio preload="none" src="https://www.audiotreasure.com/content/KJV_AT/26_Ezekiel023.mp3"></audio>
-              <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play KJV audio for Ezekiel 23">
-                <span data-audio-icon>Play</span>
-              </button>
-              <div class="audio-meta">
-                <div class="audio-progress-shell">
-                  <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="KJV chapter progress">
-                </div>
-                <div class="audio-time">
-                  <span data-audio-current>0:00</span>
-                  <span data-audio-duration>0:00</span>
-                </div>
-              </div>
+              <label class="bible-continuous-toggle">
+                <input type="checkbox" data-bible-continuous-toggle>
+                <span>Continuous play</span>
+              </label>
             </div>
           </article>
         </div>
@@ -858,266 +841,15 @@
           </div>
         </section>
   
-
-        <section class="bible-column" data-translation="tyndale">
-          <header class="bible-column-header">
-            <p class="eyebrow">Tyndale Bible</p>
-          </header>
-          <div class="bible-verses">
-            
-              <p id="tyndale-1" class="bible-verse">
-                <span class="verse-num">1</span>
-                <span>Again the word of the LORD came to me, saying,</span>
-              </p>
-            
-              <p id="tyndale-2" class="bible-verse">
-                <span class="verse-num">2</span>
-                <span>“Son of man, there were two women, daughters of the same mother,</span>
-              </p>
-            
-              <p id="tyndale-3" class="bible-verse">
-                <span class="verse-num">3</span>
-                <span>and they played in Egypt, prostituting themselves from their youth. Their breasts were fondled there, and their virgin bosoms caressed.</span>
-              </p>
-            
-              <p id="tyndale-4" class="bible-verse">
-                <span class="verse-num">4</span>
-                <span>The older was named Oholah, and her sister was named Oholibah. They became Mine and gave birth to sons and daughters. As for their identities, Oholah is Samaria, and Oholibah is Jerusalem.</span>
-              </p>
-            
-              <p id="tyndale-5" class="bible-verse">
-                <span class="verse-num">5</span>
-                <span>Oholah prostituted herself while she was still Mine. She lusted after her lovers, the Assyrians—warriors</span>
-              </p>
-            
-              <p id="tyndale-6" class="bible-verse">
-                <span class="verse-num">6</span>
-                <span>clothed in blue, governors and commanders, all desirable young men, horsemen mounted on steeds.</span>
-              </p>
-            
-              <p id="tyndale-7" class="bible-verse">
-                <span class="verse-num">7</span>
-                <span>She offered sexual favors to all the elite of Assyria. She defiled herself with all the idols of those for whom she lusted.</span>
-              </p>
-            
-              <p id="tyndale-8" class="bible-verse">
-                <span class="verse-num">8</span>
-                <span>She did not give up the prostitution she began in Egypt, when men slept with her in her youth, caressed her virgin bosom, and poured out their lust upon her.</span>
-              </p>
-            
-              <p id="tyndale-9" class="bible-verse">
-                <span class="verse-num">9</span>
-                <span>Therefore I delivered her into the hands of her lovers, the Assyrians for whom she lusted.</span>
-              </p>
-            
-              <p id="tyndale-10" class="bible-verse">
-                <span class="verse-num">10</span>
-                <span>They exposed her nakedness, seized her sons and daughters, and put her to the sword. Thus she became a byword among women, and they executed judgment against her.</span>
-              </p>
-            
-              <p id="tyndale-11" class="bible-verse">
-                <span class="verse-num">11</span>
-                <span>Her sister Oholibah saw this, yet in her lust and prostitution she was more depraved than her sister.</span>
-              </p>
-            
-              <p id="tyndale-12" class="bible-verse">
-                <span class="verse-num">12</span>
-                <span>She too lusted after the Assyrians—governors and commanders, warriors dressed in splendor, horsemen riding on steeds, all desirable young men.</span>
-              </p>
-            
-              <p id="tyndale-13" class="bible-verse">
-                <span class="verse-num">13</span>
-                <span>And I saw that she too had defiled herself; both of them had taken the same path.</span>
-              </p>
-            
-              <p id="tyndale-14" class="bible-verse">
-                <span class="verse-num">14</span>
-                <span>But Oholibah carried her prostitution even further. She saw the men portrayed on the wall, images of the Chaldeans, engraved in vermilion,</span>
-              </p>
-            
-              <p id="tyndale-15" class="bible-verse">
-                <span class="verse-num">15</span>
-                <span>wearing belts on their waists and flowing turbans on their heads; all of them looked like officers of the Babylonians in Chaldea, the land of their birth.</span>
-              </p>
-            
-              <p id="tyndale-16" class="bible-verse">
-                <span class="verse-num">16</span>
-                <span>At the sight of them, she lusted for them and sent messengers to them in Chaldea.</span>
-              </p>
-            
-              <p id="tyndale-17" class="bible-verse">
-                <span class="verse-num">17</span>
-                <span>Then the Babylonians came to her, to the bed of love, and in their lust they defiled her. But after she had been defiled by them, she turned away in disgust.</span>
-              </p>
-            
-              <p id="tyndale-18" class="bible-verse">
-                <span class="verse-num">18</span>
-                <span>When Oholibah openly prostituted herself and exposed her nakedness, I turned away from her in disgust, just as I had turned away from her sister.</span>
-              </p>
-            
-              <p id="tyndale-19" class="bible-verse">
-                <span class="verse-num">19</span>
-                <span>Yet she multiplied her promiscuity, remembering the days of her youth, when she had prostituted herself in the land of Egypt</span>
-              </p>
-            
-              <p id="tyndale-20" class="bible-verse">
-                <span class="verse-num">20</span>
-                <span>and lusted after their lovers, whose genitals were like those of donkeys and whose emission was like that of stallions.</span>
-              </p>
-            
-              <p id="tyndale-21" class="bible-verse">
-                <span class="verse-num">21</span>
-                <span>So you revisited the indecency of your youth, when the Egyptians caressed your bosom and pressed your young breasts.</span>
-              </p>
-            
-              <p id="tyndale-22" class="bible-verse">
-                <span class="verse-num">22</span>
-                <span>Therefore, Oholibah, this is what the Lord GOD says: ‘I will incite your lovers against you, those from whom you turned away in disgust. And I will bring them against you from every side—</span>
-              </p>
-            
-              <p id="tyndale-23" class="bible-verse">
-                <span class="verse-num">23</span>
-                <span>the Babylonians and all the Chaldeans, the men of Pekod, Shoa, and Koa, and all the Assyrians with them—all desirable young men, governors and commanders, officers and men of renown, mounted on horses.</span>
-              </p>
-            
-              <p id="tyndale-24" class="bible-verse">
-                <span class="verse-num">24</span>
-                <span>They will come against you with a host of peoples, with weapons, chariots, and wagons. They will array themselves against you on every side with buckler and shield and helmet. I will delegate judgment to them, and they will punish you according to their own standards.</span>
-              </p>
-            
-              <p id="tyndale-25" class="bible-verse">
-                <span class="verse-num">25</span>
-                <span>And I will set My jealous rage against you, and they will deal with you in fury. They will cut off your noses and ears, and your survivors will fall by the sword. They will seize your sons and daughters, and your remnant will be consumed by fire.</span>
-              </p>
-            
-              <p id="tyndale-26" class="bible-verse">
-                <span class="verse-num">26</span>
-                <span>They will strip off your clothes and take your fine jewelry.</span>
-              </p>
-            
-              <p id="tyndale-27" class="bible-verse">
-                <span class="verse-num">27</span>
-                <span>So I will put an end to your indecency and prostitution, which began in the land of Egypt, and you will not lift your eyes to them or remember Egypt anymore.’</span>
-              </p>
-            
-              <p id="tyndale-28" class="bible-verse">
-                <span class="verse-num">28</span>
-                <span>For this is what the Lord GOD says: ‘Surely I will deliver you into the hands of those you hate, from whom you turned away in disgust.</span>
-              </p>
-            
-              <p id="tyndale-29" class="bible-verse">
-                <span class="verse-num">29</span>
-                <span>They will treat you with hatred, take all for which you have worked, and leave you naked and bare, so that the shame of your prostitution will be exposed. Your indecency and promiscuity</span>
-              </p>
-            
-              <p id="tyndale-30" class="bible-verse">
-                <span class="verse-num">30</span>
-                <span>have brought these things upon you, because you have prostituted yourself with the nations and defiled yourself with their idols.</span>
-              </p>
-            
-              <p id="tyndale-31" class="bible-verse">
-                <span class="verse-num">31</span>
-                <span>Because you have followed the path of your sister, I will put her cup into your hand.’</span>
-              </p>
-            
-              <p id="tyndale-32" class="bible-verse">
-                <span class="verse-num">32</span>
-                <span>This is what the Lord GOD says: ‘You will drink your sister’s cup, a cup deep and wide. It will bring scorn and derision, for it holds so much.</span>
-              </p>
-            
-              <p id="tyndale-33" class="bible-verse">
-                <span class="verse-num">33</span>
-                <span>You will be filled with drunkenness and grief, with a cup of devastation and desolation, the cup of your sister Samaria.</span>
-              </p>
-            
-              <p id="tyndale-34" class="bible-verse">
-                <span class="verse-num">34</span>
-                <span>You will drink it and drain it; you will dash it to pieces, and tear your breasts. For I have spoken,’ declares the Lord GOD.</span>
-              </p>
-            
-              <p id="tyndale-35" class="bible-verse">
-                <span class="verse-num">35</span>
-                <span>Therefore this is what the Lord GOD says: ‘Because you have forgotten Me and have cast Me behind your back, you must bear the consequences of your indecency and prostitution.’”</span>
-              </p>
-            
-              <p id="tyndale-36" class="bible-verse">
-                <span class="verse-num">36</span>
-                <span>Then the LORD said to me: “Son of man, will you pass judgment against Oholah and Oholibah? Then declare to them their abominations.</span>
-              </p>
-            
-              <p id="tyndale-37" class="bible-verse">
-                <span class="verse-num">37</span>
-                <span>For they have committed adultery, and blood is on their hands. They have committed adultery with their idols. They have even sacrificed their children, whom they bore to Me, in the fire as food for their idols.</span>
-              </p>
-            
-              <p id="tyndale-38" class="bible-verse">
-                <span class="verse-num">38</span>
-                <span>They have also done this to Me: On that very same day, they defiled My sanctuary and profaned My Sabbaths.</span>
-              </p>
-            
-              <p id="tyndale-39" class="bible-verse">
-                <span class="verse-num">39</span>
-                <span>On the very day they slaughtered their children for their idols, they entered My sanctuary to profane it. Yes, they did this inside My house.</span>
-              </p>
-            
-              <p id="tyndale-40" class="bible-verse">
-                <span class="verse-num">40</span>
-                <span>Furthermore, you sisters sent messengers for men who came from afar; and behold, when they arrived, you bathed for them, painted your eyes, and adorned yourself with jewelry.</span>
-              </p>
-            
-              <p id="tyndale-41" class="bible-verse">
-                <span class="verse-num">41</span>
-                <span>You sat on a couch of luxury with a table spread before it, on which you had set My incense and My oil,</span>
-              </p>
-            
-              <p id="tyndale-42" class="bible-verse">
-                <span class="verse-num">42</span>
-                <span>accompanied by the sound of a carefree crowd. Drunkards were brought in from the desert along with men from the rabble, who put bracelets on your wrists and beautiful crowns on your head.</span>
-              </p>
-            
-              <p id="tyndale-43" class="bible-verse">
-                <span class="verse-num">43</span>
-                <span>Then I said of her who had grown old in adulteries: ‘Now let them use her as a prostitute, for that is all she is!’</span>
-              </p>
-            
-              <p id="tyndale-44" class="bible-verse">
-                <span class="verse-num">44</span>
-                <span>And they slept with her as with a prostitute; they slept with Oholah and Oholibah, those lewd women.</span>
-              </p>
-            
-              <p id="tyndale-45" class="bible-verse">
-                <span class="verse-num">45</span>
-                <span>But righteous men will sentence them to the punishment of those who commit adultery and bloodshed, because they are adulteresses with blood on their hands.</span>
-              </p>
-            
-              <p id="tyndale-46" class="bible-verse">
-                <span class="verse-num">46</span>
-                <span>This is what the Lord GOD says: ‘Bring a mob against them and consign them to terror and plunder.</span>
-              </p>
-            
-              <p id="tyndale-47" class="bible-verse">
-                <span class="verse-num">47</span>
-                <span>The mob will stone them and cut them down with their swords. They will kill their sons and daughters and burn down their houses.</span>
-              </p>
-            
-              <p id="tyndale-48" class="bible-verse">
-                <span class="verse-num">48</span>
-                <span>So I will put an end to indecency in the land, and all the women will be admonished not to imitate your behavior.</span>
-              </p>
-            
-              <p id="tyndale-49" class="bible-verse">
-                <span class="verse-num">49</span>
-                <span>They will repay you for your indecency, and you will bear the consequences of your sins of idolatry. Then you will know that I am the Lord GOD.’”</span>
-              </p>
-            
-          </div>
-        </section>
-  
+        </div>
+        <div class="bible-bottom-nav">
+          <a class="button button-red" href="/bible/ezekiel/24.html">Next Chapter</a>
         </div>
       </section>
     </main>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"Ezekiel","chapter":1,"pageUrl":"/bible/ezekiel/1.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/001.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":2,"pageUrl":"/bible/ezekiel/2.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/002.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":3,"pageUrl":"/bible/ezekiel/3.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/003.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":4,"pageUrl":"/bible/ezekiel/4.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/004.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":5,"pageUrl":"/bible/ezekiel/5.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/005.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":6,"pageUrl":"/bible/ezekiel/6.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_006_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/006.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":7,"pageUrl":"/bible/ezekiel/7.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_007_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/007.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":8,"pageUrl":"/bible/ezekiel/8.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_008_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/008.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":9,"pageUrl":"/bible/ezekiel/9.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_009_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/009.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":10,"pageUrl":"/bible/ezekiel/10.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_010_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/010.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":11,"pageUrl":"/bible/ezekiel/11.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_011_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/011.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":12,"pageUrl":"/bible/ezekiel/12.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_012_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/012.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":13,"pageUrl":"/bible/ezekiel/13.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_013_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/013.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":14,"pageUrl":"/bible/ezekiel/14.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_014_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/014.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":15,"pageUrl":"/bible/ezekiel/15.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_015_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/015.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":16,"pageUrl":"/bible/ezekiel/16.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_016_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/016.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":17,"pageUrl":"/bible/ezekiel/17.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_017_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/017.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":18,"pageUrl":"/bible/ezekiel/18.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_018_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/018.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":19,"pageUrl":"/bible/ezekiel/19.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_019_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/019.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":20,"pageUrl":"/bible/ezekiel/20.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_020_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/020.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":21,"pageUrl":"/bible/ezekiel/21.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_021_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/021.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":22,"pageUrl":"/bible/ezekiel/22.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_022_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/022.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":23,"pageUrl":"/bible/ezekiel/23.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_023_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/023.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":24,"pageUrl":"/bible/ezekiel/24.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_024_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/024.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":25,"pageUrl":"/bible/ezekiel/25.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_025_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/025.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":26,"pageUrl":"/bible/ezekiel/26.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_026_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/026.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":27,"pageUrl":"/bible/ezekiel/27.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_027_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/027.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":28,"pageUrl":"/bible/ezekiel/28.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_028_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/028.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":29,"pageUrl":"/bible/ezekiel/29.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_029_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/029.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":30,"pageUrl":"/bible/ezekiel/30.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_030_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/030.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":31,"pageUrl":"/bible/ezekiel/31.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_031_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/031.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":32,"pageUrl":"/bible/ezekiel/32.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_032_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/032.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":33,"pageUrl":"/bible/ezekiel/33.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_033_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/033.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":34,"pageUrl":"/bible/ezekiel/34.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_034_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/034.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":35,"pageUrl":"/bible/ezekiel/35.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_035_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/035.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":36,"pageUrl":"/bible/ezekiel/36.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_036_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/036.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":37,"pageUrl":"/bible/ezekiel/37.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_037_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/037.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":38,"pageUrl":"/bible/ezekiel/38.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_038_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/038.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":39,"pageUrl":"/bible/ezekiel/39.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_039_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/039.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":40,"pageUrl":"/bible/ezekiel/40.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_040_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/040.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":41,"pageUrl":"/bible/ezekiel/41.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_041_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/041.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":42,"pageUrl":"/bible/ezekiel/42.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_042_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/042.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":43,"pageUrl":"/bible/ezekiel/43.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_043_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/043.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":44,"pageUrl":"/bible/ezekiel/44.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_044_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/044.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":45,"pageUrl":"/bible/ezekiel/45.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_045_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/045.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":46,"pageUrl":"/bible/ezekiel/46.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_046_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/046.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":47,"pageUrl":"/bible/ezekiel/47.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_047_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/047.mp3","slug":"ezekiel"},{"book":"Ezekiel","chapter":48,"pageUrl":"/bible/ezekiel/48.html","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_26_Ezk_048_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/ezekiel/048.mp3","slug":"ezekiel"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>
