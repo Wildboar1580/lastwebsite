@@ -1467,6 +1467,38 @@ textarea {
   gap: 0.9rem;
 }
 
+.lectionary-propers {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1rem 0 1.15rem;
+}
+
+.lectionary-proper {
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(213, 166, 41, 0.14);
+  border-radius: 0.8rem;
+  background: rgba(8, 8, 8, 0.46);
+}
+
+.lectionary-proper-label {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+}
+
+.lectionary-proper-body {
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+.lectionary-proper-body p,
+.lectionary-proper-body br + br {
+  margin-top: 0.45rem;
+}
+
 .lectionary-passage-list {
   display: grid;
   gap: 0.85rem;

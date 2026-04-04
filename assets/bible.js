@@ -3,7 +3,12 @@ const ONE_YEAR_TYPES = {
   oldTestament: 19,
   epistle: 1,
   gospel: 2,
+  collect: 20,
+  introit: 23,
   color: 25
+  ,
+  gradual: 35,
+  verse: 36
 };
 
 const DAILY_TYPES = {
@@ -705,11 +710,21 @@ function findProper(propers, type) {
 function renderOneYear(propers, books, searchIndex, date) {
   const title = findProper(propers, ONE_YEAR_TYPES.title) || "No appointed one-year observance";
   const color = findProper(propers, ONE_YEAR_TYPES.color) || "Seasonal";
+  const introit = findProper(propers, ONE_YEAR_TYPES.introit);
+  const collect = findProper(propers, ONE_YEAR_TYPES.collect);
+  const gradual = findProper(propers, ONE_YEAR_TYPES.gradual);
+  const verse = findProper(propers, ONE_YEAR_TYPES.verse);
   return `
     <article class="lectionary-card">
       <p class="eyebrow">Today in the Historic One Year Lectionary</p>
       <h3>${escapeHtml(title)}</h3>
       <p class="lectionary-date">${date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · ${escapeHtml(color)}</p>
+      <div class="lectionary-propers">
+        ${renderProperBlock("Introit", introit)}
+        ${renderProperBlock("Collect", collect)}
+        ${renderProperBlock("Gradual", gradual)}
+        ${renderProperBlock("Verse", verse)}
+      </div>
       <div class="lectionary-reading-list">
         <div><strong>Old Testament</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.oldTestament), books, searchIndex)}</div>
         <div><strong>Epistle</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
@@ -728,6 +743,16 @@ function renderDaily(propers, books, searchIndex, date) {
         <div><strong>First Reading</strong>${renderReferenceList(findProper(propers, DAILY_TYPES.first), books, searchIndex)}</div>
         <div><strong>Second Reading</strong>${renderReferenceList(findProper(propers, DAILY_TYPES.second), books, searchIndex)}</div>
       </div>
+    </article>
+  `;
+}
+
+function renderProperBlock(label, htmlText) {
+  if (!htmlText) return "";
+  return `
+    <article class="lectionary-proper">
+      <p class="lectionary-proper-label">${escapeHtml(label)}</p>
+      <div class="lectionary-proper-body">${htmlText}</div>
     </article>
   `;
 }
