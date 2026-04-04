@@ -11,6 +11,8 @@ const DAILY_TYPES = {
   second: 39
 };
 
+const BIBLE_VIEW_STORAGE_KEY = "lcm-bible-view";
+
 const BOOK_ALIASES = new Map([
   ["gen", "Genesis"], ["genesis", "Genesis"],
   ["ex", "Exodus"], ["exo", "Exodus"], ["exodus", "Exodus"],
@@ -107,6 +109,64 @@ function formatTime(seconds) {
   return `${minutes}:${String(remaining).padStart(2, "0")}`;
 }
 
+function normalizeBibleView(view) {
+  return view === "kjv" ? "kjv" : "msb";
+}
+
+function getStoredBibleView() {
+  try {
+    return normalizeBibleView(window.localStorage.getItem(BIBLE_VIEW_STORAGE_KEY) || "");
+  } catch {
+    return "msb";
+  }
+}
+
+function setStoredBibleView(view) {
+  try {
+    window.localStorage.setItem(BIBLE_VIEW_STORAGE_KEY, normalizeBibleView(view));
+  } catch {
+    // Ignore storage failures.
+  }
+}
+
+function buildBibleChapterHref(bookSlug, chapter, view = getStoredBibleView()) {
+  const normalizedView = normalizeBibleView(view);
+  const href = `/bible/${bookSlug}/${chapter}.html`;
+  return normalizedView === "kjv" ? `${href}?version=kjv` : href;
+}
+
+function isBibleChapterHref(href = "") {
+  return /^\/bible\/[^/]+\/\d+\.html(?:\?.*)?$/.test(href);
+}
+
+function updateBibleChapterLinks(view = getStoredBibleView()) {
+  const normalizedView = normalizeBibleView(view);
+  document.querySelectorAll('a[href^="/bible/"]').forEach((link) => {
+    const rawHref = link.getAttribute("href");
+    if (!rawHref || !isBibleChapterHref(rawHref)) return;
+    const url = new URL(rawHref, window.location.origin);
+    if (normalizedView === "kjv") {
+      url.searchParams.set("version", "kjv");
+    } else {
+      url.searchParams.delete("version");
+    }
+    link.setAttribute("href", `${url.pathname}${url.search}`);
+  });
+}
+
+function getSearchResultHref(entry) {
+  if (entry.bookSlug && entry.chapter) {
+    return buildBibleChapterHref(entry.bookSlug, entry.chapter, getStoredBibleView());
+  }
+
+  if (entry.url && isBibleChapterHref(entry.url)) {
+    const url = new URL(entry.url, window.location.origin);
+    return buildBibleChapterHref(url.pathname.split("/")[2], url.pathname.split("/")[3].replace(".html", ""), getStoredBibleView());
+  }
+
+  return entry.url || "/bible.html";
+}
+
 function loadBooks() {
   if (!booksPromise) {
     booksPromise = fetch("/assets/bible/books.json").then((response) => response.json());
@@ -124,6 +184,7 @@ function loadSearchIndex() {
 async function initBibleControls() {
   const bookSelect = document.querySelector("[data-bible-book-select]");
   const chapterSelect = document.querySelector("[data-bible-chapter-select]");
+  const openSelectedLink = document.querySelector("[data-bible-open-selected]");
   const bookDataScript = document.querySelector("#bible-book-options");
   const toggleButtons = [...document.querySelectorAll("[data-view-mode]")];
   const body = document.body;
@@ -145,18 +206,30 @@ async function initBibleControls() {
       `).join("");
     };
 
+    const syncOpenSelectedLink = () => {
+      if (!openSelectedLink) return;
+      openSelectedLink.setAttribute("href", buildBibleChapterHref(bookSelect.value, chapterSelect.value, getStoredBibleView()));
+    };
+
     renderChapterOptions(currentBook, currentChapter);
     bookSelect.value = currentBook;
+    syncOpenSelectedLink();
 
     bookSelect.addEventListener("change", () => {
       renderChapterOptions(bookSelect.value, 1);
       if (body.dataset.bibleBook) {
-        window.location.href = `/bible/${bookSelect.value}/1.html`;
+        window.location.href = buildBibleChapterHref(bookSelect.value, 1, getStoredBibleView());
+        return;
       }
+      syncOpenSelectedLink();
     });
 
     chapterSelect.addEventListener("change", () => {
-      window.location.href = `/bible/${bookSelect.value}/${chapterSelect.value}.html`;
+      if (body.dataset.bibleBook) {
+        window.location.href = buildBibleChapterHref(bookSelect.value, chapterSelect.value, getStoredBibleView());
+        return;
+      }
+      syncOpenSelectedLink();
     });
   }
 
@@ -210,6 +283,8 @@ function initBibleChapterPage() {
   let resolvingDuration = false;
   if (requestedView === "kjv" || requestedView === "msb") {
     view = requestedView;
+  } else {
+    view = getStoredBibleView();
   }
   continuousToggle.checked = continuous;
 
@@ -270,6 +345,15 @@ function initBibleChapterPage() {
       button.classList.toggle("is-active", button.dataset.viewMode === view);
     });
     body.dataset.bibleView = view;
+    setStoredBibleView(view);
+    updateBibleChapterLinks(view);
+    const currentUrl = new URL(window.location.href);
+    if (view === "kjv") {
+      currentUrl.searchParams.set("version", "kjv");
+    } else {
+      currentUrl.searchParams.delete("version");
+    }
+    window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
   };
 
   const primeNextChapter = () => {
@@ -438,7 +522,7 @@ async function initBibleSearch() {
     }
 
     results.innerHTML = matches.map((entry) => `
-      <a class="search-result-card" href="${entry.url}">
+      <a class="search-result-card" href="${getSearchResultHref(entry)}">
         <strong>${escapeHtml(entry.reference)}</strong>
         <span>${escapeHtml(entry.text)}</span>
       </a>
@@ -637,7 +721,7 @@ function linkReference(referenceText, books) {
   const book = books.find((entry) => entry.name === bookName);
   if (!book) return escapeHtml(trimmed);
 
-  return `<a class="text-link" href="/bible/${book.slug}/${chapter}.html">${escapeHtml(trimmed)}</a>`;
+  return `<a class="text-link" href="${buildBibleChapterHref(book.slug, chapter, getStoredBibleView())}">${escapeHtml(trimmed)}</a>`;
 }
 
 function renderPassageBlock(referenceText, books, searchIndex) {
@@ -696,7 +780,7 @@ function parseReference(referenceText, books) {
     startVerse,
     endChapter,
     endVerse,
-    url: `/bible/${book.slug}/${startChapter}.html`
+    url: buildBibleChapterHref(book.slug, startChapter, getStoredBibleView())
   };
 }
 
