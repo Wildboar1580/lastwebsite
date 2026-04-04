@@ -148,6 +148,7 @@ function buildPage(episode) {
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="/bible.html">Bible</a>
+        <a href="/lectionary.html">Lectionary</a>
         <a href="/podcast.html">Podcast</a>
         <a href="/index.html#campaigns">Campaigns</a>
         <a href="/library.html">Library</a>
@@ -255,6 +256,7 @@ const bibleManifest = fs.existsSync(bibleManifestPath)
 const sitemapUrls = [
   { loc: "https://lastchristian.com/", changefreq: "weekly", priority: "1.0" },
   { loc: "https://lastchristian.com/bible.html", changefreq: "daily", priority: "0.9" },
+  { loc: "https://lastchristian.com/lectionary.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/about.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },

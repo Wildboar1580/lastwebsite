@@ -451,10 +451,11 @@ async function initLectionaryPanels() {
   const dailyRoot = document.querySelector("[data-daily-reading]");
   if (!oneYearRoot && !dailyRoot) return;
 
-  const [oneYearData, dailyData, books] = await Promise.all([
+  const [oneYearData, dailyData, books, searchIndex] = await Promise.all([
     fetch("/assets/bible/lsb-1yr.json").then((response) => response.json()),
     fetch("/assets/bible/lsb-daily.json").then((response) => response.json()),
-    loadBooks()
+    loadBooks(),
+    loadSearchIndex()
   ]);
 
   const today = new Date();
@@ -462,11 +463,11 @@ async function initLectionaryPanels() {
   const dailyPropers = loadPropers(dailyData, today);
 
   if (oneYearRoot) {
-    oneYearRoot.innerHTML = renderOneYear(oneYearPropers, books, today);
+    oneYearRoot.innerHTML = renderOneYear(oneYearPropers, books, searchIndex, today);
   }
 
   if (dailyRoot) {
-    dailyRoot.innerHTML = renderDaily(dailyPropers, books, today);
+    dailyRoot.innerHTML = renderDaily(dailyPropers, books, searchIndex, today);
   }
 }
 
@@ -564,42 +565,42 @@ function findProper(propers, type) {
   return propers.find((proper) => proper.type === type)?.text || "";
 }
 
-function renderOneYear(propers, books, date) {
+function renderOneYear(propers, books, searchIndex, date) {
   const title = findProper(propers, ONE_YEAR_TYPES.title) || "No appointed one-year observance";
   const color = findProper(propers, ONE_YEAR_TYPES.color) || "Seasonal";
   return `
     <article class="lectionary-card">
-      <p class="eyebrow">Today in the LCMS One-Year Series</p>
+      <p class="eyebrow">Today in the Historic One Year Lectionary</p>
       <h3>${escapeHtml(title)}</h3>
       <p class="lectionary-date">${date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · ${escapeHtml(color)}</p>
       <div class="lectionary-reading-list">
-        <div><strong>Old Testament</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.oldTestament), books)}</div>
-        <div><strong>Epistle</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.epistle), books)}</div>
-        <div><strong>Gospel</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.gospel), books)}</div>
+        <div><strong>Old Testament</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.oldTestament), books, searchIndex)}</div>
+        <div><strong>Epistle</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
+        <div><strong>Gospel</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.gospel), books, searchIndex)}</div>
       </div>
     </article>
   `;
 }
 
-function renderDaily(propers, books, date) {
+function renderDaily(propers, books, searchIndex, date) {
   return `
     <article class="lectionary-card">
       <p class="eyebrow">Today’s Daily Lectionary</p>
       <h3>${date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })}</h3>
       <div class="lectionary-reading-list">
-        <div><strong>First Reading</strong>${renderReferenceList(findProper(propers, DAILY_TYPES.first), books)}</div>
-        <div><strong>Second Reading</strong>${renderReferenceList(findProper(propers, DAILY_TYPES.second), books)}</div>
+        <div><strong>First Reading</strong>${renderReferenceList(findProper(propers, DAILY_TYPES.first), books, searchIndex)}</div>
+        <div><strong>Second Reading</strong>${renderReferenceList(findProper(propers, DAILY_TYPES.second), books, searchIndex)}</div>
       </div>
     </article>
   `;
 }
 
-function renderReferenceList(referenceText, books) {
+function renderReferenceList(referenceText, books, searchIndex) {
   if (!referenceText) {
     return `<p class="lectionary-empty">No reading listed.</p>`;
   }
   const parts = referenceText.split(/\s*;\s*/).filter(Boolean);
-  return `<ul>${parts.map((part) => `<li>${linkReference(part, books)}</li>`).join("")}</ul>`;
+  return `<div class="lectionary-passage-list">${parts.map((part) => renderPassageBlock(part, books, searchIndex)).join("")}</div>`;
 }
 
 function linkReference(referenceText, books) {
@@ -613,6 +614,89 @@ function linkReference(referenceText, books) {
   if (!book) return escapeHtml(trimmed);
 
   return `<a class="text-link" href="/bible/${book.slug}/${chapter}.html">${escapeHtml(trimmed)}</a>`;
+}
+
+function renderPassageBlock(referenceText, books, searchIndex) {
+  const trimmed = referenceText.trim();
+  const parsed = parseReference(trimmed, books);
+  if (!parsed) {
+    return `<article class="lectionary-passage"><p class="lectionary-reference">${escapeHtml(trimmed)}</p></article>`;
+  }
+
+  const verses = collectPassageVerses(parsed, searchIndex);
+  return `
+    <article class="lectionary-passage">
+      <p class="lectionary-reference"><a class="text-link" href="${parsed.url}">${escapeHtml(trimmed)}</a></p>
+      ${verses.length
+        ? `<div class="lectionary-passage-text">${verses.map((verse) => `
+            <p><span class="verse-num">${verse.verseLabel}</span><span>${escapeHtml(verse.text)}</span></p>
+          `).join("")}</div>`
+        : `<p class="lectionary-empty">Passage text unavailable on this page.</p>`}
+    </article>
+  `;
+}
+
+function parseReference(referenceText, books) {
+  const trimmed = referenceText.trim();
+  const match = trimmed.match(/^([1-3]?\s?[A-Za-z. ]+)\s+(\d+)(?::([\d,\-]+))?(?:-(\d+)(?::([\d,\-]+))?)?$/);
+  if (!match) return null;
+
+  const bookName = normalizeBookName(match[1]);
+  const startChapter = Number(match[2]);
+  const startVerseSpec = match[3] || "";
+  const endChapterOrVerse = match[4] ? Number(match[4]) : null;
+  const endVerseSpec = match[5] || "";
+  const book = books.find((entry) => entry.name === bookName);
+  if (!book) return null;
+
+  const hasVerseRange = startVerseSpec.includes("-") || startVerseSpec.includes(",");
+  const startVerse = startVerseSpec ? Number(startVerseSpec.split(/[,\-]/)[0]) : null;
+  let endChapter = startChapter;
+  let endVerse = startVerse;
+
+  if (endChapterOrVerse !== null) {
+    if (startVerseSpec && !endVerseSpec && !hasVerseRange) {
+      endVerse = endChapterOrVerse;
+    } else {
+      endChapter = endChapterOrVerse;
+      endVerse = endVerseSpec ? Number(endVerseSpec.split(/[,\-]/)[0]) : null;
+    }
+  } else if (startVerseSpec.includes("-")) {
+    endVerse = Number(startVerseSpec.split("-")[1]);
+  }
+
+  return {
+    bookName,
+    bookSlug: book.slug,
+    startChapter,
+    startVerse,
+    endChapter,
+    endVerse,
+    url: `/bible/${book.slug}/${startChapter}.html`
+  };
+}
+
+function collectPassageVerses(parsed, searchIndex) {
+  const matches = [];
+
+  for (const entry of searchIndex) {
+    const verseMatch = entry.reference.match(/^(.*?) (\d+):(\d+)$/);
+    if (!verseMatch) continue;
+    const bookName = normalizeBookName(verseMatch[1]);
+    const chapter = Number(verseMatch[2]);
+    const verse = Number(verseMatch[3]);
+    if (bookName !== parsed.bookName) continue;
+    if (chapter < parsed.startChapter || chapter > parsed.endChapter) continue;
+    if (parsed.startVerse !== null && chapter === parsed.startChapter && verse < parsed.startVerse) continue;
+    if (parsed.endVerse !== null && chapter === parsed.endChapter && verse > parsed.endVerse) continue;
+
+    matches.push({
+      verseLabel: `${chapter}:${verse}`,
+      text: entry.text
+    });
+  }
+
+  return matches.slice(0, 40);
 }
 
 function normalizeBookName(value) {
