@@ -451,12 +451,36 @@ async function initLectionaryPanels() {
   const dailyRoot = document.querySelector("[data-daily-reading]");
   if (!oneYearRoot && !dailyRoot) return;
 
-  const [oneYearData, dailyData, books, searchIndex] = await Promise.all([
-    fetch("/assets/bible/lsb-1yr.json").then((response) => response.json()),
-    fetch("/assets/bible/lsb-daily.json").then((response) => response.json()),
-    loadBooks(),
-    loadSearchIndex()
-  ]);
+  let oneYearData = [];
+  let dailyData = [];
+  let books = [];
+  let searchIndex = [];
+
+  try {
+    [oneYearData, dailyData, books] = await Promise.all([
+      fetch("/assets/bible/lsb-1yr.json").then((response) => response.json()),
+      fetch("/assets/bible/lsb-daily.json").then((response) => response.json()),
+      loadBooks()
+    ]);
+  } catch (error) {
+    const errorMessage = `
+      <article class="lectionary-card">
+        <p class="eyebrow">Lectionary</p>
+        <h3>Unable to load today’s readings right now</h3>
+        <p class="lectionary-empty">Please refresh the page in a moment. The lectionary data could not be loaded.</p>
+      </article>
+    `;
+
+    if (oneYearRoot) oneYearRoot.innerHTML = errorMessage;
+    if (dailyRoot) dailyRoot.innerHTML = "";
+    return;
+  }
+
+  try {
+    searchIndex = await loadSearchIndex();
+  } catch (error) {
+    searchIndex = [];
+  }
 
   const today = new Date();
   const oneYearPropers = loadPropers(oneYearData, today);
