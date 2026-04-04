@@ -240,6 +240,17 @@ async function initBibleControls() {
       }
       syncOpenSelectedLink();
     });
+
+    if (openSelectedLink) {
+      openSelectedLink.addEventListener("click", (event) => {
+        event.preventDefault();
+        window.location.href = buildBibleChapterHref(
+          bookSelect.value,
+          chapterSelect.value,
+          document.body.dataset.bibleView || getStoredBibleView()
+        );
+      });
+    }
   }
 
   if (!chapterPlayer) {
