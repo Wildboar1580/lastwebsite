@@ -1563,6 +1563,67 @@ textarea {
   color: var(--white);
 }
 
+.concord-search-card span {
+  color: var(--text-soft);
+}
+
+.concord-page-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.concord-page-heading {
+  margin-bottom: 0;
+}
+
+.concord-content {
+  padding: 1.3rem;
+  background: rgba(18, 18, 18, 0.95);
+  border: 1px solid rgba(213, 166, 41, 0.16);
+  border-radius: 1rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+}
+
+.concord-content h2,
+.concord-content h3,
+.concord-content h4 {
+  margin: 1.2rem 0 0.75rem;
+  line-height: 1.1;
+}
+
+.concord-content p {
+  margin: 0.75rem 0;
+  color: var(--text-main);
+}
+
+.concord-content .next-previous-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 1.2rem;
+}
+
+.concord-content .next-previous {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(213, 166, 41, 0.18);
+  background: rgba(8, 8, 8, 0.6);
+  color: var(--gold-bright);
+  text-decoration: none;
+}
+
+.concord-content .bocanchor-content {
+  color: var(--gold-bright);
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+}
+
+.concord-content .bocanchor {
+  text-decoration: none;
+}
+
 .bible-columns {
   display: grid;
   gap: 1rem;
