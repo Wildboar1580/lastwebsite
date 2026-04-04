@@ -99,6 +99,14 @@ function escapeHtml(text = "") {
     .replaceAll("'", "&#39;");
 }
 
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
+  const totalSeconds = Math.floor(seconds);
+  const minutes = Math.floor(totalSeconds / 60);
+  const remaining = totalSeconds % 60;
+  return `${minutes}:${String(remaining).padStart(2, "0")}`;
+}
+
 function loadBooks() {
   if (!booksPromise) {
     booksPromise = fetch("/assets/bible/books.json").then((response) => response.json());
