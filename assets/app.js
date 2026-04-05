@@ -11,6 +11,7 @@ const ARCHIVE_PAGE_SIZE = 24;
 document.addEventListener("DOMContentLoaded", () => {
   hydrateCampaignPage();
   initCountdowns();
+  initLazyIframes();
   initPodcastFeed();
   initAudioPlayers();
   initVideoEmbeds();
@@ -42,7 +43,10 @@ function hydrateCampaignPage() {
   if (goal) goal.textContent = campaign.goal;
   if (donate) donate.setAttribute("href", campaign.donationUrl);
   if (canonical) canonical.setAttribute("href", campaign.canonicalUrl);
-  if (thermometer) thermometer.setAttribute("src", campaign.thermometerUrl);
+  if (thermometer) {
+    thermometer.setAttribute("data-src", campaign.thermometerUrl);
+    thermometer.removeAttribute("src");
+  }
   if (story) {
     story.innerHTML = campaign.story.map((paragraph) => `<p>${paragraph}</p>`).join("");
   }
@@ -98,6 +102,7 @@ function renderCountdown(milliseconds) {
 async function initPodcastFeed() {
   const featuredRoot = document.querySelector("#featured-episodes");
   const homepageStatus = document.querySelector("#podcast-status");
+  const homepageSection = document.querySelector(".podcast-section");
   const archiveRoot = document.querySelector("#archive-results");
   const archiveStatus = document.querySelector("#archive-status");
   const search = document.querySelector("#podcast-search");
@@ -108,20 +113,45 @@ async function initPodcastFeed() {
   const needsArchive = Boolean(archiveRoot && archiveStatus && search && pagination);
   if (!needsHomepage && !needsArchive) return;
 
-  try {
-    const xmlText = await fetchFeed(FEED_URL);
-    const episodes = parseFeed(xmlText);
+  let pendingFeed;
 
-    if (!episodes.length) {
-      throw new Error("No podcast episodes were found in the feed.");
+  const loadEpisodes = async () => {
+    if (!pendingFeed) {
+      pendingFeed = (async () => {
+        const xmlText = await fetchFeed(FEED_URL);
+        return parseFeed(xmlText);
+      })();
     }
 
-    if (needsHomepage) {
+    return pendingFeed;
+  };
+
+  const renderHomepage = async () => {
+    if (!needsHomepage) return;
+
+    try {
+      const episodes = await loadEpisodes();
+      if (!episodes.length) {
+        throw new Error("No podcast episodes were found in the feed.");
+      }
+
       homepageStatus.textContent = `Loaded ${Math.min(HOMEPAGE_EPISODE_COUNT, episodes.length)} recent episodes.`;
       renderEpisodeCards(featuredRoot, episodes.slice(0, HOMEPAGE_EPISODE_COUNT));
+    } catch (error) {
+      homepageStatus.textContent = "The podcast feed could not be loaded right now.";
+      featuredRoot.innerHTML = `<article class="episode-card fallback-card"><h3>Podcast temporarily unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noopener noreferrer">Open RSS Feed</a></article>`;
     }
+  };
 
-    if (needsArchive) {
+  const renderArchivePage = async () => {
+    if (!needsArchive) return;
+
+    try {
+      const episodes = await loadEpisodes();
+      if (!episodes.length) {
+        throw new Error("No podcast episodes were found in the feed.");
+      }
+
       initArchivePage({
         episodes,
         root: archiveRoot,
@@ -130,18 +160,30 @@ async function initPodcastFeed() {
         pagination,
         countLabel: pageTitle
       });
-    }
-  } catch (error) {
-    if (needsHomepage) {
-      homepageStatus.textContent = "The podcast feed could not be loaded right now.";
-      featuredRoot.innerHTML = `<article class="episode-card fallback-card"><h3>Podcast temporarily unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
-    }
-
-    if (needsArchive) {
+    } catch (error) {
       archiveStatus.textContent = "The podcast archive could not be loaded right now.";
-      archiveRoot.innerHTML = `<article class="archive-item"><h3>Podcast archive unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noreferrer">Open RSS Feed</a></article>`;
+      archiveRoot.innerHTML = `<article class="archive-item"><h3>Podcast archive unavailable</h3><p>${error.message}</p><a class="button button-outline" href="${FEED_URL}" target="_blank" rel="noopener noreferrer">Open RSS Feed</a></article>`;
       pagination.innerHTML = "";
     }
+  };
+
+  if (needsArchive) {
+    renderArchivePage();
+  }
+
+  if (needsHomepage && homepageSection) {
+    if (!("IntersectionObserver" in window)) {
+      renderHomepage();
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      if (!entries.some((entry) => entry.isIntersecting)) return;
+      observer.disconnect();
+      renderHomepage();
+    }, { rootMargin: "300px 0px" });
+
+    observer.observe(homepageSection);
   }
 }
 
@@ -438,6 +480,31 @@ function initVideoEmbeds(root = document) {
       button.replaceWith(iframe);
     });
   });
+}
+
+function initLazyIframes(root = document) {
+  const iframes = root.querySelectorAll("iframe[data-src]");
+  if (!iframes.length) return;
+
+  const loadIframe = (iframe) => {
+    if (!iframe.dataset.src || iframe.src) return;
+    iframe.src = iframe.dataset.src;
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    iframes.forEach(loadIframe);
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      loadIframe(entry.target);
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "320px 0px" });
+
+  iframes.forEach((iframe) => observer.observe(iframe));
 }
 
 function pauseOtherPlayers(activeAudio) {
