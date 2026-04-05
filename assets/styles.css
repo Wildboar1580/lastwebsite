@@ -1577,41 +1577,78 @@ textarea {
 }
 
 .concord-content {
-  padding: 1.3rem;
-  background: rgba(18, 18, 18, 0.95);
-  border: 1px solid rgba(213, 166, 41, 0.16);
-  border-radius: 1rem;
+  max-width: 52rem;
+  padding: 1.6rem 1.4rem;
+  background: linear-gradient(180deg, rgba(19, 16, 14, 0.96), rgba(12, 10, 9, 0.98));
+  border: 1px solid rgba(213, 166, 41, 0.18);
+  border-radius: 1.1rem;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  line-height: 1.85;
 }
 
 .concord-content h2,
 .concord-content h3,
 .concord-content h4 {
-  margin: 1.2rem 0 0.75rem;
-  line-height: 1.1;
+  margin: 1.7rem 0 0.9rem;
+  line-height: 1.2;
+  font-family: var(--font-heading);
+  color: var(--paper);
 }
 
 .concord-content p {
-  margin: 0.75rem 0;
+  margin: 0.95rem 0;
   color: var(--text-main);
 }
 
-.concord-content .next-previous-box {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin: 1rem 0 1.2rem;
+.concord-content a:not(.concord-nav-button) {
+  color: var(--gold-bright);
+  text-underline-offset: 0.18em;
 }
 
-.concord-content .next-previous {
+.concord-doc-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin: 0 0 1.3rem;
+  align-items: stretch;
+}
+
+.concord-doc-nav-bottom {
+  margin: 1.65rem 0 0;
+}
+
+.concord-nav-button,
+.concord-nav-spacer {
+  min-height: 100%;
+}
+
+.concord-nav-button {
   display: inline-flex;
   align-items: center;
-  padding: 0.55rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid rgba(213, 166, 41, 0.18);
-  background: rgba(8, 8, 8, 0.6);
-  color: var(--gold-bright);
+  justify-content: center;
+  padding: 0.8rem 0.95rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(213, 166, 41, 0.22);
+  background: linear-gradient(180deg, rgba(37, 12, 13, 0.95), rgba(24, 8, 9, 0.98));
+  color: var(--paper);
   text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.concord-nav-button:hover,
+.concord-nav-button:focus-visible {
+  border-color: rgba(255, 216, 121, 0.4);
+  background: linear-gradient(180deg, rgba(52, 16, 18, 0.95), rgba(31, 9, 11, 0.98));
+}
+
+.concord-nav-spacer {
+  display: block;
 }
 
 .concord-content .bocanchor-content {
@@ -1622,6 +1659,25 @@ textarea {
 
 .concord-content .bocanchor {
   text-decoration: none;
+}
+
+@media (max-width: 780px) {
+  .concord-content {
+    padding: 1.2rem 1rem;
+    font-size: 1.06rem;
+    line-height: 1.9;
+  }
+
+  .concord-content h2,
+  .concord-content h3,
+  .concord-content h4 {
+    margin-top: 1.45rem;
+    line-height: 1.25;
+  }
+
+  .concord-doc-nav {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bible-columns {

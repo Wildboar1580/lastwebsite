@@ -20,6 +20,10 @@ const INCLUDED_PREFIXES = [
   "/testimonies/"
 ];
 
+const EXCLUDED_PATHS = new Set([
+  "/small-catechism/small-catechism-pdf/"
+]);
+
 const SECTION_TITLES = new Map([
   ["preface", "Preface"],
   ["ecumenical-creeds", "Ecumenical Creeds"],
@@ -85,7 +89,7 @@ function toPathname(url) {
 }
 
 function includePath(pathname) {
-  return INCLUDED_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+  return INCLUDED_PREFIXES.some((prefix) => pathname.startsWith(prefix)) && !EXCLUDED_PATHS.has(pathname);
 }
 
 function normalizePathname(pathname) {
@@ -121,8 +125,19 @@ function extractMainContent(html) {
     .replace(/<footer[\s\S]*$/i, "")
     .trim();
 
+  content = sanitizeContent(content);
   content = rewriteLinks(content);
   return content;
+}
+
+function sanitizeContent(html) {
+  return html
+    .replace(/<div[^>]*class="[^"]*next-previous-box[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
+    .replace(/<p>\s*<a[^>]+href="[^"]*catechism\.cph\.org[^"]*"[\s\S]*?<\/p>/gi, "")
+    .replace(/<p>[\s\S]*?for purchase options\.<\/p>/gi, "")
+    .replace(/<p>[\s\S]*?Concordia Publishing House[\s\S]*?<\/p>/gi, "")
+    .replace(/<p>[\s\S]*?we&rsquo;ve provided links to the PDF&rsquo;s[\s\S]*?<\/p>/gi, "")
+    .trim();
 }
 
 function rewriteLinks(html) {
@@ -144,8 +159,25 @@ function rewriteLinks(html) {
     .replace(/src="(\/[^"]*)"/gi, (_, pathValue) => `src="https://bookofconcord.org${pathValue}"`);
 }
 
-function buildDocPage({ title, sectionTitle, pathname, contentHtml, description }) {
+function buildNavBlock(previousEntry, nextEntry, placement) {
+  if (!previousEntry && !nextEntry) {
+    return "";
+  }
+
+  const previousMarkup = previousEntry
+    ? `<a href="${previousEntry.localUrl}" class="concord-nav-button concord-nav-prev" rel="prev">Previous: ${escapeHtml(previousEntry.title)}</a>`
+    : `<span class="concord-nav-spacer" aria-hidden="true"></span>`;
+  const nextMarkup = nextEntry
+    ? `<a href="${nextEntry.localUrl}" class="concord-nav-button concord-nav-next" rel="next">Next: ${escapeHtml(nextEntry.title)}</a>`
+    : `<span class="concord-nav-spacer" aria-hidden="true"></span>`;
+
+  return `<nav class="concord-doc-nav concord-doc-nav-${placement}" aria-label="Document navigation">${previousMarkup}${nextMarkup}</nav>`;
+}
+
+function buildDocPage({ title, sectionTitle, pathname, contentHtml, description, previousEntry, nextEntry }) {
   const canonicalUrl = `https://lastchristian.com${localUrlFromPathname(pathname)}`;
+  const topNav = buildNavBlock(previousEntry, null, "top");
+  const bottomNav = buildNavBlock(null, nextEntry, "bottom");
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -209,7 +241,9 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description 
           <p><a class="text-link" href="/concord.html">Return to the Book of Concord library</a></p>
         </div>
         <article class="concord-content">
+${topNav}
 ${contentHtml}
+${bottomNav}
         </article>
       </section>
     </main>
@@ -416,9 +450,10 @@ async function main() {
     .map((url) => normalizePathname(toPathname(url)))
     .filter((pathname) => includePath(pathname));
 
-  const uniquePaths = [...new Set(urls)].sort((a, b) => a.localeCompare(b));
+  const uniquePaths = [...new Set(urls)];
   const searchIndex = [];
   const manifest = [];
+  const entries = [];
 
   for (const pathname of uniquePaths) {
     const sourceUrl = `${ROOT_URL}${pathname}`;
@@ -427,21 +462,44 @@ async function main() {
     const contentHtml = extractMainContent(html);
     const sectionTitle = getSectionTitle(pathname);
     const description = stripHtml(contentHtml).slice(0, 155);
-    const localDir = path.join(outputDir, pathname.replace(/^\/+/, ""));
+    const localUrl = localUrlFromPathname(pathname);
+    entries.push({
+      title,
+      sectionTitle,
+      pathname,
+      contentHtml,
+      description,
+      localUrl
+    });
+  }
+
+  const entriesBySection = new Map();
+  for (const entry of entries) {
+    if (!entriesBySection.has(entry.sectionTitle)) {
+      entriesBySection.set(entry.sectionTitle, []);
+    }
+    entriesBySection.get(entry.sectionTitle).push(entry);
+  }
+
+  for (const entry of entries) {
+    const sectionEntries = entriesBySection.get(entry.sectionTitle) || [];
+    const currentIndex = sectionEntries.findIndex((item) => item.pathname === entry.pathname);
+    const previousEntry = currentIndex > 0 ? sectionEntries[currentIndex - 1] : null;
+    const nextEntry = currentIndex >= 0 && currentIndex < sectionEntries.length - 1 ? sectionEntries[currentIndex + 1] : null;
+    const localDir = path.join(outputDir, entry.pathname.replace(/^\/+/, ""));
     ensureDir(localDir);
 
     fs.writeFileSync(
       path.join(localDir, "index.html"),
-      buildDocPage({ title, sectionTitle, pathname, contentHtml, description })
+      buildDocPage({ ...entry, previousEntry, nextEntry })
     );
 
-    const localUrl = localUrlFromPathname(pathname);
-    manifest.push({ title, sectionTitle, url: `https://lastchristian.com${localUrl}` });
+    manifest.push({ title: entry.title, sectionTitle: entry.sectionTitle, url: `https://lastchristian.com${entry.localUrl}` });
     searchIndex.push({
-      title,
-      section: sectionTitle,
-      text: stripHtml(contentHtml),
-      url: localUrl
+      title: entry.title,
+      section: entry.sectionTitle,
+      text: stripHtml(entry.contentHtml),
+      url: entry.localUrl
     });
   }
 
