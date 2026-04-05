@@ -728,10 +728,11 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
         <a href="/lectionary.html">Lectionary</a>
         <a href="/podcast.html">Podcast</a>
         <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/concord.html">Book of Concord</a>
+        <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
-        <a href="/security.html">Security</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <a class="button button-red" href="/index.html#campaigns">Give Now</a>
@@ -805,10 +806,11 @@ function buildVolumePage(volume, sections) {
         <a href="/lectionary.html">Lectionary</a>
         <a href="/podcast.html">Podcast</a>
         <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/concord.html">Book of Concord</a>
+        <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
-        <a href="/security.html">Security</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <a class="button button-red" href="/index.html#campaigns">Give Now</a>
@@ -883,10 +885,11 @@ function buildLandingPage(manifest) {
         <a href="/lectionary.html">Lectionary</a>
         <a href="/podcast.html">Podcast</a>
         <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/concord.html">Book of Concord</a>
+        <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
         <a href="/about.html">About</a>
         <a href="/faq.html">FAQ</a>
-        <a href="/security.html">Security</a>
         <a href="/contact.html">Contact</a>
       </nav>
       <a class="button button-red" href="/index.html#campaigns">Give Now</a>
