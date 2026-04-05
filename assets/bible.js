@@ -293,6 +293,12 @@ function initBibleChapterPage() {
   const duration = player.querySelector("[data-audio-duration]");
   const label = player.closest(".bible-audio-card")?.querySelector("[data-bible-audio-label]");
   const continuousToggle = player.querySelector("[data-bible-continuous-toggle]");
+  const bookSelect = document.querySelector("[data-bible-book-select]");
+  const chapterSelect = document.querySelector("[data-bible-chapter-select]");
+  const heroCopy = document.querySelector(".bible-hero .contact-hero-copy");
+  const readingSection = document.querySelector(".bible-reading-section");
+  const topNav = document.querySelector(".bible-nav-buttons-top");
+  const bottomNav = document.querySelector(".bible-bottom-nav");
 
   if (!audio || !preloadAudio || !toggle || !icon || !progress || !current || !duration || !label || !continuousToggle) {
     return;
@@ -315,6 +321,7 @@ function initBibleChapterPage() {
   const requestedView = params.get("version");
   let rafId = 0;
   let resolvingDuration = false;
+  let pendingVisibleSync = null;
   if (requestedView === "kjv" || requestedView === "msb") {
     view = requestedView;
   } else {
@@ -324,6 +331,7 @@ function initBibleChapterPage() {
 
   const getAudioUrl = (entry, mode) => mode === "kjv" ? entry.kjvAudioUrl : entry.msbAudioUrl;
   const getLabel = (entry, mode) => `${mode === "kjv" ? "KJV" : "MSB"} Audio · ${entry.book} ${entry.chapter}`;
+  const getEntryUrl = (entry, mode) => buildBibleChapterHref(entry.slug, entry.chapter, mode);
 
   const setProgress = (value) => {
     progress.value = String(value);
@@ -390,6 +398,79 @@ function initBibleChapterPage() {
     window.history.replaceState({}, "", `${currentUrl.pathname}${currentUrl.search}${currentUrl.hash}`);
   };
 
+  const syncSelectors = (entry) => {
+    if (bookSelect) {
+      bookSelect.value = entry.slug;
+    }
+    if (chapterSelect) {
+      chapterSelect.value = String(entry.chapter);
+    }
+  };
+
+  const syncHistoryForEntry = (entry) => {
+    const nextUrl = new URL(getEntryUrl(entry, view), window.location.origin);
+    window.history.replaceState({}, "", `${nextUrl.pathname}${nextUrl.search}${nextUrl.hash}`);
+  };
+
+  const syncPageContentForEntry = async (entry) => {
+    const url = new URL(getEntryUrl(entry, view), window.location.origin);
+    const response = await fetch(url.toString(), { credentials: "same-origin" });
+    if (!response.ok) {
+      throw new Error(`Unable to load chapter page ${url.pathname}`);
+    }
+    const html = await response.text();
+    const parsed = new DOMParser().parseFromString(html, "text/html");
+
+    const nextHeroCopy = parsed.querySelector(".bible-hero .contact-hero-copy");
+    const nextColumns = parsed.querySelector(".bible-columns");
+    const nextTopNav = parsed.querySelector(".bible-nav-buttons-top");
+    const nextBottomNav = parsed.querySelector(".bible-bottom-nav");
+    const nextTitle = parsed.querySelector("title")?.textContent;
+    const nextCanonical = parsed.querySelector("link[rel='canonical']")?.getAttribute("href");
+
+    if (heroCopy && nextHeroCopy) {
+      heroCopy.innerHTML = nextHeroCopy.innerHTML;
+    }
+    if (readingSection && nextColumns) {
+      const currentColumns = readingSection.querySelector(".bible-columns");
+      if (currentColumns) {
+        currentColumns.innerHTML = nextColumns.innerHTML;
+      }
+    }
+    if (topNav && nextTopNav) {
+      topNav.innerHTML = nextTopNav.innerHTML;
+    }
+    if (bottomNav && nextBottomNav) {
+      bottomNav.innerHTML = nextBottomNav.innerHTML;
+    }
+    if (nextTitle) {
+      document.title = nextTitle;
+    }
+    if (nextCanonical) {
+      document.querySelector("link[rel='canonical']")?.setAttribute("href", nextCanonical);
+    }
+
+    body.dataset.bibleBook = entry.slug;
+    body.dataset.bibleChapter = String(entry.chapter);
+    syncSelectors(entry);
+    syncActiveToggle();
+    updateBibleChapterLinks(view);
+  };
+
+  const syncPageForEntry = async (entry) => {
+    syncHistoryForEntry(entry);
+
+    if (document.visibilityState === "hidden") {
+      pendingVisibleSync = entry;
+      body.dataset.bibleBook = entry.slug;
+      body.dataset.bibleChapter = String(entry.chapter);
+      return;
+    }
+
+    pendingVisibleSync = null;
+    await syncPageContentForEntry(entry);
+  };
+
   const primeNextChapter = () => {
     const nextEntry = sequence[currentIndex + 1];
     if (!continuous || !nextEntry) {
@@ -437,6 +518,7 @@ function initBibleChapterPage() {
   };
 
   syncActiveToggle();
+  syncSelectors(sequence[currentIndex]);
   loadCurrentChapterAudio({ autoplay: shouldAutoplay });
 
   toggleButtons.forEach((button) => {
@@ -515,12 +597,22 @@ function initBibleChapterPage() {
 
   audio.addEventListener("ended", () => {
     if (continuous && sequence[currentIndex + 1]) {
-      const nextEntry = sequence[currentIndex + 1];
-      const nextUrl = new URL(nextEntry.pageUrl, window.location.origin);
-      nextUrl.searchParams.set("autoplay", "1");
-      nextUrl.searchParams.set("version", view);
-      nextUrl.searchParams.set("continuous", "1");
-      window.location.href = nextUrl.toString();
+      currentIndex += 1;
+      const nextEntry = sequence[currentIndex];
+
+      syncPageForEntry(nextEntry).catch(() => {
+        syncHistoryForEntry(nextEntry);
+      });
+
+      audio.src = preloadAudio.src || getAudioUrl(nextEntry, view);
+      audio.preload = "metadata";
+      audio.load();
+      label.textContent = getLabel(nextEntry, view);
+      current.textContent = "0:00";
+      duration.textContent = "…";
+      setProgress(0);
+      primeNextChapter();
+      audio.play().catch(() => {});
       return;
     }
     current.textContent = "0:00";
@@ -530,6 +622,13 @@ function initBibleChapterPage() {
 
   audio.addEventListener("error", () => {
     label.textContent = `${getLabel(sequence[currentIndex], view)} unavailable`;
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState !== "visible" || !pendingVisibleSync) return;
+    const entry = pendingVisibleSync;
+    pendingVisibleSync = null;
+    syncPageContentForEntry(entry).catch(() => {});
   });
 }
 
