@@ -6,6 +6,7 @@ const feedPath = path.join(root, "rss-feed.xml");
 const outputDir = path.join(root, "episodes");
 const bibleManifestPath = path.join(root, "assets", "bible", "chapter-manifest.json");
 const concordManifestPath = path.join(root, "assets", "concord", "manifest.json");
+const lutherManifestPath = path.join(root, "assets", "luther", "manifest.json");
 
 const feedXml = fs.readFileSync(feedPath, "utf8");
 const items = [...feedXml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
@@ -256,6 +257,9 @@ const bibleManifest = fs.existsSync(bibleManifestPath)
 const concordManifest = fs.existsSync(concordManifestPath)
   ? JSON.parse(fs.readFileSync(concordManifestPath, "utf8"))
   : [];
+const lutherManifest = fs.existsSync(lutherManifestPath)
+  ? JSON.parse(fs.readFileSync(lutherManifestPath, "utf8"))
+  : { pages: [] };
 
 const sitemapUrls = [
   { loc: "https://lastchristian.com/", changefreq: "weekly", priority: "1.0" },
@@ -265,6 +269,7 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/concord.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://lastchristian.com/luther.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/podcast.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
@@ -277,6 +282,11 @@ const sitemapUrls = [
   })),
   ...concordManifest.map((entry) => ({
     loc: entry.url,
+    changefreq: "monthly",
+    priority: "0.7"
+  })),
+  ...lutherManifest.pages.map((url) => ({
+    loc: url,
     changefreq: "monthly",
     priority: "0.7"
   })),
