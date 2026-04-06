@@ -1038,18 +1038,40 @@ textarea {
 }
 
 .campaign-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .campaign-grid-single {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .campaign-card-featured {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .campaign-card-featured img {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+  }
 
 .campaign-body {
   display: grid;
   gap: 0.7rem;
 }
 
-.campaign-sidebar {
-  display: grid;
-  gap: 0.8rem;
-}
+  .campaign-sidebar {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .campaign-card-featured .campaign-body {
+    gap: 0.9rem;
+  }
 
 .campaign-goal {
   margin-bottom: 0;
@@ -2145,6 +2167,11 @@ textarea {
   .bible-bottom-nav,
   .bible-browse-grid {
     grid-template-columns: 1fr;
+  }
+
+  .campaign-card-featured {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .site-header {
