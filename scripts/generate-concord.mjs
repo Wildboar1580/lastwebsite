@@ -369,6 +369,36 @@ function buildConcordLanding(manifest) {
   <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="https://lastchristian.com/concord.html">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": "Book of Concord",
+          "url": "https://lastchristian.com/concord.html",
+          "description": "Search and read the full English Triglotta of the Book of Concord on Last Christian Ministries."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lastchristian.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Book of Concord",
+              "item": "https://lastchristian.com/concord.html"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="campaign-page contact-page concord-page">
   <div class="site-shell">
@@ -424,6 +454,31 @@ function buildConcordLanding(manifest) {
               <p>${escapeHtml(text)}</p>
             </a>
           `).join("")}
+        </div>
+      </section>
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">Related Reading</p>
+          <h2>Read the Confessions in their larger context</h2>
+          <p>Move between Holy Scripture, Luther’s works, the lectionary, and the sermon archive through direct internal links.</p>
+        </div>
+        <div class="library-grid">
+          <a class="library-card" href="/bible.html">
+            <h3>Holy Scripture</h3>
+            <p>Read the Bible in static MSB and KJV chapter pages with search and audio.</p>
+          </a>
+          <a class="library-card" href="/luther.html">
+            <h3>Luther’s Works</h3>
+            <p>Follow the confessional writings into Luther’s sermons, catechesis, and theological works.</p>
+          </a>
+          <a class="library-card" href="/lectionary.html">
+            <h3>Historic One-Year Lectionary</h3>
+            <p>Pair the Confessions with the church year’s appointed readings and propers.</p>
+          </a>
+          <a class="library-card" href="/podcast.html">
+            <h3>Podcast Archive</h3>
+            <p>Listen to sermons and readings connected to confessional Lutheran theology.</p>
+          </a>
         </div>
       </section>
     </main>

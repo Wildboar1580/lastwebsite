@@ -251,6 +251,46 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
   <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="https://lastchristian.com/bible/${escapeHtml(bookSlug)}/">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "CollectionPage",
+          "name": ${JSON.stringify(bookName)},
+          "url": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)},
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Bible",
+            "url": "https://lastchristian.com/bible.html"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lastchristian.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Bible",
+              "item": "https://lastchristian.com/bible.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": ${JSON.stringify(bookName)},
+              "item": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)}
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="campaign-page bible-page bible-book-page" data-bible-view="msb">
   <div class="site-shell">
@@ -296,6 +336,31 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
         <div class="bible-bottom-nav">
           ${previousBook ? `<a class="button button-outline" href="/bible/${previousBook.slug}/">Previous Book</a>` : `<span></span>`}
           ${nextBook ? `<a class="button button-red" href="/bible/${nextBook.slug}/">Next Book</a>` : ""}
+        </div>
+      </section>
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">Related Reading</p>
+          <h2>Read this book alongside the rest of the library</h2>
+          <p>Follow ${escapeHtml(bookName)} into the lectionary, the Lutheran Confessions, Luther’s works, and sermon audio through ordinary internal links.</p>
+        </div>
+        <div class="library-grid">
+          <a class="library-card" href="/lectionary.html">
+            <h3>Historic One-Year Lectionary</h3>
+            <p>See how this biblical book appears in the church year’s appointed readings and propers.</p>
+          </a>
+          <a class="library-card" href="/concord.html">
+            <h3>Book of Concord</h3>
+            <p>Read the Lutheran Confessions that summarize and teach the faith drawn from Holy Scripture.</p>
+          </a>
+          <a class="library-card" href="/luther.html">
+            <h3>Luther’s Works</h3>
+            <p>Read Luther’s sermons and theological works connected to the biblical text.</p>
+          </a>
+          <a class="library-card" href="/podcast.html">
+            <h3>Podcast Archive</h3>
+            <p>Listen to sermons, readings, and theological audio that pair naturally with Scripture study.</p>
+          </a>
         </div>
       </section>
     </main>
@@ -361,6 +426,52 @@ function renderPage({
   <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": ${JSON.stringify(`${bookName} ${chapter}`)},
+          "url": ${JSON.stringify(canonicalUrl)},
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": ${JSON.stringify(bookName)},
+            "url": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)}
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lastchristian.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Bible",
+              "item": "https://lastchristian.com/bible.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": ${JSON.stringify(bookName)},
+              "item": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)}
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": ${JSON.stringify(`Chapter ${chapter}`)},
+              "item": ${JSON.stringify(canonicalUrl)}
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="campaign-page bible-page bible-chapter-page" data-bible-book="${escapeHtml(bookSlug)}" data-bible-chapter="${chapter}" data-bible-chapter-index="${chapterIndex}" data-bible-view="msb">
   <div class="site-shell">
@@ -451,6 +562,31 @@ ${renderColumn("KJV", "kjv", kjvVerses)}
         <div class="bible-bottom-nav">
           <a class="button button-outline" href="${bookUrl}">All ${escapeHtml(bookName)} Chapters</a>
           ${nextUrl ? `<a class="button button-red" href="${nextUrl}">Next Chapter</a>` : ""}
+        </div>
+      </section>
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">Related Reading</p>
+          <h2>Continue from ${escapeHtml(bookName)} ${chapter}</h2>
+          <p>Move from this chapter into the lectionary, the Confessions, Luther’s works, and the sermon archive through direct internal links.</p>
+        </div>
+        <div class="library-grid">
+          <a class="library-card" href="/lectionary.html">
+            <h3>Historic One-Year Lectionary</h3>
+            <p>See where this text fits into the church year’s appointed readings and propers.</p>
+          </a>
+          <a class="library-card" href="/concord.html">
+            <h3>Book of Concord</h3>
+            <p>Read the Lutheran Confessions alongside the scriptural text they confess.</p>
+          </a>
+          <a class="library-card" href="/luther.html">
+            <h3>Luther’s Works</h3>
+            <p>Read Luther’s sermons and theological works connected to Scripture.</p>
+          </a>
+          <a class="library-card" href="/podcast.html">
+            <h3>Podcast Archive</h3>
+            <p>Listen to sermons, readings, and theological audio tied to the same biblical themes.</p>
+          </a>
         </div>
       </section>
     </main>
