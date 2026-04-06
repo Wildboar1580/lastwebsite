@@ -397,10 +397,16 @@ textarea {
 }
 
 .about-image-frame img {
-  width: 100%;
-  aspect-ratio: 42 / 43;
-  object-fit: cover;
-}
+    width: 100%;
+    aspect-ratio: 42 / 43;
+    object-fit: cover;
+  }
+
+  .kutesa-image-frame img {
+    object-fit: contain;
+    object-position: center top;
+    background: rgba(0, 0, 0, 0.3);
+  }
 
 .about-copy {
   display: grid;

@@ -781,7 +781,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
-        <a href="/about.html">About</a>
+        <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
         <a href="/contact.html">Contact</a>
       </nav>
@@ -859,7 +859,7 @@ function buildVolumePage(volume, sections) {
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
-        <a href="/about.html">About</a>
+        <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
         <a href="/contact.html">Contact</a>
       </nav>
@@ -968,7 +968,7 @@ function buildLandingPage(manifest) {
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
-        <a href="/about.html">About</a>
+        <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
         <a href="/contact.html">Contact</a>
       </nav>

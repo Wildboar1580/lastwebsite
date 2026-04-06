@@ -309,7 +309,7 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
-        <a href="/about.html">About</a>
+        <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
         <a href="/contact.html">Contact</a>
       </nav>
@@ -489,7 +489,7 @@ function renderPage({
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
         <a href="/library.html">Library</a>
-        <a href="/about.html">About</a>
+        <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
         <a href="/contact.html">Contact</a>
       </nav>
