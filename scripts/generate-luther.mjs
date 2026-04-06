@@ -1059,6 +1059,17 @@ function summarizeSection(section) {
   return summary;
 }
 
+function buildSearchText(section) {
+  return section.blocks
+    .filter((block) => block.type === "paragraph" && !isBoilerplateParagraph(block.text))
+    .map((block) => block.text.trim())
+    .filter((text) => text.length >= 12)
+    .join(" ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 4000);
+}
+
 async function main() {
   fs.rmSync(outputDir, { recursive: true, force: true });
   fs.rmSync(assetsDir, { recursive: true, force: true });
@@ -1131,11 +1142,13 @@ async function main() {
         buildSectionPage(volume, section, previousEntry, nextEntry, description)
       );
 
-      sectionSearchIndex.push({
-        title: section.title,
-        volume: volume.label,
-        url: section.href
-      });
+        sectionSearchIndex.push({
+          title: section.title,
+          volume: volume.label,
+          url: section.href,
+          summary: section.description,
+          text: buildSearchText(section)
+        });
       pageManifest.push(`https://lastchristian.com${section.href}`);
     });
   }
