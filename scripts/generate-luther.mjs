@@ -690,29 +690,79 @@ function buildSectionNav(previousEntry, nextEntry, position) {
 
 function buildSectionPage(volume, section, previousEntry, nextEntry, description) {
   const canonicalUrl = `https://lastchristian.com${section.href}`;
+  const sectionSlug = section.href.split("/").filter(Boolean).at(-1) || "";
+  const sectionPrefixMatch = sectionSlug.match(/^(\d+)/);
+  const sectionLabel = sectionPrefixMatch ? `Section ${sectionPrefixMatch[1]}` : volume.label;
+  const fullTitle = `${section.title} | ${volume.label} | ${sectionLabel} | Luther Library | Last Christian Ministries`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(section.title)} | ${escapeHtml(volume.label)} | Luther Library | Last Christian Ministries</title>
+  <title>${escapeHtml(fullTitle)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)}">
+  <meta property="og:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)} | ${escapeHtml(sectionLabel)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)}">
+  <meta name="twitter:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)} | ${escapeHtml(sectionLabel)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": ${JSON.stringify(section.title)},
+          "url": ${JSON.stringify(canonicalUrl)},
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": ${JSON.stringify(volume.label)},
+            "url": ${JSON.stringify(`https://lastchristian.com${volume.href}`)}
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lastchristian.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Luther's Works",
+              "item": "https://lastchristian.com/luther.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": ${JSON.stringify(volume.label)},
+              "item": ${JSON.stringify(`https://lastchristian.com${volume.href}`)}
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": ${JSON.stringify(section.title)},
+              "item": ${JSON.stringify(canonicalUrl)}
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="campaign-page contact-page luther-doc-page">
   <div class="site-shell">

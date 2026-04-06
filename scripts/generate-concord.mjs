@@ -176,6 +176,7 @@ function buildNavBlock(previousEntry, nextEntry, placement) {
 
 function buildDocPage({ title, sectionTitle, pathname, contentHtml, description, previousEntry, nextEntry }) {
   const canonicalUrl = `https://lastchristian.com${localUrlFromPathname(pathname)}`;
+  const fullTitle = `${title} | ${sectionTitle} | Book of Concord | Last Christian Ministries`;
   const topNav = buildNavBlock(previousEntry, null, "top");
   const bottomNav = buildNavBlock(null, nextEntry, "bottom");
   return `<!DOCTYPE html>
@@ -183,24 +184,70 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(title)} | Book of Concord | Last Christian Ministries</title>
+  <title>${escapeHtml(fullTitle)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="${escapeHtml(title)} | Book of Concord">
+  <meta property="og:title" content="${escapeHtml(title)} | ${escapeHtml(sectionTitle)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="${escapeHtml(title)} | Book of Concord">
+  <meta name="twitter:title" content="${escapeHtml(title)} | ${escapeHtml(sectionTitle)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "headline": ${JSON.stringify(title)},
+          "url": ${JSON.stringify(canonicalUrl)},
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": ${JSON.stringify(sectionTitle)},
+            "url": "https://lastchristian.com/concord.html"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://lastchristian.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Book of Concord",
+              "item": "https://lastchristian.com/concord.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": ${JSON.stringify(sectionTitle)},
+              "item": "https://lastchristian.com/concord.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": ${JSON.stringify(title)},
+              "item": ${JSON.stringify(canonicalUrl)}
+            }
+          ]
+        }
+      ]
+    }
+  </script>
 </head>
 <body class="campaign-page contact-page concord-doc-page">
   <div class="site-shell">
