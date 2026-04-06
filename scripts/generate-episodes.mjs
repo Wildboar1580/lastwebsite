@@ -471,6 +471,7 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/about.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://lastchristian.com/requests.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/concord.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/luther.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/podcast.html", changefreq: "daily", priority: "0.9" },
