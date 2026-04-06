@@ -9,8 +9,8 @@ export const campaigns = [
     endDate: "",
     donationUrl: "https://www.zeffy.com/en-US/donation-form/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry",
     thermometerUrl: "https://www.zeffy.com/embed/thermometer/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry",
-    image: "/assets/images/campaign-education.svg",
-    imageAlt: "An illustrated building, supplies, and relief goods representing the effort to build a medical clinic in Uganda.",
+    image: "/assets/images/community.jpeg",
+    imageAlt: "Young people from the Ugandan community standing together outside their homes, representing the families the medical clinic campaign aims to serve.",
     canonicalUrl: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html",
     story: [
       "This campaign is centered on building a medical clinic that can serve poor families, widows, and children in Uganda who often have little access to basic treatment. A clinic creates a fixed place where mercy can be offered consistently instead of only in scattered emergencies.",
