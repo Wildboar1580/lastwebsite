@@ -1436,6 +1436,26 @@ textarea {
   object-fit: cover;
 }
 
+.text-spotlight-card {
+  background: linear-gradient(180deg, rgba(239, 43, 45, 0.08), rgba(255, 255, 255, 0.02));
+  border-color: rgba(239, 43, 45, 0.2);
+}
+
+.broader-ministry-page .campaign-story p,
+.broader-ministry-page .campaign-sidebar p,
+.broader-ministry-page .campaign-evidence-copy {
+  line-height: 1.78;
+}
+
+.broader-ministry-page .campaign-impact ul,
+.broader-ministry-page .broader-ministry-card-copy ul {
+  line-height: 1.75;
+}
+
+.broader-ministry-page .broader-ministry-card-copy {
+  gap: 0.95rem;
+}
+
 .requests-hero,
 .request-group-section {
   width: min(1180px, calc(100% - 2rem));
