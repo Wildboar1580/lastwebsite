@@ -485,6 +485,7 @@ const sitemapUrls = [
   })),
   { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html", changefreq: "weekly", priority: "0.9" },
+  { loc: "https://lastchristian.com/campaigns/support-the-work-of-last-christian-ministries.html", changefreq: "weekly", priority: "0.7" },
   ...bibleBookManifest.map((book) => ({
     loc: book.url,
     changefreq: "monthly",

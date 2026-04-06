@@ -1112,6 +1112,23 @@ textarea {
   text-align: center;
 }
 
+.secondary-giving {
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.secondary-giving h3,
+.secondary-giving-card h3 {
+  margin: 0;
+}
+
+.secondary-giving p,
+.secondary-giving-card p {
+  margin: 0;
+}
+
 .text-link {
   font-family: "Inter", Arial, sans-serif;
   font-size: 0.88rem;
@@ -1515,6 +1532,14 @@ textarea {
 .campaign-sidebar .button,
 .campaign-sidebar .countdown {
   width: 100%;
+}
+
+.secondary-giving-card {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.75rem;
 }
 
 .sr-only {
