@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://lastchristian.com/kutesa.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lastchristian.com/faq.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

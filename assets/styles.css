@@ -1371,6 +1371,26 @@ textarea {
   object-fit: cover;
 }
 
+.campaign-evidence-spotlight {
+  gap: 1rem;
+}
+
+.campaign-spotlight-card {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(213, 166, 41, 0.18);
+  border-radius: 0.65rem;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: var(--shadow);
+}
+
+.campaign-spotlight-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
 .requests-hero,
 .request-group-section {
   width: min(1180px, calc(100% - 2rem));

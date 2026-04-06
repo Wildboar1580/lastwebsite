@@ -469,6 +469,7 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/bible.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/lectionary.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/about.html", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://lastchristian.com/kutesa.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/requests.html", changefreq: "monthly", priority: "0.8" },
