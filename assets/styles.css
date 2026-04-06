@@ -588,6 +588,12 @@ textarea {
   overflow: hidden;
 }
 
+.episode-art-link {
+  display: block;
+  border-radius: 0.45rem;
+  overflow: hidden;
+}
+
 .episode-card img,
 .campaign-card img {
   width: 100%;
@@ -637,6 +643,15 @@ textarea {
 .episode-date {
   margin-bottom: 0.55rem;
   color: var(--gold);
+}
+
+.archive-page-note {
+  color: var(--text-soft);
+}
+
+.pagination-spacer {
+  display: inline-block;
+  min-width: 5.5rem;
 }
 
 .episode-content h3,

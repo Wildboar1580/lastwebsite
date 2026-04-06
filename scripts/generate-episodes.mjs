@@ -4,15 +4,19 @@ import path from "node:path";
 const root = process.cwd();
 const feedPath = path.join(root, "rss-feed.xml");
 const outputDir = path.join(root, "episodes");
+const podcastLandingPath = path.join(root, "podcast.html");
+const podcastPageDir = path.join(root, "podcast", "page");
 const bibleManifestPath = path.join(root, "assets", "bible", "chapter-manifest.json");
 const bibleBookManifestPath = path.join(root, "assets", "bible", "book-manifest.json");
 const concordManifestPath = path.join(root, "assets", "concord", "manifest.json");
 const lutherManifestPath = path.join(root, "assets", "luther", "manifest.json");
+const ARCHIVE_PAGE_SIZE = 24;
 
 const feedXml = fs.readFileSync(feedPath, "utf8");
 const items = [...feedXml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
 
 fs.mkdirSync(outputDir, { recursive: true });
+fs.mkdirSync(podcastPageDir, { recursive: true });
 
 const subscribeLinks = {
   apple: "https://podcasts.apple.com/us/podcast/last-christian-ministries/id1852167931",
@@ -81,6 +85,66 @@ function formatDuration(duration) {
   const seconds = Math.floor(totalSeconds % 60);
   if (hours > 0) return `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
   return `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
+function archivePageUrl(pageNumber) {
+  return pageNumber <= 1
+    ? "https://lastchristian.com/podcast.html"
+    : `https://lastchristian.com/podcast/page/${pageNumber}.html`;
+}
+
+function archivePagePath(pageNumber) {
+  return pageNumber <= 1
+    ? podcastLandingPath
+    : path.join(podcastPageDir, `${pageNumber}.html`);
+}
+
+function renderStaticArchiveCards(episodes) {
+  return episodes.map((episode) => `
+        <article class="episode-card">
+          <div class="episode-card-media">
+            <a class="episode-art-link" href="${episode.canonicalUrl}" aria-label="Open ${escapeHtml(episode.title)}">
+              <img src="${episode.imageUrl}" alt="" loading="lazy" decoding="async">
+            </a>
+          </div>
+          <div class="episode-content">
+            <p class="episode-date">${escapeHtml(episode.displayDate)}</p>
+            <h3><a class="episode-title-link" href="${episode.canonicalUrl}">${escapeHtml(episode.title)}</a></h3>
+            <a class="read-more-link" href="${episode.canonicalUrl}">Read more</a>
+          </div>
+        </article>
+  `).join("");
+}
+
+function renderStaticPagination(currentPage, totalPages) {
+  if (totalPages <= 1) {
+    return "";
+  }
+
+  const links = [];
+  for (let page = 1; page <= totalPages; page += 1) {
+    if (page === 1 || page === totalPages || Math.abs(page - currentPage) <= 1) {
+      links.push(page);
+    } else if (links[links.length - 1] !== "...") {
+      links.push("...");
+    }
+  }
+
+  const previousUrl = currentPage > 1 ? archivePageUrl(currentPage - 1) : "";
+  const nextUrl = currentPage < totalPages ? archivePageUrl(currentPage + 1) : "";
+
+  return `
+        ${previousUrl ? `<a class="button button-outline pagination-button" href="${previousUrl}">Previous</a>` : `<span class="pagination-spacer"></span>`}
+        ${links.map((entry) => {
+          if (entry === "...") {
+            return `<span class="pagination-ellipsis" aria-hidden="true">…</span>`;
+          }
+          const href = archivePageUrl(entry);
+          const active = entry === currentPage;
+          return `<a class="button ${active ? "button-red" : "button-outline"} pagination-button" href="${href}" ${active ? 'aria-current="page"' : ""}>${entry}</a>`;
+        }).join("")}
+        ${nextUrl ? `<a class="button button-outline pagination-button" href="${nextUrl}">Next</a>` : `<span class="pagination-spacer"></span>`}
+  `;
 }
 
 function buildPage(episode) {
@@ -214,6 +278,123 @@ function buildPage(episode) {
 </html>`;
 }
 
+function buildArchivePage({ episodes, currentPage, totalPages }) {
+  const canonicalUrl = archivePageUrl(currentPage);
+  const pageTitle = currentPage === 1
+    ? "Podcast Archive | Last Christian Ministries"
+    : `Podcast Archive Page ${currentPage} | Last Christian Ministries`;
+  const metaDescription = currentPage === 1
+    ? "Browse the full Last Christian Ministries podcast archive with sermons, Scripture readings, and readings from historic Lutheran theology, paginated for easier listening and searching."
+    : `Browse page ${currentPage} of the Last Christian Ministries podcast archive with static links to older episodes and sermon recordings.`;
+  const staticCards = renderStaticArchiveCards(episodes);
+  const staticPagination = renderStaticPagination(currentPage, totalPages);
+  const previousUrl = currentPage > 1 ? archivePageUrl(currentPage - 1) : "";
+  const nextUrl = currentPage < totalPages ? archivePageUrl(currentPage + 1) : "";
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(pageTitle)}</title>
+  <meta name="description" content="${escapeHtml(metaDescription)}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="${escapeHtml(pageTitle)}">
+  <meta property="og:description" content="${escapeHtml(metaDescription)}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:image" content="https://media.rss.com/last-christian-ministries/podcast_cover.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
+  <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
+  <meta name="twitter:image" content="https://media.rss.com/last-christian-ministries/podcast_cover.jpg">
+  <link rel="canonical" href="${canonicalUrl}">
+  ${previousUrl ? `<link rel="prev" href="${previousUrl}">` : ""}
+  ${nextUrl ? `<link rel="next" href="${nextUrl}">` : ""}
+  <link rel="alternate" type="application/rss+xml" title="Last Christian Ministries Podcast Feed" href="https://media.rss.com/last-christian-ministries/feed.xml">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
+        </span>
+        <span>
+          <strong>Last Christian Ministries</strong>
+          <em>Faithful in the last days</em>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/bible.html">Bible</a>
+        <a href="/lectionary.html">Lectionary</a>
+        <a href="/podcast.html">Podcast</a>
+        <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/concord.html">Book of Concord</a>
+        <a href="/luther.html">Luther's Works</a>
+        <a href="/library.html">Library</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="button button-gold" href="/index.html#campaigns">Give Now</a>
+    </header>
+
+    <main>
+      <section class="section podcast-archive-page">
+        <div class="section-heading">
+          <p class="eyebrow">Podcast Archive</p>
+          <h2>Every Episode in One Place</h2>
+          <p>Browse the full Last Christian Ministries feed with real archive pages and static links to older episodes.</p>
+        </div>
+        <div class="archive-header archive-header-page">
+          <div>
+            <p class="eyebrow">Archive</p>
+            <h3>${episodes.length ? `${escapeHtml(String(episodes.length))} episodes on this page` : "Archive page"}</h3>
+          </div>
+          <div class="archive-page-note">
+            <p>Page ${currentPage} of ${totalPages}. For live search, use <a class="text-link" href="/podcast.html">the main archive page</a>.</p>
+          </div>
+        </div>
+        <div class="archive-grid">
+${staticCards}
+        </div>
+        <div class="archive-pagination" aria-label="Podcast archive pagination">
+${staticPagination}
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>`;
+}
+
+function updatePodcastLandingPage(episodes) {
+  if (!fs.existsSync(podcastLandingPath)) {
+    return;
+  }
+
+  const totalPages = Math.max(1, Math.ceil(episodes.length / ARCHIVE_PAGE_SIZE));
+  const visibleEpisodes = episodes.slice(0, ARCHIVE_PAGE_SIZE);
+  const staticCards = renderStaticArchiveCards(visibleEpisodes);
+  const staticPagination = renderStaticPagination(1, totalPages);
+  let html = fs.readFileSync(podcastLandingPath, "utf8");
+  html = html.replace(
+    /<!-- PODCAST_ARCHIVE_RESULTS_START -->[\s\S]*?<!-- PODCAST_ARCHIVE_RESULTS_END -->/,
+    `<!-- PODCAST_ARCHIVE_RESULTS_START -->\n        <div id="archive-results" class="archive-grid" aria-live="polite">\n${staticCards}\n        </div>\n        <!-- PODCAST_ARCHIVE_RESULTS_END -->`
+  );
+  html = html.replace(
+    /<!-- PODCAST_ARCHIVE_PAGINATION_START -->[\s\S]*?<!-- PODCAST_ARCHIVE_PAGINATION_END -->/,
+    `<!-- PODCAST_ARCHIVE_PAGINATION_START -->\n        <div id="archive-pagination" class="archive-pagination" aria-label="Podcast archive pagination">\n${staticPagination}\n        </div>\n        <!-- PODCAST_ARCHIVE_PAGINATION_END -->`
+  );
+  fs.writeFileSync(podcastLandingPath, html);
+}
+
 const episodes = items.map((item) => {
   const title = readTag(item, "title") || "Untitled episode";
   const link = readTag(item, "link");
@@ -251,6 +432,22 @@ for (const episode of episodes) {
   fs.writeFileSync(path.join(outputDir, `${episode.slug}.html`), buildPage(episode));
 }
 
+const podcastArchiveTotalPages = Math.max(1, Math.ceil(episodes.length / ARCHIVE_PAGE_SIZE));
+for (let page = 2; page <= podcastArchiveTotalPages; page += 1) {
+  const start = (page - 1) * ARCHIVE_PAGE_SIZE;
+  const visibleEpisodes = episodes.slice(start, start + ARCHIVE_PAGE_SIZE);
+  fs.writeFileSync(
+    archivePagePath(page),
+    buildArchivePage({
+      episodes: visibleEpisodes,
+      currentPage: page,
+      totalPages: podcastArchiveTotalPages
+    })
+  );
+}
+
+updatePodcastLandingPage(episodes);
+
 const manifest = episodes.map(({ slug, title, link, canonicalUrl }) => ({ slug, title, link, canonicalUrl }));
 fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.stringify(manifest, null, 2));
 
@@ -277,6 +474,11 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/concord.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/luther.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/podcast.html", changefreq: "daily", priority: "0.9" },
+  ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({
+    loc: archivePageUrl(index + 2),
+    changefreq: "weekly",
+    priority: "0.8"
+  })),
   { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
   { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda.html", changefreq: "daily", priority: "0.9" },
