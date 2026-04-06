@@ -5,6 +5,7 @@ const root = process.cwd();
 const feedPath = path.join(root, "rss-feed.xml");
 const outputDir = path.join(root, "episodes");
 const bibleManifestPath = path.join(root, "assets", "bible", "chapter-manifest.json");
+const bibleBookManifestPath = path.join(root, "assets", "bible", "book-manifest.json");
 const concordManifestPath = path.join(root, "assets", "concord", "manifest.json");
 const lutherManifestPath = path.join(root, "assets", "luther", "manifest.json");
 
@@ -256,6 +257,9 @@ fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.string
 const bibleManifest = fs.existsSync(bibleManifestPath)
   ? JSON.parse(fs.readFileSync(bibleManifestPath, "utf8"))
   : [];
+const bibleBookManifest = fs.existsSync(bibleBookManifestPath)
+  ? JSON.parse(fs.readFileSync(bibleBookManifestPath, "utf8"))
+  : [];
 const concordManifest = fs.existsSync(concordManifestPath)
   ? JSON.parse(fs.readFileSync(concordManifestPath, "utf8"))
   : [];
@@ -277,6 +281,11 @@ const sitemapUrls = [
   { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html", changefreq: "weekly", priority: "0.9" },
+  ...bibleBookManifest.map((book) => ({
+    loc: book.url,
+    changefreq: "monthly",
+    priority: "0.8"
+  })),
   ...bibleManifest.map((chapter) => ({
     loc: chapter.url,
     changefreq: "monthly",

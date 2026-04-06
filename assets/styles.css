@@ -1820,6 +1820,54 @@ textarea {
   margin-top: 1.4rem;
 }
 
+.bible-crumbs {
+  margin: 0 0 0.85rem;
+  color: var(--text-soft);
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+}
+
+.bible-crumbs a {
+  color: var(--gold-bright);
+}
+
+.bible-browse-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.bible-browse-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bible-book-link-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1rem;
+}
+
+.bible-book-link-list .text-link {
+  font-size: 0.98rem;
+}
+
+.bible-book-section .section-heading {
+  margin-bottom: 1.5rem;
+}
+
+.bible-chapter-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.bible-chapter-link {
+  min-width: 3rem;
+  justify-content: center;
+}
+
 .bible-column {
   padding: 1.15rem;
 }
@@ -1881,7 +1929,8 @@ textarea {
   .bible-audio-grid,
   .bible-lectionary-grid,
   .bible-note-grid,
-  .bible-bottom-nav {
+  .bible-bottom-nav,
+  .bible-browse-grid {
     grid-template-columns: 1fr;
   }
 

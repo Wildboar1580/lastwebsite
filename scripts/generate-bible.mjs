@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const outputDir = path.join(root, "bible");
 const assetsDir = path.join(root, "assets", "bible");
+const bibleLandingPath = path.join(root, "bible.html");
 const msbStringsPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "sharedStrings.xml");
 const msbSheetPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "worksheets", "sheet1.xml");
 const kjvPath = path.join(root, "tmp", "bible", "json", "EN-English", "kjv.json");
@@ -200,6 +201,125 @@ function renderColumn(versionLabel, versionKey, verses) {
   `;
 }
 
+function renderBrowseSection(oldTestament, newTestament) {
+  const renderGroup = (title, books) => `
+        <article class="faq-card bible-browse-card">
+          <p class="eyebrow">${title}</p>
+          <div class="bible-book-link-list">
+            ${books.map((book) => `<a class="text-link" href="/bible/${book.slug}/">${escapeHtml(book.name)}</a>`).join("")}
+          </div>
+        </article>`;
+
+  return `      <section class="section library-section bible-browse-section">
+        <div class="section-heading">
+          <p class="eyebrow">Browse the Bible</p>
+          <h2>Browse books and chapters with normal links</h2>
+          <p>Open static book and chapter pages directly with ordinary links so readers and search engines can move through Scripture naturally.</p>
+        </div>
+        <div class="bible-browse-grid">
+${renderGroup("Old Testament", oldTestament)}
+${renderGroup("New Testament", newTestament)}
+        </div>
+      </section>`;
+}
+
+function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook, nextBook }) {
+  const chapterLinks = chapterNumbers
+    .map((chapter) => `<a class="button button-outline bible-chapter-link" href="/bible/${bookSlug}/${chapter}.html">${chapter}</a>`)
+    .join("");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(bookName)} | Bible | Last Christian Ministries</title>
+  <meta name="description" content="Browse every chapter of ${escapeHtml(bookName)} in the Majority Standard Bible and KJV with static pages built for reading, audio, and search.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="${escapeHtml(bookName)} | Bible | Last Christian Ministries">
+  <meta property="og:description" content="Browse every chapter of ${escapeHtml(bookName)} with static links, audio-ready chapter pages, and a mobile-friendly reading layout.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lastchristian.com/bible/${escapeHtml(bookSlug)}/">
+  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(bookName)} | Bible | Last Christian Ministries">
+  <meta name="twitter:description" content="Browse every chapter of ${escapeHtml(bookName)} with static links, audio-ready chapter pages, and a mobile-friendly reading layout.">
+  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://lastchristian.com/bible/${escapeHtml(bookSlug)}/">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="campaign-page bible-page bible-book-page" data-bible-view="msb">
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
+        </span>
+        <span><strong>Last Christian Ministries</strong></span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="/bible.html">Bible</a>
+        <a href="/lectionary.html">Lectionary</a>
+        <a href="/podcast.html">Podcast</a>
+        <a href="/index.html#campaigns">Campaigns</a>
+        <a href="/concord.html">Book of Concord</a>
+        <a href="/luther.html">Luther's Works</a>
+        <a href="/library.html">Library</a>
+        <a href="/about.html">About</a>
+        <a href="/faq.html">FAQ</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+    </header>
+    <main>
+      <section class="contact-hero bible-hero">
+        <div class="contact-hero-copy">
+          <p class="eyebrow">Bible</p>
+          <p class="bible-crumbs"><a href="/bible.html">Bible</a> / ${escapeHtml(bookName)}</p>
+          <h1>${escapeHtml(bookName)}</h1>
+          <p>Open any chapter in ${escapeHtml(bookName)} with static chapter pages that preserve your preferred translation and support chapter audio.</p>
+        </div>
+      </section>
+      <section class="section bible-book-section">
+        <div class="section-heading">
+          <p class="eyebrow">Browse Chapters</p>
+          <h2>Choose a chapter in ${escapeHtml(bookName)}</h2>
+          <p>Every chapter is available as its own static page for easier reading, linking, and search engine discovery.</p>
+        </div>
+        <div class="bible-chapter-list">
+          ${chapterLinks}
+        </div>
+        <div class="bible-bottom-nav">
+          ${previousBook ? `<a class="button button-outline" href="/bible/${previousBook.slug}/">Previous Book</a>` : `<span></span>`}
+          ${nextBook ? `<a class="button button-red" href="/bible/${nextBook.slug}/">Next Book</a>` : ""}
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>`;
+}
+
+function updateBibleLandingPage(booksManifest) {
+  if (!fs.existsSync(bibleLandingPath)) {
+    return;
+  }
+
+  const bibleLandingHtml = fs.readFileSync(bibleLandingPath, "utf8");
+  const oldTestament = booksManifest.slice(0, 39);
+  const newTestament = booksManifest.slice(39);
+  const browseSection = renderBrowseSection(oldTestament, newTestament);
+  const nextHtml = bibleLandingHtml.replace(
+    /<!-- BIBLE_BROWSE_START -->[\s\S]*?<!-- BIBLE_BROWSE_END -->/,
+    `<!-- BIBLE_BROWSE_START -->\n${browseSection}\n      <!-- BIBLE_BROWSE_END -->`
+  );
+  fs.writeFileSync(bibleLandingPath, nextHtml);
+}
+
 function renderPage({
   bookName,
   bookSlug,
@@ -213,7 +333,8 @@ function renderPage({
   kjvAudioUrl,
   audioSequence,
   selectorOptions,
-  metaDescription
+  metaDescription,
+  bookUrl
 }) {
   const pageTitle = `${bookName} ${chapter} | Bible | Last Christian Ministries`;
   const canonicalUrl = `https://lastchristian.com/bible/${bookSlug}/${chapter}.html`;
@@ -267,6 +388,7 @@ function renderPage({
       <section class="contact-hero bible-hero">
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
+          <p class="bible-crumbs"><a href="/bible.html">Bible</a> / <a href="${bookUrl}">${escapeHtml(bookName)}</a> / Chapter ${chapter}</p>
           <h1>${escapeHtml(bookName)} ${chapter}</h1>
           <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
@@ -327,6 +449,7 @@ ${renderColumn("Majority Standard Bible", "msb", msbVerses)}
 ${renderColumn("KJV", "kjv", kjvVerses)}
         </div>
         <div class="bible-bottom-nav">
+          <a class="button button-outline" href="${bookUrl}">All ${escapeHtml(bookName)} Chapters</a>
           ${nextUrl ? `<a class="button button-red" href="${nextUrl}">Next Chapter</a>` : ""}
         </div>
       </section>
@@ -377,16 +500,20 @@ function main() {
     chapterCount: [...(msbBooks.get(bookName)?.keys() || [])].length
   }));
 
+  const bookManifest = [];
   const chapterManifest = [];
   const msbSearchIndex = [];
   const kjvSearchIndex = [];
 
   bookNames.forEach((bookName, index) => {
     const bookSlug = slugifyBook(bookName);
+    const bookUrl = `/bible/${bookSlug}/`;
     const msbCode = MSB_BOOK_CODES[index];
     const kjvAudioSlug = buildKjvAudioSlug(bookName);
     const chapterNumbers = [...(msbBooks.get(bookName)?.keys() || [])].sort((a, b) => a - b);
     const bookDir = path.join(outputDir, bookSlug);
+    const previousBook = index > 0 ? booksManifest[index - 1] : null;
+    const nextBook = index < booksManifest.length - 1 ? booksManifest[index + 1] : null;
     fs.mkdirSync(bookDir, { recursive: true });
     const audioSequence = chapterNumbers.map((chapterNumber) => ({
       book: bookName,
@@ -395,6 +522,23 @@ function main() {
       msbAudioUrl: buildMsbAudioUrl(index + 1, chapterNumber, msbCode, bookSlug),
       kjvAudioUrl: buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug)
     }));
+
+    fs.writeFileSync(
+      path.join(bookDir, "index.html"),
+      renderBookIndexPage({
+        bookName,
+        bookSlug,
+        chapterNumbers,
+        previousBook,
+        nextBook
+      })
+    );
+
+    bookManifest.push({
+      book: bookName,
+      slug: bookSlug,
+      url: `https://lastchristian.com${bookUrl}`
+    });
 
     chapterNumbers.forEach((chapterNumber, chapterIndex) => {
       const msbVerses = (msbBooks.get(bookName)?.get(chapterNumber) || []).sort((a, b) => a.verse - b.verse);
@@ -455,16 +599,19 @@ function main() {
           kjvAudioUrl,
           audioSequence,
           selectorOptions,
-          metaDescription
+          metaDescription,
+          bookUrl
         })
       );
     });
   });
 
   fs.writeFileSync(path.join(assetsDir, "books.json"), JSON.stringify(booksManifest, null, 2));
+  fs.writeFileSync(path.join(assetsDir, "book-manifest.json"), JSON.stringify(bookManifest, null, 2));
   fs.writeFileSync(path.join(assetsDir, "search-index.json"), JSON.stringify(msbSearchIndex));
   fs.writeFileSync(path.join(assetsDir, "search-index-kjv.json"), JSON.stringify(kjvSearchIndex));
   fs.writeFileSync(path.join(assetsDir, "chapter-manifest.json"), JSON.stringify(chapterManifest, null, 2));
+  updateBibleLandingPage(booksManifest);
 
   console.log(`Generated ${chapterManifest.length} Bible chapter pages.`);
 }
