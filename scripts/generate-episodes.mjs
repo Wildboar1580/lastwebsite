@@ -480,8 +480,6 @@ const sitemapUrls = [
     priority: "0.8"
   })),
   { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/campaigns/feed-100-people-in-uganda-this-easter.html", changefreq: "daily", priority: "0.9" },
-  { loc: "https://lastchristian.com/campaigns/christ-for-the-lame-help-us-care-for-30-disabled-children-in-uganda.html", changefreq: "daily", priority: "0.9" },
   { loc: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html", changefreq: "weekly", priority: "0.9" },
   ...bibleBookManifest.map((book) => ({
     loc: book.url,
