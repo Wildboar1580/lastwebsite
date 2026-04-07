@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Last Christian Ministries Gmail logo</title>
+  <desc id="desc">Minimal square logo with a small, simplified Luther rose centered on a dark background.</desc>
+
+  <rect x="20" y="20" width="472" height="472" rx="40" fill="#111111"/>
+  <rect x="20" y="20" width="472" height="472" rx="40" fill="none" stroke="#d5a629" stroke-opacity="0.24" stroke-width="6"/>
+
+  <circle cx="256" cy="256" r="114" fill="none" stroke="#d5a629" stroke-width="12"/>
+
+  <g fill="#fbf7ef" stroke="#d9c59a" stroke-width="4" stroke-linejoin="round">
+    <path d="M256 186
+      C269 200 276 210 279 220
+      C294 209 307 204 324 202
+      C319 217 314 230 304 244
+      C319 248 331 254 342 263
+      C328 271 316 276 303 279
+      C312 293 317 306 320 322
+      C304 316 291 309 279 300
+      C275 311 268 324 256 337
+      C244 324 237 311 233 300
+      C221 309 208 316 192 322
+      C195 306 200 293 209 279
+      C196 276 184 271 170 263
+      C181 254 193 248 208 244
+      C198 230 193 217 188 202
+      C205 204 218 209 233 220
+      C236 210 243 200 256 186Z"/>
+  </g>
+
+  <path d="M256 220c15-19 40-23 56-8 15 14 15 37 0 52l-56 53-56-53c-15-15-15-38 0-52 16-15 41-11 56 8Z"
+    fill="#b51f26" stroke="#171311" stroke-width="6"/>
+  <path d="M256 232v60" stroke="#171311" stroke-width="16" stroke-linecap="round"/>
+  <path d="M226 262h60" stroke="#171311" stroke-width="16" stroke-linecap="round"/>
+</svg>

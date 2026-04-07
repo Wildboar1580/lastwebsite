@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Last Christian Ministries Gmail logo</title>
+  <desc id="desc">Minimal confessional Christian logo with a gold cross above a simple fish outline on a dark square background.</desc>
+
+  <rect x="20" y="20" width="472" height="472" rx="40" fill="#111111"/>
+  <rect x="20" y="20" width="472" height="472" rx="40" fill="none" stroke="#d5a629" stroke-opacity="0.28" stroke-width="6"/>
+
+  <path d="M256 126v116" stroke="#d5a629" stroke-width="20" stroke-linecap="round"/>
+  <path d="M206 174h100" stroke="#d5a629" stroke-width="20" stroke-linecap="round"/>
+
+  <path d="M136 318
+           C188 270 260 268 322 318
+           C260 368 188 366 136 318Z"
+        fill="none" stroke="#fbf7ef" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M322 318l62-42v84Z"
+        fill="none" stroke="#fbf7ef" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

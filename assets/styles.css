@@ -2004,6 +2004,15 @@ textarea {
   text-underline-offset: 0.18em;
 }
 
+.pieper-emphasis {
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.pieper-italic {
+  font-style: italic;
+}
+
 .luther-doc-nav {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
