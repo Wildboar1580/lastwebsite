@@ -592,6 +592,15 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "5. The Communication of Attributes.") {
     return "The communication of attributes means that the one person of Christ is spoken of according to both natures, so that what belongs to either nature is truly predicated of the incarnate Son. Pieper introduces this doctrine to defend the scriptural way of speaking against rationalistic attempts to divide Christ's person.";
   }
+  if (title === "The Second Genus of the Communication of Attributes") {
+    return "In the second genus of the communication of attributes, Pieper argues that Christ's human nature truly shares in divine majesty through the personal union. He frames the issue as a defense of Scripture's own language against the claim that finite human nature cannot participate in divine attributes.";
+  }
+  if (title === "The Communicated Omnipresence.") {
+    return "Pieper treats the communicated omnipresence of Christ's human nature as part of the scriptural teaching on the genus maiestaticum. He argues that the incarnate Son is not divided from His humanity, but remains the one Christ wherever He is.";
+  }
+  if (title === "Summarizing Assessment of Reformed Christology.") {
+    return "Pieper's summary assessment of Reformed Christology distinguishes between what remains Christian in it and what becomes destructive when rationalistic principles are followed consistently. He argues that the rejection of Christ's real communion of natures leads away from the incarnation itself unless that principle is inconsistently abandoned.";
+  }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
   }
