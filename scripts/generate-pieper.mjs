@@ -623,8 +623,25 @@ function parseOcrSections(volume) {
   });
 }
 
-function summarizeSection(section) {
-  const text = section.blocks.filter((block) => block.type === "paragraph").map((block) => cleanText(block.text)).filter((value) => value.length >= 24).slice(0, 2).join(" ");
+function sanitizeSummaryText(volume, text) {
+  let value = cleanText(text);
+  if (volume.slug === "vol-2") {
+    value = value
+      .replace(/\b(?:[A-Za-z@&]{1,4}[0-9@&A-Za-z]*){3,}\b/g, " ")
+      .replace(/\b[A-Z]{3,}[a-zA-Z]*\b/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  return value;
+}
+
+function summarizeSection(volume, section) {
+  const text = section.blocks
+    .filter((block) => block.type === "paragraph")
+    .map((block) => sanitizeSummaryText(volume, block.text))
+    .filter((value) => value.length >= 24)
+    .slice(0, 2)
+    .join(" ");
   return text.slice(0, 180).trim() || "Open this section of Christian Dogmatics.";
 }
 
@@ -953,7 +970,7 @@ function main() {
     const sections = rawSections.map((section, index) => ({
       ...section,
       slug: `${String(index + 1).padStart(2, "0")}-${slugify(section.title || `section-${index + 1}`)}`,
-      description: summarizeSection(section)
+      description: summarizeSection(volume, section)
     }));
 
     const volumeDir = path.join(outputDir, volume.slug);
