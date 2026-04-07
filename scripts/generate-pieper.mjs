@@ -1219,6 +1219,26 @@ function buildVolumeSourceCards(volume) {
   `;
 }
 
+function buildFeaturedDoctrineCards() {
+  const featured = [
+    ["Grace", "Saving Grace", "/pieper/vol-2/03-2-concept-of-saving-grace/", "Start with Pieper's definition of saving grace and how it differs from works or inward merit."],
+    ["Christology", "Christ's Person", "/pieper/vol-2/08-i-the-doctrine-of-christ-s-person/", "Open the core Christology section on Christ's divinity, humanity, and personal union."],
+    ["Justification", "Central Position", "/pieper/vol-2/69-4-the-central-position-of-the-doctrine-of-justification/", "Jump to the section where Pieper places justification at the center of Christian doctrine."],
+    ["Means of Grace", "Means of Grace", "/pieper/vol-3/28-means-of-grace/", "Go directly to Pieper's treatment of how Christ delivers His gifts through appointed means."],
+    ["Last Things", "Last Things", "/pieper/vol-3/107-last-things/", "Enter volume 3 through Pieper's treatment of death, resurrection, judgment, and the life to come."]
+  ];
+
+  return `<div class="pieper-topic-grid">
+    ${featured.map(([eyebrow, title, href, summary]) => `
+      <a class="library-card pieper-topic-card" href="${href}">
+        <span class="pieper-card-meta">${escapeHtml(eyebrow)}</span>
+        <h3>${escapeHtml(title)}</h3>
+        <p>${escapeHtml(summary)}</p>
+      </a>
+    `).join("")}
+  </div>`;
+}
+
 function buildLandingPage(manifest) {
   return `<!DOCTYPE html>
 <html lang="en">
@@ -1299,14 +1319,25 @@ function buildLandingPage(manifest) {
 
       <section class="section library-section">
         <div class="section-heading">
+          <p class="eyebrow">Featured Topics</p>
+          <h2>Start with a doctrine</h2>
+          <p>Use a few guided entry points if you want to begin with the major centers of Pieper's dogmatics.</p>
+        </div>
+        ${buildFeaturedDoctrineCards()}
+      </section>
+
+      <section class="section library-section">
+        <div class="section-heading">
           <p class="eyebrow">Volumes</p>
           <h2>Open a local volume</h2>
         </div>
         <div class="library-grid">
           ${manifest.volumes.map((volume) => `
-            <a class="library-card" href="${volume.href}">
+            <a class="library-card pieper-volume-card" href="${volume.href}">
+              <span class="pieper-card-meta">${escapeHtml(volume.label)}</span>
               <h3>${escapeHtml(volume.label)}</h3>
               <p>${escapeHtml(volume.title)}</p>
+              <span class="pieper-card-count">${volume.sectionCount} sections</span>
             </a>
           `).join("")}
         </div>
@@ -1519,7 +1550,7 @@ function main() {
     const sectionEntries = sections.map((section) => ({ ...section, href: `/pieper/${volume.slug}/${section.slug}/` }));
     fs.writeFileSync(path.join(volumeDir, "index.html"), buildVolumePage(volume, sectionEntries));
 
-    manifest.volumes.push({ label: volume.label, title: volume.title, href: volume.href, slug: volume.slug });
+    manifest.volumes.push({ label: volume.label, title: volume.title, href: volume.href, slug: volume.slug, sectionCount: sectionEntries.length });
     manifest.pages.push(`https://lastchristian.com${volume.href}`);
 
     for (const [index, section] of sectionEntries.entries()) {
