@@ -668,11 +668,46 @@ function cleanupVolume2ParagraphText(text = "") {
     .replace(/\bIumination\b/g, "Illumination");
 }
 
+const VOLUME_2_BODY_OVERRIDES = new Map([
+  ["5. The Communication of Attributes.", [
+    "The communication of attributes means that the one person of Christ is spoken of according to both natures, so that what belongs to either nature is truly predicated of the incarnate Son. Pieper introduces this doctrine to defend the scriptural way of speaking against rationalistic attempts to divide Christ's person.",
+    "He first clarifies that 'attributes' includes not only essential qualities, but also the actions and sufferings proper to each nature. On that basis, he argues that the communicatio idiomatum is not a separate speculation beyond the personal union, but the necessary consequence of confessing that the Son of God truly became man."
+  ]],
+  ["The Second Genus of the Communication of Attributes", [
+    "In the second genus of the communication of attributes, Pieper argues that Christ's human nature truly shares in divine majesty through the personal union. He frames the issue as a defense of Scripture's own language against the claim that finite human nature cannot participate in divine attributes.",
+    "His emphasis is that the incarnation does not merely place divinity alongside humanity in Christ, but unites the two natures in the one person of the Son. For that reason, the Church must confess that the assumed human nature is not left in bare creaturely isolation, but is personally filled and borne by the majesty of the Logos."
+  ]],
+  ["The Communicated Omnipresence.", [
+    "Pieper treats the communicated omnipresence of Christ's human nature as part of the scriptural teaching on the genus maiestaticum. He argues that the incarnate Son is not divided from His humanity, but remains the one Christ wherever He is.",
+    "The point is not to dissolve Christ's humanity into deity, but to confess the mystery of the personal union without rationalistic limits. Pieper therefore presents Christ's presence as the presence of the whole God-man, especially in relation to the Church's confession of His continuing saving work."
+  ]],
+  ["II. The Doctrine of the States of Christ.", [
+    "Pieper presents Scripture's teaching that Christ stands in two states: humiliation and exaltation. He introduces this doctrine as a way of describing how the incarnate Son, according to His human nature, first refrained from the full use of divine majesty and then openly exercised it.",
+    "This distinction is not meant to divide Christ into two persons or two different subjects of action. Rather, it describes the history of the one incarnate Lord as He passes from lowliness and suffering into resurrection glory, ascension, and royal rule."
+  ]],
+  ["1. The Nature and Concept of Christ's Humiliation and Exaltation.", [
+    "Pieper defines Christ's humiliation and exaltation in relation to the one person of the God-man. Humiliation is not the loss of divine majesty, but the incarnate Son's non-use of it according to His human nature, while exaltation is its open and full use.",
+    "This allows him to preserve both Christ's unchanging deity and the reality of His earthly lowliness. The doctrine is therefore meant to confess how the same Lord who was born, suffered, and died is also the risen and exalted Christ who openly exercises divine glory."
+  ]],
+  ["2. The Individual Parts of Humiliation and Exaltation.", [
+    "Pieper next identifies the concrete events that belong to Christ's humiliation and exaltation. He treats these states historically, tracing how the incarnate Lord first entered the lowliness of suffering and then passed into the open manifestation of His glory.",
+    "The section serves to anchor the doctrine in the actual history of Jesus rather than in abstraction. Each step belongs to the saving work of the same Christ who humbled Himself for sinners and was exalted for their comfort and salvation."
+  ]],
+  ["The sacrifice of Christ and the Atonement of the Old Testament.", [
+    "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.",
+    "Hebrews is central to his argument: the blood of bulls and goats did not itself remove sin, but the sacrificial system truly pointed beyond itself to Christ's once-for-all offering. In that sense, the Old Testament sacrifices functioned as a real, God-given prophecy of the reconciliation accomplished by Christ."
+  ]],
+  ["Synergistic Arguments Against Divine Monergism.", [
+    "Pieper gathers the chief synergistic arguments against divine monergism to show that they all assign a decisive role to man in conversion. However phrased, they make grace depend on human distinction, decision, or conduct.",
+    "He especially objects to language about a sinner's 'right conduct' toward grace before conversion has taken place. In his judgment, such formulations quietly assume a remaining natural power in man that can cooperate in conversion, and therefore compromise the scriptural teaching that conversion is God's work alone."
+  ]]
+]);
+
 function normalizeVolume2Sections(sections) {
   return sections.map((section) => {
     const title = VOLUME_2_TITLE_OVERRIDES.get(section.title) || section.title;
     let leadParagraphHandled = false;
-    const blocks = section.blocks.map((block, index) => {
+    let blocks = section.blocks.map((block, index) => {
       if (index === 0 && block.type === "heading") return { ...block, text: title };
       if (block.type === "paragraph" && !leadParagraphHandled) {
         leadParagraphHandled = true;
@@ -685,6 +720,15 @@ function normalizeVolume2Sections(sections) {
       }
       return block;
     });
+    const paragraphOverride = VOLUME_2_BODY_OVERRIDES.get(title);
+    const paragraphCount = blocks.filter((block) => block.type === "paragraph").length;
+    if (paragraphOverride && paragraphCount <= 1) {
+      const headingBlocks = blocks.filter((block) => block.type === "heading");
+      blocks = [
+        ...headingBlocks,
+        ...paragraphOverride.map((text) => ({ type: "paragraph", text, html: escapeHtml(text) }))
+      ];
+    }
     return { ...section, title, blocks };
   });
 }
@@ -857,7 +901,11 @@ function summarizeSection(volume, section) {
     .filter((value) => value.length >= 24)
     .slice(0, 2)
     .join(" ");
-  return text.slice(0, 180).trim() || "Open this section of Christian Dogmatics.";
+  if (!text) return "Open this section of Christian Dogmatics.";
+  if (text.length <= 210) return text;
+  const shortened = text.slice(0, 210);
+  const lastSpace = shortened.lastIndexOf(" ");
+  return `${(lastSpace > 120 ? shortened.slice(0, lastSpace) : shortened).trim()}...`;
 }
 
 function buildSearchText(section) {
