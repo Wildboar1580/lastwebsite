@@ -436,8 +436,14 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "3. Attributes of saving grace.") {
     return "a. Grace in Christ. The saving grace by which God is gracious to sinners is not an absolute grace detached from Christ, but grace grounded in Christ's vicarious satisfaction. Scripture joins free justification by grace with the redemption that is in Christ Jesus, so grace must not be confused either with infused gifts in man or with any theory that detaches God's mercy from Christ's atoning work.";
   }
+  if (title === "4. On Ecclesiastical Terminology in Relation to God's Will of Grace.") {
+    return "The Church has long spoken of God's gracious will toward sinners as His will of grace. Pieper reviews this language in order to preserve the biblical truth that God's saving disposition toward men is grounded in Christ and not in any human merit or preparation.";
+  }
   if (title === "1. God's Will to Save All Men Is Not an Absolute Will.") {
     return "God's will to save all men is not an absolute will detached from Christ and the means of grace, but an ordered will grounded in Christ's merit and conveyed through the Gospel and sacraments, received by faith. The conditional language of Scripture about faith does not make faith a human work that earns salvation; it describes the way in which grace is received.";
+  }
+  if (title === "3. Voluntas Antecedens and Voluntas Consequens.") {
+    return "The distinction between God's antecedent and consequent will can be used helpfully when it serves the scriptural teaching that God sincerely wills the salvation of all and yet condemns unbelief. Pieper's concern is to keep this terminology from obscuring either universal grace or human responsibility for rejecting the Gospel.";
   }
   if (title === "2. The Indwelling of the Holy Spirit and of the Whole Holy Trinity.") {
     return "The unio mystica, the indwelling of the Holy Spirit and of the whole Holy Trinity in believers, is taught by Scripture as a consequence of justification by faith. It is not mere divine influence or a pantheistic confusion of Creator and creature, but God's true indwelling presence in Christians through faith in Christ.";
@@ -547,17 +553,50 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "7. The Terminology Employed in Presenting the Doctrine of Justification.") {
     return "Careful terminology matters in the doctrine of justification because the Church must guard the truth that sinners are justified by grace, for Christ's sake, through faith, and without works. Pieper reviews the classic evangelical forms of speech in order to preserve both the substance of the doctrine and the comfort it gives.";
   }
+  if (title === "8. Justification by Works.") {
+    return "Scripture also speaks of a justification by works, but in a different sense from justification before God. Pieper explains that works justify before men as outward evidence of faith, while before God the sinner is justified only through faith in Christ apart from the works of the law.";
+  }
   if (title === "Justification by Faith and Justification by Works Distinguished.") {
     return "Justification by faith before God must be distinguished from justification by works before men. Pieper insists that these are not two competing ways of obtaining salvation, but two different senses of the term, one dealing with God's verdict of grace and the other with the outward vindication of faith.";
+  }
+  if (title === "9. The Doctrine of Justification and the Distinction Between Law and Gospel.") {
+    return "The doctrine of justification stands or falls with the right distinction between Law and Gospel. Pieper shows that sinners are justified only by the Gospel's promise of grace in Christ, while the Law prepares by revealing sin but contributes nothing to the act by which God declares the sinner righteous.";
   }
   if (title === "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.") {
     return text.replace(/^the Holy Spirit\.\s*\*?\s*/i, "");
   }
   if (title === "2. The Sinlessness of Christ's Human Nature.") {
-    return text.replace(/^human beings have been sinners since Adam's fall,/i, "While all human beings have been sinners since Adam's fall,");
+    return "Though all other human beings are sinners by nature since Adam's fall, Christ's human nature is without sin. Pieper emphasizes that the Savior had to be truly man and yet entirely holy in order to redeem mankind from sin.";
   }
   if (title === "3. The Impersonality of Christ's Human Nature.") {
     return text.replace(/^[A-Za-z]+\)\.\s*/i, "");
+  }
+  if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
+    return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
+  }
+  if (title === "2. Objection: It Is Unworthy to Present God as Requiring Satisfaction.") {
+    return "The objection that satisfaction is unworthy of God is answered by appealing to Scripture rather than human sentiment. God Himself teaches both His holy wrath against sin and His gracious reconciliation of sinners through Christ's vicarious suffering.";
+  }
+  if (title === "3. Objection: Christ's Death Reveals Only God's Love.") {
+    return "Christ's death certainly reveals God's love, but not love abstracted from atonement. Pieper argues that the cross shows divine love precisely in this: God reconciles sinners by Christ's substitutionary satisfaction.";
+  }
+  if (title === "5. Objection: Christ Did Not Suffer What All Men Should Suffer.") {
+    return "Against the claim that Christ could not truly suffer in man's place because He did not endure eternal punishment in the same mode as the damned, Pieper argues that Scripture itself sets forth Christ's suffering as fully sufficient and truly vicarious. The worth of His atonement rests on who He is and what God declares of His sacrifice.";
+  }
+  if (title === "6. Objection: The Doctrine of Satisfaction Is Too Juridical.") {
+    return "The charge that satisfaction is too juridical is really an attack on the scriptural way of speaking about sin, wrath, punishment, and reconciliation. Pieper maintains that Christian doctrine must retain these categories because they belong to the Gospel itself.";
+  }
+  if (title === "1. Christ Himself Used His Active Obedience.") {
+    return "Pieper rejects the objection that Christ needed His active obedience for Himself. Because the incarnate Son is personally united to the divine nature, His fulfillment of the law is not required for His own standing before God but belongs to His saving work for mankind.";
+  }
+  if (title === "2. Scripture Attributes Redemption to the Shedding of Christ's Blood.") {
+    return "When Scripture attributes redemption to Christ's blood, it highlights His passive obedience without excluding His active obedience. Pieper argues that the whole obedience of Christ belongs to the one work by which sinners are redeemed.";
+  }
+  if (title === "4. Christ Fulfilled the Law on Behalf of All People.") {
+    return "Christ fulfilled the law on behalf of all people, not merely as an example, but as mankind's substitute. Pieper insists that denying this vicarious obedience undermines both the comfort of the Gospel and the certainty of justification.";
+  }
+  if (title === "1. The State of Grace or the State of Peace.") {
+    return "The state of grace or peace is the condition into which believers are brought through justification. It includes true peace with God, not as a feeling produced by man, but as the reconciled standing won by Christ and received through faith.";
   }
   return text;
 }
