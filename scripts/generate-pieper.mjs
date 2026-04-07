@@ -669,9 +669,65 @@ function cleanupVolume2ParagraphText(text = "") {
 }
 
 const VOLUME_2_BODY_OVERRIDES = new Map([
+  ["1. The Necessity of Grace.", [
+    "The necessity of grace appears from Scripture's teaching that all men are sinners under condemnation and cannot free themselves by the works of the law. Pieper sets this first so that the saving character of Christianity is seen against the total inability of man to justify himself before God.",
+    "Grace is therefore not an optional divine supplement to human effort, but the only possible way of salvation for fallen mankind. The Gospel reveals that what the law cannot produce, God freely gives for Christ's sake."
+  ]],
+  ["2. Concept of saving grace.", [
+    "Saving grace means first of all God's gracious disposition toward sinners for Christ's sake. Pieper stresses that grace, in the proper justifying sense, is not an infused moral quality in man but God's merciful favor, revealed in the Gospel and received by faith.",
+    "This keeps the doctrine of grace from being turned into a doctrine of human religious improvement. Grace belongs first to God as His saving attitude and action toward the ungodly in Christ."
+  ]],
+  ["3. Attributes of saving grace.", [
+    "Pieper describes the attributes of saving grace by showing that God's grace toward sinners is grounded in Christ and ordered toward salvation through the means He has appointed. The section emphasizes that grace is not an abstract disposition in God, but grace given for Christ's sake.",
+    "He is careful to preserve both the richness and the concreteness of grace. Saving grace is universal, serious, and effective in the means of grace, yet never detached from Christ's atoning work."
+  ]],
+  ["4. On Ecclesiastical Terminology in Relation to God's Will of Grace.", [
+    "The Church has long spoken of God's gracious will toward sinners as His will of grace. Pieper reviews this language in order to preserve the biblical truth that God's saving disposition toward men is grounded in Christ and not in any human merit or preparation.",
+    "His concern is not merely historical wording, but doctrinal clarity. Terminology should help the Church confess universal grace without sliding into either rationalism or synergism."
+  ]],
+  ["1. God's Will to Save All Men Is Not an Absolute Will.", [
+    "God's will to save all men is not an absolute will detached from Christ and the means of grace, but an ordered will grounded in Christ's merit and conveyed through the Gospel and sacraments, received by faith. The conditional language of Scripture about faith does not make faith a human work that earns salvation; it describes the way in which grace is received.",
+    "Pieper's point is to guard both sides of the biblical witness. God sincerely wills the salvation of all, yet He has bound salvation to Christ and the means through which Christ is offered."
+  ]],
+  ["3. Voluntas Antecedens and Voluntas Consequens.", [
+    "The distinction between God's antecedent and consequent will can be used helpfully when it serves the scriptural teaching that God sincerely wills the salvation of all and yet condemns unbelief. Pieper's concern is to keep this terminology from obscuring either universal grace or human responsibility for rejecting the Gospel.",
+    "Used rightly, the distinction is subordinate to Scripture and not a speculative key above it. Pieper resists any use of these terms that would weaken either the seriousness of grace or the guilt of unbelief."
+  ]],
   ["5. The Communication of Attributes.", [
     "The communication of attributes means that the one person of Christ is spoken of according to both natures, so that what belongs to either nature is truly predicated of the incarnate Son. Pieper introduces this doctrine to defend the scriptural way of speaking against rationalistic attempts to divide Christ's person.",
     "He first clarifies that 'attributes' includes not only essential qualities, but also the actions and sufferings proper to each nature. On that basis, he argues that the communicatio idiomatum is not a separate speculation beyond the personal union, but the necessary consequence of confessing that the Son of God truly became man."
+  ]],
+  ["I. The Doctrine of Christ's Person.", [
+    "Pieper treats the doctrine of Christ's person in detail because the Church must confess both Christ's true divinity and His true humanity, together with their personal union, against many old and new denials. The goal is not speculative subtlety, but faithful confession of the God-man who saves sinners.",
+    "Christology matters because the Gospel itself depends on who Christ is. Only the true God-man can reconcile sinners, reveal the Father perfectly, and serve as the living center of the Church's faith."
+  ]],
+  ["1. The True Divinity of Christ.", [
+    "Scripture places Christ's true divinity in the foreground, because faith in Him is inseparable from faith in the Son of God Himself. Pieper argues that the Church must confess Christ not as a merely exalted man, but as true God of one essence with the Father.",
+    "This is not a speculative appendage to the Gospel. The saving worth of Christ's obedience and suffering depends on the fact that the one who acts and suffers for sinners is the eternal Son of God."
+  ]],
+  ["2. The True Humanity of Christ.", [
+    "Christ is true man in the full and proper sense, sharing our human nature in body and soul while remaining without sin. Pieper emphasizes this because only a Redeemer who is truly one of us can stand in mankind's place under the Law and in suffering.",
+    "The Church must therefore deny every view that reduces Christ's humanity to appearance or abstraction. His human nature is real and complete, because His saving work required a genuine human life, obedience, suffering, and death."
+  ]],
+  ["1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.", [
+    "Christ's human nature came into being through the miraculous action of the Holy Spirit in the Virgin Mary, not by ordinary human generation from two parents. Pieper emphasizes the virginal conception to confess both Christ's true humanity and the unique, holy origin of the incarnate Son of God.",
+    "This miracle serves the Gospel by preserving the mystery of the incarnation. The Savior is fully man and yet enters the world in a way fitting for the eternal Son who comes to redeem sinners."
+  ]],
+  ["2. The Sinlessness of Christ's Human Nature.", [
+    "Though all other human beings are sinners by nature since Adam's fall, Christ's human nature is without sin. Pieper emphasizes that the Savior had to be truly man and yet entirely holy in order to redeem mankind from sin.",
+    "His sinlessness is therefore not a secondary adornment, but integral to His office. Only a spotless Redeemer can fulfill the law for others and offer Himself as the perfect sacrifice."
+  ]],
+  ["3. The Impersonality of Christ's Human Nature.", [
+    "Christ's human nature does not exist as a separate human person alongside the Son of God. Pieper argues that from the first moment of the incarnation Christ's humanity subsists in the person of the eternal Son, so that the one incarnate Lord is true God and true man in one person.",
+    "This protects the unity of Christ against every tendency to treat Him as a merely inspired man in partnership with the Logos. The subject of all Christ's saving actions is the one divine person of the Son."
+  ]],
+  ["3. The Personal Union.", [
+    "In the personal union, the divine and human natures are united in the one person of Christ without confusion or separation. Pieper emphasizes that Scripture does not describe a mere cooperation between God and a holy man, but the incarnation of the eternal Son Himself.",
+    "The doctrine serves the Gospel by identifying the Savior correctly. The one who teaches, suffers, dies, and rises is the same person who is eternally God."
+  ]],
+  ["4. The Communion of Natures.", [
+    "The communion of natures follows directly from the personal union of Christ. Pieper argues that because the divine Son truly assumed human nature, the two natures are in real communion in the one person of the God-man without mixture or change.",
+    "This communion explains why Scripture can speak of Christ in ways that involve both natures while never dividing His person. The Church confesses one Christ, not two parallel subjects acting side by side."
   ]],
   ["The Second Genus of the Communication of Attributes", [
     "In the second genus of the communication of attributes, Pieper argues that Christ's human nature truly shares in divine majesty through the personal union. He frames the issue as a defense of Scripture's own language against the claim that finite human nature cannot participate in divine attributes.",
@@ -680,6 +736,10 @@ const VOLUME_2_BODY_OVERRIDES = new Map([
   ["The Communicated Omnipresence.", [
     "Pieper treats the communicated omnipresence of Christ's human nature as part of the scriptural teaching on the genus maiestaticum. He argues that the incarnate Son is not divided from His humanity, but remains the one Christ wherever He is.",
     "The point is not to dissolve Christ's humanity into deity, but to confess the mystery of the personal union without rationalistic limits. Pieper therefore presents Christ's presence as the presence of the whole God-man, especially in relation to the Church's confession of His continuing saving work."
+  ]],
+  ["Summarizing Assessment of Reformed Christology.", [
+    "Pieper's summary assessment of Reformed Christology distinguishes between what remains Christian in it and what becomes destructive when rationalistic principles are followed consistently. He argues that the rejection of Christ's real communion of natures leads away from the incarnation itself unless that principle is inconsistently abandoned.",
+    "His aim is not mere controversy, but to show how Christology and the means of grace stand together. Once Christ's person is divided by rational limitation, sacramental and soteriological consequences follow."
   ]],
   ["II. The Doctrine of the States of Christ.", [
     "Pieper presents Scripture's teaching that Christ stands in two states: humiliation and exaltation. He introduces this doctrine as a way of describing how the incarnate Son, according to His human nature, first refrained from the full use of divine majesty and then openly exercised it.",
@@ -693,9 +753,73 @@ const VOLUME_2_BODY_OVERRIDES = new Map([
     "Pieper next identifies the concrete events that belong to Christ's humiliation and exaltation. He treats these states historically, tracing how the incarnate Lord first entered the lowliness of suffering and then passed into the open manifestation of His glory.",
     "The section serves to anchor the doctrine in the actual history of Jesus rather than in abstraction. Each step belongs to the saving work of the same Christ who humbled Himself for sinners and was exalted for their comfort and salvation."
   ]],
+  ["III. The Doctrine of Christ's Work.", [
+    "Christ's work is the saving office He carries out as the God-man for the redemption of sinners. Pieper introduces it as the unified work of the incarnate Son, who teaches, reconciles, and rules for man's salvation.",
+    "This keeps the several offices and acts of Christ from being treated as disconnected topics. Everything He does belongs to one saving mission grounded in His person."
+  ]],
+  ["2. Directing the Prophetic Office in the State of Exaltation.", [
+    "In the state of exaltation, Christ continues to exercise His prophetic office for the Church. Pieper explains that the risen Lord still teaches and governs His people through the means by which His Word is proclaimed.",
+    "This shows that Christ's prophetic office did not end with His earthly ministry. The exalted Christ remains active in His Church by His living Word."
+  ]],
+  ["1. Objection: God Can Forgive Sin by Virtue of His Power.", [
+    "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.",
+    "The issue is not a limit on divine power, but submission to God's own revealed way of salvation. Christian doctrine begins with what God has said and done in Christ."
+  ]],
+  ["2. Objection: It Is Unworthy to Present God as Requiring Satisfaction.", [
+    "The objection that satisfaction is unworthy of God is answered by appealing to Scripture rather than human sentiment. God Himself teaches both His holy wrath against sin and His gracious reconciliation of sinners through Christ's vicarious suffering.",
+    "Pieper insists that sentimentality cannot be allowed to rewrite revelation. The same God who loves the world also judges sin, and in Christ He satisfies His own righteousness for the salvation of sinners."
+  ]],
+  ["3. Objection: Christ's Death Reveals Only God's Love.", [
+    "Christ's death certainly reveals God's love, but not love abstracted from atonement. Pieper argues that the cross shows divine love precisely in this: God reconciles sinners by Christ's substitutionary satisfaction.",
+    "To reduce the cross to moral influence or example empties it of its saving content. Scripture presents the death of Christ as both revelation and accomplishment of reconciliation."
+  ]],
+  ["4. Objection: It Is Unjust That the Innocent Should Suffer.", [
+    "Pieper answers the objection that it is unjust for the innocent Christ to suffer in the place of the guilty by appealing to Scripture's own teaching on substitution. He argues that Christ's vicarious suffering is not a humanly invented theory of injustice, but God's revealed way of reconciling sinners.",
+    "Because Christ freely takes the sinner's place as the incarnate Son, His suffering is not a miscarriage of justice but the center of God's saving counsel. The cross must be judged by revelation, not by moral intuition detached from it."
+  ]],
+  ["5. Objection: Christ Did Not Suffer What All Men Should Suffer.", [
+    "Against the claim that Christ could not truly suffer in man's place because He did not endure eternal punishment in the same mode as the damned, Pieper argues that Scripture itself sets forth Christ's suffering as fully sufficient and truly vicarious. The worth of His atonement rests on who He is and what God declares of His sacrifice.",
+    "The saving question is therefore not whether Christ suffered identically in every outward respect, but whether God accepted His suffering as the true substitute for sinners. Scripture answers that question decisively in the affirmative."
+  ]],
+  ["6. Objection: The Doctrine of Satisfaction Is Too Juridical.", [
+    "The charge that satisfaction is too juridical is really an attack on the scriptural way of speaking about sin and reconciliation. Pieper maintains that Christian doctrine must retain these categories because they belong to the Gospel itself.",
+    "To soften them is not to deepen the Gospel, but to replace it with a less concrete religion of feeling. Scripture itself teaches guilt, wrath, substitution, and absolution."
+  ]],
+  ["1. Christ Himself Used His Active Obedience.", [
+    "Pieper rejects the objection that Christ needed His active obedience for Himself. Because the incarnate Son is personally united to the divine nature, His fulfillment of the law is not required for His own standing before God but belongs to His saving work for mankind.",
+    "This preserves the vicarious character of Christ's obedience. He obeys not as a private individual seeking righteousness for Himself, but as the representative of sinners."
+  ]],
+  ["2. Scripture Attributes Redemption to the Shedding of Christ's Blood.", [
+    "When Scripture attributes redemption to Christ's blood, it highlights His passive obedience without excluding His active obedience. Pieper argues that the whole obedience of Christ belongs to the one work by which sinners are redeemed.",
+    "The emphasis on blood and death does not narrow redemption to one fragment of Christ's work. It points to the climactic sacrifice in which His entire obedient life reaches its saving goal."
+  ]],
+  ["4. Christ Fulfilled the Law on Behalf of All People.", [
+    "Christ fulfilled the law on behalf of all people, not merely as an example, but as mankind's substitute. Pieper insists that denying this vicarious obedience undermines both the comfort of the Gospel and the certainty of justification.",
+    "If Christ obeyed only for Himself, the sinner is left again to fulfill the law personally. But if He fulfilled it for all, then His righteousness can truly be imputed to those who believe."
+  ]],
   ["The sacrifice of Christ and the Atonement of the Old Testament.", [
     "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.",
     "Hebrews is central to his argument: the blood of bulls and goats did not itself remove sin, but the sacrificial system truly pointed beyond itself to Christ's once-for-all offering. In that sense, the Old Testament sacrifices functioned as a real, God-given prophecy of the reconciliation accomplished by Christ."
+  ]],
+  ["1. The State of Grace or the State of Peace.", [
+    "The state of grace or peace is the condition into which believers are brought through justification. Pieper describes it as true peace with God, not as a feeling produced by man, but as the reconciled standing won by Christ and received through faith.",
+    "This gives the Christian life a firm objective foundation. Peace with God rests on God's verdict in Christ before it becomes an inward consolation in the believer."
+  ]],
+  ["2. The Indwelling of the Holy Spirit and of the Whole Holy Trinity.", [
+    "The unio mystica is Scripture's teaching that the Holy Spirit and the whole Holy Trinity truly dwell in believers through faith in Christ. Pieper insists that this indwelling is neither mere influence nor confusion of Creator and creature, but a real consequence of justification by faith.",
+    "This communion is grounded in Christ and His promise, not in mystical self-transcendence. God dwells with believers because He has first reconciled them to Himself in the Gospel."
+  ]],
+  ["3. The New Life and Its Activity in Sanctification and Good Works.", [
+    "The new spiritual life of Christians follows faith in the reconciliation accomplished by Christ and shows itself in sanctification and good works. This new life is not the basis of justification, but its fruit and consequence.",
+    "Pieper therefore treats good works evangelically: as the living activity of faith, not as a second foundation for peace with God. The order must remain clear if sanctification is to remain Christian."
+  ]],
+  ["4. Membership in the Christian Church and Its Privileges.", [
+    "Membership in the Christian Church arises from faith in the Gospel, not from nationality, descent, or outward association. Pieper then points to the privileges Christ gives His Church through the forgiveness of sins, the means of grace, and communion in His body.",
+    "The Church is therefore defined by the presence of the Gospel and faith, not by merely visible or institutional criteria. Its privileges are the saving gifts Christ distributes within it."
+  ]],
+  ["5. Membership in the Kingdom of Glory.", [
+    "Membership in the kingdom of glory is the final inheritance of those who belong to Christ by faith. Pieper presents it as the consummation of fellowship with Christ and His Church in eternal life.",
+    "This completes the line from justification to glorification. The same grace that brings sinners into peace with God also preserves them for the final kingdom."
   ]],
   ["1. Saving faith has only the Gospel as its object.", [
     "Saving faith has the Gospel alone as its object in the matter of forgiveness and salvation. Pieper insists that justification comes only through the promise of grace in Christ, not through the Law or a general acknowledgment of revealed truth.",
