@@ -4,19 +4,22 @@
       "label": "Volume 1",
       "title": "Essence and Concept of Theology. The Holy Scriptures. The Doctrines of God. The Creation of the World and of Man. Divine Providence. The Angels. The Doctrines of Man before the Fall and after the Fall.",
       "href": "/pieper/vol-1/",
-      "slug": "vol-1"
+      "slug": "vol-1",
+      "sectionCount": 128
     },
     {
       "label": "Volume 2",
       "title": "Saving Grace. The Person and Work of Christ. Saving Faith. The Origin of Faith. Justification through Faith.",
       "href": "/pieper/vol-2/",
-      "slug": "vol-2"
+      "slug": "vol-2",
+      "sectionCount": 75
     },
     {
       "label": "Volume 3",
       "title": "The Christian Life. The Perseverance to Salvation. The Means of Grace. The Church. The Public Ministry. Eternal Election. The Last Things.",
       "href": "/pieper/vol-3/",
-      "slug": "vol-3"
+      "slug": "vol-3",
+      "sectionCount": 115
     }
   ],
   "pages": [
