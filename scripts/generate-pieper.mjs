@@ -455,13 +455,13 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Christ is true man in the full and proper sense, sharing our human nature in body and soul while remaining without sin. Pieper emphasizes this because only a Redeemer who is truly one of us can stand in mankind's place under the Law and in suffering.";
   }
   if (title === "2. The Indwelling of the Holy Spirit and of the Whole Holy Trinity.") {
-    return "The unio mystica, the indwelling of the Holy Spirit and of the whole Holy Trinity in believers, is taught by Scripture as a consequence of justification by faith. It is not mere divine influence or a pantheistic confusion of Creator and creature, but God's true indwelling presence in Christians through faith in Christ.";
+    return "The unio mystica is Scripture's teaching that the Holy Spirit and the whole Holy Trinity truly dwell in believers through faith in Christ. Pieper insists that this indwelling is neither mere influence nor confusion of Creator and creature, but a real consequence of justification by faith.";
   }
   if (title === "3. The New Life and Its Activity in Sanctification and Good Works.") {
     return "The new spiritual life of Christians follows faith in the reconciliation accomplished by Christ and shows itself in sanctification and good works. This new life is not the basis of justification, but its fruit and consequence.";
   }
   if (title === "4. Membership in the Christian Church and Its Privileges.") {
-    return "Membership in the Christian Church does not arise from nationality, descent, or outward association, but from faith in the Gospel. With this membership come the privileges Christ gives His Church through the forgiveness of sins, the means of grace, and communion in His body.";
+    return "Membership in the Christian Church arises from faith in the Gospel, not from nationality, descent, or outward association. Pieper then points to the privileges Christ gives His Church through the forgiveness of sins, the means of grace, and communion in His body.";
   }
   if (title === "1. The Nature of Conversion.") {
     return "Conversion does not consist in moral self-improvement or outward reform, but in a sinner becoming a believer in the Gospel under the terrors of conscience. In the proper and primary sense, conversion is conversion to Christ and to the grace of God offered in the Gospel.";
@@ -572,7 +572,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "The doctrine of justification stands or falls with the right distinction between Law and Gospel. Pieper shows that sinners are justified only by the Gospel's promise of grace in Christ, while the Law prepares by revealing sin but contributes nothing to the act by which God declares the sinner righteous.";
   }
   if (title === "III. The Doctrine of Christ's Work.") {
-    return "Christ's work is the whole saving office He carries out as the God-man for the redemption of sinners. Pieper introduces it as the unified work of the incarnate Son, who teaches, reconciles, and rules for man's salvation.";
+    return "Christ's work is the saving office He carries out as the God-man for the redemption of sinners. Pieper introduces it as the unified work of the incarnate Son, who teaches, reconciles, and rules for man's salvation.";
   }
   if (title === "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.") {
     return "Christ's human nature came into being through the miraculous action of the Holy Spirit in the Virgin Mary, not by ordinary human generation from two parents. Pieper emphasizes the virginal conception to confess both Christ's true humanity and the unique, holy origin of the incarnate Son of God.";
@@ -610,6 +610,9 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "2. The Individual Parts of Humiliation and Exaltation.") {
     return "Pieper next identifies the concrete events that belong to Christ's humiliation and exaltation. He treats these states historically, tracing how the incarnate Lord first entered the lowliness of suffering and then passed into the open manifestation of His glory.";
   }
+  if (title === "2. Directing the Prophetic Office in the State of Exaltation.") {
+    return "In the state of exaltation, Christ continues to exercise His prophetic office for the Church. Pieper explains that the risen Lord still teaches and governs His people through the means by which His Word is proclaimed.";
+  }
   if (title === "3. Attributes of saving grace.") {
     return "Pieper describes the attributes of saving grace by showing that God's grace toward sinners is grounded in Christ and ordered toward salvation through the means He has appointed. The section emphasizes that grace is not an abstract disposition in God, but grace given for Christ's sake.";
   }
@@ -618,6 +621,9 @@ function cleanupVolume2LeadParagraph(title, text) {
   }
   if (title === "The sacrifice of Christ and the Atonement of the Old Testament.") {
     return "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.";
+  }
+  if (title === "5. Membership in the Kingdom of Glory.") {
+    return "Membership in the kingdom of glory is the final inheritance of those who belong to Christ by faith. Pieper presents it as the consummation of the believer's present fellowship with Christ and His Church, brought to completion in eternal life.";
   }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
@@ -632,7 +638,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Against the claim that Christ could not truly suffer in man's place because He did not endure eternal punishment in the same mode as the damned, Pieper argues that Scripture itself sets forth Christ's suffering as fully sufficient and truly vicarious. The worth of His atonement rests on who He is and what God declares of His sacrifice.";
   }
   if (title === "6. Objection: The Doctrine of Satisfaction Is Too Juridical.") {
-    return "The charge that satisfaction is too juridical is really an attack on the scriptural way of speaking about sin, wrath, punishment, and reconciliation. Pieper maintains that Christian doctrine must retain these categories because they belong to the Gospel itself.";
+    return "The charge that satisfaction is too juridical is really an attack on the scriptural way of speaking about sin and reconciliation. Pieper maintains that Christian doctrine must retain these categories because they belong to the Gospel itself.";
   }
   if (title === "1. Christ Himself Used His Active Obedience.") {
     return "Pieper rejects the objection that Christ needed His active obedience for Himself. Because the incarnate Son is personally united to the divine nature, His fulfillment of the law is not required for His own standing before God but belongs to His saving work for mankind.";
@@ -644,7 +650,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Christ fulfilled the law on behalf of all people, not merely as an example, but as mankind's substitute. Pieper insists that denying this vicarious obedience undermines both the comfort of the Gospel and the certainty of justification.";
   }
   if (title === "1. The State of Grace or the State of Peace.") {
-    return "The state of grace or peace is the condition into which believers are brought through justification. It includes true peace with God, not as a feeling produced by man, but as the reconciled standing won by Christ and received through faith.";
+    return "The state of grace or peace is the condition into which believers are brought through justification. Pieper describes it as true peace with God, not as a feeling produced by man, but as the reconciled standing won by Christ and received through faith.";
   }
   return text;
 }
