@@ -445,13 +445,30 @@ function cleanupVolume2LeadParagraph(title, text) {
   return text;
 }
 
+function cleanupVolume2ParagraphText(text = "") {
+  return cleanText(text)
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .replace(/\(\s+/g, "(")
+    .replace(/\s+\)/g, ")")
+    .replace(/\bas_\s+one person\b/gi, "as one person")
+    .replace(/\bDe communicatione idiomatum\.\s+\)/gi, "De communicatione idiomatum.)")
+    .replace(/\b' first of all\b/g, " first of all")
+    .replace(/\baE aE eT GETS © bu a grace\b/g, "absolute grace, but a grace")
+    .replace(/\bEcclesiatical\b/g, "Ecclesiastical")
+    .replace(/\bIumination\b/g, "Illumination");
+}
+
 function normalizeVolume2Sections(sections) {
   return sections.map((section) => {
     const title = VOLUME_2_TITLE_OVERRIDES.get(section.title) || section.title;
     const blocks = section.blocks.map((block, index) => {
       if (index === 0 && block.type === "heading") return { ...block, text: title };
       if (index === 1 && block.type === "paragraph") {
-        const text = cleanupVolume2LeadParagraph(title, block.text);
+        const text = cleanupVolume2LeadParagraph(title, cleanupVolume2ParagraphText(block.text));
+        return { ...block, text, html: escapeHtml(text) };
+      }
+      if (block.type === "paragraph") {
+        const text = cleanupVolume2ParagraphText(block.text);
         return { ...block, text, html: escapeHtml(text) };
       }
       return block;
