@@ -155,6 +155,68 @@ const OCR_HEADING_STOPWORDS = new Set([
   "without"
 ]);
 
+const VOLUME_2_TITLE_OVERRIDES = new Map([
+  ["4. On Ecclesiatical Terminology in relation to God's Will of Grace.", "4. On Ecclesiastical Terminology in Relation to God's Will of Grace."],
+  ["1. The will, according to which God wants to have all men saved, is not", "1. God's Will to Save All Men Is Not an Absolute Will."],
+  ["3. With regard to the distinction between a preceding or first will (vol.", "3. Voluntas Antecedens and Voluntas Consequens."],
+  ["1. The True Divinity of Christ", "1. The True Divinity of Christ."],
+  ["1. The emergence of the human nature of Christ through the action of", "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit."],
+  ["2. The sinlessness of Christ's human nature (Gvapaptnoia). While all", "2. The Sinlessness of Christ's Human Nature."],
+  ["3. The impersonality of Christ's human nature * (avvtiootaoia sive", "3. The Impersonality of Christ's Human Nature."],
+  ["Summarizing assessment of Reformed Christology.", "Summarizing Assessment of Reformed Christology."],
+  ["1. The nature and concept of the humiliation and exaltation of Christ", "1. The Nature and Concept of Christ's Humiliation and Exaltation."],
+  ["2. Directing the prophetic office in the state of exaltation", "2. Directing the Prophetic Office in the State of Exaltation."],
+  ["I. It has been said that God can forgive sin by virtue of his power,", "1. Objection: God Can Forgive Sin by Virtue of His Power."],
+  ["II. It is said that it is an unworthy conception of God to present him as", "2. Objection: It Is Unworthy to Present God as Requiring Satisfaction."],
+  ["III. It is said: In the fact that Christ died for mankind, the love of God is", "3. Objection: Christ's Death Reveals Only God's Love."],
+  ["IV. It is said that it is a manifest injustice to suppose that the innocent", "4. Objection: It Is Unjust That the Innocent Should Suffer."],
+  ["V. It is said that Christ did not in fact suffer what all men should suffer,", "5. Objection: Christ Did Not Suffer What All Men Should Suffer."],
+  ["VI. It has been said, and is said especially in our time, that this whole", "6. Objection: The Doctrine of Satisfaction Is Too Juridical."],
+  ["I. Christ himself used his active obedience, since he was a true man,", "1. Christ Himself Used His Active Obedience."],
+  ["II. Scripture attributes the redemption of men to the shedding of the", "2. Scripture Attributes Redemption to the Shedding of Christ's Blood."],
+  ["IV. The teaching that Christ has fulfilled the law on behalf of all people", "4. Christ Fulfilled the Law on Behalf of All People."],
+  ["1. the state of grace (status gratiae) or the state of peace (status pacis)", "1. The State of Grace or the State of Peace."],
+  ["2. The indwelling of the Holy Spirit and of the whole Holy Trinity (unio", "2. The Indwelling of the Holy Spirit and of the Whole Holy Trinity."],
+  ["3. The new life and its activity in sanctification and good works. The", "3. The New Life and Its Activity in Sanctification and Good Works."],
+  ["4. Membership in the Christian Church and the privileges associated", "4. Membership in the Christian Church and Its Privileges."],
+  ["5. Membership in the kingdom of glory. All people who entered the", "5. Membership in the Kingdom of Glory."],
+  ["2. Saving faith is fiducia cordis", "2. Saving Faith Is Fiducia Cordis."],
+  ["3. Saving faith is fides specialis", "3. Saving Faith Is Fides Specialis."],
+  ["4. Saving faith is fides actualis", "4. Saving Faith Is Fides Actualis."],
+  ["5. Faith is merely instrumental to the attainment of justification and", "5. Faith Is Merely Instrumental in Justification and Salvation."],
+  ["6. Saving faith is fides directa.", "6. Saving Faith Is Fides Directa."],
+  ["7. Saving faith includes the certainty of grace. Faith and the testimony of", "7. Saving Faith Includes the Certainty of Grace and the Testimony of the Holy Spirit."],
+  ["8. Saving faith is faith in the grace offered in the Word of the Gospel.", "8. Saving Faith Trusts the Grace Offered in the Gospel."],
+  ["1. What conversion consists of. (forma conversionis). Because God", "1. The Nature of Conversion."],
+  ["2. The Cause of the Conversion. * (causa efficiens principalis", "2. The Efficient Cause of Conversion."],
+  ["3. The means by which conversion takes place. * (media, quibus", "3. The Means Through Which God Effects Conversion."],
+  ["4. The inner processes during conversion. * (motus interni, quibus", "4. The Inner Motions of Conversion."],
+  ["5. Conversion happens at the moment. * (conversio momentanea est).", "5. Conversion Is Instantaneous."],
+  ["6. Conversion can be prevented by man. (gratia conversionis", "6. Man Can Prevent His Conversion."],
+  ["7. Transitive and intransitive conversion. When we speak of", "7. Transitive and Intransitive Conversion."],
+  ["8. Continued conversion. * [conversio continuata]. It is scriptural to", "8. Continued Conversion."],
+  ["9. Repeated conversion. [conversio reiterata]. Scripture clearly", "9. Repeated Conversion."],
+  ["1. When it is said of a man that, with the powers of grace he has been", "Synergistic Arguments Against Divine Monergism."],
+  ["3. The same theologians who speak of a \"right conduct\" etc. on the basis", "The Real Reasons for Combating God's Sole Efficacy in Conversion."],
+  ["Chpt VII).", "1. The Harmfulness of Synergism."],
+  ["2. Synergism, as much as it is in him, does not lead to conversion, and", "2. Synergism Prevents Conversion and Undermines Faith."],
+  ["3. Synergism involves all those who protect it in a whole series of", "3. Synergism Contradicts Scripture, Luther, and the Lutheran Confession."],
+  ["1. Regeneration (regeneratio). Regeneration means conceptually the", "1. Regeneration."],
+  ["2. The quickening or resurrection * [vivificatio, resuscitatio] These", "2. Vivification or Resurrection."],
+  ["3. Iumination * (i/luminatio). The term conceptually describes the", "3. Illumination."],
+  ["4. Calling (vocatio). The word vocation is used in Scripture in a", "4. Calling."],
+  ["5. Repentance (poenitentia). The word repentance (uetévo1a), as the", "5. Repentance."],
+  ["2. The Polemics of Scripture against the interference of works in", "2. The Polemics of Scripture Against the Interference of Works in Justification."],
+  ["3. The conditions of justification through faith without works.", "3. The Postulates of Justification by Faith Without Works."],
+  ["4. The central position of the doctrine of justification.", "4. The Central Position of the Doctrine of Justification."],
+  ["5. The actual agreement of all Christians in the article of justification.", "5. The Actual Agreement of All Christians in the Article of Justification."],
+  ["6. The Harmfulness of Erring in the doctrine of justification.", "6. The Harmfulness of Erring in the Doctrine of Justification."],
+  ["7. The Ecclesiastical Terminology to Ensure the Christian doctrine of", "7. The Terminology Employed in Presenting the Doctrine of Justification."],
+  ["8. Justification by works", "8. Justification by Works."],
+  ["Apology", "Justification by Faith and Justification by Works Distinguished."],
+  ["9. The doctrine of justification and the distinction of law and gospel.", "9. The Doctrine of Justification and the Distinction Between Law and Gospel."]
+]);
+
 function downloadFile(url, destination) {
   const command = `
 $ProgressPreference = 'SilentlyContinue'
@@ -369,6 +431,35 @@ function cleanOcrHeading(line = "") {
   return cleanHeading(cleanOcrLine(line).replace(/^The True of Humanity Christ/i, "The True Humanity of Christ").replace(/^I\.\s+The doctrine of Christ's person/i, "I. The Doctrine of Christ's Person").replace(/^II\.\s+The States of Christ/i, "II. The States of Christ").replace(/^The Doctrine of Christ's Person\.$/i, "The Doctrine of Christ's Person"));
 }
 
+function cleanupVolume2LeadParagraph(title, text) {
+  if (!text) return text;
+  if (title === "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.") {
+    return text.replace(/^the Holy Spirit\.\s*\*?\s*/i, "");
+  }
+  if (title === "2. The Sinlessness of Christ's Human Nature.") {
+    return text.replace(/^human beings have been sinners since Adam's fall,/i, "While all human beings have been sinners since Adam's fall,");
+  }
+  if (title === "3. The Impersonality of Christ's Human Nature.") {
+    return text.replace(/^[A-Za-z]+\)\.\s*/i, "");
+  }
+  return text;
+}
+
+function normalizeVolume2Sections(sections) {
+  return sections.map((section) => {
+    const title = VOLUME_2_TITLE_OVERRIDES.get(section.title) || section.title;
+    const blocks = section.blocks.map((block, index) => {
+      if (index === 0 && block.type === "heading") return { ...block, text: title };
+      if (index === 1 && block.type === "paragraph") {
+        const text = cleanupVolume2LeadParagraph(title, block.text);
+        return { ...block, text, html: escapeHtml(text) };
+      }
+      return block;
+    });
+    return { ...section, title, blocks };
+  });
+}
+
 function isTitleLikeOcrHeading(text = "") {
   const candidate = extractOcrHeadingCore(text);
   if (!candidate || candidate.length > 110) return false;
@@ -507,7 +598,9 @@ function parseOcrSections(volume) {
   }
   if (currentTitle && bodyLines.length) pushSection(currentTitle, bodyLines);
 
-  return sections.filter((section) => {
+  const normalizedSections = volume.slug === "vol-2" ? normalizeVolume2Sections(sections) : sections;
+
+  return normalizedSections.filter((section) => {
     const text = section.blocks.filter((block) => block.type === "paragraph").map((block) => block.text).join(" ");
     return text.length >= 80 && !DROP_SECTION_TITLES.has(section.title);
   });
