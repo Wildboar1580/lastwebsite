@@ -581,7 +581,16 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Though all other human beings are sinners by nature since Adam's fall, Christ's human nature is without sin. Pieper emphasizes that the Savior had to be truly man and yet entirely holy in order to redeem mankind from sin.";
   }
   if (title === "3. The Impersonality of Christ's Human Nature.") {
-    return text.replace(/^[A-Za-z]+\)\.\s*/i, "");
+    return "Christ's human nature does not exist as a separate human person alongside the Son of God. Pieper argues that from the first moment of the incarnation Christ's humanity subsists in the person of the eternal Son, so that the one incarnate Lord is true God and true man in one person.";
+  }
+  if (title === "3. The Personal Union.") {
+    return "In the personal union, the divine and human natures are united in the one person of Christ without confusion or separation. Pieper emphasizes that Scripture does not describe a mere cooperation between God and a holy man, but the incarnation of the eternal Son Himself.";
+  }
+  if (title === "4. The Communion of Natures.") {
+    return "The communion of natures follows directly from the personal union of Christ. Pieper argues that because the divine Son truly assumed human nature, the two natures are in real communion in the one person of the God-man without mixture or change.";
+  }
+  if (title === "5. The Communication of Attributes.") {
+    return "The communication of attributes means that the one person of Christ is spoken of according to both natures, so that what belongs to either nature is truly predicated of the incarnate Son. Pieper introduces this doctrine to defend the scriptural way of speaking against rationalistic attempts to divide Christ's person.";
   }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
