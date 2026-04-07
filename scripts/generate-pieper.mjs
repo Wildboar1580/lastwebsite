@@ -768,6 +768,78 @@ const VOLUME_2_BODY_OVERRIDES = new Map([
   ["Synergistic Arguments Against Divine Monergism.", [
     "Pieper gathers the chief synergistic arguments against divine monergism to show that they all assign a decisive role to man in conversion. However phrased, they make grace depend on human distinction, decision, or conduct.",
     "He especially objects to language about a sinner's 'right conduct' toward grace before conversion has taken place. In his judgment, such formulations quietly assume a remaining natural power in man that can cooperate in conversion, and therefore compromise the scriptural teaching that conversion is God's work alone."
+  ]],
+  ["The Real Reasons for Combating God's Sole Efficacy in Conversion.", [
+    "The real motive behind opposition to God's sole efficacy in conversion is man's refusal to let salvation rest entirely on grace. Pieper says synergism reappears because reason wants room for boasting or self-determination.",
+    "For that reason, he treats the controversy not merely as a dispute over terminology, but as a struggle over whether the sinner will be comforted by grace alone. Whenever man seeks even a small decisive role for himself, the Gospel is pushed back into uncertainty."
+  ]],
+  ["1. The Harmfulness of Synergism.", [
+    "Synergism is harmful because it corrupts the Gospel itself. Once conversion depends partly on a better human response, comfort for terrified consciences is destroyed and grace is no longer truly grace.",
+    "Pieper therefore treats synergism as pastorally destructive as well as doctrinally false. It shifts the sinner's attention away from God's promise in Christ and back toward inward qualifications that can never give peace."
+  ]],
+  ["2. Synergism Prevents Conversion and Undermines Faith.", [
+    "Synergism prevents conversion and undermines faith because it directs the sinner away from God's promise to his own conduct and readiness. In that way it blocks the trust through which conversion takes place.",
+    "Instead of leaving the conscience with Christ's Word alone, synergistic teaching causes men to ask whether they have first behaved rightly toward grace. Pieper argues that this does not assist faith, but hinders it at its very beginning."
+  ]],
+  ["3. Synergism Contradicts Scripture, Luther, and the Lutheran Confession.", [
+    "Synergism contradicts Scripture, Luther, and the Lutheran Confessions because all three teach that conversion is God's work alone through the Gospel. Any cooperative role for man conflicts with the Church's confession.",
+    "Pieper appeals to the Lutheran tradition here not as a secondary authority, but as a faithful witness to the biblical doctrine. The consistency of Scripture, Luther, and the Confessions shows that monergism is not a later school opinion, but part of evangelical Christianity itself."
+  ]],
+  ["1. Regeneration.", [
+    "Regeneration is the new birth by which spiritual life is kindled in the sinner through faith in Christ. Pieper treats it as another way of describing conversion from death to life through the Gospel.",
+    "The term highlights the positive gift involved in conversion. God does not merely improve the old man, but creates new spiritual life where there had been only unbelief and death."
+  ]],
+  ["2. Vivification or Resurrection.", [
+    "Vivification or resurrection is the transition from spiritual death to spiritual life. It is the same saving event viewed under the image of being raised from the dead by God's gracious power.",
+    "This language underscores that the sinner contributes nothing to his own awakening. As bodily resurrection is God's act, so the quickening of the spiritually dead is entirely the work of divine grace."
+  ]],
+  ["3. Illumination.", [
+    "Illumination is the passing from spiritual darkness into the light of faith. This light is the saving knowledge of God in Christ worked by the Holy Spirit through the Word.",
+    "Pieper uses the term to stress that true knowledge of God is not achieved by reason climbing upward, but is given from above in the revelation of the Gospel. Illumination therefore belongs to the same gracious act by which faith is created."
+  ]],
+  ["4. Calling.", [
+    "Calling is the divine summons issued through the Gospel. In the proper saving sense, it is God's gracious call that offers forgiveness and brings sinners to faith.",
+    "The call is not a bare invitation waiting for man to make it effective. Pieper presents it as a real means of grace in which God Himself addresses sinners and seriously wills their salvation."
+  ]],
+  ["5. Repentance.", [
+    "Repentance in Scripture can mean the whole conversion of man or more narrowly contrition over sin. In either case, true repentance is inseparable from faith in the Gospel.",
+    "Pieper therefore resists every treatment of repentance that leaves the sinner under the Law without evangelical comfort. Christian repentance includes sorrow over sin, but it does not end there; it drives the conscience to Christ."
+  ]],
+  ["2. The Polemics of Scripture Against the Interference of Works in Justification.", [
+    "Scripture not only teaches justification apart from works, but also wages direct polemic against every attempt to mix works into man's righteousness before God. Pieper stresses that once works are made part of justification, the Gospel is no longer comfort for sinners but another form of religion by human performance.",
+    "The sharpness of this scriptural polemic matters because the danger is constant. Even small concessions to works in justification alter the entire character of Christianity by shifting trust from Christ's merit to human worthiness."
+  ]],
+  ["3. The Postulates of Justification by Faith Without Works.", [
+    "Justification by faith without works presupposes several other evangelical doctrines: objective reconciliation in Christ, universal grace, monergistic conversion, and the means of grace through which forgiveness is actually offered. Pieper argues that if these foundations are denied, faith is quietly turned into a human contribution and the doctrine of justification is lost.",
+    "In this way the article of justification stands in living connection with the rest of dogmatics. It cannot be preserved in words while its doctrinal supports are removed underneath it."
+  ]],
+  ["4. The Central Position of the Doctrine of Justification.", [
+    "The doctrine of justification stands at the center of Christian teaching because all the other articles either prepare for it or flow from it. Christology, the means of grace, the Church, and sanctification all serve or arise from the truth that sinners are forgiven and counted righteous for Christ's sake through faith alone.",
+    "Pieper's point is not that the other doctrines are unimportant, but that they find their evangelical meaning here. Where justification is obscured, the whole system of doctrine loses its proper center and comfort."
+  ]],
+  ["5. The Actual Agreement of All Christians in the Article of Justification.", [
+    "All true Christians are united in the article of justification, even though they differ in maturity, knowledge, and clarity on many other points. What makes them Christians is not perfect doctrinal attainment in every area, but living trust that God forgives sins for Christ's sake without their own merit.",
+    "This does not make doctrinal differences unimportant. Rather, Pieper is identifying the living core of Christianity: wherever a sinner truly relies on Christ alone for righteousness before God, there the article of justification is actually believed."
+  ]],
+  ["6. The Harmfulness of Erring in the Doctrine of Justification.", [
+    "Error in the doctrine of justification is harmful because it severs the sinner from Christ's comfort and turns Christianity back into a religion of works. Pieper insists that once trust is divided between grace and human merit, the Gospel, the means of grace, and even the right knowledge of God are all obscured.",
+    "For that reason, errors in justification are never merely technical mistakes. They strike directly at the way sinners are taught to seek peace with God."
+  ]],
+  ["7. The Terminology Employed in Presenting the Doctrine of Justification.", [
+    "Careful terminology matters in the doctrine of justification because the Church must guard the truth that sinners are justified by grace, for Christ's sake, through faith, and without works. Pieper reviews the classic evangelical forms of speech in order to preserve both the substance of the doctrine and the comfort it gives.",
+    "The issue is not verbal fussiness for its own sake. In this article especially, careless phrasing can blur the difference between receiving grace and contributing toward righteousness."
+  ]],
+  ["8. Justification by Works.", [
+    "Scripture also speaks of a justification by works, but in a different sense from justification before God. Pieper explains that works justify before men as outward evidence of faith, while before God the sinner is justified only through faith in Christ apart from the works of the law.",
+    "This distinction allows apparently different biblical passages to stand together without confusion. Good works vindicate faith publicly, but they never function as the basis of God's forgiving verdict."
+  ]],
+  ["Justification by Faith and Justification by Works Distinguished.", [
+    "Justification by faith before God must be distinguished from justification by works before men. Pieper insists that these are not two competing ways of obtaining salvation, but two different senses of the term, one dealing with God's verdict of grace and the other with the outward vindication of faith.",
+    "Once this distinction is kept clear, James and Paul no longer oppose one another. Both uphold the same Gospel while speaking to different questions and using the term 'justify' in different relations."
+  ]],
+  ["9. The Doctrine of Justification and the Distinction Between Law and Gospel.", [
+    "The doctrine of justification stands or falls with the right distinction between Law and Gospel. Pieper shows that sinners are justified only by the Gospel's promise of grace in Christ, while the Law prepares by revealing sin but contributes nothing to the act by which God declares the sinner righteous.",
+    "This final connection is decisive for the whole Christian ministry. Where Law and Gospel are confused, justification is either turned into moralism or reduced to mere sentiment; only their right distinction preserves the full comfort of Christ's absolution."
   ]]
 ]);
 
