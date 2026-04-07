@@ -439,6 +439,21 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "1. God's Will to Save All Men Is Not an Absolute Will.") {
     return "God's will to save all men is not an absolute will detached from Christ and the means of grace, but an ordered will grounded in Christ's merit and conveyed through the Gospel and sacraments, received by faith. The conditional language of Scripture about faith does not make faith a human work that earns salvation; it describes the way in which grace is received.";
   }
+  if (title === "2. The Indwelling of the Holy Spirit and of the Whole Holy Trinity.") {
+    return "The unio mystica, the indwelling of the Holy Spirit and of the whole Holy Trinity in believers, is taught by Scripture as a consequence of justification by faith. It is not mere divine influence or a pantheistic confusion of Creator and creature, but God's true indwelling presence in Christians through faith in Christ.";
+  }
+  if (title === "3. The New Life and Its Activity in Sanctification and Good Works.") {
+    return "The new spiritual life of Christians follows faith in the reconciliation accomplished by Christ and shows itself in sanctification and good works. This new life is not the basis of justification, but its fruit and consequence.";
+  }
+  if (title === "4. Membership in the Christian Church and Its Privileges.") {
+    return "Membership in the Christian Church does not arise from nationality, descent, or outward association, but from faith in the Gospel. With this membership come the privileges Christ gives His Church through the forgiveness of sins, the means of grace, and communion in His body.";
+  }
+  if (title === "1. The Nature of Conversion.") {
+    return "Conversion does not consist in moral self-improvement or outward reform, but in a sinner becoming a believer in the Gospel under the terrors of conscience. In the proper and primary sense, conversion is conversion to Christ and to the grace of God offered in the Gospel.";
+  }
+  if (title === "2. The Efficient Cause of Conversion.") {
+    return "The efficient cause of conversion is God alone. Scripture does not ascribe conversion partly to divine grace and partly to human cooperation, but teaches that God works conversion through the Gospel by His grace and power.";
+  }
   if (title === "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.") {
     return text.replace(/^the Holy Spirit\.\s*\*?\s*/i, "");
   }
