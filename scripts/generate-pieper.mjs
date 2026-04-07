@@ -697,6 +697,74 @@ const VOLUME_2_BODY_OVERRIDES = new Map([
     "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.",
     "Hebrews is central to his argument: the blood of bulls and goats did not itself remove sin, but the sacrificial system truly pointed beyond itself to Christ's once-for-all offering. In that sense, the Old Testament sacrifices functioned as a real, God-given prophecy of the reconciliation accomplished by Christ."
   ]],
+  ["1. Saving faith has only the Gospel as its object.", [
+    "Saving faith has the Gospel alone as its object in the matter of forgiveness and salvation. Pieper insists that justification comes only through the promise of grace in Christ, not through the Law or a general acknowledgment of revealed truth.",
+    "For that reason, faith is not directed first to man's inward condition or moral attainment, but to God's external promise of mercy. The Gospel creates and sustains faith precisely by setting Christ before sinners as their righteousness and peace."
+  ]],
+  ["2. Saving Faith Is Fiducia Cordis.", [
+    "Saving faith is not mere knowledge or bare assent, but trust of the heart in the grace promised for Christ's sake. Pieper insists that faith justifies by clinging personally to Christ as Savior.",
+    "This emphasis protects the evangelical character of faith. To know the doctrine of grace in an abstract way is not yet to believe savingly; faith exists where the sinner actually rests his confidence on the forgiveness offered in the Gospel."
+  ]],
+  ["3. Saving Faith Is Fides Specialis.", [
+    "Saving faith is always personal faith. It does not merely affirm that Christ is a Savior in general, but trusts that the forgiveness won by Christ is meant also for the individual sinner who hears the Gospel.",
+    "Pieper therefore opposes every account of faith that leaves the conscience at a distance from Christ. The Gospel is not only true in itself, but is addressed to particular sinners so that each may say that Christ is given also for him."
+  ]],
+  ["4. Saving Faith Is Fides Actualis.", [
+    "Saving faith is actual faith, not merely a dormant capacity or undeveloped possibility. Pieper says justifying faith exists in the act of relying on Christ's promise.",
+    "That point matters because salvation is not attached to a hidden potential in man, but to the living trust worked by the Holy Spirit through the Gospel. Faith is present where Christ is presently grasped as Savior."
+  ]],
+  ["5. Faith Is Merely Instrumental in Justification and Salvation.", [
+    "Faith justifies and saves only instrumentally. It does not earn forgiveness or contribute merit before God, but receives the grace and righteousness Christ has won for sinners.",
+    "Pieper's aim is to keep all saving worth in Christ alone. Faith is great only because of its object; it is the empty hand that receives, not a cooperative power that helps accomplish redemption."
+  ]],
+  ["6. Saving Faith Is Fides Directa.", [
+    "Saving faith is direct faith, fixed on Christ and His promise rather than on itself. Pieper emphasizes that faith's essence lies in grasping Christ, not in analyzing the act of believing.",
+    "This guards troubled consciences from being turned inward. Assurance grows not by dissecting faith as a human experience, but by hearing again the Gospel in which Christ Himself is offered to sinners."
+  ]],
+  ["7. Saving Faith Includes the Certainty of Grace and the Testimony of the Holy Spirit.", [
+    "Saving faith includes certainty of grace because it rests on God's own promise in the Gospel. Pieper argues that confidence in forgiveness belongs to faith itself and is worked by the Spirit through the Word.",
+    "He rejects the notion that assurance is a second, higher stage added to simple faith. Where faith truly receives Christ, there the conscience also begins to know that God's grace is meant for it."
+  ]],
+  ["8. Saving Faith Trusts the Grace Offered in the Gospel.", [
+    "Saving faith trusts the grace actually offered in the Gospel. Pieper rejects the idea that faith arises from inward impressions apart from the spoken promise of forgiveness.",
+    "The object of faith is therefore concrete and external: the grace God sets before sinners in Word and Sacrament. Faith does not invent certainty from within, but receives what God Himself gives."
+  ]],
+  ["1. The Nature of Conversion.", [
+    "Conversion is not moral self-improvement or outward reform, but a sinner becoming a believer in the Gospel. In the proper sense, conversion is turning to Christ and the grace of God offered in the Gospel.",
+    "Pieper therefore treats conversion as a specifically evangelical event. The decisive change is not merely a new ethical direction, but the transition from unbelief to faith by which the sinner is brought into fellowship with Christ."
+  ]],
+  ["2. The Efficient Cause of Conversion.", [
+    "The efficient cause of conversion is God alone. Scripture does not divide conversion between divine grace and human cooperation, but teaches that God works conversion through the Gospel.",
+    "This monergistic teaching excludes all boasting. If conversion depended partly on a better movement in man, then grace would no longer be the sole cause and the conscience could never rest securely in Christ."
+  ]],
+  ["3. The Means Through Which God Effects Conversion.", [
+    "God effects conversion through means, namely through the Gospel, and not apart from it. The Law exposes sin, but the Gospel alone creates faith by offering forgiveness in Christ.",
+    "Pieper's concern is to keep conversion tied to the instituted means of grace. The Holy Spirit does not work by private impulses detached from the Word, but through the external promise by which Christ is preached to sinners."
+  ]],
+  ["4. The Inner Motions of Conversion.", [
+    "The inner motions of conversion are not stages of self-improvement, but the sinner's being terrified by the Law and comforted by the Gospel. Conversion is completed when faith is kindled through the promise of grace.",
+    "In that way Pieper preserves the distinction between Law and Gospel even within the experience of conversion. The Law prepares by exposing guilt, but the Gospel alone creates the trust that reconciles the conscience to God."
+  ]],
+  ["5. Conversion Is Instantaneous.", [
+    "Conversion is instantaneous in the strict sense because it occurs when an unbeliever becomes a believer. Instruction and struggle may take time, but the passage from unbelief to faith happens in a moment.",
+    "Pieper does not deny the longer process of teaching and spiritual conflict that may surround conversion. His point is that the actual transition itself is not gradual sanctification, but the moment in which faith is worked by the Gospel."
+  ]],
+  ["6. Man Can Prevent His Conversion.", [
+    "Though God alone works conversion, man can resist the grace of God and so prevent his own conversion. This does not make conversion partly a human work; it shows Scripture teaches real resistance to grace.",
+    "The distinction matters because resisting grace is not the same as cooperating in conversion. Pieper uses it to uphold both sides of the biblical testimony: God alone converts, yet man alone is to blame when he remains unconverted."
+  ]],
+  ["7. Transitive and Intransitive Conversion.", [
+    "Scripture allows us to speak both of God converting man and of man being converted, but these are not two separate works. The latter expression describes the same divine action as it takes effect in the sinner.",
+    "Pieper uses this distinction to prevent confusion in theological language. However the expression is framed, conversion remains one gracious work of God that brings the sinner from unbelief to faith."
+  ]],
+  ["8. Continued Conversion.", [
+    "Continued conversion describes the ongoing repentance and renewal of those who already believe. Christians daily return to the Gospel as the old Adam is put to death and the new man lives before God.",
+    "This keeps sanctification connected to the same grace that first converted the sinner. The Christian life is therefore not life beyond conversion, but life continually sustained by repentance and faith."
+  ]],
+  ["9. Repeated Conversion.", [
+    "Repeated conversion refers to the restoration of those who truly had faith and then fell from it. Scripture therefore teaches the real return of fallen Christians through repentance and faith.",
+    "Pieper includes this category to preserve the seriousness of apostasy without denying the Gospel's power to restore. The same Christ who first converts sinners also calls back those who have fallen away."
+  ]],
   ["Synergistic Arguments Against Divine Monergism.", [
     "Pieper gathers the chief synergistic arguments against divine monergism to show that they all assign a decisive role to man in conversion. However phrased, they make grace depend on human distinction, decision, or conduct.",
     "He especially objects to language about a sinner's 'right conduct' toward grace before conversion has taken place. In his judgment, such formulations quietly assume a remaining natural power in man that can cooperate in conversion, and therefore compromise the scriptural teaching that conversion is God's work alone."
@@ -721,8 +789,7 @@ function normalizeVolume2Sections(sections) {
       return block;
     });
     const paragraphOverride = VOLUME_2_BODY_OVERRIDES.get(title);
-    const paragraphCount = blocks.filter((block) => block.type === "paragraph").length;
-    if (paragraphOverride && paragraphCount <= 1) {
+    if (paragraphOverride) {
       const headingBlocks = blocks.filter((block) => block.type === "heading");
       blocks = [
         ...headingBlocks,
