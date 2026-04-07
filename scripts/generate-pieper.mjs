@@ -464,85 +464,85 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Membership in the Christian Church arises from faith in the Gospel, not from nationality, descent, or outward association. Pieper then points to the privileges Christ gives His Church through the forgiveness of sins, the means of grace, and communion in His body.";
   }
   if (title === "1. The Nature of Conversion.") {
-    return "Conversion does not consist in moral self-improvement or outward reform, but in a sinner becoming a believer in the Gospel under the terrors of conscience. In the proper and primary sense, conversion is conversion to Christ and to the grace of God offered in the Gospel.";
+    return "Conversion does not consist in moral self-improvement or outward reform, but in a sinner becoming a believer in the Gospel. In the proper sense, conversion is turning to Christ and the grace of God offered in the Gospel.";
   }
   if (title === "2. The Efficient Cause of Conversion.") {
-    return "The efficient cause of conversion is God alone. Scripture does not ascribe conversion partly to divine grace and partly to human cooperation, but teaches that God works conversion through the Gospel by His grace and power.";
+    return "The efficient cause of conversion is God alone. Scripture does not divide conversion between divine grace and human cooperation, but teaches that God works conversion through the Gospel.";
   }
   if (title === "1. Saving faith has only the Gospel as its object.") {
-    return "Saving faith, insofar as it receives the forgiveness of sins, has the Gospel alone as its object. Faith is certainly active in the whole of Scripture and produces love that fulfills the Law, but justification and salvation come only through the promise of grace in Christ, not through the Law or through a general acknowledgment of all revealed truth.";
+    return "Saving faith has the Gospel alone as its object in the matter of forgiveness and salvation. Pieper insists that justification comes only through the promise of grace in Christ, not through the Law or a general acknowledgment of revealed truth.";
   }
   if (title === "2. Saving Faith Is Fiducia Cordis.") {
-    return "Saving faith is not mere historical knowledge about Christ or bare assent to facts about Him, but trust of the heart in the grace promised for Christ's sake. Pieper insists that faith justifies precisely because it clings personally to Christ as Savior and rests in the mercy of God offered in the Gospel.";
+    return "Saving faith is not mere historical knowledge or bare assent, but trust of the heart in the grace promised for Christ's sake. Pieper insists that faith justifies by clinging personally to Christ as Savior.";
   }
   if (title === "3. Saving Faith Is Fides Specialis.") {
     return "Saving faith is always personal faith. It does not merely affirm that Christ is a Savior in general, but trusts that the forgiveness won by Christ is meant also for the individual sinner who hears the Gospel.";
   }
   if (title === "4. Saving Faith Is Fides Actualis.") {
-    return "Saving faith is actual faith, not merely a dormant capacity or an undeveloped possibility. Justifying faith exists in the act of relying on Christ's promise, even though the believer may not always be reflecting on that faith at every moment.";
+    return "Saving faith is actual faith, not merely a dormant capacity or undeveloped possibility. Pieper says justifying faith exists in the act of relying on Christ's promise.";
   }
   if (title === "5. Faith Is Merely Instrumental in Justification and Salvation.") {
-    return "Faith justifies and saves only instrumentally. It does not earn forgiveness or contribute merit before God, but simply receives the grace and righteousness that Christ has already won for sinners.";
+    return "Faith justifies and saves only instrumentally. It does not earn forgiveness or contribute merit before God, but receives the grace and righteousness Christ has won for sinners.";
   }
   if (title === "6. Saving Faith Is Fides Directa.") {
-    return "Saving faith is direct faith, fixed on Christ and His promise rather than on itself. A Christian may truly believe even when he is not engaged in reflective self-analysis, because faith's essence lies in grasping Christ, not in continually observing the act of believing.";
+    return "Saving faith is direct faith, fixed on Christ and His promise rather than on itself. Pieper emphasizes that faith's essence lies in grasping Christ, not in analyzing the act of believing.";
   }
   if (title === "7. Saving Faith Includes the Certainty of Grace and the Testimony of the Holy Spirit.") {
-    return "Saving faith includes certainty of grace because it rests on God's own promise in the Gospel. The Holy Spirit creates this certainty through the Word, so that confidence in forgiveness belongs to faith itself and is not an optional addition for especially advanced Christians.";
+    return "Saving faith includes certainty of grace because it rests on God's own promise in the Gospel. Pieper argues that confidence in forgiveness belongs to faith itself and is worked by the Spirit through the Word.";
   }
   if (title === "8. Saving Faith Trusts the Grace Offered in the Gospel.") {
-    return "Saving faith trusts the grace actually offered in the Gospel. Pieper rejects every notion that faith arises from impressions, inward experiences, or a bare encounter with Christ apart from His Word; the sinner believes because the promise of forgiveness is spoken and trusted.";
+    return "Saving faith trusts the grace actually offered in the Gospel. Pieper rejects the idea that faith arises from inward impressions apart from the spoken promise of forgiveness.";
   }
   if (title === "3. The Means Through Which God Effects Conversion.") {
-    return "God effects conversion through means, namely through the Gospel, and not apart from it. The Law prepares by exposing sin, but the Gospel alone creates faith by offering the forgiveness of sins in Christ.";
+    return "God effects conversion through means, namely through the Gospel, and not apart from it. The Law exposes sin, but the Gospel alone creates faith by offering forgiveness in Christ.";
   }
   if (title === "4. The Inner Motions of Conversion.") {
-    return "The inner motions of conversion are not stages of human self-improvement, but the sinner's being terrified by the Law and comforted by the Gospel. Conversion is completed when faith is kindled through the promise of grace.";
+    return "The inner motions of conversion are not stages of self-improvement, but the sinner's being terrified by the Law and comforted by the Gospel. Conversion is completed when faith is kindled through the promise of grace.";
   }
   if (title === "5. Conversion Is Instantaneous.") {
-    return "Conversion is instantaneous in the strict sense because it occurs when an unbeliever becomes a believer. Although instruction, struggle, and preparation may take time, the passage from unbelief to faith itself happens in a moment.";
+    return "Conversion is instantaneous in the strict sense because it occurs when an unbeliever becomes a believer. Instruction and struggle may take time, but the passage from unbelief to faith happens in a moment.";
   }
   if (title === "6. Man Can Prevent His Conversion.") {
-    return "Though God alone works conversion, man can resist the grace of God and so prevent his own conversion. This resistance does not make conversion partly a human work; it simply shows that Scripture teaches real opposition to grace on man's part.";
+    return "Though God alone works conversion, man can resist the grace of God and so prevent his own conversion. This does not make conversion partly a human work; it shows Scripture teaches real resistance to grace.";
   }
   if (title === "7. Transitive and Intransitive Conversion.") {
-    return "Scripture allows us to speak both of God converting man and of man being converted, but these are not two separate works. The latter expression simply describes the same divine action as it comes to effect in the sinner.";
+    return "Scripture allows us to speak both of God converting man and of man being converted, but these are not two separate works. The latter expression describes the same divine action as it takes effect in the sinner.";
   }
   if (title === "8. Continued Conversion.") {
     return "Continued conversion describes the ongoing repentance and renewal of those who already believe. Christians daily return to the Gospel as the old Adam is put to death and the new man lives before God.";
   }
   if (title === "9. Repeated Conversion.") {
-    return "Repeated conversion refers to the restoration of those who truly had faith and then fell from it. Scripture therefore teaches not only initial conversion, but also the real return of fallen Christians through repentance and faith.";
+    return "Repeated conversion refers to the restoration of those who truly had faith and then fell from it. Scripture therefore teaches the real return of fallen Christians through repentance and faith.";
   }
   if (title === "Synergistic Arguments Against Divine Monergism.") {
-    return "Pieper gathers the chief synergistic arguments against divine monergism in order to show that they all ascribe some decisive role to man in conversion. However differently they are phrased, they finally make grace dependent on a human distinction, decision, or better conduct.";
+    return "Pieper gathers the chief synergistic arguments against divine monergism to show that they all assign some decisive role to man in conversion. However phrased, they make grace depend on human distinction, decision, or conduct.";
   }
   if (title === "The Real Reasons for Combating God's Sole Efficacy in Conversion.") {
-    return "The real motive behind opposition to God's sole efficacy in conversion is the natural man's refusal to let salvation rest entirely on grace. Synergism repeatedly reappears because human reason wants some remaining ground for boasting or self-determination.";
+    return "The real motive behind opposition to God's sole efficacy in conversion is man's refusal to let salvation rest entirely on grace. Pieper says synergism reappears because reason wants ground for boasting or self-determination.";
   }
   if (title === "1. The Harmfulness of Synergism.") {
-    return "Synergism is harmful because it corrupts the Gospel itself. Once conversion is made to depend partly on a better human response, comfort for terrified consciences is destroyed and grace is no longer truly grace.";
+    return "Synergism is harmful because it corrupts the Gospel itself. Once conversion depends partly on a better human response, comfort for terrified consciences is destroyed and grace is no longer truly grace.";
   }
   if (title === "2. Synergism Prevents Conversion and Undermines Faith.") {
-    return "Synergism prevents conversion and undermines faith because it directs the sinner away from God's promise to his own conduct and readiness. In that way it blocks the very trust in grace through which conversion actually takes place.";
+    return "Synergism prevents conversion and undermines faith because it directs the sinner away from God's promise to his own conduct and readiness. In that way it blocks the trust through which conversion takes place.";
   }
   if (title === "3. Synergism Contradicts Scripture, Luther, and the Lutheran Confession.") {
-    return "Synergism contradicts Scripture, Luther, and the Lutheran Confessions because all three teach that conversion is God's work alone through the Gospel. Any attempt to preserve a cooperative role for man finally conflicts with the Church's evangelical confession.";
+    return "Synergism contradicts Scripture, Luther, and the Lutheran Confessions because all three teach that conversion is God's work alone through the Gospel. Any cooperative role for man conflicts with the evangelical confession.";
   }
   if (title === "1. Regeneration.") {
-    return "Regeneration is the new birth by which spiritual life is kindled in the sinner through faith in Christ. Pieper treats it not as a moral reform detached from faith, but as another way of describing conversion from death to life through the Gospel.";
+    return "Regeneration is the new birth by which spiritual life is kindled in the sinner through faith in Christ. Pieper treats it as another way of describing conversion from death to life through the Gospel.";
   }
   if (title === "2. Vivification or Resurrection.") {
     return "Vivification or resurrection is the transition from spiritual death to spiritual life. It is the same saving event viewed under the image of being raised from the dead by God's gracious power.";
   }
   if (title === "3. Illumination.") {
-    return "Illumination is the passing from spiritual darkness into the light of faith. This light is not autonomous human insight, but the saving knowledge of God in Christ worked by the Holy Spirit through the Word.";
+    return "Illumination is the passing from spiritual darkness into the light of faith. This light is the saving knowledge of God in Christ worked by the Holy Spirit through the Word.";
   }
   if (title === "4. Calling.") {
-    return "Calling is the divine summons issued through the Gospel. In the proper saving sense, it is not a bare outward invitation, but God's gracious call that offers forgiveness and seeks to bring sinners to faith.";
+    return "Calling is the divine summons issued through the Gospel. In the proper saving sense, it is God's gracious call that offers forgiveness and brings sinners to faith.";
   }
   if (title === "5. Repentance.") {
-    return "Repentance in Scripture can be taken broadly for the whole conversion of man or more narrowly for contrition over sin. In either case, true repentance is inseparable from faith in the Gospel and must not be turned into a meritorious preparation for grace.";
+    return "Repentance in Scripture can be taken broadly for the whole conversion of man or more narrowly for contrition over sin. In either case, true repentance is inseparable from faith in the Gospel.";
   }
   if (title === "2. The Polemics of Scripture Against the Interference of Works in Justification.") {
     return "Scripture not only teaches justification apart from works, but also wages direct polemic against every attempt to mix works into man's righteousness before God. Pieper stresses that once works are made part of justification, the Gospel is no longer comfort for sinners but another form of religion by human performance.";
@@ -623,7 +623,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.";
   }
   if (title === "5. Membership in the Kingdom of Glory.") {
-    return "Membership in the kingdom of glory is the final inheritance of those who belong to Christ by faith. Pieper presents it as the consummation of the believer's present fellowship with Christ and His Church, brought to completion in eternal life.";
+    return "Membership in the kingdom of glory is the final inheritance of those who belong to Christ by faith. Pieper presents it as the consummation of the believer's fellowship with Christ and His Church in eternal life.";
   }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
