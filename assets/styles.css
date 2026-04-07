@@ -1871,6 +1871,14 @@ textarea {
   line-height: 1.6;
 }
 
+.pieper-volume-search-shell {
+  margin-bottom: 1.1rem;
+}
+
+[data-pieper-section-card][hidden] {
+  display: none;
+}
+
 .search-result-card {
   display: grid;
   gap: 0.35rem;

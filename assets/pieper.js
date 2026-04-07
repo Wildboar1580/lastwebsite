@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   initPieperSearch();
+  initPieperVolumeFilters();
 });
 
 async function initPieperSearch() {
@@ -154,4 +155,37 @@ function escapeHtml(text = "") {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
+}
+
+function initPieperVolumeFilters() {
+  const input = document.querySelector("[data-pieper-volume-search]");
+  const status = document.querySelector("[data-pieper-volume-status]");
+  const cards = [...document.querySelectorAll("[data-pieper-section-card]")];
+  if (!input || !cards.length) return;
+
+  const total = cards.length;
+  if (status) status.textContent = `Browse ${total} sections in this volume.`;
+
+  input.addEventListener("input", () => {
+    const query = input.value.trim().toLowerCase();
+    let visible = 0;
+
+    for (const card of cards) {
+      const haystack = `${card.dataset.pieperTitle || ""} ${card.dataset.pieperSummary || ""}`.toLowerCase();
+      const isMatch = query.length < 2 || haystack.includes(query);
+      card.hidden = !isMatch;
+      if (isMatch) visible += 1;
+    }
+
+    if (!status) return;
+    if (query.length < 2) {
+      status.textContent = `Browse ${total} sections in this volume.`;
+      return;
+    }
+    if (!visible) {
+      status.textContent = `No sections matched "${input.value.trim()}".`;
+      return;
+    }
+    status.textContent = `Showing ${visible} of ${total} sections for "${input.value.trim()}".`;
+  });
 }

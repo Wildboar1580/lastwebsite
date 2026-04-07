@@ -1384,9 +1384,14 @@ function buildVolumePage(volume, sectionEntries) {
           <p class="eyebrow">Volume Contents</p>
           <h2>Open a section from ${escapeHtml(volume.label.toLowerCase())}</h2>
         </div>
+        <div class="bible-search-shell pieper-volume-search-shell">
+          <label class="sr-only" for="${escapeHtml(volume.slug)}-search">Search ${escapeHtml(volume.label)}</label>
+          <input id="${escapeHtml(volume.slug)}-search" class="podcast-search" type="search" placeholder="Filter sections in ${escapeHtml(volume.label)}" data-pieper-volume-search>
+          <p class="pieper-search-status" data-pieper-volume-status>Browse ${sectionEntries.length} sections in this volume.</p>
+        </div>
         <div class="library-grid">
           ${sectionEntries.map((section) => `
-            <a class="library-card" href="${section.href}">
+            <a class="library-card" href="${section.href}" data-pieper-section-card data-pieper-title="${escapeHtml(section.title)}" data-pieper-summary="${escapeHtml(section.description)}">
               <h3>${escapeHtml(section.title)}</h3>
               <p>${escapeHtml(section.description)}</p>
             </a>
@@ -1403,6 +1408,7 @@ function buildVolumePage(volume, sectionEntries) {
       </section>
     </main>
   </div>
+  <script type="module" src="/assets/pieper.js"></script>
 </body>
 </html>`;
 }
