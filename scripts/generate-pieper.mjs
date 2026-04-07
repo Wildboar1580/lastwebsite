@@ -436,6 +436,9 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "3. Attributes of saving grace.") {
     return "a. Grace in Christ. The saving grace by which God is gracious to sinners is not an absolute grace detached from Christ, but grace grounded in Christ's vicarious satisfaction. Scripture joins free justification by grace with the redemption that is in Christ Jesus, so grace must not be confused either with infused gifts in man or with any theory that detaches God's mercy from Christ's atoning work.";
   }
+  if (title === "2. Concept of saving grace.") {
+    return "Saving grace means first of all God's gracious disposition toward sinners for Christ's sake. Pieper stresses that grace, in the proper justifying sense, is not an infused moral quality in man but God's merciful favor, revealed in the Gospel and received by faith.";
+  }
   if (title === "4. On Ecclesiastical Terminology in Relation to God's Will of Grace.") {
     return "The Church has long spoken of God's gracious will toward sinners as His will of grace. Pieper reviews this language in order to preserve the biblical truth that God's saving disposition toward men is grounded in Christ and not in any human merit or preparation.";
   }
@@ -444,6 +447,12 @@ function cleanupVolume2LeadParagraph(title, text) {
   }
   if (title === "3. Voluntas Antecedens and Voluntas Consequens.") {
     return "The distinction between God's antecedent and consequent will can be used helpfully when it serves the scriptural teaching that God sincerely wills the salvation of all and yet condemns unbelief. Pieper's concern is to keep this terminology from obscuring either universal grace or human responsibility for rejecting the Gospel.";
+  }
+  if (title === "I. The Doctrine of Christ's Person.") {
+    return "Pieper treats the doctrine of Christ's person in detail because the Church must confess both Christ's true divinity and His true humanity, together with their personal union, against many old and new denials. The goal is not speculative subtlety, but faithful confession of the God-man who saves sinners.";
+  }
+  if (title === "2. The True Humanity of Christ.") {
+    return "Christ is true man in the full and proper sense, sharing our human nature in body and soul while remaining without sin. Pieper emphasizes this because only a Redeemer who is truly one of us can stand in mankind's place under the Law and in suffering.";
   }
   if (title === "2. The Indwelling of the Holy Spirit and of the Whole Holy Trinity.") {
     return "The unio mystica, the indwelling of the Holy Spirit and of the whole Holy Trinity in believers, is taught by Scripture as a consequence of justification by faith. It is not mere divine influence or a pantheistic confusion of Creator and creature, but God's true indwelling presence in Christians through faith in Christ.";
@@ -562,8 +571,11 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "9. The Doctrine of Justification and the Distinction Between Law and Gospel.") {
     return "The doctrine of justification stands or falls with the right distinction between Law and Gospel. Pieper shows that sinners are justified only by the Gospel's promise of grace in Christ, while the Law prepares by revealing sin but contributes nothing to the act by which God declares the sinner righteous.";
   }
+  if (title === "III. The Doctrine of Christ's Work.") {
+    return "Christ's work is the whole saving office He carries out as the God-man for the redemption of sinners. Pieper introduces it as the unified work of the incarnate Son, who teaches, reconciles, and rules for man's salvation.";
+  }
   if (title === "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.") {
-    return text.replace(/^the Holy Spirit\.\s*\*?\s*/i, "");
+    return "Christ's human nature came into being through the miraculous action of the Holy Spirit in the Virgin Mary, not by ordinary human generation from two parents. Pieper emphasizes the virginal conception to confess both Christ's true humanity and the unique, holy origin of the incarnate Son of God.";
   }
   if (title === "2. The Sinlessness of Christ's Human Nature.") {
     return "Though all other human beings are sinners by nature since Adam's fall, Christ's human nature is without sin. Pieper emphasizes that the Savior had to be truly man and yet entirely holy in order to redeem mankind from sin.";
@@ -617,9 +629,11 @@ function cleanupVolume2ParagraphText(text = "") {
 function normalizeVolume2Sections(sections) {
   return sections.map((section) => {
     const title = VOLUME_2_TITLE_OVERRIDES.get(section.title) || section.title;
+    let leadParagraphHandled = false;
     const blocks = section.blocks.map((block, index) => {
       if (index === 0 && block.type === "heading") return { ...block, text: title };
-      if (index === 1 && block.type === "paragraph") {
+      if (block.type === "paragraph" && !leadParagraphHandled) {
+        leadParagraphHandled = true;
         const text = cleanupVolume2LeadParagraph(title, cleanupVolume2ParagraphText(block.text));
         return { ...block, text, html: escapeHtml(text) };
       }
