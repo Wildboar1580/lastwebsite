@@ -1286,8 +1286,13 @@ function buildLandingPage(manifest) {
           <p>Search titles and text across the local Pieper volumes on this site.</p>
         </div>
         <div class="bible-search-shell">
+          <div class="pieper-search-toolbar" aria-label="Pieper search filters">
+            <button class="pieper-filter-chip is-active" type="button" data-pieper-filter="all" aria-pressed="true">All volumes</button>
+            ${manifest.volumes.map((volume) => `<button class="pieper-filter-chip" type="button" data-pieper-filter="${volume.slug}" aria-pressed="false">${escapeHtml(volume.label)}</button>`).join("")}
+          </div>
           <label class="sr-only" for="pieper-search">Search Pieper's Christian Dogmatics</label>
-          <input id="pieper-search" class="podcast-search" type="search" placeholder="Search" data-pieper-search>
+          <input id="pieper-search" class="podcast-search" type="search" placeholder="Search by title, doctrine, or phrase" data-pieper-search>
+          <p class="pieper-search-status" data-pieper-search-status>Search the local Pieper library by title or text.</p>
           <div class="bible-search-results" data-pieper-search-results></div>
         </div>
       </section>
@@ -1508,7 +1513,7 @@ function main() {
     const sectionEntries = sections.map((section) => ({ ...section, href: `/pieper/${volume.slug}/${section.slug}/` }));
     fs.writeFileSync(path.join(volumeDir, "index.html"), buildVolumePage(volume, sectionEntries));
 
-    manifest.volumes.push({ label: volume.label, title: volume.title, href: volume.href });
+    manifest.volumes.push({ label: volume.label, title: volume.title, href: volume.href, slug: volume.slug });
     manifest.pages.push(`https://lastchristian.com${volume.href}`);
 
     for (const [index, section] of sectionEntries.entries()) {

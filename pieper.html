@@ -64,8 +64,13 @@
           <p>Search titles and text across the local Pieper volumes on this site.</p>
         </div>
         <div class="bible-search-shell">
+          <div class="pieper-search-toolbar" aria-label="Pieper search filters">
+            <button class="pieper-filter-chip is-active" type="button" data-pieper-filter="all" aria-pressed="true">All volumes</button>
+            <button class="pieper-filter-chip" type="button" data-pieper-filter="vol-1" aria-pressed="false">Volume 1</button><button class="pieper-filter-chip" type="button" data-pieper-filter="vol-2" aria-pressed="false">Volume 2</button><button class="pieper-filter-chip" type="button" data-pieper-filter="vol-3" aria-pressed="false">Volume 3</button>
+          </div>
           <label class="sr-only" for="pieper-search">Search Pieper's Christian Dogmatics</label>
-          <input id="pieper-search" class="podcast-search" type="search" placeholder="Search" data-pieper-search>
+          <input id="pieper-search" class="podcast-search" type="search" placeholder="Search by title, doctrine, or phrase" data-pieper-search>
+          <p class="pieper-search-status" data-pieper-search-status>Search the local Pieper library by title or text.</p>
           <div class="bible-search-results" data-pieper-search-results></div>
         </div>
       </section>

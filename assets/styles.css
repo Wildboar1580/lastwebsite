@@ -1830,6 +1830,47 @@ textarea {
   margin-top: 1rem;
 }
 
+.pieper-search-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 0.85rem;
+}
+
+.pieper-filter-chip {
+  padding: 0.65rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(213, 166, 41, 0.22);
+  background: rgba(13, 11, 10, 0.9);
+  color: var(--text-soft);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.pieper-filter-chip:hover,
+.pieper-filter-chip:focus-visible {
+  border-color: rgba(255, 216, 121, 0.4);
+  color: var(--paper);
+  transform: translateY(-1px);
+}
+
+.pieper-filter-chip.is-active {
+  border-color: rgba(255, 216, 121, 0.44);
+  background: linear-gradient(180deg, rgba(53, 18, 19, 0.96), rgba(31, 10, 11, 0.99));
+  color: var(--paper);
+}
+
+.pieper-search-status {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
 .search-result-card {
   display: grid;
   gap: 0.35rem;
@@ -1842,6 +1883,15 @@ textarea {
 
 .search-result-card strong {
   color: var(--white);
+}
+
+.search-empty {
+  margin: 0;
+  padding: 1rem 1.05rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(213, 166, 41, 0.14);
+  background: rgba(10, 9, 8, 0.62);
+  color: var(--text-muted);
 }
 
 .concord-search-card span {
