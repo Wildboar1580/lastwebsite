@@ -2206,6 +2206,133 @@ textarea {
   display: block;
 }
 
+.easter-hero,
+.easter-stat-section {
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.easter-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+  gap: 1.6rem;
+  align-items: center;
+  padding: 2.25rem 0 1.5rem;
+}
+
+.easter-hero-copy {
+  max-width: 46rem;
+}
+
+.easter-actions {
+  justify-content: flex-start;
+  margin-top: 1.6rem;
+}
+
+.easter-hero-art,
+.easter-video-frame,
+.easter-gallery-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.85rem;
+  background: rgba(0, 0, 0, 0.32);
+  box-shadow: var(--shadow);
+}
+
+.easter-hero-art img,
+.easter-video-frame video {
+  width: 100%;
+  display: block;
+}
+
+.easter-hero-art img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.easter-stat-section {
+  padding: 0 0 4.5rem;
+}
+
+.easter-stat-grid,
+.easter-gallery-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.easter-stat-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.easter-stat-card {
+  padding: 1.35rem;
+  background: linear-gradient(180deg, rgba(36, 14, 15, 0.92), rgba(18, 10, 10, 0.98));
+  border: 1px solid rgba(213, 166, 41, 0.22);
+  border-radius: 0.85rem;
+  box-shadow: var(--shadow);
+}
+
+.easter-stat-number {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  color: var(--gold-bright);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 0.9;
+}
+
+.easter-stat-card h3,
+.easter-gallery-card figcaption {
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.easter-stat-card h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+.easter-stat-card p {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+.easter-story-grid {
+  align-items: start;
+}
+
+.easter-video-frame {
+  max-width: 560px;
+  justify-self: center;
+}
+
+.easter-video-frame video {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: #000;
+}
+
+.easter-gallery-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.easter-gallery-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.easter-gallery-card figcaption {
+  padding: 0.95rem 1rem 1.05rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.easter-cta-panel {
+  align-items: center;
+}
+
 @media (max-width: 780px) {
   .concord-content {
     padding: 1.2rem 1rem;
@@ -2242,6 +2369,20 @@ textarea {
 
   .luther-doc-nav {
     grid-template-columns: 1fr;
+  }
+
+  .easter-hero,
+  .easter-stat-grid,
+  .easter-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .easter-hero {
+    padding-top: 1.5rem;
+  }
+
+  .easter-actions {
+    justify-content: stretch;
   }
 }
 
