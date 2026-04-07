@@ -434,7 +434,7 @@ function cleanOcrHeading(line = "") {
 function cleanupVolume2LeadParagraph(title, text) {
   if (!text) return text;
   if (title === "3. Attributes of saving grace.") {
-    return "a. Grace in Christ. The saving grace by which God is gracious to sinners is not an absolute grace detached from Christ, but grace grounded in Christ's vicarious satisfaction. Scripture joins free justification by grace with the redemption that is in Christ Jesus, so grace must not be confused either with infused gifts in man or with any theory that detaches God's mercy from Christ's atoning work.";
+    return "Pieper describes the attributes of saving grace by showing that God's grace toward sinners is grounded in Christ and ordered toward salvation through the means He has appointed. The section emphasizes that grace is not an abstract disposition in God, but grace given for Christ's sake.";
   }
   if (title === "2. Concept of saving grace.") {
     return "Saving grace means first of all God's gracious disposition toward sinners for Christ's sake. Pieper stresses that grace, in the proper justifying sense, is not an infused moral quality in man but God's merciful favor, revealed in the Gospel and received by faith.";
@@ -609,6 +609,15 @@ function cleanupVolume2LeadParagraph(title, text) {
   }
   if (title === "2. The Individual Parts of Humiliation and Exaltation.") {
     return "Pieper next identifies the concrete events that belong to Christ's humiliation and exaltation. He treats these states historically, tracing how the incarnate Lord first entered the lowliness of suffering and then passed into the open manifestation of His glory.";
+  }
+  if (title === "3. Attributes of saving grace.") {
+    return "Pieper describes the attributes of saving grace by showing that God's grace toward sinners is grounded in Christ and ordered toward salvation through the means He has appointed. The section emphasizes that grace is not an abstract disposition in God, but grace given for Christ's sake.";
+  }
+  if (title === "4. Objection: It Is Unjust That the Innocent Should Suffer.") {
+    return "Pieper answers the objection that it is unjust for the innocent Christ to suffer in the place of the guilty by appealing to Scripture's own teaching on substitution. He argues that Christ's vicarious suffering is not a humanly invented theory of injustice, but God's revealed way of reconciling sinners.";
+  }
+  if (title === "The sacrifice of Christ and the Atonement of the Old Testament.") {
+    return "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.";
   }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
