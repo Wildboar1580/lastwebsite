@@ -1191,6 +1191,49 @@ function buildSectionNav(previousEntry, nextEntry, position) {
   if (!previousEntry && !nextEntry) return "";
   return `<nav class="luther-doc-nav luther-doc-nav-${position}" aria-label="Pieper section navigation">\n    ${previousEntry ? `<a class="luther-nav-button" rel="prev" href="${previousEntry.href}">Previous: ${escapeHtml(previousEntry.title)}</a>` : `<span class="luther-nav-spacer" aria-hidden="true"></span>`}\n    ${nextEntry ? `<a class="luther-nav-button" rel="next" href="${nextEntry.href}">Next: ${escapeHtml(nextEntry.title)}</a>` : `<span class="luther-nav-spacer" aria-hidden="true"></span>`}\n  </nav>`;
 }
+
+function buildSectionReadNext(volume, previousEntry, nextEntry) {
+  const cards = [];
+  if (previousEntry) {
+    cards.push({
+      meta: "Previous",
+      title: previousEntry.title,
+      href: previousEntry.href,
+      summary: `Return to the previous section in ${volume.label}.`
+    });
+  }
+  cards.push({
+    meta: volume.label,
+    title: `Back to ${volume.label}`,
+    href: volume.href,
+    summary: `Browse all sections in ${volume.label}.`
+  });
+  if (nextEntry) {
+    cards.push({
+      meta: "Next",
+      title: nextEntry.title,
+      href: nextEntry.href,
+      summary: `Continue to the next section in ${volume.label}.`
+    });
+  }
+
+  return `<section class="section pieper-read-next-section">
+    <div class="section-heading">
+      <p class="eyebrow">Read Next</p>
+      <h2>Keep moving through this volume</h2>
+    </div>
+    <div class="library-grid pieper-read-next-grid">
+      ${cards.map((card) => `
+        <a class="library-card pieper-read-next-card" href="${card.href}">
+          <span class="pieper-card-meta">${escapeHtml(card.meta)}</span>
+          <h3>${escapeHtml(card.title)}</h3>
+          <p>${escapeHtml(card.summary)}</p>
+        </a>
+      `).join("")}
+    </div>
+  </section>`;
+}
+
 function buildVolumeSourceCards(volume) {
   const otherVolumes = VOLUMES.filter((item) => item.slug !== volume.slug);
   return `
@@ -1516,6 +1559,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
           ${buildSectionNav(null, nextEntry, "bottom")}
         </article>
       </section>
+      ${buildSectionReadNext(volume, previousEntry, nextEntry)}
     </main>
   </div>
 </body>
