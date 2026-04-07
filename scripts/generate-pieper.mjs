@@ -601,6 +601,15 @@ function cleanupVolume2LeadParagraph(title, text) {
   if (title === "Summarizing Assessment of Reformed Christology.") {
     return "Pieper's summary assessment of Reformed Christology distinguishes between what remains Christian in it and what becomes destructive when rationalistic principles are followed consistently. He argues that the rejection of Christ's real communion of natures leads away from the incarnation itself unless that principle is inconsistently abandoned.";
   }
+  if (title === "II. The Doctrine of the States of Christ.") {
+    return "Pieper presents Scripture's teaching that Christ stands in two states: humiliation and exaltation. He introduces this doctrine as a way of describing how the incarnate Son, according to His human nature, first refrained from the full use of divine majesty and then openly exercised it.";
+  }
+  if (title === "1. The Nature and Concept of Christ's Humiliation and Exaltation.") {
+    return "Pieper defines Christ's humiliation and exaltation in relation to the one person of the God-man. Humiliation is not the loss of divine majesty, but the incarnate Son's non-use of it according to His human nature, while exaltation is its open and full use.";
+  }
+  if (title === "2. The Individual Parts of Humiliation and Exaltation.") {
+    return "Pieper next identifies the concrete events that belong to Christ's humiliation and exaltation. He treats these states historically, tracing how the incarnate Lord first entered the lowliness of suffering and then passed into the open manifestation of His glory.";
+  }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
   }
