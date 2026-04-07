@@ -433,6 +433,12 @@ function cleanOcrHeading(line = "") {
 
 function cleanupVolume2LeadParagraph(title, text) {
   if (!text) return text;
+  if (title === "3. Attributes of saving grace.") {
+    return "a. Grace in Christ. The saving grace by which God is gracious to sinners is not an absolute grace detached from Christ, but grace grounded in Christ's vicarious satisfaction. Scripture joins free justification by grace with the redemption that is in Christ Jesus, so grace must not be confused either with infused gifts in man or with any theory that detaches God's mercy from Christ's atoning work.";
+  }
+  if (title === "1. God's Will to Save All Men Is Not an Absolute Will.") {
+    return "God's will to save all men is not an absolute will detached from Christ and the means of grace, but an ordered will grounded in Christ's merit and conveyed through the Gospel and sacraments, received by faith. The conditional language of Scripture about faith does not make faith a human work that earns salvation; it describes the way in which grace is received.";
+  }
   if (title === "1. The Emergence of Christ's Human Nature Through the Action of the Holy Spirit.") {
     return text.replace(/^the Holy Spirit\.\s*\*?\s*/i, "");
   }
@@ -627,8 +633,11 @@ function sanitizeSummaryText(volume, text) {
   let value = cleanText(text);
   if (volume.slug === "vol-2") {
     value = value
-      .replace(/\b(?:[A-Za-z@&]{1,4}[0-9@&A-Za-z]*){3,}\b/g, " ")
-      .replace(/\b[A-Z]{3,}[a-zA-Z]*\b/g, " ")
+      .replace(/\bdbwpedv ty abtov yapitt\b/gi, "freely by His grace")
+      .replace(/\bo1d Tic GOALTPHOEWS THs EV\b/gi, "through the redemption that is in")
+      .replace(/\bmedia dot\b/gi, "the means of giving")
+      .replace(/\bmedium AnxtiKov\b/gi, "the means of receiving")
+      .replace(/\by@pic épymv vopov\b/gi, "without works of the law")
       .replace(/\s+/g, " ")
       .trim();
   }
@@ -734,6 +743,7 @@ function buildLandingPage(manifest) {
         <a href="/index.html#campaigns">Campaigns</a>
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
+        <a href="/pieper.html">Pieper</a>
         <a href="/library.html">Library</a>
         <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
@@ -828,6 +838,7 @@ function buildVolumePage(volume, sectionEntries) {
         <a href="/index.html#campaigns">Campaigns</a>
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
+        <a href="/pieper.html">Pieper</a>
         <a href="/library.html">Library</a>
         <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
@@ -915,6 +926,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
         <a href="/index.html#campaigns">Campaigns</a>
         <a href="/concord.html">Book of Concord</a>
         <a href="/luther.html">Luther's Works</a>
+        <a href="/pieper.html">Pieper</a>
         <a href="/library.html">Library</a>
         <a href="/about.html">About Me</a>
         <a href="/faq.html">FAQ</a>
