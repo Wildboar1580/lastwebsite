@@ -464,7 +464,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Membership in the Christian Church arises from faith in the Gospel, not from nationality, descent, or outward association. Pieper then points to the privileges Christ gives His Church through the forgiveness of sins, the means of grace, and communion in His body.";
   }
   if (title === "1. The Nature of Conversion.") {
-    return "Conversion does not consist in moral self-improvement or outward reform, but in a sinner becoming a believer in the Gospel. In the proper sense, conversion is turning to Christ and the grace of God offered in the Gospel.";
+    return "Conversion is not moral self-improvement or outward reform, but a sinner becoming a believer in the Gospel. In the proper sense, conversion is turning to Christ and the grace of God offered in the Gospel.";
   }
   if (title === "2. The Efficient Cause of Conversion.") {
     return "The efficient cause of conversion is God alone. Scripture does not divide conversion between divine grace and human cooperation, but teaches that God works conversion through the Gospel.";
@@ -473,7 +473,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Saving faith has the Gospel alone as its object in the matter of forgiveness and salvation. Pieper insists that justification comes only through the promise of grace in Christ, not through the Law or a general acknowledgment of revealed truth.";
   }
   if (title === "2. Saving Faith Is Fiducia Cordis.") {
-    return "Saving faith is not mere historical knowledge or bare assent, but trust of the heart in the grace promised for Christ's sake. Pieper insists that faith justifies by clinging personally to Christ as Savior.";
+    return "Saving faith is not mere knowledge or bare assent, but trust of the heart in the grace promised for Christ's sake. Pieper insists that faith justifies by clinging personally to Christ as Savior.";
   }
   if (title === "3. Saving Faith Is Fides Specialis.") {
     return "Saving faith is always personal faith. It does not merely affirm that Christ is a Savior in general, but trusts that the forgiveness won by Christ is meant also for the individual sinner who hears the Gospel.";
@@ -515,10 +515,10 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Repeated conversion refers to the restoration of those who truly had faith and then fell from it. Scripture therefore teaches the real return of fallen Christians through repentance and faith.";
   }
   if (title === "Synergistic Arguments Against Divine Monergism.") {
-    return "Pieper gathers the chief synergistic arguments against divine monergism to show that they all assign some decisive role to man in conversion. However phrased, they make grace depend on human distinction, decision, or conduct.";
+    return "Pieper gathers the chief synergistic arguments against divine monergism to show that they all assign a decisive role to man in conversion. However phrased, they make grace depend on human distinction, decision, or conduct.";
   }
   if (title === "The Real Reasons for Combating God's Sole Efficacy in Conversion.") {
-    return "The real motive behind opposition to God's sole efficacy in conversion is man's refusal to let salvation rest entirely on grace. Pieper says synergism reappears because reason wants ground for boasting or self-determination.";
+    return "The real motive behind opposition to God's sole efficacy in conversion is man's refusal to let salvation rest entirely on grace. Pieper says synergism reappears because reason wants room for boasting or self-determination.";
   }
   if (title === "1. The Harmfulness of Synergism.") {
     return "Synergism is harmful because it corrupts the Gospel itself. Once conversion depends partly on a better human response, comfort for terrified consciences is destroyed and grace is no longer truly grace.";
@@ -527,7 +527,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Synergism prevents conversion and undermines faith because it directs the sinner away from God's promise to his own conduct and readiness. In that way it blocks the trust through which conversion takes place.";
   }
   if (title === "3. Synergism Contradicts Scripture, Luther, and the Lutheran Confession.") {
-    return "Synergism contradicts Scripture, Luther, and the Lutheran Confessions because all three teach that conversion is God's work alone through the Gospel. Any cooperative role for man conflicts with the evangelical confession.";
+    return "Synergism contradicts Scripture, Luther, and the Lutheran Confessions because all three teach that conversion is God's work alone through the Gospel. Any cooperative role for man conflicts with the Church's confession.";
   }
   if (title === "1. Regeneration.") {
     return "Regeneration is the new birth by which spiritual life is kindled in the sinner through faith in Christ. Pieper treats it as another way of describing conversion from death to life through the Gospel.";
@@ -542,7 +542,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Calling is the divine summons issued through the Gospel. In the proper saving sense, it is God's gracious call that offers forgiveness and brings sinners to faith.";
   }
   if (title === "5. Repentance.") {
-    return "Repentance in Scripture can be taken broadly for the whole conversion of man or more narrowly for contrition over sin. In either case, true repentance is inseparable from faith in the Gospel.";
+    return "Repentance in Scripture can mean the whole conversion of man or more narrowly contrition over sin. In either case, true repentance is inseparable from faith in the Gospel.";
   }
   if (title === "2. The Polemics of Scripture Against the Interference of Works in Justification.") {
     return "Scripture not only teaches justification apart from works, but also wages direct polemic against every attempt to mix works into man's righteousness before God. Pieper stresses that once works are made part of justification, the Gospel is no longer comfort for sinners but another form of religion by human performance.";
@@ -623,7 +623,7 @@ function cleanupVolume2LeadParagraph(title, text) {
     return "Pieper connects Christ's sacrifice with the atoning offerings of the Old Testament by treating those rites as divinely given shadows of the one saving sacrifice to come. The comparison is meant to show the continuity of Scripture's doctrine of atonement rather than a merely symbolic resemblance.";
   }
   if (title === "5. Membership in the Kingdom of Glory.") {
-    return "Membership in the kingdom of glory is the final inheritance of those who belong to Christ by faith. Pieper presents it as the consummation of the believer's fellowship with Christ and His Church in eternal life.";
+    return "Membership in the kingdom of glory is the final inheritance of those who belong to Christ by faith. Pieper presents it as the consummation of fellowship with Christ and His Church in eternal life.";
   }
   if (title === "1. Objection: God Can Forgive Sin by Virtue of His Power.") {
     return "Pieper answers the claim that God could forgive sin by sheer power without satisfaction by insisting that God has revealed how He actually forgives: through Christ's atoning work. Speculation about what God might do apart from that revelation only dissolves the Gospel into human guesswork.";
