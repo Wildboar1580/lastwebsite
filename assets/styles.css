@@ -2322,6 +2322,10 @@ textarea {
   object-fit: cover;
 }
 
+.easter-gallery-image-top {
+  object-position: center top;
+}
+
 .easter-gallery-card figcaption {
   padding: 0.95rem 1rem 1.05rem;
   color: var(--text-soft);
