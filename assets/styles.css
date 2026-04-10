@@ -2338,6 +2338,25 @@ textarea {
   margin-bottom: 0;
 }
 
+.walther-reading-section {
+  margin: 1rem 0 0;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(213, 166, 41, 0.12);
+  border-radius: 1rem;
+  background: rgba(9, 8, 7, 0.36);
+}
+
+.walther-reading-section h3,
+.walther-reading-section h4 {
+  margin-top: 0;
+}
+
+.walther-reading-section p:last-child,
+.walther-reading-section ol:last-child,
+.walther-reading-section blockquote:last-child {
+  margin-bottom: 0;
+}
+
 .luther-page-shell {
   display: grid;
   gap: 1rem;

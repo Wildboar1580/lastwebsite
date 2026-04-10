@@ -260,6 +260,54 @@ function enhanceThesesPage(contentHtml) {
   return rebuilt;
 }
 
+function segmentLectureContent(contentHtml) {
+  const titleMatch = contentHtml.match(/^(\s*<h1[\s\S]*?<\/h1>\s*<h2[\s\S]*?<\/h2>)/i);
+  const titleBlock = titleMatch?.[1] || "";
+  const bodyHtml = titleBlock ? contentHtml.slice(titleBlock.length) : contentHtml;
+  const blocks = [...bodyHtml.matchAll(/<(h[3-4]|p|ol|blockquote)[^>]*>[\s\S]*?<\/\1>/gi)].map((match) => ({
+    tag: match[1].toLowerCase(),
+    html: match[0]
+  }));
+
+  if (!blocks.length) {
+    return contentHtml;
+  }
+
+  const sections = [];
+  let currentBlocks = [];
+  let currentCount = 0;
+
+  function flushSection() {
+    if (!currentBlocks.length) {
+      return;
+    }
+    sections.push(`<section class="walther-reading-section">
+${currentBlocks.join("")}
+</section>`);
+    currentBlocks = [];
+    currentCount = 0;
+  }
+
+  for (const block of blocks) {
+    if (block.tag === "h3" || block.tag === "h4") {
+      flushSection();
+      currentBlocks.push(block.html);
+      continue;
+    }
+
+    currentBlocks.push(block.html);
+    currentCount += 1;
+
+    if (currentCount >= 3) {
+      flushSection();
+    }
+  }
+
+  flushSection();
+
+  return `${titleBlock}${sections.join("")}`;
+}
+
 function renderReadingSidebar(entry, headings = []) {
   const headingSection = headings.length
     ? `
@@ -540,9 +588,12 @@ async function main() {
     const pageHtml = await fetchText(tocEntry.sourceUrl);
     const importedHtml = sanitizeImportedHtml(extractMainContent(pageHtml));
     const annotated = annotateContentHeadings(importedHtml, tocEntry.title);
-    const enhancedContentHtml = tocEntry.slug === "theses"
-      ? enhanceThesesPage(annotated.contentHtml)
-      : annotated.contentHtml;
+    let enhancedContentHtml = annotated.contentHtml;
+    if (tocEntry.slug === "theses") {
+      enhancedContentHtml = enhanceThesesPage(enhancedContentHtml);
+    } else if (/evening-lecture/.test(tocEntry.slug)) {
+      enhancedContentHtml = segmentLectureContent(enhancedContentHtml);
+    }
     const description = buildDescription(enhancedContentHtml, tocEntry.title);
     const shortSummary = buildShortSummary(enhancedContentHtml, tocEntry.title);
     entries.push({
