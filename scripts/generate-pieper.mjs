@@ -91,7 +91,8 @@ const VOLUMES = [
 const DROP_SECTION_TITLES = new Set([
   "Summary of Content.",
   "Summary of Contents.",
-  "Misprint."
+  "Misprint.",
+  "The Saving Grace of God."
 ]);
 
 function ensureDir(dir) { fs.mkdirSync(dir, { recursive: true }); }
@@ -409,9 +410,11 @@ function parseDocxSections(volume) {
 
 function stripOcrPageHeader(line = "") {
   let text = String(line).replace(/\u000c/g, "").trim();
+  if (/^\d+\s*>\s*.+?English ed(?:ition)?\b/i.test(text)) return "";
+  if (/^\d+\s*[=><-]\s*.+?English ed(?:ition)?\b/i.test(text)) return "";
   text = text.replace(/^\d+\s*>\s*/, "");
   text = text.replace(/^\d+\s+\d+\s+/, "");
-  if (/english edition/i.test(text)) return "";
+  if (/english ed(?:ition)?\.?/i.test(text)) return "";
   if (/\[English ed\./i.test(text) && /^[A-Z]/.test(text)) return "";
   return text;
 }
@@ -1090,6 +1093,13 @@ function parseOcrSections(volume) {
         }
         continue;
       }
+      if (/^\d{2,4}\)/.test(cleaned)) {
+        if (currentParagraph.length) {
+          paragraphs.push(currentParagraph.join(" "));
+          currentParagraph = [];
+        }
+        continue;
+      }
       if (/^[IVXLCDM]+\s*[>=-]/.test(cleaned)) continue;
       if (/^\d+\)/.test(cleaned)) continue;
       if (/^\[English ed\./i.test(cleaned)) continue;
@@ -1126,7 +1136,8 @@ function parseOcrSections(volume) {
 
   return normalizedSections.filter((section) => {
     const text = section.blocks.filter((block) => block.type === "paragraph").map((block) => block.text).join(" ");
-    return text.length >= 80 && !DROP_SECTION_TITLES.has(section.title);
+    const minimumLength = volume.slug === "vol-2" ? 20 : 80;
+    return text.length >= minimumLength && !DROP_SECTION_TITLES.has(section.title);
   });
 }
 
