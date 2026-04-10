@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { renderSiteFooter } from "./site-layout.mjs";
+import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
@@ -1292,6 +1292,7 @@ function buildLandingPage(manifest) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Pieper's Christian Dogmatics | Last Christian Ministries">
@@ -1405,6 +1406,7 @@ function buildVolumePage(volume, sectionEntries) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(volume.label)} | Pieper Library">
@@ -1501,6 +1503,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)}">

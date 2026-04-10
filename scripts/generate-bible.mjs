@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { renderSiteFooter } from "./site-layout.mjs";
+import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 
 const root = process.cwd();
 const outputDir = path.join(root, "bible");
@@ -239,6 +239,7 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(bookName)} | Bible | Last Christian Ministries">
@@ -417,6 +418,7 @@ function renderPage({
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(pageTitle)}">

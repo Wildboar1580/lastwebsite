@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { renderSiteFooter } from "./site-layout.mjs";
+import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 
 const ROOT_URL = "https://lutherantheology.com";
 const SOURCE_URL = `${ROOT_URL}/theological-works/the-proper-distinction-between-law-and-gospel/`;
@@ -395,6 +395,7 @@ function renderDocPage(entry, previousEntry, nextEntry) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(entry.title)} | Law and Gospel">
@@ -489,6 +490,7 @@ function renderHubPage(entries, noteHtml) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="The Proper Distinction Between Law and Gospel | Walther">

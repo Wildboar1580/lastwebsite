@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { renderSiteFooter } from "./site-layout.mjs";
+import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 
 const ROOT_URL = "https://bookofconcord.org";
 const root = process.cwd();
@@ -226,6 +226,7 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(title)} | ${escapeHtml(sectionTitle)}">
@@ -354,6 +355,7 @@ function buildFormulaPage() {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Formula of Concord | Last Christian Ministries">
@@ -446,6 +448,7 @@ function buildConcordLanding(manifest) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Book of Concord | Last Christian Ministries">

@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { ROOT_URL, renderSiteFooter } from "./site-layout.mjs";
+import { ROOT_URL, renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 
 const ROOT = process.cwd();
 const WALTHER_ROOT = path.join(ROOT, "walther");
@@ -312,6 +312,7 @@ function renderDocumentPage({ title, description, canonicalPath, eyebrow, headin
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(title)} | Walther">
@@ -487,6 +488,7 @@ function renderEpistlesHub(sermons) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Walther's Epistle Sermons | Last Christian Ministries">
@@ -535,6 +537,7 @@ function renderSermonsHub(sermons) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Walther's Sermons | Last Christian Ministries">

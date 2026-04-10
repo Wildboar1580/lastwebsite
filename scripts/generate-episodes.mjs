@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { renderSiteFooter } from "./site-layout.mjs";
+import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 
 const root = process.cwd();
 const feedPath = path.join(root, "rss-feed.xml");
@@ -166,6 +166,7 @@ function buildPage(episode) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(episode.title)}">
@@ -306,6 +307,7 @@ function buildArchivePage({ episodes, currentPage, totalPages }) {
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
+${renderFaviconLinks()}
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(pageTitle)}">
