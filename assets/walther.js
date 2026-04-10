@@ -19,7 +19,7 @@ async function initWaltherSearch() {
   }
 
   if (status) {
-    status.textContent = `Search ${searchIndex.length} starter Walther entries by title or summary.`;
+    status.textContent = `Search ${searchIndex.length} Walther entries by title or summary.`;
   }
 
   input.addEventListener("input", () => {
@@ -27,7 +27,7 @@ async function initWaltherSearch() {
     if (query.length < 2) {
       results.innerHTML = "";
       if (status) {
-        status.textContent = `Search ${searchIndex.length} starter Walther entries by title or summary.`;
+        status.textContent = `Search ${searchIndex.length} Walther entries by title or summary.`;
       }
       return;
     }
