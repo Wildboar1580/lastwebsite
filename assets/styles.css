@@ -2100,6 +2100,73 @@ textarea {
   line-height: 1.7;
 }
 
+.library-feature-grid {
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  align-items: start;
+}
+
+.library-feature-image-luther {
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.library-feature-image-luther img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.library-feature-image-pieper img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 18%;
+  transform: scale(1.04);
+}
+
+.library-feature-image-concord {
+  width: 100%;
+  max-width: 310px;
+  margin: 0;
+  background: transparent;
+}
+
+.library-feature-image-concord img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  object-fit: cover;
+  padding: 0.4rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow);
+  background:
+    radial-gradient(circle at top, rgba(245, 225, 181, 0.18), transparent 52%),
+    linear-gradient(180deg, rgba(23, 18, 12, 0.94), rgba(12, 10, 8, 0.98));
+}
+
+.library-feature-copy {
+  max-width: 48rem;
+}
+
+.library-feature-copy h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.04;
+}
+
+.library-feature-copy p {
+  margin: 0.85rem 0 0;
+  color: var(--text-soft);
+  line-height: 1.72;
+}
+
 .luther-page-shell {
   display: grid;
   gap: 1rem;
