@@ -2150,6 +2150,20 @@ textarea {
     linear-gradient(180deg, rgba(23, 18, 12, 0.94), rgba(12, 10, 8, 0.98));
 }
 
+.library-feature-image-walther {
+  max-width: 280px;
+  justify-self: center;
+}
+
+.library-feature-image-walther img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(0.18);
+}
+
 .library-feature-copy {
   max-width: 48rem;
 }
