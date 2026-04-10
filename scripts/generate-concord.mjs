@@ -303,6 +303,7 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
+        <a href="/walther">Walther</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/faq">FAQ</a>
@@ -384,6 +385,7 @@ function buildFormulaPage() {
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
+        <a href="/walther">Walther</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/faq">FAQ</a>
@@ -505,6 +507,7 @@ function buildConcordLanding(manifest) {
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
+        <a href="/walther">Walther</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/faq">FAQ</a>

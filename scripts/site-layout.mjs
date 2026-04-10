@@ -23,6 +23,7 @@ export function renderSiteFooter({ homeHref = "/", campaignsHref = "/#campaigns"
           <a href="${campaignsHref}">Campaigns</a>
           <a href="/easter">Easter Report</a>
           <a href="/library">Library</a>
+          <a href="/walther">Walther</a>
           <a href="/requests">Signed Requests</a>
           <a href="/about">About Me</a>
           <a href="/kutesa">Kutesa Henry</a>

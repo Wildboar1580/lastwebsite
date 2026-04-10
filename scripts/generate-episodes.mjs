@@ -222,6 +222,7 @@ function buildPage(episode) {
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
+        <a href="/walther">Walther</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/kutesa">Kutesa Henry</a>
@@ -342,6 +343,7 @@ function buildArchivePage({ episodes, currentPage, totalPages }) {
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
+        <a href="/walther">Walther</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/kutesa">Kutesa Henry</a>
