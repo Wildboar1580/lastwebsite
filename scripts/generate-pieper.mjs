@@ -411,6 +411,7 @@ function stripOcrPageHeader(line = "") {
   let text = String(line).replace(/\u000c/g, "").trim();
   text = text.replace(/^\d+\s*>\s*/, "");
   text = text.replace(/^\d+\s+\d+\s+/, "");
+  if (/english edition/i.test(text)) return "";
   if (/\[English ed\./i.test(text) && /^[A-Z]/.test(text)) return "";
   return text;
 }
@@ -971,28 +972,14 @@ const VOLUME_2_BODY_OVERRIDES = new Map([
 function normalizeVolume2Sections(sections) {
   return sections.map((section) => {
     const title = VOLUME_2_TITLE_OVERRIDES.get(section.title) || section.title;
-    let leadParagraphHandled = false;
     let blocks = section.blocks.map((block, index) => {
       if (index === 0 && block.type === "heading") return { ...block, text: title };
-      if (block.type === "paragraph" && !leadParagraphHandled) {
-        leadParagraphHandled = true;
-        const text = cleanupVolume2LeadParagraph(title, cleanupVolume2ParagraphText(block.text));
-        return { ...block, text, html: escapeHtml(text) };
-      }
       if (block.type === "paragraph") {
         const text = cleanupVolume2ParagraphText(block.text);
         return { ...block, text, html: escapeHtml(text) };
       }
       return block;
     });
-    const paragraphOverride = VOLUME_2_BODY_OVERRIDES.get(title);
-    if (paragraphOverride) {
-      const headingBlocks = blocks.filter((block) => block.type === "heading");
-      blocks = [
-        ...headingBlocks,
-        ...paragraphOverride.map((text) => ({ type: "paragraph", text, html: escapeHtml(text) }))
-      ];
-    }
     return { ...section, title, blocks };
   });
 }
@@ -1265,10 +1252,10 @@ function buildVolumeSourceCards(volume) {
 
 function buildFeaturedDoctrineCards() {
   const featured = [
-    ["Grace", "Saving Grace", "/pieper/vol-2/03-2-concept-of-saving-grace/", "Start with Pieper's definition of saving grace and how it differs from works or inward merit."],
+    ["Grace", "Saving Grace", "/pieper/vol-3/42-the-means-of-grace-in-the-form-of-absolution/", "Start with a fuller section where Pieper treats the actual delivery of forgiving grace in absolution."],
     ["Christology", "Christ's Person", "/pieper/vol-2/09-1-the-true-divinity-of-christ/", "Open the core Christology section through Pieper's treatment of Christ's true divinity."],
-    ["Justification", "Central Position", "/pieper/vol-2/69-4-the-central-position-of-the-doctrine-of-justification/", "Jump to the section where Pieper places justification at the center of Christian doctrine."],
-    ["Means of Grace", "Means of Grace", "/pieper/vol-3/29-the-means-of-grace-in-general/", "Go directly to Pieper's treatment of how Christ delivers His gifts through appointed means."],
+    ["Justification", "Central Position", "/pieper/vol-3/06-3-the-relationship-between-justification-and-sanctification-in-the-strict-sense/", "Jump into Pieper's extended treatment of justification and why good works must follow it, not precede it."],
+    ["Means of Grace", "Means of Grace", "/pieper/vol-3/39-the-importance-of-the-christian-doctrine-of-the-means-of-grace/", "Go straight to a full-text section defending how Christ actually delivers His gifts through appointed means."],
     ["Last Things", "Last Things", "/pieper/vol-3/108-1-the-temporal-death/", "Enter volume 3 through Pieper's treatment of death, resurrection, judgment, and the life to come."]
   ];
 
