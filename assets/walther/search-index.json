@@ -2,8 +2,8 @@
   {
     "title": "The Proper Distinction Between Law and Gospel",
     "category": "Pastoral Theology",
-    "summary": "A scaffold page for Walther's famous evening lectures on distinguishing God's Law from God's Gospel.",
-    "text": "Use this starter page for Walther's Law and Gospel lectures, pastoral theology, preaching, repentance, absolution, and care for troubled consciences.",
+    "summary": "A reading hub for Walther's famous evening lectures on distinguishing God's Law from God's Gospel.",
+    "text": "Use this Walther reading hub for Law and Gospel lectures, pastoral theology, preaching, repentance, absolution, and care for troubled consciences.",
     "url": "/walther/law-and-gospel/"
   },
   {
@@ -19,5 +19,180 @@
     "summary": "A scaffold page for sermons, addresses, and pastoral writing that shaped confessional Lutheranism in America.",
     "text": "Use this starter page for Walther sermons, essays, convention addresses, American Lutheran pastoral theology, catechesis, and confessional teaching.",
     "url": "/walther/american-lutheran-pastoral-theology/"
+  },
+  {
+    "title": "Lecture 1: Need for the Distinction",
+    "category": "Law and Gospel",
+    "summary": "Why the right distinction between Law and Gospel is a matter of life, death, and pastoral faithfulness.",
+    "text": "Walther opens by showing that the church loses her evangelical voice when Law and Gospel are blurred together. Why the right distinction between Law and Gospel is a matter of life, death, and pastoral faithfulness.",
+    "url": "/walther/law-and-gospel/lecture-01/"
+  },
+  {
+    "title": "Lecture 2: Two Doctrines from God",
+    "category": "Law and Gospel",
+    "summary": "How both Law and Gospel come from God while differing completely in office and effect.",
+    "text": "This lecture sets the basic contrast between divine demand and divine promise. How both Law and Gospel come from God while differing completely in office and effect.",
+    "url": "/walther/law-and-gospel/lecture-02/"
+  },
+  {
+    "title": "Lecture 3: Why Confusion Destroys Consciences",
+    "category": "Law and Gospel",
+    "summary": "The spiritual damage done when preachers speak truly in parts but confuse the hearer about Christ's consolation.",
+    "text": "Walther pushes the question from theory into the actual condition of terrified and secure consciences. The spiritual damage done when preachers speak truly in parts but confuse the hearer about Christ's consolation.",
+    "url": "/walther/law-and-gospel/lecture-03/"
+  },
+  {
+    "title": "Lecture 4: Command and Promise",
+    "category": "Law and Gospel",
+    "summary": "The distinction between what God commands and what God freely gives in Christ.",
+    "text": "This lecture helps establish why the Gospel is not advice, threat, or moral program. The distinction between what God commands and what God freely gives in Christ.",
+    "url": "/walther/law-and-gospel/lecture-04/"
+  },
+  {
+    "title": "Lecture 5: The First Thesis",
+    "category": "Law and Gospel",
+    "summary": "A first major warning against preaching that weakens the force of either doctrine.",
+    "text": "Walther begins naming the errors that repeatedly appear in otherwise serious church bodies. A first major warning against preaching that weakens the force of either doctrine.",
+    "url": "/walther/law-and-gospel/lecture-05/"
+  },
+  {
+    "title": "Lecture 6: Repentance and Terror",
+    "category": "Law and Gospel",
+    "summary": "How the Law must expose sin without leaving the sinner in despair.",
+    "text": "The pastoral task is not simply to terrify, but to prepare the way for the Gospel's comfort. How the Law must expose sin without leaving the sinner in despair.",
+    "url": "/walther/law-and-gospel/lecture-06/"
+  },
+  {
+    "title": "Lecture 7: The Gospel Is Not a New Law",
+    "category": "Law and Gospel",
+    "summary": "Why the Gospel must never be reduced to instructions for self-improvement.",
+    "text": "Walther keeps Christ's completed work at the center rather than the sinner's performance. Why the Gospel must never be reduced to instructions for self-improvement.",
+    "url": "/walther/law-and-gospel/lecture-07/"
+  },
+  {
+    "title": "Lecture 8: Justification and Sanctification",
+    "category": "Law and Gospel",
+    "summary": "How to preach the Christian life without letting sanctification swallow justification.",
+    "text": "This is one of the classic places where doctrinal precision protects pastoral comfort. How to preach the Christian life without letting sanctification swallow justification.",
+    "url": "/walther/law-and-gospel/lecture-08/"
+  },
+  {
+    "title": "Lecture 9: Faith Created by the Gospel",
+    "category": "Law and Gospel",
+    "summary": "Why faith is born from the promise rather than from demands for inward strength.",
+    "text": "Walther insists that the Gospel creates what it asks for by delivering Christ Himself. Why faith is born from the promise rather than from demands for inward strength.",
+    "url": "/walther/law-and-gospel/lecture-09/"
+  },
+  {
+    "title": "Lecture 10: Do Not Point Consciences Inward",
+    "category": "Law and Gospel",
+    "summary": "A warning against sending troubled Christians into themselves rather than to Christ.",
+    "text": "The afflicted conscience needs the objective promise, not endless spiritual introspection. A warning against sending troubled Christians into themselves rather than to Christ.",
+    "url": "/walther/law-and-gospel/lecture-10/"
+  },
+  {
+    "title": "Lecture 11: Evangelical Exhortation",
+    "category": "Law and Gospel",
+    "summary": "How Christians may be exhorted without turning sermons into disguised legalism.",
+    "text": "Walther shows the difference between genuine evangelical encouragement and moral pressure. How Christians may be exhorted without turning sermons into disguised legalism.",
+    "url": "/walther/law-and-gospel/lecture-11/"
+  },
+  {
+    "title": "Lecture 12: Means of Grace",
+    "category": "Law and Gospel",
+    "summary": "Why the Gospel reaches sinners through preached Word, Baptism, and the Supper.",
+    "text": "This lecture belongs naturally with sacramental and ecclesial Lutheran theology. Why the Gospel reaches sinners through preached Word, Baptism, and the Supper.",
+    "url": "/walther/law-and-gospel/lecture-12/"
+  },
+  {
+    "title": "Lecture 13: The Gospel Gives What It Says",
+    "category": "Law and Gospel",
+    "summary": "The Gospel not only announces grace but actually bestows forgiveness and consolation.",
+    "text": "Walther presses the performative power of God's promise. The Gospel not only announces grace but actually bestows forgiveness and consolation.",
+    "url": "/walther/law-and-gospel/lecture-13/"
+  },
+  {
+    "title": "Lecture 14: Moralism in the Pulpit",
+    "category": "Law and Gospel",
+    "summary": "The danger of sermons that sound useful but leave Christ in the background.",
+    "text": "Here Walther is especially sharp about preaching that trains behavior without delivering redemption. The danger of sermons that sound useful but leave Christ in the background.",
+    "url": "/walther/law-and-gospel/lecture-14/"
+  },
+  {
+    "title": "Lecture 15: Comfort for the Afflicted",
+    "category": "Law and Gospel",
+    "summary": "How the Gospel is aimed at sinners who know their need and long for mercy.",
+    "text": "This is pastoral theology in its most direct form: consolation for burdened consciences. How the Gospel is aimed at sinners who know their need and long for mercy.",
+    "url": "/walther/law-and-gospel/lecture-15/"
+  },
+  {
+    "title": "Lecture 16: False Comfort for the Secure",
+    "category": "Law and Gospel",
+    "summary": "Why the Gospel must not be poured out indiscriminately on those hardened in impenitence.",
+    "text": "Walther keeps both doctrines distinct by preserving their proper hearers and uses. Why the Gospel must not be poured out indiscriminately on those hardened in impenitence.",
+    "url": "/walther/law-and-gospel/lecture-16/"
+  },
+  {
+    "title": "Lecture 17: The Whole Counsel of God",
+    "category": "Law and Gospel",
+    "summary": "Faithful preaching requires both doctrines, each spoken at the right time and to the right hearer.",
+    "text": "The preacher must not flatten every sermon into one emotional register. Faithful preaching requires both doctrines, each spoken at the right time and to the right hearer.",
+    "url": "/walther/law-and-gospel/lecture-17/"
+  },
+  {
+    "title": "Lecture 18: Doctrinal Precision for Preaching",
+    "category": "Law and Gospel",
+    "summary": "Why confessional accuracy matters because souls depend on the church's words about Christ.",
+    "text": "Walther joins dogmatics and homiletics instead of setting them against each other. Why confessional accuracy matters because souls depend on the church's words about Christ.",
+    "url": "/walther/law-and-gospel/lecture-18/"
+  },
+  {
+    "title": "Lecture 19: Catechesis and Care of Souls",
+    "category": "Law and Gospel",
+    "summary": "Applying the distinction to teaching, visitation, and ordinary congregational life.",
+    "text": "This lecture helps connect the pulpit to pastoral practice beyond Sunday sermons. Applying the distinction to teaching, visitation, and ordinary congregational life.",
+    "url": "/walther/law-and-gospel/lecture-19/"
+  },
+  {
+    "title": "Lecture 20: Fruits and the Basis of Salvation",
+    "category": "Law and Gospel",
+    "summary": "How to speak about fruits of faith without making them the ground of assurance.",
+    "text": "Walther keeps good works in their proper place as fruit, not foundation. How to speak about fruits of faith without making them the ground of assurance.",
+    "url": "/walther/law-and-gospel/lecture-20/"
+  },
+  {
+    "title": "Lecture 21: The Comfort of Absolution",
+    "category": "Law and Gospel",
+    "summary": "The absolving word of Christ as medicine for consciences bruised by sin and accusation.",
+    "text": "This lecture naturally ties Walther's doctrine to sacramental and pastoral practice. The absolving word of Christ as medicine for consciences bruised by sin and accusation.",
+    "url": "/walther/law-and-gospel/lecture-21/"
+  },
+  {
+    "title": "Lecture 22: Christ at the Center",
+    "category": "Law and Gospel",
+    "summary": "Every evangelical sermon must finally deliver Christ, not merely information about Him.",
+    "text": "Walther keeps the person and work of Christ as the heart of all true Gospel proclamation. Every evangelical sermon must finally deliver Christ, not merely information about Him.",
+    "url": "/walther/law-and-gospel/lecture-22/"
+  },
+  {
+    "title": "Lecture 23: Orthodox Words with a Legal Effect",
+    "category": "Law and Gospel",
+    "summary": "Language may sound correct while still leaving the hearer under the Law.",
+    "text": "Walther teaches preachers to judge sermons not only by formulas but by their actual doctrinal force. Language may sound correct while still leaving the hearer under the Law.",
+    "url": "/walther/law-and-gospel/lecture-23/"
+  },
+  {
+    "title": "Lecture 24: The Pastor's Task",
+    "category": "Law and Gospel",
+    "summary": "The minister as steward of mysteries, not manager of moral outcomes.",
+    "text": "This lecture draws the distinction into the identity and vocation of the pastor himself. The minister as steward of mysteries, not manager of moral outcomes.",
+    "url": "/walther/law-and-gospel/lecture-24/"
+  },
+  {
+    "title": "Lecture 25: The Enduring Necessity of the Distinction",
+    "category": "Law and Gospel",
+    "summary": "A closing emphasis on why the church must never tire of learning this distinction anew.",
+    "text": "Walther leaves the reader with the long-term pastoral stakes clearly in view. A closing emphasis on why the church must never tire of learning this distinction anew.",
+    "url": "/walther/law-and-gospel/lecture-25/"
   }
 ]
