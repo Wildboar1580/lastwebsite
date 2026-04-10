@@ -960,6 +960,28 @@ textarea {
   justify-content: center;
 }
 
+.podcast-subscribe-block {
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.podcast-subscribe-label {
+  margin: 0 0 0.85rem;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.podcast-subscribe-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+
 .podcast-toggle {
   width: auto;
 }
@@ -3178,12 +3200,18 @@ textarea {
     align-items: stretch;
   }
 
+  .podcast-subscribe-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
   .archive-item {
     grid-template-columns: 1fr;
   }
 
   .search-field input,
-  .podcast-toggle {
+  .podcast-toggle,
+  .podcast-subscribe-links .button {
     width: 100%;
   }
 

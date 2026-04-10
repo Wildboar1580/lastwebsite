@@ -22,8 +22,17 @@ fs.mkdirSync(podcastPageDir, { recursive: true });
 const subscribeLinks = {
   apple: "https://podcasts.apple.com/us/podcast/last-christian-ministries/id1852167931",
   amazon: "https://music.amazon.com/podcasts/aed6067f-66bd-4ab0-b274-a888abd5e972/last-christian-ministries",
+  rsscom: "https://rss.com/podcasts/last-christian-ministries/",
   rss: "https://media.rss.com/last-christian-ministries/feed.xml"
 };
+
+function renderSubscribeButtons() {
+  return `
+          <a class="button button-outline icon-button" href="${subscribeLinks.apple}" target="_blank" rel="noreferrer"><span>Apple Podcasts</span></a>
+          <a class="button button-outline icon-button" href="${subscribeLinks.amazon}" target="_blank" rel="noreferrer"><span>Amazon Music</span></a>
+          <a class="button button-outline icon-button" href="${subscribeLinks.rsscom}" target="_blank" rel="noreferrer"><span>RSS.com</span></a>
+          <a class="button button-outline icon-button" href="${subscribeLinks.rss}" target="_blank" rel="noreferrer"><span>RSS Feed</span></a>`;
+}
 
 function decodeXml(text = "") {
   return text
@@ -259,9 +268,7 @@ ${renderFaviconLinks()}
             </div>
           </div>
           <div class="episode-page-actions">
-            <a class="button button-outline icon-button" href="${subscribeLinks.apple}" target="_blank" rel="noreferrer"><span>Apple Podcasts</span></a>
-            <a class="button button-outline icon-button" href="${subscribeLinks.amazon}" target="_blank" rel="noreferrer"><span>Amazon Music</span></a>
-            <a class="button button-outline icon-button" href="${subscribeLinks.rss}" target="_blank" rel="noreferrer"><span>RSS Feed</span></a>
+${renderSubscribeButtons()}
           </div>
           <div class="episode-page-actions">
             <a class="button button-outline icon-button" href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" rel="noreferrer"><span>Facebook</span></a>
@@ -361,6 +368,12 @@ ${renderFaviconLinks()}
           <p class="eyebrow">Podcast Archive</p>
           <h2>Every Episode in One Place</h2>
           <p>Browse the full Last Christian Ministries feed with real archive pages and static links to older episodes.</p>
+        </div>
+        <div class="podcast-subscribe-block">
+          <p class="podcast-subscribe-label">Subscribe on major podcast services</p>
+          <div class="podcast-subscribe-links">
+${renderSubscribeButtons()}
+          </div>
         </div>
         <div class="archive-header archive-header-page">
           <div>
