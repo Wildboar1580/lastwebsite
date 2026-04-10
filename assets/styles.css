@@ -2186,6 +2186,30 @@ textarea {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.walther-featured-work-grid {
+  grid-template-columns: 1fr;
+}
+
+.walther-featured-work-card {
+  display: grid;
+  gap: 0.65rem;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.4rem;
+  background:
+    radial-gradient(circle at top right, rgba(213, 166, 41, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(34, 12, 13, 0.96), rgba(15, 10, 9, 0.99));
+  border-color: rgba(213, 166, 41, 0.28);
+}
+
+.walther-featured-work-card h3 {
+  font-size: 1.55rem;
+}
+
+.walther-featured-work-card p:last-child {
+  color: var(--text-soft);
+}
+
 .walther-lecture-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
