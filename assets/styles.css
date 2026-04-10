@@ -2181,6 +2181,277 @@ textarea {
   line-height: 1.72;
 }
 
+.hardcore-library-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  gap: 2rem;
+  align-items: center;
+  padding-block: 2.15rem;
+  background:
+    radial-gradient(circle at 12% 14%, rgba(213, 166, 41, 0.24), transparent 24%),
+    radial-gradient(circle at 88% 14%, rgba(146, 28, 33, 0.42), transparent 24%),
+    linear-gradient(140deg, rgba(10, 10, 10, 0.99), rgba(32, 16, 13, 0.98) 46%, rgba(11, 10, 10, 1));
+  border: 1px solid rgba(213, 166, 41, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 239, 201, 0.06),
+    0 28px 60px rgba(0, 0, 0, 0.3);
+}
+
+.hardcore-library-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(8, 8, 8, 0.54), transparent 26%, transparent 74%, rgba(8, 8, 8, 0.62)),
+    linear-gradient(180deg, rgba(255, 247, 225, 0.03), transparent 18%, transparent 82%, rgba(0, 0, 0, 0.26)),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0 1px, transparent 1px 120px);
+  pointer-events: none;
+}
+
+.hardcore-library-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 34%;
+  background:
+    linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.1) 22%, rgba(0, 0, 0, 0.42)),
+    repeating-linear-gradient(90deg, rgba(121, 88, 58, 0.18) 0 7px, rgba(52, 34, 23, 0.18) 7px 14px);
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.hardcore-library-copy,
+.hardcore-library-art {
+  position: relative;
+  z-index: 1;
+}
+
+.hardcore-library-copy {
+  max-width: 40rem;
+  padding: 1.25rem 1.35rem 1.25rem 0;
+}
+
+.hardcore-library-copy .eyebrow {
+  margin-bottom: 0.6rem;
+  color: #efc864;
+}
+
+.hardcore-library-copy h1 {
+  font-size: clamp(3rem, 7vw, 5.9rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-shadow: 0 10px 28px rgba(0, 0, 0, 0.36);
+}
+
+.hardcore-library-copy > p:first-of-type {
+  max-width: 36rem;
+  font-size: 1.08rem;
+  line-height: 1.82;
+  color: rgba(245, 238, 226, 0.9);
+}
+
+.hardcore-library-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0.72rem 1rem;
+  border: 1px solid rgba(213, 166, 41, 0.28);
+  border-radius: 999px;
+  background: rgba(255, 248, 230, 0.04);
+  color: rgba(241, 230, 211, 0.88);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hardcore-library-note::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #f0d899, #c6902d);
+  box-shadow: 0 0 14px rgba(213, 166, 41, 0.35);
+}
+
+.hardcore-library-art {
+  position: relative;
+  min-height: 450px;
+  padding: 1.25rem 0.5rem 0.75rem;
+  display: grid;
+  align-items: end;
+}
+
+.hardcore-library-arch {
+  position: absolute;
+  inset: 0.25rem 0 1.15rem;
+  border-radius: 260px 260px 1rem 1rem;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(245, 224, 171, 0.48), transparent 14%),
+    linear-gradient(180deg, rgba(104, 61, 38, 0.42), rgba(37, 20, 15, 0.18) 42%, rgba(10, 10, 10, 0));
+  border: 1px solid rgba(213, 166, 41, 0.2);
+  box-shadow:
+    inset 0 -50px 70px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 241, 204, 0.08);
+}
+
+.hardcore-library-arch::before,
+.hardcore-library-arch::after {
+  content: "";
+  position: absolute;
+  top: 24%;
+  bottom: 0.25rem;
+  width: 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(143, 99, 63, 0.56), rgba(55, 32, 19, 0.9));
+  box-shadow:
+    inset 1px 0 0 rgba(245, 225, 183, 0.12),
+    inset -1px 0 0 rgba(0, 0, 0, 0.32);
+}
+
+.hardcore-library-arch::before {
+  left: 7.5%;
+}
+
+.hardcore-library-arch::after {
+  right: 7.5%;
+}
+
+.hardcore-library-crest {
+  position: absolute;
+  left: 50%;
+  top: 1.55rem;
+  width: 128px;
+  height: 128px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: radial-gradient(circle at 50% 40%, rgba(91, 20, 23, 0.98), rgba(27, 8, 10, 1));
+  border: 2px solid rgba(213, 166, 41, 0.78);
+  box-shadow:
+    0 18px 34px rgba(0, 0, 0, 0.46),
+    0 0 0 10px rgba(0, 0, 0, 0.18);
+}
+
+.hardcore-library-crest-ring,
+.hardcore-library-crest-cross {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hardcore-library-crest-ring {
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  border: 2px solid rgba(242, 226, 184, 0.76);
+}
+
+.hardcore-library-crest-cross {
+  width: 20px;
+  height: 66px;
+  background: linear-gradient(180deg, #f0d899, #c6902d);
+  border-radius: 999px;
+  box-shadow: 0 0 20px rgba(213, 166, 41, 0.28);
+}
+
+.hardcore-library-crest-cross::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 56px;
+  height: 15px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #f0d899, #c6902d);
+  border-radius: 999px;
+}
+
+.hardcore-library-shelf {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 0.5rem;
+}
+
+.hardcore-library-shelf::after {
+  content: "";
+  position: absolute;
+  left: 6%;
+  right: 6%;
+  bottom: -0.55rem;
+  height: 14px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #73553a, #342115);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.34);
+}
+
+.hardcore-library-shelf-top {
+  margin-bottom: 1.65rem;
+  padding-top: 8.5rem;
+}
+
+.hardcore-library-shelf-bottom {
+  margin-top: 1rem;
+}
+
+.hardcore-book {
+  position: relative;
+  width: clamp(38px, 5vw, 54px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 0.35rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: rgba(249, 240, 220, 0.92);
+  border-radius: 0.55rem 0.55rem 0.2rem 0.2rem;
+  border: 1px solid rgba(243, 231, 199, 0.12);
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.14),
+    inset -1px 0 0 rgba(0, 0, 0, 0.28),
+    0 14px 22px rgba(0, 0, 0, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hardcore-book::before {
+  content: "";
+  position: absolute;
+  inset: 6px auto 6px 6px;
+  width: 3px;
+  border-radius: 999px;
+  background: rgba(247, 227, 173, 0.34);
+}
+
+.hardcore-library-art:hover .hardcore-book {
+  transform: rotate(180deg) translateY(-3px);
+  box-shadow:
+    inset 1px 0 0 rgba(255, 255, 255, 0.14),
+    inset -1px 0 0 rgba(0, 0, 0, 0.28),
+    0 18px 30px rgba(0, 0, 0, 0.28);
+}
+
+.spine-scripture { height: 150px; background: linear-gradient(180deg, #3d2414, #23150d); }
+.spine-concord { height: 170px; background: linear-gradient(180deg, #6a3125, #391613); }
+.spine-luther { height: 182px; background: linear-gradient(180deg, #4f2b12, #27170c); }
+.spine-pieper { height: 174px; background: linear-gradient(180deg, #61211f, #300f11); }
+.spine-walther { height: 162px; background: linear-gradient(180deg, #35442b, #1b2416); }
+.spine-psalms { height: 138px; background: linear-gradient(180deg, #775631, #392514); }
+.spine-romans { height: 152px; background: linear-gradient(180deg, #5c1e24, #2d0f12); }
+.spine-augustana { height: 166px; background: linear-gradient(180deg, #7b4c1f, #3f250e); }
+.spine-law-gospel { height: 188px; background: linear-gradient(180deg, #2a2f4e, #171930); }
+.spine-dogmatics { height: 180px; background: linear-gradient(180deg, #4e1817, #220b0b); }
+.spine-sermons { height: 144px; background: linear-gradient(180deg, #58503b, #2c281c); }
+
 .walther-summary-grid,
 .walther-front-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2619,6 +2890,73 @@ textarea {
 }
 
 @media (max-width: 780px) {
+  .hardcore-library-hero {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding-block: 1.4rem;
+  }
+
+  .hardcore-library-art {
+    min-height: 360px;
+    padding-top: 0.5rem;
+  }
+
+  .hardcore-library-arch {
+    inset: 0.5rem 0 1rem;
+  }
+
+  .hardcore-library-crest {
+    top: 1.35rem;
+    width: 92px;
+    height: 92px;
+  }
+
+  .hardcore-library-crest-ring {
+    width: 60px;
+    height: 60px;
+  }
+
+  .hardcore-library-crest-cross {
+    height: 48px;
+  }
+
+  .hardcore-library-crest-cross::before {
+    top: 14px;
+    width: 40px;
+  }
+
+  .hardcore-library-shelf-top {
+    padding-top: 6rem;
+  }
+
+  .hardcore-library-shelf {
+    gap: 0.35rem;
+  }
+
+  .hardcore-book {
+    width: clamp(30px, 7vw, 42px);
+    font-size: 0.56rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hardcore-library-copy {
+    padding-right: 0;
+  }
+
+  .hardcore-library-copy h1 {
+    font-size: clamp(2.6rem, 11vw, 4.1rem);
+  }
+
+  .hardcore-library-copy > p:first-of-type {
+    font-size: 1rem;
+    line-height: 1.74;
+  }
+
+  .hardcore-library-note {
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+  }
+
   .walther-reading-layout {
     grid-template-columns: 1fr;
   }
