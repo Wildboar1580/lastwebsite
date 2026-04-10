@@ -162,6 +162,10 @@ function buildDescription(contentHtml, title) {
 }
 
 function buildShortSummary(contentHtml, title) {
+  if (title.toLowerCase() === "theses") {
+    return "Read Walther's twenty-five theses on rightly distinguishing Law and Gospel, with each thesis linked for quick reference.";
+  }
+
   const text = stripHtml(contentHtml).replace(/\s+/g, " ").trim();
   if (!text) {
     return `Read ${title} from Walther's Law and Gospel.`;
@@ -211,6 +215,49 @@ function annotateContentHeadings(contentHtml, pageTitle) {
   });
 
   return { contentHtml: html, headings };
+}
+
+function enhanceThesesPage(contentHtml) {
+  const thesisMatches = [...contentHtml.matchAll(/<h3 id="(thesis-[^"]+)">([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/gi)];
+  if (!thesisMatches.length) {
+    return contentHtml;
+  }
+
+  const thesisCards = thesisMatches.map((match) => {
+    const id = match[1];
+    const headingHtml = match[2];
+    const paragraphHtml = match[3];
+    return {
+      id,
+      title: stripHtml(headingHtml),
+      html: `<section class="walther-thesis-card" aria-labelledby="${id}">
+  <h3 id="${id}">${headingHtml}</h3>
+  <p>${paragraphHtml}</p>
+</section>`
+    };
+  });
+
+  const thesisGrid = `<section class="walther-thesis-index" aria-labelledby="walther-thesis-index-heading">
+  <div class="walther-thesis-index-header">
+    <p class="eyebrow">Quick Reference</p>
+    <h2 id="walther-thesis-index-heading">Twenty-five theses at a glance</h2>
+    <p>Jump straight to any thesis below and use the anchors to link to a specific point in Walther's outline.</p>
+  </div>
+  <div class="walther-thesis-grid">
+    ${thesisCards.map((card) => `<a class="walther-thesis-link" href="#${card.id}">${escapeHtml(card.title)}</a>`).join("")}
+  </div>
+</section>`;
+
+  const rebuilt = contentHtml
+    .replace(/<h1[\s\S]*?<\/h1>/i, "$&" + thesisGrid)
+    .replace(/<h3 id="(thesis-[^"]+)">([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/gi, (match, id, headingHtml, paragraphHtml) => {
+      return `<section class="walther-thesis-card" aria-labelledby="${id}">
+  <h3 id="${id}">${headingHtml}</h3>
+  <p>${paragraphHtml}</p>
+</section>`;
+    });
+
+  return rebuilt;
 }
 
 function renderReadingSidebar(entry, headings = []) {
@@ -492,15 +539,18 @@ async function main() {
   for (const tocEntry of tocEntries) {
     const pageHtml = await fetchText(tocEntry.sourceUrl);
     const importedHtml = sanitizeImportedHtml(extractMainContent(pageHtml));
-    const { contentHtml, headings } = annotateContentHeadings(importedHtml, tocEntry.title);
-    const description = buildDescription(contentHtml, tocEntry.title);
-    const shortSummary = buildShortSummary(contentHtml, tocEntry.title);
+    const annotated = annotateContentHeadings(importedHtml, tocEntry.title);
+    const enhancedContentHtml = tocEntry.slug === "theses"
+      ? enhanceThesesPage(annotated.contentHtml)
+      : annotated.contentHtml;
+    const description = buildDescription(enhancedContentHtml, tocEntry.title);
+    const shortSummary = buildShortSummary(enhancedContentHtml, tocEntry.title);
     entries.push({
       ...tocEntry,
-      contentHtml,
+      contentHtml: enhancedContentHtml,
       description,
       shortSummary,
-      headings
+      headings: annotated.headings
     });
   }
 

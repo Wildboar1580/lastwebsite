@@ -2280,6 +2280,64 @@ textarea {
   scroll-margin-top: 7rem;
 }
 
+.walther-thesis-index {
+  display: grid;
+  gap: 1rem;
+  margin: 1.2rem 0 1.65rem;
+  padding: 1.15rem;
+  border: 1px solid rgba(213, 166, 41, 0.16);
+  border-radius: 1rem;
+  background: rgba(10, 9, 8, 0.52);
+}
+
+.walther-thesis-index-header h2 {
+  margin: 0.2rem 0 0.55rem;
+}
+
+.walther-thesis-index-header p:last-child {
+  margin: 0;
+}
+
+.walther-thesis-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.walther-thesis-link {
+  display: block;
+  padding: 0.85rem 0.95rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(213, 166, 41, 0.18);
+  background: linear-gradient(180deg, rgba(20, 15, 12, 0.96), rgba(11, 9, 8, 0.99));
+  color: var(--text-soft);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.walther-thesis-link:hover,
+.walther-thesis-link:focus-visible {
+  border-color: rgba(255, 216, 121, 0.38);
+  color: var(--gold-soft);
+}
+
+.walther-thesis-card {
+  margin: 1rem 0 0;
+  padding: 1rem 1.05rem;
+  border: 1px solid rgba(213, 166, 41, 0.14);
+  border-radius: 1rem;
+  background: rgba(9, 8, 7, 0.5);
+}
+
+.walther-thesis-card h3 {
+  margin-top: 0;
+}
+
+.walther-thesis-card p:last-child {
+  margin-bottom: 0;
+}
+
 .luther-page-shell {
   display: grid;
   gap: 1rem;
@@ -2519,6 +2577,10 @@ textarea {
 
 @media (max-width: 780px) {
   .walther-reading-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .walther-thesis-grid {
     grid-template-columns: 1fr;
   }
 
