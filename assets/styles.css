@@ -2181,6 +2181,105 @@ textarea {
   line-height: 1.72;
 }
 
+.walther-summary-grid,
+.walther-front-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.walther-lecture-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.walther-summary-card {
+  display: grid;
+  gap: 0.55rem;
+  min-height: 100%;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.018), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(20, 15, 12, 0.96), rgba(11, 9, 8, 0.99));
+  border-color: rgba(213, 166, 41, 0.16);
+}
+
+.walther-lecture-card {
+  display: grid;
+  gap: 0.45rem;
+  min-height: 100%;
+}
+
+.walther-lecture-kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.36rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(213, 166, 41, 0.12);
+  color: var(--gold-bright);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.77rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.walther-hub-section {
+  padding-top: 0;
+}
+
+.walther-reading-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.walther-reading-sidebar {
+  position: sticky;
+  top: 6.25rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.walther-reading-panel {
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(18, 14, 12, 0.96), rgba(10, 9, 8, 0.99));
+  border: 1px solid rgba(213, 166, 41, 0.16);
+  border-radius: 1rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+.walther-reading-links {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.walther-reading-link {
+  color: var(--text-soft);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.walther-reading-link:hover,
+.walther-reading-link:focus-visible {
+  color: var(--gold-soft);
+}
+
+.walther-reading-note {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.65;
+}
+
+.walther-reading-content {
+  max-width: none;
+}
+
+.walther-reading-content h2[id],
+.walther-reading-content h3[id],
+.walther-reading-content h4[id] {
+  scroll-margin-top: 7rem;
+}
+
 .luther-page-shell {
   display: grid;
   gap: 1rem;
@@ -2419,6 +2518,15 @@ textarea {
 }
 
 @media (max-width: 780px) {
+  .walther-reading-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .walther-reading-sidebar {
+    position: static;
+    order: -1;
+  }
+
   .concord-content {
     padding: 1.2rem 1rem;
     font-size: 1.06rem;
@@ -2595,6 +2703,12 @@ textarea {
   .bible-note-grid,
   .bible-bottom-nav,
   .bible-browse-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .walther-summary-grid,
+  .walther-front-grid,
+  .walther-lecture-grid {
     grid-template-columns: 1fr;
   }
 

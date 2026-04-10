@@ -51,6 +51,15 @@ function stripHtml(html = "") {
   );
 }
 
+function slugify(text = "") {
+  return String(text)
+    .toLowerCase()
+    .replace(/&[a-z0-9#]+;/gi, " ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .replace(/-{2,}/g, "-");
+}
+
 function normalizeSourceUrl(url) {
   return url.replace(/^http:\/\//i, "https://");
 }
@@ -152,6 +161,85 @@ function buildDescription(contentHtml, title) {
   return (withoutTitleLead || text).slice(0, 180);
 }
 
+function buildShortSummary(contentHtml, title) {
+  const text = stripHtml(contentHtml).replace(/\s+/g, " ").trim();
+  if (!text) {
+    return `Read ${title} from Walther's Law and Gospel.`;
+  }
+
+  const cleaned = text
+    .replace(new RegExp(`^${title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\.?\\s*`, "i"), "")
+    .replace(/^Law and Gospel\s*/i, "")
+    .replace(/^\([^)]*\)\.?\s*/i, "")
+    .replace(/^(My Dear Friends|My Friends|Beloved in the Lord|Dear Friends)[^A-Za-z0-9]*\s*/i, "")
+    .trim();
+
+  return (cleaned || text).slice(0, 220);
+}
+
+function annotateContentHeadings(contentHtml, pageTitle) {
+  const used = new Set();
+  const headings = [];
+  let h2Count = 0;
+
+  const html = contentHtml.replace(/<(h[1-4])>([\s\S]*?)<\/\1>/gi, (match, tagName, innerHtml) => {
+    const text = stripHtml(innerHtml).replace(/\s+/g, " ").trim();
+    const lowerTag = tagName.toLowerCase();
+
+    if (!text || lowerTag === "h1") {
+      return match;
+    }
+
+    if (lowerTag === "h2") {
+      h2Count += 1;
+      if (h2Count === 1 && /^\([^)]*\)\.?$/.test(text)) {
+        return match;
+      }
+    }
+
+    if (text.toLowerCase() === pageTitle.toLowerCase()) {
+      return match;
+    }
+
+    let id = slugify(text) || `${lowerTag}-section`;
+    while (used.has(id)) {
+      id = `${id}-2`;
+    }
+    used.add(id);
+    headings.push({ id, title: text, level: lowerTag });
+    return `<${lowerTag} id="${id}">${innerHtml}</${lowerTag}>`;
+  });
+
+  return { contentHtml: html, headings };
+}
+
+function renderReadingSidebar(entry, headings = []) {
+  const headingSection = headings.length
+    ? `
+        <div class="walther-reading-panel">
+          <p class="eyebrow">On This Page</p>
+          <div class="walther-reading-links">
+            ${headings.map((heading) => `<a href="#${heading.id}" class="walther-reading-link">${escapeHtml(heading.title)}</a>`).join("")}
+          </div>
+        </div>`
+    : "";
+
+  return `        <aside class="walther-reading-sidebar" aria-label="Reading tools">
+          <div class="walther-reading-panel">
+            <p class="eyebrow">In This Work</p>
+            <div class="walther-reading-links">
+              <a href="/walther/law-and-gospel/" class="walther-reading-link">Law and Gospel hub</a>
+              <a href="/walther/law-and-gospel/preface-and-introduction/" class="walther-reading-link">Preface and Introduction</a>
+              <a href="/walther/law-and-gospel/theses/" class="walther-reading-link">Theses</a>
+            </div>
+          </div>
+          <div class="walther-reading-panel">
+            <p class="eyebrow">Reading Note</p>
+            <p class="walther-reading-note">${escapeHtml(entry.shortSummary || entry.description)}</p>
+          </div>${headingSection}
+        </aside>`;
+}
+
 function renderAliasPage(targetEntry, aliasSlug) {
   const aliasUrl = `/walther/law-and-gospel/${aliasSlug}/`;
   const canonicalUrl = `https://www.lastchristian.com${targetEntry.localUrl}`;
@@ -199,6 +287,8 @@ function renderDocPage(entry, previousEntry, nextEntry) {
   const canonicalUrl = `https://www.lastchristian.com${entry.localUrl}`;
   const navTop = buildNavBlock(previousEntry, nextEntry);
   const navBottom = buildNavBlock(previousEntry, nextEntry);
+  const readingSidebar = renderReadingSidebar(entry, entry.headings);
+  const pageSummary = entry.shortSummary || entry.description;
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -206,20 +296,20 @@ function renderDocPage(entry, previousEntry, nextEntry) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${escapeHtml(entry.title)} | Law and Gospel | Walther | Last Christian Ministries</title>
-  <meta name="description" content="${escapeHtml(entry.description)}">
+  <meta name="description" content="${escapeHtml(pageSummary)}">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
   <meta property="og:title" content="${escapeHtml(entry.title)} | Law and Gospel">
-  <meta property="og:description" content="${escapeHtml(entry.description)}">
+  <meta property="og:description" content="${escapeHtml(pageSummary)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
   <meta property="og:image" content="https://www.lastchristian.com/assets/images/cfw-walther.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(entry.title)} | Law and Gospel">
-  <meta name="twitter:description" content="${escapeHtml(entry.description)}">
+  <meta name="twitter:description" content="${escapeHtml(pageSummary)}">
   <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/cfw-walther.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
@@ -232,7 +322,7 @@ ${renderHeader()}
         <div class="contact-hero-copy">
           <p class="eyebrow">Walther</p>
           <h1>${escapeHtml(entry.title)}</h1>
-          <p>${escapeHtml(entry.description)}</p>
+          <p>${escapeHtml(pageSummary)}</p>
         </div>
       </section>
 
@@ -242,11 +332,14 @@ ${renderHeader()}
           <h2>${escapeHtml(entry.title)}</h2>
           <p><a class="text-link" href="/walther/law-and-gospel/">Return to the Law and Gospel hub</a></p>
         </div>
-        <article class="concord-content">
-          ${navTop}
+        <div class="walther-reading-layout">
+${readingSidebar}
+          <article class="concord-content walther-reading-content">
+            ${navTop}
 ${entry.contentHtml}
-          ${navBottom}
-        </article>
+            ${navBottom}
+          </article>
+        </div>
       </section>
     </main>
 ${renderSiteFooter()}
@@ -258,10 +351,37 @@ ${renderSiteFooter()}
 }
 
 function renderHubPage(entries, noteHtml) {
-  const cards = entries.map((entry) => `
+  const frontMatterEntries = entries.filter((entry) => !/evening lecture/i.test(entry.title));
+  const lectureEntries = entries.filter((entry) => /evening lecture/i.test(entry.title));
+
+  const summaryCards = `
+          <article class="library-card walther-summary-card">
+            <p class="walther-lecture-kicker">Structure</p>
+            <h3>Two opening documents</h3>
+            <p>Begin with the prefatory material and Walther's theses before moving into the full lecture cycle.</p>
+          </article>
+          <article class="library-card walther-summary-card">
+            <p class="walther-lecture-kicker">Lecture Cycle</p>
+            <h3>Thirty-nine evening lectures</h3>
+            <p>Read the lectures in sequence, with each one now available as its own local page in your library.</p>
+          </article>
+          <article class="library-card walther-summary-card">
+            <p class="walther-lecture-kicker">Reading Flow</p>
+            <h3>Built for long-form reading</h3>
+            <p>Each lecture page includes previous and next navigation plus a section list for quicker movement through the text.</p>
+          </article>`;
+
+  const frontMatterCards = frontMatterEntries.map((entry) => `
           <a class="library-card" href="${entry.localUrl}">
             <h3>${escapeHtml(entry.title)}</h3>
-            <p>${escapeHtml(entry.description)}</p>
+            <p>${escapeHtml(entry.shortSummary || entry.description)}</p>
+          </a>`).join("");
+
+  const lectureCards = lectureEntries.map((entry) => `
+          <a class="library-card walther-lecture-card" href="${entry.localUrl}">
+            <p class="walther-lecture-kicker">${escapeHtml(entry.sequenceLabel || "Lecture")}</p>
+            <h3>${escapeHtml(entry.title)}</h3>
+            <p>${escapeHtml(entry.shortSummary || entry.description)}</p>
           </a>`).join("");
 
   return `<!DOCTYPE html>
@@ -317,8 +437,30 @@ ${sanitizeImportedHtml(noteHtml)}
           <h2>Read the work in order</h2>
           <p>Start with the preface and theses, then move sequentially through the thirty-nine evening lectures.</p>
         </div>
-        <div class="library-grid">
-${cards}
+        <div class="library-grid walther-summary-grid">
+${summaryCards}
+        </div>
+      </section>
+
+      <section class="section library-section walther-hub-section">
+        <div class="section-heading">
+          <p class="eyebrow">Front Matter</p>
+          <h2>Begin with Walther's framework</h2>
+          <p>These opening pages explain the edition and lay out the theses that shape the rest of the work.</p>
+        </div>
+        <div class="library-grid walther-front-grid">
+${frontMatterCards}
+        </div>
+      </section>
+
+      <section class="section library-section walther-hub-section">
+        <div class="section-heading">
+          <p class="eyebrow">Lecture Sequence</p>
+          <h2>Move through the evening lectures in order</h2>
+          <p>The lecture summaries are cleaner now, so it is easier to choose a starting point or continue where you left off.</p>
+        </div>
+        <div class="library-grid walther-lecture-grid">
+${lectureCards}
         </div>
       </section>
     </main>
@@ -349,13 +491,22 @@ async function main() {
   const entries = [];
   for (const tocEntry of tocEntries) {
     const pageHtml = await fetchText(tocEntry.sourceUrl);
-    const contentHtml = sanitizeImportedHtml(extractMainContent(pageHtml));
+    const importedHtml = sanitizeImportedHtml(extractMainContent(pageHtml));
+    const { contentHtml, headings } = annotateContentHeadings(importedHtml, tocEntry.title);
     const description = buildDescription(contentHtml, tocEntry.title);
+    const shortSummary = buildShortSummary(contentHtml, tocEntry.title);
     entries.push({
       ...tocEntry,
       contentHtml,
-      description
+      description,
+      shortSummary,
+      headings
     });
+  }
+
+  const lectureEntries = entries.filter((entry) => /evening lecture/i.test(entry.title));
+  for (let index = 0; index < lectureEntries.length; index += 1) {
+    lectureEntries[index].sequenceLabel = `Lecture ${index + 1}`;
   }
 
   for (let index = 0; index < entries.length; index += 1) {
@@ -367,7 +518,6 @@ async function main() {
     fs.writeFileSync(path.join(outputDir, "index.html"), renderDocPage(entry, previousEntry, nextEntry));
   }
 
-  const lectureEntries = entries.filter((entry) => /evening lecture/i.test(entry.title));
   for (let index = 0; index < lectureEntries.length; index += 1) {
     const entry = lectureEntries[index];
     const aliasDir = path.join(waltherDir, buildLectureAliasSlug(index + 1));
@@ -380,7 +530,7 @@ async function main() {
   const searchIndex = entries.map((entry) => ({
     title: entry.title,
     category: "Law and Gospel",
-    summary: entry.description,
+    summary: entry.shortSummary || entry.description,
     text: stripHtml(entry.contentHtml),
     url: entry.localUrl
   }));
