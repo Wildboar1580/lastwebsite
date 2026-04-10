@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { renderSiteFooter } from "./site-layout.mjs";
 import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
@@ -1298,38 +1299,38 @@ function buildLandingPage(manifest) {
   <meta property="og:title" content="Pieper's Christian Dogmatics | Last Christian Ministries">
   <meta property="og:description" content="Read and search Franz Pieper's Christian Dogmatics volumes 1-3 in a mobile-friendly format on Last Christian Ministries.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lastchristian.com/pieper.html">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:url" content="https://www.lastchristian.com/pieper">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pieper's Christian Dogmatics | Last Christian Ministries">
   <meta name="twitter:description" content="Read and search Franz Pieper's Christian Dogmatics volumes 1-3 in a mobile-friendly format on Last Christian Ministries.">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
-  <link rel="canonical" href="https://lastchristian.com/pieper.html">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://www.lastchristian.com/pieper">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="campaign-page contact-page luther-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -1386,6 +1387,7 @@ function buildLandingPage(manifest) {
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 
   <script type="module" src="/assets/pieper.js"></script>
@@ -1409,38 +1411,38 @@ function buildVolumePage(volume, sectionEntries) {
   <meta property="og:title" content="${escapeHtml(volume.label)} | Pieper Library">
   <meta property="og:description" content="${escapeHtml(volume.title)}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lastchristian.com${volume.href}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:url" content="https://www.lastchristian.com${volume.href}">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(volume.label)} | Pieper Library">
   <meta name="twitter:description" content="${escapeHtml(volume.title)}">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
-  <link rel="canonical" href="https://lastchristian.com${volume.href}">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://www.lastchristian.com${volume.href}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="campaign-page contact-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -1481,13 +1483,14 @@ function buildVolumePage(volume, sectionEntries) {
         ${buildVolumeSourceCards(volume)}
       </section>
     </main>
+${renderSiteFooter()}
   </div>
   <script type="module" src="/assets/pieper.js"></script>
 </body>
 </html>`;
 }
 function buildSectionPage(volume, section, previousEntry, nextEntry, description) {
-  const canonicalUrl = `https://lastchristian.com${section.href}`;
+  const canonicalUrl = `https://www.lastchristian.com${section.href}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1504,37 +1507,37 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="campaign-page contact-page luther-doc-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -1551,7 +1554,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
         <div class="section-heading luther-page-heading">
           <p class="eyebrow">${escapeHtml(volume.label)}</p>
           <h2>${escapeHtml(section.title)}</h2>
-          <p><a class="text-link" href="${volume.href}">Return to ${escapeHtml(volume.label)}</a> or <a class="text-link" href="/pieper.html">open the Pieper library</a>.</p>
+          <p><a class="text-link" href="${volume.href}">Return to ${escapeHtml(volume.label)}</a> or <a class="text-link" href="/pieper">open the Pieper library</a>.</p>
         </div>
         <article class="luther-content">
           ${buildSectionNav(previousEntry, null, "top")}
@@ -1561,6 +1564,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
       </section>
       ${buildSectionReadNext(volume, previousEntry, nextEntry)}
     </main>
+${renderSiteFooter()}
   </div>
 </body>
 </html>`;
@@ -1577,7 +1581,7 @@ function main() {
   ensureDir(assetsDir);
   ensureDir(tempDir);
 
-  const manifest = { volumes: [], pages: ["https://lastchristian.com/pieper.html"] };
+  const manifest = { volumes: [], pages: ["https://www.lastchristian.com/pieper"] };
   const searchIndex = [];
 
   for (const volume of VOLUMES) {
@@ -1595,7 +1599,7 @@ function main() {
     fs.writeFileSync(path.join(volumeDir, "index.html"), buildVolumePage(volume, sectionEntries));
 
     manifest.volumes.push({ label: volume.label, title: volume.title, href: volume.href, slug: volume.slug, sectionCount: sectionEntries.length });
-    manifest.pages.push(`https://lastchristian.com${volume.href}`);
+    manifest.pages.push(`https://www.lastchristian.com${volume.href}`);
 
     for (const [index, section] of sectionEntries.entries()) {
       const sectionDir = path.join(volumeDir, section.slug);
@@ -1606,7 +1610,7 @@ function main() {
       fs.writeFileSync(path.join(sectionDir, "index.html"), buildSectionPage(volume, section, previousEntry, nextEntry, description));
 
       searchIndex.push({ title: section.title, volume: volume.label, url: section.href, summary: section.description, text: buildSearchText(section) });
-      manifest.pages.push(`https://lastchristian.com${section.href}`);
+      manifest.pages.push(`https://www.lastchristian.com${section.href}`);
     }
   }
 

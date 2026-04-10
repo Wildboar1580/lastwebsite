@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { renderSiteFooter } from "./site-layout.mjs";
 
 const root = process.cwd();
 const outputDir = path.join(root, "bible");
@@ -225,7 +226,7 @@ ${renderGroup("New Testament", newTestament)}
 
 function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook, nextBook }) {
   const chapterLinks = chapterNumbers
-    .map((chapter) => `<a class="button button-outline bible-chapter-link" href="/bible/${bookSlug}/${chapter}.html">${chapter}</a>`)
+    .map((chapter) => `<a class="button button-outline bible-chapter-link" href="/bible/${bookSlug}/${chapter}">${chapter}</a>`)
     .join("");
 
   return `<!DOCTYPE html>
@@ -243,13 +244,13 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
   <meta property="og:title" content="${escapeHtml(bookName)} | Bible | Last Christian Ministries">
   <meta property="og:description" content="Browse every chapter of ${escapeHtml(bookName)} with static links, audio-ready chapter pages, and a mobile-friendly reading layout.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lastchristian.com/bible/${escapeHtml(bookSlug)}/">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:url" content="https://www.lastchristian.com/bible/${escapeHtml(bookSlug)}/">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(bookName)} | Bible | Last Christian Ministries">
   <meta name="twitter:description" content="Browse every chapter of ${escapeHtml(bookName)} with static links, audio-ready chapter pages, and a mobile-friendly reading layout.">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
-  <link rel="canonical" href="https://lastchristian.com/bible/${escapeHtml(bookSlug)}/">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://www.lastchristian.com/bible/${escapeHtml(bookSlug)}/">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
     {
@@ -258,11 +259,11 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
         {
           "@type": "CollectionPage",
           "name": ${JSON.stringify(bookName)},
-          "url": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)},
+          "url": ${JSON.stringify(`https://www.lastchristian.com/bible/${bookSlug}/`)},
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Bible",
-            "url": "https://lastchristian.com/bible.html"
+            "url": "https://www.lastchristian.com/bible"
           }
         },
         {
@@ -272,19 +273,19 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://lastchristian.com/"
+              "item": "https://www.lastchristian.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Bible",
-              "item": "https://lastchristian.com/bible.html"
+              "item": "https://www.lastchristian.com/bible"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": ${JSON.stringify(bookName)},
-              "item": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)}
+              "item": ${JSON.stringify(`https://www.lastchristian.com/bible/${bookSlug}/`)}
             }
           ]
         }
@@ -295,32 +296,32 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
 <body class="campaign-page bible-page bible-book-page" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
     <main>
       <section class="contact-hero bible-hero">
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
-          <p class="bible-crumbs"><a href="/bible.html">Bible</a> / ${escapeHtml(bookName)}</p>
+          <p class="bible-crumbs"><a href="/bible">Bible</a> / ${escapeHtml(bookName)}</p>
           <h1>${escapeHtml(bookName)}</h1>
           <p>Open any chapter in ${escapeHtml(bookName)} with static chapter pages that preserve your preferred translation and support chapter audio.</p>
         </div>
@@ -346,25 +347,26 @@ function renderBookIndexPage({ bookName, bookSlug, chapterNumbers, previousBook,
           <p>Follow ${escapeHtml(bookName)} into the lectionary, the Lutheran Confessions, Luther’s works, and sermon audio through ordinary internal links.</p>
         </div>
         <div class="library-grid">
-          <a class="library-card" href="/lectionary.html">
+          <a class="library-card" href="/lectionary">
             <h3>Historic One-Year Lectionary</h3>
             <p>See how this biblical book appears in the church year’s appointed readings and propers.</p>
           </a>
-          <a class="library-card" href="/concord.html">
+          <a class="library-card" href="/concord">
             <h3>Book of Concord</h3>
             <p>Read the Lutheran Confessions that summarize and teach the faith drawn from Holy Scripture.</p>
           </a>
-          <a class="library-card" href="/luther.html">
+          <a class="library-card" href="/luther">
             <h3>Luther’s Works</h3>
             <p>Read Luther’s sermons and theological works connected to the biblical text.</p>
           </a>
-          <a class="library-card" href="/podcast.html">
+          <a class="library-card" href="/podcast">
             <h3>Podcast Archive</h3>
             <p>Listen to sermons, readings, and theological audio that pair naturally with Scripture study.</p>
           </a>
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 </body>
 </html>`;
@@ -403,7 +405,7 @@ function renderPage({
   bookUrl
 }) {
   const pageTitle = `${bookName} ${chapter} | Bible | Last Christian Ministries`;
-  const canonicalUrl = `https://lastchristian.com/bible/${bookSlug}/${chapter}.html`;
+  const canonicalUrl = `https://www.lastchristian.com/bible/${bookSlug}/${chapter}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -420,11 +422,11 @@ function renderPage({
   <meta property="og:description" content="${escapeHtml(metaDescription)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(pageTitle)}">
   <meta name="twitter:description" content="${escapeHtml(metaDescription)}">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
@@ -438,7 +440,7 @@ function renderPage({
           "isPartOf": {
             "@type": "CollectionPage",
             "name": ${JSON.stringify(bookName)},
-            "url": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)}
+            "url": ${JSON.stringify(`https://www.lastchristian.com/bible/${bookSlug}/`)}
           }
         },
         {
@@ -448,19 +450,19 @@ function renderPage({
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://lastchristian.com/"
+              "item": "https://www.lastchristian.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Bible",
-              "item": "https://lastchristian.com/bible.html"
+              "item": "https://www.lastchristian.com/bible"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": ${JSON.stringify(bookName)},
-              "item": ${JSON.stringify(`https://lastchristian.com/bible/${bookSlug}/`)}
+              "item": ${JSON.stringify(`https://www.lastchristian.com/bible/${bookSlug}/`)}
             },
             {
               "@type": "ListItem",
@@ -477,31 +479,31 @@ function renderPage({
 <body class="campaign-page bible-page bible-chapter-page" data-bible-book="${escapeHtml(bookSlug)}" data-bible-chapter="${chapter}" data-bible-chapter-index="${chapterIndex}" data-bible-view="msb">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
     <main>
       <section class="contact-hero bible-hero">
         <div class="contact-hero-copy">
           <p class="eyebrow">Bible</p>
-          <p class="bible-crumbs"><a href="/bible.html">Bible</a> / <a href="${bookUrl}">${escapeHtml(bookName)}</a> / Chapter ${chapter}</p>
+          <p class="bible-crumbs"><a href="/bible">Bible</a> / <a href="${bookUrl}">${escapeHtml(bookName)}</a> / Chapter ${chapter}</p>
           <h1>${escapeHtml(bookName)} ${chapter}</h1>
           <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
         </div>
@@ -573,25 +575,26 @@ ${renderColumn("KJV", "kjv", kjvVerses)}
           <p>Move from this chapter into the lectionary, the Confessions, Luther’s works, and the sermon archive through direct internal links.</p>
         </div>
         <div class="library-grid">
-          <a class="library-card" href="/lectionary.html">
+          <a class="library-card" href="/lectionary">
             <h3>Historic One-Year Lectionary</h3>
             <p>See where this text fits into the church year’s appointed readings and propers.</p>
           </a>
-          <a class="library-card" href="/concord.html">
+          <a class="library-card" href="/concord">
             <h3>Book of Concord</h3>
             <p>Read the Lutheran Confessions alongside the scriptural text they confess.</p>
           </a>
-          <a class="library-card" href="/luther.html">
+          <a class="library-card" href="/luther">
             <h3>Luther’s Works</h3>
             <p>Read Luther’s sermons and theological works connected to Scripture.</p>
           </a>
-          <a class="library-card" href="/podcast.html">
+          <a class="library-card" href="/podcast">
             <h3>Podcast Archive</h3>
             <p>Listen to sermons, readings, and theological audio tied to the same biblical themes.</p>
           </a>
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
   <script type="application/json" id="bible-book-options">${JSON.stringify(selectorOptions.allBooks)}</script>
   <script type="application/json" id="bible-audio-sequence">${JSON.stringify(audioSequence.map((entry) => ({
@@ -656,7 +659,7 @@ function main() {
     const audioSequence = chapterNumbers.map((chapterNumber) => ({
       book: bookName,
       chapter: chapterNumber,
-      pageUrl: `/bible/${bookSlug}/${chapterNumber}.html`,
+      pageUrl: `/bible/${bookSlug}/${chapterNumber}`,
       msbAudioUrl: buildMsbAudioUrl(index + 1, chapterNumber, msbCode, bookSlug),
       kjvAudioUrl: buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug)
     }));
@@ -675,18 +678,18 @@ function main() {
     bookManifest.push({
       book: bookName,
       slug: bookSlug,
-      url: `https://lastchristian.com${bookUrl}`
+      url: `https://www.lastchristian.com${bookUrl}`
     });
 
     chapterNumbers.forEach((chapterNumber, chapterIndex) => {
       const msbVerses = (msbBooks.get(bookName)?.get(chapterNumber) || []).sort((a, b) => a.verse - b.verse);
       const kjvVerses = (kjvBooks.get(bookName)?.get(chapterNumber) || msbVerses).sort((a, b) => a.verse - b.verse);
       const selectorOptions = buildSelectorData(booksManifest, bookSlug, chapterNumber);
-      const prevUrl = chapterIndex === 0 ? "" : `/bible/${bookSlug}/${chapterNumber - 1}.html`;
-      const nextUrl = chapterIndex === chapterNumbers.length - 1 ? "" : `/bible/${bookSlug}/${chapterNumber + 1}.html`;
+      const prevUrl = chapterIndex === 0 ? "" : `/bible/${bookSlug}/${chapterNumber - 1}`;
+      const nextUrl = chapterIndex === chapterNumbers.length - 1 ? "" : `/bible/${bookSlug}/${chapterNumber + 1}`;
       const msbAudioUrl = buildMsbAudioUrl(index + 1, chapterNumber, msbCode, bookSlug);
       const kjvAudioUrl = buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug);
-      const chapterUrl = `/bible/${bookSlug}/${chapterNumber}.html`;
+      const chapterUrl = `/bible/${bookSlug}/${chapterNumber}`;
       const metaDescription = stripHtml(
         msbVerses.slice(0, 3).map((verse) => `${bookName} ${chapterNumber}:${verse.verse} ${verse.text}`).join(" ")
       ).slice(0, 155);
@@ -719,7 +722,7 @@ function main() {
         book: bookName,
         slug: bookSlug,
         chapter: chapterNumber,
-        url: `https://lastchristian.com${chapterUrl}`
+        url: `https://www.lastchristian.com${chapterUrl}`
       });
 
       fs.writeFileSync(

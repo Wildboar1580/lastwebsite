@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { renderSiteFooter } from "./site-layout.mjs";
 
 const root = process.cwd();
 const feedPath = path.join(root, "rss-feed.xml");
@@ -89,8 +90,8 @@ function formatDuration(duration) {
 
 function archivePageUrl(pageNumber) {
   return pageNumber <= 1
-    ? "https://lastchristian.com/podcast.html"
-    : `https://lastchristian.com/podcast/page/${pageNumber}.html`;
+    ? "https://www.lastchristian.com/podcast"
+    : `https://www.lastchristian.com/podcast/page/${pageNumber}`;
 }
 
 function archivePagePath(pageNumber) {
@@ -196,12 +197,12 @@ function buildPage(episode) {
       "partOfSeries": {
         "@type": "PodcastSeries",
         "name": "Last Christian Ministries",
-        "url": "https://lastchristian.com/"
+        "url": "https://www.lastchristian.com/"
       },
       "publisher": {
         "@type": "Organization",
         "name": "Last Christian Ministries",
-        "url": "https://lastchristian.com/"
+        "url": "https://www.lastchristian.com/"
       }
     }
   </script>
@@ -209,25 +210,25 @@ function buildPage(episode) {
 <body class="campaign-page episode-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true"><img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async"></span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/kutesa.html">Kutesa Henry</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/kutesa">Kutesa Henry</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
     <main>
       <section class="episode-page-hero">
@@ -274,6 +275,7 @@ function buildPage(episode) {
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
   <script type="module" src="/assets/app.js"></script>
 </body>
@@ -323,7 +325,7 @@ function buildArchivePage({ episodes, currentPage, totalPages }) {
 <body>
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
@@ -333,20 +335,20 @@ function buildArchivePage({ episodes, currentPage, totalPages }) {
         </span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/kutesa.html">Kutesa Henry</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/kutesa">Kutesa Henry</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-gold" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-gold" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -362,7 +364,7 @@ function buildArchivePage({ episodes, currentPage, totalPages }) {
             <h3>${episodes.length ? `${escapeHtml(String(episodes.length))} episodes on this page` : "Archive page"}</h3>
           </div>
           <div class="archive-page-note">
-            <p>Page ${currentPage} of ${totalPages}. For live search, use <a class="text-link" href="/podcast.html">the main archive page</a>.</p>
+            <p>Page ${currentPage} of ${totalPages}. For live search, use <a class="text-link" href="/podcast">the main archive page</a>.</p>
           </div>
         </div>
         <div class="archive-grid">
@@ -373,6 +375,7 @@ ${staticPagination}
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 </body>
 </html>`;
@@ -415,7 +418,7 @@ const episodes = items.map((item) => {
   const imageUrl = readAttr(item, "itunes:image", "href") || "https://media.rss.com/last-christian-ministries/podcast_cover.jpg";
   const slugBase = slugify(title) || slugify(link) || `episode-${Math.random().toString(36).slice(2, 8)}`;
   const slug = `${slugBase}-${link.split("/").pop()}`;
-  const canonicalUrl = `https://lastchristian.com/episodes/${slug}.html`;
+  const canonicalUrl = `https://www.lastchristian.com/episodes/${slug}`;
 
   return {
     slug,
@@ -469,25 +472,25 @@ const lutherManifest = fs.existsSync(lutherManifestPath)
   : { pages: [] };
 
 const sitemapUrls = [
-  { loc: "https://lastchristian.com/", changefreq: "weekly", priority: "1.0" },
-  { loc: "https://lastchristian.com/bible.html", changefreq: "daily", priority: "0.9" },
-  { loc: "https://lastchristian.com/lectionary.html", changefreq: "daily", priority: "0.9" },
-  { loc: "https://lastchristian.com/about.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/kutesa.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/faq.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/library.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/requests.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/concord.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/luther.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/podcast.html", changefreq: "daily", priority: "0.9" },
+  { loc: "https://www.lastchristian.com/", changefreq: "weekly", priority: "1.0" },
+  { loc: "https://www.lastchristian.com/bible", changefreq: "daily", priority: "0.9" },
+  { loc: "https://www.lastchristian.com/lectionary", changefreq: "daily", priority: "0.9" },
+  { loc: "https://www.lastchristian.com/about", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/kutesa", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/faq", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/library", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/requests", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/concord", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/luther", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/podcast", changefreq: "daily", priority: "0.9" },
   ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({
     loc: archivePageUrl(index + 2),
     changefreq: "weekly",
     priority: "0.8"
   })),
-  { loc: "https://lastchristian.com/contact.html", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html", changefreq: "weekly", priority: "0.9" },
-  { loc: "https://lastchristian.com/campaigns/support-the-work-of-last-christian-ministries.html", changefreq: "weekly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/contact", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry", changefreq: "weekly", priority: "0.9" },
+  { loc: "https://www.lastchristian.com/campaigns/support-the-work-of-last-christian-ministries", changefreq: "weekly", priority: "0.7" },
   ...bibleBookManifest.map((book) => ({
     loc: book.url,
     changefreq: "monthly",

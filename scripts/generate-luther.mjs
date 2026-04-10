@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { renderSiteFooter } from "./site-layout.mjs";
 import { execFileSync } from "node:child_process";
 
 const root = process.cwd();
@@ -689,7 +690,7 @@ function buildSectionNav(previousEntry, nextEntry, position) {
 }
 
 function buildSectionPage(volume, section, previousEntry, nextEntry, description) {
-  const canonicalUrl = `https://lastchristian.com${section.href}`;
+  const canonicalUrl = `https://www.lastchristian.com${section.href}`;
   const sectionSlug = section.href.split("/").filter(Boolean).at(-1) || "";
   const sectionPrefixMatch = sectionSlug.match(/^(\d+)/);
   const sectionLabel = sectionPrefixMatch ? `Section ${sectionPrefixMatch[1]}` : volume.label;
@@ -710,11 +711,11 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(section.title)} | ${escapeHtml(volume.label)} | ${escapeHtml(sectionLabel)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
@@ -728,7 +729,7 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
           "isPartOf": {
             "@type": "CollectionPage",
             "name": ${JSON.stringify(volume.label)},
-            "url": ${JSON.stringify(`https://lastchristian.com${volume.href}`)}
+            "url": ${JSON.stringify(`https://www.lastchristian.com${volume.href}`)}
           }
         },
         {
@@ -738,19 +739,19 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://lastchristian.com/"
+              "item": "https://www.lastchristian.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Luther's Works",
-              "item": "https://lastchristian.com/luther.html"
+              "item": "https://www.lastchristian.com/luther"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": ${JSON.stringify(volume.label)},
-              "item": ${JSON.stringify(`https://lastchristian.com${volume.href}`)}
+              "item": ${JSON.stringify(`https://www.lastchristian.com${volume.href}`)}
             },
             {
               "@type": "ListItem",
@@ -767,26 +768,26 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
 <body class="campaign-page contact-page luther-doc-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -812,13 +813,14 @@ function buildSectionPage(volume, section, previousEntry, nextEntry, description
         </article>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 </body>
 </html>`;
 }
 
 function buildVolumePage(volume, sections) {
-  const canonicalUrl = `https://lastchristian.com${volume.href}`;
+  const canonicalUrl = `https://www.lastchristian.com${volume.href}`;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -835,37 +837,37 @@ function buildVolumePage(volume, sections) {
   <meta property="og:description" content="${escapeHtml(volume.title)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(volume.label)} | Luther Library">
   <meta name="twitter:description" content="${escapeHtml(volume.title)}">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="campaign-page contact-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -893,6 +895,7 @@ function buildVolumePage(volume, sections) {
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 </body>
 </html>`;
@@ -914,13 +917,13 @@ function buildLandingPage(manifest) {
   <meta property="og:title" content="Complete Luther Library | Last Christian Ministries">
   <meta property="og:description" content="Read Luther's complete St. Louis Edition English texts in a mobile-friendly library with attribution to Back to Luther.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lastchristian.com/luther.html">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:url" content="https://www.lastchristian.com/luther">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Complete Luther Library | Last Christian Ministries">
   <meta name="twitter:description" content="Read Luther's complete St. Louis Edition English texts in a mobile-friendly library.">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
-  <link rel="canonical" href="https://lastchristian.com/luther.html">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://www.lastchristian.com/luther">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
     {
@@ -929,7 +932,7 @@ function buildLandingPage(manifest) {
         {
           "@type": "CollectionPage",
           "name": "Complete Luther Library",
-          "url": "https://lastchristian.com/luther.html",
+          "url": "https://www.lastchristian.com/luther",
           "description": "Read Luther's complete works from the English St. Louis Edition in a mobile-friendly online library."
         },
         {
@@ -939,13 +942,13 @@ function buildLandingPage(manifest) {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://lastchristian.com/"
+              "item": "https://www.lastchristian.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Luther's Works",
-              "item": "https://lastchristian.com/luther.html"
+              "item": "https://www.lastchristian.com/luther"
             }
           ]
         }
@@ -956,26 +959,26 @@ function buildLandingPage(manifest) {
 <body class="campaign-page contact-page luther-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -1018,25 +1021,26 @@ function buildLandingPage(manifest) {
           <p>Move from Luther’s works into the Bible, the Book of Concord, the church year, and sermon audio through the rest of the site.</p>
         </div>
         <div class="library-grid">
-          <a class="library-card" href="/bible.html">
+          <a class="library-card" href="/bible">
             <h3>Holy Scripture</h3>
             <p>Read the biblical text itself with static chapter pages, search, and audio.</p>
           </a>
-          <a class="library-card" href="/concord.html">
+          <a class="library-card" href="/concord">
             <h3>Book of Concord</h3>
             <p>Read the Lutheran Confessions that frame and summarize much of Luther’s theology.</p>
           </a>
-          <a class="library-card" href="/lectionary.html">
+          <a class="library-card" href="/lectionary">
             <h3>Historic One-Year Lectionary</h3>
             <p>Read Luther with the church year’s appointed texts and propers in view.</p>
           </a>
-          <a class="library-card" href="/podcast.html">
+          <a class="library-card" href="/podcast">
             <h3>Podcast Archive</h3>
             <p>Listen to Luther readings, sermons, and theological audio tied to the same subjects.</p>
           </a>
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 
   <script type="module" src="/assets/luther.js"></script>
@@ -1131,7 +1135,7 @@ async function main() {
       title: volume.title,
       href: volume.href
     });
-    pageManifest.push(`https://lastchristian.com${volume.href}`);
+    pageManifest.push(`https://www.lastchristian.com${volume.href}`);
 
     sectionEntries.forEach((section, index) => {
       const sectionDir = path.join(volumeDir, section.slug);
@@ -1152,7 +1156,7 @@ async function main() {
           summary: section.description,
           text: buildSearchText(section)
         });
-      pageManifest.push(`https://lastchristian.com${section.href}`);
+      pageManifest.push(`https://www.lastchristian.com${section.href}`);
     });
   }
 

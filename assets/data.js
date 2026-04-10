@@ -11,7 +11,7 @@ export const campaigns = [
     thermometerUrl: "https://www.zeffy.com/embed/thermometer/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry",
     image: "/assets/images/community.jpeg",
     imageAlt: "Young people from the Ugandan community standing together outside their homes, representing the families the medical clinic campaign aims to serve.",
-    canonicalUrl: "https://lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry.html",
+    canonicalUrl: "https://www.lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry",
     story: [
       "This campaign is centered on building a medical clinic that can serve poor families, widows, and children in Uganda who often have little access to basic treatment. In some of the households being served, children are surviving on little more than dirt and greens because there is so little food and so little access to care. A clinic creates a fixed place where mercy can be offered consistently instead of only in scattered emergencies.",
       "The goal is not merely to hand out temporary relief, but to help establish a lasting work of Christian care. Medicines, examinations, wound care, maternal support, and treatment for common illnesses all become much more reachable when there is a dedicated clinic on the ground.",

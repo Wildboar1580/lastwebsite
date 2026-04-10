@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { renderSiteFooter } from "./site-layout.mjs";
 
 const ROOT_URL = "https://bookofconcord.org";
 const root = process.cwd();
@@ -175,7 +176,7 @@ function buildNavBlock(previousEntry, nextEntry, placement) {
 }
 
 function buildDocPage({ title, sectionTitle, pathname, contentHtml, description, previousEntry, nextEntry }) {
-  const canonicalUrl = `https://lastchristian.com${localUrlFromPathname(pathname)}`;
+  const canonicalUrl = `https://www.lastchristian.com${localUrlFromPathname(pathname)}`;
   const fullTitle = `${title} | ${sectionTitle} | Book of Concord | Last Christian Ministries`;
   const topNav = buildNavBlock(previousEntry, null, "top");
   const bottomNav = buildNavBlock(null, nextEntry, "bottom");
@@ -195,11 +196,11 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:type" content="article">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)} | ${escapeHtml(sectionTitle)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
@@ -213,7 +214,7 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
           "isPartOf": {
             "@type": "CollectionPage",
             "name": ${JSON.stringify(sectionTitle)},
-            "url": "https://lastchristian.com/concord.html"
+            "url": "https://www.lastchristian.com/concord"
           }
         },
         {
@@ -223,19 +224,19 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://lastchristian.com/"
+              "item": "https://www.lastchristian.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Book of Concord",
-              "item": "https://lastchristian.com/concord.html"
+              "item": "https://www.lastchristian.com/concord"
             },
             {
               "@type": "ListItem",
               "position": 3,
               "name": ${JSON.stringify(sectionTitle)},
-              "item": "https://lastchristian.com/concord.html"
+              "item": "https://www.lastchristian.com/concord"
             },
             {
               "@type": "ListItem",
@@ -252,26 +253,26 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
 <body class="campaign-page contact-page concord-doc-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -287,7 +288,7 @@ function buildDocPage({ title, sectionTitle, pathname, contentHtml, description,
         <div class="section-heading concord-page-heading">
           <p class="eyebrow">${escapeHtml(sectionTitle)}</p>
           <h2>${escapeHtml(title)}</h2>
-          <p><a class="text-link" href="/concord.html">Return to the Book of Concord library</a></p>
+          <p><a class="text-link" href="/concord">Return to the Book of Concord library</a></p>
         </div>
         <article class="concord-content">
 ${topNav}
@@ -296,6 +297,7 @@ ${bottomNav}
         </article>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 
   <script type="module" src="/assets/app.js"></script>
@@ -304,7 +306,7 @@ ${bottomNav}
 }
 
 function buildFormulaPage() {
-  const canonicalUrl = "https://lastchristian.com/concord/formula-of-concord/";
+  const canonicalUrl = "https://www.lastchristian.com/concord/formula-of-concord/";
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -321,37 +323,37 @@ function buildFormulaPage() {
   <meta property="og:description" content="Read the Formula of Concord in the public-domain English Triglotta.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Formula of Concord | Last Christian Ministries">
   <meta name="twitter:description" content="Read the Formula of Concord in the public-domain English Triglotta.">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="campaign-page contact-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -376,6 +378,7 @@ function buildFormulaPage() {
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 </body>
 </html>`;
@@ -410,13 +413,13 @@ function buildConcordLanding(manifest) {
   <meta property="og:title" content="Book of Concord | Last Christian Ministries">
   <meta property="og:description" content="Search and read the full public-domain English Triglotta of the Book of Concord directly on Last Christian Ministries.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://lastchristian.com/concord.html">
-  <meta property="og:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:url" content="https://www.lastchristian.com/concord">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Book of Concord | Last Christian Ministries">
   <meta name="twitter:description" content="Search and read the full public-domain English Triglotta of the Book of Concord directly on Last Christian Ministries.">
-  <meta name="twitter:image" content="https://lastchristian.com/assets/images/base44-logo.jpg">
-  <link rel="canonical" href="https://lastchristian.com/concord.html">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <link rel="canonical" href="https://www.lastchristian.com/concord">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
     {
@@ -425,7 +428,7 @@ function buildConcordLanding(manifest) {
         {
           "@type": "CollectionPage",
           "name": "Book of Concord",
-          "url": "https://lastchristian.com/concord.html",
+          "url": "https://www.lastchristian.com/concord",
           "description": "Search and read the full English Triglotta of the Book of Concord on Last Christian Ministries."
         },
         {
@@ -435,13 +438,13 @@ function buildConcordLanding(manifest) {
               "@type": "ListItem",
               "position": 1,
               "name": "Home",
-              "item": "https://lastchristian.com/"
+              "item": "https://www.lastchristian.com/"
             },
             {
               "@type": "ListItem",
               "position": 2,
               "name": "Book of Concord",
-              "item": "https://lastchristian.com/concord.html"
+              "item": "https://www.lastchristian.com/concord"
             }
           ]
         }
@@ -452,26 +455,26 @@ function buildConcordLanding(manifest) {
 <body class="campaign-page contact-page concord-page">
   <div class="site-shell">
     <header class="site-header">
-      <a class="brand" href="/index.html" aria-label="Last Christian Ministries home">
+      <a class="brand" href="/" aria-label="Last Christian Ministries home">
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
         <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/bible.html">Bible</a>
-        <a href="/lectionary.html">Lectionary</a>
-        <a href="/podcast.html">Podcast</a>
-        <a href="/index.html#campaigns">Campaigns</a>
-        <a href="/concord.html">Book of Concord</a>
-        <a href="/luther.html">Luther's Works</a>
-        <a href="/pieper.html">Pieper</a>
-        <a href="/library.html">Library</a>
-        <a href="/about.html">About Me</a>
-        <a href="/faq.html">FAQ</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/bible">Bible</a>
+        <a href="/lectionary">Lectionary</a>
+        <a href="/podcast">Podcast</a>
+        <a href="/#campaigns">Campaigns</a>
+        <a href="/concord">Book of Concord</a>
+        <a href="/luther">Luther's Works</a>
+        <a href="/pieper">Pieper</a>
+        <a href="/library">Library</a>
+        <a href="/about">About Me</a>
+        <a href="/faq">FAQ</a>
+        <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/index.html#campaigns">Give Now</a>
+      <a class="button button-red" href="/#campaigns">Give Now</a>
     </header>
 
     <main>
@@ -513,25 +516,26 @@ function buildConcordLanding(manifest) {
           <p>Move between Holy Scripture, Luther’s works, the lectionary, and the sermon archive through direct internal links.</p>
         </div>
         <div class="library-grid">
-          <a class="library-card" href="/bible.html">
+          <a class="library-card" href="/bible">
             <h3>Holy Scripture</h3>
             <p>Read the Bible in static MSB and KJV chapter pages with search and audio.</p>
           </a>
-          <a class="library-card" href="/luther.html">
+          <a class="library-card" href="/luther">
             <h3>Luther’s Works</h3>
             <p>Follow the confessional writings into Luther’s sermons, catechesis, and theological works.</p>
           </a>
-          <a class="library-card" href="/lectionary.html">
+          <a class="library-card" href="/lectionary">
             <h3>Historic One-Year Lectionary</h3>
             <p>Pair the Confessions with the church year’s appointed readings and propers.</p>
           </a>
-          <a class="library-card" href="/podcast.html">
+          <a class="library-card" href="/podcast">
             <h3>Podcast Archive</h3>
             <p>Listen to sermons and readings connected to confessional Lutheran theology.</p>
           </a>
         </div>
       </section>
     </main>
+${renderSiteFooter()}
   </div>
 
   <script type="application/json" id="concord-manifest">${JSON.stringify(manifest)}</script>
@@ -602,7 +606,7 @@ async function main() {
       buildDocPage({ ...entry, previousEntry, nextEntry })
     );
 
-    manifest.push({ title: entry.title, sectionTitle: entry.sectionTitle, url: `https://lastchristian.com${entry.localUrl}` });
+    manifest.push({ title: entry.title, sectionTitle: entry.sectionTitle, url: `https://www.lastchristian.com${entry.localUrl}` });
     searchIndex.push({
       title: entry.title,
       section: entry.sectionTitle,
@@ -618,7 +622,7 @@ async function main() {
   manifest.push({
     title: "Formula of Concord",
     sectionTitle: "Book of Concord",
-    url: "https://lastchristian.com/concord/formula-of-concord/"
+    url: "https://www.lastchristian.com/concord/formula-of-concord/"
   });
 
   fs.writeFileSync(path.join(root, "concord.html"), buildConcordLanding(manifest));
