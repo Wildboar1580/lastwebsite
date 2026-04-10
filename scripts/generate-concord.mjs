@@ -39,6 +39,19 @@ const SECTION_TITLES = new Map([
   ["testimonies", "Catalog of Testimonies"]
 ]);
 
+const SMALL_CATECHISM_PDF_LINKS = new Map([
+  ["preface.pdf", "/concord/small-catechism/preface/"],
+  ["ten-commandments.pdf", "/concord/small-catechism/ten-commandments/"],
+  ["creed.pdf", "/concord/small-catechism/the-creed/"],
+  ["lords-prayer.pdf", "/concord/small-catechism/the-lords-prayer/"],
+  ["holy-baptism.pdf", "/concord/small-catechism/the-sacrament-of-holy-baptism/"],
+  ["confession.pdf", "/concord/small-catechism/how-christians-confess/"],
+  ["sacrament-ofthe-altar.pdf", "/concord/small-catechism/the-sacrament-of-the-altar/"],
+  ["daily-prayers.pdf", "/concord/small-catechism/daily-prayers/"],
+  ["table-of-duties.pdf", "/concord/small-catechism/table-of-duties/"],
+  ["questions-and-answers.pdf", "/concord/small-catechism/christian-questions-and-answers/"]
+]);
+
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
@@ -54,6 +67,13 @@ function escapeHtml(text = "") {
 
 function decodeHtml(text = "") {
   return String(text)
+    .replaceAll("&amp;rsquo;", "'")
+    .replaceAll("&amp;lsquo;", "'")
+    .replaceAll("&amp;rdquo;", "\"")
+    .replaceAll("&amp;ldquo;", "\"")
+    .replaceAll("&amp;mdash;", "—")
+    .replaceAll("&amp;ndash;", "–")
+    .replaceAll("&amp;nbsp;", " ")
     .replaceAll("&nbsp;", " ")
     .replaceAll("&middot;", "·")
     .replaceAll("&rdquo;", "\"")
@@ -66,6 +86,13 @@ function decodeHtml(text = "") {
     .replaceAll("&lt;", "<")
     .replaceAll("&gt;", ">")
     .replaceAll("&#39;", "'");
+}
+
+function normalizeImportedText(text = "") {
+  return String(text)
+    .replaceAll("Prefaratory", "Prefatory")
+    .replaceAll("Luther&amp;rsquo;s", "Luther's")
+    .replaceAll("Lord&amp;rsquo;s", "Lord's");
 }
 
 function stripHtml(html = "") {
@@ -111,7 +138,7 @@ function getSectionTitle(pathname) {
 
 function extractTitle(html) {
   const titleMatch = html.match(/<title>([\s\S]*?)<\/title>/i);
-  const raw = decodeHtml(titleMatch?.[1] || "Book of Concord");
+  const raw = normalizeImportedText(decodeHtml(titleMatch?.[1] || "Book of Concord"));
   return raw.replace(/\s*·\s*BookOfConcord\.org\s*$/i, "").trim();
 }
 
@@ -132,17 +159,23 @@ function extractMainContent(html) {
 }
 
 function sanitizeContent(html) {
-  return html
+  return normalizeImportedText(
+    html
     .replace(/<div[^>]*class="[^"]*next-previous-box[^"]*"[^>]*>[\s\S]*?<\/div>/gi, "")
-    .replace(/<p>\s*<a[^>]+href="[^"]*catechism\.cph\.org[^"]*"[\s\S]*?<\/p>/gi, "")
     .replace(/<p>[\s\S]*?for purchase options\.<\/p>/gi, "")
     .replace(/<p>[\s\S]*?Concordia Publishing House[\s\S]*?<\/p>/gi, "")
     .replace(/<p>[\s\S]*?we&rsquo;ve provided links to the PDF&rsquo;s[\s\S]*?<\/p>/gi, "")
-    .trim();
+    .trim()
+  );
 }
 
 function rewriteLinks(html) {
   return html
+    .replace(/href="https?:\/\/(?:www\.)?cph\.org\/images\/topics\/pdf\/smallcatechism\/([^"]+)"/gi, (_, fileName) => {
+      const normalizedFileName = fileName.toLowerCase();
+      const localHref = SMALL_CATECHISM_PDF_LINKS.get(normalizedFileName);
+      return localHref ? `href="${localHref}"` : 'href="/concord/small-catechism/"';
+    })
     .replace(/href="https:\/\/bookofconcord\.org(\/[^"]*)"/gi, (_, pathValue) => {
       const pathname = normalizePathname(pathValue);
       if (includePath(pathname)) {
@@ -151,6 +184,9 @@ function rewriteLinks(html) {
       return `href="https://bookofconcord.org${pathValue}"`;
     })
     .replace(/href="(\/[^"]*)"/gi, (_, pathValue) => {
+      if (pathValue.startsWith("/concord/")) {
+        return `href="${pathValue}"`;
+      }
       const pathname = normalizePathname(pathValue);
       if (includePath(pathname)) {
         return `href="${localUrlFromPathname(pathname)}"`;
@@ -414,11 +450,11 @@ function buildConcordLanding(manifest) {
   <meta property="og:description" content="Search and read the full public-domain English Triglotta of the Book of Concord directly on Last Christian Ministries.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.lastchristian.com/concord">
-  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/book-of-concord-dresden-1580.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Book of Concord | Last Christian Ministries">
   <meta name="twitter:description" content="Search and read the full public-domain English Triglotta of the Book of Concord directly on Last Christian Ministries.">
-  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/book-of-concord-dresden-1580.jpg">
   <link rel="canonical" href="https://www.lastchristian.com/concord">
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
@@ -483,6 +519,20 @@ function buildConcordLanding(manifest) {
           <p class="eyebrow">Book of Concord</p>
           <h1>The English Triglotta on Last Christian Ministries</h1>
           <p>Read and search the full public-domain English translation of the Book of Concord in a format matched to the rest of the site.</p>
+        </div>
+      </section>
+
+      <section class="section about-section">
+        <div class="about-grid library-feature-grid">
+          <figure class="library-feature-image-concord">
+            <img src="/assets/images/book-of-concord-dresden-1580.jpg" alt="1580 Dresden title page of the Book of Concord" width="740" height="1185" loading="lazy" decoding="async">
+          </figure>
+          <div class="library-feature-copy">
+            <p class="eyebrow">Why It Matters</p>
+            <h2>The doctrinal standard of the Lutheran Church</h2>
+            <p>The Book of Concord is the collected confession of the Lutheran Church, published in 1580 to gather the creeds, catechisms, and confessional writings that summarize what Scripture teaches. It gives public, churchly form to the faith confessed in the Augsburg Confession and defended throughout the Reformation era.</p>
+            <p>Its significance is practical as well as historical. The Book of Concord helps pastors, congregations, and families test doctrine, learn the language of the faith, and stay anchored to the Gospel of Christ instead of drifting with every new theological fashion. Hosting the Triglotta here makes those confessions searchable and easy to read as living standards for teaching and preaching.</p>
+          </div>
         </div>
       </section>
 
