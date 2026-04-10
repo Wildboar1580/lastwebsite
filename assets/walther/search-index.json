@@ -1,0 +1,23 @@
+[
+  {
+    "title": "The Proper Distinction Between Law and Gospel",
+    "category": "Pastoral Theology",
+    "summary": "A scaffold page for Walther's famous evening lectures on distinguishing God's Law from God's Gospel.",
+    "text": "Use this starter page for Walther's Law and Gospel lectures, pastoral theology, preaching, repentance, absolution, and care for troubled consciences.",
+    "url": "/walther/law-and-gospel/"
+  },
+  {
+    "title": "Church and Ministry",
+    "category": "Church and Ministry",
+    "summary": "A scaffold page for Walther's theses on the church, the office of the ministry, and ecclesiastical authority.",
+    "text": "Use this starter page for Walther's theses on church and ministry, congregational life, ministerial office, church authority, and confessional Lutheran polity.",
+    "url": "/walther/church-and-ministry/"
+  },
+  {
+    "title": "American Lutheran Pastoral Theology",
+    "category": "Sermons and Pastoral Writings",
+    "summary": "A scaffold page for sermons, addresses, and pastoral writing that shaped confessional Lutheranism in America.",
+    "text": "Use this starter page for Walther sermons, essays, convention addresses, American Lutheran pastoral theology, catechesis, and confessional teaching.",
+    "url": "/walther/american-lutheran-pastoral-theology/"
+  }
+]

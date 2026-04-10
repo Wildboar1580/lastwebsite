@@ -79,15 +79,37 @@
           <h2>Ready for Walther's works</h2>
           <p>This section is ready to grow into a dedicated Walther library. As his works are added, this page can organize them by sermons, theses, church and ministry, law and gospel, and pastoral theology.</p>
         </div>
+        <div class="bible-search-shell walther-search-shell">
+          <label class="sr-only" for="walther-search">Search the Walther Library</label>
+          <input id="walther-search" class="podcast-search" type="search" placeholder="Search Walther by title or theme" data-walther-search>
+          <p class="pieper-search-status" data-walther-search-status>Search the starter Walther library by title or summary.</p>
+          <div class="bible-search-results" data-walther-search-results></div>
+        </div>
+      </section>
+
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">Starter Works</p>
+          <h2>Begin building the Walther section</h2>
+          <p>These starter entries give the Walther page a real internal structure now, with room to expand into a much larger library later.</p>
+        </div>
         <div class="library-grid">
+          <a class="library-card" href="/walther/law-and-gospel/">
+            <h3>The Proper Distinction Between Law and Gospel</h3>
+            <p>Set up Walther's most widely known work as the key starting point for pastoral theology and preaching.</p>
+          </a>
+          <a class="library-card" href="/walther/church-and-ministry/">
+            <h3>Church and Ministry</h3>
+            <p>Use this section for Walther's foundational theses on the church, the ministry, and ecclesiastical authority.</p>
+          </a>
+          <a class="library-card" href="/walther/american-lutheran-pastoral-theology/">
+            <h3>American Lutheran Pastoral Theology</h3>
+            <p>Reserve a place for sermons, lectures, and pastoral writings that shaped confessional Lutheranism in America.</p>
+          </a>
           <a class="library-card" href="/library">
             <h3>Back to the Library</h3>
             <p>Return to the Hardcore Lutheran Library and move between Scripture, the Confessions, Luther, Pieper, and future Walther additions.</p>
           </a>
-          <div class="library-card">
-            <h3>Works Coming Soon</h3>
-            <p>Add Walther titles here as the collection grows, including major doctrinal and pastoral works that deserve a permanent place in the library.</p>
-          </div>
         </div>
       </section>
     </main>
@@ -133,5 +155,6 @@
   </div>
 
   <script type="module" src="/assets/app.js"></script>
+  <script type="module" src="/assets/walther.js"></script>
 </body>
 </html>
