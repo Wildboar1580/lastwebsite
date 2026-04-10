@@ -1266,10 +1266,10 @@ function buildVolumeSourceCards(volume) {
 function buildFeaturedDoctrineCards() {
   const featured = [
     ["Grace", "Saving Grace", "/pieper/vol-2/03-2-concept-of-saving-grace/", "Start with Pieper's definition of saving grace and how it differs from works or inward merit."],
-    ["Christology", "Christ's Person", "/pieper/vol-2/08-i-the-doctrine-of-christ-s-person/", "Open the core Christology section on Christ's divinity, humanity, and personal union."],
+    ["Christology", "Christ's Person", "/pieper/vol-2/09-1-the-true-divinity-of-christ/", "Open the core Christology section through Pieper's treatment of Christ's true divinity."],
     ["Justification", "Central Position", "/pieper/vol-2/69-4-the-central-position-of-the-doctrine-of-justification/", "Jump to the section where Pieper places justification at the center of Christian doctrine."],
-    ["Means of Grace", "Means of Grace", "/pieper/vol-3/28-means-of-grace/", "Go directly to Pieper's treatment of how Christ delivers His gifts through appointed means."],
-    ["Last Things", "Last Things", "/pieper/vol-3/107-last-things/", "Enter volume 3 through Pieper's treatment of death, resurrection, judgment, and the life to come."]
+    ["Means of Grace", "Means of Grace", "/pieper/vol-3/29-the-means-of-grace-in-general/", "Go directly to Pieper's treatment of how Christ delivers His gifts through appointed means."],
+    ["Last Things", "Last Things", "/pieper/vol-3/108-1-the-temporal-death/", "Enter volume 3 through Pieper's treatment of death, resurrection, judgment, and the life to come."]
   ];
 
   return `<div class="pieper-topic-grid">
