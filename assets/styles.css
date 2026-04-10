@@ -2700,4 +2700,8 @@ textarea {
   .text-link {
     font-size: 0.86rem;
   }
+
+  .pieper-topic-grid {
+    grid-template-columns: 1fr;
+  }
 }
