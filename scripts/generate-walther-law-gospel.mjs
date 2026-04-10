@@ -7,31 +7,45 @@ const waltherDir = path.join(root, "walther", "law-and-gospel");
 const waltherAssetsDir = path.join(root, "assets", "walther");
 
 const lectures = [
-  { number: 1, slug: "lecture-01", title: "Need for the Distinction", summary: "Why the right distinction between Law and Gospel is a matter of life, death, and pastoral faithfulness.", focus: "Walther opens by showing that the church loses her evangelical voice when Law and Gospel are blurred together." },
-  { number: 2, slug: "lecture-02", title: "Two Doctrines from God", summary: "How both Law and Gospel come from God while differing completely in office and effect.", focus: "This lecture sets the basic contrast between divine demand and divine promise." },
-  { number: 3, slug: "lecture-03", title: "Why Confusion Destroys Consciences", summary: "The spiritual damage done when preachers speak truly in parts but confuse the hearer about Christ's consolation.", focus: "Walther pushes the question from theory into the actual condition of terrified and secure consciences." },
-  { number: 4, slug: "lecture-04", title: "Command and Promise", summary: "The distinction between what God commands and what God freely gives in Christ.", focus: "This lecture helps establish why the Gospel is not advice, threat, or moral program." },
-  { number: 5, slug: "lecture-05", title: "The First Thesis", summary: "A first major warning against preaching that weakens the force of either doctrine.", focus: "Walther begins naming the errors that repeatedly appear in otherwise serious church bodies." },
-  { number: 6, slug: "lecture-06", title: "Repentance and Terror", summary: "How the Law must expose sin without leaving the sinner in despair.", focus: "The pastoral task is not simply to terrify, but to prepare the way for the Gospel's comfort." },
-  { number: 7, slug: "lecture-07", title: "The Gospel Is Not a New Law", summary: "Why the Gospel must never be reduced to instructions for self-improvement.", focus: "Walther keeps Christ's completed work at the center rather than the sinner's performance." },
-  { number: 8, slug: "lecture-08", title: "Justification and Sanctification", summary: "How to preach the Christian life without letting sanctification swallow justification.", focus: "This is one of the classic places where doctrinal precision protects pastoral comfort." },
-  { number: 9, slug: "lecture-09", title: "Faith Created by the Gospel", summary: "Why faith is born from the promise rather than from demands for inward strength.", focus: "Walther insists that the Gospel creates what it asks for by delivering Christ Himself." },
-  { number: 10, slug: "lecture-10", title: "Do Not Point Consciences Inward", summary: "A warning against sending troubled Christians into themselves rather than to Christ.", focus: "The afflicted conscience needs the objective promise, not endless spiritual introspection." },
-  { number: 11, slug: "lecture-11", title: "Evangelical Exhortation", summary: "How Christians may be exhorted without turning sermons into disguised legalism.", focus: "Walther shows the difference between genuine evangelical encouragement and moral pressure." },
-  { number: 12, slug: "lecture-12", title: "Means of Grace", summary: "Why the Gospel reaches sinners through preached Word, Baptism, and the Supper.", focus: "This lecture belongs naturally with sacramental and ecclesial Lutheran theology." },
-  { number: 13, slug: "lecture-13", title: "The Gospel Gives What It Says", summary: "The Gospel not only announces grace but actually bestows forgiveness and consolation.", focus: "Walther presses the performative power of God's promise." },
-  { number: 14, slug: "lecture-14", title: "Moralism in the Pulpit", summary: "The danger of sermons that sound useful but leave Christ in the background.", focus: "Here Walther is especially sharp about preaching that trains behavior without delivering redemption." },
-  { number: 15, slug: "lecture-15", title: "Comfort for the Afflicted", summary: "How the Gospel is aimed at sinners who know their need and long for mercy.", focus: "This is pastoral theology in its most direct form: consolation for burdened consciences." },
-  { number: 16, slug: "lecture-16", title: "False Comfort for the Secure", summary: "Why the Gospel must not be poured out indiscriminately on those hardened in impenitence.", focus: "Walther keeps both doctrines distinct by preserving their proper hearers and uses." },
-  { number: 17, slug: "lecture-17", title: "The Whole Counsel of God", summary: "Faithful preaching requires both doctrines, each spoken at the right time and to the right hearer.", focus: "The preacher must not flatten every sermon into one emotional register." },
-  { number: 18, slug: "lecture-18", title: "Doctrinal Precision for Preaching", summary: "Why confessional accuracy matters because souls depend on the church's words about Christ.", focus: "Walther joins dogmatics and homiletics instead of setting them against each other." },
-  { number: 19, slug: "lecture-19", title: "Catechesis and Care of Souls", summary: "Applying the distinction to teaching, visitation, and ordinary congregational life.", focus: "This lecture helps connect the pulpit to pastoral practice beyond Sunday sermons." },
-  { number: 20, slug: "lecture-20", title: "Fruits and the Basis of Salvation", summary: "How to speak about fruits of faith without making them the ground of assurance.", focus: "Walther keeps good works in their proper place as fruit, not foundation." },
-  { number: 21, slug: "lecture-21", title: "The Comfort of Absolution", summary: "The absolving word of Christ as medicine for consciences bruised by sin and accusation.", focus: "This lecture naturally ties Walther's doctrine to sacramental and pastoral practice." },
-  { number: 22, slug: "lecture-22", title: "Christ at the Center", summary: "Every evangelical sermon must finally deliver Christ, not merely information about Him.", focus: "Walther keeps the person and work of Christ as the heart of all true Gospel proclamation." },
-  { number: 23, slug: "lecture-23", title: "Orthodox Words with a Legal Effect", summary: "Language may sound correct while still leaving the hearer under the Law.", focus: "Walther teaches preachers to judge sermons not only by formulas but by their actual doctrinal force." },
-  { number: 24, slug: "lecture-24", title: "The Pastor's Task", summary: "The minister as steward of mysteries, not manager of moral outcomes.", focus: "This lecture draws the distinction into the identity and vocation of the pastor himself." },
-  { number: 25, slug: "lecture-25", title: "The Enduring Necessity of the Distinction", summary: "A closing emphasis on why the church must never tire of learning this distinction anew.", focus: "Walther leaves the reader with the long-term pastoral stakes clearly in view." }
+  { number: 1, slug: "lecture-01", title: "First Evening Lecture", summary: "The opening evening lecture in Walther's Law and Gospel cycle.", focus: "Walther opens the series by introducing the central pastoral necessity of distinguishing Law and Gospel properly." },
+  { number: 2, slug: "lecture-02", title: "Second Evening Lecture", summary: "The second evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the opening framework and presses the doctrinal seriousness of the distinction." },
+  { number: 3, slug: "lecture-03", title: "Third Evening Lecture", summary: "The third evening lecture in Walther's Law and Gospel cycle.", focus: "Walther develops the consequences of confusing God's demand with God's promise." },
+  { number: 4, slug: "lecture-04", title: "Fourth Evening Lecture", summary: "The fourth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture keeps attention on how the distinction governs faithful preaching." },
+  { number: 5, slug: "lecture-05", title: "Fifth Evening Lecture", summary: "The fifth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther moves deeper into the practical errors that arise when pastors mingle the two doctrines." },
+  { number: 6, slug: "lecture-06", title: "Sixth Evening Lecture", summary: "The sixth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the pastoral application of the distinction to preaching and repentance." },
+  { number: 7, slug: "lecture-07", title: "Seventh Evening Lecture", summary: "The seventh evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues showing how the Gospel must remain pure promise and consolation." },
+  { number: 8, slug: "lecture-08", title: "Eighth Evening Lecture", summary: "The eighth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture emphasizes the difference between evangelical proclamation and legal pressure." },
+  { number: 9, slug: "lecture-09", title: "Ninth Evening Lecture", summary: "The ninth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther pushes the hearer toward Christ's objective promise rather than inward uncertainty." },
+  { number: 10, slug: "lecture-10", title: "Tenth Evening Lecture", summary: "The tenth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture extends the argument into the comfort of terrified consciences." },
+  { number: 11, slug: "lecture-11", title: "Eleventh Evening Lecture", summary: "The eleventh evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues tracing the difference between true evangelical comfort and disguised moralism." },
+  { number: 12, slug: "lecture-12", title: "Twelfth Evening Lecture", summary: "The twelfth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the pastoral and doctrinal exposition of the theses." },
+  { number: 13, slug: "lecture-13", title: "Thirteenth Evening Lecture", summary: "The thirteenth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther presses the church to preserve the pure Gospel in the midst of confusion." },
+  { number: 14, slug: "lecture-14", title: "Fourteenth Evening Lecture", summary: "The fourteenth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture keeps the hearer's comfort in Christ at the center of the work." },
+  { number: 15, slug: "lecture-15", title: "Fifteenth Evening Lecture", summary: "The fifteenth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues showing how preachers may sound orthodox while functioning legalistically." },
+  { number: 16, slug: "lecture-16", title: "Sixteenth Evening Lecture", summary: "The sixteenth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture carries the argument forward in the context of pastoral care and absolution." },
+  { number: 17, slug: "lecture-17", title: "Seventeenth Evening Lecture", summary: "The seventeenth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther deepens the treatment of the Christian life without obscuring justification." },
+  { number: 18, slug: "lecture-18", title: "Eighteenth Evening Lecture", summary: "The eighteenth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the correction of preaching that fails to distinguish the doctrines rightly." },
+  { number: 19, slug: "lecture-19", title: "Nineteenth Evening Lecture", summary: "The nineteenth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther ties the distinction closely to the preacher's office and task." },
+  { number: 20, slug: "lecture-20", title: "Twentieth Evening Lecture", summary: "The twentieth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the practical implications for pastors and hearers." },
+  { number: 21, slug: "lecture-21", title: "Twenty-first Evening Lecture", summary: "The twenty-first evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues the long application of the theses to preaching and spiritual care." },
+  { number: 22, slug: "lecture-22", title: "Twenty-second Evening Lecture", summary: "The twenty-second evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the work's concern for evangelical comfort and doctrinal clarity." },
+  { number: 23, slug: "lecture-23", title: "Twenty-third Evening Lecture", summary: "The twenty-third evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues exposing the damage done by legal preaching dressed in orthodox language." },
+  { number: 24, slug: "lecture-24", title: "Twenty-fourth Evening Lecture", summary: "The twenty-fourth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture presses the distinction into the daily task of the ministry." },
+  { number: 25, slug: "lecture-25", title: "Twenty-fifth Evening Lecture", summary: "The twenty-fifth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues the steady thesis-by-thesis labor of pastoral instruction." },
+  { number: 26, slug: "lecture-26", title: "Twenty-sixth Evening Lecture", summary: "The twenty-sixth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues Walther's warning against mixing Christ's promise with human merit." },
+  { number: 27, slug: "lecture-27", title: "Twenty-seventh Evening Lecture", summary: "The twenty-seventh evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues his pastoral critique of false assurance and false despair." },
+  { number: 28, slug: "lecture-28", title: "Twenty-eighth Evening Lecture", summary: "The twenty-eighth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture carries the same distinction deeper into practical church life." },
+  { number: 29, slug: "lecture-29", title: "Twenty-ninth Evening Lecture", summary: "The twenty-ninth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues clarifying how the Gospel must remain wholly free and consoling." },
+  { number: 30, slug: "lecture-30", title: "Thirtieth Evening Lecture", summary: "The thirtieth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture extends the sequence as Walther works through the pastoral misuse of Scripture." },
+  { number: 31, slug: "lecture-31", title: "Thirty-first Evening Lecture", summary: "The thirty-first evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues the long-form pastoral instruction of the later lectures." },
+  { number: 32, slug: "lecture-32", title: "Thirty-second Evening Lecture", summary: "The thirty-second evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the defense of pure evangelical preaching." },
+  { number: 33, slug: "lecture-33", title: "Thirty-third Evening Lecture", summary: "The thirty-third evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues applying the distinction to doctrine, preaching, and the care of souls." },
+  { number: 34, slug: "lecture-34", title: "Thirty-fourth Evening Lecture", summary: "The thirty-fourth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture keeps the later sequence tied to the work's central pastoral burden." },
+  { number: 35, slug: "lecture-35", title: "Thirty-fifth Evening Lecture", summary: "The thirty-fifth evening lecture in Walther's Law and Gospel cycle.", focus: "Walther continues the sustained critique of preaching that leaves consciences without Christ's comfort." },
+  { number: 36, slug: "lecture-36", title: "Thirty-sixth Evening Lecture", summary: "The thirty-sixth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the work's closing movement toward enduring pastoral instruction." },
+  { number: 37, slug: "lecture-37", title: "Thirty-seventh Evening Lecture", summary: "The thirty-seventh evening lecture in Walther's Law and Gospel cycle.", focus: "Walther nears the end of the cycle while maintaining the same insistence on evangelical clarity." },
+  { number: 38, slug: "lecture-38", title: "Thirty-eighth Evening Lecture", summary: "The thirty-eighth evening lecture in Walther's Law and Gospel cycle.", focus: "This lecture continues the closing sequence of Walther's evening lectures." },
+  { number: 39, slug: "lecture-39", title: "Thirty-ninth Evening Lecture", summary: "The thirty-ninth and final evening lecture in Walther's Law and Gospel cycle.", focus: "Walther closes the series by leaving the church with the enduring necessity of rightly distinguishing Law and Gospel." }
 ];
 
 const starterEntries = [
@@ -168,9 +182,93 @@ ${renderSiteFooter()}
 </html>`;
 }
 
+function renderStandalonePage({ slug, title, category, summary, focus }) {
+  const canonicalUrl = `https://www.lastchristian.com/walther/law-and-gospel/${slug}/`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(title)} | Law and Gospel | Walther | Last Christian Ministries</title>
+  <meta name="description" content="${escapeHtml(summary)}">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Pastor Charles Wiese">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:site_name" content="Last Christian Ministries">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="${escapeHtml(title)} | Law and Gospel">
+  <meta property="og:description" content="${escapeHtml(summary)}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/cfw-walther.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)} | Law and Gospel">
+  <meta name="twitter:description" content="${escapeHtml(summary)}">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/cfw-walther.jpg">
+  <link rel="canonical" href="${canonicalUrl}">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body class="campaign-page contact-page concord-doc-page">
+  <div class="site-shell">
+${renderHeader()}
+    <main>
+      <section class="contact-hero concord-hero">
+        <div class="contact-hero-copy">
+          <p class="eyebrow">Walther</p>
+          <h1>${escapeHtml(title)}</h1>
+          <p>${escapeHtml(summary)}</p>
+        </div>
+      </section>
+
+      <section class="section concord-page-shell">
+        <div class="section-heading concord-page-heading">
+          <p class="eyebrow">Law and Gospel</p>
+          <h2>${escapeHtml(category)}</h2>
+          <p><a class="text-link" href="/walther/law-and-gospel/">Return to the Law and Gospel hub</a></p>
+        </div>
+        <article class="concord-content">
+          <h2>${escapeHtml(title)}</h2>
+          <p>${escapeHtml(focus)}</p>
+          <p>This page establishes the front matter of Walther's <em>The Proper Distinction Between Law and Gospel</em> in a form that can later hold the full local text.</p>
+          <p>Using the structure shown on LutheranTheology.com for the public-domain 1929 edition, this section now matches the broad division into preface, theses, and thirty-nine evening lectures.</p>
+        </article>
+      </section>
+    </main>
+${renderSiteFooter()}
+  </div>
+
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>`;
+}
+
 function main() {
   ensureDir(waltherDir);
   ensureDir(waltherAssetsDir);
+
+  const standalonePages = [
+    {
+      slug: "preface-and-introduction",
+      title: "Preface and Introduction",
+      category: "Front Matter",
+      summary: "The preface and introduction to Walther's The Proper Distinction Between Law and Gospel.",
+      focus: "This page opens the work and prepares the reader for the theses and the evening lectures that follow."
+    },
+    {
+      slug: "theses",
+      title: "Theses",
+      category: "Foundational Outline",
+      summary: "Walther's theses for The Proper Distinction Between Law and Gospel.",
+      focus: "This page provides the doctrinal backbone of the whole work and should eventually anchor the later lecture pages."
+    }
+  ];
+
+  for (const page of standalonePages) {
+    const pageDir = path.join(waltherDir, page.slug);
+    ensureDir(pageDir);
+    fs.writeFileSync(path.join(pageDir, "index.html"), renderStandalonePage(page));
+  }
 
   for (let index = 0; index < lectures.length; index += 1) {
     const lecture = lectures[index];
@@ -183,6 +281,13 @@ function main() {
 
   const searchIndex = [
     ...starterEntries,
+    ...standalonePages.map((page) => ({
+      title: page.title,
+      category: "Law and Gospel",
+      summary: page.summary,
+      text: page.focus,
+      url: `/walther/law-and-gospel/${page.slug}/`
+    })),
     ...lectures.map((lecture) => ({
       title: `Lecture ${lecture.number}: ${lecture.title}`,
       category: "Law and Gospel",
