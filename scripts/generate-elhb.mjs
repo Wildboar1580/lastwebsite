@@ -168,7 +168,12 @@ function parseDocxParagraphs(xml = "") {
       .replace(/<w:cr\/>/g, "\n");
     const text = [...paragraphXml.matchAll(/<w:t(?:[^>]*)>([\s\S]*?)<\/w:t>/g)].map((item) => decodeEntities(item[1])).join("");
     const normalized = text.replace(/\u00a0/g, " ").replace(/[ \t]+\n/g, "\n").trim();
-    if (normalized) paragraphs.push(normalized);
+    const cleaned = normalized
+      .replace(/<\/?w:[^>]+>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/\s{2,}/g, " ")
+      .trim();
+    if (cleaned) paragraphs.push(cleaned);
   }
   return paragraphs;
 }
@@ -254,6 +259,7 @@ function paragraphsToHtml(text = "") {
     .split(/\n{2,}/)
     .map((paragraph) => paragraph.trim())
     .filter(Boolean)
+    .filter((paragraph) => !/^<\/?w:/i.test(paragraph) && !/^<w:/i.test(paragraph))
     .map((paragraph) => {
       if (/^[A-Z][A-Z0-9 ,.';:()\-]{4,}$/.test(paragraph) && paragraph.length <= 120) {
         return `<h3>${escapeHtml(paragraph)}</h3>`;
@@ -263,13 +269,33 @@ function paragraphsToHtml(text = "") {
     .join("\n");
 }
 
+function cleanHymnFragment(fragment = "") {
+  return decodeEntities(
+    String(fragment)
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<\/p>/gi, "\n\n")
+      .replace(/<[^>]+>/g, " ")
+  )
+    .replace(/\r/g, "")
+    .replace(/\u00a0/g, " ")
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/\n[ \t]+/g, "\n")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\n{2,}/g, "\n")
+    .trim();
+}
+
 function parseHymnTextPage(filePath) {
   const html = readFile(filePath);
   const title = decodeEntities(html.match(/property="headline"[^>]*>([\s\S]*?)<\/h2>/i)?.[1] || "");
   const author = stripTags(html.match(/<span class="hy_infoLabel">Author:<\/span><\/td>\s*<td><span class="hy_infoItem">([\s\S]*?)<\/span><\/td>/i)?.[1] || html.match(/Author:\s*([^<]+)<\/a>/i)?.[1] || "");
   const representativeHtml = html.match(/<h2 id='fulltexts'>Representative Text<\/h2><div property='text'>([\s\S]*?)<\/div><\/div><div class="authority_bottom_bar">/i)?.[1] || "";
-  const text = stripTags(representativeHtml);
   const source = stripTags(representativeHtml.match(/Source:\s*([\s\S]*)$/i)?.[1] || "");
+  const mainHtml = representativeHtml.replace(/<br\s*\/?>\s*<br\s*\/?>\s*Source:[\s\S]*$/i, "");
+  const stanzaMatches = [...mainHtml.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((match) => cleanHymnFragment(match[1]))
+    .filter(Boolean);
+  const text = (stanzaMatches.length ? stanzaMatches.join("\n\n") : cleanHymnFragment(mainHtml)).trim();
   return { title: title.trim(), author: author.trim(), text, source: source.trim() };
 }
 
@@ -535,7 +561,7 @@ function buildHymnIndexPage(hymns) {
 
 function buildHymnPage(hymn) {
   const body = hymn.text
-    ? hymn.text.split(/\n{2,}/).map((stanza) => `<p>${escapeHtml(stanza).replace(/\n/g, "<br>")}</p>`).join("")
+    ? hymn.text.split(/\n{2,}/).map((stanza) => `<div class="elhb-hymn-stanza">${escapeHtml(stanza).replace(/\n/g, "<br>")}</div>`).join("")
     : `<p>This hymn entry is listed in the ELHB index, but no representative text was available from the downloaded Hymnary text pages.</p>`;
   return pageShell({
     title: `${hymn.number}. ${hymn.title}`,
