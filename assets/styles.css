@@ -1975,7 +1975,7 @@ textarea {
 
 .elhb-resource-card,
 .elhb-reading-block {
-  padding: 1.2rem;
+  padding: 1.45rem;
   background: linear-gradient(180deg, rgba(18, 14, 12, 0.96), rgba(9, 8, 7, 0.98));
   border: 1px solid rgba(213, 166, 41, 0.16);
   border-radius: 1rem;
@@ -1989,18 +1989,38 @@ textarea {
 }
 
 .elhb-prose {
-  max-width: 58rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  font-size: 1.08rem;
 }
 
 .elhb-prose p,
 .elhb-prose li {
-  line-height: 1.7;
-  color: var(--text-soft);
+  margin: 0 0 1rem;
+  line-height: 1.9;
+  color: var(--paper);
+}
+
+.elhb-prose .elhb-prose-block {
+  padding: 1rem 1.1rem;
+  border-left: 2px solid rgba(213, 166, 41, 0.34);
+  background: rgba(255, 248, 225, 0.03);
+  border-radius: 0.6rem;
 }
 
 .elhb-prose h3 {
-  margin-top: 1.5rem;
+  margin: 1.9rem 0 0.8rem;
   color: var(--gold-soft);
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.elhb-hymn-stanza {
+  margin: 0 0 1.6rem;
+  padding: 0 0 0.2rem;
+  line-height: 2;
+  color: var(--paper);
+  white-space: normal;
 }
 
 .pieper-topic-grid {

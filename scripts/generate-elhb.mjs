@@ -11,6 +11,94 @@ const sourceDir = path.join(root, "tmp", "elhb", "sources");
 const hymnIndexDir = path.join(root, "tmp", "elhb", "hymnary-index");
 const hymnTextDir = path.join(root, "tmp", "elhb", "hymnary-texts");
 const docxExpandDir = path.join(root, "tmp", "elhb", "expanded");
+const HYMN_TEXT_OVERRIDES = new Map();
+
+HYMN_TEXT_OVERRIDES.set(2, {
+  author: "Johann Olearius (1671)",
+  source: "Evangelical Lutheran Hymn-book #2",
+  text: `1 Lord, open Thou my heart to hear,
+And through Thy Word to me draw near;
+Let me Thy Word e'er pure retain;
+Let me Thy child and heir remain.
+
+2 Thy Word doth deeply move the heart,
+Thy Word doth perfect health impart,
+Thy Word my soul with joy doth bless,
+Thy Word brings peace and happiness.
+
+3 To God the Father, God the Son,
+And God the Spirit, Three in One,
+Shall glory, praise, and honor be
+Now and throughout eternity.`
+});
+
+HYMN_TEXT_OVERRIDES.set(134, {
+  source: "Public-domain Hymnary text tradition",
+  text: `1 The Bridegroom soon will call us:
+Come, all ye wedding guests!
+May not His voice appall us
+While slumber binds our breasts!
+May all our lamps be burning,
+And oil be found in store,
+That we with Him returning,
+May open find the door!
+
+2 There shall we see delighted
+Our dear Redeemer's face,
+Who leads our souls benighted
+To glory by His grace;
+The patriarchs shall meet us,
+The prophets' holy band,
+Apostles, martyrs, greet us
+In that celestial land.
+
+3 They will not blush to own us
+As brothers, sisters dear,
+Love ever will be shown us
+When we with them appear.
+We all shall come before Him,
+Who for us man became,
+As Lord and God adore Him,
+And ever bless His name.
+
+4 Our Father, rich in blessing,
+Will give us crowns of gold,
+And to His bosom pressing,
+Impart a bliss untold,
+Will welcome with embraces
+Of never-ending love,
+And deck us with His graces
+In blissful realms above.
+
+5 In yonder home shall never
+Be silent music's voice;
+With hearts and lips forever
+We shall in God rejoice;
+The angels shall adore Him,
+All saints shall sing His praise,
+And bring with joy before Him
+Their sweetest heavenly lays.
+
+6 In mansions fair and spacious
+Will God the feast prepare,
+And, ever kind and gracious,
+Bid us its riches share;
+There bliss that knows no measure
+From springs of love shall flow,
+And never-changing pleasure
+His bounty will bestow.
+
+7 Thus God shall from all evil
+Forever make us free,
+From sin and from the Devil,
+From all adversity,
+From sickness, pain and sadness,
+From troubles, cares and fears,
+And grant us heavenly gladness,
+And wipe away our tears.`
+});
+
+HYMN_TEXT_OVERRIDES.set(164, { author: "James Hamilton (1882)", source: "Evangelical Lutheran Hymn-book #164", text: "1 Across the sky the shades of night\nThis winter's eve are fleeting:\nWe deck Thine altar, Lord, with light,\nIn solemn worship meeting;\nAnd as the year's last hours go by,\nWe raise to Thee our earnest cry,\nOnce more Thy love entreating.\n\n2 Before the cross subdued we bow,\nTo Thee our prayers addressing;\nRecounting all Thy mercies now,\nAnd all our sins confessing;\nBeseeching Thee, this coming year,\nTo keep us in Thy faith and fear,\nAnd crown us with Thy blessing.\n\n3 And while we pray, we lift our eyes\nTo dear ones gone before us,\nSafe home with Thee in Paradise,\nWhose peace descendeth o'er us:\nAnd beg of Thee, when life is past\nTo re-unite us all at last\nWith those who've gone before us.\n\n4 We gather up, in this brief hour,\nThe memory of Thy mercies:\nThy wondrous goodness, love, and power,\nOur grateful song rehearses:\nFor Thou hast been our strength and stay\nIn many a dark and dreary day\nOf sorrow and reverses.\n\n5 In many an hour, when fear and dread,\nLike evil spells have bound us,\nAnd clouds were gathering overhead,\nThy providence hath found us:\nIn many a night, when waves ran high,\nThy gracious presence, drawing nigh,\nHath made all calm around us.\n\n6 Then, O Great God, in years to come,\nWhatever fate betide us,\nRight onward through our journey home\nBe Thou at hand to guide us:\nNor leave us till, at close of life,\nSafe from all perils, toil, and strife,\nHeaven shall unfold and hide us." });
 
 const SECTIONS = [
   {
@@ -225,14 +313,12 @@ function renderHeader() {
 function renderResourceCards(section) {
   return section.resources.map((resource) => {
     const pdfHref = copySourceFile(resource.pdf);
-    const docxHref = resource.docx ? copySourceFile(resource.docx) : "";
     return `
       <article class="elhb-resource-card">
         <p class="eyebrow">${escapeHtml(resource.kind === "updated" ? "Updated resource" : resource.kind === "music" ? "Music edition" : "Original resource")}</p>
         <h3>${escapeHtml(resource.label)}</h3>
         <div class="elhb-button-row">
           <a class="button button-outline" href="${pdfHref}">Open PDF</a>
-          ${docxHref ? `<a class="button button-outline" href="${docxHref}">Open DOCX</a>` : ""}
         </div>
       </article>`;
   }).join("");
@@ -264,7 +350,11 @@ function paragraphsToHtml(text = "") {
       if (/^[A-Z][A-Z0-9 ,.';:()\-]{4,}$/.test(paragraph) && paragraph.length <= 120) {
         return `<h3>${escapeHtml(paragraph)}</h3>`;
       }
-      return `<p>${escapeHtml(paragraph).replace(/\n/g, "<br>")}</p>`;
+      const body = escapeHtml(paragraph).replace(/\n/g, "<br>");
+      if (/^\d+[.)]?\s/.test(paragraph) || /\bAmen\.\s*$/i.test(paragraph)) {
+        return `<p class="elhb-prose-block">${body}</p>`;
+      }
+      return `<p>${body}</p>`;
     })
     .join("\n");
 }
@@ -366,13 +456,15 @@ function parseHymns() {
       const title = decodeEntities(match[3]).trim();
       const metadata = metadataMap.get(normalizeKey(title));
       const textRecord = getTextRecord(metadata?.textAuthNumber);
+      const override = HYMN_TEXT_OVERRIDES.get(number);
+      const activeOverride = override?.text ? override : null;
       const slug = `${String(number).padStart(3, "0")}-${slugify(title)}`;
       hymns.push({
         number,
         title,
-        author: textRecord?.author || "",
-        text: textRecord?.text || "",
-        source: textRecord?.source || "",
+        author: activeOverride?.author || textRecord?.author || "",
+        text: activeOverride?.text || textRecord?.text || "",
+        source: activeOverride?.source || textRecord?.source || "",
         pageScanUrl: `https://hymnary.org${match[4]}`,
         hymnaryUrl: `https://hymnary.org/hymn/ELHL1918/${number}`,
         href: `/elhb/hymns/${slug}/`,
@@ -455,7 +547,7 @@ function buildLandingPage(sections, hymns) {
             <p class="eyebrow">Attribution</p>
             <h2>Original ELHB texts, hosted with source attribution</h2>
             <p>The original Evangelical Lutheran Hymn-Book material is public domain. The revised and adapted files used here are attributed to <a class="text-link" href="https://acollectionofprayers.com/tag/evangelical-lutheran-hymn-book/">A Collection of Prayers</a>, whose site licenses modified or adapted prayers under <a class="text-link" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> and requests the attribution: “Prayer from www.acollectionofprayers.com. Used with permission.”</p>
-            <p>The hymn texts are organized from Hymnary’s ELHB index pages and representative text pages so the 1918 hymn book can be searched locally by number, title, author, and text.</p>
+            <p>The hymn texts are organized from Hymnary’s ELHB index pages and corrected with public-domain ELHB text where needed so the 1918 hymn book can be searched locally by number, title, author, and text.</p>
           </div>
         </div>
       </section>
@@ -483,13 +575,13 @@ function buildLandingPage(sections, hymns) {
         <div class="section-heading">
           <p class="eyebrow">Sections</p>
           <h2>Electronic resources and hosted texts</h2>
-          <p>Each section includes local text when a DOCX source is available, plus direct PDF and DOCX downloads for the original and updated editions.</p>
+          <p>Each section includes hosted text when a local transcription is available, plus direct PDF downloads for the original and updated editions.</p>
         </div>
         <div class="library-grid">
           ${sectionCards}
           <a class="library-card" href="/elhb/hymns/">
             <h3>Hymns 1-594</h3>
-            <p>Browse all 594 hymn entries with number, title, representative text, author information, and page-scan links.</p>
+            <p>Browse all 594 hymn entries with number, title, full hosted text, author information, and source links.</p>
           </a>
         </div>
       </section>`,
@@ -551,7 +643,7 @@ function buildHymnIndexPage(hymns) {
           ${hymns.map((hymn) => `
             <a class="library-card" href="${hymn.href}" data-elhb-hymn-card data-elhb-title="${escapeHtml(hymn.title)}" data-elhb-author="${escapeHtml(hymn.author)}" data-elhb-number="${hymn.number}" data-elhb-text="${escapeHtml((hymn.text || "").slice(0, 500))}">
               <h3>${hymn.number}. ${escapeHtml(hymn.title)}</h3>
-              <p>${escapeHtml(hymn.author || "Representative text hosted from Hymnary source pages.")}</p>
+              <p>${escapeHtml(hymn.author || "Hosted from public-domain ELHB and Hymnary source pages.")}</p>
             </a>`).join("")}
         </div>
       </section>`,
@@ -562,7 +654,7 @@ function buildHymnIndexPage(hymns) {
 function buildHymnPage(hymn) {
   const body = hymn.text
     ? hymn.text.split(/\n{2,}/).map((stanza) => `<div class="elhb-hymn-stanza">${escapeHtml(stanza).replace(/\n/g, "<br>")}</div>`).join("")
-    : `<p>This hymn entry is listed in the ELHB index, but no representative text was available from the downloaded Hymnary text pages.</p>`;
+    : `<p>This hymn entry is listed in the ELHB index, but no local hymn text was available from the downloaded source pages.</p>`;
   return pageShell({
     title: `${hymn.number}. ${hymn.title}`,
     description: `ELHB hymn ${hymn.number}: ${hymn.title}.`,
@@ -572,19 +664,18 @@ function buildHymnPage(hymn) {
         <div class="contact-hero-copy">
           <p class="eyebrow">ELHB Hymn ${hymn.number}</p>
           <h1>${escapeHtml(hymn.title)}</h1>
-          <p>${escapeHtml(hymn.author || "Representative text and source links from Hymnary.")}</p>
+          <p>${escapeHtml(hymn.author || "Hosted hymn text with source links.")}</p>
           <div class="elhb-button-row">
             <a class="button button-outline" href="${hymn.hymnaryUrl}">View on Hymnary</a>
-            <a class="button button-outline" href="${hymn.pageScanUrl}">Open page scan</a>
           </div>
         </div>
       </section>
       <section class="section">
         <div class="elhb-reading-block">
           <div class="section-heading">
-            <p class="eyebrow">Representative Text</p>
+            <p class="eyebrow">Hymn Text</p>
             <h2>${hymn.number}. ${escapeHtml(hymn.title)}</h2>
-            <p>Text and metadata are organized from Hymnary’s ELHB index and representative text pages.</p>
+            <p>Text and metadata are organized from Hymnary’s ELHB index pages and corrected with public-domain ELHB text where needed.</p>
           </div>
           <div class="elhb-prose">
             ${body}
