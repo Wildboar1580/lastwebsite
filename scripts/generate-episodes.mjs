@@ -233,6 +233,7 @@ ${renderFaviconLinks()}
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
         <a href="/walther">Walther</a>
+        <a href="/elhb">ELHB</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/kutesa">Kutesa Henry</a>
@@ -353,6 +354,7 @@ ${renderFaviconLinks()}
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
         <a href="/walther">Walther</a>
+        <a href="/elhb">ELHB</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/kutesa">Kutesa Henry</a>
@@ -487,6 +489,10 @@ const concordManifest = fs.existsSync(concordManifestPath)
 const lutherManifest = fs.existsSync(lutherManifestPath)
   ? JSON.parse(fs.readFileSync(lutherManifestPath, "utf8"))
   : { pages: [] };
+const elhbManifestPath = path.join(root, "assets", "elhb", "manifest.json");
+const elhbManifest = fs.existsSync(elhbManifestPath)
+  ? JSON.parse(fs.readFileSync(elhbManifestPath, "utf8"))
+  : { pages: [] };
 
 const sitemapUrls = [
   { loc: "https://www.lastchristian.com/", changefreq: "weekly", priority: "1.0" },
@@ -499,6 +505,7 @@ const sitemapUrls = [
   { loc: "https://www.lastchristian.com/requests", changefreq: "monthly", priority: "0.8" },
   { loc: "https://www.lastchristian.com/concord", changefreq: "monthly", priority: "0.8" },
   { loc: "https://www.lastchristian.com/luther", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/elhb", changefreq: "monthly", priority: "0.8" },
   { loc: "https://www.lastchristian.com/podcast", changefreq: "daily", priority: "0.9" },
   ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({
     loc: archivePageUrl(index + 2),
@@ -528,12 +535,17 @@ const sitemapUrls = [
     changefreq: "monthly",
     priority: "0.7"
   })),
+  ...elhbManifest.pages.map((url) => ({
+    loc: url,
+    changefreq: "monthly",
+    priority: "0.7"
+  })),
   ...episodes.map((episode) => ({
     loc: episode.canonicalUrl,
     changefreq: "weekly",
     priority: "0.7"
   }))
-];
+].filter((entry, index, entries) => entries.findIndex((candidate) => candidate.loc === entry.loc) === index);
 
 const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

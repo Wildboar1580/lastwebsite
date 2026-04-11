@@ -292,6 +292,7 @@ function renderHeader() {
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
         <a href="/walther">Walther</a>
+        <a href="/elhb">ELHB</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>
         <a href="/faq">FAQ</a>
@@ -569,7 +570,6 @@ ${renderHeader()}
         <div class="section-heading">
           <p class="eyebrow">Collections</p>
           <h2>Start with the epistle sermons</h2>
-          <p>The first sermon collection in this section is the epistle sequence, now broken out into local sermon pages.</p>
         </div>
         <div class="library-grid">
           <a class="library-card" href="/walther/sermons/epistle-sermons/">
