@@ -10,6 +10,7 @@ const filesDir = path.join(assetsDir, "files");
 const sourceDir = path.join(root, "tmp", "elhb", "sources");
 const hymnIndexDir = path.join(root, "tmp", "elhb", "hymnary-index");
 const hymnTextDir = path.join(root, "tmp", "elhb", "hymnary-texts");
+const hymnInstanceDir = path.join(root, "tmp", "elhb", "hymnary-instances");
 const docxExpandDir = path.join(root, "tmp", "elhb", "expanded");
 const HYMN_TEXT_OVERRIDES = new Map();
 
@@ -99,6 +100,7 @@ And wipe away our tears.`
 });
 
 HYMN_TEXT_OVERRIDES.set(164, { author: "James Hamilton (1882)", source: "Evangelical Lutheran Hymn-book #164", text: "1 Across the sky the shades of night\nThis winter's eve are fleeting:\nWe deck Thine altar, Lord, with light,\nIn solemn worship meeting;\nAnd as the year's last hours go by,\nWe raise to Thee our earnest cry,\nOnce more Thy love entreating.\n\n2 Before the cross subdued we bow,\nTo Thee our prayers addressing;\nRecounting all Thy mercies now,\nAnd all our sins confessing;\nBeseeching Thee, this coming year,\nTo keep us in Thy faith and fear,\nAnd crown us with Thy blessing.\n\n3 And while we pray, we lift our eyes\nTo dear ones gone before us,\nSafe home with Thee in Paradise,\nWhose peace descendeth o'er us:\nAnd beg of Thee, when life is past\nTo re-unite us all at last\nWith those who've gone before us.\n\n4 We gather up, in this brief hour,\nThe memory of Thy mercies:\nThy wondrous goodness, love, and power,\nOur grateful song rehearses:\nFor Thou hast been our strength and stay\nIn many a dark and dreary day\nOf sorrow and reverses.\n\n5 In many an hour, when fear and dread,\nLike evil spells have bound us,\nAnd clouds were gathering overhead,\nThy providence hath found us:\nIn many a night, when waves ran high,\nThy gracious presence, drawing nigh,\nHath made all calm around us.\n\n6 Then, O Great God, in years to come,\nWhatever fate betide us,\nRight onward through our journey home\nBe Thou at hand to guide us:\nNor leave us till, at close of life,\nSafe from all perils, toil, and strife,\nHeaven shall unfold and hide us." });
+HYMN_TEXT_OVERRIDES.clear();
 
 const SECTIONS = [
   {
@@ -389,6 +391,23 @@ function parseHymnTextPage(filePath) {
   return { title: title.trim(), author: author.trim(), text, source: source.trim() };
 }
 
+function parseHymnInstancePage(filePath, number) {
+  const html = readFile(filePath);
+  const title = decodeEntities(html.match(/<h2 class='hymntitle'>\d+\.\s*([\s\S]*?)<\/h2>/i)?.[1] || "");
+  const author = stripTags(html.match(/<span class="hy_infoLabel">Author:<\/span><\/td>\s*<td><span class="hy_infoItem">([\s\S]*?)<\/span><\/td>/i)?.[1] || "");
+  const fullTextHtml = html.match(/<div id="text">([\s\S]*?)<\/div><div class='text hy_column'>/i)?.[1] || "";
+  const stanzaMatches = [...fullTextHtml.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)]
+    .map((match) => cleanHymnFragment(match[1]))
+    .filter(Boolean);
+  const text = (stanzaMatches.length ? stanzaMatches.join("\n\n") : cleanHymnFragment(fullTextHtml)).trim();
+  return {
+    title: title.trim(),
+    author: author.trim(),
+    text,
+    source: text ? `Evangelical Lutheran Hymn-book #${number}` : ""
+  };
+}
+
 function parseCsv(content = "") {
   const rows = [];
   let field = "";
@@ -447,6 +466,16 @@ function parseHymns() {
     return textCache.get(textAuthNumber);
   }
 
+  const instanceCache = new Map();
+  function getInstanceRecord(number) {
+    if (!number) return null;
+    if (!instanceCache.has(number)) {
+      const filePath = path.join(hymnInstanceDir, `${String(number)}.html`);
+      instanceCache.set(number, fs.existsSync(filePath) ? parseHymnInstancePage(filePath, number) : null);
+    }
+    return instanceCache.get(number);
+  }
+
   const hymns = [];
   const indexFiles = fs.readdirSync(hymnIndexDir).filter((file) => /^page-[0-5]\.html$/i.test(file)).sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
   for (const file of indexFiles) {
@@ -455,6 +484,7 @@ function parseHymns() {
       const number = Number(match[1]);
       const title = decodeEntities(match[3]).trim();
       const metadata = metadataMap.get(normalizeKey(title));
+      const instanceRecord = getInstanceRecord(number);
       const textRecord = getTextRecord(metadata?.textAuthNumber);
       const override = HYMN_TEXT_OVERRIDES.get(number);
       const activeOverride = override?.text ? override : null;
@@ -462,9 +492,9 @@ function parseHymns() {
       hymns.push({
         number,
         title,
-        author: activeOverride?.author || textRecord?.author || "",
-        text: activeOverride?.text || textRecord?.text || "",
-        source: activeOverride?.source || textRecord?.source || "",
+        author: activeOverride?.author || instanceRecord?.author || textRecord?.author || "",
+        text: activeOverride?.text || instanceRecord?.text || "",
+        source: activeOverride?.source || instanceRecord?.source || "",
         pageScanUrl: `https://hymnary.org${match[4]}`,
         hymnaryUrl: `https://hymnary.org/hymn/ELHL1918/${number}`,
         href: `/elhb/hymns/${slug}/`,
@@ -547,7 +577,7 @@ function buildLandingPage(sections, hymns) {
             <p class="eyebrow">Attribution</p>
             <h2>Original ELHB texts, hosted with source attribution</h2>
             <p>The original Evangelical Lutheran Hymn-Book material is public domain. The revised and adapted files used here are attributed to <a class="text-link" href="https://acollectionofprayers.com/tag/evangelical-lutheran-hymn-book/">A Collection of Prayers</a>, whose site licenses modified or adapted prayers under <a class="text-link" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> and requests the attribution: “Prayer from www.acollectionofprayers.com. Used with permission.”</p>
-            <p>The hymn texts are organized from Hymnary’s ELHB index pages and corrected with public-domain ELHB text where needed so the 1918 hymn book can be searched locally by number, title, author, and text.</p>
+            <p>The hymn texts are organized from Hymnary’s ELHB index pages and ELHL1918 instance pages so the 1918 hymn book can be searched locally by number, title, author, and text.</p>
           </div>
         </div>
       </section>
@@ -581,7 +611,7 @@ function buildLandingPage(sections, hymns) {
           ${sectionCards}
           <a class="library-card" href="/elhb/hymns/">
             <h3>Hymns 1-594</h3>
-            <p>Browse all 594 hymn entries with number, title, full hosted text, author information, and source links.</p>
+            <p>Browse all 594 hymn entries with number, title, hosted ELHB text, author information, and source links.</p>
           </a>
         </div>
       </section>`,
@@ -643,7 +673,7 @@ function buildHymnIndexPage(hymns) {
           ${hymns.map((hymn) => `
             <a class="library-card" href="${hymn.href}" data-elhb-hymn-card data-elhb-title="${escapeHtml(hymn.title)}" data-elhb-author="${escapeHtml(hymn.author)}" data-elhb-number="${hymn.number}" data-elhb-text="${escapeHtml((hymn.text || "").slice(0, 500))}">
               <h3>${hymn.number}. ${escapeHtml(hymn.title)}</h3>
-              <p>${escapeHtml(hymn.author || "Hosted from public-domain ELHB and Hymnary source pages.")}</p>
+              <p>${escapeHtml(hymn.author || "Hosted from ELHL1918 instance pages.")}</p>
             </a>`).join("")}
         </div>
       </section>`,
@@ -664,7 +694,7 @@ function buildHymnPage(hymn) {
         <div class="contact-hero-copy">
           <p class="eyebrow">ELHB Hymn ${hymn.number}</p>
           <h1>${escapeHtml(hymn.title)}</h1>
-          <p>${escapeHtml(hymn.author || "Hosted hymn text with source links.")}</p>
+          <p>${escapeHtml(hymn.author || "Hosted ELHB hymn text with source links.")}</p>
           <div class="elhb-button-row">
             <a class="button button-outline" href="${hymn.hymnaryUrl}">View on Hymnary</a>
           </div>
@@ -675,7 +705,7 @@ function buildHymnPage(hymn) {
           <div class="section-heading">
             <p class="eyebrow">Hymn Text</p>
             <h2>${hymn.number}. ${escapeHtml(hymn.title)}</h2>
-            <p>Text and metadata are organized from Hymnary’s ELHB index pages and corrected with public-domain ELHB text where needed.</p>
+            <p>Text and metadata are organized from Hymnary’s ELHB index pages and ELHL1918 instance pages.</p>
           </div>
           <div class="elhb-prose">
             ${body}
