@@ -1299,11 +1299,11 @@ ${renderFaviconLinks()}
   <meta property="og:description" content="Read and search Franz Pieper's Christian Dogmatics volumes 1-3 in a mobile-friendly format on Last Christian Ministries.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.lastchristian.com/pieper">
-  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/franz-pieper-1923.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Pieper's Christian Dogmatics | Last Christian Ministries">
   <meta name="twitter:description" content="Read and search Franz Pieper's Christian Dogmatics volumes 1-3 in a mobile-friendly format on Last Christian Ministries.">
-  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/franz-pieper-1923.jpg">
   <link rel="canonical" href="https://www.lastchristian.com/pieper">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
@@ -1341,6 +1341,9 @@ ${renderFaviconLinks()}
           <p>Read Franz Pieper's public-domain English translation of <em>Christian Dogmatics</em>, volumes 1 through 3, in a searchable format styled to match the rest of Last Christian Ministries.</p>
           <p class="luther-source-note">Source texts taken from the public-domain Back to Luther releases for <a class="text-link" href="${VOLUMES[0].sourcePost}" target="_blank" rel="noopener noreferrer">volume 1</a>, <a class="text-link" href="${VOLUMES[1].sourcePost}" target="_blank" rel="noopener noreferrer">volume 2</a>, and <a class="text-link" href="${VOLUMES[2].sourcePost}" target="_blank" rel="noopener noreferrer">volume 3</a>.</p>
         </div>
+        <figure class="library-feature-image-luther library-feature-image-pieper">
+          <img src="/assets/images/franz-pieper-1923.jpg" alt="Portrait of Franz Pieper">
+        </figure>
       </section>
 
       <section class="section bible-search-section">

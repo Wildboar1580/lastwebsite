@@ -2111,8 +2111,15 @@ textarea {
   text-decoration: none;
 }
 
+.luther-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(240px, 0.8fr);
+  gap: 1.5rem;
+  align-items: center;
+}
+
 .luther-hero .contact-hero-copy {
-  max-width: 52rem;
+  max-width: none;
 }
 
 .luther-source-note {
@@ -3203,6 +3210,10 @@ textarea {
   .podcast-subscribe-links {
     flex-direction: column;
     align-items: stretch;
+  }
+
+  .luther-hero {
+    grid-template-columns: 1fr;
   }
 
   .archive-item {
