@@ -1381,6 +1381,9 @@ ${renderFaviconLinks()}
         <div class="library-grid">
           ${manifest.volumes.map((volume) => `
             <a class="library-card pieper-volume-card" href="${volume.href}">
+              <div class="library-card-media">
+                <img src="/assets/images/franz-pieper-1923.jpg" alt="" loading="lazy" decoding="async">
+              </div>
               <span class="pieper-card-meta">${escapeHtml(volume.label)}</span>
               <h3>${escapeHtml(volume.label)}</h3>
               <p>${escapeHtml(volume.title)}</p>
@@ -1416,11 +1419,11 @@ ${renderFaviconLinks()}
   <meta property="og:description" content="${escapeHtml(volume.title)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.lastchristian.com${volume.href}">
-  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/franz-pieper-1923.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(volume.label)} | Pieper Library">
   <meta name="twitter:description" content="${escapeHtml(volume.title)}">
-  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/franz-pieper-1923.jpg">
   <link rel="canonical" href="https://www.lastchristian.com${volume.href}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
@@ -1458,6 +1461,9 @@ ${renderFaviconLinks()}
           <p>${escapeHtml(volume.title)}</p>
           <p class="luther-source-note">Source text from <a class="text-link" href="${volume.sourcePost}" target="_blank" rel="noopener noreferrer">Back to Luther</a>. Archive source: <a class="text-link" href="${volume.pdfSourceUrl}" target="_blank" rel="noopener noreferrer">open source file</a>.</p>
         </div>
+        <figure class="library-feature-image-luther library-feature-image-pieper">
+          <img src="/assets/images/franz-pieper-1923.jpg" alt="Portrait of Franz Pieper">
+        </figure>
       </section>
 
       <section class="section luther-volume-section">

@@ -840,11 +840,11 @@ ${renderFaviconLinks()}
   <meta property="og:description" content="${escapeHtml(volume.title)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${canonicalUrl}">
-  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/martin-luther-junker-jorg-cropped.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(volume.label)} | Luther Library">
   <meta name="twitter:description" content="${escapeHtml(volume.title)}">
-  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/martin-luther-junker-jorg-cropped.jpg">
   <link rel="canonical" href="${canonicalUrl}">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
@@ -882,6 +882,9 @@ ${renderFaviconLinks()}
           <p>${escapeHtml(volume.title)}</p>
           <p class="luther-source-note">Source text used with permission from <a class="text-link" href="${SOURCE_POST}" target="_blank" rel="noopener noreferrer">Back to Luther</a>.</p>
         </div>
+        <figure class="library-feature-image-luther">
+          <img src="/assets/images/martin-luther-junker-jorg-cropped.jpg" alt="Portrait of Martin Luther">
+        </figure>
       </section>
 
       <section class="section luther-volume-section">
@@ -1017,6 +1020,9 @@ ${renderFaviconLinks()}
         <div class="library-grid">
           ${manifest.volumes.map((volume) => `
             <a class="library-card" href="${volume.href}">
+              <div class="library-card-media">
+                <img src="/assets/images/martin-luther-junker-jorg-cropped.jpg" alt="" loading="lazy" decoding="async">
+              </div>
               <h3>${escapeHtml(volume.label)}</h3>
               <p>${escapeHtml(volume.title)}</p>
             </a>

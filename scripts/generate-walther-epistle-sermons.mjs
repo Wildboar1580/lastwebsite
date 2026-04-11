@@ -449,22 +449,6 @@ function renderEpistlesHub(sermons) {
 
       <section class="section library-section">
         <div class="section-heading">
-          <p class="eyebrow">Start Reading</p>
-          <h2>Move through the epistle sequence</h2>
-          <p>Begin anywhere, but the sequence opens with Advent and carries across the church year into Trinity and Reformation observances.</p>
-        </div>
-        <div class="library-grid walther-lecture-grid">
-          ${firstEntries.map((entry) => `
-          <a class="library-card walther-lecture-card" href="/walther/sermons/epistle-sermons/${entry.slug}/">
-            <p class="walther-lecture-kicker">${escapeHtml(entry.collectionTitle)}</p>
-            <h3>${escapeHtml(entry.title)}</h3>
-            <p>${escapeHtml(entry.summary)}</p>
-          </a>`).join("\n")}
-        </div>
-      </section>
-
-      <section class="section library-section">
-        <div class="section-heading">
           <p class="eyebrow">Browse All</p>
           <h2>All epistle sermons</h2>
           <p>Open the full sequence below to move sermon by sermon through the collection.</p>
