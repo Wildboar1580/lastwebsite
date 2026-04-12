@@ -74,6 +74,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  flex-wrap: wrap;
   padding: 0.9rem 1.1rem;
   margin-top: 0.75rem;
   background: rgba(9, 9, 9, 0.88);
@@ -91,7 +92,8 @@ body:not(.campaign-page) .site-shell > main {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  min-width: 0;
+  flex: 0 0 auto;
+  min-width: max-content;
 }
 
 .brand-mark {
@@ -119,10 +121,19 @@ body:not(.campaign-page) .site-shell > main {
 .site-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex: 1 1 420px;
+  min-width: 0;
+  flex-wrap: wrap;
   gap: 1.2rem;
+  row-gap: 0.45rem;
   font-family: "Inter", Arial, sans-serif;
   font-size: 0.86rem;
   color: var(--text-soft);
+}
+
+.site-header > .button {
+  flex: 0 0 auto;
 }
 
 .site-nav a:hover,
@@ -803,6 +814,21 @@ body:not(.campaign-page) .hero {
 
 .contact-hero {
   padding: 2.25rem 0 1rem;
+}
+
+@media (min-width: 981px) {
+  .site-shell > main {
+    padding-top: 0.5rem;
+  }
+
+  .hero {
+    margin-top: 1.85rem;
+    padding-top: 8.1rem;
+  }
+
+  .contact-hero {
+    padding-top: 3.4rem;
+  }
 }
 
 .contact-hero-copy {
