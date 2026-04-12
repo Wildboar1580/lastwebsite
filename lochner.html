@@ -83,6 +83,20 @@
         </div>
       </section>
 
+      <section class="section bible-search-section">
+        <div class="section-heading">
+          <p class="eyebrow">Search Lochner</p>
+          <h2>Search the full Lochner text</h2>
+          <p>Search chapter titles and text across the local edition of <em>Festivals and Customs in the Lutheran and Catholic Church</em>.</p>
+        </div>
+        <div class="bible-search-shell">
+          <label class="sr-only" for="lochner-search">Search Friedrich Lochner</label>
+          <input id="lochner-search" class="podcast-search" type="search" placeholder="Search Lochner by chapter or phrase" data-lochner-search>
+          <p class="pieper-search-status" data-lochner-search-status>Search 15 local Lochner chapters by title or text.</p>
+          <div class="bible-search-results" data-lochner-search-results></div>
+        </div>
+      </section>
+
       <section class="section library-section">
         <div class="section-heading">
           <p class="eyebrow">Chapters</p>
@@ -197,5 +211,6 @@
     </footer>
   </div>
   
+  <script type="module" src="/assets/lochner.js"></script>
 </body>
 </html>

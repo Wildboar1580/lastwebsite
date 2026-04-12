@@ -84,10 +84,6 @@ textarea {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
 }
 
-body:not(.campaign-page) .site-shell > main {
-  padding-top: 0.85rem;
-}
-
 .brand {
   display: flex;
   align-items: center;
@@ -207,11 +203,6 @@ body:not(.campaign-page) .site-shell > main {
   text-align: center;
   overflow: hidden;
   border-bottom: 1px solid var(--line-soft);
-}
-
-body:not(.campaign-page) .hero {
-  margin-top: 1.5rem;
-  padding-top: 7rem;
 }
 
 .hero::before {
@@ -814,21 +805,6 @@ body:not(.campaign-page) .hero {
 
 .contact-hero {
   padding: 2.25rem 0 1rem;
-}
-
-@media (min-width: 981px) {
-  .site-shell > main {
-    padding-top: 0.5rem;
-  }
-
-  .hero {
-    margin-top: 1.85rem;
-    padding-top: 8.1rem;
-  }
-
-  .contact-hero {
-    padding-top: 3.4rem;
-  }
 }
 
 .contact-hero-copy {

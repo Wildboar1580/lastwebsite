@@ -5,6 +5,7 @@ import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 const root = process.cwd();
 const sourcePath = path.join(root, "tmp", "lochner-festivals.txt");
 const outputDir = path.join(root, "lochner");
+const assetsDir = path.join(root, "assets", "lochner");
 const canonicalBase = "https://www.lastchristian.com";
 
 const CHAPTERS = [
@@ -217,6 +218,12 @@ function paragraphsToHtml(text = "") {
     .join("\n");
 }
 
+function buildSearchText(chapter) {
+  return String(chapter.body || "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function extractChapters() {
   const source = cleanSourceText(readFile(sourcePath));
   const contentsIndex = source.indexOf("Content.");
@@ -268,6 +275,8 @@ function buildLandingPage(chapters) {
     title: "Friedrich Lochner's Festivals and Customs",
     description: "Read Friedrich Lochner's Festivals and Customs in the Lutheran and Catholic Church chapter by chapter on Last Christian Ministries.",
     canonicalPath: "/lochner/",
+    script: `
+  <script type="module" src="/assets/lochner.js"></script>`,
     content: `
       <section class="contact-hero luther-hero">
         <div class="contact-hero-copy">
@@ -290,6 +299,20 @@ function buildLandingPage(chapters) {
             <p>That background matters for this little book. Lochner was not writing as a detached antiquarian. He wrote as a confessional Lutheran pastor who cared about how doctrine, worship, ceremonies, and churchly customs fit together. His significance in American Lutheranism lies partly in that combination: he helped shape pastors and teachers, and he argued that authentic Lutheranism should keep its liturgical and ceremonial inheritance in consciously evangelical form.</p>
             <p>In <em>Festivals and Customs in the Lutheran and Catholic Church</em>, Lochner contrasts Roman usages with Lutheran practice in a way that is direct, catechetical, and polemical. It is a helpful window into how older confessional Lutherans explained the church year, the sacraments, and ceremonial life to ordinary laypeople.</p>
           </div>
+        </div>
+      </section>
+
+      <section class="section bible-search-section">
+        <div class="section-heading">
+          <p class="eyebrow">Search Lochner</p>
+          <h2>Search the full Lochner text</h2>
+          <p>Search chapter titles and text across the local edition of <em>Festivals and Customs in the Lutheran and Catholic Church</em>.</p>
+        </div>
+        <div class="bible-search-shell">
+          <label class="sr-only" for="lochner-search">Search Friedrich Lochner</label>
+          <input id="lochner-search" class="podcast-search" type="search" placeholder="Search Lochner by chapter or phrase" data-lochner-search>
+          <p class="pieper-search-status" data-lochner-search-status>Search ${chapters.length} local Lochner chapters by title or text.</p>
+          <div class="bible-search-results" data-lochner-search-results></div>
         </div>
       </section>
 
@@ -349,7 +372,16 @@ function buildChapterPage(chapters, index) {
 
 function main() {
   ensureDir(outputDir);
+  ensureDir(assetsDir);
   const chapters = extractChapters();
+  const searchIndex = chapters.map((chapter) => ({
+    title: chapter.title,
+    category: chapter.navTitle,
+    summary: `Open ${chapter.title} in Friedrich Lochner's Festivals and Customs in the Lutheran and Catholic Church.`,
+    url: chapter.href,
+    text: buildSearchText(chapter)
+  }));
+  fs.writeFileSync(path.join(assetsDir, "search-index.json"), JSON.stringify(searchIndex, null, 2));
   fs.writeFileSync(path.join(root, "lochner.html"), buildLandingPage(chapters));
   chapters.forEach((chapter, index) => {
     const dir = path.join(outputDir, chapter.slug);
