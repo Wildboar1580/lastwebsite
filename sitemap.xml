@@ -36,11 +36,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc></loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.lastchristian.com/concord</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -137,6 +132,11 @@
   </url>
   <url>
     <loc>https://www.lastchristian.com/brief-statement</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/graebner/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

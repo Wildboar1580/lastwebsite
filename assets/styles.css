@@ -2428,6 +2428,72 @@ textarea {
   filter: sepia(0.3) contrast(1.04);
 }
 
+.library-feature-image-graebner {
+  max-width: 280px;
+  justify-self: center;
+  background:
+    linear-gradient(180deg, rgba(239, 229, 206, 0.94), rgba(206, 182, 145, 0.94)),
+    var(--panel);
+}
+
+.library-feature-image-graebner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 295 / 395;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(0.34) contrast(1.05);
+}
+
+.graebner-title-panel {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.4rem 2rem;
+  border: 1px solid rgba(120, 80, 32, 0.22);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(248, 242, 229, 0.98), rgba(235, 223, 197, 0.98)),
+    var(--panel);
+  box-shadow: 0 24px 60px rgba(35, 24, 14, 0.12);
+  text-align: center;
+}
+
+.graebner-title-panel h2 {
+  margin: 0.35rem 0 0;
+}
+
+.graebner-title-byline {
+  margin: 1rem 0 0;
+  font-size: 1.02rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.graebner-contents-list {
+  columns: 2;
+  column-gap: 2rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.graebner-contents-list li {
+  break-inside: avoid;
+  margin: 0 0 0.8rem;
+}
+
+.graebner-contents-link {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.graebner-contents-link:hover,
+.graebner-contents-link:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 .brief-statement-graphic {
   position: relative;
   min-height: 350px;
@@ -3661,5 +3727,9 @@ textarea {
 
   .pieper-topic-grid {
     grid-template-columns: 1fr;
+  }
+
+  .graebner-contents-list {
+    columns: 1;
   }
 }
