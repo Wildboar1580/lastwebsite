@@ -56,6 +56,8 @@ function stripTags(html = "") {
 
 function sanitizeBodyHtml(html = "") {
   return String(html)
+    .replace(/<br\s*\/?>\s*<br\s*\/?>\s*Please read our response to this\s*<a\b[^>]*>Frequently Asked Question<\/a>\.\s*/gi, "")
+    .replace(/Please read our response to this\s*<a\b[^>]*>Frequently Asked Question<\/a>\.\s*/gi, "")
     .replace(/<ol([^>]*)>/i, (_, attrs) => {
       const startMatch = attrs.match(/start="(\d+)"/i);
       return `<ol class="brief-statement-list"${startMatch ? ` start="${startMatch[1]}"` : ""}>`;
