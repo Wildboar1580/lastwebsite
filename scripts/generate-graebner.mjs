@@ -309,17 +309,6 @@ ${buildAboutHtml()}
         </div>
       </section>
 
-      <section class="section library-section">
-        <div class="section-heading">
-          <p class="eyebrow">Front Matter</p>
-          <h2>Start with the title page, author note, or preface</h2>
-          <p>These opening pages give the basic framing for the work before the numbered doctrinal chapters begin.</p>
-        </div>
-        <div class="library-grid">
-${frontCards}
-        </div>
-      </section>
-
       <section class="section">
         <div class="section-heading">
           <p class="eyebrow">Contents</p>

@@ -391,17 +391,6 @@ ${significanceHtml()}
         </div>
       </section>
 
-      <section class="section library-section">
-        <div class="section-heading">
-          <p class="eyebrow">Start Reading</p>
-          <h2>Open Schmid from the beginning</h2>
-          <p>The opening pages, introduction, and first doctrinal chapters are all locally hosted and linked in sequence.</p>
-        </div>
-        <div class="library-grid">
-${landingCards(entries)}
-        </div>
-      </section>
-
       <section class="section">
         <div class="section-heading">
           <p class="eyebrow">Contents</p>
