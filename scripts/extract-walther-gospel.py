@@ -82,6 +82,30 @@ def normalize_line(line: str) -> str:
     return re.sub(r"\s+", " ", line.replace("\xad", "")).strip()
 
 
+def clean_ocr_text(text: str) -> str:
+    replacements = {
+        "Lord Jesusl": "Lord Jesus!",
+        "Dear friends in Christ Jesusl": "Dear friends in Christ Jesus!",
+        "my dear hMtsra": "my dear hearers",
+        "Pentecoat": "Pentecost",
+        "guarrantee": "guarantee",
+        "exultationI": "exultation!",
+        "0 Saviorl": "O Savior!",
+        "13 a twofold one": "is a twofold one",
+        "sunDfiY": "Sunday",
+        "i5t": "1st",
+        "l£th": "12th",
+        "LŁTH": "12TH",
+    }
+    for source, target in replacements.items():
+        text = text.replace(source, target)
+    text = re.sub(r"\b([0-9]{1,2})\s+th\b", r"\1th", text, flags=re.IGNORECASE)
+    text = re.sub(r"\b([0-9]{1,2})\s+st\b", r"\1st", text, flags=re.IGNORECASE)
+    text = re.sub(r"\b([0-9]{1,2})\s+nd\b", r"\1nd", text, flags=re.IGNORECASE)
+    text = re.sub(r"\b([0-9]{1,2})\s+rd\b", r"\1rd", text, flags=re.IGNORECASE)
+    return text
+
+
 def occasion_titlecase(title: str) -> str:
     title = normalize_line(title)
     title = re.sub(r"^\d+\s+", "", title)
@@ -197,18 +221,28 @@ def page_to_blocks(page_text: str, title: str) -> tuple[list[dict[str, str]], st
         if not buffer:
             return
         paragraph = " ".join(buffer).strip()
+        paragraph = clean_ocr_text(paragraph)
+        paragraph = re.sub(r"^\d+(?:\s+\d+){1,3}\s+\d+(?:st|nd|rd|th)\s+", "", paragraph, flags=re.IGNORECASE)
+        paragraph = re.sub(r"^\d+\s+\d+(?:st|nd|rd|th)\b\s*", "", paragraph, flags=re.IGNORECASE)
+        paragraph = re.sub(r"^\d+(?:st|nd|rd|th)\s+(Sunday|Christmas|Epiphany|Lent|Trinity)\b[^A-Z]+", "", paragraph, flags=re.IGNORECASE)
+        paragraph = re.sub(r"^(?:[1-9][0-9]{0,2}\s+)?(?:1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th|11th|12th|13th|14th|15th|16th|17th|18th|19th|20th|21st|22nd|23rd|24th|25th)\s+Sunday.*?(?=(?:Lord|Dear|The text|In |From |My |God |Oh ))", "", paragraph, flags=re.IGNORECASE)
         paragraph = re.sub(r"\s+([,.;:!?])", r"\1", paragraph)
         paragraph = re.sub(r"\(\s+", "(", paragraph)
         paragraph = re.sub(r"\s+\)", ")", paragraph)
+        paragraph = re.sub(r"\s{2,}", " ", paragraph).strip()
         if paragraph:
             blocks.append({"type": "p", "text": paragraph})
             plain_parts.append(paragraph)
         buffer.clear()
 
     for line in lines:
+        line = clean_ocr_text(line)
         if should_skip_line(line, title):
             continue
-        if BOOK_PATTERN.search(line) and looks_like_occasion(line) and len(line) < 110:
+        if BOOK_PATTERN.search(line) and (
+            looks_like_occasion(line)
+            or re.search(r"\b(?:sun|christmas|epiphany|lent|trinity|pentecost|easter|advent)\b", line, re.IGNORECASE)
+        ) and len(line) < 140:
             continue
         if looks_like_new_sermon_start(line) and occasion_titlecase(line) != title:
             flush_paragraph()
