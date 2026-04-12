@@ -86,19 +86,39 @@ def clean_ocr_text(text: str) -> str:
     replacements = {
         "Lord Jesusl": "Lord Jesus!",
         "Dear friends in Christ Jesusl": "Dear friends in Christ Jesus!",
+        "Dear friends in Christ Jesus.": "Dear friends in Christ Jesus!",
         "my dear hMtsra": "my dear hearers",
         "Pentecoat": "Pentecost",
         "guarrantee": "guarantee",
         "exultationI": "exultation!",
         "0 Saviorl": "O Savior!",
+        "O Saviorl": "O Savior!",
         "13 a twofold one": "is a twofold one",
         "sunDfiY": "Sunday",
         "i5t": "1st",
         "l£th": "12th",
         "LŁTH": "12TH",
+        "God'grant": "God grant",
+        "3hows": "shows",
+        "Christ ads": "Christ adds",
+        "to-, day": "today",
+        "h i g h e s t": "highest",
+        "com- forting": "comforting",
+        "ho salvation": "no salvation",
+        "pretence": "pretense",
     }
     for source, target in replacements.items():
         text = text.replace(source, target)
+    text = text.replace(
+        "Shall we once again ask you not to forsake your Church in the we want this? You come to her without our, prayer, for you have promised to come; heaven and earth would sooner crumble before you could break your word and let your Church, which is founded upon you, be overpowered. You are with her, she will therefore stand; you will help her and that right early. give us grace, so that we may open our heart when you come.",
+        "Shall we once again ask you not to forsake your Church in the new year but in grace return to her and preserve and protect her? Why do we want this? You come to her without our prayer, for you have promised to come; heaven and earth would sooner crumble before you could break your word and let your Church, which is founded upon you, be overpowered. You are with her, she will therefore stand; you will help her and that right early. Lord, that is why we beseech you to come also to us in the new year and give us grace, so that we may open our heart when you come."
+    )
+    text = text.replace(
+        "We know that we have well deserved that you would pass us by in the Yet, 0 Savior of all men and also our Saviorl it is only because you interceded that we still live; it is only because you interceded that we are not yet snatched away but are given a period of grace; oh, make this also a part of your grace, and come again to us in this us so that, when the voice of midnight finally calls us to the wedding feast, we may be prepared to follow you, our Bridegroom, with lamps burning, clothed in our wedding garments.",
+        "We know that we have well deserved that you would pass us by in the new year. Yet, O Savior of all men and also our Savior, it is only because you interceded that we still live; it is only because you interceded that we are not yet snatched away but are given a period of grace; oh, make this also a part of your grace, and come again to us in this new year and complete your work in us so that, when the voice of midnight finally calls us to the wedding feast, we may be prepared to follow you, our Bridegroom, with lamps burning, clothed in our wedding garments."
+    )
+    text = text.replace("Peter says he must be saved through Christ. or all his efforts are in vain;", "Peter says he must be saved through Christ, or all his efforts are in vain;")
+    text = text.replace("Amen. 1 9th The grace of our Lord Jesus Christ", "Amen.")
     text = re.sub(r"\b([0-9]{1,2})\s+th\b", r"\1th", text, flags=re.IGNORECASE)
     text = re.sub(r"\b([0-9]{1,2})\s+st\b", r"\1st", text, flags=re.IGNORECASE)
     text = re.sub(r"\b([0-9]{1,2})\s+nd\b", r"\1nd", text, flags=re.IGNORECASE)
@@ -160,6 +180,7 @@ def looks_like_new_sermon_start(line: str) -> bool:
         r"^\d+(?:st|nd|rd|th).*christmas",
         r"^(septuagesima|sexagesima|quinquegesima)",
         r"^(palm sunday|maundy thursday|good friday|easter sunday|pentecost|trinity sunday|sunday after ascension)",
+        r"^\d+\s+\d+(?:st|nd|rd|th)\b",
     ]
     return any(re.search(pattern, lower) for pattern in patterns)
 
