@@ -2335,6 +2335,24 @@ textarea {
   filter: sepia(0.18);
 }
 
+.library-feature-image-lochner {
+  max-width: 320px;
+  justify-self: center;
+  background:
+    linear-gradient(180deg, rgba(245, 234, 212, 0.9), rgba(217, 196, 161, 0.92)),
+    var(--panel);
+}
+
+.library-feature-image-lochner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 560 / 771;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(0.3) contrast(1.04);
+}
+
 .library-feature-copy {
   max-width: 48rem;
 }
