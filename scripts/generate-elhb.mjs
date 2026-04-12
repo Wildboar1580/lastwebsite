@@ -505,7 +505,7 @@ function parseHymns() {
   return hymns.sort((a, b) => a.number - b.number);
 }
 
-function pageShell({ title, description, canonicalPath, bodyClass = "campaign-page contact-page", content, script = "" }) {
+function pageShell({ title, description, canonicalPath, bodyClass = "campaign-page contact-page", content, script = "", extraHead = "" }) {
   const url = `https://www.lastchristian.com${canonicalPath}`;
   return `<!DOCTYPE html>
 <html lang="en">
@@ -530,6 +530,7 @@ function pageShell({ title, description, canonicalPath, bodyClass = "campaign-pa
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/elhb.jpg">
   <link rel="canonical" href="${url}">
+  ${extraHead}
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
 <body class="${bodyClass} elhb-page">
@@ -545,6 +546,21 @@ ${renderSiteFooter()}
 </html>`;
 }
 
+function buildPrevNextNav(items, index, { backHref, backLabel }) {
+  const previous = index > 0 ? items[index - 1] : null;
+  const next = index < items.length - 1 ? items[index + 1] : null;
+  return `
+      <nav class="elhb-doc-nav" aria-label="Page navigation">
+        ${previous
+          ? `<a class="elhb-nav-button" href="${previous.href}">Previous: ${escapeHtml(previous.navTitle || previous.title)}</a>`
+          : `<span class="elhb-nav-spacer" aria-hidden="true"></span>`}
+        <a class="elhb-nav-button" href="${backHref}">${escapeHtml(backLabel)}</a>
+        ${next
+          ? `<a class="elhb-nav-button" href="${next.href}">Next: ${escapeHtml(next.navTitle || next.title)}</a>`
+          : `<span class="elhb-nav-spacer" aria-hidden="true"></span>`}
+      </nav>`;
+}
+
 function buildLandingPage(sections, hymns) {
   const sectionCards = sections.map((section) => `
     <a class="library-card" href="/elhb/${section.slug}/">
@@ -554,7 +570,7 @@ function buildLandingPage(sections, hymns) {
   return pageShell({
     title: "Evangelical Lutheran Hymn-Book",
     description: "Read and search the Evangelical Lutheran Hymn-Book, including liturgical sections, updated revisions, and all 594 hymn entries.",
-    canonicalPath: "/elhb",
+    canonicalPath: "/elhb/",
     content: `
       <section class="contact-hero elhb-hero">
         <div class="contact-hero-copy">
@@ -574,6 +590,10 @@ function buildLandingPage(sections, hymns) {
       <section class="section about-section">
         <div class="about-grid library-feature-grid">
           <div class="library-feature-copy">
+            <p class="eyebrow">Historical Significance</p>
+            <h2>The old Missouri Synod's first official English hymnal</h2>
+            <p>The Evangelical Lutheran Hymn-Book was the first official English-language hymnal of the Lutheran Church-Missouri Synod, then known as the Evangelical Lutheran Synod of Missouri, Ohio, and other States. Concordia Publishing House in St. Louis published it in 1912 for a church body moving into English while trying to retain the confessional character of old Missouri.</p>
+            <p>That makes the ELHB more than a transitional worship book. It preserves a sharper theological and polemical edge than later hymnals such as <em>The Lutheran Hymnal</em>. Its language still reflects the older Missouri Synod's habit of naming enemies directly, including lines against the Pope and the Turk, and it gives a clearer sense of the doctrinal instincts, devotional life, and churchly temperament of the synod in that era.</p>
             <p class="eyebrow">Attribution</p>
             <h2>Original ELHB texts, hosted with source attribution</h2>
             <p>The original Evangelical Lutheran Hymn-Book material is public domain. The revised and adapted files used here are attributed to <a class="text-link" href="https://acollectionofprayers.com/tag/evangelical-lutheran-hymn-book/">A Collection of Prayers</a>, whose site licenses modified or adapted prayers under <a class="text-link" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a> and requests the attribution: “Prayer from www.acollectionofprayers.com. Used with permission.”</p>
@@ -619,11 +639,21 @@ function buildLandingPage(sections, hymns) {
   });
 }
 
-function buildSectionPage(section) {
+function buildSectionPage(section, sections, index) {
+  const nav = buildPrevNextNav(
+    sections.map((item) => ({ ...item, href: `/elhb/${item.slug}/`, navTitle: item.title })),
+    index,
+    { backHref: "/elhb/", backLabel: "Back to ELHB library" }
+  );
+  const prevSection = index > 0 ? sections[index - 1] : null;
+  const nextSection = index < sections.length - 1 ? sections[index + 1] : null;
   return pageShell({
     title: section.title,
     description: section.description,
     canonicalPath: `/elhb/${section.slug}/`,
+    extraHead: `
+  ${prevSection ? `<link rel="prev" href="https://www.lastchristian.com/elhb/${prevSection.slug}/">` : ""}
+  ${nextSection ? `<link rel="next" href="https://www.lastchristian.com/elhb/${nextSection.slug}/">` : ""}`,
     content: `
       <section class="contact-hero">
         <div class="contact-hero-copy">
@@ -632,6 +662,9 @@ function buildSectionPage(section) {
           <p>${escapeHtml(section.description)}</p>
           <p><a class="text-link" href="/elhb">Return to the ELHB library</a></p>
         </div>
+      </section>
+      <section class="section elhb-nav-section">
+        ${nav}
       </section>
       <section class="section library-section">
         <div class="library-grid elhb-resource-grid">
@@ -645,6 +678,9 @@ function buildSectionPage(section) {
           <p>Original ELHB content is public domain. Updated versions are attributed to A Collection of Prayers under the source site’s CC BY-NC-ND 4.0 licensing notice.</p>
         </div>
         ${renderTextBlocks(section)}
+      </section>
+      <section class="section elhb-nav-section">
+        ${nav}
       </section>`
   });
 }
@@ -681,14 +717,24 @@ function buildHymnIndexPage(hymns) {
   });
 }
 
-function buildHymnPage(hymn) {
+function buildHymnPage(hymn, hymns, index) {
   const body = hymn.text
     ? hymn.text.split(/\n{2,}/).map((stanza) => `<div class="elhb-hymn-stanza">${escapeHtml(stanza).replace(/\n/g, "<br>")}</div>`).join("")
     : `<p>This hymn entry is listed in the ELHB index, but no local hymn text was available from the downloaded source pages.</p>`;
+  const nav = buildPrevNextNav(
+    hymns.map((item) => ({ ...item, navTitle: `${item.number}. ${item.title}` })),
+    index,
+    { backHref: "/elhb/hymns/", backLabel: "Back to hymn archive" }
+  );
+  const prevHymn = index > 0 ? hymns[index - 1] : null;
+  const nextHymn = index < hymns.length - 1 ? hymns[index + 1] : null;
   return pageShell({
     title: `${hymn.number}. ${hymn.title}`,
     description: `ELHB hymn ${hymn.number}: ${hymn.title}.`,
     canonicalPath: hymn.href.replace(/\/$/, ""),
+    extraHead: `
+  ${prevHymn ? `<link rel="prev" href="https://www.lastchristian.com${prevHymn.href}">` : ""}
+  ${nextHymn ? `<link rel="next" href="https://www.lastchristian.com${nextHymn.href}">` : ""}`,
     content: `
       <section class="contact-hero">
         <div class="contact-hero-copy">
@@ -699,6 +745,9 @@ function buildHymnPage(hymn) {
             <a class="button button-outline" href="${hymn.hymnaryUrl}">View on Hymnary</a>
           </div>
         </div>
+      </section>
+      <section class="section elhb-nav-section">
+        ${nav}
       </section>
       <section class="section">
         <div class="elhb-reading-block">
@@ -712,6 +761,9 @@ function buildHymnPage(hymn) {
             ${hymn.source ? `<p><strong>Source noted on Hymnary:</strong> ${escapeHtml(hymn.source)}</p>` : ""}
           </div>
         </div>
+      </section>
+      <section class="section elhb-nav-section">
+        ${nav}
       </section>`
   });
 }
@@ -742,10 +794,10 @@ function main() {
     ]
   };
 
-  for (const section of sections) {
+  sections.forEach((section, index) => {
     const sectionDir = path.join(outputDir, section.slug);
     ensureDir(sectionDir);
-    fs.writeFileSync(path.join(sectionDir, "index.html"), buildSectionPage(section));
+    fs.writeFileSync(path.join(sectionDir, "index.html"), buildSectionPage(section, sections, index));
     manifest.pages.push(`https://www.lastchristian.com/elhb/${section.slug}/`);
     searchIndex.push({
       kind: "section",
@@ -754,15 +806,15 @@ function main() {
       url: `/elhb/${section.slug}/`,
       text: `${section.description} ${section.resources.map((resource) => `${resource.label} ${resource.text}`).join(" ")}`
     });
-  }
+  });
 
   const hymnsDir = path.join(outputDir, "hymns");
   ensureDir(hymnsDir);
   fs.writeFileSync(path.join(hymnsDir, "index.html"), buildHymnIndexPage(hymns));
-  for (const hymn of hymns) {
+  hymns.forEach((hymn, index) => {
     const hymnDir = path.join(hymnsDir, hymn.slug);
     ensureDir(hymnDir);
-    fs.writeFileSync(path.join(hymnDir, "index.html"), buildHymnPage(hymn));
+    fs.writeFileSync(path.join(hymnDir, "index.html"), buildHymnPage(hymn, hymns, index));
     manifest.pages.push(`https://www.lastchristian.com${hymn.href}`);
     searchIndex.push({
       kind: "hymn",
@@ -771,7 +823,7 @@ function main() {
       url: hymn.href,
       text: `${hymn.number} ${hymn.title} ${hymn.author} ${hymn.text}`
     });
-  }
+  });
 
   fs.writeFileSync(path.join(root, "elhb.html"), buildLandingPage(sections, hymns));
   fs.writeFileSync(path.join(assetsDir, "search-index.json"), JSON.stringify(searchIndex));

@@ -1960,6 +1960,49 @@ textarea {
   gap: 0.75rem;
 }
 
+.elhb-doc-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  align-items: stretch;
+}
+
+.elhb-nav-button,
+.elhb-nav-spacer {
+  min-height: 100%;
+}
+
+.elhb-nav-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(213, 166, 41, 0.22);
+  background: linear-gradient(180deg, rgba(37, 12, 13, 0.95), rgba(24, 8, 9, 0.98));
+  color: var(--paper);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.elhb-nav-button:hover,
+.elhb-nav-button:focus-visible {
+  border-color: rgba(255, 216, 121, 0.42);
+  background: linear-gradient(180deg, rgba(52, 16, 18, 0.95), rgba(31, 9, 11, 0.98));
+}
+
+.elhb-nav-spacer {
+  display: block;
+}
+
+.elhb-nav-section {
+  padding-top: 0;
+}
+
 .elhb-filter-row {
   margin: 1rem 0 0.8rem;
 }
