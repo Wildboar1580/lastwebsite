@@ -2494,6 +2494,118 @@ textarea {
   text-decoration: underline;
 }
 
+.schmid-graphic {
+  position: relative;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+}
+
+.schmid-sheet {
+  position: absolute;
+  width: min(100%, 290px);
+  aspect-ratio: 4 / 5.4;
+  border-radius: 28px;
+  border: 1px solid rgba(111, 77, 41, 0.22);
+  box-shadow: 0 22px 55px rgba(24, 18, 12, 0.16);
+}
+
+.schmid-sheet-back {
+  transform: translate(16px, 18px) rotate(6deg);
+  background:
+    linear-gradient(180deg, rgba(211, 190, 153, 0.92), rgba(170, 139, 96, 0.94)),
+    var(--panel);
+}
+
+.schmid-sheet-front {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding: 1.5rem 1.45rem 1.9rem;
+  background:
+    linear-gradient(180deg, rgba(247, 240, 225, 0.98), rgba(229, 214, 182, 0.98)),
+    var(--panel);
+}
+
+.schmid-ribbon {
+  display: inline-flex;
+  align-self: start;
+  justify-self: start;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(123, 27, 27, 0.12);
+  color: #7b1b1b;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.schmid-name {
+  display: block;
+  margin-top: 0.3rem;
+  color: #7f5a2b;
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.schmid-title {
+  display: block;
+  max-width: 10ch;
+  color: var(--text);
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.05;
+}
+
+.schmid-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(127, 90, 43, 0.55), transparent);
+}
+
+.schmid-line {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(127, 90, 43, 0.14);
+}
+
+.schmid-line-1 {
+  width: 92%;
+}
+
+.schmid-line-2 {
+  width: 80%;
+}
+
+.schmid-line-3 {
+  width: 68%;
+}
+
+.schmid-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+}
+
+.schmid-prose td,
+.schmid-prose th {
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid rgba(127, 90, 43, 0.14);
+  text-align: left;
+  vertical-align: top;
+}
+
+.schmid-prose h1,
+.schmid-prose h2,
+.schmid-prose h3,
+.schmid-prose h4 {
+  text-wrap: balance;
+}
+
 .brief-statement-graphic {
   position: relative;
   min-height: 350px;
