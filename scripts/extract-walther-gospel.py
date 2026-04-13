@@ -73,6 +73,19 @@ TEXT_REPLACEMENTS: list[tuple[str, str]] = [
     ("disciples' choir", "disciples' choir"),
     ("Jesus' feet", "Jesus' feet"),
     ("valley' through", "valley through"),
+    ("not to know not to know", "not to know anything"),
+    ("sinners,made", "sinners, made"),
+    ("Christ, predicted", "Christ predicted"),
+    ("on .his", "on his"),
+    ("prophecy,and", "prophecy, and"),
+    ("incomprehensible,deep", "incomprehensible, deep"),
+    ("than,all", "than all"),
+    ("wondersufficiently", "wonder sufficiently"),
+    ("andthirsts", "and thirsts"),
+    ("good1", "good!"),
+    ("lips,no", "lips, no"),
+    ("foes,and", "foes, and"),
+    ("day: Were", "say: Were"),
 ]
 
 
@@ -100,8 +113,11 @@ def normalize_line(text: str) -> str:
     text = text.replace("\xad", "")
     text = re.sub(r"\[\s*page\s+\d+\s*\]", "", text, flags=re.IGNORECASE)
     text = re.sub(r"(?<=\w)-\s+(?=\w)", "", text)
+    text = re.sub(r"(?<=\d)\.(?=\d)", ",", text)
     for source, target in TEXT_REPLACEMENTS:
         text = text.replace(source, target)
+    text = re.sub(r"\bVv\.(\d+),(\d+)\b", r"Vv. \1,\2", text)
+    text = re.sub(r"\bV\.(\d+)\b", r"V. \1", text)
     text = WHITESPACE_RE.sub(" ", text)
     return text.strip()
 
