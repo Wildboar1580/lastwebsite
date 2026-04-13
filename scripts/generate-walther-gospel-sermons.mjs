@@ -14,6 +14,16 @@ function ensureDir(dirPath) {
   fs.mkdirSync(dirPath, { recursive: true });
 }
 
+function pruneObsoleteSermonDirs(entries) {
+  const expected = new Set(entries.map((entry) => entry.slug));
+  const existing = fs.readdirSync(GOSPEL_ROOT, { withFileTypes: true });
+  for (const entry of existing) {
+    if (!entry.isDirectory()) continue;
+    if (expected.has(entry.name)) continue;
+    fs.rmSync(path.join(GOSPEL_ROOT, entry.name), { recursive: true, force: true });
+  }
+}
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -331,6 +341,7 @@ function updateManifest(entries) {
 function main() {
   ensureDir(GOSPEL_ROOT);
   const entries = loadEntries();
+  pruneObsoleteSermonDirs(entries);
 
   fs.writeFileSync(path.join(SERMONS_ROOT, "index.html"), `${renderSermonsHub()}\n`);
   fs.writeFileSync(path.join(GOSPEL_ROOT, "index.html"), `${renderGospelHub(entries)}\n`);
