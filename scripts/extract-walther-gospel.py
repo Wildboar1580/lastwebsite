@@ -45,6 +45,35 @@ PARAGRAPH_RE = re.compile(r"<p\b[^>]*>(?P<body>.*?)</p>", re.IGNORECASE | re.DOT
 BLOCK_RE = re.compile(r"<(?P<tag>p|h[1-6])\b[^>]*>(?P<body>.*?)</(?P=tag)>", re.IGNORECASE | re.DOTALL)
 TAG_RE = re.compile(r"<[^>]+>")
 WHITESPACE_RE = re.compile(r"\s+")
+TEXT_REPLACEMENTS: list[tuple[str, str]] = [
+    ("our, prayer", "our prayer"),
+    ("ho salvation", "no salvation"),
+    ("as. the only true", "as the only true"),
+    ("it. is found", "it is found"),
+    ("that,no matter", "that, no matter"),
+    ("met. Christ;", "met Christ;"),
+    ("Cod's", "God's"),
+    ("honor .rather", "honor rather"),
+    ("honor.rather", "honor rather"),
+    ("cornel your King", "come, your King"),
+    ("Christ' entry", "Christ's entry"),
+    ("Behold you King comes", "Behold your King comes"),
+    ("blessed Is he", "blessed is he"),
+    ("high- est", "highest"),
+    ("to-, day", "today"),
+    ("Lord' s", "Lord's"),
+    ("come'to him", "come to him"),
+    ("Take'a look", "Take a look"),
+    ("and'full", "and full"),
+    ("Our sins'", "our sins"),
+    ("behold', again", "behold, again"),
+    ("valley' through", "valley through"),
+    ("far be it1", "far be it!"),
+    ("can not", "cannot"),
+    ("disciples' choir", "disciples' choir"),
+    ("Jesus' feet", "Jesus' feet"),
+    ("valley' through", "valley through"),
+]
 
 
 def fetch_html(url: str) -> str:
@@ -70,6 +99,9 @@ def normalize_line(text: str) -> str:
     text = text.replace("\u00b7", "")
     text = text.replace("\xad", "")
     text = re.sub(r"\[\s*page\s+\d+\s*\]", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"(?<=\w)-\s+(?=\w)", "", text)
+    for source, target in TEXT_REPLACEMENTS:
+        text = text.replace(source, target)
     text = WHITESPACE_RE.sub(" ", text)
     return text.strip()
 
