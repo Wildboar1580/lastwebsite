@@ -134,7 +134,7 @@ function renderGospelHub(entries) {
           <p class="eyebrow">Walther's Sermons</p>
           <h1>Walther's Gospel Sermons</h1>
           <p>Read Walther's preaching on the Gospel pericopes of the church year through a local sermon section built for direct reading, browsing, and sermon-by-sermon navigation.</p>
-          <p class="luther-source-note">Built from <a class="text-link" href="https://www.dropbox.com/s/0cyl8m3f8ipk2ua/Walther-Year%20of%20Grace%20Part%20I.pdf?dl=0" target="_blank" rel="noopener noreferrer">Year of Grace Part I</a> and <a class="text-link" href="https://www.dropbox.com/s/3zxz6srpzd2s84b/Walther-Year%20of%20Grace%20Part%20II.pdf?dl=0" target="_blank" rel="noopener noreferrer">Part II</a>.</p>
+          <p class="luther-source-note">Built from the published <em>Year of Grace</em> texts linked in <a class="text-link" href="https://backtoluther.blogspot.com/2015/05/walthers-sermon-book-year-of-grace-part.html" target="_blank" rel="noopener noreferrer">Back to Luther Part I</a> and <a class="text-link" href="https://backtoluther.blogspot.com/2015/05/walthers-sermon-book-year-of-grace-part_11.html" target="_blank" rel="noopener noreferrer">Part II</a>.</p>
         </div>
       </section>
 
@@ -148,7 +148,7 @@ function renderGospelHub(entries) {
           <article class="library-card walther-summary-card">
             <p class="walther-lecture-kicker">Sources</p>
             <h3>Two translated Year of Grace volumes</h3>
-            <p>These pages are built from the two published Gospel-sermon PDF volumes and keep direct attribution to the source files.</p>
+            <p>These pages are built from the cleaner published Google Doc texts linked from the two <em>Back to Luther</em> Year of Grace posts.</p>
           </article>
           <article class="library-card walther-summary-card">
             <p class="walther-lecture-kicker">Coverage</p>
