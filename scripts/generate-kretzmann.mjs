@@ -401,6 +401,89 @@ function pageDescription(text = "", fallback = "") {
   return `${clean.slice(0, 152).trimEnd()}...`;
 }
 
+function renderLibraryHome() {
+  const starterCards = `
+          <a class="library-card" href="/kretzmann/about-paul-kretzmann/">
+            <h3>About Paul E. Kretzmann</h3>
+            <p>Read a short local introduction to Kretzmann, why the commentary mattered, and how the project describes its aim.</p>
+          </a>
+          <a class="library-card" href="/kretzmann/foreword-and-publishers-note/">
+            <h3>Foreword and Publishers&#39; Note</h3>
+            <p>Open a local page built from the Kretzmann Project&#39;s foreword and publishers&#39; note with direct attribution.</p>
+          </a>`;
+
+  const volumeSections = volumes.map((volume) => {
+    const bookCards = volume.books.map((book) => `
+            <a class="library-card" href="${book.pageHref}">
+              <h3>${escapeHtml(book.title)}</h3>
+              <p>${escapeHtml(book.items.length ? `${book.items.length} local page${book.items.length === 1 ? "" : "s"} for ${book.title}.` : `Book directory page for ${book.title}.`)}</p>
+            </a>`).join("\n");
+
+    return `
+        <section class="section library-section kretzmann-volume-block">
+          <div class="section-heading">
+            <p class="eyebrow">Volume</p>
+            <h2>${escapeHtml(volume.title)}</h2>
+            <p>${escapeHtml(volume.description)} <a class="text-link" href="/kretzmann/${volume.slug}/">Open the volume directory.</a></p>
+          </div>
+          <div class="library-grid kretzmann-book-grid">
+${bookCards}
+          </div>
+        </section>`;
+  }).join("\n");
+
+  return pageShell({
+    title: "Paul E. Kretzmann's Popular Commentary",
+    description: "Browse a full local Kretzmann library with the author introduction, foreword, and every Bible book listed on one page.",
+    canonicalPath: "/kretzmann/",
+    previous: null,
+    next: { href: "/kretzmann/about-paul-kretzmann/", navTitle: "About Paul E. Kretzmann" },
+    content: `      <section class="contact-hero luther-hero">
+        <div class="contact-hero-copy">
+          <p class="eyebrow">Kretzmann Library</p>
+          <h1>The Popular Commentary of the Bible</h1>
+          <p>Browse a full local edition of Paul E. Kretzmann&#39;s four-volume commentary with source-attributed background, every Bible book listed in one place, and ordinary crawlable navigation from library to book to chapter.</p>
+          <p class="luther-source-note">Source text and directory structure adapted from <a class="text-link" href="http://kretzmannproject.org/">The Kretzmann Project</a>, which notes that the four-volume work was completed in 1924 and consists of nearly 3,000 pages.</p>
+        </div>
+      </section>
+
+      <section class="section about-section">
+        <div class="about-grid library-feature-grid">
+          <figure class="library-feature-image-luther library-feature-image-kretzmann">
+            <img src="/assets/images/paul-kretzmann-1946.jpg" alt="Portrait of Paul E. Kretzmann" width="125" height="175" loading="lazy" decoding="async">
+          </figure>
+          <div class="library-feature-copy">
+            <p class="eyebrow">Why It Matters</p>
+            <h2>A confessional commentary built for ordinary readers</h2>
+            <p>The Kretzmann Project describes <em>The Popular Commentary of the Bible</em> as a long-loved favorite among confessional Lutherans, a four-volume set that had gone out of print and was placed online so it could again be available to everyone.</p>
+            <p>That significance is worth preserving locally. According to the 1922 <em>Lutheran Witness</em> article hosted by the project, the commentary was commissioned to provide a brief but dependable exposition of the whole Bible for Sunday-school teachers and Bible students without sacrificing sound doctrine or real scholarship.</p>
+            <p>Its enduring value is that it joins pastoral clarity to old Missouri Lutheran convictions. The foreword and publishers&#39; note on the source site repeatedly stress that the work was meant to be practical, biblical, and unmistakably Lutheran in tone while still being careful with the original languages, history, and doctrinal questions.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">Start Here</p>
+          <h2>About the commentary</h2>
+          <p>Begin with the author background and the foreword, then jump straight into any book of the Bible from the same page.</p>
+        </div>
+        <div class="library-grid">
+${starterCards}
+        </div>
+      </section>
+
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">All Books</p>
+          <h2>Every book in the Kretzmann commentary</h2>
+          <p>The full commentary is grouped below by the four original volumes, with each book opening into its local overview and reading pages.</p>
+        </div>
+      </section>
+${volumeSections}`
+  });
+}
+
 function renderBookOverview(book) {
   const cards = book.items.map((item) => `
           <a class="library-card" href="${item.href}">
@@ -430,15 +513,18 @@ function renderBookOverview(book) {
       <section class="section elhb-nav-section">
 ${buildNav(previous, `/kretzmann/${book.volume.slug}/`, `Back to ${book.volume.shortLabel}`, next)}
       </section>
-      <section class="section library-section">
+      <section class="section library-section kretzmann-book-overview">
         <div class="section-heading">
           <p class="eyebrow">Pages</p>
           <h2>${escapeHtml(book.title)}</h2>
-          <p>${escapeHtml(book.items.length)} local page${book.items.length === 1 ? "" : "s"}, including introductions, chapters, and linked essays where available.</p>
+          <p>${book.items.length
+            ? `${escapeHtml(book.items.length)} local page${book.items.length === 1 ? "" : "s"}, including introductions, chapters, and linked essays where available.`
+            : `This book is listed in ${escapeHtml(book.volume.title)}, but no local chapter pages were exposed by the source directory import. The directory entry is still preserved here for browsing continuity.`}</p>
         </div>
         <div class="library-grid">
 ${cards}
         </div>
+        ${book.items.length ? "" : `<div class="section-heading"><p><a class="text-link" href="${escapeHtml(sourceUrl(book.volume.sourceHref))}">Open the source volume directory at the Kretzmann Project</a> while the local directory remains in place on this site.</p></div>`}
       </section>
       <section class="section elhb-nav-section">
 ${buildNav(previous, `/kretzmann/${book.volume.slug}/`, `Back to ${book.volume.shortLabel}`, next)}
@@ -450,7 +536,7 @@ function renderVolumePage(volume) {
   const cards = volume.books.map((book) => `
           <a class="library-card" href="${book.pageHref}">
             <h3>${escapeHtml(book.title)}</h3>
-            <p>${escapeHtml(book.items.length)} local page${book.items.length === 1 ? "" : "s"} for ${escapeHtml(book.title)}.</p>
+            <p>${escapeHtml(book.items.length ? `${book.items.length} local page${book.items.length === 1 ? "" : "s"} for ${book.title}.` : `Book directory page for ${book.title}.`)}</p>
           </a>`).join("\n");
 
   const previous = volume.previousHref ? { href: volume.previousHref, navTitle: volume.previousLabel } : null;
@@ -509,8 +595,10 @@ function renderContentPage(item, previous, next, book) {
 ${buildNav(previous, `/kretzmann/${book.slug}/`, `Back to ${book.title}`, next)}
       </section>
       <section class="section">
-        <div class="luther-reading">
+        <div class="kretzmann-reading-shell">
+          <article class="kretzmann-reading">
 ${item.renderedHtml}
+          </article>
         </div>
       </section>
       <section class="section elhb-nav-section">
@@ -538,8 +626,10 @@ function renderFootnotesPage(item, footnote, book) {
 ${buildNav({ href: item.href, navTitle: item.pageTitle }, `/kretzmann/${book.slug}/`, `Back to ${book.title}`, null)}
       </section>
       <section class="section">
-        <div class="luther-reading">
+        <div class="kretzmann-reading-shell">
+          <article class="kretzmann-reading">
 ${footnote.renderedHtml}
+          </article>
         </div>
       </section>
       <section class="section elhb-nav-section">
@@ -660,11 +750,12 @@ async function main() {
     }
   }
 
-  for (const volume of volumes) {
-    writePage(`kretzmann/${volume.slug}`, renderVolumePage(volume));
+  writePage("kretzmann", renderLibraryHome());
+
+    for (const volume of volumes) {
+      writePage(`kretzmann/${volume.slug}`, renderVolumePage(volume));
 
     for (const book of volume.books) {
-      if (!book.items.length) continue;
       writePage(`kretzmann/${book.slug}`, renderBookOverview(book));
 
       book.items.forEach((item, index) => {
