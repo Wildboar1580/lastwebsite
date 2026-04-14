@@ -2446,6 +2446,24 @@ textarea {
   filter: sepia(0.34) contrast(1.05);
 }
 
+.library-feature-image-kretzmann {
+  max-width: 220px;
+  justify-self: center;
+  background:
+    linear-gradient(180deg, rgba(239, 229, 206, 0.94), rgba(206, 182, 145, 0.94)),
+    var(--panel);
+}
+
+.library-feature-image-kretzmann img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 125 / 175;
+  object-fit: cover;
+  object-position: center top;
+  filter: sepia(0.26) contrast(1.04);
+}
+
 .graebner-title-panel {
   max-width: 720px;
   margin: 0 auto;
