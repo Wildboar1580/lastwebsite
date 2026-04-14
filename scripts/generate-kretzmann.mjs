@@ -454,10 +454,11 @@ ${bookCards}
           </figure>
           <div class="library-feature-copy">
             <p class="eyebrow">Why It Matters</p>
-            <h2>A confessional commentary built for ordinary readers</h2>
-            <p>The Kretzmann Project describes <em>The Popular Commentary of the Bible</em> as a long-loved favorite among confessional Lutherans, a four-volume set that had gone out of print and was placed online so it could again be available to everyone.</p>
-            <p>That significance is worth preserving locally. According to the 1922 <em>Lutheran Witness</em> article hosted by the project, the commentary was commissioned to provide a brief but dependable exposition of the whole Bible for Sunday-school teachers and Bible students without sacrificing sound doctrine or real scholarship.</p>
-            <p>Its enduring value is that it joins pastoral clarity to old Missouri Lutheran convictions. The foreword and publishers&#39; note on the source site repeatedly stress that the work was meant to be practical, biblical, and unmistakably Lutheran in tone while still being careful with the original languages, history, and doctrinal questions.</p>
+            <h2>Paul Kretzmann and the enduring value of the Popular Commentary</h2>
+            <p>Paul E. Kretzmann (1883–1965) was one of the most influential biblical commentators in the history of the Lutheran Church—Missouri Synod. A pastor, professor, and scholar, he is best remembered for making Scripture accessible to ordinary Christians without sacrificing doctrinal depth or confessional clarity.</p>
+            <p>His most enduring contribution is the <em>Popular Commentary of the Bible</em>, a multi-volume work covering the entire Bible. Written in clear, concise language, the <em>Popular Commentary</em> was designed for pastors, teachers, and laypeople alike. It reflects the strong commitment of the LCMS in the early 20th century to uphold the authority of Scripture, teach in harmony with the Lutheran Confessions, and equip the laity for serious engagement with God&#39;s Word.</p>
+            <p>Kretzmann&#39;s work is especially significant because it bridges the gap between academic theology and practical Christian reading. While firmly grounded in the original languages and historical context of the Bible, the <em>Popular Commentary</em> avoids unnecessary technicality, making it an enduring resource for devotional study, sermon preparation, and catechesis.</p>
+            <p>Today, Kretzmann&#39;s commentary remains a valuable witness to classic Missouri Synod theology—marked by fidelity to the Book of Concord, a high view of Scripture, and a pastoral concern to clearly proclaim Christ.</p>
           </div>
         </div>
       </section>

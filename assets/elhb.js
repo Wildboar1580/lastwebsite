@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   initElhbSearch();
-  initElhbHymnFilter();
+  initElhbHymnArchive().then(() => {
+    initElhbHymnFilter();
+  });
 });
 
 async function initElhbSearch() {
@@ -119,6 +121,50 @@ function initElhbHymnFilter() {
         ? `Showing ${visible} of ${total} hymn entries for "${input.value.trim()}".`
         : `No hymn entries matched "${input.value.trim()}".`;
   });
+}
+
+async function initElhbHymnArchive() {
+  const archive = document.querySelector("[data-elhb-hymn-archive]");
+  const status = document.querySelector("[data-elhb-hymn-status]");
+  if (!archive) return;
+
+  let searchIndex = [];
+  try {
+    searchIndex = await fetch("/assets/elhb/search-index.json").then((response) => response.json());
+  } catch {
+    archive.innerHTML = `<p class="search-empty">The ELHB hymn archive could not be loaded right now.</p>`;
+    if (status) status.textContent = "The hymn archive could not be loaded right now.";
+    return;
+  }
+
+  const hymns = searchIndex
+    .filter((entry) => entry.kind === "hymn")
+    .sort((a, b) => hymnNumber(a) - hymnNumber(b));
+
+  archive.innerHTML = hymns.map((entry) => `
+    <a class="library-card" href="${entry.url}"
+      data-elhb-hymn-card
+      data-elhb-title="${escapeHtml(cleanHymnTitle(entry.title))}"
+      data-elhb-author="${escapeHtml(entry.subtitle || "ELHB Hymn")}"
+      data-elhb-number="${escapeHtml(String(hymnNumber(entry) || ""))}"
+      data-elhb-text="${escapeHtml(entry.text || "")}">
+      <h3>${escapeHtml(entry.title || "ELHB Hymn")}</h3>
+      <p>${escapeHtml(entry.subtitle || "Open this local ELHB hymn page.")}</p>
+    </a>
+  `).join("");
+
+  if (status) {
+    status.textContent = `Browse ${hymns.length} hymn entries.`;
+  }
+}
+
+function hymnNumber(entry) {
+  const match = String(entry.title || "").match(/^(\d+)\./);
+  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER;
+}
+
+function cleanHymnTitle(title = "") {
+  return String(title).replace(/^\d+\.\s*/, "").trim();
 }
 
 function escapeHtml(text = "") {
