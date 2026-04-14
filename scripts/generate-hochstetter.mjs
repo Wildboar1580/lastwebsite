@@ -346,8 +346,9 @@ function sanitizeSectionHtml(html = "") {
       /^\^$/.test(text) ||
       /^Foreword\.?$/.test(text) ||
       /^(?:I|II|III|IV|V|VI|VII|VIII|IX|X|XI|XII|XIII)\.?$/.test(text) ||
-      /\(\d{1,3}(?:-\d{1,3})?\)/.test(text) ||
-      text.length > 95
+      /^ToC(?:-[A-Z]+)?$/i.test(text) ||
+      /^Top$/i.test(text) ||
+      /^\d+$/.test(text)
     ) {
       skipCount += 1;
       continue;
