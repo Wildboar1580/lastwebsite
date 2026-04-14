@@ -25,6 +25,7 @@ const headerHtml = `
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
         <a href="/walther">Walther</a>
+        <a href="/kretzmann">Kretzmann</a>
         <a href="/elhb">ELHB</a>
         <a href="/library">Library</a>
         <a href="/about">About Me</a>

@@ -34,6 +34,7 @@ export function renderSiteFooter({ homeHref = "/", campaignsHref = "/#campaigns"
           <a href="/easter">Easter Report</a>
           <a href="/library">Library</a>
           <a href="/walther">Walther</a>
+          <a href="/kretzmann">Kretzmann</a>
           <a href="/elhb">ELHB</a>
           <a href="/about">About Me</a>
           <a href="/kutesa">Kutesa Henry</a>
