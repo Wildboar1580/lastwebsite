@@ -3273,6 +3273,73 @@ textarea {
   margin-bottom: 0;
 }
 
+.walther-cm-content {
+  max-width: none;
+}
+
+.walther-cm-intro-grid {
+  align-items: start;
+}
+
+.walther-cm-part-block + .walther-cm-part-block {
+  margin-top: 1.75rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(213, 166, 41, 0.12);
+}
+
+.walther-cm-part-label {
+  margin: 0 0 0.55rem;
+  color: var(--gold-soft);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.walther-cm-section-heading {
+  margin-top: 0.35rem;
+}
+
+.walther-cm-thesis-card h4 {
+  margin-bottom: 0.7rem;
+  color: var(--paper);
+  font-size: 1.05rem;
+}
+
+.walther-cm-thesis-card p + h4 {
+  margin-top: 1.4rem;
+}
+
+.walther-cm-thesis-card p[id],
+.walther-cm-thesis-card h3[id],
+.walther-cm-thesis-card h4[id],
+.walther-cm-section-heading[id] {
+  scroll-margin-top: 7rem;
+}
+
+.walther-cm-underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.14em;
+}
+
+.walther-cm-content p,
+.walther-cm-content li {
+  font-size: clamp(1.08rem, 0.98rem + 0.32vw, 1.24rem);
+  line-height: 1.92;
+}
+
+.walther-cm-content p {
+  text-wrap: pretty;
+}
+
+.walther-cm-content h2,
+.walther-cm-content h3,
+.walther-cm-content h4 {
+  scroll-margin-top: 7rem;
+}
+
 .walther-reading-section {
   margin: 1rem 0 0;
   padding: 1rem 1.05rem;
