@@ -3340,6 +3340,19 @@ textarea {
   scroll-margin-top: 7rem;
 }
 
+.pieper-distinction-outline {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-family: "Crimson Text", Georgia, serif;
+  font-size: clamp(1.02rem, 0.96rem + 0.22vw, 1.16rem);
+  line-height: 1.8;
+}
+
+.pieper-distinction-outline li + li {
+  margin-top: 0.5rem;
+}
+
 .walther-reading-section {
   margin: 1rem 0 0;
   padding: 1rem 1.05rem;
