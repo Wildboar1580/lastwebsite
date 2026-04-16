@@ -7,6 +7,7 @@ async function initWaltherSearch() {
   const results = document.querySelector("[data-walther-search-results]");
   const status = document.querySelector("[data-walther-search-status]");
   if (!input || !results) return;
+  const scope = (input.dataset.waltherScope || "").trim().toLowerCase();
 
   let searchIndex = [];
 
@@ -18,8 +19,12 @@ async function initWaltherSearch() {
     return;
   }
 
+  const filteredIndex = scope
+    ? searchIndex.filter((entry) => String(entry.category || "").toLowerCase() === scope)
+    : searchIndex;
+
   if (status) {
-    status.textContent = `Search ${searchIndex.length} Walther entries by title or summary.`;
+    status.textContent = `Search ${filteredIndex.length} Walther entr${filteredIndex.length === 1 ? "y" : "ies"} by title or summary.`;
   }
 
   input.addEventListener("input", () => {
@@ -27,12 +32,12 @@ async function initWaltherSearch() {
     if (query.length < 2) {
       results.innerHTML = "";
       if (status) {
-        status.textContent = `Search ${searchIndex.length} Walther entries by title or summary.`;
+        status.textContent = `Search ${filteredIndex.length} Walther entr${filteredIndex.length === 1 ? "y" : "ies"} by title or summary.`;
       }
       return;
     }
 
-    const matches = searchIndex
+    const matches = filteredIndex
       .filter((entry) => `${entry.title} ${entry.summary} ${entry.text}`.toLowerCase().includes(query))
       .slice(0, 20);
 
