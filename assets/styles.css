@@ -3273,6 +3273,28 @@ textarea {
   margin-bottom: 0;
 }
 
+.walther-reading-figure {
+  margin: 1.25rem 0;
+  padding: 0.9rem;
+  border: 1px solid rgba(213, 166, 41, 0.14);
+  border-radius: 1rem;
+  background: rgba(9, 8, 7, 0.42);
+}
+
+.walther-reading-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.7rem;
+}
+
+.walther-reading-figure figcaption {
+  margin-top: 0.75rem;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
 .walther-cm-content {
   max-width: none;
 }
