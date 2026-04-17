@@ -1452,11 +1452,7 @@ async function urlExists(url) {
 }
 
 async function resolveExistingUrls(candidates) {
-  const matches = [];
-  for (const candidate of [...new Set(candidates.filter(Boolean))]) {
-    if (await urlExists(candidate)) matches.push(candidate);
-  }
-  return matches;
+  return [...new Set((candidates || []).filter(Boolean))];
 }
 
 async function getResolvedSermonLinks(title) {
