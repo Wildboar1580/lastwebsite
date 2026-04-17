@@ -153,6 +153,411 @@ export const ELHB_HYMN_GUIDE = [
       closing: { number: 250, title: "O blessed, holy Trinity" }
     },
     notes: []
+  },
+  {
+    id: "trinity_1",
+    observanceKey: "trinity-1",
+    name: "First Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 473, title: "The Church's one foundation" },
+      chief: { number: 385, title: "O love, how deep, how broad, how high" },
+      distribution: { number: 429, title: "Lord, Thee I love with all my heart" },
+      closing: { number: 611, title: "The day is surely drawing near" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_2",
+    observanceKey: "trinity-2",
+    name: "Second Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 306, title: "Jesus Christ, our blessed Savior" },
+      chief: { number: 305, title: "Soul, adorn thyself with gladness" },
+      distribution: { number: 308, title: "O Lord, we praise Thee" },
+      closing: { number: 307, title: "Draw nigh and take the body of the Lord" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_3",
+    observanceKey: "trinity-3",
+    name: "Third Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 324, title: "Just as I am, without one plea" },
+      chief: { number: 330, title: "I lay my sins on Jesus" },
+      distribution: { number: 331, title: "Rock of Ages, cleft for me" },
+      closing: { number: 377, title: "Salvation unto us has come" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_4",
+    observanceKey: "trinity-4",
+    name: "Fourth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 422, title: "I heard the voice of Jesus say" },
+      chief: { number: 421, title: "Jesus calls us o'er the tumult" },
+      distribution: { number: 424, title: "Take my life and let it be" },
+      closing: { number: 426, title: "O God, my faithful God" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_5",
+    observanceKey: "trinity-5",
+    name: "Fifth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 520, title: "Jesus, Savior, pilot me" },
+      chief: { number: 429, title: "Lord, Thee I love with all my heart" },
+      distribution: { number: 523, title: "If God Himself be for me" },
+      closing: { number: 524, title: "How firm a foundation, ye saints of the Lord" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_6",
+    observanceKey: "trinity-6",
+    name: "Sixth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 298, title: "All who believe and are baptized" },
+      chief: { number: 299, title: "Baptized into Thy name most holy" },
+      distribution: { number: 302, title: "God's own child, I gladly say it" },
+      closing: { number: 377, title: "Salvation unto us has come" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_7",
+    observanceKey: "trinity-7",
+    name: "Seventh Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 25, title: "Praise to the Lord, the Almighty" },
+      chief: { number: 522, title: "God moves in a mysterious way" },
+      distribution: { number: 523, title: "If God Himself be for me" },
+      closing: { number: 524, title: "How firm a foundation, ye saints of the Lord" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_8",
+    observanceKey: "trinity-8",
+    name: "Eighth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 261, title: "Lord, keep us steadfast in Thy Word" },
+      chief: { number: 289, title: "Thy strong word did cleave the darkness" },
+      distribution: { number: 288, title: "O God, our Lord, Thy holy Word" },
+      closing: { number: 473, title: "The Church's one foundation" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_9",
+    observanceKey: "trinity-9",
+    name: "Ninth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 424, title: "Take my life and let it be" },
+      chief: { number: 426, title: "O God, my faithful God" },
+      distribution: { number: 422, title: "I heard the voice of Jesus say" },
+      closing: { number: 523, title: "If God Himself be for me" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_10",
+    observanceKey: "trinity-10",
+    name: "Tenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 473, title: "The Church's one foundation" },
+      chief: { number: 261, title: "Lord, keep us steadfast in Thy Word" },
+      distribution: { number: 289, title: "Thy strong word did cleave the darkness" },
+      closing: { number: 611, title: "The day is surely drawing near" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_11",
+    observanceKey: "trinity-11",
+    name: "Eleventh Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 377, title: "Salvation unto us has come" },
+      chief: { number: 372, title: "By grace I'm saved, grace free and boundless" },
+      distribution: { number: 373, title: "Not what these hands have done" },
+      closing: { number: 380, title: "Thy works, not mine, O Christ" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_12",
+    observanceKey: "trinity-12",
+    name: "Twelfth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 289, title: "Thy strong word did cleave the darkness" },
+      chief: { number: 288, title: "O God, our Lord, Thy holy Word" },
+      distribution: { number: 290, title: "Lord, keep us steadfast in Thy Word" },
+      closing: { number: 261, title: "Lord, keep us steadfast in Thy Word" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_13",
+    observanceKey: "trinity-13",
+    name: "Thirteenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 385, title: "O love, how deep, how broad, how high" },
+      chief: { number: 429, title: "Lord, Thee I love with all my heart" },
+      distribution: { number: 424, title: "Take my life and let it be" },
+      closing: { number: 426, title: "O God, my faithful God" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_14",
+    observanceKey: "trinity-14",
+    name: "Fourteenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 523, title: "If God Himself be for me" },
+      chief: { number: 522, title: "God moves in a mysterious way" },
+      distribution: { number: 524, title: "How firm a foundation, ye saints of the Lord" },
+      closing: { number: 520, title: "Jesus, Savior, pilot me" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_15",
+    observanceKey: "trinity-15",
+    name: "Fifteenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 522, title: "God moves in a mysterious way" },
+      chief: { number: 523, title: "If God Himself be for me" },
+      distribution: { number: 524, title: "How firm a foundation, ye saints of the Lord" },
+      closing: { number: 520, title: "Jesus, Savior, pilot me" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_16",
+    observanceKey: "trinity-16",
+    name: "Sixteenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 611, title: "The day is surely drawing near" },
+      chief: { number: 331, title: "Rock of Ages, cleft for me" },
+      distribution: { number: 522, title: "God moves in a mysterious way" },
+      closing: { number: 524, title: "How firm a foundation, ye saints of the Lord" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_17",
+    observanceKey: "trinity-17",
+    name: "Seventeenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 429, title: "Lord, Thee I love with all my heart" },
+      chief: { number: 377, title: "Salvation unto us has come" },
+      distribution: { number: 372, title: "By grace I'm saved, grace free and boundless" },
+      closing: { number: 380, title: "Thy works, not mine, O Christ" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_18",
+    observanceKey: "trinity-18",
+    name: "Eighteenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 385, title: "O love, how deep, how broad, how high" },
+      chief: { number: 424, title: "Take my life and let it be" },
+      distribution: { number: 429, title: "Lord, Thee I love with all my heart" },
+      closing: { number: 426, title: "O God, my faithful God" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_19",
+    observanceKey: "trinity-19",
+    name: "Nineteenth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 372, title: "By grace I'm saved, grace free and boundless" },
+      chief: { number: 373, title: "Not what these hands have done" },
+      distribution: { number: 377, title: "Salvation unto us has come" },
+      closing: { number: 380, title: "Thy works, not mine, O Christ" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_20",
+    observanceKey: "trinity-20",
+    name: "Twentieth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 95, title: "Savior of the nations, come" },
+      chief: { number: 473, title: "The Church's one foundation" },
+      distribution: { number: 289, title: "Thy strong word did cleave the darkness" },
+      closing: { number: 288, title: "O God, our Lord, Thy holy Word" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_21",
+    observanceKey: "trinity-21",
+    name: "Twenty-first Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 524, title: "How firm a foundation, ye saints of the Lord" },
+      chief: { number: 520, title: "Jesus, Savior, pilot me" },
+      distribution: { number: 522, title: "God moves in a mysterious way" },
+      closing: { number: 523, title: "If God Himself be for me" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_22",
+    observanceKey: "trinity-22",
+    name: "Twenty-second Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 330, title: "I lay my sins on Jesus" },
+      chief: { number: 331, title: "Rock of Ages, cleft for me" },
+      distribution: { number: 377, title: "Salvation unto us has come" },
+      closing: { number: 373, title: "Not what these hands have done" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_23",
+    observanceKey: "trinity-23",
+    name: "Twenty-third Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 609, title: "Wake, awake, for night is flying" },
+      chief: { number: 610, title: "Lo! He comes, with clouds descending" },
+      distribution: { number: 611, title: "The day is surely drawing near" },
+      closing: { number: 523, title: "If God Himself be for me" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_24",
+    observanceKey: "trinity-24",
+    name: "Twenty-fourth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 611, title: "The day is surely drawing near" },
+      chief: { number: 609, title: "Wake, awake, for night is flying" },
+      distribution: { number: 610, title: "Lo! He comes, with clouds descending" },
+      closing: { number: 522, title: "God moves in a mysterious way" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_25",
+    observanceKey: "trinity-25",
+    name: "Twenty-fifth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 523, title: "If God Himself be for me" },
+      chief: { number: 524, title: "How firm a foundation, ye saints of the Lord" },
+      distribution: { number: 611, title: "The day is surely drawing near" },
+      closing: { number: 520, title: "Jesus, Savior, pilot me" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_26",
+    observanceKey: "trinity-26",
+    name: "Twenty-sixth Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 610, title: "Lo! He comes, with clouds descending" },
+      chief: { number: 611, title: "The day is surely drawing near" },
+      distribution: { number: 609, title: "Wake, awake, for night is flying" },
+      closing: { number: 522, title: "God moves in a mysterious way" }
+    },
+    notes: []
+  },
+  {
+    id: "trinity_27",
+    observanceKey: "trinity-27",
+    name: "Twenty-seventh Sunday after Trinity",
+    season: "Trinity",
+    color: "Green",
+    lectionary: {},
+    hymns: {
+      entrance: { number: 611, title: "The day is surely drawing near" },
+      chief: { number: 609, title: "Wake, awake, for night is flying" },
+      distribution: { number: 610, title: "Lo! He comes, with clouds descending" },
+      closing: { number: 524, title: "How firm a foundation, ye saints of the Lord" }
+    },
+    notes: []
   }
 ];
 
