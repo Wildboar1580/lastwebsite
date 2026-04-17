@@ -1,3 +1,5 @@
+import { findElhbGuideEntryByKey } from "./elhb-hymn-guide-data.js";
+
 const ONE_YEAR_TYPES = {
   title: 0,
   oldTestament: 19,
@@ -702,6 +704,7 @@ async function initLectionaryPanels() {
       const oneYearPropers = loadPropers(oneYearData, today);
       oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
       hydrateLectionarySermonLinks(oneYearRoot);
+      hydrateLectionaryHymnLinks(oneYearRoot);
     } catch (error) {
       oneYearRoot.innerHTML = `
         <article class="lectionary-card">
@@ -878,6 +881,7 @@ function renderOneYear(data, propers, books, searchIndex, date) {
           ${nextObservance ? `<a class="button button-outline lectionary-action-button lectionary-observance-jump" href="#lectionary-next">Next observance</a>` : ""}
           <a class="button button-outline lectionary-action-button" href="#lectionary-current-sermons">Current sermons</a>
           ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next-sermons">Next sermons</a>` : ""}
+          <a class="button button-outline lectionary-action-button" href="/elhb/hymn-selection-guide/">ELHB hymn guide</a>
           <a class="button button-outline lectionary-action-button" href="/daily-readings">Daily readings</a>
         </div>
       </article>
@@ -896,6 +900,8 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
   const gradual = findProper(observance.propers, ONE_YEAR_TYPES.gradual);
   const verse = findProper(observance.propers, ONE_YEAR_TYPES.verse);
   const specialRubric = findProper(observance.propers, ONE_YEAR_TYPES.specialRubric);
+  const observanceKey = getObservanceKey(observance.title);
+  const hymnGuideEntry = findElhbGuideEntryByKey(observanceKey);
 
   return `
     <article class="lectionary-card lectionary-observance-card" id="${sectionId}">
@@ -914,6 +920,7 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
         <div><strong>Epistle</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
         <div><strong>Gospel</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.gospel), books, searchIndex)}</div>
         </div>
+        ${renderElhbHymnPanel(hymnGuideEntry)}
         ${includeSermons ? `
           <div class="lectionary-sermon-panel" id="${sectionId}-sermons">
             <p class="lectionary-proper-label">Relevant Luther and Walther Sermons</p>
@@ -924,6 +931,64 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
         ` : ""}
       </article>
   `;
+}
+
+function renderElhbHymnPanel(entry) {
+  if (!entry) return "";
+
+  const hymnButtons = [
+    ["Entrance", entry.hymns.entrance],
+    ["Chief", entry.hymns.chief],
+    ["Distribution", entry.hymns.distribution],
+    ["Closing", entry.hymns.closing]
+  ].filter(([, hymn]) => hymn && hymn.number);
+
+  return `
+    <div class="lectionary-sermon-panel">
+      <p class="lectionary-proper-label">Recommended ELHB Hymns</p>
+      <div class="lectionary-hymn-actions">
+        ${hymnButtons.map(([label, hymn]) => renderElhbHymnButton(label, hymn)).join("")}
+      </div>
+      <p class="lectionary-empty lectionary-hymn-note">Open the full <a class="text-link" href="/elhb/hymn-selection-guide/#${escapeHtml(entry.id)}">ELHB hymn guide entry</a> for this observance.</p>
+    </div>
+  `;
+}
+
+function renderElhbHymnButton(label, hymn) {
+  const number = Number(hymn.number);
+  if (!Number.isFinite(number) || number <= 0) return "";
+  return `<a class="button button-outline lectionary-action-button" href="/elhb/hymns/" data-elhb-hymn-link data-elhb-hymn-number="${number}">${escapeHtml(`${label}: ELHB ${number}`)}</a>`;
+}
+
+let elhbHymnIndexPromise;
+
+function loadElhbHymnIndex() {
+  if (!elhbHymnIndexPromise) {
+    elhbHymnIndexPromise = fetch("/assets/elhb/hymns.json").then((response) => response.json());
+  }
+  return elhbHymnIndexPromise;
+}
+
+async function hydrateLectionaryHymnLinks(root) {
+  const links = [...root.querySelectorAll("[data-elhb-hymn-link]")];
+  if (!links.length) return;
+
+  try {
+    const hymnIndex = await loadElhbHymnIndex();
+    const hymnMap = new Map(hymnIndex.map((entry) => [Number(entry.number), entry]));
+
+    for (const link of links) {
+      const hymnNumber = Number(link.dataset.elhbHymnNumber || "");
+      const hymn = hymnMap.get(hymnNumber);
+      if (!hymn?.href) continue;
+      link.setAttribute("href", hymn.href);
+      const roleLabel = link.textContent?.split(":")[0] || "Hymn";
+      link.textContent = `${roleLabel}: ELHB ${hymn.number}`;
+      link.setAttribute("title", hymn.title || `ELHB ${hymn.number}`);
+    }
+  } catch {
+    // Leave archive links in place if the hymn index is unavailable.
+  }
 }
 
 const lectionarySermonResolutionCache = new Map();

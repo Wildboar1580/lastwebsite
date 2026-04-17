@@ -1862,7 +1862,8 @@ textarea {
 }
 
 .lectionary-action-row,
-.lectionary-sermon-actions {
+.lectionary-sermon-actions,
+.lectionary-hymn-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
@@ -1921,6 +1922,24 @@ textarea {
 .lectionary-proper-body p,
 .lectionary-proper-body br + br {
   margin-top: 0.45rem;
+}
+
+.lectionary-notes-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-soft);
+}
+
+.lectionary-hymn-note {
+  margin-top: 0.85rem;
+}
+
+.elhb-guide-card {
+  scroll-margin-top: 6.5rem;
+}
+
+.elhb-guide-hymn-grid {
+  margin-top: 1rem;
 }
 
 .lectionary-passage-list {
