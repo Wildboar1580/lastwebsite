@@ -1790,6 +1790,10 @@ textarea {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.lectionary-page-grid {
+  align-items: start;
+}
+
 .bible-audio-grid-single {
   grid-template-columns: 1fr;
 }
@@ -1964,9 +1968,15 @@ textarea {
 }
 
 @media (min-width: 900px) {
+  .lectionary-page-grid {
+    width: min(1440px, calc(100% - 2rem));
+    gap: 1.5rem;
+  }
+
   .lectionary-observance-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
+    gap: 1.5rem;
   }
 
   .lectionary-observance-jump {
