@@ -837,9 +837,7 @@ function findAdjacentObservance(data, date, direction, includeStart = false) {
 
 function renderOneYear(data, propers, books, searchIndex, date) {
   const currentObservance = findAdjacentObservance(data, date, -1, true) || findAdjacentObservance(data, date, 1, true);
-  const previousObservance = currentObservance
-    ? findAdjacentObservance(data, addDays(currentObservance.date, -1), -1, true)
-    : null;
+  const previousObservance = findAdjacentObservance(data, date, -1, true);
   const nextObservance = currentObservance
     ? findAdjacentObservance(data, addDays(currentObservance.date, 1), 1, true)
     : null;
@@ -861,7 +859,7 @@ function renderOneYear(data, propers, books, searchIndex, date) {
         <h3>Move through the church-year cycle</h3>
         <p class="lectionary-empty">Jump to the most recent previous observance, the current day in the cycle, the next observance, or the sermon pages tied to the current and next observances.</p>
         <div class="lectionary-action-row">
-          ${previousObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-previous">Previous observance</a>` : ""}
+          ${previousObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-previous">Most recent observance</a>` : ""}
           <a class="button button-red lectionary-action-button" href="#lectionary-current">Current observance</a>
           ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next">Next observance</a>` : ""}
         </div>
@@ -870,7 +868,7 @@ function renderOneYear(data, propers, books, searchIndex, date) {
           ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next-sermons">Next sermons</a>` : ""}
         </div>
       </article>
-      ${previousObservance ? renderOneYearCard(previousObservance, books, searchIndex, "Most Recent Previous Sunday or Major Feast", "lectionary-previous", false) : ""}
+      ${previousObservance ? renderOneYearCard(previousObservance, books, searchIndex, "Most Recent Sunday or Major Feast", "lectionary-previous", false) : ""}
       ${renderOneYearCard(currentObservance, books, searchIndex, "Current Sunday or Major Feast in the Cycle", "lectionary-current", true)}
       ${nextObservance ? renderOneYearCard(nextObservance, books, searchIndex, "Next Sunday or Major Feast in the Cycle", "lectionary-next", true) : ""}
     </section>
