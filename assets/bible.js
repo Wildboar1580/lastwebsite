@@ -928,6 +928,47 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
 
 const lectionarySermonResolutionCache = new Map();
 const lectionaryUrlExistsCache = new Map();
+const LUTHER_VOL12_GOSPEL_HREFS = new Set([
+  "/luther/vol-12/79-on-the-second-sunday-of-advent/",
+  "/luther/vol-12/80-on-the-third-sunday-of-advent/",
+  "/luther/vol-12/81-on-the-fourth-sunday-of-advent/",
+  "/luther/vol-12/86-sermon-of-the-birth-of-christ/",
+  "/luther/vol-12/87-on-the-holy-three-kings-day/",
+  "/luther/vol-12/90-sermon-on-the-next-sunday-after-epiphany/",
+  "/luther/vol-12/91-gospel-on-the-third-sunday-after-epiphany/",
+  "/luther/vol-12/94-on-the-fourth-sunday-after-epiphany/",
+  "/luther/vol-12/96-on-the-fifth-sunday-after-epiphany/",
+  "/luther/vol-12/99-sermon-on-the-first-sunday-in-lent/",
+  "/luther/vol-12/100-two-sermons-on-the-sunday-invocavit/",
+  "/luther/vol-12/105-sermon-on-the-gospel-on-the-sunday-of-judica/",
+  "/luther/vol-12/110-sermon-on-the-gospel-on-easter-wednesday/",
+  "/luther/vol-12/111-sermon-on-the-gospel-on-the-first-sunday-after-easter-or-quasimodogeniti/",
+  "/luther/vol-12/112-sermon-on-the-gospel-on-the-third-sunday-after-easter-or-jubilate/",
+  "/luther/vol-12/113-on-the-fourth-sunday-after-easter-or-cantate/",
+  "/luther/vol-12/123-of-the-joyful-resurrection-of-christ/",
+  "/luther/vol-12/135-on-the-first-easter-holiday/",
+  "/luther/vol-12/148-on-the-day-of-the-resurrection-of-the-lord/",
+  "/luther/vol-12/149-of-the-resurrection-of-christ/",
+  "/luther/vol-12/165-on-the-third-sunday-of-advent/",
+  "/luther/vol-12/167-on-the-fourth-sunday-of-advent/",
+  "/luther/vol-12/171-on-the-day-of-appearance/",
+  "/luther/vol-12/172-on-the-fourth-sunday-after-epiphany/",
+  "/luther/vol-12/176-on-the-first-sunday-after-easter/",
+  "/luther/vol-12/177-on-the-first-sunday-after-easter/",
+  "/luther/vol-12/188-on-the-sunday-reminiscere/",
+  "/luther/vol-12/189-on-sunday-oculi/",
+  "/luther/vol-12/190-on-sunday-l-tare/",
+  "/luther/vol-12/193-on-the-sunday-misericordias-domini/",
+  "/luther/vol-12/194-on-the-sunday-jubilate/",
+  "/luther/vol-12/195-on-sunday-cantate/",
+  "/luther/vol-12/196-on-the-day-of-the-ascension-of-the-lord/",
+  "/luther/vol-12/197-on-sunday-exaudi/",
+  "/luther/vol-12/198-on-the-sunday-of-trinity/",
+  "/luther/vol-12/200-the-other-sunday-after-trinity/",
+  "/luther/vol-12/204-on-the-twentieth-sunday-after-trinity/",
+  "/luther/vol-12/207-on-the-sunday-after-christmas-day/",
+  "/luther/vol-12/209-on-the-first-sunday-after-trinity/"
+]);
 
 function getObservanceKey(title) {
   const trimmed = title.trim();
@@ -1486,8 +1527,13 @@ function getResolvedSermonLinks(title) {
   const lutherHrefs = resolveExistingUrls(getLutherCandidateUrls(key));
   const waltherGospelHref = resolveExistingUrls(waltherCandidates.gospel || [])[0] || "";
   const waltherEpistleHref = resolveExistingUrls(waltherCandidates.epistle || [])[0] || "";
-  const lutherGospelHrefs = lutherHrefs.filter((href) => !href.includes("/vol-12/"));
-  const lutherEpistleHrefs = lutherHrefs.filter((href) => href.includes("/vol-12/"));
+  const isLutherGospelHref = (href) => {
+    if (href.includes("/vol-11/") || href.includes("/vol-13a/") || href.includes("/vol-13b/")) return true;
+    if (!href.includes("/vol-12/")) return false;
+    return LUTHER_VOL12_GOSPEL_HREFS.has(href);
+  };
+  const lutherGospelHrefs = lutherHrefs.filter((href) => isLutherGospelHref(href));
+  const lutherEpistleHrefs = lutherHrefs.filter((href) => href.includes("/vol-12/") && !isLutherGospelHref(href));
   const getLutherSeriesDate = (href) => {
     if (href.includes("/vol-11/") || href.includes("/vol-12/")) return "1521-1525";
     if (href.includes("/vol-13a/") || href.includes("/vol-13b/")) return "1531-1535";
