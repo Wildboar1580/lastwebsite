@@ -1969,8 +1969,8 @@ textarea {
 
 @media (min-width: 900px) {
   .lectionary-page-grid {
-    width: min(1440px, calc(100% - 2rem));
-    gap: 1.5rem;
+    width: min(1680px, calc(100% - 2rem));
+    gap: 1.75rem;
   }
 
   .lectionary-page-grid .lectionary-card {
@@ -1980,7 +1980,7 @@ textarea {
   .lectionary-observance-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 
   .lectionary-observance-jump {
