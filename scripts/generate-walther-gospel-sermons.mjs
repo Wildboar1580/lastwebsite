@@ -144,7 +144,7 @@ function renderGospelHub(entries) {
         <div class="contact-hero-copy">
           <p class="eyebrow">Walther's Sermons</p>
           <h1>Walther's Gospel Sermons</h1>
-          <p>Read Walther's preaching on the Gospel pericopes of the church year through a local sermon section built for direct reading, browsing, and sermon-by-sermon navigation.</p>
+          <p>Read Walther's preaching on the Gospel pericopes of the church year through a sermon section arranged for direct reading, browsing, and sermon-by-sermon navigation.</p>
           <p class="luther-source-note">Built from the published <em>Year of Grace</em> texts linked in <a class="text-link" href="https://backtoluther.blogspot.com/2015/05/walthers-sermon-book-year-of-grace-part.html" target="_blank" rel="noopener noreferrer">Back to Luther Part I</a> and <a class="text-link" href="https://backtoluther.blogspot.com/2015/05/walthers-sermon-book-year-of-grace-part_11.html" target="_blank" rel="noopener noreferrer">Part II</a>.</p>
         </div>
       </section>
@@ -271,7 +271,7 @@ function renderSermonsHub() {
         <div class="contact-hero-copy">
           <p class="eyebrow">Walther's Sermons</p>
           <h1>Walther's Sermons</h1>
-          <p>Move from Walther's doctrinal works into his preaching through sermon collections built for direct reading on your site.</p>
+          <p>Move from Walther's doctrinal works into his preaching through sermon collections arranged for direct reading on the site.</p>
           <p class="luther-source-note"><a class="text-link" href="/walther">Return to the Walther library</a> whenever you want to move back to the larger section.</p>
         </div>
       </section>

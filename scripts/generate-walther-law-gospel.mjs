@@ -526,7 +526,7 @@ ${renderHeader()}
         </div>
         <article class="concord-content">
 ${sanitizeImportedHtml(noteHtml)}
-          <p>This local edition is structured from the public table of contents at LutheranTheology.com and now serves as the first substantial Walther work inside your library.</p>
+          <p>This work follows the public table of contents at LutheranTheology.com and serves as a searchable reading edition inside your library.</p>
         </article>
       </section>
 

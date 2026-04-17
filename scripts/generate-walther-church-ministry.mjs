@@ -452,7 +452,7 @@ function renderSidebar(parts) {
 function buildPage({ preludeText, sourceCitation, parts }) {
   const pageTitle = "Church and Ministry";
   const description =
-    "Read a cleaned local edition of Walther's Church and Ministry theses and antitheses with preserved underlining, mobile-friendly spacing, and quick thesis navigation.";
+    "Read Walther's Church and Ministry theses and antitheses with preserved underlining, mobile-friendly spacing, and quick thesis navigation.";
   const sidebar = renderSidebar(parts);
 
   const content = parts
@@ -508,7 +508,7 @@ ${renderHeader()}
         <div class="contact-hero-copy">
           <p class="eyebrow">Walther Library</p>
           <h1>Church and Ministry</h1>
-          <p>A cleaned local edition of Walther's church-and-ministry theses material, rebuilt for easier reading on desktop and mobile without the Google Docs clutter.</p>
+          <p>Read Walther's church-and-ministry theses material with preserved structure in a cleaner desktop and mobile reading layout.</p>
           <p class="luther-source-note"><a class="text-link" href="/walther">Return to the Walther library</a> or continue reading this document with the thesis index below.</p>
         </div>
       </section>
@@ -520,7 +520,7 @@ ${renderHeader()}
             <h2>Readable, searchable, and cleaned for your site</h2>
             <p>This edition preserves the source document's underlining, removes the original highlight colors, and resets the text into your site's reading layout so the document is much easier to follow on a phone.</p>
             <p>${preludeText}</p>
-            <p class="luther-source-note">Source: Google Doc provided by you, adapted into a local reading page with attribution. Original source: <a href="${sourceUrl}">${sourceUrl}</a>${sourceCitation ? `. Source publication noted in the document: ${escapeHtml(sourceCitation)}` : ""}.</p>
+            <p class="luther-source-note">Source: Google Doc source. Original source: <a href="${sourceUrl}">${sourceUrl}</a>${sourceCitation ? `. Source publication noted in the document: ${escapeHtml(sourceCitation)}` : ""}.</p>
           </div>
         </div>
       </section>

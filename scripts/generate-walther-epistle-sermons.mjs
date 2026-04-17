@@ -399,7 +399,7 @@ ${sermon.contentHtml}
     canonicalPath,
     eyebrow: "Walther's Epistle Sermons",
     heading: sermon.title,
-    intro: `Read Walther's sermon on ${escapeHtml(sermon.scripture)} from ${escapeHtml(sermon.collectionTitle)} in a local reading edition built for steady study.`,
+    intro: `Read Walther's sermon on ${escapeHtml(sermon.scripture)} from ${escapeHtml(sermon.collectionTitle)}.`,
     bodyHtml,
     extraSections: readNext
   });

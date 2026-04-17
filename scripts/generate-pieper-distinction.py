@@ -252,7 +252,7 @@ def render_page(meta_lines, intro_paragraphs, outline_items, sections):
         <div class="contact-hero-copy">
           <p class="eyebrow">Pieper Library</p>
           <h1>The Distinction Between Orthodox and Heterodox Churches</h1>
-          <p>A local reading edition of Pieper's concise work on church fellowship, rebuilt to match the readability and visual style of the rest of your Pieper library.</p>
+          <p>Read Pieper's concise work on church fellowship with full text in the same reading format used across the rest of the Pieper library.</p>
           <p class="luther-source-note"><a class="text-link" href="/pieper">Return to the Pieper library</a> or jump straight into the outline and section index below.</p>
         </div>
       </section>
@@ -267,7 +267,7 @@ def render_page(meta_lines, intro_paragraphs, outline_items, sections):
             <h2>Pieper on doctrinal fidelity and church fellowship</h2>
             {meta_html}
             {intro_html}
-            <p class="luther-source-note">Source PDF hosted at <a href="{escape_html(SOURCE_URL)}">{escape_html(SOURCE_URL)}</a>. This local edition is adapted for readability and mobile-friendly study on Last Christian Ministries.</p>
+            <p class="luther-source-note">Source PDF: <a href="{escape_html(SOURCE_URL)}">{escape_html(SOURCE_URL)}</a>. Presented here for readable, mobile-friendly study.</p>
           </div>
         </div>
       </section>

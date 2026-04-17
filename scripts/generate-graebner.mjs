@@ -285,7 +285,7 @@ function buildLandingPage(entries) {
         <div class="contact-hero-copy">
           <p class="eyebrow">Graebner Library</p>
           <h1>Outlines of Doctrinal Theology</h1>
-          <p>Read A. L. Graebner's doctrinal compend in a local edition built for straightforward reading, search, and crawlable chapter-by-chapter navigation.</p>
+          <p>Read A. L. Graebner's doctrinal compend with full text, search, and chapter-by-chapter navigation.</p>
           <p class="luther-source-note">Source text adapted from the Concordia Lutheran Conference's <a class="text-link" href="https://www.concordialutheranconf.com/category/graebners-outlines/" target="_blank" rel="noopener noreferrer">Graebner's Outlines</a> pages. The 2006 preface is intentionally omitted here.</p>
         </div>
       </section>
@@ -300,7 +300,7 @@ ${buildAboutHtml()}
         <div class="section-heading">
           <p class="eyebrow">Search Graebner</p>
           <h2>Search the full local text</h2>
-          <p>Search headings and text across the local edition of <em>Outlines of Doctrinal Theology</em>.</p>
+          <p>Search headings and text across <em>Outlines of Doctrinal Theology</em>.</p>
         </div>
         <div class="bible-search-shell">
           <label class="sr-only" for="graebner-search">Search A. L. Graebner</label>

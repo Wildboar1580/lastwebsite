@@ -367,7 +367,7 @@ function buildLandingPage(entries) {
         <div class="contact-hero-copy">
           <p class="eyebrow">Schmid Library</p>
           <h1>The Doctrinal Theology of the Evangelical Lutheran Church</h1>
-          <p>Read Heinrich Schmid's classic Lutheran dogmatics in a local edition built for direct reading, search, and ordinary chapter-by-chapter navigation.</p>
+          <p>Read Heinrich Schmid's classic Lutheran dogmatics with full text, search, and chapter-by-chapter navigation.</p>
           <p class="luther-source-note">Source text adapted from the Christian Classics Ethereal Library's edition of <a class="text-link" href="https://ccel.org/ccel/schmid/theology/theology.i.html" target="_blank" rel="noopener noreferrer">Schmid's <em>Doctrinal Theology</em></a>.</p>
         </div>
       </section>
@@ -395,7 +395,7 @@ ${significanceHtml()}
       <section class="section">
         <div class="section-heading">
           <p class="eyebrow">Contents</p>
-          <h2>Read the full local edition</h2>
+          <h2>Read the full work</h2>
           <p>Each page has its own URL, canonical tag, and previous/next navigation for ordinary browsing and search-engine discovery.</p>
         </div>
         <ol class="graebner-contents-list">

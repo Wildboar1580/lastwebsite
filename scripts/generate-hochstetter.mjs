@@ -454,7 +454,7 @@ function buildSectionPage(pages, page, index) {
             ${page.bodyHtml}
           </article>
           ${nav}
-          <p class="luther-source-note hochstetter-source-note">Source: published Google Docs edition of <em>The History of the Missouri Synod</em>, adapted into a local reading page with attribution. Original source: <a href="${sourceUrl}">${sourceUrl}</a></p>
+          <p class="luther-source-note hochstetter-source-note">Source: published Google Docs edition of <em>The History of the Missouri Synod</em>. Original source: <a href="${sourceUrl}">${sourceUrl}</a></p>
         </div>
       </section>`;
 

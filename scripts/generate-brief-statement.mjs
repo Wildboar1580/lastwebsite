@@ -153,7 +153,7 @@ function pageShell({ content }) {
           "@type": "CollectionPage",
           "name": "1932 LCMS Brief Statement",
           "url": "${canonicalUrl}",
-          "description": "A local reading edition of the 1932 LCMS Brief Statement of doctrinal position."
+          "description": "The 1932 LCMS Brief Statement of doctrinal position presented for direct reading and search."
         },
         {
           "@type": "BreadcrumbList",
@@ -202,7 +202,7 @@ function buildPage(sections) {
         <div class="contact-hero-copy">
           <p class="eyebrow">Library Document</p>
           <h1>The 1932 LCMS Brief Statement</h1>
-          <p>Read a local edition of the 1932 <em>Brief Statement of the Doctrinal Position of the Missouri Synod</em>, organized for direct reading, linking, and search.</p>
+          <p>Read the 1932 <em>Brief Statement of the Doctrinal Position of the Missouri Synod</em>, organized for direct reading, linking, and search.</p>
           <p class="luther-source-note">Source text from the official LCMS doctrinal page: <a class="text-link" href="${sourceUrl}" target="_blank" rel="noopener noreferrer">Brief Statement of LCMS Doctrinal Position</a>.</p>
         </div>
       </section>
@@ -262,7 +262,7 @@ ${topicLinks}
         <div class="section-heading">
           <p class="eyebrow">Text</p>
           <h2>The full Brief Statement</h2>
-          <p><strong>Brief Statement of the Doctrinal Position of the Missouri Synod.</strong> Adopted 1932. This local edition follows the official LCMS web text and retains the original topical structure.</p>
+          <p><strong>Brief Statement of the Doctrinal Position of the Missouri Synod.</strong> Adopted 1932. This text follows the official LCMS web version and retains the original topical structure.</p>
         </div>
         <div class="brief-statement-reading">
 ${textSections}
