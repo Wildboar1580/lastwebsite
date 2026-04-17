@@ -1089,57 +1089,349 @@ function getWaltherCandidateUrls(key) {
 }
 
 function getLutherCandidateUrls(key) {
+  const byKey = {
+    "advent-1": [
+      "/luther/vol-12/82-on-the-first-sunday-of-advent/",
+      "/luther/vol-12/185-on-the-first-sunday-of-advent/",
+      "/luther/vol-13a/07-on-the-first-sunday-of-advent/",
+      "/luther/vol-13b/05-on-the-first-sunday-of-advent/"
+    ],
+    "advent-2": [
+      "/luther/vol-11/19-on-the-second-sunday-of-advent/",
+      "/luther/vol-12/08-on-the-second-sunday-of-advent/",
+      "/luther/vol-12/79-on-the-second-sunday-of-advent/",
+      "/luther/vol-12/83-on-the-second-sunday-of-advent/",
+      "/luther/vol-13a/08-on-the-second-sunday-of-advent/",
+      "/luther/vol-13b/06-on-the-second-sunday-of-advent/"
+    ],
+    "advent-3": [
+      "/luther/vol-11/20-on-the-third-sunday-of-advent/",
+      "/luther/vol-12/09-on-the-third-sunday-of-advent/",
+      "/luther/vol-12/80-on-the-third-sunday-of-advent/",
+      "/luther/vol-12/84-on-the-third-sunday-of-advent/",
+      "/luther/vol-12/165-on-the-third-sunday-of-advent/",
+      "/luther/vol-13a/09-on-the-third-sunday-of-advent/",
+      "/luther/vol-13b/07-on-the-third-sunday-of-advent/"
+    ],
+    "advent-4": [
+      "/luther/vol-11/21-on-the-fourth-sunday-of-advent/",
+      "/luther/vol-12/10-on-the-fourth-sunday-of-advent/",
+      "/luther/vol-12/81-on-the-fourth-sunday-of-advent/",
+      "/luther/vol-12/85-on-the-fourth-sunday-of-advent/",
+      "/luther/vol-12/167-on-the-fourth-sunday-of-advent/",
+      "/luther/vol-13a/10-on-the-fourth-sunday-of-advent/",
+      "/luther/vol-13b/08-on-the-fourth-sunday-of-advent/"
+    ],
+    "christmas-eve": [
+      "/luther/vol-11/105-at-christmas-eve-mass/"
+    ],
+    "christmas-day": [
+      "/luther/vol-11/22-on-christmas-day/",
+      "/luther/vol-11/106-in-the-morning-christmas-mass/",
+      "/luther/vol-11/110-in-the-high-mass-of-christmas/",
+      "/luther/vol-12/11-on-christmas-day/",
+      "/luther/vol-12/86-sermon-of-the-birth-of-christ/",
+      "/luther/vol-12/186-on-the-day-of-the-birth-of-christ/",
+      "/luther/vol-13a/11-on-the-holy-day-of-christ/",
+      "/luther/vol-13a/12-on-christmas-day/",
+      "/luther/vol-13a/97-on-christmas-day/",
+      "/luther/vol-13b/09-on-christmas-day/",
+      "/luther/vol-13b/10-three-sermons-from-the-birth-of-christ/",
+      "/luther/vol-13b/11-on-christmas-day/",
+      "/luther/vol-13b/81-on-christmas-day/"
+    ],
+    "sunday-after-christmas": [
+      "/luther/vol-11/27-on-the-sunday-after-christmas-day/",
+      "/luther/vol-12/16-on-the-sunday-after-christmas-day/",
+      "/luther/vol-12/207-on-the-sunday-after-christmas-day/",
+      "/luther/vol-13b/13-on-the-sunday-after-christmas-day/"
+    ],
+    "sunday-after-new-years": [
+      "/luther/vol-11/30-on-the-first-sunday-after-epiphany/",
+      "/luther/vol-11/31-on-the-first-sunday-after-epiphany/",
+      "/luther/vol-12/19-on-the-first-sunday-after-epiphany/",
+      "/luther/vol-13a/18-on-the-first-sunday-after-epiphany/",
+      "/luther/vol-13b/16-on-the-first-sunday-after-epiphany/"
+    ],
+    "baptism-of-our-lord": [
+      "/luther/vol-11/119-a-sermon-of-the-baptism-of-christ/"
+    ],
+    "epiphany": [
+      "/luther/vol-11/29-on-the-day-of-the-three-kings/",
+      "/luther/vol-12/18-on-the-day-of-the-three-kings/",
+      "/luther/vol-12/87-on-the-holy-three-kings-day/",
+      "/luther/vol-12/171-on-the-day-of-appearance/",
+      "/luther/vol-13a/16-on-the-colonel-s-day-above-feast-of-the-apparition/",
+      "/luther/vol-13a/17-on-the-colonel-s-day-or-feast-of-the-apparition/",
+      "/luther/vol-13a/100-on-the-colonel-s-day-or-feast-of-the-apparition/",
+      "/luther/vol-13b/15-on-the-day-of-epiphany/"
+    ],
+    "epiphany-2": [
+      "/luther/vol-11/32-the-next-sunday-after-epiphany/",
+      "/luther/vol-12/20-the-next-sunday-after-epiphany/",
+      "/luther/vol-12/90-sermon-on-the-next-sunday-after-epiphany/",
+      "/luther/vol-13a/19-the-next-sunday-after-epiphany/",
+      "/luther/vol-13b/17-on-the-second-sunday-after-epiphany/"
+    ],
+    "epiphany-3": [
+      "/luther/vol-11/33-on-the-third-sunday-after-epiphany/",
+      "/luther/vol-12/21-on-the-third-sunday-after-epiphany/",
+      "/luther/vol-12/91-gospel-on-the-third-sunday-after-epiphany/",
+      "/luther/vol-13a/20-on-the-third-sunday-after-epiphany/",
+      "/luther/vol-13b/18-on-the-third-sunday-after-epiphany/"
+    ],
+    "epiphany-4": [
+      "/luther/vol-11/34-on-the-fourth-sunday-after-epiphany/",
+      "/luther/vol-12/22-on-the-fourth-sunday-after-epiphany/",
+      "/luther/vol-12/94-on-the-fourth-sunday-after-epiphany/",
+      "/luther/vol-12/172-on-the-fourth-sunday-after-epiphany/",
+      "/luther/vol-13a/21-on-the-fourth-sunday-after-epiphany/",
+      "/luther/vol-13b/19-on-the-fourth-sunday-after-epiphany/"
+    ],
+    "epiphany-5": [
+      "/luther/vol-11/35-on-the-fifth-sunday-after-epiphany/",
+      "/luther/vol-12/23-on-the-fifth-sunday-after-epiphany/",
+      "/luther/vol-12/96-on-the-fifth-sunday-after-epiphany/",
+      "/luther/vol-13a/22-on-the-fifth-sunday-after-epiphany/",
+      "/luther/vol-13b/20-on-the-fifth-sunday-after-epiphany/"
+    ],
+    "transfiguration": [
+      "/luther/vol-11/32-the-next-sunday-after-epiphany/",
+      "/luther/vol-12/20-the-next-sunday-after-epiphany/",
+      "/luther/vol-12/90-sermon-on-the-next-sunday-after-epiphany/",
+      "/luther/vol-13a/19-the-next-sunday-after-epiphany/",
+      "/luther/vol-13b/17-on-the-second-sunday-after-epiphany/"
+    ],
+    "lent-1": [
+      "/luther/vol-11/39-on-the-first-sunday-in-lent/",
+      "/luther/vol-12/27-on-the-first-sunday-in-lent/",
+      "/luther/vol-12/99-sermon-on-the-first-sunday-in-lent/",
+      "/luther/vol-12/100-two-sermons-on-the-sunday-invocavit/",
+      "/luther/vol-13a/28-on-sunday-invocavit/",
+      "/luther/vol-13b/25-on-sunday-invocavit/"
+    ],
+    "lent-2": [
+      "/luther/vol-12/28-on-the-other-sunday-in-lent/",
+      "/luther/vol-12/188-on-the-sunday-reminiscere/",
+      "/luther/vol-13a/29-on-the-sunday-reminiscere/",
+      "/luther/vol-13b/26-on-the-sunday-reminiscere/"
+    ],
+    "lent-3": [
+      "/luther/vol-11/41-on-the-third-sunday-in-lent/",
+      "/luther/vol-12/29-on-the-third-sunday-in-lent/",
+      "/luther/vol-12/189-on-sunday-oculi/",
+      "/luther/vol-13a/30-on-sunday-oculi/",
+      "/luther/vol-13b/27-on-sunday-oculi/"
+    ],
+    "lent-4": [
+      "/luther/vol-11/40-on-the-easter-sunday-in-lent/",
+      "/luther/vol-11/42-on-sundays-in-the-middle-fast/",
+      "/luther/vol-12/30-on-sundays-in-the-middle-fast/",
+      "/luther/vol-12/190-on-sunday-l-tare/",
+      "/luther/vol-13a/31-on-sunday-l-tare/",
+      "/luther/vol-13b/28-on-sunday-l-tare/"
+    ],
+    "lent-5": [
+      "/luther/vol-11/43-on-sunday-judica/",
+      "/luther/vol-12/31-on-sunday-judica/",
+      "/luther/vol-12/105-sermon-on-the-gospel-on-the-sunday-of-judica/",
+      "/luther/vol-13a/32-on-the-sunday-of-judica/",
+      "/luther/vol-13b/29-on-sunday-judica/"
+    ],
+    "good-friday": [
+      "/luther/vol-13a/49-good-friday/"
+    ],
+    "easter": [
+      "/luther/vol-11/47-on-easter-day/",
+      "/luther/vol-11/49-on-easter-day/",
+      "/luther/vol-12/33-on-easter-day/",
+      "/luther/vol-12/123-of-the-joyful-resurrection-of-christ/",
+      "/luther/vol-12/148-on-the-day-of-the-resurrection-of-the-lord/",
+      "/luther/vol-12/149-of-the-resurrection-of-christ/",
+      "/luther/vol-13a/52-on-the-holy-day-of-easter/",
+      "/luther/vol-13a/53-of-the-fruit-of-christ-s-resurrection/",
+      "/luther/vol-13a/54-on-the-holy-day-of-easter/",
+      "/luther/vol-13b/39-on-the-holy-day-of-easter/"
+    ],
+    "easter-monday": [
+      "/luther/vol-11/50-on-easter-monday/",
+      "/luther/vol-12/34-on-easter-monday/",
+      "/luther/vol-12/135-on-the-first-easter-holiday/",
+      "/luther/vol-13b/40-easter-monday/"
+    ],
+    "easter-tuesday": [
+      "/luther/vol-11/51-on-easter-tuesday/",
+      "/luther/vol-12/35-easter-tuesday/",
+      "/luther/vol-12/36-on-easter-tuesday/",
+      "/luther/vol-13a/55-easter-tuesday/",
+      "/luther/vol-13b/41-on-easter-tuesday/"
+    ],
+    "easter-wednesday": [
+      "/luther/vol-12/37-easter-wednesday/",
+      "/luther/vol-12/110-sermon-on-the-gospel-on-easter-wednesday/",
+      "/luther/vol-13b/42-easter-wednesday/"
+    ],
+    "easter-2": [
+      "/luther/vol-11/52-on-the-sunday-after-easter/",
+      "/luther/vol-11/53-the-sunday-after-easter/",
+      "/luther/vol-12/38-on-the-sunday-after-easter/",
+      "/luther/vol-12/39-on-the-easter-sunday-after-easter/",
+      "/luther/vol-12/111-sermon-on-the-gospel-on-the-first-sunday-after-easter-or-quasimodogeniti/",
+      "/luther/vol-12/176-on-the-first-sunday-after-easter/",
+      "/luther/vol-12/177-on-the-first-sunday-after-easter/",
+      "/luther/vol-13b/43-on-the-first-sunday-after-easter-quasimodogeniti/"
+    ],
+    "easter-3": [
+      "/luther/vol-11/54-the-second-sunday-after-easter/",
+      "/luther/vol-12/193-on-the-sunday-misericordias-domini/",
+      "/luther/vol-13a/56-on-the-second-sunday-after-easter-misericordias-domini/",
+      "/luther/vol-13b/44-on-the-second-sunday-after-easter-misericordias-domini/"
+    ],
+    "easter-4": [
+      "/luther/vol-11/55-on-the-third-sunday-after-easter/",
+      "/luther/vol-12/40-on-the-third-sunday-after-easter/",
+      "/luther/vol-12/41-on-the-third-sunday-after-easter/",
+      "/luther/vol-12/112-sermon-on-the-gospel-on-the-third-sunday-after-easter-or-jubilate/",
+      "/luther/vol-12/194-on-the-sunday-jubilate/",
+      "/luther/vol-13a/57-on-the-third-sunday-after-easter-jubilate/",
+      "/luther/vol-13b/45-on-the-third-sunday-after-easter-jubilate/"
+    ],
+    "easter-5": [
+      "/luther/vol-11/56-on-the-fourth-sunday-after-easter/",
+      "/luther/vol-12/42-on-the-fourth-sunday-after-easter/",
+      "/luther/vol-12/113-on-the-fourth-sunday-after-easter-or-cantate/",
+      "/luther/vol-12/195-on-sunday-cantate/",
+      "/luther/vol-13a/58-on-the-fourth-sunday-after-easter-cantate/",
+      "/luther/vol-13b/46-on-the-fourth-sunday-after-easter-cantate/"
+    ],
+    "easter-6": [
+      "/luther/vol-11/57-on-the-fifth-sunday-after-easter/",
+      "/luther/vol-11/58-on-the-fifth-sunday-after-easter/",
+      "/luther/vol-12/43-on-the-fifth-sunday-after-easter/",
+      "/luther/vol-13a/59-on-the-fifth-sunday-after-easter-rogate/",
+      "/luther/vol-13b/47-on-the-fifth-sunday-after-easter-rogate/"
+    ],
+    "ascension": [
+      "/luther/vol-11/59-on-the-day-of-the-ascension-of-christ/",
+      "/luther/vol-12/44-on-the-day-of-the-ascension-of-christ/",
+      "/luther/vol-12/196-on-the-day-of-the-ascension-of-the-lord/",
+      "/luther/vol-13a/60-on-the-day-of-the-ascension-of-christ/",
+      "/luther/vol-13b/48-on-the-day-of-the-ascension-of-christ/"
+    ],
+    "exaudi": [
+      "/luther/vol-11/60-on-the-sunday-after-the-ascension-of-christ/",
+      "/luther/vol-12/45-on-the-sunday-after-the-ascension-of-christ/",
+      "/luther/vol-12/197-on-sunday-exaudi/",
+      "/luther/vol-13b/49-on-the-sunday-after-the-ascension-of-christ-exaudi/"
+    ],
+    "pentecost": [
+      "/luther/vol-11/61-on-the-day-of-pentecost/",
+      "/luther/vol-11/62-on-pentecost-assembly/",
+      "/luther/vol-12/46-on-the-day-of-pentecost/",
+      "/luther/vol-13a/61-on-the-holy-day-of-pentecost/",
+      "/luther/vol-13a/62-on-the-holy-day-of-pentecost/",
+      "/luther/vol-13a/63-on-pentecost-assembly/",
+      "/luther/vol-13b/50-on-the-holy-day-of-pentecost/"
+    ],
+    "pentecost-monday": [
+      "/luther/vol-11/62-on-pentecost-assembly/",
+      "/luther/vol-12/47-on-pentecost-mount/",
+      "/luther/vol-13b/51-on-pentecost-mount/"
+    ],
+    "pentecost-tuesday": [
+      "/luther/vol-11/63-on-the-tuesday-of-pentecost/",
+      "/luther/vol-12/48-on-pentecost-tuesday/"
+    ],
+    "trinity-sunday": [
+      "/luther/vol-11/65-the-sunday-after-pentecost/",
+      "/luther/vol-11/68-on-the-sunday-of-trinity/",
+      "/luther/vol-12/49-on-the-sunday-of-trinity/",
+      "/luther/vol-12/50-on-the-sunday-of-trinity/",
+      "/luther/vol-12/198-on-the-sunday-of-trinity/",
+      "/luther/vol-13a/64-on-the-sunday-of-trinity/",
+      "/luther/vol-13b/52-on-the-sunday-of-trinity/"
+    ],
+    "third-last-sunday": [
+      "/luther/vol-11/96-on-the-twenty-fifth-sunday-after-trinity/",
+      "/luther/vol-12/76-on-the-twenty-fifth-sunday-after-trinity/",
+      "/luther/vol-13a/90-on-the-twenty-fifth-sunday-after-trinity/",
+      "/luther/vol-13b/78-on-the-twenty-fifth-sunday-after-trinity/"
+    ],
+    "second-last-sunday": [
+      "/luther/vol-12/77-on-the-twenty-sixth-sunday-after-trinity/",
+      "/luther/vol-13a/91-on-the-twenty-sixth-sunday-after-trinity/",
+      "/luther/vol-13b/79-on-the-twenty-sixth-sunday-after-trinity/"
+    ],
+    "last-sunday": [
+      "/luther/vol-13a/92-on-the-twenty-seventh-sunday-after-trinity/"
+    ]
+  };
+
   const trinityMatch = key.match(/^trinity-(\d+)$/);
   if (trinityMatch) {
     const number = Number(trinityMatch[1]);
-    const index = String(50 + number).padStart(2, "0");
-    if (number === 2) return [`/luther/vol-12/${index}-the-other-sunday-after-trinity/`];
-    if (number === 20) return [`/luther/vol-12/${index}-on-the-twentieth-sunday-after-trinity-day/`, "/luther/vol-13b/72-on-the-twentieth-sunday-after-trinity/"];
-    return [`/luther/vol-12/${index}-on-the-${ordinalWord(number)}-sunday-after-trinity/`];
+    const word = ordinalWord(number);
+    const candidates = [];
+
+    if (number === 1) {
+      candidates.push(
+        "/luther/vol-11/69-on-the-first-sunday-after-trinity/",
+        "/luther/vol-11/73-on-the-first-sunday-after-trinity/",
+        "/luther/vol-12/51-on-the-first-sunday-after-trinity/",
+        "/luther/vol-12/209-on-the-first-sunday-after-trinity/",
+        "/luther/vol-13a/65-on-the-first-sunday-after-trinity/",
+        "/luther/vol-13b/53-on-the-first-sunday-after-trinity/"
+      );
+      return candidates;
+    }
+
+    if (number === 2) {
+      candidates.push(
+        "/luther/vol-11/70-on-the-other-sunday-after-trinity/",
+        "/luther/vol-12/52-the-other-sunday-after-trinity/",
+        "/luther/vol-12/200-the-other-sunday-after-trinity/",
+        "/luther/vol-13a/66-on-the-second-sunday-after-trinity/",
+        "/luther/vol-13b/54-on-the-second-sunday-after-trinity/"
+      );
+      return candidates;
+    }
+
+    if (number >= 3 && number <= 25) {
+      candidates.push(`/luther/vol-11/${String(68 + number).padStart(2, "0")}-on-the-${word}-sunday-after-trinity/`);
+    }
+
+    if (number === 20) {
+      candidates.push(
+        "/luther/vol-12/71-on-the-twentieth-sunday-after-trinity-day/",
+        "/luther/vol-12/204-on-the-twentieth-sunday-after-trinity/",
+        "/luther/vol-13a/85-on-the-twentieth-sunday-after-trinity/",
+        "/luther/vol-13b/72-on-the-twentieth-sunday-after-trinity/",
+        "/luther/vol-13b/74-on-the-twentieth-sunday-after-trinity/"
+      );
+      return candidates;
+    }
+
+    if (number === 26) {
+      return [
+        "/luther/vol-12/77-on-the-twenty-sixth-sunday-after-trinity/",
+        "/luther/vol-13a/91-on-the-twenty-sixth-sunday-after-trinity/",
+        "/luther/vol-13b/79-on-the-twenty-sixth-sunday-after-trinity/"
+      ];
+    }
+
+    if (number === 27) {
+      return ["/luther/vol-13a/92-on-the-twenty-seventh-sunday-after-trinity/"];
+    }
+
+    candidates.push(
+      `/luther/vol-12/${String(50 + number).padStart(2, "0")}-on-the-${word}-sunday-after-trinity/`,
+      `/luther/vol-13a/${String(64 + number).padStart(2, "0")}-on-the-${word}-sunday-after-trinity/`,
+      `/luther/vol-13b/${String(52 + number).padStart(2, "0")}-on-the-${word}-sunday-after-trinity/`
+    );
+    return candidates;
   }
 
-  switch (key) {
-    case "advent-1": return ["/luther/vol-13b/05-on-the-first-sunday-of-advent/"];
-    case "advent-2": return ["/luther/vol-13b/06-on-the-second-sunday-of-advent/"];
-    case "advent-3": return ["/luther/vol-13b/07-on-the-third-sunday-of-advent/"];
-    case "advent-4": return ["/luther/vol-13b/08-on-the-fourth-sunday-of-advent/"];
-    case "christmas-eve": return ["/luther/vol-11/105-at-christmas-eve-mass/"];
-    case "christmas-day": return ["/luther/vol-11/106-in-the-morning-christmas-mass/", "/luther/vol-13b/09-on-christmas-day/"];
-    case "sunday-after-christmas": return ["/luther/vol-13b/13-on-the-sunday-after-christmas-day/"];
-    case "sunday-after-new-years": return ["/luther/vol-13b/16-on-the-first-sunday-after-epiphany/"];
-    case "baptism-of-our-lord": return ["/luther/vol-11/119-a-sermon-of-the-baptism-of-christ/"];
-    case "epiphany": return ["/luther/vol-13b/15-on-the-day-of-epiphany/"];
-    case "epiphany-2": return ["/luther/vol-13b/17-on-the-second-sunday-after-epiphany/"];
-    case "epiphany-3": return ["/luther/vol-13b/18-on-the-third-sunday-after-epiphany/"];
-    case "epiphany-4": return ["/luther/vol-13b/19-on-the-fourth-sunday-after-epiphany/"];
-    case "epiphany-5": return ["/luther/vol-13b/20-on-the-fifth-sunday-after-epiphany/"];
-    case "transfiguration": return ["/luther/vol-13a/19-the-next-sunday-after-epiphany/", "/luther/vol-12/20-the-next-sunday-after-epiphany/"];
-    case "lent-1": return ["/luther/vol-13b/25-on-sunday-invocavit/"];
-    case "lent-2": return ["/luther/vol-13b/26-on-the-sunday-reminiscere/"];
-    case "lent-3": return ["/luther/vol-13b/27-on-sunday-oculi/"];
-    case "lent-4": return ["/luther/vol-12/28-on-the-other-sunday-in-lent/", "/luther/vol-11/40-on-the-easter-sunday-in-lent/"];
-    case "lent-5": return ["/luther/vol-13b/29-on-sunday-judica/"];
-    case "good-friday": return ["/luther/vol-13a/49-good-friday/"];
-    case "easter": return ["/luther/vol-13b/39-on-the-holy-day-of-easter/"];
-    case "easter-monday": return ["/luther/vol-13b/40-easter-monday/"];
-    case "easter-tuesday": return ["/luther/vol-13b/41-on-easter-tuesday/"];
-    case "easter-wednesday": return ["/luther/vol-13b/42-easter-wednesday/"];
-    case "easter-2": return ["/luther/vol-13b/43-on-the-first-sunday-after-easter-quasimodogeniti/"];
-    case "easter-3": return ["/luther/vol-13b/44-on-the-second-sunday-after-easter-misericordias-domini/"];
-    case "easter-4": return ["/luther/vol-13b/45-on-the-third-sunday-after-easter-jubilate/"];
-    case "easter-5": return ["/luther/vol-13b/46-on-the-fourth-sunday-after-easter-cantate/"];
-    case "easter-6": return ["/luther/vol-13b/47-on-the-fifth-sunday-after-easter-rogate/"];
-    case "ascension": return ["/luther/vol-13b/48-on-the-day-of-the-ascension-of-christ/"];
-    case "exaudi": return ["/luther/vol-13b/49-on-the-sunday-after-the-ascension-of-christ-exaudi/"];
-    case "pentecost": return ["/luther/vol-13b/50-on-the-holy-day-of-pentecost/"];
-    case "pentecost-monday": return ["/luther/vol-13b/51-on-pentecost-mount/"];
-    case "pentecost-tuesday": return ["/luther/vol-12/48-on-pentecost-tuesday/"];
-    case "trinity-sunday": return ["/luther/vol-13b/52-on-the-sunday-of-trinity/"];
-    case "third-last-sunday": return ["/luther/vol-12/76-on-the-twenty-fifth-sunday-after-trinity/"];
-    case "second-last-sunday": return ["/luther/vol-12/77-on-the-twenty-sixth-sunday-after-trinity/"];
-    case "last-sunday": return ["/luther/vol-13a/92-on-the-twenty-seventh-sunday-after-trinity/"];
-    default: return [];
-  }
+  return byKey[key] || [];
 }
 
 async function urlExists(url) {
@@ -1164,11 +1456,12 @@ async function urlExists(url) {
   return lectionaryUrlExistsCache.get(url);
 }
 
-async function resolveFirstExistingUrl(candidates) {
+async function resolveExistingUrls(candidates) {
+  const matches = [];
   for (const candidate of [...new Set(candidates.filter(Boolean))]) {
-    if (await urlExists(candidate)) return candidate;
+    if (await urlExists(candidate)) matches.push(candidate);
   }
-  return "";
+  return matches;
 }
 
 async function getResolvedSermonLinks(title) {
@@ -1181,18 +1474,24 @@ async function getResolvedSermonLinks(title) {
     if (!key) return [];
 
     const waltherCandidates = getWaltherCandidateUrls(key);
-    const [lutherHref, waltherGospelHref, waltherEpistleHref] = await Promise.all([
-      resolveFirstExistingUrl(getLutherCandidateUrls(key)),
-      resolveFirstExistingUrl(waltherCandidates.gospel || []),
-      resolveFirstExistingUrl(waltherCandidates.epistle || [])
+    const [lutherHrefs, waltherGospelHref, waltherEpistleHref] = await Promise.all([
+      resolveExistingUrls(getLutherCandidateUrls(key)),
+      resolveExistingUrls(waltherCandidates.gospel || []).then((matches) => matches[0] || ""),
+      resolveExistingUrls(waltherCandidates.epistle || []).then((matches) => matches[0] || "")
     ]);
 
-    return [
-      lutherHref ? { label: "Luther Sermon", href: lutherHref } : null,
-      waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
-      waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
-    ].filter(Boolean);
-  })();
+    const lutherLinks = lutherHrefs.map((href, index) => ({
+      label: `Luther Sermon ${index + 1}`,
+      href
+    }));
+
+      return [
+        ...lutherLinks,
+        waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
+        waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
+      ];
+    }).then((links) => links.filter(Boolean));
+  
 
   lectionarySermonResolutionCache.set(title, resolution);
   return resolution;
