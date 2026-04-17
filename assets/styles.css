@@ -3322,6 +3322,7 @@ textarea {
 .walther-reading-figure {
   margin: 1.25rem 0;
   padding: 0.9rem;
+  max-width: 32rem;
   border: 1px solid rgba(213, 166, 41, 0.14);
   border-radius: 1rem;
   background: rgba(9, 8, 7, 0.42);
@@ -3330,6 +3331,7 @@ textarea {
 .walther-reading-figure img {
   display: block;
   width: 100%;
+  max-width: 100%;
   height: auto;
   border-radius: 0.7rem;
 }
