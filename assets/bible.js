@@ -853,8 +853,8 @@ function findAdjacentObservance(data, date, direction, includeStart = false) {
 
 function renderOneYear(data, propers, books, searchIndex, date) {
   const currentObservance = findAdjacentObservance(data, date, -1, true) || findAdjacentObservance(data, date, 1, true);
-  const previousObservance = currentObservance
-    ? findAdjacentObservance(data, addDays(currentObservance.date, -1), -1, true)
+  const nextObservance = currentObservance
+    ? findAdjacentObservance(data, addDays(currentObservance.date, 1), 1, true)
     : null;
 
   if (!currentObservance) {
@@ -871,19 +871,19 @@ function renderOneYear(data, propers, books, searchIndex, date) {
     <section class="lectionary-cycle-shell" aria-label="Historic One Year lectionary cycle">
       <article class="lectionary-card lectionary-cycle-nav-card">
         <p class="eyebrow">Historic One Year Lectionary</p>
-        <h3>Read the most recent and current observances together</h3>
-        <p class="lectionary-empty">On larger screens the previous and current Sunday or major feast appear side by side. On mobile you can still jump directly to each observance and its sermon links.</p>
+        <h3>Read the current and next observances together</h3>
+        <p class="lectionary-empty">On larger screens the current and next Sunday or major feast appear side by side. On mobile you can still jump directly to each observance and its sermon links.</p>
         <div class="lectionary-action-row">
-          ${previousObservance ? `<a class="button button-outline lectionary-action-button lectionary-observance-jump" href="#lectionary-previous">Previous observance</a>` : ""}
           <a class="button button-red lectionary-action-button lectionary-observance-jump" href="#lectionary-current">Current observance</a>
-          ${previousObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-previous-sermons">Previous sermons</a>` : ""}
+          ${nextObservance ? `<a class="button button-outline lectionary-action-button lectionary-observance-jump" href="#lectionary-next">Next observance</a>` : ""}
           <a class="button button-outline lectionary-action-button" href="#lectionary-current-sermons">Current sermons</a>
+          ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next-sermons">Next sermons</a>` : ""}
           <a class="button button-outline lectionary-action-button" href="/daily-readings">Daily readings</a>
         </div>
       </article>
       <div class="lectionary-observance-grid">
-        ${previousObservance ? renderOneYearCard(previousObservance, books, searchIndex, "Most Recent Previous Sunday or Major Feast", "lectionary-previous", true) : ""}
         ${renderOneYearCard(currentObservance, books, searchIndex, "Current Sunday or Major Feast in the Cycle", "lectionary-current", true)}
+        ${nextObservance ? renderOneYearCard(nextObservance, books, searchIndex, "Next Sunday or Major Feast in the Cycle", "lectionary-next", true) : ""}
       </div>
     </section>
   `;
@@ -1486,26 +1486,18 @@ function getResolvedSermonLinks(title) {
   const lutherHrefs = resolveExistingUrls(getLutherCandidateUrls(key));
   const waltherGospelHref = resolveExistingUrls(waltherCandidates.gospel || [])[0] || "";
   const waltherEpistleHref = resolveExistingUrls(waltherCandidates.epistle || [])[0] || "";
-  let lutherGospelCount = 0;
-  let lutherEpistleCount = 0;
+  const lutherGospelHrefs = lutherHrefs.filter((href) => !href.includes("/vol-12/"));
+  const lutherEpistleHrefs = lutherHrefs.filter((href) => href.includes("/vol-12/"));
 
   const resolution = [
-    ...lutherHrefs.map((href) => {
-      const isEpistle = href.includes("/vol-12/");
-      if (isEpistle) {
-        lutherEpistleCount += 1;
-        return {
-          label: `Luther Epistle Sermon ${lutherEpistleCount}`,
-          href
-        };
-      }
-
-      lutherGospelCount += 1;
-      return {
-        label: `Luther Gospel Sermon ${lutherGospelCount}`,
-        href
-      };
-    }),
+    ...lutherGospelHrefs.map((href, index) => ({
+      label: `Luther Gospel Sermon ${index + 1}`,
+      href
+    })),
+    ...lutherEpistleHrefs.map((href, index) => ({
+      label: `Luther Epistle Sermon ${index + 1}`,
+      href
+    })),
     waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
     waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
   ].filter(Boolean);
