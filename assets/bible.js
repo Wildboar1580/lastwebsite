@@ -894,16 +894,16 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
         <div><strong>Old Testament</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.oldTestament), books, searchIndex)}</div>
         <div><strong>Epistle</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
         <div><strong>Gospel</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.gospel), books, searchIndex)}</div>
-      </div>
-      ${includeSermons ? `
-        <div class="lectionary-sermon-panel" id="${sectionId}-sermons">
-          <p class="lectionary-proper-label">Relevant Luther and Walther Sermons</p>
-          <div class="lectionary-sermon-actions" data-observance-sermons data-observance-title="${escapeHtml(observance.title)}">
-            <p class="lectionary-empty">Looking for sermon pages for this observance...</p>
-          </div>
         </div>
-      ` : ""}
-    </article>
+        ${includeSermons ? `
+          <div class="lectionary-sermon-panel" id="${sectionId}-sermons">
+            <p class="lectionary-proper-label">Relevant Luther and Walther Sermons</p>
+            <div class="lectionary-sermon-actions" data-observance-sermons data-observance-title="${escapeHtml(observance.title)}">
+              ${renderSermonLinks(getResolvedSermonLinks(observance.title))}
+            </div>
+          </div>
+        ` : ""}
+      </article>
   `;
 }
 
@@ -1451,38 +1451,31 @@ async function urlExists(url) {
   return lectionaryUrlExistsCache.get(url);
 }
 
-async function resolveExistingUrls(candidates) {
+function resolveExistingUrls(candidates) {
   return [...new Set((candidates || []).filter(Boolean))];
 }
 
-async function getResolvedSermonLinks(title) {
+function getResolvedSermonLinks(title) {
   if (lectionarySermonResolutionCache.has(title)) {
     return lectionarySermonResolutionCache.get(title);
   }
 
-  const resolution = (async () => {
-    const key = getObservanceKey(title);
-    if (!key) return [];
+  const key = getObservanceKey(title);
+  if (!key) return [];
 
-    const waltherCandidates = getWaltherCandidateUrls(key);
-    const [lutherHrefs, waltherGospelHref, waltherEpistleHref] = await Promise.all([
-      resolveExistingUrls(getLutherCandidateUrls(key)),
-      resolveExistingUrls(waltherCandidates.gospel || []).then((matches) => matches[0] || ""),
-      resolveExistingUrls(waltherCandidates.epistle || []).then((matches) => matches[0] || "")
-    ]);
+  const waltherCandidates = getWaltherCandidateUrls(key);
+  const lutherHrefs = resolveExistingUrls(getLutherCandidateUrls(key));
+  const waltherGospelHref = resolveExistingUrls(waltherCandidates.gospel || [])[0] || "";
+  const waltherEpistleHref = resolveExistingUrls(waltherCandidates.epistle || [])[0] || "";
 
-    const lutherLinks = lutherHrefs.map((href, index) => ({
+  const resolution = [
+    ...lutherHrefs.map((href, index) => ({
       label: `Luther Sermon ${index + 1}`,
       href
-    }));
-
-      return [
-        ...lutherLinks,
-        waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
-        waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
-      ];
-    }).then((links) => links.filter(Boolean));
-  
+    })),
+    waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
+    waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
+  ].filter(Boolean);
 
   lectionarySermonResolutionCache.set(title, resolution);
   return resolution;
@@ -1498,13 +1491,13 @@ function renderSermonLinks(links) {
   `).join("");
 }
 
-async function hydrateLectionarySermonLinks(root) {
+function hydrateLectionarySermonLinks(root) {
   const containers = [...root.querySelectorAll("[data-observance-sermons]")];
-  await Promise.all(containers.map(async (container) => {
+  containers.forEach((container) => {
     const title = container.dataset.observanceTitle || "";
-    const links = await getResolvedSermonLinks(title);
+    const links = getResolvedSermonLinks(title);
     container.innerHTML = renderSermonLinks(links);
-  }));
+  });
 }
 
 function renderDaily(propers, books, searchIndex, date) {
