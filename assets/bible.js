@@ -1467,12 +1467,26 @@ function getResolvedSermonLinks(title) {
   const lutherHrefs = resolveExistingUrls(getLutherCandidateUrls(key));
   const waltherGospelHref = resolveExistingUrls(waltherCandidates.gospel || [])[0] || "";
   const waltherEpistleHref = resolveExistingUrls(waltherCandidates.epistle || [])[0] || "";
+  let lutherGospelCount = 0;
+  let lutherEpistleCount = 0;
 
   const resolution = [
-    ...lutherHrefs.map((href, index) => ({
-      label: `Luther Sermon ${index + 1}`,
-      href
-    })),
+    ...lutherHrefs.map((href) => {
+      const isEpistle = href.includes("/vol-12/");
+      if (isEpistle) {
+        lutherEpistleCount += 1;
+        return {
+          label: `Luther Epistle Sermon ${lutherEpistleCount}`,
+          href
+        };
+      }
+
+      lutherGospelCount += 1;
+      return {
+        label: `Luther Gospel Sermon ${lutherGospelCount}`,
+        href
+      };
+    }),
     waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
     waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
   ].filter(Boolean);
