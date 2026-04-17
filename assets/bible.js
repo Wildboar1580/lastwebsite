@@ -1488,14 +1488,19 @@ function getResolvedSermonLinks(title) {
   const waltherEpistleHref = resolveExistingUrls(waltherCandidates.epistle || [])[0] || "";
   const lutherGospelHrefs = lutherHrefs.filter((href) => !href.includes("/vol-12/"));
   const lutherEpistleHrefs = lutherHrefs.filter((href) => href.includes("/vol-12/"));
+  const getLutherSeriesDate = (href) => {
+    if (href.includes("/vol-11/") || href.includes("/vol-12/")) return "1521-1525";
+    if (href.includes("/vol-13a/") || href.includes("/vol-13b/")) return "1531-1535";
+    return "";
+  };
 
   const resolution = [
     ...lutherGospelHrefs.map((href, index) => ({
-      label: `Luther Gospel Sermon ${index + 1}`,
+      label: `Luther Gospel Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
       href
     })),
     ...lutherEpistleHrefs.map((href, index) => ({
-      label: `Luther Epistle Sermon ${index + 1}`,
+      label: `Luther Epistle Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
       href
     })),
     waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
