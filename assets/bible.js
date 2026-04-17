@@ -669,17 +669,11 @@ async function initLectionaryPanels() {
   const dailyRoot = document.querySelector("[data-daily-reading]");
   if (!oneYearRoot && !dailyRoot) return;
 
-  let oneYearData = [];
-  let dailyData = [];
   let books = [];
   let searchIndex = [];
 
   try {
-    [oneYearData, dailyData, books] = await Promise.all([
-      fetch("/assets/bible/lsb-1yr.json").then((response) => response.json()),
-      fetch("/assets/bible/lsb-daily.json").then((response) => response.json()),
-      loadBooks()
-    ]);
+    books = await loadBooks();
   } catch (error) {
     const errorMessage = `
       <article class="lectionary-card">
@@ -701,16 +695,38 @@ async function initLectionaryPanels() {
   }
 
   const today = new Date();
-  const oneYearPropers = loadPropers(oneYearData, today);
-  const dailyPropers = loadPropers(dailyData, today);
 
   if (oneYearRoot) {
-    oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
-    await hydrateLectionarySermonLinks(oneYearRoot);
+    try {
+      const oneYearData = await fetch("/assets/bible/lsb-1yr.json").then((response) => response.json());
+      const oneYearPropers = loadPropers(oneYearData, today);
+      oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
+      hydrateLectionarySermonLinks(oneYearRoot);
+    } catch (error) {
+      oneYearRoot.innerHTML = `
+        <article class="lectionary-card">
+          <p class="eyebrow">Historic One Year Lectionary</p>
+          <h3>Unable to load the one-year cycle right now</h3>
+          <p class="lectionary-empty">Please refresh the page in a moment. The one-year lectionary data could not be loaded.</p>
+        </article>
+      `;
+    }
   }
 
   if (dailyRoot) {
-    dailyRoot.innerHTML = renderDaily(dailyPropers, books, searchIndex, today);
+    try {
+      const dailyData = await fetch("/assets/bible/lsb-daily.json").then((response) => response.json());
+      const dailyPropers = loadPropers(dailyData, today);
+      dailyRoot.innerHTML = renderDaily(dailyPropers, books, searchIndex, today);
+    } catch (error) {
+      dailyRoot.innerHTML = `
+        <article class="lectionary-card">
+          <p class="eyebrow">Daily Lectionary</p>
+          <h3>Unable to load today’s daily readings right now</h3>
+          <p class="lectionary-empty">Please refresh the page in a moment. The daily lectionary data could not be loaded.</p>
+        </article>
+      `;
+    }
   }
 }
 
@@ -836,10 +852,10 @@ function findAdjacentObservance(data, date, direction, includeStart = false) {
 }
 
 function renderOneYear(data, propers, books, searchIndex, date) {
-    const currentObservance = findAdjacentObservance(data, date, -1, true) || findAdjacentObservance(data, date, 1, true);
-    const nextObservance = currentObservance
-      ? findAdjacentObservance(data, addDays(currentObservance.date, 1), 1, true)
-      : null;
+  const currentObservance = findAdjacentObservance(data, date, -1, true) || findAdjacentObservance(data, date, 1, true);
+  const previousObservance = currentObservance
+    ? findAdjacentObservance(data, addDays(currentObservance.date, -1), -1, true)
+    : null;
 
   if (!currentObservance) {
     return `
@@ -852,21 +868,24 @@ function renderOneYear(data, propers, books, searchIndex, date) {
   }
 
   return `
-      <section class="lectionary-cycle-shell" aria-label="Historic One Year lectionary cycle">
-        <article class="lectionary-card lectionary-cycle-nav-card">
-          <p class="eyebrow">Historic One Year Lectionary</p>
-          <h3>Move through the church-year cycle</h3>
-          <p class="lectionary-empty">Jump to the current observance in the cycle, the next observance, or the sermon pages tied to the current and next observances.</p>
-          <div class="lectionary-action-row">
-            <a class="button button-red lectionary-action-button" href="#lectionary-current">Current observance</a>
-            ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next">Next observance</a>` : ""}
-            <a class="button button-outline lectionary-action-button" href="#lectionary-current-sermons">Current sermons</a>
-            ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next-sermons">Next sermons</a>` : ""}
-          </div>
-        </article>
+    <section class="lectionary-cycle-shell" aria-label="Historic One Year lectionary cycle">
+      <article class="lectionary-card lectionary-cycle-nav-card">
+        <p class="eyebrow">Historic One Year Lectionary</p>
+        <h3>Read the most recent and current observances together</h3>
+        <p class="lectionary-empty">On larger screens the previous and current Sunday or major feast appear side by side. On mobile you can still jump directly to each observance and its sermon links.</p>
+        <div class="lectionary-action-row">
+          ${previousObservance ? `<a class="button button-outline lectionary-action-button lectionary-observance-jump" href="#lectionary-previous">Previous observance</a>` : ""}
+          <a class="button button-red lectionary-action-button lectionary-observance-jump" href="#lectionary-current">Current observance</a>
+          ${previousObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-previous-sermons">Previous sermons</a>` : ""}
+          <a class="button button-outline lectionary-action-button" href="#lectionary-current-sermons">Current sermons</a>
+          <a class="button button-outline lectionary-action-button" href="/daily-readings">Daily readings</a>
+        </div>
+      </article>
+      <div class="lectionary-observance-grid">
+        ${previousObservance ? renderOneYearCard(previousObservance, books, searchIndex, "Most Recent Previous Sunday or Major Feast", "lectionary-previous", true) : ""}
         ${renderOneYearCard(currentObservance, books, searchIndex, "Current Sunday or Major Feast in the Cycle", "lectionary-current", true)}
-        ${nextObservance ? renderOneYearCard(nextObservance, books, searchIndex, "Next Sunday or Major Feast in the Cycle", "lectionary-next", true) : ""}
-      </section>
+      </div>
+    </section>
   `;
 }
 

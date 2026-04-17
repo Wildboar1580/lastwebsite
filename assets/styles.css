@@ -1852,6 +1852,11 @@ textarea {
   gap: 1rem;
 }
 
+.lectionary-observance-grid {
+  display: grid;
+  gap: 1rem;
+}
+
 .lectionary-action-row,
 .lectionary-sermon-actions {
   display: flex;
@@ -1869,6 +1874,10 @@ textarea {
 }
 
 .lectionary-observance-card {
+  scroll-margin-top: 6.5rem;
+}
+
+.lectionary-cycle-nav-card {
   scroll-margin-top: 6.5rem;
 }
 
@@ -1952,6 +1961,17 @@ textarea {
   margin: 0;
   padding-left: 1.15rem;
   color: var(--text-soft);
+}
+
+@media (min-width: 900px) {
+  .lectionary-observance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .lectionary-observance-jump {
+    display: none;
+  }
 }
 
 .bible-search-results {
