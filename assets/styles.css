@@ -1847,6 +1847,37 @@ textarea {
   gap: 0.9rem;
 }
 
+.lectionary-cycle-shell {
+  display: grid;
+  gap: 1rem;
+}
+
+.lectionary-action-row,
+.lectionary-sermon-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.lectionary-sermon-jump-row {
+  margin-top: 0.75rem;
+}
+
+.lectionary-action-button {
+  min-height: 2.75rem;
+}
+
+.lectionary-observance-card {
+  scroll-margin-top: 6.5rem;
+}
+
+.lectionary-sermon-panel {
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(213, 166, 41, 0.14);
+}
+
 .lectionary-propers {
   display: grid;
   gap: 0.9rem;

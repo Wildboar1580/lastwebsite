@@ -705,7 +705,8 @@ async function initLectionaryPanels() {
   const dailyPropers = loadPropers(dailyData, today);
 
   if (oneYearRoot) {
-    oneYearRoot.innerHTML = renderOneYear(oneYearPropers, books, searchIndex, today);
+    oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
+    await hydrateLectionarySermonLinks(oneYearRoot);
   }
 
   if (dailyRoot) {
@@ -807,31 +808,415 @@ function findProper(propers, type) {
   return propers.find((proper) => proper.type === type)?.text || "";
 }
 
-function renderOneYear(propers, books, searchIndex, date) {
-  const title = findProper(propers, ONE_YEAR_TYPES.title) || "No appointed one-year observance";
-  const color = findProper(propers, ONE_YEAR_TYPES.color) || "Seasonal";
-  const introit = findProper(propers, ONE_YEAR_TYPES.introit);
-  const collect = findProper(propers, ONE_YEAR_TYPES.collect);
-  const gradual = findProper(propers, ONE_YEAR_TYPES.gradual);
-  const verse = findProper(propers, ONE_YEAR_TYPES.verse);
+function startOfDay(date) {
+  const next = new Date(date);
+  next.setHours(0, 0, 0, 0);
+  return next;
+}
+
+function getObservance(data, date) {
+  const propers = loadPropers(data, date);
+  const title = findProper(propers, ONE_YEAR_TYPES.title);
+  if (!title) return null;
+
+  return {
+    date: startOfDay(date),
+    propers,
+    title
+  };
+}
+
+function findAdjacentObservance(data, date, direction, includeStart = false) {
+  const anchor = startOfDay(date);
+  for (let offset = includeStart ? 0 : direction; Math.abs(offset) <= 370; offset += direction) {
+    const observance = getObservance(data, addDays(anchor, offset));
+    if (observance) return observance;
+  }
+  return null;
+}
+
+function renderOneYear(data, propers, books, searchIndex, date) {
+  const currentObservance = findAdjacentObservance(data, date, -1, true) || findAdjacentObservance(data, date, 1, true);
+  const previousObservance = currentObservance
+    ? findAdjacentObservance(data, addDays(currentObservance.date, -1), -1, true)
+    : null;
+  const nextObservance = currentObservance
+    ? findAdjacentObservance(data, addDays(currentObservance.date, 1), 1, true)
+    : null;
+
+  if (!currentObservance) {
+    return `
+      <article class="lectionary-card">
+        <p class="eyebrow">Historic One Year Lectionary</p>
+        <h3>No appointed one-year observance found</h3>
+        <p class="lectionary-empty">The lectionary data did not return an observance for this part of the cycle.</p>
+      </article>
+    `;
+  }
+
   return `
-    <article class="lectionary-card">
-      <p class="eyebrow">Today in the Historic One Year Lectionary</p>
-      <h3>${escapeHtml(title)}</h3>
-      <p class="lectionary-date">${date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · ${escapeHtml(color)}</p>
+    <section class="lectionary-cycle-shell" aria-label="Historic One Year lectionary cycle">
+      <article class="lectionary-card lectionary-cycle-nav-card">
+        <p class="eyebrow">Historic One Year Lectionary</p>
+        <h3>Move through the church-year cycle</h3>
+        <p class="lectionary-empty">Jump to the most recent previous observance, the current day in the cycle, the next observance, or the sermon pages tied to the current and next observances.</p>
+        <div class="lectionary-action-row">
+          ${previousObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-previous">Previous observance</a>` : ""}
+          <a class="button button-red lectionary-action-button" href="#lectionary-current">Current observance</a>
+          ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next">Next observance</a>` : ""}
+        </div>
+        <div class="lectionary-action-row lectionary-sermon-jump-row">
+          <a class="button button-outline lectionary-action-button" href="#lectionary-current-sermons">Current sermons</a>
+          ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next-sermons">Next sermons</a>` : ""}
+        </div>
+      </article>
+      ${previousObservance ? renderOneYearCard(previousObservance, books, searchIndex, "Most Recent Previous Sunday or Major Feast", "lectionary-previous", false) : ""}
+      ${renderOneYearCard(currentObservance, books, searchIndex, "Current Sunday or Major Feast in the Cycle", "lectionary-current", true)}
+      ${nextObservance ? renderOneYearCard(nextObservance, books, searchIndex, "Next Sunday or Major Feast in the Cycle", "lectionary-next", true) : ""}
+    </section>
+  `;
+}
+
+function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, includeSermons) {
+  const color = findProper(observance.propers, ONE_YEAR_TYPES.color) || "Seasonal";
+  const introit = findProper(observance.propers, ONE_YEAR_TYPES.introit);
+  const collect = findProper(observance.propers, ONE_YEAR_TYPES.collect);
+  const gradual = findProper(observance.propers, ONE_YEAR_TYPES.gradual);
+  const verse = findProper(observance.propers, ONE_YEAR_TYPES.verse);
+  const specialRubric = findProper(observance.propers, ONE_YEAR_TYPES.specialRubric);
+
+  return `
+    <article class="lectionary-card lectionary-observance-card" id="${sectionId}">
+      <p class="eyebrow">${escapeHtml(eyebrow)}</p>
+      <h3>${escapeHtml(observance.title)}</h3>
+      <p class="lectionary-date">${observance.date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })} · ${escapeHtml(color)}</p>
       <div class="lectionary-propers">
         ${renderProperBlock("Introit", introit)}
         ${renderProperBlock("Collect", collect)}
         ${renderProperBlock("Gradual", gradual)}
         ${renderProperBlock("Verse", verse)}
+        ${renderProperBlock("Notes", specialRubric)}
       </div>
       <div class="lectionary-reading-list">
-        <div><strong>Old Testament</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.oldTestament), books, searchIndex)}</div>
-        <div><strong>Epistle</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
-        <div><strong>Gospel</strong>${renderReferenceList(findProper(propers, ONE_YEAR_TYPES.gospel), books, searchIndex)}</div>
+        <div><strong>Old Testament</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.oldTestament), books, searchIndex)}</div>
+        <div><strong>Epistle</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
+        <div><strong>Gospel</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.gospel), books, searchIndex)}</div>
       </div>
+      ${includeSermons ? `
+        <div class="lectionary-sermon-panel" id="${sectionId}-sermons">
+          <p class="lectionary-proper-label">Relevant Luther and Walther Sermons</p>
+          <div class="lectionary-sermon-actions" data-observance-sermons data-observance-title="${escapeHtml(observance.title)}">
+            <p class="lectionary-empty">Looking for sermon pages for this observance...</p>
+          </div>
+        </div>
+      ` : ""}
     </article>
   `;
+}
+
+const lectionarySermonResolutionCache = new Map();
+const lectionaryUrlExistsCache = new Map();
+
+function getObservanceKey(title) {
+  const trimmed = title.trim();
+  const trinityMatch = trimmed.match(/^Trinity\s+(\d+)$/i);
+  if (trinityMatch) return `trinity-${Number(trinityMatch[1])}`;
+
+  const epiphanyMatch = trimmed.match(/^Epiphany\s+(\d+)$/i);
+  if (epiphanyMatch) return `epiphany-${Number(epiphanyMatch[1])}`;
+
+  switch (trimmed) {
+    case "Ad Te Levavi (Advent 1)": return "advent-1";
+    case "Populus Zion (Advent 2)": return "advent-2";
+    case "Gaudete (Advent 3)": return "advent-3";
+    case "Rorate coeli (Advent 4)": return "advent-4";
+    case "Eve of the Nativity (Christmas Eve)": return "christmas-eve";
+    case "The Nativity of Our Lord (Christmas Dawn)": return "christmas-day";
+    case "Sunday after Christmas": return "sunday-after-christmas";
+    case "Sunday after New Years": return "sunday-after-new-years";
+    case "The Baptism of Our Lord": return "baptism-of-our-lord";
+    case "The Epiphany of Our Lord": return "epiphany";
+    case "Transfiguration": return "transfiguration";
+    case "Septuagesima": return "septuagesima";
+    case "Sexagesima": return "sexagesima";
+    case "Quinquagesima": return "quinquagesima";
+    case "Ash Wednesday": return "ash-wednesday";
+    case "Invocavit (Lent 1)": return "lent-1";
+    case "Reminiscere (Lent 2)": return "lent-2";
+    case "Oculi (Lent 3)": return "lent-3";
+    case "Laetare (Lent 4)": return "lent-4";
+    case "Judica (Lent 5)": return "lent-5";
+    case "Palmarum (Palm Sunday)": return "palm-sunday";
+    case "Monday of Holy Week": return "holy-week-monday";
+    case "Tuesday of Holy Week": return "holy-week-tuesday";
+    case "Wednesday of Holy Week": return "holy-week-wednesday";
+    case "Maundy Thursday": return "maundy-thursday";
+    case "Good Friday": return "good-friday";
+    case "Holy Saturday (Easter Vigil)": return "holy-saturday";
+    case "Easter": return "easter";
+    case "Easter Monday": return "easter-monday";
+    case "Easter Tuesday": return "easter-tuesday";
+    case "Easter Wednesday": return "easter-wednesday";
+    case "Quasimodo Geniti (Easter 2)": return "easter-2";
+    case "Misericordias Domini (Easter 3)": return "easter-3";
+    case "Jubilate (Easter 4)": return "easter-4";
+    case "Cantate (Easter 5)": return "easter-5";
+    case "Rogate (Easter 6)": return "easter-6";
+    case "Ascension": return "ascension";
+    case "Exaudi (Sunday after the Ascension)": return "exaudi";
+    case "Pentecost": return "pentecost";
+    case "Pentecost Monday": return "pentecost-monday";
+    case "Pentecost Tuesday": return "pentecost-tuesday";
+    case "Trinity Sunday": return "trinity-sunday";
+    case "Third Last Sunday": return "third-last-sunday";
+    case "Second Last Sunday": return "second-last-sunday";
+    case "Last Sunday": return "last-sunday";
+    default: return "";
+  }
+}
+
+function ordinalWord(number) {
+  const words = {
+    1: "first",
+    2: "second",
+    3: "third",
+    4: "fourth",
+    5: "fifth",
+    6: "sixth",
+    7: "seventh",
+    8: "eighth",
+    9: "ninth",
+    10: "tenth",
+    11: "eleventh",
+    12: "twelfth",
+    13: "thirteenth",
+    14: "fourteenth",
+    15: "fifteenth",
+    16: "sixteenth",
+    17: "seventeenth",
+    18: "eighteenth",
+    19: "nineteenth",
+    20: "twentieth",
+    21: "twenty-first",
+    22: "twenty-second",
+    23: "twenty-third",
+    24: "twenty-fourth",
+    25: "twenty-fifth",
+    26: "twenty-sixth",
+    27: "twenty-seventh"
+  };
+  return words[number] || `${number}th`;
+}
+
+function ordinalSlug(number) {
+  const mod100 = number % 100;
+  if (mod100 >= 11 && mod100 <= 13) return `${number}th`;
+  switch (number % 10) {
+    case 1: return `${number}st`;
+    case 2: return `${number}nd`;
+    case 3: return `${number}rd`;
+    default: return `${number}th`;
+  }
+}
+
+function waltherTrinityEpistleBase(number) {
+  if (number === 5 || number === 7) return `${number}-sunday-after-trinity`;
+  return `${ordinalSlug(number)}-sunday-after-trinity`;
+}
+
+function getWaltherCandidateUrls(key) {
+  const gospelRoot = "/walther/sermons/gospel-sermons";
+  const epistleRoot = "/walther/sermons/epistle-sermons";
+  const exact = (slug, root = gospelRoot) => slug ? [`${root}/${slug}/`] : [];
+  const withVariants = (base, root = epistleRoot) => [
+    `${root}/${base}/`,
+    `${root}/${base}-1/`,
+    `${root}/${base}-2/`,
+    `${root}/${base}-3/`
+  ];
+
+  const links = { gospel: [], epistle: [] };
+  const trinityMatch = key.match(/^trinity-(\d+)$/);
+  if (trinityMatch) {
+    const number = Number(trinityMatch[1]);
+    links.gospel = exact(`${ordinalSlug(number)}-sunday-after-trinity`);
+    if (number <= 23) {
+      links.epistle = withVariants(waltherTrinityEpistleBase(number));
+    }
+    return links;
+  }
+
+  switch (key) {
+    case "advent-1": links.gospel = exact("1st-sunday-in-advent"); links.epistle = withVariants("1st-sunday-in-advent"); break;
+    case "advent-2": links.gospel = exact("2nd-sunday-in-advent"); links.epistle = withVariants("2nd-sunday-in-advent"); break;
+    case "advent-3": links.gospel = exact("3rd-sunday-in-advent"); links.epistle = withVariants("3rd-sunday-in-advent"); break;
+    case "advent-4": links.gospel = exact("4th-sunday-in-advent"); links.epistle = withVariants("4th-sunday-in-advent"); break;
+    case "christmas-day": links.gospel = exact("christmas-day"); links.epistle = withVariants("christmas-day"); break;
+    case "sunday-after-christmas": links.epistle = exact("sunday-after-christmas", epistleRoot); break;
+    case "sunday-after-new-years": links.gospel = exact("1st-sunday-after-epiphany"); links.epistle = exact("1st-sunday-after-epiphany", epistleRoot); break;
+    case "epiphany": links.gospel = exact("epiphany-sunday"); links.epistle = exact("epiphany-sunday-2", epistleRoot); break;
+    case "epiphany-2": links.gospel = exact("2nd-sunday-after-epiphany"); links.epistle = exact("2nd-sunday-after-epiphany", epistleRoot); break;
+    case "epiphany-3": links.gospel = exact("3rd-sunday-after-epiphany"); links.epistle = withVariants("3rd-sunday-after-epiphany"); break;
+    case "epiphany-4": links.gospel = exact("4th-sunday-after-epiphany"); links.epistle = exact("4th-sunday-after-epiphany", epistleRoot); break;
+    case "epiphany-5": links.gospel = exact("5th-sunday-after-epiphany"); break;
+    case "transfiguration": links.gospel = exact("6th-sunday-after-epiphany"); break;
+    case "septuagesima":
+    case "sexagesima":
+    case "quinquagesima": links.gospel = exact(key); break;
+    case "lent-1": links.gospel = exact("1st-sunday-in-lent"); links.epistle = exact("1st-sunday-in-lent", epistleRoot); break;
+    case "lent-2": links.gospel = exact("2nd-sunday-in-lent"); links.epistle = withVariants("2nd-sunday-in-lent"); break;
+    case "lent-3": links.gospel = exact("3rd-sunday-in-lent"); links.epistle = withVariants("3rd-sunday-in-lent"); break;
+    case "lent-4": links.gospel = exact("4th-sunday-in-lent"); links.epistle = exact("4th-sunday-in-lent", epistleRoot); break;
+    case "lent-5": links.gospel = exact("5th-sunday-in-lent"); links.epistle = exact("5th-sunday-in-lent", epistleRoot); break;
+    case "palm-sunday": links.gospel = exact("palm-sunday"); links.epistle = exact("palm-sunday-confirmation", epistleRoot); break;
+    case "maundy-thursday": links.gospel = exact("maundy-thursday"); links.epistle = withVariants("maundy-thursday"); break;
+    case "good-friday": links.gospel = exact("good-friday"); links.epistle = withVariants("good-friday"); break;
+    case "easter": links.gospel = exact("easter-sunday"); links.epistle = withVariants("easter-sunday"); break;
+    case "easter-monday": links.gospel = exact("2nd-easter-day"); links.epistle = withVariants("easter-monday"); break;
+    case "easter-2": links.gospel = exact("1st-sunday-after-easter"); links.epistle = exact("1st-sunday-after-easter", epistleRoot); break;
+    case "easter-3": links.gospel = exact("2nd-sunday-after-easter"); links.epistle = exact("2nd-sunday-after-easter-confirmation", epistleRoot); break;
+    case "easter-4": links.gospel = exact("3rd-sunday-after-easter"); links.epistle = withVariants("3rd-sunday-after-easter"); break;
+    case "easter-5": links.gospel = exact("4th-sunday-after-easter"); links.epistle = exact("4th-sunday-after-easter", epistleRoot); break;
+    case "easter-6": links.gospel = exact("5th-sunday-after-easter"); links.epistle = exact("5th-sunday-after-easter", epistleRoot); break;
+    case "ascension": links.epistle = exact("ascension-day", epistleRoot); break;
+    case "exaudi": links.epistle = exact("sunday-after-ascension", epistleRoot); break;
+    case "pentecost": links.gospel = exact("pentecost"); links.epistle = withVariants("pentecost"); break;
+    case "pentecost-monday": links.gospel = exact("pentecost-monday"); break;
+    case "trinity-sunday": links.gospel = exact("trinity-sunday"); links.epistle = exact("trinity-sunday", epistleRoot); break;
+    case "third-last-sunday": links.gospel = exact("25th-sunday-after-trinity"); break;
+    default: break;
+  }
+
+  return links;
+}
+
+function getLutherCandidateUrls(key) {
+  const trinityMatch = key.match(/^trinity-(\d+)$/);
+  if (trinityMatch) {
+    const number = Number(trinityMatch[1]);
+    const index = String(50 + number).padStart(2, "0");
+    if (number === 2) return [`/luther/vol-12/${index}-the-other-sunday-after-trinity/`];
+    if (number === 20) return [`/luther/vol-12/${index}-on-the-twentieth-sunday-after-trinity-day/`, "/luther/vol-13b/72-on-the-twentieth-sunday-after-trinity/"];
+    return [`/luther/vol-12/${index}-on-the-${ordinalWord(number)}-sunday-after-trinity/`];
+  }
+
+  switch (key) {
+    case "advent-1": return ["/luther/vol-13b/05-on-the-first-sunday-of-advent/"];
+    case "advent-2": return ["/luther/vol-13b/06-on-the-second-sunday-of-advent/"];
+    case "advent-3": return ["/luther/vol-13b/07-on-the-third-sunday-of-advent/"];
+    case "advent-4": return ["/luther/vol-13b/08-on-the-fourth-sunday-of-advent/"];
+    case "christmas-eve": return ["/luther/vol-11/105-at-christmas-eve-mass/"];
+    case "christmas-day": return ["/luther/vol-11/106-in-the-morning-christmas-mass/", "/luther/vol-13b/09-on-christmas-day/"];
+    case "sunday-after-christmas": return ["/luther/vol-13b/13-on-the-sunday-after-christmas-day/"];
+    case "sunday-after-new-years": return ["/luther/vol-13b/16-on-the-first-sunday-after-epiphany/"];
+    case "baptism-of-our-lord": return ["/luther/vol-11/119-a-sermon-of-the-baptism-of-christ/"];
+    case "epiphany": return ["/luther/vol-13b/15-on-the-day-of-epiphany/"];
+    case "epiphany-2": return ["/luther/vol-13b/17-on-the-second-sunday-after-epiphany/"];
+    case "epiphany-3": return ["/luther/vol-13b/18-on-the-third-sunday-after-epiphany/"];
+    case "epiphany-4": return ["/luther/vol-13b/19-on-the-fourth-sunday-after-epiphany/"];
+    case "epiphany-5": return ["/luther/vol-13b/20-on-the-fifth-sunday-after-epiphany/"];
+    case "transfiguration": return ["/luther/vol-13a/19-the-next-sunday-after-epiphany/", "/luther/vol-12/20-the-next-sunday-after-epiphany/"];
+    case "lent-1": return ["/luther/vol-13b/25-on-sunday-invocavit/"];
+    case "lent-2": return ["/luther/vol-13b/26-on-the-sunday-reminiscere/"];
+    case "lent-3": return ["/luther/vol-13b/27-on-sunday-oculi/"];
+    case "lent-4": return ["/luther/vol-12/28-on-the-other-sunday-in-lent/", "/luther/vol-11/40-on-the-easter-sunday-in-lent/"];
+    case "lent-5": return ["/luther/vol-13b/29-on-sunday-judica/"];
+    case "good-friday": return ["/luther/vol-13a/49-good-friday/"];
+    case "easter": return ["/luther/vol-13b/39-on-the-holy-day-of-easter/"];
+    case "easter-monday": return ["/luther/vol-13b/40-easter-monday/"];
+    case "easter-tuesday": return ["/luther/vol-13b/41-on-easter-tuesday/"];
+    case "easter-wednesday": return ["/luther/vol-13b/42-easter-wednesday/"];
+    case "easter-2": return ["/luther/vol-13b/43-on-the-first-sunday-after-easter-quasimodogeniti/"];
+    case "easter-3": return ["/luther/vol-13b/44-on-the-second-sunday-after-easter-misericordias-domini/"];
+    case "easter-4": return ["/luther/vol-13b/45-on-the-third-sunday-after-easter-jubilate/"];
+    case "easter-5": return ["/luther/vol-13b/46-on-the-fourth-sunday-after-easter-cantate/"];
+    case "easter-6": return ["/luther/vol-13b/47-on-the-fifth-sunday-after-easter-rogate/"];
+    case "ascension": return ["/luther/vol-13b/48-on-the-day-of-the-ascension-of-christ/"];
+    case "exaudi": return ["/luther/vol-13b/49-on-the-sunday-after-the-ascension-of-christ-exaudi/"];
+    case "pentecost": return ["/luther/vol-13b/50-on-the-holy-day-of-pentecost/"];
+    case "pentecost-monday": return ["/luther/vol-13b/51-on-pentecost-mount/"];
+    case "pentecost-tuesday": return ["/luther/vol-12/48-on-pentecost-tuesday/"];
+    case "trinity-sunday": return ["/luther/vol-13b/52-on-the-sunday-of-trinity/"];
+    case "third-last-sunday": return ["/luther/vol-12/76-on-the-twenty-fifth-sunday-after-trinity/"];
+    case "second-last-sunday": return ["/luther/vol-12/77-on-the-twenty-sixth-sunday-after-trinity/"];
+    case "last-sunday": return ["/luther/vol-13a/92-on-the-twenty-seventh-sunday-after-trinity/"];
+    default: return [];
+  }
+}
+
+async function urlExists(url) {
+  if (!lectionaryUrlExistsCache.has(url)) {
+    lectionaryUrlExistsCache.set(url, (async () => {
+      try {
+        const headResponse = await fetch(url, { method: "HEAD" });
+        if (headResponse.ok) return true;
+      } catch {
+        // Fall through to GET.
+      }
+
+      try {
+        const getResponse = await fetch(url, { method: "GET" });
+        return getResponse.ok;
+      } catch {
+        return false;
+      }
+    })());
+  }
+
+  return lectionaryUrlExistsCache.get(url);
+}
+
+async function resolveFirstExistingUrl(candidates) {
+  for (const candidate of [...new Set(candidates.filter(Boolean))]) {
+    if (await urlExists(candidate)) return candidate;
+  }
+  return "";
+}
+
+async function getResolvedSermonLinks(title) {
+  if (lectionarySermonResolutionCache.has(title)) {
+    return lectionarySermonResolutionCache.get(title);
+  }
+
+  const resolution = (async () => {
+    const key = getObservanceKey(title);
+    if (!key) return [];
+
+    const waltherCandidates = getWaltherCandidateUrls(key);
+    const [lutherHref, waltherGospelHref, waltherEpistleHref] = await Promise.all([
+      resolveFirstExistingUrl(getLutherCandidateUrls(key)),
+      resolveFirstExistingUrl(waltherCandidates.gospel || []),
+      resolveFirstExistingUrl(waltherCandidates.epistle || [])
+    ]);
+
+    return [
+      lutherHref ? { label: "Luther Sermon", href: lutherHref } : null,
+      waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
+      waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
+    ].filter(Boolean);
+  })();
+
+  lectionarySermonResolutionCache.set(title, resolution);
+  return resolution;
+}
+
+function renderSermonLinks(links) {
+  if (!links.length) {
+    return `<p class="lectionary-empty">No matching Luther or Walther sermon page has been linked for this observance yet.</p>`;
+  }
+
+  return links.map((link) => `
+    <a class="button button-outline lectionary-action-button" href="${link.href}">${escapeHtml(link.label)}</a>
+  `).join("");
+}
+
+async function hydrateLectionarySermonLinks(root) {
+  const containers = [...root.querySelectorAll("[data-observance-sermons]")];
+  await Promise.all(containers.map(async (container) => {
+    const title = container.dataset.observanceTitle || "";
+    const links = await getResolvedSermonLinks(title);
+    container.innerHTML = renderSermonLinks(links);
+  }));
 }
 
 function renderDaily(propers, books, searchIndex, date) {
