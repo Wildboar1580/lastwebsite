@@ -957,7 +957,7 @@ function renderElhbHymnPanel(entry) {
 function renderElhbHymnButton(label, hymn) {
   const number = Number(hymn.number);
   if (!Number.isFinite(number) || number <= 0) return "";
-  return `<a class="button button-outline lectionary-action-button" href="/elhb/hymns/" data-elhb-hymn-link data-elhb-hymn-number="${number}">${escapeHtml(`${label}: ELHB ${number}`)}</a>`;
+  return `<a class="button button-outline lectionary-action-button" href="/elhb/hymns/" data-elhb-hymn-link data-elhb-hymn-number="${number}" data-elhb-hymn-role="${escapeHtml(label)}">${escapeHtml(`${label}: ELHB ${number}`)}</a>`;
 }
 
 let elhbHymnIndexPromise;
@@ -979,11 +979,11 @@ async function hydrateLectionaryHymnLinks(root) {
 
     for (const link of links) {
       const hymnNumber = Number(link.dataset.elhbHymnNumber || "");
+      const hymnRole = link.dataset.elhbHymnRole || "Hymn";
       const hymn = hymnMap.get(hymnNumber);
       if (!hymn?.href) continue;
       link.setAttribute("href", hymn.href);
-      const roleLabel = link.textContent?.split(":")[0] || "Hymn";
-      link.textContent = `${roleLabel}: ELHB ${hymn.number}`;
+      link.textContent = `${hymnRole}: ELHB ${hymn.number} - ${hymn.title}`;
       link.setAttribute("title", hymn.title || `ELHB ${hymn.number}`);
     }
   } catch {
