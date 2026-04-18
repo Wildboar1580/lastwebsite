@@ -949,7 +949,7 @@ function renderElhbHymnPanel(entry) {
       <div class="lectionary-hymn-actions">
         ${hymnButtons.map(([label, hymn]) => renderElhbHymnButton(label, hymn)).join("")}
       </div>
-      <p class="lectionary-empty lectionary-hymn-note">Open the full <a class="text-link" href="/elhb/hymn-selection-guide/#${escapeHtml(entry.id)}">ELHB hymn guide entry</a> for this observance.</p>
+      <p class="lectionary-empty lectionary-hymn-note">Open the full <a class="text-link" href="/elhb/hymn-selection-guide/day/?id=${encodeURIComponent(entry.id)}">ELHB hymn guide entry</a> for this observance.</p>
     </div>
   `;
 }

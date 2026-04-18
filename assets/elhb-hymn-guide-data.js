@@ -1,4 +1,4 @@
-export const ELHB_HYMN_GUIDE = [
+const ELHB_HYMN_GUIDE_CORE = [
   {
     id: "advent_1",
     observanceKey: "advent-1",
@@ -560,6 +560,90 @@ export const ELHB_HYMN_GUIDE = [
     notes: []
   }
 ];
+
+const ELHB_HYMN_GUIDE_PLACEHOLDERS = [
+  { id: "advent_2", observanceKey: "advent-2", name: "Second Sunday in Advent", season: "Advent", color: "Violet" },
+  { id: "advent_3", observanceKey: "advent-3", name: "Third Sunday in Advent", season: "Advent", color: "Violet" },
+  { id: "advent_4", observanceKey: "advent-4", name: "Fourth Sunday in Advent", season: "Advent", color: "Violet" },
+  { id: "christmas_eve", observanceKey: "christmas-eve", name: "Christmas Eve", season: "Christmas", color: "White" },
+  { id: "sunday_after_christmas", observanceKey: "sunday-after-christmas", name: "Sunday after Christmas", season: "Christmas", color: "White" },
+  { id: "sunday_after_new_years", observanceKey: "sunday-after-new-years", name: "Sunday after New Year’s", season: "Christmas", color: "White" },
+  { id: "baptism_of_our_lord", observanceKey: "baptism-of-our-lord", name: "The Baptism of Our Lord", season: "Epiphany", color: "White" },
+  { id: "epiphany", observanceKey: "epiphany", name: "The Epiphany of Our Lord", season: "Epiphany", color: "White" },
+  { id: "epiphany_2", observanceKey: "epiphany-2", name: "Second Sunday after Epiphany", season: "Epiphany", color: "Green" },
+  { id: "epiphany_3", observanceKey: "epiphany-3", name: "Third Sunday after Epiphany", season: "Epiphany", color: "Green" },
+  { id: "epiphany_4", observanceKey: "epiphany-4", name: "Fourth Sunday after Epiphany", season: "Epiphany", color: "Green" },
+  { id: "epiphany_5", observanceKey: "epiphany-5", name: "Fifth Sunday after Epiphany", season: "Epiphany", color: "Green" },
+  { id: "transfiguration", observanceKey: "transfiguration", name: "Transfiguration", season: "Epiphany", color: "White" },
+  { id: "septuagesima", observanceKey: "septuagesima", name: "Septuagesima", season: "Pre-Lent", color: "Green" },
+  { id: "sexagesima", observanceKey: "sexagesima", name: "Sexagesima", season: "Pre-Lent", color: "Green" },
+  { id: "quinquagesima", observanceKey: "quinquagesima", name: "Quinquagesima", season: "Pre-Lent", color: "Green" },
+  { id: "lent_1", observanceKey: "lent-1", name: "First Sunday in Lent", season: "Lent", color: "Violet" },
+  { id: "lent_2", observanceKey: "lent-2", name: "Second Sunday in Lent", season: "Lent", color: "Violet" },
+  { id: "lent_3", observanceKey: "lent-3", name: "Third Sunday in Lent", season: "Lent", color: "Violet" },
+  { id: "lent_4", observanceKey: "lent-4", name: "Fourth Sunday in Lent", season: "Lent", color: "Rose" },
+  { id: "lent_5", observanceKey: "lent-5", name: "Fifth Sunday in Lent", season: "Lent", color: "Violet" },
+  { id: "palm_sunday", observanceKey: "palm-sunday", name: "Palm Sunday", season: "Holy Week", color: "Violet" },
+  { id: "holy_week_monday", observanceKey: "holy-week-monday", name: "Monday of Holy Week", season: "Holy Week", color: "Violet" },
+  { id: "holy_week_tuesday", observanceKey: "holy-week-tuesday", name: "Tuesday of Holy Week", season: "Holy Week", color: "Violet" },
+  { id: "holy_week_wednesday", observanceKey: "holy-week-wednesday", name: "Wednesday of Holy Week", season: "Holy Week", color: "Violet" },
+  { id: "maundy_thursday", observanceKey: "maundy-thursday", name: "Maundy Thursday", season: "Holy Week", color: "White" },
+  { id: "holy_saturday", observanceKey: "holy-saturday", name: "Holy Saturday", season: "Holy Week", color: "Black" },
+  { id: "easter_monday", observanceKey: "easter-monday", name: "Easter Monday", season: "Easter", color: "White" },
+  { id: "easter_tuesday", observanceKey: "easter-tuesday", name: "Easter Tuesday", season: "Easter", color: "White" },
+  { id: "easter_wednesday", observanceKey: "easter-wednesday", name: "Easter Wednesday", season: "Easter", color: "White" },
+  { id: "easter_2", observanceKey: "easter-2", name: "Second Sunday of Easter", season: "Easter", color: "White" },
+  { id: "easter_3", observanceKey: "easter-3", name: "Third Sunday of Easter", season: "Easter", color: "White" },
+  { id: "easter_4", observanceKey: "easter-4", name: "Fourth Sunday of Easter", season: "Easter", color: "White" },
+  { id: "easter_5", observanceKey: "easter-5", name: "Fifth Sunday of Easter", season: "Easter", color: "White" },
+  { id: "easter_6", observanceKey: "easter-6", name: "Sixth Sunday of Easter", season: "Easter", color: "White" },
+  { id: "ascension", observanceKey: "ascension", name: "Ascension", season: "Easter", color: "White" },
+  { id: "exaudi", observanceKey: "exaudi", name: "Exaudi", season: "Easter", color: "White" },
+  { id: "pentecost_monday", observanceKey: "pentecost-monday", name: "Pentecost Monday", season: "Pentecost", color: "Red" },
+  { id: "pentecost_tuesday", observanceKey: "pentecost-tuesday", name: "Pentecost Tuesday", season: "Pentecost", color: "Red" },
+  { id: "third_last_sunday", observanceKey: "third-last-sunday", name: "Third Last Sunday", season: "End Times", color: "Green" },
+  { id: "second_last_sunday", observanceKey: "second-last-sunday", name: "Second Last Sunday", season: "End Times", color: "Green" },
+  { id: "last_sunday", observanceKey: "last-sunday", name: "Last Sunday", season: "End Times", color: "Green" }
+];
+
+const ELHB_HYMN_GUIDE_ORDER = [
+  "advent_1", "advent_2", "advent_3", "advent_4",
+  "christmas_eve", "christmas_day", "sunday_after_christmas", "sunday_after_new_years",
+  "baptism_of_our_lord", "epiphany", "epiphany_2", "epiphany_3", "epiphany_4", "epiphany_5", "transfiguration",
+  "septuagesima", "sexagesima", "quinquagesima",
+  "ash_wednesday", "lent_1", "lent_2", "lent_3", "lent_4", "lent_5", "palm_sunday",
+  "holy_week_monday", "holy_week_tuesday", "holy_week_wednesday", "maundy_thursday", "good_friday", "holy_saturday",
+  "easter", "easter_monday", "easter_tuesday", "easter_wednesday", "easter_2", "easter_3", "easter_4", "easter_5", "easter_6",
+  "ascension", "exaudi", "pentecost", "pentecost_monday", "pentecost_tuesday",
+  "trinity",
+  "trinity_1", "trinity_2", "trinity_3", "trinity_4", "trinity_5", "trinity_6", "trinity_7", "trinity_8", "trinity_9",
+  "trinity_10", "trinity_11", "trinity_12", "trinity_13", "trinity_14", "trinity_15", "trinity_16", "trinity_17", "trinity_18",
+  "trinity_19", "trinity_20", "trinity_21", "trinity_22", "trinity_23", "trinity_24", "trinity_25", "trinity_26", "trinity_27",
+  "third_last_sunday", "second_last_sunday", "last_sunday"
+];
+
+function createPlaceholderGuideEntry(entry) {
+  return {
+    ...entry,
+    lectionary: {},
+    hymns: {
+      entrance: null,
+      chief: null,
+      distribution: null,
+      closing: null
+    },
+    notes: []
+  };
+}
+
+const guideEntryMap = new Map(
+  [...ELHB_HYMN_GUIDE_CORE, ...ELHB_HYMN_GUIDE_PLACEHOLDERS.map(createPlaceholderGuideEntry)]
+    .map((entry) => [entry.id, entry])
+);
+
+export const ELHB_HYMN_GUIDE = ELHB_HYMN_GUIDE_ORDER
+  .map((id) => guideEntryMap.get(id))
+  .filter(Boolean);
 
 const ELHB_HYMN_GUIDE_MAP = new Map(
   ELHB_HYMN_GUIDE.map((entry) => [entry.observanceKey, entry])
