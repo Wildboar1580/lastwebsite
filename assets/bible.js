@@ -1,4 +1,4 @@
-import { findElhbGuideEntryByKey } from "./elhb-hymn-guide-data.js";
+import { findElhbGuideEntryByKeyWithFallback } from "./elhb-hymn-guide-data.js";
 
 const ONE_YEAR_TYPES = {
   title: 0,
@@ -901,7 +901,7 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
   const verse = findProper(observance.propers, ONE_YEAR_TYPES.verse);
   const specialRubric = findProper(observance.propers, ONE_YEAR_TYPES.specialRubric);
   const observanceKey = getObservanceKey(observance.title);
-  const hymnGuideEntry = findElhbGuideEntryByKey(observanceKey);
+  const hymnGuideEntry = findElhbGuideEntryByKeyWithFallback(observanceKey);
 
   return `
     <article class="lectionary-card lectionary-observance-card" id="${sectionId}">

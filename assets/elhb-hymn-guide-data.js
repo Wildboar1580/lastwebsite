@@ -2145,6 +2145,24 @@ const ELHB_HYMN_GUIDE_MAP = new Map(
   ELHB_HYMN_GUIDE.map((entry) => [entry.observanceKey, entry])
 );
 
+const ELHB_HYMN_GUIDE_FALLBACK_KEYS = new Map([
+  ["sunday-after-new-years", ["circumcision-name-of-jesus"]],
+  ["third-last-sunday", ["trinity-25"]],
+  ["second-last-sunday", ["trinity-26"]],
+  ["last-sunday", ["trinity-27"]]
+]);
+
 export function findElhbGuideEntryByKey(key) {
   return ELHB_HYMN_GUIDE_MAP.get(key) || null;
+}
+
+export function findElhbGuideEntryByKeyWithFallback(key) {
+  const fallbackKeys = ELHB_HYMN_GUIDE_FALLBACK_KEYS.get(key) || [];
+
+  for (const candidateKey of [...fallbackKeys, key]) {
+    const entry = ELHB_HYMN_GUIDE_MAP.get(candidateKey);
+    if (entry) return entry;
+  }
+
+  return null;
 }
