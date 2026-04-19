@@ -109,6 +109,18 @@ function archivePagePath(pageNumber) {
     : path.join(podcastPageDir, `${pageNumber}.html`);
 }
 
+function episodeOutputDir(slug) {
+  return path.join(outputDir, slug);
+}
+
+function episodeIndexPath(slug) {
+  return path.join(episodeOutputDir(slug), "index.html");
+}
+
+function episodeLegacyPath(slug) {
+  return path.join(outputDir, `${slug}.html`);
+}
+
 function renderStaticArchiveCards(episodes) {
   return episodes.map((episode) => `
         <article class="episode-card">
@@ -457,7 +469,10 @@ const episodes = items.map((item) => {
 });
 
 for (const episode of episodes) {
-  fs.writeFileSync(path.join(outputDir, `${episode.slug}.html`), buildPage(episode));
+  fs.mkdirSync(episodeOutputDir(episode.slug), { recursive: true });
+  const html = buildPage(episode);
+  fs.writeFileSync(episodeIndexPath(episode.slug), html);
+  fs.writeFileSync(episodeLegacyPath(episode.slug), html);
 }
 
 const podcastArchiveTotalPages = Math.max(1, Math.ceil(episodes.length / ARCHIVE_PAGE_SIZE));
