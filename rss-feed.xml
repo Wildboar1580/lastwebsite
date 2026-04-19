@@ -7,8 +7,8 @@
     <atom:link href="https://media.rss.com/last-christian-ministries/feed.xml" rel="self" type="application/rss+xml"/>
     <atom:link rel="hub" href="https://pubsubhubbub.appspot.com/"/>
     <description><![CDATA[Last Christian Ministries proclaims the pure Gospel of Jesus Christ from a confessional Lutheran foundation. The name expresses our desire to remain faithful to Christ and His Word, even if we must stand alone—not a claim of exclusivity, but of conviction. Rooted in Scripture and the Book of Concord, we call all to repentance, faith, and holy living in these last days. RSSVERIFY ]]></description>
-    <generator>RSS.com 2026.320.183334</generator>
-    <lastBuildDate>Sun, 22 Mar 2026 15:50:08 GMT</lastBuildDate>
+    <generator>RSS.com 2026.401.141116</generator>
+    <lastBuildDate>Sun, 19 Apr 2026 05:09:47 GMT</lastBuildDate>
     <language>en</language>
     <copyright><![CDATA[Pastor Charles Wiese]]></copyright>
     <itunes:image href="https://media.rss.com/last-christian-ministries/podcast_cover.jpg"/>
@@ -30,6 +30,26 @@
       <itunes:category text="Christianity"/>
     </itunes:category>
     <podcast:medium>podcast</podcast:medium>
+    <podcast:txt purpose="ai-content">true</podcast:txt>
+    <item>
+      <title><![CDATA[Misericordias Domini (Easter 3) John 10:11-16]]></title>
+      <itunes:title><![CDATA[Misericordias Domini (Easter 3) John 10:11-16]]></itunes:title>
+      <description><![CDATA[<p>An abridged and modernized sermon from Martin Luther on Misericordias Domini (John 10:11–16), this episode cuts through confusion with a sharp Law-and-Gospel contrast. Christ is not merely a helper—He is the Good Shepherd who lays down His life for the sheep, and there is no other.</p><p>Drawing from Luther’s classic themes, this sermon exposes the false shepherds—those who burden consciences with law, works, or human authority—while calling hearers back to the only voice that saves: the Word of Christ. </p><p>God With Us LC</p><p>Expect a direct, pastoral, and unapologetic proclamation:</p><p>Why the Law cannot create true righteousness</p><p>How wolves still devour through false teaching</p><p>What it means to hear and follow Christ’s voice alone</p><p>And how the Shepherd’s death is not defeat—but the rescue of His flock</p><p>For those weary of confusion, compromise, or dead religion, this is a call to return to the Shepherd who knows His sheep—and who still gathers them by His voice.</p><p>https://www.lastchristian.com/luther/vol-13b/44-on-the-second-sunday-after-easter-misericordias-domini/</p>]]></description>
+      <link>https://rss.com/podcasts/last-christian-ministries/2746515</link>
+      <enclosure url="https://content.rss.com/episodes/378178/2746515/last-christian-ministries/2026_04_19_05_09_35_0f962f22-2a93-4d3b-937d-42aa6592a9d1.mp3" length="11839572" type="audio/mpeg"/>
+      <guid isPermaLink="false">c8dbe253-96f7-42a6-959f-6d5bb391b645</guid>
+      <itunes:duration>739</itunes:duration>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:season>2</itunes:season>
+      <podcast:season>2</podcast:season>
+      <itunes:episode>69</itunes:episode>
+      <podcast:episode>69</podcast:episode>
+      <itunes:explicit>false</itunes:explicit>
+      <pubDate>Sun, 19 Apr 2026 05:09:46 GMT</pubDate>
+      <podcast:txt purpose="ai-content">true</podcast:txt>
+      <itunes:image href="https://media.rss.com/last-christian-ministries/ep_cover_20260419_050427_b63a83a304d10e64ccc3bc85fd67f89d.png"/>
+      <podcast:location rel="creator" geo="geo:42.7130889,-85.4619599" osm="R134983" country="us">Middleville, Middleville, Barry County, Michigan, 49333, USA</podcast:location>
+    </item>
     <item>
       <title><![CDATA[Laetare Sunday – Christ Feeds the Five Thousand (Luther’s House Postil, Abridged & Modernized)]]></title>
       <itunes:title><![CDATA[Laetare Sunday – Christ Feeds the Five Thousand (Luther’s House Postil, Abridged & Modernized)]]></itunes:title>
