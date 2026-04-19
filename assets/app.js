@@ -367,7 +367,7 @@ function extractImageFromHtml(html) {
   return match ? match[1] : "";
 }
 
-function initAudioPlayers(root = document) {
+export function initAudioPlayers(root = document) {
   const players = root.querySelectorAll("[data-audio-player]");
 
   players.forEach((player) => {

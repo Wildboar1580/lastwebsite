@@ -1059,7 +1059,6 @@ export const ELHB_HYMN_GUIDE = [
     "hymns": {
       "suggested": [
         { "number": 105 },
-        { "number": 173 },
         { "number": 276 },
         { "number": 367 },
         { "number": 448 },

@@ -1,3 +1,4 @@
+import { initAudioPlayers } from "./app.js";
 import { FEED_URL } from "./data.js";
 import { findElhbGuideEntryByKeyWithFallback } from "./elhb-hymn-guide-data.js";
 
@@ -1693,6 +1694,7 @@ async function hydrateLectionaryPodcastPanels(root) {
     if (!config) return;
     const episode = findObservancePodcastEpisode(episodes, config);
     panel.innerHTML = renderObservancePodcastEpisode(episode, config);
+    initAudioPlayers(panel);
   });
 }
 
@@ -1795,7 +1797,6 @@ function renderObservancePodcastEpisode(episode, config) {
   }
 
   const meta = [episode.date, episode.duration].filter(Boolean).join(" · ");
-  const summary = episode.description || "Listen to the latest sermon podcast for this observance.";
 
   return `
     <p class="lectionary-proper-label">Featured Podcast Sermon</p>
@@ -1804,10 +1805,25 @@ function renderObservancePodcastEpisode(episode, config) {
       <div class="lectionary-podcast-copy">
         ${meta ? `<p class="lectionary-empty">${escapeHtml(meta)}</p>` : ""}
         <h4>${escapeHtml(episode.title)}</h4>
-        <p class="lectionary-empty">${escapeHtml(summary)}</p>
-        ${episode.audioUrl ? `<audio class="lectionary-podcast-audio" controls preload="none" src="${episode.audioUrl}"></audio>` : ""}
+        ${episode.audioUrl ? `
+          <div class="audio-player lectionary-podcast-player" data-audio-player>
+            <audio preload="metadata" src="${episode.audioUrl}"></audio>
+            <button class="audio-toggle" type="button" data-audio-toggle aria-label="Play ${escapeHtml(episode.title)}">
+              <span data-audio-icon>Play</span>
+            </button>
+            <div class="audio-meta">
+              <div class="audio-progress-shell">
+                <input class="audio-progress" data-audio-progress type="range" min="0" max="100" value="0" aria-label="Episode progress">
+              </div>
+              <div class="audio-time">
+                <span data-audio-current>0:00</span>
+                <span data-audio-duration>${escapeHtml(episode.duration || "0:00")}</span>
+              </div>
+            </div>
+          </div>
+        ` : ""}
         <div class="lectionary-action-row">
-          <a class="button button-red lectionary-action-button" href="${episode.pageUrl}">Open episode page</a>
+          <a class="button button-red lectionary-action-button" href="${episode.pageUrl}">Read more</a>
           <a class="button button-outline lectionary-action-button" href="${episode.link}" target="_blank" rel="noopener noreferrer">Open on RSS.com</a>
         </div>
       </div>
