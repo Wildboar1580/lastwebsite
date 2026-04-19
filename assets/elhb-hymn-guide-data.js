@@ -12,22 +12,14 @@ export const ELHB_HYMN_GUIDE = [
       "gospel": "Matthew 21:1-9"
     },
     "hymns": {
-      "entrance": {
-        "number": 90,
-        "title": "The advent of our King"
-      },
-      "chief": {
-        "number": 95,
-        "title": "Savior of the nations, come"
-      },
-      "distribution": {
-        "number": 94,
-        "title": "Come, Thou precious Ransom, come"
-      },
-      "closing": {
-        "number": 91,
-        "title": "Lift up your heads, ye mighty gates"
-      }
+      "suggested": [
+        { "number": 103 },
+        { "number": 136 },
+        { "number": 141 },
+        { "number": 314 },
+        { "number": 310 },
+        { "number": 396 }
+      ]
     },
     "notes": []
   },
@@ -39,22 +31,14 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Violet",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 611,
-        "title": "The day is surely drawing near"
-      },
-      "chief": {
-        "number": 609,
-        "title": "Wake, awake, for night is flying"
-      },
-      "distribution": {
-        "number": 610,
-        "title": "Lo! He comes, with clouds descending"
-      },
-      "closing": {
-        "number": 93,
-        "title": "Rejoice, rejoice, believers"
-      }
+      "suggested": [
+        { "number": 136 },
+        { "number": 141 },
+        { "number": 150 },
+        { "number": 278 },
+        { "number": 480 },
+        { "number": 552 }
+      ]
     },
     "notes": []
   },
@@ -66,22 +50,15 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Violet",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 97,
-        "title": "Comfort, comfort ye My people"
-      },
-      "chief": {
-        "number": 96,
-        "title": "On Jordan's bank the Baptist's cry"
-      },
-      "distribution": {
-        "number": 92,
-        "title": "Hark! a thrilling voice is sounding"
-      },
-      "closing": {
-        "number": 93,
-        "title": "Rejoice, rejoice, believers"
-      }
+      "suggested": [
+        { "number": 88 },
+        { "number": 141 },
+        { "number": 278 },
+        { "number": 284 },
+        { "number": 310 },
+        { "number": 396 },
+        { "number": 509 }
+      ]
     },
     "notes": []
   },
@@ -93,22 +70,16 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Violet",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 100,
-        "title": "Prepare the royal highway"
-      },
-      "chief": {
-        "number": 95,
-        "title": "Savior of the nations, come"
-      },
-      "distribution": {
-        "number": 98,
-        "title": "O Lord, how shall I meet Thee"
-      },
-      "closing": {
-        "number": 89,
-        "title": "The King shall come when morning dawns"
-      }
+      "suggested": [
+        { "number": 130 },
+        { "number": 136 },
+        { "number": 141 },
+        { "number": 157 },
+        { "number": 274 },
+        { "number": 310 },
+        { "number": 314 },
+        { "number": 401 }
+      ]
     },
     "notes": []
   },
@@ -120,22 +91,15 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 81,
-        "title": "Oh, come, all ye faithful"
-      },
-      "chief": {
-        "number": 85,
-        "title": "From heaven above to earth I come"
-      },
-      "distribution": {
-        "number": 83,
-        "title": "We praise Thee, Jesus, at Thy birth"
-      },
-      "closing": {
-        "number": 84,
-        "title": "Hark! the herald angels sing"
-      }
+      "suggested": [
+        { "number": 136 },
+        { "number": 145 },
+        { "number": 148 },
+        { "number": 149 },
+        { "number": 150 },
+        { "number": 156 },
+        { "number": 161 }
+      ]
     },
     "notes": []
   },
@@ -152,22 +116,15 @@ export const ELHB_HYMN_GUIDE = [
       "gospel": "Luke 2:1-14"
     },
     "hymns": {
-      "entrance": {
-        "number": 80,
-        "title": "All praise to Thee, eternal God"
-      },
-      "chief": {
-        "number": 85,
-        "title": "From heaven above to earth I come"
-      },
-      "distribution": {
-        "number": 81,
-        "title": "Oh, come, all ye faithful"
-      },
-      "closing": {
-        "number": 84,
-        "title": "Hark! the herald angels sing"
-      }
+      "suggested": [
+        { "number": 148 },
+        { "number": 150 },
+        { "number": 153 },
+        { "number": 156 },
+        { "number": 157 },
+        { "number": 161 },
+        { "number": 162 }
+      ]
     },
     "notes": []
   },
@@ -179,22 +136,12 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 86,
-        "title": "Angels from the realms of glory"
-      },
-      "chief": {
-        "number": 85,
-        "title": "From heaven above to earth I come"
-      },
-      "distribution": {
-        "number": 87,
-        "title": "While shepherds watched their flocks by night"
-      },
-      "closing": {
-        "number": 88,
-        "title": "O little town of Bethlehem"
-      }
+      "suggested": [
+        { "number": 143 },
+        { "number": 148 },
+        { "number": 150 },
+        { "number": 162 }
+      ]
     },
     "notes": []
   },
@@ -206,22 +153,17 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 80,
-        "title": "All praise to Thee, eternal God"
-      },
-      "chief": {
-        "number": 83,
-        "title": "We praise Thee, Jesus, at Thy birth"
-      },
-      "distribution": {
-        "number": 85,
-        "title": "From heaven above to earth I come"
-      },
-      "closing": {
-        "number": 88,
-        "title": "O little town of Bethlehem"
-      }
+      "suggested": [
+        { "number": 59 },
+        { "number": 64 },
+        { "number": 148 },
+        { "number": 152 },
+        { "number": 161 },
+        { "number": 162 },
+        { "number": 169 },
+        { "number": 185 },
+        { "number": 503 }
+      ]
     },
     "notes": []
   },
@@ -233,22 +175,14 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 132,
-        "title": "Jesus! Name of wondrous love"
-      },
-      "chief": {
-        "number": 133,
-        "title": "At the name of Jesus"
-      },
-      "distribution": {
-        "number": 134,
-        "title": "Jesus, name all names above"
-      },
-      "closing": {
-        "number": 131,
-        "title": "O morning star, how fair and bright"
-      }
+      "suggested": [
+        { "number": 169 },
+        { "number": 173 },
+        { "number": 174 },
+        { "number": 176 },
+        { "number": 178 },
+        { "number": 571 }
+      ]
     },
     "notes": []
   },
@@ -260,22 +194,15 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 298,
-        "title": "All who believe and are baptized"
-      },
-      "chief": {
-        "number": 299,
-        "title": "Baptized into Thy name most holy"
-      },
-      "distribution": {
-        "number": 302,
-        "title": "God's own child, I gladly say it"
-      },
-      "closing": {
-        "number": 301,
-        "title": "Christians, let us love one another"
-      }
+      "suggested": [
+        { "number": 24 },
+        { "number": 103 },
+        { "number": 180 },
+        { "number": 183 },
+        { "number": 400 },
+        { "number": 401 },
+        { "number": 403 }
+      ]
     },
     "notes": []
   },
@@ -287,22 +214,12 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 129,
-        "title": "Songs of thankfulness and praise"
-      },
-      "chief": {
-        "number": 127,
-        "title": "As with gladness men of old"
-      },
-      "distribution": {
-        "number": 131,
-        "title": "O morning star, how fair and bright"
-      },
-      "closing": {
-        "number": 128,
-        "title": "Brightest and best of the sons of the morning"
-      }
+      "suggested": [
+        { "number": 24 },
+        { "number": 103 },
+        { "number": 183 },
+        { "number": 401 }
+      ]
     },
     "notes": []
   },
@@ -314,22 +231,15 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Green",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 289,
-        "title": "Thy strong word did cleave the darkness"
-      },
-      "chief": {
-        "number": 288,
-        "title": "O God, our Lord, Thy holy Word"
-      },
-      "distribution": {
-        "number": 290,
-        "title": "Lord, help us ever to retain"
-      },
-      "closing": {
-        "number": 261,
-        "title": "Lord, keep us steadfast in Thy Word"
-      }
+      "suggested": [
+        { "number": 88 },
+        { "number": 148 },
+        { "number": 157 },
+        { "number": 391 },
+        { "number": 392 },
+        { "number": 401 },
+        { "number": 505 }
+      ]
     },
     "notes": []
   },
@@ -341,22 +251,14 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Green",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 422,
-        "title": "I heard the voice of Jesus say"
-      },
-      "chief": {
-        "number": 421,
-        "title": "Jesus calls us o'er the tumult"
-      },
-      "distribution": {
-        "number": 424,
-        "title": "Take my life and let it be"
-      },
-      "closing": {
-        "number": 426,
-        "title": "O God, my faithful God"
-      }
+      "suggested": [
+        { "number": 24 },
+        { "number": 88 },
+        { "number": 314 },
+        { "number": 363 },
+        { "number": 446 },
+        { "number": 505 }
+      ]
     },
     "notes": []
   },
@@ -368,22 +270,14 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Green",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 523,
-        "title": "If God Himself be for me"
-      },
-      "chief": {
-        "number": 522,
-        "title": "God moves in a mysterious way"
-      },
-      "distribution": {
-        "number": 524,
-        "title": "How firm a foundation, ye saints of the Lord"
-      },
-      "closing": {
-        "number": 520,
-        "title": "Jesus, Savior, pilot me"
-      }
+      "suggested": [
+        { "number": 284 },
+        { "number": 314 },
+        { "number": 396 },
+        { "number": 413 },
+        { "number": 480 },
+        { "number": 509 }
+      ]
     },
     "notes": []
   },
@@ -395,22 +289,17 @@ export const ELHB_HYMN_GUIDE = [
     "color": "Green",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 25,
-        "title": "Praise to the Lord, the Almighty"
-      },
-      "chief": {
-        "number": 522,
-        "title": "God moves in a mysterious way"
-      },
-      "distribution": {
-        "number": 523,
-        "title": "If God Himself be for me"
-      },
-      "closing": {
-        "number": 524,
-        "title": "How firm a foundation, ye saints of the Lord"
-      }
+      "suggested": [
+        { "number": 82 },
+        { "number": 132 },
+        { "number": 273 },
+        { "number": 274 },
+        { "number": 278 },
+        { "number": 284 },
+        { "number": 314 },
+        { "number": 392 },
+        { "number": 515 }
+      ]
     },
     "notes": []
   },
