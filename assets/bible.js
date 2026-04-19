@@ -1,3 +1,4 @@
+import { FEED_URL } from "./data.js";
 import { findElhbGuideEntryByKeyWithFallback } from "./elhb-hymn-guide-data.js";
 
 const ONE_YEAR_TYPES = {
@@ -20,6 +21,17 @@ const DAILY_TYPES = {
 };
 
 const BIBLE_VIEW_STORAGE_KEY = "lcm-bible-view";
+const PODCAST_FEED_PROXIES = [
+  (url) => url,
+  (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
+  (url) => `https://r.jina.ai/http://${url.replace(/^https?:\/\//, "")}`
+];
+const OBSERVANCE_PODCAST_MATCHERS = new Map([
+  ["easter-3", {
+    fallbackUrl: "/episodes/misericordias-domini-easter-3-john-10-11-16-2746515",
+    matchTerms: ["misericordias domini", "john 10:11-16"]
+  }]
+]);
 
 const BOOK_ALIASES = new Map([
   ["gen", "Genesis"], ["genesis", "Genesis"],
@@ -705,6 +717,7 @@ async function initLectionaryPanels() {
       oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
       hydrateLectionarySermonLinks(oneYearRoot);
       hydrateLectionaryHymnLinks(oneYearRoot);
+      hydrateLectionaryPodcastPanels(oneYearRoot);
     } catch (error) {
       oneYearRoot.innerHTML = `
         <article class="lectionary-card">
@@ -929,7 +942,20 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
             </div>
           </div>
         ` : ""}
+        ${renderFeaturedObservancePodcastPanel(observance.title)}
       </article>
+  `;
+}
+
+function renderFeaturedObservancePodcastPanel(title) {
+  const key = getObservanceKey(title);
+  if (!key || !OBSERVANCE_PODCAST_MATCHERS.has(key)) return "";
+
+  return `
+    <div class="lectionary-sermon-panel lectionary-podcast-panel" data-observance-podcast data-observance-title="${escapeHtml(title)}">
+      <p class="lectionary-proper-label">Featured Podcast Sermon</p>
+      <p class="lectionary-empty">Loading the latest podcast episode for this observance…</p>
+    </div>
   `;
 }
 
@@ -1639,6 +1665,146 @@ function hydrateLectionarySermonLinks(root) {
     const links = getResolvedSermonLinks(title);
     container.innerHTML = renderSermonLinks(links);
   });
+}
+
+async function hydrateLectionaryPodcastPanels(root) {
+  const panels = [...root.querySelectorAll("[data-observance-podcast]")];
+  if (!panels.length) return;
+
+  let episodes = [];
+  try {
+    const xmlText = await fetchPodcastFeedXml(FEED_URL);
+    episodes = parsePodcastEpisodes(xmlText);
+  } catch {
+    episodes = [];
+  }
+
+  panels.forEach((panel) => {
+    const title = panel.dataset.observanceTitle || "";
+    const config = OBSERVANCE_PODCAST_MATCHERS.get(getObservanceKey(title) || "");
+    if (!config) return;
+    const episode = findObservancePodcastEpisode(episodes, config);
+    panel.innerHTML = renderObservancePodcastEpisode(episode, config);
+  });
+}
+
+async function fetchPodcastFeedXml(url) {
+  let lastError;
+
+  for (const buildUrl of PODCAST_FEED_PROXIES) {
+    try {
+      const response = await fetch(buildUrl(url));
+      if (!response.ok) {
+        throw new Error(`Feed request failed with status ${response.status}`);
+      }
+      return await response.text();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error("Unable to fetch podcast feed.");
+}
+
+function parsePodcastEpisodes(xmlText) {
+  const parser = new DOMParser();
+  const xml = parser.parseFromString(xmlText, "text/xml");
+  const items = [...xml.querySelectorAll("item")];
+
+  return items.map((item) => {
+    const title = readXmlText(item, "title");
+    const description = stripHtml(readXmlText(item, "description"));
+    const link = readXmlText(item, "link");
+    const enclosure = item.querySelector("enclosure");
+    const image = item.querySelector("itunes\\:image, image");
+    const pubDate = readXmlText(item, "pubDate");
+    const duration = normalizePodcastDuration(readXmlText(item, "itunes\\:duration"));
+
+    return {
+      title,
+      description,
+      link,
+      audioUrl: enclosure?.getAttribute("url") || "",
+      imageUrl: image?.getAttribute("href") || "",
+      date: pubDate ? new Date(pubDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }) : "",
+      duration,
+      pageUrl: buildEpisodePageUrl(title || "Untitled episode", link)
+    };
+  });
+}
+
+function readXmlText(root, selector) {
+  return root.querySelector(selector)?.textContent?.trim() || "";
+}
+
+function stripHtml(html = "") {
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+  return temp.textContent?.replace(/\s+/g, " ").trim() || "";
+}
+
+function normalizePodcastDuration(duration) {
+  if (!duration) return "";
+  if (duration.includes(":")) return duration;
+  const totalSeconds = Number(duration);
+  if (!Number.isFinite(totalSeconds) || totalSeconds < 0) return "";
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = Math.floor(totalSeconds % 60);
+  return hours > 0
+    ? `${hours}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    : `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
+function buildEpisodePageUrl(title, link) {
+  const id = (link || "").split("/").pop() || "episode";
+  const slug = title
+    .toLowerCase()
+    .replace(/&/g, " and ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 90);
+  return `/episodes/${slug}-${id}`;
+}
+
+function findObservancePodcastEpisode(episodes, config) {
+  const terms = (config.matchTerms || []).map((term) => term.toLowerCase());
+  if (!terms.length) return null;
+
+  return episodes.find((episode) => {
+    const haystack = `${episode.title} ${episode.description}`.toLowerCase();
+    return terms.every((term) => haystack.includes(term));
+  }) || null;
+}
+
+function renderObservancePodcastEpisode(episode, config) {
+  if (!episode) {
+    return `
+      <p class="lectionary-proper-label">Featured Podcast Sermon</p>
+      <p class="lectionary-empty">The matching podcast episode could not be loaded from the live feed right now.</p>
+      <a class="button button-outline lectionary-action-button" href="${config.fallbackUrl}">Open sermon episode page</a>
+    `;
+  }
+
+  const meta = [episode.date, episode.duration].filter(Boolean).join(" · ");
+  const summary = episode.description || "Listen to the latest sermon podcast for this observance.";
+
+  return `
+    <p class="lectionary-proper-label">Featured Podcast Sermon</p>
+    <article class="lectionary-podcast-card">
+      ${episode.imageUrl ? `<img class="lectionary-podcast-art" src="${episode.imageUrl}" alt="" loading="lazy" decoding="async">` : ""}
+      <div class="lectionary-podcast-copy">
+        ${meta ? `<p class="lectionary-empty">${escapeHtml(meta)}</p>` : ""}
+        <h4>${escapeHtml(episode.title)}</h4>
+        <p class="lectionary-empty">${escapeHtml(summary)}</p>
+        ${episode.audioUrl ? `<audio class="lectionary-podcast-audio" controls preload="none" src="${episode.audioUrl}"></audio>` : ""}
+        <div class="lectionary-action-row">
+          <a class="button button-red lectionary-action-button" href="${episode.pageUrl}">Open episode page</a>
+          <a class="button button-outline lectionary-action-button" href="${episode.link}" target="_blank" rel="noopener noreferrer">Open on RSS.com</a>
+        </div>
+      </div>
+    </article>
+  `;
 }
 
 function renderDaily(propers, books, searchIndex, date) {

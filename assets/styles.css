@@ -1792,6 +1792,9 @@ textarea {
 
 .lectionary-page-grid {
   align-items: start;
+  grid-template-columns: 1fr;
+  width: min(1840px, calc(100% - 2rem));
+  margin-inline: auto;
 }
 
 .bible-audio-grid-single {
@@ -1892,6 +1895,36 @@ textarea {
   border-top: 1px solid rgba(213, 166, 41, 0.14);
 }
 
+.lectionary-podcast-card {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 140px) minmax(0, 1fr);
+  align-items: start;
+}
+
+.lectionary-podcast-art {
+  width: 100%;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(213, 166, 41, 0.16);
+  background: rgba(8, 8, 8, 0.46);
+}
+
+.lectionary-podcast-copy {
+  display: grid;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.lectionary-podcast-copy h4 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.lectionary-podcast-audio {
+  width: 100%;
+}
+
 .lectionary-propers {
   display: grid;
   gap: 0.9rem;
@@ -1988,7 +2021,7 @@ textarea {
 
 @media (min-width: 900px) {
   .lectionary-page-grid {
-    width: min(1680px, calc(100% - 2rem));
+    width: min(1920px, calc(100% - 2rem));
     gap: 1.75rem;
   }
 
@@ -2004,6 +2037,16 @@ textarea {
 
   .lectionary-observance-jump {
     display: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .lectionary-podcast-card {
+    grid-template-columns: 1fr;
+  }
+
+  .lectionary-podcast-art {
+    max-width: 220px;
   }
 }
 
