@@ -1057,22 +1057,14 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 191,
-        "title": "Awake, my heart, with gladness"
-      },
-      "chief": {
-        "number": 192,
-        "title": "I know that my Redeemer lives"
-      },
-      "distribution": {
-        "number": 193,
-        "title": "Alleluia! Jesus lives!"
-      },
-      "closing": {
-        "number": 189,
-        "title": "Christ is arisen"
-      }
+      "suggested": [
+        { "number": 105 },
+        { "number": 173 },
+        { "number": 276 },
+        { "number": 367 },
+        { "number": 448 },
+        { "number": 573 }
+      ]
     },
     "notes": []
   },
@@ -1084,22 +1076,12 @@ export const ELHB_HYMN_GUIDE = [
     "color": "White",
     "lectionary": {},
     "hymns": {
-      "entrance": {
-        "number": 520,
-        "title": "Jesus, Savior, pilot me"
-      },
-      "chief": {
-        "number": 522,
-        "title": "God moves in a mysterious way"
-      },
-      "distribution": {
-        "number": 523,
-        "title": "If God Himself be for me"
-      },
-      "closing": {
-        "number": 524,
-        "title": "How firm a foundation, ye saints of the Lord"
-      }
+      "suggested": [
+        { "number": 276 },
+        { "number": 413 },
+        { "number": 505 },
+        { "number": 516 }
+      ]
     },
     "notes": []
   },

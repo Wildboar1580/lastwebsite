@@ -962,12 +962,17 @@ function renderFeaturedObservancePodcastPanel(title) {
 function renderElhbHymnPanel(entry) {
   if (!entry) return "";
 
-  const hymnButtons = [
-    ["Entrance", entry.hymns.entrance],
-    ["Chief", entry.hymns.chief],
-    ["Distribution", entry.hymns.distribution],
-    ["Closing", entry.hymns.closing]
-  ].filter(([, hymn]) => hymn && hymn.number);
+  const suggestedHymns = Array.isArray(entry.hymns?.suggested)
+    ? entry.hymns.suggested.filter((hymn) => hymn && hymn.number)
+    : [];
+  const hymnButtons = suggestedHymns.length
+    ? suggestedHymns.map((hymn) => [null, hymn])
+    : [
+        ["Entrance", entry.hymns.entrance],
+        ["Chief", entry.hymns.chief],
+        ["Distribution", entry.hymns.distribution],
+        ["Closing", entry.hymns.closing]
+      ].filter(([, hymn]) => hymn && hymn.number);
 
   return `
     <div class="lectionary-sermon-panel">
@@ -983,7 +988,8 @@ function renderElhbHymnPanel(entry) {
 function renderElhbHymnButton(label, hymn) {
   const number = Number(hymn.number);
   if (!Number.isFinite(number) || number <= 0) return "";
-  return `<a class="button button-outline lectionary-action-button" href="/elhb/hymns/" data-elhb-hymn-link data-elhb-hymn-number="${number}" data-elhb-hymn-role="${escapeHtml(label)}">${escapeHtml(`${label}: ELHB ${number}`)}</a>`;
+  const baseLabel = label ? `${label}: ELHB ${number}` : `ELHB ${number}`;
+  return `<a class="button button-outline lectionary-action-button" href="/elhb/hymns/" data-elhb-hymn-link data-elhb-hymn-number="${number}"${label ? ` data-elhb-hymn-role="${escapeHtml(label)}"` : ""}>${escapeHtml(baseLabel)}</a>`;
 }
 
 let elhbHymnIndexPromise;
@@ -1005,11 +1011,13 @@ async function hydrateLectionaryHymnLinks(root) {
 
     for (const link of links) {
       const hymnNumber = Number(link.dataset.elhbHymnNumber || "");
-      const hymnRole = link.dataset.elhbHymnRole || "Hymn";
+      const hymnRole = link.dataset.elhbHymnRole || "";
       const hymn = hymnMap.get(hymnNumber);
       if (!hymn?.href) continue;
       link.setAttribute("href", hymn.href);
-      link.textContent = `${hymnRole}: ELHB ${hymn.number} - ${hymn.title}`;
+      link.textContent = hymnRole
+        ? `${hymnRole}: ELHB ${hymn.number} - ${hymn.title}`
+        : `ELHB ${hymn.number} - ${hymn.title}`;
       link.setAttribute("title", hymn.title || `ELHB ${hymn.number}`);
     }
   } catch {
