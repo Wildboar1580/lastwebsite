@@ -9,6 +9,7 @@ const bibleLandingPath = path.join(root, "bible.html");
 const msbStringsPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "sharedStrings.xml");
 const msbSheetPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "worksheets", "sheet1.xml");
 const kjvPath = path.join(root, "tmp", "bible", "json", "EN-English", "kjv.json");
+const lutherEnglishPath = path.join(root, "tmp", "bible", "luther-english.json");
 const AUDIO_BASE_URL = "https://media.lastchristian.com";
 const AUDIO_CONFIG = {
   msbPattern: "legacy-r2",
@@ -144,6 +145,23 @@ function normalizeVerses(entries) {
   return books;
 }
 
+function normalizeLutherEnglishChapters(entries) {
+  const books = new Map();
+  for (const entry of entries) {
+    if (!books.has(entry.book_name)) {
+      books.set(entry.book_name, new Map());
+    }
+    books.get(entry.book_name).set(entry.chapter, {
+      headings: Array.isArray(entry.headings) ? entry.headings : [],
+      verses: (entry.verses || []).map((verse) => ({
+        verse: verse.verse,
+        text: verse.text
+      }))
+    });
+  }
+  return books;
+}
+
 function getBookList(baseVerses) {
   const seen = new Set();
   const books = [];
@@ -184,12 +202,17 @@ function buildKjvAudioUrl(bookIndex, chapter, kjvAudioSlug, bookSlug) {
   }
 }
 
-function renderColumn(versionLabel, versionKey, verses) {
+function renderColumn(versionLabel, versionKey, verses, headings = []) {
   return `
         <section class="bible-column" data-translation="${versionKey}">
           <header class="bible-column-header">
             <p class="eyebrow">${versionLabel}</p>
           </header>
+          ${headings.length ? `
+          <div class="bible-chapter-headings">
+            ${headings.map((heading) => `<p class="bible-chapter-heading">${escapeHtml(heading)}</p>`).join("")}
+          </div>
+          ` : ""}
           <div class="bible-verses">
             ${verses.map((verse) => `
               <p id="${versionKey}-${verse.verse}" class="bible-verse">
@@ -401,6 +424,8 @@ function renderPage({
   nextUrl,
   msbVerses,
   kjvVerses,
+  lutherVerses,
+  lutherHeadings,
   msbAudioUrl,
   kjvAudioUrl,
   audioSequence,
@@ -512,7 +537,7 @@ ${renderFaviconLinks()}
           <p class="eyebrow">Bible</p>
           <p class="bible-crumbs"><a href="/bible">Bible</a> / <a href="${bookUrl}">${escapeHtml(bookName)}</a> / Chapter ${chapter}</p>
           <h1>${escapeHtml(bookName)} ${chapter}</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch among the KJV and Luther English translations, and listen with a single themed player where audio is available.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
@@ -538,6 +563,7 @@ ${renderFaviconLinks()}
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
+          <button class="button button-outline" type="button" data-view-mode="luther">Luther English</button>
         </div>
         <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
@@ -569,6 +595,7 @@ ${renderFaviconLinks()}
         <div class="bible-columns">
 ${renderColumn("Majority Standard Bible", "msb", msbVerses)}
 ${renderColumn("KJV", "kjv", kjvVerses)}
+${renderColumn("Luther English", "luther", lutherVerses, lutherHeadings)}
         </div>
         <div class="bible-bottom-nav">
           <a class="button button-outline" href="${bookUrl}">All ${escapeHtml(bookName)} Chapters</a>
@@ -630,13 +657,16 @@ function main() {
   ensureSource(msbStringsPath);
   ensureSource(msbSheetPath);
   ensureSource(kjvPath);
+  ensureSource(lutherEnglishPath);
 
   const sharedStrings = parseSharedStrings(fs.readFileSync(msbStringsPath, "utf8"));
   const msbSourceVerses = parseSheetRows(fs.readFileSync(msbSheetPath, "utf8"), sharedStrings);
   const kjvSourceVerses = JSON.parse(fs.readFileSync(kjvPath, "utf8")).verses;
+  const lutherEnglishSource = JSON.parse(fs.readFileSync(lutherEnglishPath, "utf8")).chapters;
 
   const msbBooks = normalizeVerses(msbSourceVerses);
   const kjvBooks = normalizeVerses(kjvSourceVerses);
+  const lutherBooks = normalizeLutherEnglishChapters(lutherEnglishSource);
   const bookNames = getBookList(kjvSourceVerses);
 
   fs.mkdirSync(outputDir, { recursive: true });
@@ -652,6 +682,7 @@ function main() {
   const chapterManifest = [];
   const msbSearchIndex = [];
   const kjvSearchIndex = [];
+  const lutherSearchIndex = [];
 
   bookNames.forEach((bookName, index) => {
     const bookSlug = slugifyBook(bookName);
@@ -668,7 +699,8 @@ function main() {
       chapter: chapterNumber,
       pageUrl: `/bible/${bookSlug}/${chapterNumber}`,
       msbAudioUrl: buildMsbAudioUrl(index + 1, chapterNumber, msbCode, bookSlug),
-      kjvAudioUrl: buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug)
+      kjvAudioUrl: buildKjvAudioUrl(index + 1, chapterNumber, kjvAudioSlug, bookSlug),
+      lutherAudioUrl: ""
     }));
 
     fs.writeFileSync(
@@ -691,6 +723,9 @@ function main() {
     chapterNumbers.forEach((chapterNumber, chapterIndex) => {
       const msbVerses = (msbBooks.get(bookName)?.get(chapterNumber) || []).sort((a, b) => a.verse - b.verse);
       const kjvVerses = (kjvBooks.get(bookName)?.get(chapterNumber) || msbVerses).sort((a, b) => a.verse - b.verse);
+      const lutherChapter = lutherBooks.get(bookName)?.get(chapterNumber) || { headings: [], verses: msbVerses };
+      const lutherHeadings = lutherChapter.headings || [];
+      const lutherVerses = (lutherChapter.verses || msbVerses).sort((a, b) => a.verse - b.verse);
       const selectorOptions = buildSelectorData(booksManifest, bookSlug, chapterNumber);
       const prevUrl = chapterIndex === 0 ? "" : `/bible/${bookSlug}/${chapterNumber - 1}`;
       const nextUrl = chapterIndex === chapterNumbers.length - 1 ? "" : `/bible/${bookSlug}/${chapterNumber + 1}`;
@@ -725,6 +760,18 @@ function main() {
         }))
       );
 
+      lutherSearchIndex.push(
+        ...lutherVerses.map((verse) => ({
+          reference: `${bookName} ${chapterNumber}:${verse.verse}`,
+          text: verse.text,
+          url: `${chapterUrl}#luther-${verse.verse}`,
+          bookSlug,
+          chapter: chapterNumber,
+          verse: verse.verse,
+          version: "luther"
+        }))
+      );
+
       chapterManifest.push({
         book: bookName,
         slug: bookSlug,
@@ -743,6 +790,8 @@ function main() {
           nextUrl,
           msbVerses,
           kjvVerses,
+          lutherVerses,
+          lutherHeadings,
           msbAudioUrl,
           kjvAudioUrl,
           audioSequence,
@@ -758,6 +807,7 @@ function main() {
   fs.writeFileSync(path.join(assetsDir, "book-manifest.json"), JSON.stringify(bookManifest, null, 2));
   fs.writeFileSync(path.join(assetsDir, "search-index.json"), JSON.stringify(msbSearchIndex));
   fs.writeFileSync(path.join(assetsDir, "search-index-kjv.json"), JSON.stringify(kjvSearchIndex));
+  fs.writeFileSync(path.join(assetsDir, "search-index-luther.json"), JSON.stringify(lutherSearchIndex));
   fs.writeFileSync(path.join(assetsDir, "chapter-manifest.json"), JSON.stringify(chapterManifest, null, 2));
   updateBibleLandingPage(booksManifest);
 

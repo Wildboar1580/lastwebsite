@@ -82,10 +82,7 @@
         <span class="brand-mark" aria-hidden="true">
           <img src="/assets/images/base44-logo.jpg" alt="" width="34" height="34" decoding="async">
         </span>
-        <span>
-          <strong>Last Christian Ministries</strong>
-          <em>God's Word and Luther's Doctrine Shall Never Pass Away</em>
-        </span>
+        <span><strong>Last Christian Ministries</strong></span>
       </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="/bible">Bible</a>
@@ -109,7 +106,7 @@
           <p class="eyebrow">Bible</p>
           <p class="bible-crumbs"><a href="/bible">Bible</a> / <a href="/bible/1-thessalonians/">1 Thessalonians</a> / Chapter 1</p>
           <h1>1 Thessalonians 1</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch to the KJV with a simple toggle, and listen with a single themed player.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch among the KJV and Luther English translations, and listen with a single themed player where audio is available.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
@@ -277,6 +274,7 @@
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
+          <button class="button button-outline" type="button" data-view-mode="luther">Luther English</button>
         </div>
         <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
@@ -311,6 +309,7 @@
           <header class="bible-column-header">
             <p class="eyebrow">Majority Standard Bible</p>
           </header>
+          
           <div class="bible-verses">
             
               <p id="msb-1" class="bible-verse">
@@ -371,6 +370,7 @@
           <header class="bible-column-header">
             <p class="eyebrow">KJV</p>
           </header>
+          
           <div class="bible-verses">
             
               <p id="kjv-1" class="bible-verse">
@@ -421,6 +421,71 @@
               <p id="kjv-10" class="bible-verse">
                 <span class="verse-num">10</span>
                 <span>And to wait for his Son from heaven, whom he raised from the dead, [even] Jesus, which delivered us from the wrath to come.</span>
+              </p>
+            
+          </div>
+        </section>
+  
+
+        <section class="bible-column" data-translation="luther">
+          <header class="bible-column-header">
+            <p class="eyebrow">Luther English</p>
+          </header>
+          
+          <div class="bible-chapter-headings">
+            <p class="bible-chapter-heading">Exhortation to the Thessalonians to persevere in Christianity.</p>
+          </div>
+          
+          <div class="bible-verses">
+            
+              <p id="luther-1" class="bible-verse">
+                <span class="verse-num">1</span>
+                <span>Paul, and Silvanus, and Timotheus, to the church at Thessalonica, in GOD the Father, and the Lord JESUS CHRIST. Grace be unto you, and peace, from God our Father, and the Lord Jesus Christ.</span>
+              </p>
+            
+              <p id="luther-2" class="bible-verse">
+                <span class="verse-num">2</span>
+                <span>We give thanks unto God always for you all, and remember you in our prayers without ceasing.</span>
+              </p>
+            
+              <p id="luther-3" class="bible-verse">
+                <span class="verse-num">3</span>
+                <span>And remember your work of faith, and your labour of love, and your patience of hope, which is our Lord JESUS Christ in the sight of GOD and our Father.</span>
+              </p>
+            
+              <p id="luther-4" class="bible-verse">
+                <span class="verse-num">4</span>
+                <span>For, brethren, beloved of God, we know how ye are chosen,</span>
+              </p>
+            
+              <p id="luther-5" class="bible-verse">
+                <span class="verse-num">5</span>
+                <span>That our gospel was not with you in word only, but both in power, and in the Holy Ghost, and in great assurance: as ye know what manner of things we were among you for your sakes.</span>
+              </p>
+            
+              <p id="luther-6" class="bible-verse">
+                <span class="verse-num">6</span>
+                <span>And ye became our followers, and of the LORD, and received the word with joy in the Holy Ghost, through many tribulations,</span>
+              </p>
+            
+              <p id="luther-7" class="bible-verse">
+                <span class="verse-num">7</span>
+                <span>So that ye became an example unto all the faithful of Macedonia and Achaia.</span>
+              </p>
+            
+              <p id="luther-8" class="bible-verse">
+                <span class="verse-num">8</span>
+                <span>For the word of the LORD hath gone forth from you, not only into Macedonia and Achaia, but in every place your faith also in God is broken forth; so that there is no need to say anything unto you.</span>
+              </p>
+            
+              <p id="luther-9" class="bible-verse">
+                <span class="verse-num">9</span>
+                <span>For they themselves declare of you what entrance we have had unto you, and how ye are converted unto God from idols, to serve the living and true God.</span>
+              </p>
+            
+              <p id="luther-10" class="bible-verse">
+                <span class="verse-num">10</span>
+                <span>And to wait for his Son from heaven, whom he hath raised from the dead, Jesus, who hath redeemed us from the wrath to come.</span>
               </p>
             
           </div>
@@ -481,11 +546,12 @@
           <a href="/easter">Easter Report</a>
           <a href="/library">Library</a>
           <a href="/walther">Walther</a>
+          <a href="/kretzmann">Kretzmann</a>
           <a href="/elhb">ELHB</a>
-
           <a href="/about">About Me</a>
           <a href="/kutesa">Kutesa Henry</a>
           <a href="/faq">FAQ</a>
+          <a href="/requests">Signed Requests</a>
           <a href="/security">Security</a>
           <a href="/contact">Contact</a>
           <a href="https://media.rss.com/last-christian-ministries/feed.xml" target="_blank" rel="noopener noreferrer">RSS Feed</a>
@@ -501,7 +567,7 @@
     </footer>
   </div>
   <script type="application/json" id="bible-book-options">[{"name":"Genesis","slug":"genesis","chapterCount":50},{"name":"Exodus","slug":"exodus","chapterCount":40},{"name":"Leviticus","slug":"leviticus","chapterCount":27},{"name":"Numbers","slug":"numbers","chapterCount":36},{"name":"Deuteronomy","slug":"deuteronomy","chapterCount":34},{"name":"Joshua","slug":"joshua","chapterCount":24},{"name":"Judges","slug":"judges","chapterCount":21},{"name":"Ruth","slug":"ruth","chapterCount":4},{"name":"1 Samuel","slug":"1-samuel","chapterCount":31},{"name":"2 Samuel","slug":"2-samuel","chapterCount":24},{"name":"1 Kings","slug":"1-kings","chapterCount":22},{"name":"2 Kings","slug":"2-kings","chapterCount":25},{"name":"1 Chronicles","slug":"1-chronicles","chapterCount":29},{"name":"2 Chronicles","slug":"2-chronicles","chapterCount":36},{"name":"Ezra","slug":"ezra","chapterCount":10},{"name":"Nehemiah","slug":"nehemiah","chapterCount":13},{"name":"Esther","slug":"esther","chapterCount":10},{"name":"Job","slug":"job","chapterCount":42},{"name":"Psalms","slug":"psalms","chapterCount":150},{"name":"Proverbs","slug":"proverbs","chapterCount":31},{"name":"Ecclesiastes","slug":"ecclesiastes","chapterCount":12},{"name":"Song of Solomon","slug":"song-of-solomon","chapterCount":8},{"name":"Isaiah","slug":"isaiah","chapterCount":66},{"name":"Jeremiah","slug":"jeremiah","chapterCount":52},{"name":"Lamentations","slug":"lamentations","chapterCount":5},{"name":"Ezekiel","slug":"ezekiel","chapterCount":48},{"name":"Daniel","slug":"daniel","chapterCount":12},{"name":"Hosea","slug":"hosea","chapterCount":14},{"name":"Joel","slug":"joel","chapterCount":3},{"name":"Amos","slug":"amos","chapterCount":9},{"name":"Obadiah","slug":"obadiah","chapterCount":1},{"name":"Jonah","slug":"jonah","chapterCount":4},{"name":"Micah","slug":"micah","chapterCount":7},{"name":"Nahum","slug":"nahum","chapterCount":3},{"name":"Habakkuk","slug":"habakkuk","chapterCount":3},{"name":"Zephaniah","slug":"zephaniah","chapterCount":3},{"name":"Haggai","slug":"haggai","chapterCount":2},{"name":"Zechariah","slug":"zechariah","chapterCount":14},{"name":"Malachi","slug":"malachi","chapterCount":4},{"name":"Matthew","slug":"matthew","chapterCount":28},{"name":"Mark","slug":"mark","chapterCount":16},{"name":"Luke","slug":"luke","chapterCount":24},{"name":"John","slug":"john","chapterCount":21},{"name":"Acts","slug":"acts","chapterCount":28},{"name":"Romans","slug":"romans","chapterCount":16},{"name":"1 Corinthians","slug":"1-corinthians","chapterCount":16},{"name":"2 Corinthians","slug":"2-corinthians","chapterCount":13},{"name":"Galatians","slug":"galatians","chapterCount":6},{"name":"Ephesians","slug":"ephesians","chapterCount":6},{"name":"Philippians","slug":"philippians","chapterCount":4},{"name":"Colossians","slug":"colossians","chapterCount":4},{"name":"1 Thessalonians","slug":"1-thessalonians","chapterCount":5},{"name":"2 Thessalonians","slug":"2-thessalonians","chapterCount":3},{"name":"1 Timothy","slug":"1-timothy","chapterCount":6},{"name":"2 Timothy","slug":"2-timothy","chapterCount":4},{"name":"Titus","slug":"titus","chapterCount":3},{"name":"Philemon","slug":"philemon","chapterCount":1},{"name":"Hebrews","slug":"hebrews","chapterCount":13},{"name":"James","slug":"james","chapterCount":5},{"name":"1 Peter","slug":"1-peter","chapterCount":5},{"name":"2 Peter","slug":"2-peter","chapterCount":3},{"name":"1 John","slug":"1-john","chapterCount":5},{"name":"2 John","slug":"2-john","chapterCount":1},{"name":"3 John","slug":"3-john","chapterCount":1},{"name":"Jude","slug":"jude","chapterCount":1},{"name":"Revelation","slug":"revelation","chapterCount":22}]</script>
-  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Thessalonians","chapter":1,"pageUrl":"/bible/1-thessalonians/1","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/001.mp3","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":2,"pageUrl":"/bible/1-thessalonians/2","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/002.mp3","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":3,"pageUrl":"/bible/1-thessalonians/3","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/003.mp3","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":4,"pageUrl":"/bible/1-thessalonians/4","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/004.mp3","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":5,"pageUrl":"/bible/1-thessalonians/5","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/005.mp3","slug":"1-thessalonians"}]</script>
+  <script type="application/json" id="bible-audio-sequence">[{"book":"1 Thessalonians","chapter":1,"pageUrl":"/bible/1-thessalonians/1","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_001_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/001.mp3","lutherAudioUrl":"","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":2,"pageUrl":"/bible/1-thessalonians/2","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_002_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/002.mp3","lutherAudioUrl":"","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":3,"pageUrl":"/bible/1-thessalonians/3","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_003_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/003.mp3","lutherAudioUrl":"","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":4,"pageUrl":"/bible/1-thessalonians/4","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_004_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/004.mp3","lutherAudioUrl":"","slug":"1-thessalonians"},{"book":"1 Thessalonians","chapter":5,"pageUrl":"/bible/1-thessalonians/5","msbAudioUrl":"https://media.lastchristian.com/msb/MSB_52_1Th_005_D.mp3","kjvAudioUrl":"https://media.lastchristian.com/kjv/1-thessalonians/005.mp3","lutherAudioUrl":"","slug":"1-thessalonians"}]</script>
   <script type="module" src="/assets/app.js"></script>
   <script type="module" src="/assets/bible.js"></script>
 </body>

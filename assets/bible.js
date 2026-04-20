@@ -131,7 +131,8 @@ function formatTime(seconds) {
 }
 
 function normalizeBibleView(view) {
-  return view === "kjv" ? "kjv" : "msb";
+  if (view === "kjv" || view === "luther") return view;
+  return "msb";
 }
 
 function getStoredBibleView() {
@@ -153,7 +154,7 @@ function setStoredBibleView(view) {
 function buildBibleChapterHref(bookSlug, chapter, view = getStoredBibleView()) {
   const normalizedView = normalizeBibleView(view);
   const href = `/bible/${bookSlug}/${chapter}.html`;
-  return normalizedView === "kjv" ? `${href}?version=kjv` : href;
+  return normalizedView === "msb" ? href : `${href}?version=${normalizedView}`;
 }
 
 function isBibleChapterHref(href = "") {
@@ -199,7 +200,9 @@ function loadSearchIndex(view = "msb") {
   const normalizedView = normalizeBibleView(view);
   const searchIndexPath = normalizedView === "kjv"
     ? "/assets/bible/search-index-kjv.json"
-    : "/assets/bible/search-index.json";
+    : normalizedView === "luther"
+      ? "/assets/bible/search-index-luther.json"
+      : "/assets/bible/search-index.json";
 
   if (!searchIndexPromises.has(searchIndexPath)) {
     searchIndexPromises.set(
@@ -337,15 +340,23 @@ function initBibleChapterPage() {
   let rafId = 0;
   let resolvingDuration = false;
   let pendingVisibleSync = null;
-  if (requestedView === "kjv" || requestedView === "msb") {
+  if (requestedView === "kjv" || requestedView === "msb" || requestedView === "luther") {
     view = requestedView;
   } else {
     view = getStoredBibleView();
   }
   continuousToggle.checked = continuous;
 
-  const getAudioUrl = (entry, mode) => mode === "kjv" ? entry.kjvAudioUrl : entry.msbAudioUrl;
-  const getLabel = (entry, mode) => `${mode === "kjv" ? "KJV" : "MSB"} Audio · ${entry.book} ${entry.chapter}`;
+  const getAudioUrl = (entry, mode) => {
+    if (mode === "kjv") return entry.kjvAudioUrl;
+    if (mode === "luther") return entry.lutherAudioUrl || "";
+    return entry.msbAudioUrl;
+  };
+  const getLabel = (entry, mode) => {
+    if (mode === "kjv") return `KJV Audio · ${entry.book} ${entry.chapter}`;
+    if (mode === "luther") return `Luther English · ${entry.book} ${entry.chapter} · No audio available`;
+    return `MSB Audio · ${entry.book} ${entry.chapter}`;
+  };
   const getEntryUrl = (entry, mode) => buildBibleChapterHref(entry.slug, entry.chapter, mode);
 
   const setProgress = (value) => {
@@ -405,8 +416,8 @@ function initBibleChapterPage() {
     setStoredBibleView(view);
     updateBibleChapterLinks(view);
     const currentUrl = new URL(window.location.href);
-    if (view === "kjv") {
-      currentUrl.searchParams.set("version", "kjv");
+    if (view === "kjv" || view === "luther") {
+      currentUrl.searchParams.set("version", view);
     } else {
       currentUrl.searchParams.delete("version");
     }
@@ -506,10 +517,28 @@ function initBibleChapterPage() {
     const wasPaused = audio.paused;
     const nextSource = getAudioUrl(entry, view);
 
+    label.textContent = getLabel(entry, view);
+
+    if (!nextSource) {
+      audio.removeAttribute("src");
+      audio.load();
+      preloadAudio.removeAttribute("src");
+      preloadAudio.preload = "none";
+      preloadAudio.load();
+      current.textContent = "0:00";
+      duration.textContent = "—";
+      setProgress(0);
+      toggle.disabled = true;
+      player.classList.add("is-disabled");
+      return;
+    }
+
+    toggle.disabled = false;
+    player.classList.remove("is-disabled");
+
     audio.src = nextSource;
     audio.preload = "metadata";
     audio.load();
-    label.textContent = getLabel(entry, view);
     current.textContent = "0:00";
     duration.textContent = "…";
     setProgress(0);
@@ -666,7 +695,8 @@ async function initBibleSearch() {
       .slice(0, 25);
 
     if (!matches.length) {
-      results.innerHTML = `<p class="search-empty">No matching verses found in the selected ${activeView === "kjv" ? "KJV" : "MSB"} text.</p>`;
+      const viewLabel = activeView === "kjv" ? "KJV" : activeView === "luther" ? "Luther English" : "MSB";
+      results.innerHTML = `<p class="search-empty">No matching verses found in the selected ${viewLabel} text.</p>`;
       return;
     }
 
