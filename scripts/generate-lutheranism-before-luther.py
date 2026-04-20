@@ -29,6 +29,32 @@ def normalize_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
+def is_source_toc_line(text: str) -> bool:
+    if not text:
+        return False
+    if text.startswith("Objections to this answer"):
+        return True
+    if text.startswith("Question ") or text.startswith("Answer by ") or text.startswith("First objection") or text.startswith("First Objection"):
+        return True
+    if text.startswith("Second objection") or text.startswith("Second Objection") or text.startswith("Third objection") or text.startswith("Third Objection"):
+        return True
+    if text.startswith("Fourth objection") or text.startswith("Fourth Objection") or text.startswith("Fifth objection") or text.startswith("Sixth objection"):
+        return True
+    if text.startswith("The First Chapter") or text.startswith("The Second Chapter") or text.startswith("The Third Chapter"):
+        return True
+    if text.startswith("Recently Proven Lutheranism Before Luther") or text.startswith("The Vindicated Lutheranism Before Luther"):
+        return True
+    if text.startswith("The First Question") or text.startswith("The Second Question") or text.startswith("The Third Question"):
+        return True
+    if text.startswith("Nihil ad rem") or text.startswith("Transcript of hoax letter") or text.startswith("Anti-Papistic Panoplia"):
+        return True
+    if re.search(r",\s*\d+[;.]?$", text):
+        return True
+    if re.search(r"\bp\.\s*\d+", text):
+        return True
+    return False
+
+
 def rel_target(base_target: str) -> str:
     if base_target.startswith("http://") or base_target.startswith("https://"):
         return base_target
@@ -133,7 +159,7 @@ def build_page(paragraphs: list[tuple[str, str]]) -> str:
             or plain_text.startswith("Recently Proven Lutheranism Before Luther")
             or plain_text == "Preface."
             or plain_text == "Table of Contents"
-            or plain_text == "[Preface] ^"
+            or plain_text.startswith("[Preface]")
         )
 
         if is_section:
@@ -334,10 +360,10 @@ def main() -> None:
             continue
 
         if skipping_source_toc:
-            if plain_text.startswith("The Nobles") or plain_text.startswith("[Preface]"):
-                skipping_source_toc = False
-            else:
+            if is_source_toc_line(plain_text):
                 continue
+            if plain_text.startswith("[Preface]") or plain_text == "The" or plain_text.startswith("Nobles, Noble"):
+                skipping_source_toc = False
 
         filtered_paragraphs.append((html_text, plain_text))
 
