@@ -939,7 +939,7 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
           <div class="lectionary-sermon-panel" id="${sectionId}-sermons">
             <p class="lectionary-proper-label">Relevant Luther and Walther Sermons</p>
             <div class="lectionary-sermon-actions" data-observance-sermons data-observance-title="${escapeHtml(observance.title)}">
-              ${renderSermonLinks(getResolvedSermonLinks(observance.title))}
+              <p class="lectionary-empty">Loading matching sermon links…</p>
             </div>
           </div>
         ` : ""}
@@ -1615,7 +1615,25 @@ function resolveExistingUrls(candidates) {
   return [...new Set((candidates || []).filter(Boolean))];
 }
 
-function getResolvedSermonLinks(title) {
+async function resolveFirstExistingUrl(candidates) {
+  for (const href of resolveExistingUrls(candidates)) {
+    if (await urlExists(href)) {
+      return href;
+    }
+  }
+  return "";
+}
+
+async function resolveExistingUrlsByFetch(candidates) {
+  const unique = resolveExistingUrls(candidates);
+  const existence = await Promise.all(unique.map(async (href) => ({
+    href,
+    exists: await urlExists(href)
+  })));
+  return existence.filter((entry) => entry.exists).map((entry) => entry.href);
+}
+
+async function getResolvedSermonLinks(title) {
   if (lectionarySermonResolutionCache.has(title)) {
     return lectionarySermonResolutionCache.get(title);
   }
@@ -1623,38 +1641,40 @@ function getResolvedSermonLinks(title) {
   const key = getObservanceKey(title);
   if (!key) return [];
 
-  const waltherCandidates = getWaltherCandidateUrls(key);
-  const lutherHrefs = resolveExistingUrls(getLutherCandidateUrls(key));
-  const waltherGospelHref = resolveExistingUrls(waltherCandidates.gospel || [])[0] || "";
-  const waltherEpistleHref = resolveExistingUrls(waltherCandidates.epistle || [])[0] || "";
-  const isLutherGospelHref = (href) => {
-    if (href.includes("/vol-11/") || href.includes("/vol-13a/") || href.includes("/vol-13b/")) return true;
-    if (!href.includes("/vol-12/")) return false;
-    return LUTHER_VOL12_GOSPEL_HREFS.has(href);
-  };
-  const lutherGospelHrefs = lutherHrefs.filter((href) => isLutherGospelHref(href));
-  const lutherEpistleHrefs = lutherHrefs.filter((href) => href.includes("/vol-12/") && !isLutherGospelHref(href));
-  const getLutherSeriesDate = (href) => {
-    if (href.includes("/vol-11/") || href.includes("/vol-12/")) return "1521-1525";
-    if (href.includes("/vol-13a/") || href.includes("/vol-13b/")) return "1531-1535";
-    return "";
-  };
+  const resolutionPromise = (async () => {
+    const waltherCandidates = getWaltherCandidateUrls(key);
+    const lutherHrefs = await resolveExistingUrlsByFetch(getLutherCandidateUrls(key));
+    const waltherGospelHref = await resolveFirstExistingUrl(waltherCandidates.gospel || []);
+    const waltherEpistleHref = await resolveFirstExistingUrl(waltherCandidates.epistle || []);
+    const isLutherGospelHref = (href) => {
+      if (href.includes("/vol-11/") || href.includes("/vol-13a/") || href.includes("/vol-13b/")) return true;
+      if (!href.includes("/vol-12/")) return false;
+      return LUTHER_VOL12_GOSPEL_HREFS.has(href);
+    };
+    const lutherGospelHrefs = lutherHrefs.filter((href) => isLutherGospelHref(href));
+    const lutherEpistleHrefs = lutherHrefs.filter((href) => href.includes("/vol-12/") && !isLutherGospelHref(href));
+    const getLutherSeriesDate = (href) => {
+      if (href.includes("/vol-11/") || href.includes("/vol-12/")) return "1521-1525";
+      if (href.includes("/vol-13a/") || href.includes("/vol-13b/")) return "1531-1535";
+      return "";
+    };
 
-  const resolution = [
-    ...lutherGospelHrefs.map((href, index) => ({
-      label: `Luther Gospel Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
-      href
-    })),
-    ...lutherEpistleHrefs.map((href, index) => ({
-      label: `Luther Epistle Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
-      href
-    })),
-    waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
-    waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
-  ].filter(Boolean);
+    return [
+      ...lutherGospelHrefs.map((href, index) => ({
+        label: `Luther Gospel Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
+        href
+      })),
+      ...lutherEpistleHrefs.map((href, index) => ({
+        label: `Luther Epistle Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
+        href
+      })),
+      waltherGospelHref ? { label: "Walther Gospel Sermon", href: waltherGospelHref } : null,
+      waltherEpistleHref ? { label: "Walther Epistle Sermon", href: waltherEpistleHref } : null
+    ].filter(Boolean);
+  })();
 
-  lectionarySermonResolutionCache.set(title, resolution);
-  return resolution;
+  lectionarySermonResolutionCache.set(title, resolutionPromise);
+  return resolutionPromise;
 }
 
 function renderSermonLinks(links) {
@@ -1669,9 +1689,9 @@ function renderSermonLinks(links) {
 
 function hydrateLectionarySermonLinks(root) {
   const containers = [...root.querySelectorAll("[data-observance-sermons]")];
-  containers.forEach((container) => {
+  containers.forEach(async (container) => {
     const title = container.dataset.observanceTitle || "";
-    const links = getResolvedSermonLinks(title);
+    const links = await getResolvedSermonLinks(title);
     container.innerHTML = renderSermonLinks(links);
   });
 }
