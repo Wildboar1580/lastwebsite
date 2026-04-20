@@ -11,6 +11,7 @@ const extractedDir = path.join(tempDir, "extracted");
 const assetsDir = path.join(root, "assets", "luther");
 
 const SOURCE_POST = "https://backtoluther.blogspot.com/2022/04/st-louis-edition-digitized-text-now-in.html";
+const LED_PAGE_URL = "/bible.html?version=luther";
 
 const VOLUMES = [
   { number: "1", title: "Interpretation of the First Book of Moses [Genesis]. First part." },
@@ -1045,6 +1046,10 @@ ${renderFaviconLinks()}
           <a class="library-card" href="/bible">
             <h3>Holy Scripture</h3>
             <p>Read the biblical text itself with static chapter pages, search, and audio.</p>
+          </a>
+          <a class="library-card" href="${LED_PAGE_URL}">
+            <h3>1545 Luther's English Bible (LED)</h3>
+            <p>Read Luther's final 1545 Bible in the machine-generated English LED translation with preserved chapter headings and source attribution.</p>
           </a>
           <a class="library-card" href="/concord">
             <h3>Book of Concord</h3>

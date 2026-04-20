@@ -1773,7 +1773,7 @@ textarea {
 }
 
 .bible-view-toggle {
-  grid-template-columns: repeat(2, minmax(0, 220px));
+  grid-template-columns: repeat(3, minmax(0, 220px));
   margin-top: 1.2rem;
   justify-content: start;
 }
@@ -1788,6 +1788,10 @@ textarea {
 .bible-lectionary-grid,
 .bible-note-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.bible-translation-note {
+  grid-column: 1 / -1;
 }
 
 .lectionary-page-grid {

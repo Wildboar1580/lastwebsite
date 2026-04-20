@@ -22,6 +22,7 @@ const DAILY_TYPES = {
 };
 
 const BIBLE_VIEW_STORAGE_KEY = "lcm-bible-view";
+const LED_NAME = "1545 Luther's English Bible (LED)";
 const PODCAST_FEED_PROXIES = [
   (url) => url,
   (url) => `https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`,
@@ -354,7 +355,7 @@ function initBibleChapterPage() {
   };
   const getLabel = (entry, mode) => {
     if (mode === "kjv") return `KJV Audio · ${entry.book} ${entry.chapter}`;
-    if (mode === "luther") return `Luther English · ${entry.book} ${entry.chapter} · No audio available`;
+    if (mode === "luther") return `${LED_NAME} · ${entry.book} ${entry.chapter} · No audio available`;
     return `MSB Audio · ${entry.book} ${entry.chapter}`;
   };
   const getEntryUrl = (entry, mode) => buildBibleChapterHref(entry.slug, entry.chapter, mode);
@@ -695,7 +696,7 @@ async function initBibleSearch() {
       .slice(0, 25);
 
     if (!matches.length) {
-      const viewLabel = activeView === "kjv" ? "KJV" : activeView === "luther" ? "Luther English" : "MSB";
+      const viewLabel = activeView === "kjv" ? "KJV" : activeView === "luther" ? LED_NAME : "MSB";
       results.innerHTML = `<p class="search-empty">No matching verses found in the selected ${viewLabel} text.</p>`;
       return;
     }

@@ -11,6 +11,9 @@ const msbSheetPath = path.join(root, "tmp", "bible", "msb_unzipped", "xl", "work
 const kjvPath = path.join(root, "tmp", "bible", "json", "EN-English", "kjv.json");
 const lutherEnglishPath = path.join(root, "tmp", "bible", "luther-english.json");
 const AUDIO_BASE_URL = "https://media.lastchristian.com";
+const LED_NAME = "1545 Luther's English Bible (LED)";
+const LED_SOURCE_URL = "https://backtoluther.blogspot.com/2021/09/luthers-1545-bible-in-english-by-deepl.html";
+const LED_PRINT_URL = "https://backtoluther.blogspot.com/2024/04/1545-luthers-english-bible-led-now-in.html";
 const AUDIO_CONFIG = {
   msbPattern: "legacy-r2",
   kjvPattern: "normalized-r2"
@@ -223,6 +226,17 @@ function renderColumn(versionLabel, versionKey, verses, headings = []) {
           </div>
         </section>
   `;
+}
+
+function renderLedInfoCard() {
+  return `
+        <article class="faq-card bible-translation-note">
+          <p class="eyebrow">1545 Luther's English Bible (LED)</p>
+          <h3>Machine-translated from Luther's final 1545 German Bible</h3>
+          <p>The LED is an English rendering of Martin Luther's final 1545 German Bible. According to BackToLuther, it was produced by using the DeepL Translator on Luther's German text, then processed, polished, formatted, and hyperlinked for reading, while preserving chapter headings and other notations from orthodox German Lutheran Bibles.</p>
+          <p>Source attribution: <a class="text-link" href="${LED_SOURCE_URL}" target="_blank" rel="noopener noreferrer">BackToLuther, “Luther's 1545 Bible - in English by… DeepL Translator (The LED Bible)”</a>.</p>
+          <p>For print editions, see <a class="text-link" href="${LED_PRINT_URL}" target="_blank" rel="noopener noreferrer">“1545 Luther's English Bible (LED): now in print”</a>.</p>
+        </article>`;
 }
 
 function renderBrowseSection(oldTestament, newTestament) {
@@ -537,7 +551,7 @@ ${renderFaviconLinks()}
           <p class="eyebrow">Bible</p>
           <p class="bible-crumbs"><a href="/bible">Bible</a> / <a href="${bookUrl}">${escapeHtml(bookName)}</a> / Chapter ${chapter}</p>
           <h1>${escapeHtml(bookName)} ${chapter}</h1>
-          <p>Read this chapter in the Majority Standard Bible by default, switch among the KJV and Luther English translations, and listen with a single themed player where audio is available.</p>
+          <p>Read this chapter in the Majority Standard Bible by default, switch among the KJV and the ${LED_NAME}, and listen with a single themed player where audio is available.</p>
         </div>
       </section>
       <section class="section bible-controls-section">
@@ -563,7 +577,7 @@ ${renderFaviconLinks()}
         <div class="bible-view-toggle" role="tablist" aria-label="Bible display modes">
           <button class="button button-outline is-active" type="button" data-view-mode="msb">MSB</button>
           <button class="button button-outline" type="button" data-view-mode="kjv">KJV</button>
-          <button class="button button-outline" type="button" data-view-mode="luther">Luther English</button>
+          <button class="button button-outline" type="button" data-view-mode="luther">1545 Luther's English Bible (LED)</button>
         </div>
         <div class="bible-audio-grid bible-audio-grid-single">
           <article class="bible-audio-card">
@@ -595,11 +609,16 @@ ${renderFaviconLinks()}
         <div class="bible-columns">
 ${renderColumn("Majority Standard Bible", "msb", msbVerses)}
 ${renderColumn("KJV", "kjv", kjvVerses)}
-${renderColumn("Luther English", "luther", lutherVerses, lutherHeadings)}
+${renderColumn(LED_NAME, "luther", lutherVerses, lutherHeadings)}
         </div>
         <div class="bible-bottom-nav">
           <a class="button button-outline" href="${bookUrl}">All ${escapeHtml(bookName)} Chapters</a>
           ${nextUrl ? `<a class="button button-red" href="${nextUrl}">Next Chapter</a>` : ""}
+        </div>
+      </section>
+      <section class="section bible-notes-section">
+        <div class="bible-note-grid">
+${renderLedInfoCard()}
         </div>
       </section>
       <section class="section library-section">
