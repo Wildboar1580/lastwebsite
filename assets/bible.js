@@ -1258,7 +1258,7 @@ function getWaltherCandidateUrls(key) {
     case "easter-monday": links.gospel = exact("2nd-easter-day"); links.epistle = withVariants("easter-monday"); break;
     case "easter-2": links.gospel = exact("1st-sunday-after-easter"); links.epistle = exact("1st-sunday-after-easter", epistleRoot); break;
     case "easter-3": links.gospel = exact("2nd-sunday-after-easter"); links.epistle = exact("2nd-sunday-after-easter-confirmation", epistleRoot); break;
-    case "easter-4": links.gospel = exact("3rd-sunday-after-easter"); links.epistle = withVariants("3rd-sunday-after-easter"); break;
+    case "easter-4": links.epistle = withVariants("3rd-sunday-after-easter"); break;
     case "easter-5": links.gospel = exact("4th-sunday-after-easter"); links.epistle = exact("4th-sunday-after-easter", epistleRoot); break;
     case "easter-6": links.gospel = exact("5th-sunday-after-easter"); links.epistle = exact("5th-sunday-after-easter", epistleRoot); break;
     case "ascension": links.epistle = exact("ascension-day", epistleRoot); break;
@@ -1619,9 +1619,38 @@ function getLutherCandidateUrls(key) {
   return byKey[key] || [];
 }
 
+function shouldValidateInternalContent(url) {
+  return /^\/(?:walther|luther|bible)\//.test(url);
+}
+
+function pageMatchesRequestedUrl(url, html) {
+  if (!html) return false;
+
+  const requestUrl = new URL(url, window.location.origin);
+  const pathname = requestUrl.pathname.replace(/\/+$/, "");
+  const candidatePaths = new Set([pathname, `${pathname}/`]);
+  const candidateUrls = [...candidatePaths].map((path) => `https://www.lastchristian.com${path}`);
+
+  return candidateUrls.some((candidate) =>
+    html.includes(`rel="canonical" href="${candidate}"`) ||
+    html.includes(`property="og:url" content="${candidate}"`)
+  );
+}
+
 async function urlExists(url) {
   if (!lectionaryUrlExistsCache.has(url)) {
     lectionaryUrlExistsCache.set(url, (async () => {
+      if (shouldValidateInternalContent(url)) {
+        try {
+          const response = await fetch(url, { method: "GET" });
+          if (!response.ok) return false;
+          const html = await response.text();
+          return pageMatchesRequestedUrl(url, html);
+        } catch {
+          return false;
+        }
+      }
+
       try {
         const headResponse = await fetch(url, { method: "HEAD" });
         if (headResponse.ok) return true;
