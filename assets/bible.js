@@ -1258,7 +1258,7 @@ function getWaltherCandidateUrls(key) {
     case "easter-monday": links.gospel = exact("2nd-easter-day"); links.epistle = withVariants("easter-monday"); break;
     case "easter-2": links.gospel = exact("1st-sunday-after-easter"); links.epistle = exact("1st-sunday-after-easter", epistleRoot); break;
     case "easter-3": links.gospel = exact("2nd-sunday-after-easter"); links.epistle = exact("2nd-sunday-after-easter-confirmation", epistleRoot); break;
-    case "easter-4": links.gospel = exact("3rd-sunday-after-easter"); links.epistle = withVariants("3rd-sunday-after-easter"); break;
+    case "easter-4": links.gospel = exact("3rd-sunday-after-easter"); links.epistle = exact("3rd-sunday-after-easter-1", epistleRoot); break;
     case "easter-5": links.gospel = exact("4th-sunday-after-easter"); links.epistle = exact("4th-sunday-after-easter", epistleRoot); break;
     case "easter-6": links.gospel = exact("5th-sunday-after-easter"); links.epistle = exact("5th-sunday-after-easter", epistleRoot); break;
     case "ascension": links.epistle = exact("ascension-day", epistleRoot); break;
