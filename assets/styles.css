@@ -2662,6 +2662,24 @@ textarea {
   filter: sepia(0.34) contrast(1.04);
 }
 
+.library-feature-image-rambach {
+  max-width: 300px;
+  justify-self: center;
+  background:
+    linear-gradient(180deg, rgba(238, 235, 225, 0.96), rgba(186, 185, 172, 0.94)),
+    var(--panel);
+}
+
+.library-feature-image-rambach img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1145 / 1449;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(1) contrast(1.05);
+}
+
 .graebner-title-panel {
   max-width: 720px;
   margin: 0 auto;
