@@ -1620,8 +1620,19 @@ function getLutherCandidateUrls(key) {
   return byKey[key] || [];
 }
 
+function getStoeckhardtCandidateUrls(key) {
+  const byKey = {
+    "advent-1": ["/stoeckhardt/advent-sermons/#sermon-1"],
+    "advent-2": ["/stoeckhardt/advent-sermons/#sermon-2"],
+    "advent-3": ["/stoeckhardt/advent-sermons/#sermon-3"],
+    "advent-4": ["/stoeckhardt/advent-sermons/#sermon-4"]
+  };
+
+  return byKey[key] || [];
+}
+
 function shouldValidateInternalContent(url) {
-  return /^\/(?:walther|luther|bible)\//.test(url);
+  return /^\/(?:walther|luther|bible|stoeckhardt)\//.test(url);
 }
 
 function pageMatchesRequestedUrl(url, html) {
@@ -1703,6 +1714,7 @@ async function getResolvedSermonLinks(title) {
 
   const resolutionPromise = (async () => {
     const waltherCandidates = getWaltherCandidateUrls(key);
+    const stoeckhardtHrefs = await resolveExistingUrlsByFetch(getStoeckhardtCandidateUrls(key));
     const lutherHrefs = await resolveExistingUrlsByFetch(getLutherCandidateUrls(key));
     const waltherGospelHref = await resolveFirstExistingUrl(waltherCandidates.gospel || []);
     const waltherEpistleHref = await resolveFirstExistingUrl(waltherCandidates.epistle || []);
@@ -1720,6 +1732,10 @@ async function getResolvedSermonLinks(title) {
     };
 
     return [
+      ...stoeckhardtHrefs.map((href) => ({
+        label: "Stoeckhardt Advent Sermon",
+        href
+      })),
       ...lutherGospelHrefs.map((href, index) => ({
         label: `Luther Gospel Sermon ${index + 1} (${getLutherSeriesDate(href)})`,
         href
@@ -1739,7 +1755,7 @@ async function getResolvedSermonLinks(title) {
 
 function renderSermonLinks(links) {
   if (!links.length) {
-    return `<p class="lectionary-empty">No matching Luther or Walther sermon page has been linked for this observance yet.</p>`;
+    return `<p class="lectionary-empty">No matching Luther, Walther, or Stoeckhardt sermon page has been linked for this observance yet.</p>`;
   }
 
   return links.map((link) => `
