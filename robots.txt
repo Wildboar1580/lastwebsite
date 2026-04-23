@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 Allow: /.well-known/security.txt
 
-Sitemap: https://lastchristian.com/sitemap.xml
+Sitemap: https://www.lastchristian.com/sitemap.xml

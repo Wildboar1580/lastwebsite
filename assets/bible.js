@@ -154,12 +154,12 @@ function setStoredBibleView(view) {
 
 function buildBibleChapterHref(bookSlug, chapter, view = getStoredBibleView()) {
   const normalizedView = normalizeBibleView(view);
-  const href = `/bible/${bookSlug}/${chapter}.html`;
+  const href = `/bible/${bookSlug}/${chapter}`;
   return normalizedView === "msb" ? href : `${href}?version=${normalizedView}`;
 }
 
 function isBibleChapterHref(href = "") {
-  return /^\/bible\/[^/]+\/\d+\.html(?:\?.*)?$/.test(href);
+  return /^\/bible\/[^/]+\/\d+(?:\?.*)?$/.test(href) || /^\/bible\/[^/]+\/\d+\.html(?:\?.*)?$/.test(href);
 }
 
 function updateBibleChapterLinks(view = getStoredBibleView()) {
