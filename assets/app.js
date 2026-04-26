@@ -7,6 +7,7 @@ const FALLBACK_FEED_PROXIES = [
 ];
 const HOMEPAGE_EPISODE_COUNT = 6;
 const ARCHIVE_PAGE_SIZE = 24;
+const EPISODE_MANIFEST_URL = "/assets/episode-manifest.json";
 
 document.addEventListener("DOMContentLoaded", () => {
   hydrateCampaignPage();
@@ -114,12 +115,17 @@ async function initPodcastFeed() {
   if (!needsHomepage && !needsArchive) return;
 
   let pendingFeed;
+  let pendingManifest;
 
   const loadEpisodes = async () => {
+    if (!pendingManifest) {
+      pendingManifest = loadEpisodeManifest();
+    }
     if (!pendingFeed) {
       pendingFeed = (async () => {
+        const manifest = await pendingManifest;
         const xmlText = await fetchFeed(FEED_URL);
-        return parseFeed(xmlText);
+        return parseFeed(xmlText, manifest);
       })();
     }
 
@@ -205,7 +211,7 @@ async function fetchFeed(url) {
   throw lastError || new Error("Unable to fetch feed.");
 }
 
-function parseFeed(xmlText) {
+function parseFeed(xmlText, manifest = []) {
   const parser = new DOMParser();
   const xml = parser.parseFromString(xmlText, "text/xml");
   const items = [...xml.querySelectorAll("item")];
@@ -213,6 +219,11 @@ function parseFeed(xmlText) {
     xml.querySelector("channel > itunes\\:image")?.getAttribute("href") ||
     xml.querySelector("channel > image > url")?.textContent?.trim() ||
     "/assets/images/podcast-fallback.svg";
+  const manifestByLink = new Map(
+    manifest
+      .filter((entry) => entry?.link && entry?.canonicalUrl)
+      .map((entry) => [normalizeEpisodeKey(entry.link), entry.canonicalUrl])
+  );
 
   return items.map((item) => {
     const title = readText(item, "title");
@@ -231,9 +242,22 @@ function parseFeed(xmlText) {
       audioUrl: enclosure?.getAttribute("url") || "",
       imageUrl: image?.getAttribute("href") || extractImageFromHtml(descriptionHtml) || channelImage,
       link,
-      pageUrl: buildEpisodePageUrl(title || "Untitled episode", link)
+      pageUrl: resolveEpisodePageUrl(title || "Untitled episode", link, manifestByLink)
     };
   });
+}
+
+async function loadEpisodeManifest() {
+  try {
+    const response = await fetch(EPISODE_MANIFEST_URL);
+    if (!response.ok) {
+      throw new Error(`Manifest request failed with status ${response.status}`);
+    }
+    const manifest = await response.json();
+    return Array.isArray(manifest) ? manifest : [];
+  } catch {
+    return [];
+  }
 }
 
 function renderEpisodeCards(root, episodes) {
@@ -558,4 +582,22 @@ function buildEpisodePageUrl(title, link) {
     .replace(/^-+|-+$/g, "")
     .slice(0, 90);
   return `/episodes/${slug}-${id}`;
+}
+
+function normalizeEpisodeKey(link) {
+  return String(link || "").trim().replace(/\/+$/, "");
+}
+
+function resolveEpisodePageUrl(title, link, manifestByLink) {
+  const manifestUrl = manifestByLink?.get(normalizeEpisodeKey(link));
+  if (manifestUrl) {
+    try {
+      const url = new URL(manifestUrl);
+      return `${url.pathname}${url.search}${url.hash}`;
+    } catch {
+      return manifestUrl;
+    }
+  }
+
+  return buildEpisodePageUrl(title, link);
 }
