@@ -32,6 +32,10 @@ const OBSERVANCE_PODCAST_MATCHERS = new Map([
   ["easter-3", {
     fallbackUrl: "/episodes/misericordias-domini-easter-3-john-10-11-16-2746515",
     matchTerms: ["misericordias domini", "john 10:11-16"]
+  }],
+  ["easter-4", {
+    fallbackUrl: "https://rss.com/podcasts/last-christian-ministries/2767778",
+    matchTerms: ["jubilate", "john 16:16-23"]
   }]
 ]);
 
@@ -1763,12 +1767,31 @@ function renderSermonLinks(links) {
   `).join("");
 }
 
+function getSupplementalSermonLinks(title) {
+  const key = getObservanceKey(title);
+  if (!key) return [];
+
+  const byKey = {
+    "easter-4": [
+      {
+        label: "Podcast Sermon: Jubilate (John 16:16-23)",
+        href: "https://rss.com/podcasts/last-christian-ministries/2767778"
+      }
+    ]
+  };
+
+  return byKey[key] || [];
+}
+
 function hydrateLectionarySermonLinks(root) {
   const containers = [...root.querySelectorAll("[data-observance-sermons]")];
   containers.forEach(async (container) => {
     const title = container.dataset.observanceTitle || "";
     const links = await getResolvedSermonLinks(title);
-    container.innerHTML = renderSermonLinks(links);
+    container.innerHTML = renderSermonLinks([
+      ...links,
+      ...getSupplementalSermonLinks(title)
+    ]);
   });
 }
 
