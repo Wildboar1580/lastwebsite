@@ -222,7 +222,10 @@ function parseFeed(xmlText, manifest = []) {
   const manifestByLink = new Map(
     manifest
       .filter((entry) => entry?.link && entry?.canonicalUrl)
-      .map((entry) => [normalizeEpisodeKey(entry.link), entry.canonicalUrl])
+      .map((entry) => [
+        normalizeEpisodeKey(entry.link),
+        entry.pageHref || entry.canonicalUrl
+      ])
   );
 
   return items.map((item) => {

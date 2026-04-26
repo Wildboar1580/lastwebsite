@@ -7,6 +7,7 @@ const root = process.cwd();
 const feedPath = path.join(root, "rss-feed.xml");
 const outputDir = path.join(root, "episodes");
 const podcastLandingPath = path.join(root, "podcast.html");
+const podcastIndexPath = path.join(root, "podcast", "index.html");
 const podcastPageDir = path.join(root, "podcast", "page");
 const bibleManifestPath = path.join(root, "assets", "bible", "chapter-manifest.json");
 const bibleBookManifestPath = path.join(root, "assets", "bible", "book-manifest.json");
@@ -467,24 +468,26 @@ ${renderSiteFooter()}
 }
 
 function updatePodcastLandingPage(episodes) {
-  if (!fs.existsSync(podcastLandingPath)) {
-    return;
-  }
-
   const totalPages = Math.max(1, Math.ceil(episodes.length / ARCHIVE_PAGE_SIZE));
   const visibleEpisodes = episodes.slice(0, ARCHIVE_PAGE_SIZE);
   const staticCards = renderStaticArchiveCards(visibleEpisodes);
   const staticPagination = renderStaticPagination(1, totalPages);
-  let html = fs.readFileSync(podcastLandingPath, "utf8");
-  html = html.replace(
-    /<!-- PODCAST_ARCHIVE_RESULTS_START -->[\s\S]*?<!-- PODCAST_ARCHIVE_RESULTS_END -->/,
-    `<!-- PODCAST_ARCHIVE_RESULTS_START -->\n        <div id="archive-results" class="archive-grid" aria-live="polite">\n${staticCards}\n        </div>\n        <!-- PODCAST_ARCHIVE_RESULTS_END -->`
-  );
-  html = html.replace(
-    /<!-- PODCAST_ARCHIVE_PAGINATION_START -->[\s\S]*?<!-- PODCAST_ARCHIVE_PAGINATION_END -->/,
-    `<!-- PODCAST_ARCHIVE_PAGINATION_START -->\n        <div id="archive-pagination" class="archive-pagination" aria-label="Podcast archive pagination">\n${staticPagination}\n        </div>\n        <!-- PODCAST_ARCHIVE_PAGINATION_END -->`
-  );
-  fs.writeFileSync(podcastLandingPath, html);
+  for (const landingPath of [podcastLandingPath, podcastIndexPath]) {
+    if (!fs.existsSync(landingPath)) {
+      continue;
+    }
+
+    let html = fs.readFileSync(landingPath, "utf8");
+    html = html.replace(
+      /<!-- PODCAST_ARCHIVE_RESULTS_START -->[\s\S]*?<!-- PODCAST_ARCHIVE_RESULTS_END -->/,
+      `<!-- PODCAST_ARCHIVE_RESULTS_START -->\n        <div id="archive-results" class="archive-grid" aria-live="polite">\n${staticCards}\n        </div>\n        <!-- PODCAST_ARCHIVE_RESULTS_END -->`
+    );
+    html = html.replace(
+      /<!-- PODCAST_ARCHIVE_PAGINATION_START -->[\s\S]*?<!-- PODCAST_ARCHIVE_PAGINATION_END -->/,
+      `<!-- PODCAST_ARCHIVE_PAGINATION_START -->\n        <div id="archive-pagination" class="archive-pagination" aria-label="Podcast archive pagination">\n${staticPagination}\n        </div>\n        <!-- PODCAST_ARCHIVE_PAGINATION_END -->`
+    );
+    fs.writeFileSync(landingPath, html);
+  }
 }
 
 async function main() {
@@ -547,7 +550,13 @@ async function main() {
 
   updatePodcastLandingPage(episodes);
 
-  const manifest = episodes.map(({ slug, title, link, canonicalUrl }) => ({ slug, title, link, canonicalUrl }));
+  const manifest = episodes.map(({ slug, title, link, canonicalUrl }) => ({
+    slug,
+    title,
+    link,
+    canonicalUrl,
+    pageHref: `/episodes/${slug}.html`
+  }));
   fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.stringify(manifest, null, 2));
 
   const bibleManifest = fs.existsSync(bibleManifestPath)
