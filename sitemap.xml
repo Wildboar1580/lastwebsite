@@ -51,6 +51,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.lastchristian.com/hymn-selection-guide/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/hymn-selection-guide/day/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.lastchristian.com/podcast</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>

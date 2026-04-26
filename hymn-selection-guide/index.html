@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lectionary | Last Christian Ministries</title>
-  <meta name="description" content="Read the Historic One Year Lectionary with the current and next observances displayed side by side, plus sermon links, ELHB hymn recommendations, and appointed passages from the Majority Standard Bible.">
+  <title>Lutheran Hymn Selection Guide | Last Christian Ministries</title>
+  <meta name="description" content="Browse a church-year hymn selection guide spanning ELHB, TLH, and linked external hymn texts, then open a dedicated page for each Sunday or feast day.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Pastor Charles Wiese">
   <meta name="theme-color" content="#0a0a0a">
@@ -16,19 +16,19 @@
   <link rel="manifest" href="/site.webmanifest">
   <meta property="og:site_name" content="Last Christian Ministries">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="Lectionary | Last Christian Ministries">
-  <meta property="og:description" content="Read the Historic One Year Lectionary with the current and next observances displayed side by side, plus sermon links, ELHB hymn recommendations, and appointed passages from the Majority Standard Bible.">
+  <meta property="og:title" content="Lutheran Hymn Selection Guide | Last Christian Ministries">
+  <meta property="og:description" content="Browse a church-year hymn selection guide spanning ELHB, TLH, and linked external hymn texts, then open a dedicated page for each Sunday or feast day.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.lastchristian.com/lectionary">
-  <meta property="og:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
+  <meta property="og:url" content="https://www.lastchristian.com/hymn-selection-guide/">
+  <meta property="og:image" content="https://www.lastchristian.com/assets/images/elhb.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lectionary | Last Christian Ministries">
-  <meta name="twitter:description" content="Read the Historic One Year Lectionary with the current and next observances displayed side by side, plus sermon links, ELHB hymn recommendations, and appointed passages from the Majority Standard Bible.">
-  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/base44-logo.jpg">
-  <link rel="canonical" href="https://www.lastchristian.com/lectionary">
+  <meta name="twitter:title" content="Lutheran Hymn Selection Guide | Last Christian Ministries">
+  <meta name="twitter:description" content="Browse a church-year hymn selection guide spanning ELHB, TLH, and linked external hymn texts, then open a dedicated page for each Sunday or feast day.">
+  <meta name="twitter:image" content="https://www.lastchristian.com/assets/images/elhb.jpg">
+  <link rel="canonical" href="https://www.lastchristian.com/hymn-selection-guide/">
   <link rel="stylesheet" href="/assets/styles.css">
 </head>
-<body class="campaign-page bible-page" data-bible-view="msb">
+<body class="campaign-page contact-page elhb-page">
   <div class="site-shell">
     <header class="site-header">
       <a class="brand" href="/" aria-label="Last Christian Ministries home">
@@ -40,22 +40,18 @@
           <em>God's Word and Luther's Doctrine Shall Never Pass Away</em>
         </span>
       </a>
-            <nav class="site-nav" aria-label="Primary">
+      <nav class="site-nav" aria-label="Primary">
         <a href="/bible">Bible</a>
         <a href="/lectionary">Lectionary</a>
         <a href="/podcast">Podcast</a>
-        <a href="/easter">Easter Report</a>
         <a href="/#campaigns">Campaigns</a>
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
         <a href="/walther">Walther</a>
-        <a href="/kretzmann">Kretzmann</a>
         <a href="/elhb">ELHB</a>
         <a href="/library">Library</a>
-        <a href="/#mission">Mission</a>
         <a href="/about">About Me</a>
-        <a href="/kutesa">Kutesa Henry</a>
         <a href="/faq">FAQ</a>
         <a href="/contact">Contact</a>
       </nav>
@@ -63,22 +59,32 @@
     </header>
 
     <main>
-      <section class="contact-hero bible-hero">
+      <section class="contact-hero elhb-hero">
         <div class="contact-hero-copy">
-          <p class="eyebrow">Lectionary</p>
-          <h1>Historic One Year Lectionary</h1>
-          <p>Read the current and next Sunday or major feast with the actual Majority Standard Bible text displayed beneath each reference, alongside links to the matching Luther and Walther sermons and recommended ELHB hymns when a guide entry is available.</p>
-          <div class="hero-actions">
-            <a class="button button-outline" href="/hymn-selection-guide/">Hymn Selection Guide</a>
-            <a class="button button-red" href="/daily-readings">Daily Readings</a>
+          <p class="eyebrow">Church Year Guide</p>
+          <h1>Lutheran Hymn Selection Guide</h1>
+          <p>Browse hymn suggestions for the church year across ELHB, TLH, and selected linked texts hosted elsewhere. Each observance opens its own page, and the hymn lists are alphabetized by first line.</p>
+          <div class="elhb-button-row">
+            <a class="button button-gold" href="/lectionary">Open the lectionary</a>
+            <a class="button button-outline" href="/elhb/hymns/">Browse ELHB hymns</a>
+            <a class="button button-outline" href="/tlh/hymns/">Browse TLH hymns</a>
           </div>
         </div>
+        <figure class="library-feature-image-concord elhb-feature-image">
+          <img src="/assets/images/elhb.jpg" alt="Historic Lutheran hymnal page scan" width="480" height="678" loading="lazy" decoding="async">
+        </figure>
       </section>
 
-      <section class="section bible-lectionary-grid lectionary-page-grid">
-        <div data-one-year-reading></div>
+      <section class="section library-section">
+        <div class="section-heading">
+          <p class="eyebrow">Guide</p>
+          <h2>Choose a day in the church year</h2>
+          <p>Each button opens a dedicated observance page with local hymn links where available and external hymn links where that is the only posted text.</p>
+        </div>
+        <div class="lectionary-hymn-actions" data-lutheran-guide-index></div>
       </section>
     </main>
+
     <footer class="site-footer">
       <div class="footer-col">
         <a class="brand" href="/" aria-label="Last Christian Ministries home">
@@ -100,7 +106,8 @@
           <a href="/#campaigns">Campaigns</a>
           <a href="/easter">Easter Report</a>
           <a href="/library">Library</a>
-
+          <a href="/walther">Walther</a>
+          <a href="/elhb">ELHB</a>
           <a href="/about">About Me</a>
           <a href="/kutesa">Kutesa Henry</a>
           <a href="/faq">FAQ</a>
@@ -118,10 +125,6 @@
       </div>
     </footer>
   </div>
-
-  <script type="module" src="/assets/app.js"></script>
-  <script type="module" src="/assets/bible.js"></script>
+  <script type="module" src="/assets/lutheran-hymn-guide.js"></script>
 </body>
 </html>
-
-

@@ -1,6 +1,6 @@
 import { initAudioPlayers } from "./app.js";
 import { FEED_URL } from "./data.js";
-import { findElhbGuideEntryByKeyWithFallback } from "./elhb-hymn-guide-data.js";
+import { findLutheranGuideEntryByKeyWithFallback } from "./lutheran-hymn-guide-data.js";
 
 const ONE_YEAR_TYPES = {
   title: 0,
@@ -752,7 +752,6 @@ async function initLectionaryPanels() {
       const oneYearPropers = loadPropers(oneYearData, today);
       oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
       hydrateLectionarySermonLinks(oneYearRoot);
-      hydrateLectionaryHymnLinks(oneYearRoot);
       hydrateLectionaryPodcastPanels(oneYearRoot);
     } catch (error) {
       oneYearRoot.innerHTML = `
@@ -930,7 +929,7 @@ function renderOneYear(data, propers, books, searchIndex, date) {
           ${nextObservance ? `<a class="button button-outline lectionary-action-button lectionary-observance-jump" href="#lectionary-next">Next observance</a>` : ""}
           <a class="button button-outline lectionary-action-button" href="#lectionary-current-sermons">Current sermons</a>
           ${nextObservance ? `<a class="button button-outline lectionary-action-button" href="#lectionary-next-sermons">Next sermons</a>` : ""}
-          <a class="button button-outline lectionary-action-button" href="/elhb/hymn-selection-guide/">ELHB hymn guide</a>
+          <a class="button button-outline lectionary-action-button" href="/hymn-selection-guide/">Hymn selection guide</a>
           <a class="button button-outline lectionary-action-button" href="/daily-readings">Daily readings</a>
         </div>
       </article>
@@ -950,7 +949,7 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
   const verse = findProper(observance.propers, ONE_YEAR_TYPES.verse);
   const specialRubric = findProper(observance.propers, ONE_YEAR_TYPES.specialRubric);
   const observanceKey = getObservanceKey(observance.title);
-  const hymnGuideEntry = findElhbGuideEntryByKeyWithFallback(observanceKey);
+  const hymnGuideEntry = findLutheranGuideEntryByKeyWithFallback(observanceKey);
 
   return `
     <article class="lectionary-card lectionary-observance-card" id="${sectionId}">
@@ -969,7 +968,7 @@ function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, i
         <div><strong>Epistle</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.epistle), books, searchIndex)}</div>
         <div><strong>Gospel</strong>${renderReferenceList(findProper(observance.propers, ONE_YEAR_TYPES.gospel), books, searchIndex)}</div>
         </div>
-        ${renderElhbHymnPanel(hymnGuideEntry)}
+        ${renderLutheranHymnPanel(hymnGuideEntry)}
         ${includeSermons ? `
           <div class="lectionary-sermon-panel" id="${sectionId}-sermons">
             <p class="lectionary-proper-label">Relevant Luther and Walther Sermons</p>
@@ -995,70 +994,26 @@ function renderFeaturedObservancePodcastPanel(title) {
   `;
 }
 
-function renderElhbHymnPanel(entry) {
+function renderLutheranHymnPanel(entry) {
   if (!entry) return "";
-
-  const suggestedHymns = Array.isArray(entry.hymns?.suggested)
-    ? entry.hymns.suggested.filter((hymn) => hymn && hymn.number)
-    : [];
-  const hymnButtons = suggestedHymns.length
-    ? suggestedHymns.map((hymn) => [null, hymn])
-    : [
-        ["Entrance", entry.hymns.entrance],
-        ["Chief", entry.hymns.chief],
-        ["Distribution", entry.hymns.distribution],
-        ["Closing", entry.hymns.closing]
-      ].filter(([, hymn]) => hymn && hymn.number);
 
   return `
     <div class="lectionary-sermon-panel">
-      <p class="lectionary-proper-label">Recommended ELHB Hymns</p>
+      <p class="lectionary-proper-label">Recommended Hymns</p>
       <div class="lectionary-hymn-actions">
-        ${hymnButtons.map(([label, hymn]) => renderElhbHymnButton(label, hymn)).join("")}
+        ${entry.hymns.map((hymn) => renderLutheranHymnButton(hymn)).join("")}
       </div>
-      <p class="lectionary-empty lectionary-hymn-note">Open the full <a class="text-link" href="/elhb/hymn-selection-guide/day/?id=${encodeURIComponent(entry.id)}">ELHB hymn guide entry</a> for this observance.</p>
+      <p class="lectionary-empty lectionary-hymn-note">Open the full <a class="text-link" href="/hymn-selection-guide/day/?id=${encodeURIComponent(entry.id)}">Lutheran hymn guide entry</a> for this observance.</p>
     </div>
   `;
 }
 
-function renderElhbHymnButton(label, hymn) {
-  const number = Number(hymn.number);
-  if (!Number.isFinite(number) || number <= 0) return "";
-  const baseLabel = label ? `${label}: ELHB ${number}` : `ELHB ${number}`;
-  return `<a class="button button-outline lectionary-action-button" href="/elhb/hymns/" data-elhb-hymn-link data-elhb-hymn-number="${number}"${label ? ` data-elhb-hymn-role="${escapeHtml(label)}"` : ""}>${escapeHtml(baseLabel)}</a>`;
-}
-
-let elhbHymnIndexPromise;
-
-function loadElhbHymnIndex() {
-  if (!elhbHymnIndexPromise) {
-    elhbHymnIndexPromise = fetch("/assets/elhb/hymns.json").then((response) => response.json());
-  }
-  return elhbHymnIndexPromise;
-}
-
-async function hydrateLectionaryHymnLinks(root) {
-  const links = [...root.querySelectorAll("[data-elhb-hymn-link]")];
-  if (!links.length) return;
-
-  try {
-    const hymnIndex = await loadElhbHymnIndex();
-    const hymnMap = new Map(hymnIndex.map((entry) => [Number(entry.number), entry]));
-
-    for (const link of links) {
-      const hymnNumber = Number(link.dataset.elhbHymnNumber || "");
-      const hymnRole = link.dataset.elhbHymnRole || "";
-      const hymn = hymnMap.get(hymnNumber);
-      if (!hymn?.href) continue;
-      link.setAttribute("href", hymn.href);
-      link.textContent = hymnRole
-        ? `${hymnRole}: ELHB ${hymn.number} - ${hymn.title}`
-        : `ELHB ${hymn.number} - ${hymn.title}`;
-      link.setAttribute("title", hymn.title || `ELHB ${hymn.number}`);
-    }
-  } catch {
-    // Leave archive links in place if the hymn index is unavailable.
-  }
+function renderLutheranHymnButton(hymn) {
+  const source = hymn.kind === "external"
+    ? "External"
+    : `${hymn.hymnal} ${hymn.number}`;
+  const target = hymn.external ? ` target="_blank" rel="noopener noreferrer"` : "";
+  return `<a class="button button-outline lectionary-action-button" href="${escapeHtml(hymn.href || "#")}"${target} title="${escapeHtml(`${hymn.title} (${source})`)}">${escapeHtml(`${hymn.title} · ${source}`)}</a>`;
 }
 
 const lectionarySermonResolutionCache = new Map();
@@ -1107,6 +1062,45 @@ const LUTHER_VOL12_GOSPEL_HREFS = new Set([
 
 function getObservanceKey(title) {
   const trimmed = title.trim();
+  const aliasMap = new Map([
+    ["First Sunday in Advent", "advent-1"],
+    ["Second Sunday in Advent", "advent-2"],
+    ["Third Sunday in Advent", "advent-3"],
+    ["Fourth Sunday in Advent", "advent-4"],
+    ["Christmas Eve", "christmas-eve"],
+    ["Christmas Day", "christmas-day"],
+    ["Second Day of Christmas", "christmas-2"],
+    ["Circumcision and Name of Jesus", "circumcision-name-of-jesus"],
+    ["Second Sunday After Christmas", "sunday-after-new-years"],
+    ["Second Sunday of Easter", "easter-2"],
+    ["Third Sunday of Easter", "easter-3"],
+    ["Fourth Sunday of Easter", "easter-4"],
+    ["Fifth Sunday of Easter", "easter-5"],
+    ["Sixth Sunday of Easter", "easter-6"],
+    ["Holy Trinity", "trinity-sunday"]
+  ]);
+  if (aliasMap.has(trimmed)) return aliasMap.get(trimmed);
+
+  const ordinalWords = new Map([
+    ["first", 1], ["second", 2], ["third", 3], ["fourth", 4], ["fifth", 5],
+    ["sixth", 6], ["seventh", 7], ["eighth", 8], ["ninth", 9], ["tenth", 10],
+    ["eleventh", 11], ["twelfth", 12], ["thirteenth", 13], ["fourteenth", 14],
+    ["fifteenth", 15], ["sixteenth", 16], ["seventeenth", 17], ["eighteenth", 18],
+    ["nineteenth", 19], ["twentieth", 20], ["twenty-first", 21], ["twenty-second", 22],
+    ["twenty-third", 23], ["twenty-fourth", 24], ["twenty-fifth", 25],
+    ["twenty-sixth", 26], ["twenty-seventh", 27]
+  ]);
+  const trinityWordMatch = trimmed.match(/^([A-Za-z-]+)\s+Sunday after Trinity$/i);
+  if (trinityWordMatch) {
+    const value = ordinalWords.get(trinityWordMatch[1].toLowerCase());
+    if (value) return `trinity-${value}`;
+  }
+  const epiphanyWordMatch = trimmed.match(/^([A-Za-z-]+)\s+Sunday after Epiphany$/i);
+  if (epiphanyWordMatch) {
+    const value = ordinalWords.get(epiphanyWordMatch[1].toLowerCase());
+    if (value) return `epiphany-${value}`;
+  }
+
   const trinityMatch = trimmed.match(/^Trinity\s+(\d+)$/i);
   if (trinityMatch) return `trinity-${Number(trinityMatch[1])}`;
 
