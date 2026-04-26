@@ -169,18 +169,22 @@ function episodeLegacyPath(slug) {
   return path.join(outputDir, `${slug}.html`);
 }
 
+function episodeHref(episode) {
+  return `/episodes/${episode.slug}.html`;
+}
+
 function renderStaticArchiveCards(episodes) {
   return episodes.map((episode) => `
         <article class="episode-card">
           <div class="episode-card-media">
-            <a class="episode-art-link" href="${episode.canonicalUrl}" aria-label="Open ${escapeHtml(episode.title)}">
+            <a class="episode-art-link" href="${episodeHref(episode)}" aria-label="Open ${escapeHtml(episode.title)}">
               <img src="${episode.imageUrl}" alt="" loading="lazy" decoding="async">
             </a>
           </div>
           <div class="episode-content">
             <p class="episode-date">${escapeHtml(episode.displayDate)}</p>
-            <h3><a class="episode-title-link" href="${episode.canonicalUrl}">${escapeHtml(episode.title)}</a></h3>
-            <a class="read-more-link" href="${episode.canonicalUrl}">Read more</a>
+            <h3><a class="episode-title-link" href="${episodeHref(episode)}">${escapeHtml(episode.title)}</a></h3>
+            <a class="read-more-link" href="${episodeHref(episode)}">Read more</a>
           </div>
         </article>
   `).join("");

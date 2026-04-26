@@ -581,11 +581,22 @@ function buildEpisodePageUrl(title, link) {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 90);
-  return `/episodes/${slug}-${id}`;
+  return `/episodes/${slug}-${id}.html`;
 }
 
 function normalizeEpisodeKey(link) {
   return String(link || "").trim().replace(/\/+$/, "");
+}
+
+function toEpisodeHref(urlOrPath) {
+  if (!urlOrPath) return "";
+
+  const [base, hash = ""] = String(urlOrPath).split("#");
+  if (base.endsWith(".html")) {
+    return hash ? `${base}#${hash}` : base;
+  }
+
+  return `${base}.html${hash ? `#${hash}` : ""}`;
 }
 
 function resolveEpisodePageUrl(title, link, manifestByLink) {
@@ -593,9 +604,9 @@ function resolveEpisodePageUrl(title, link, manifestByLink) {
   if (manifestUrl) {
     try {
       const url = new URL(manifestUrl);
-      return `${url.pathname}${url.search}${url.hash}`;
+      return toEpisodeHref(`${url.pathname}${url.search}${url.hash}`);
     } catch {
-      return manifestUrl;
+      return toEpisodeHref(manifestUrl);
     }
   }
 
