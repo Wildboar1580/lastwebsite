@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import https from "node:https";
 import path from "node:path";
 import { renderFaviconLinks, renderSiteFooter } from "./site-layout.mjs";
 
@@ -12,9 +13,7 @@ const bibleBookManifestPath = path.join(root, "assets", "bible", "book-manifest.
 const concordManifestPath = path.join(root, "assets", "concord", "manifest.json");
 const lutherManifestPath = path.join(root, "assets", "luther", "manifest.json");
 const ARCHIVE_PAGE_SIZE = 24;
-
-const feedXml = fs.readFileSync(feedPath, "utf8");
-const items = [...feedXml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
+const LIVE_FEED_URL = "https://media.rss.com/last-christian-ministries/feed.xml";
 
 fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(podcastPageDir, { recursive: true });
@@ -32,6 +31,55 @@ function renderSubscribeButtons() {
           <a class="button button-outline icon-button" href="${subscribeLinks.amazon}" target="_blank" rel="noreferrer"><span>Amazon Music</span></a>
           <a class="button button-outline icon-button" href="${subscribeLinks.rsscom}" target="_blank" rel="noreferrer"><span>RSS.com</span></a>
           <a class="button button-outline icon-button" href="${subscribeLinks.rss}" target="_blank" rel="noreferrer"><span>RSS Feed</span></a>`;
+}
+
+function fetchText(url, redirectCount = 0) {
+  return new Promise((resolve, reject) => {
+    https
+      .get(url, (response) => {
+        const { statusCode = 0, headers } = response;
+
+        if (statusCode >= 300 && statusCode < 400 && headers.location) {
+          response.resume();
+          if (redirectCount >= 5) {
+            reject(new Error(`Too many redirects while fetching ${url}`));
+            return;
+          }
+          resolve(fetchText(headers.location, redirectCount + 1));
+          return;
+        }
+
+        if (statusCode !== 200) {
+          response.resume();
+          reject(new Error(`Unexpected status ${statusCode} while fetching ${url}`));
+          return;
+        }
+
+        response.setEncoding("utf8");
+        let body = "";
+        response.on("data", (chunk) => {
+          body += chunk;
+        });
+        response.on("end", () => resolve(body));
+      })
+      .on("error", reject);
+  });
+}
+
+async function resolveFeedXml() {
+  try {
+    const liveFeedXml = await fetchText(LIVE_FEED_URL);
+    fs.writeFileSync(feedPath, liveFeedXml);
+    console.log(`Refreshed rss-feed.xml from ${LIVE_FEED_URL}.`);
+    return liveFeedXml;
+  } catch (error) {
+    const errorDetails = error?.message || error?.code || String(error);
+    if (fs.existsSync(feedPath)) {
+      console.warn(`Unable to refresh live RSS feed, using local rss-feed.xml instead: ${errorDetails}`);
+      return fs.readFileSync(feedPath, "utf8");
+    }
+    throw error;
+  }
 }
 
 function decodeXml(text = "") {
@@ -435,135 +483,139 @@ function updatePodcastLandingPage(episodes) {
   fs.writeFileSync(podcastLandingPath, html);
 }
 
-const episodes = items.map((item) => {
-  const title = readTag(item, "title") || "Untitled episode";
-  const link = readTag(item, "link");
-  const pubDate = readTag(item, "pubDate");
-  const isoDate = pubDate ? new Date(pubDate).toISOString() : "";
-  const displayDate = pubDate
-    ? new Date(pubDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
-    : "";
-  const duration = formatDuration(readTag(item, "itunes:duration"));
-  const descriptionHtmlRaw = readTag(item, "description");
-  const description = stripHtml(descriptionHtmlRaw);
-  const descriptionHtml = descriptionHtmlRaw || `<p>${escapeHtml(description)}</p>`;
-  const audioUrl = readAttr(item, "enclosure", "url");
-  const imageUrl = readAttr(item, "itunes:image", "href") || "https://media.rss.com/last-christian-ministries/podcast_cover.jpg";
-  const slugBase = slugify(title) || slugify(link) || `episode-${Math.random().toString(36).slice(2, 8)}`;
-  const slug = `${slugBase}-${link.split("/").pop()}`;
-  const canonicalUrl = `https://www.lastchristian.com/episodes/${slug}`;
+async function main() {
+  const feedXml = await resolveFeedXml();
+  const items = [...feedXml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map((match) => match[1]);
 
-  return {
-    slug,
-    title,
-    link,
-    isoDate,
-    displayDate,
-    duration,
-    description,
-    descriptionHtml,
-    audioUrl,
-    imageUrl,
-    canonicalUrl
-  };
-});
+  const episodes = items.map((item) => {
+    const title = readTag(item, "title") || "Untitled episode";
+    const link = readTag(item, "link");
+    const pubDate = readTag(item, "pubDate");
+    const isoDate = pubDate ? new Date(pubDate).toISOString() : "";
+    const displayDate = pubDate
+      ? new Date(pubDate).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })
+      : "";
+    const duration = formatDuration(readTag(item, "itunes:duration"));
+    const descriptionHtmlRaw = readTag(item, "description");
+    const description = stripHtml(descriptionHtmlRaw);
+    const descriptionHtml = descriptionHtmlRaw || `<p>${escapeHtml(description)}</p>`;
+    const audioUrl = readAttr(item, "enclosure", "url");
+    const imageUrl = readAttr(item, "itunes:image", "href") || "https://media.rss.com/last-christian-ministries/podcast_cover.jpg";
+    const slugBase = slugify(title) || slugify(link) || `episode-${Math.random().toString(36).slice(2, 8)}`;
+    const slug = `${slugBase}-${link.split("/").pop()}`;
+    const canonicalUrl = `https://www.lastchristian.com/episodes/${slug}`;
 
-for (const episode of episodes) {
-  fs.mkdirSync(episodeOutputDir(episode.slug), { recursive: true });
-  const html = buildPage(episode);
-  fs.writeFileSync(episodeIndexPath(episode.slug), html);
-  fs.writeFileSync(episodeLegacyPath(episode.slug), html);
-}
+    return {
+      slug,
+      title,
+      link,
+      isoDate,
+      displayDate,
+      duration,
+      description,
+      descriptionHtml,
+      audioUrl,
+      imageUrl,
+      canonicalUrl
+    };
+  });
 
-const podcastArchiveTotalPages = Math.max(1, Math.ceil(episodes.length / ARCHIVE_PAGE_SIZE));
-for (let page = 2; page <= podcastArchiveTotalPages; page += 1) {
-  const start = (page - 1) * ARCHIVE_PAGE_SIZE;
-  const visibleEpisodes = episodes.slice(start, start + ARCHIVE_PAGE_SIZE);
-  fs.writeFileSync(
-    archivePagePath(page),
-    buildArchivePage({
-      episodes: visibleEpisodes,
-      currentPage: page,
-      totalPages: podcastArchiveTotalPages
-    })
-  );
-}
+  for (const episode of episodes) {
+    fs.mkdirSync(episodeOutputDir(episode.slug), { recursive: true });
+    const html = buildPage(episode);
+    fs.writeFileSync(episodeIndexPath(episode.slug), html);
+    fs.writeFileSync(episodeLegacyPath(episode.slug), html);
+  }
 
-updatePodcastLandingPage(episodes);
+  const podcastArchiveTotalPages = Math.max(1, Math.ceil(episodes.length / ARCHIVE_PAGE_SIZE));
+  for (let page = 2; page <= podcastArchiveTotalPages; page += 1) {
+    const start = (page - 1) * ARCHIVE_PAGE_SIZE;
+    const visibleEpisodes = episodes.slice(start, start + ARCHIVE_PAGE_SIZE);
+    fs.writeFileSync(
+      archivePagePath(page),
+      buildArchivePage({
+        episodes: visibleEpisodes,
+        currentPage: page,
+        totalPages: podcastArchiveTotalPages
+      })
+    );
+  }
 
-const manifest = episodes.map(({ slug, title, link, canonicalUrl }) => ({ slug, title, link, canonicalUrl }));
-fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.stringify(manifest, null, 2));
+  updatePodcastLandingPage(episodes);
 
-const bibleManifest = fs.existsSync(bibleManifestPath)
-  ? JSON.parse(fs.readFileSync(bibleManifestPath, "utf8"))
-  : [];
-const bibleBookManifest = fs.existsSync(bibleBookManifestPath)
-  ? JSON.parse(fs.readFileSync(bibleBookManifestPath, "utf8"))
-  : [];
-const concordManifest = fs.existsSync(concordManifestPath)
-  ? JSON.parse(fs.readFileSync(concordManifestPath, "utf8"))
-  : [];
-const lutherManifest = fs.existsSync(lutherManifestPath)
-  ? JSON.parse(fs.readFileSync(lutherManifestPath, "utf8"))
-  : { pages: [] };
-const elhbManifestPath = path.join(root, "assets", "elhb", "manifest.json");
-const elhbManifest = fs.existsSync(elhbManifestPath)
-  ? JSON.parse(fs.readFileSync(elhbManifestPath, "utf8"))
-  : { pages: [] };
+  const manifest = episodes.map(({ slug, title, link, canonicalUrl }) => ({ slug, title, link, canonicalUrl }));
+  fs.writeFileSync(path.join(root, "assets", "episode-manifest.json"), JSON.stringify(manifest, null, 2));
 
-const sitemapUrls = [
-  { loc: "https://www.lastchristian.com/", changefreq: "weekly", priority: "1.0" },
-  { loc: "https://www.lastchristian.com/bible", changefreq: "daily", priority: "0.9" },
-  { loc: "https://www.lastchristian.com/lectionary", changefreq: "daily", priority: "0.9" },
-  { loc: "https://www.lastchristian.com/about", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/kutesa", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/faq", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/library", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/concord", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/luther", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/elhb", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/podcast", changefreq: "daily", priority: "0.9" },
-  ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({
-    loc: archivePageUrl(index + 2),
-    changefreq: "weekly",
-    priority: "0.8"
-  })),
-  { loc: "https://www.lastchristian.com/contact", changefreq: "monthly", priority: "0.8" },
-  { loc: "https://www.lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry", changefreq: "weekly", priority: "0.9" },
-  { loc: "https://www.lastchristian.com/campaigns/support-the-work-of-last-christian-ministries", changefreq: "weekly", priority: "0.7" },
-  ...bibleBookManifest.map((book) => ({
-    loc: book.url,
-    changefreq: "monthly",
-    priority: "0.8"
-  })),
-  ...bibleManifest.map((chapter) => ({
-    loc: chapter.url,
-    changefreq: "monthly",
-    priority: "0.7"
-  })),
-  ...concordManifest.map((entry) => ({
-    loc: entry.url,
-    changefreq: "monthly",
-    priority: "0.7"
-  })),
-  ...lutherManifest.pages.map((url) => ({
-    loc: url,
-    changefreq: "monthly",
-    priority: "0.7"
-  })),
-  ...elhbManifest.pages.map((url) => ({
-    loc: url,
-    changefreq: "monthly",
-    priority: "0.7"
-  })),
-  ...episodes.map((episode) => ({
-    loc: episode.canonicalUrl,
-    changefreq: "weekly",
-    priority: "0.7"
-  }))
-].filter((entry, index, entries) => entries.findIndex((candidate) => candidate.loc === entry.loc) === index);
+  const bibleManifest = fs.existsSync(bibleManifestPath)
+    ? JSON.parse(fs.readFileSync(bibleManifestPath, "utf8"))
+    : [];
+  const bibleBookManifest = fs.existsSync(bibleBookManifestPath)
+    ? JSON.parse(fs.readFileSync(bibleBookManifestPath, "utf8"))
+    : [];
+  const concordManifest = fs.existsSync(concordManifestPath)
+    ? JSON.parse(fs.readFileSync(concordManifestPath, "utf8"))
+    : [];
+  const lutherManifest = fs.existsSync(lutherManifestPath)
+    ? JSON.parse(fs.readFileSync(lutherManifestPath, "utf8"))
+    : { pages: [] };
+  const elhbManifestPath = path.join(root, "assets", "elhb", "manifest.json");
+  const elhbManifest = fs.existsSync(elhbManifestPath)
+    ? JSON.parse(fs.readFileSync(elhbManifestPath, "utf8"))
+    : { pages: [] };
 
-const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+  const sitemapUrls = [
+    { loc: "https://www.lastchristian.com/", changefreq: "weekly", priority: "1.0" },
+    { loc: "https://www.lastchristian.com/bible", changefreq: "daily", priority: "0.9" },
+    { loc: "https://www.lastchristian.com/lectionary", changefreq: "daily", priority: "0.9" },
+    { loc: "https://www.lastchristian.com/about", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/kutesa", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/faq", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/library", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/concord", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/luther", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/elhb", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/podcast", changefreq: "daily", priority: "0.9" },
+    ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({
+      loc: archivePageUrl(index + 2),
+      changefreq: "weekly",
+      priority: "0.8"
+    })),
+    { loc: "https://www.lastchristian.com/contact", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry", changefreq: "weekly", priority: "0.9" },
+    { loc: "https://www.lastchristian.com/campaigns/support-the-work-of-last-christian-ministries", changefreq: "weekly", priority: "0.7" },
+    ...bibleBookManifest.map((book) => ({
+      loc: book.url,
+      changefreq: "monthly",
+      priority: "0.8"
+    })),
+    ...bibleManifest.map((chapter) => ({
+      loc: chapter.url,
+      changefreq: "monthly",
+      priority: "0.7"
+    })),
+    ...concordManifest.map((entry) => ({
+      loc: entry.url,
+      changefreq: "monthly",
+      priority: "0.7"
+    })),
+    ...lutherManifest.pages.map((url) => ({
+      loc: url,
+      changefreq: "monthly",
+      priority: "0.7"
+    })),
+    ...elhbManifest.pages.map((url) => ({
+      loc: url,
+      changefreq: "monthly",
+      priority: "0.7"
+    })),
+    ...episodes.map((episode) => ({
+      loc: episode.canonicalUrl,
+      changefreq: "weekly",
+      priority: "0.7"
+    }))
+  ].filter((entry, index, entries) => entries.findIndex((candidate) => candidate.loc === entry.loc) === index);
+
+  const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapUrls.map((entry) => `  <url>
     <loc>${entry.loc}</loc>
@@ -573,6 +625,9 @@ ${sitemapUrls.map((entry) => `  <url>
 </urlset>
 `;
 
-fs.writeFileSync(path.join(root, "sitemap.xml"), sitemapXml);
+  fs.writeFileSync(path.join(root, "sitemap.xml"), sitemapXml);
 
-console.log(`Generated ${episodes.length} episode pages.`);
+  console.log(`Generated ${episodes.length} episode pages.`);
+}
+
+await main();
