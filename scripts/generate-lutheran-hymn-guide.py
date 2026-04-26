@@ -521,6 +521,10 @@ def normalize_sort_title(title: str) -> str:
     return cleaned.casefold()
 
 
+def clean_imported_title(title: str) -> str:
+    return re.sub(r"^0(?=\s+[A-Za-z])", "O", title.strip())
+
+
 def clean_external_title(title: str) -> str:
     value = title.strip()
     value = re.sub(r"^\s*HG\b[:\s-]*", "", value, flags=re.IGNORECASE).strip()
@@ -543,7 +547,7 @@ def normalize_hymn_number(hymnal: str, raw_number: str, lookup: dict[int, dict])
 
 
 def build_local_item(hymnal: str, number: int, lookup_entry: dict) -> dict:
-    title = lookup_entry["title"]
+    title = clean_imported_title(lookup_entry["title"])
     return {
         "kind": "local",
         "hymnal": hymnal,

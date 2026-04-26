@@ -4343,16 +4343,6 @@ export const LUTHERAN_HYMN_GUIDE = [
     ],
     "hymns": [
       {
-        "kind": "local",
-        "hymnal": "TLH",
-        "number": 263,
-        "title": "0 Little Flock, Fear Not the Foe",
-        "sortTitle": "0 little flock, fear not the foe",
-        "href": "/tlh/hymns/263-0-little-flock-fear-not-the-foe/",
-        "externalHref": "",
-        "external": false
-      },
-      {
         "kind": "external",
         "hymnal": "External",
         "number": null,
@@ -4399,6 +4389,16 @@ export const LUTHERAN_HYMN_GUIDE = [
         "title": "In Thee Alone, O Christ, My Lord",
         "sortTitle": "in thee alone, o christ, my lord",
         "href": "/tlh/hymns/319-in-thee-alone-o-christ-my-lord/",
+        "externalHref": "",
+        "external": false
+      },
+      {
+        "kind": "local",
+        "hymnal": "TLH",
+        "number": 263,
+        "title": "O Little Flock, Fear Not the Foe",
+        "sortTitle": "o little flock, fear not the foe",
+        "href": "/tlh/hymns/263-0-little-flock-fear-not-the-foe/",
         "externalHref": "",
         "external": false
       },
@@ -4484,16 +4484,6 @@ export const LUTHERAN_HYMN_GUIDE = [
       "Jubilate (Easter 4)"
     ],
     "hymns": [
-      {
-        "kind": "local",
-        "hymnal": "TLH",
-        "number": 263,
-        "title": "0 Little Flock, Fear Not the Foe",
-        "sortTitle": "0 little flock, fear not the foe",
-        "href": "/tlh/hymns/263-0-little-flock-fear-not-the-foe/",
-        "externalHref": "",
-        "external": false
-      },
       {
         "kind": "local",
         "hymnal": "TLH",
@@ -4602,6 +4592,16 @@ export const LUTHERAN_HYMN_GUIDE = [
         "sortTitle": "lord, hear the voice of my complaint",
         "href": "/elhb/hymns/365-lord-hear-the-voice-of-my-complaint/",
         "externalHref": "https://hymnary.org/hymn/ELHL1918/365",
+        "external": false
+      },
+      {
+        "kind": "local",
+        "hymnal": "TLH",
+        "number": 263,
+        "title": "O Little Flock, Fear Not the Foe",
+        "sortTitle": "o little flock, fear not the foe",
+        "href": "/tlh/hymns/263-0-little-flock-fear-not-the-foe/",
+        "externalHref": "",
         "external": false
       },
       {
