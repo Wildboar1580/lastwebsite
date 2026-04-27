@@ -13,6 +13,7 @@ if (!fs.existsSync(extractedPath)) {
 }
 
 const data = JSON.parse(fs.readFileSync(extractedPath, "utf8"));
+data.hymns = data.hymns.filter((hymn) => String(hymn.text || "").trim());
 
 ensureDir(tlhDir);
 ensureDir(path.join(tlhDir, "hymns"));
