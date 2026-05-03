@@ -36,6 +36,10 @@ const OBSERVANCE_PODCAST_MATCHERS = new Map([
   ["easter-4", {
     fallbackUrl: "https://rss.com/podcasts/last-christian-ministries/2767778",
     matchTerms: ["jubilate", "john 16:16-23"]
+  }],
+  ["easter-5", {
+    fallbackUrl: "/episodes/easter-4-cantate-john-16-5-15-2789182",
+    matchTerms: ["cantate", "john 16:5-15"]
   }]
 ]);
 
@@ -1770,6 +1774,12 @@ function getSupplementalSermonLinks(title) {
       {
         label: "Podcast Sermon: Jubilate (John 16:16-23)",
         href: "https://rss.com/podcasts/last-christian-ministries/2767778"
+      }
+    ],
+    "easter-5": [
+      {
+        label: "Podcast Sermon: Cantate (John 16:5-15)",
+        href: "/episodes/easter-4-cantate-john-16-5-15-2789182.html"
       }
     ]
   };
