@@ -16,6 +16,27 @@ const lutherManifestPath = path.join(root, "assets", "luther", "manifest.json");
 const ARCHIVE_PAGE_SIZE = 24;
 const LIVE_FEED_URL = "https://media.rss.com/last-christian-ministries/feed.xml";
 
+const staticSitemapUrls = [
+  { loc: "https://www.lastchristian.com/hymn-selection-guide/", changefreq: "weekly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/hymn-selection-guide/day/", changefreq: "weekly", priority: "0.6" }
+];
+
+const trailingSitemapUrls = [
+  { loc: "https://www.lastchristian.com/koestering/", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/", changefreq: "monthly", priority: "0.8" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/preliminary-remark/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-1-keyls-youth-and-student-years/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-2-keyls-call-to-the-preaching-ministry/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-3-keyls-companionship-with-stephan/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-4-keyls-emigration-to-america/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-5-keyls-effectiveness-in-wisconsin/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-6-keyls-effectiveness-in-baltimore/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-7-keyls-effectiveness-near-willshire/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-8-keyl-as-a-preacher-and-his-theology/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-9-keyls-private-and-family-life/", changefreq: "monthly", priority: "0.7" },
+  { loc: "https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-10-keyls-last-days-and-blessed-end/", changefreq: "monthly", priority: "0.7" }
+];
+
 fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(podcastPageDir, { recursive: true });
 
@@ -587,6 +608,7 @@ async function main() {
     { loc: "https://www.lastchristian.com/concord", changefreq: "monthly", priority: "0.8" },
     { loc: "https://www.lastchristian.com/luther", changefreq: "monthly", priority: "0.8" },
     { loc: "https://www.lastchristian.com/elhb", changefreq: "monthly", priority: "0.8" },
+    ...staticSitemapUrls,
     { loc: "https://www.lastchristian.com/podcast", changefreq: "daily", priority: "0.9" },
     ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({
       loc: archivePageUrl(index + 2),
@@ -625,7 +647,8 @@ async function main() {
       loc: episode.canonicalUrl,
       changefreq: "weekly",
       priority: "0.7"
-    }))
+    })),
+    ...trailingSitemapUrls
   ].filter((entry, index, entries) => entries.findIndex((candidate) => candidate.loc === entry.loc) === index);
 
   const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
