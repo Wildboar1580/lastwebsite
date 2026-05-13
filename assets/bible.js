@@ -40,6 +40,10 @@ const OBSERVANCE_PODCAST_MATCHERS = new Map([
   ["easter-5", {
     fallbackUrl: "/episodes/easter-4-cantate-john-16-5-15-2789182",
     matchTerms: ["cantate", "john 16:5-15"]
+  }],
+  ["easter-6", {
+    fallbackUrl: "/episodes/rogate-john-16-23-30-sermon-ask-and-you-will-receive-2809430",
+    matchTerms: ["rogate", "john 16:23"]
   }]
 ]);
 
@@ -1780,6 +1784,12 @@ function getSupplementalSermonLinks(title) {
       {
         label: "Podcast Sermon: Cantate (John 16:5-15)",
         href: "/episodes/easter-4-cantate-john-16-5-15-2789182.html"
+      }
+    ],
+    "easter-6": [
+      {
+        label: "Podcast Sermon: Rogate (John 16:23-30)",
+        href: "/episodes/rogate-john-16-23-30-sermon-ask-and-you-will-receive-2809430.html"
       }
     ]
   };
