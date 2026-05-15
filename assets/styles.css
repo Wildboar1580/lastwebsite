@@ -2549,6 +2549,73 @@ textarea {
   line-height: 1.7;
 }
 
+.luther-collection-grid,
+.luther-entry-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.luther-feature-grid {
+  grid-template-columns: minmax(0, 1.25fr) repeat(2, minmax(220px, 0.8fr));
+  align-items: stretch;
+}
+
+.luther-collection-card,
+.luther-entry-card {
+  display: grid;
+  align-content: start;
+  gap: 0.55rem;
+}
+
+.luther-collection-kicker,
+.luther-collection-count {
+  display: inline-flex;
+  width: fit-content;
+  color: var(--gold-soft);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.luther-collection-count {
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+}
+
+.luther-featured-entry {
+  border-color: rgba(213, 166, 41, 0.42);
+  background:
+    radial-gradient(circle at top right, rgba(213, 166, 41, 0.14), transparent 32%),
+    linear-gradient(180deg, rgba(39, 17, 15, 0.96), rgba(10, 9, 8, 0.99));
+}
+
+.luther-featured-entry h3 {
+  font-size: clamp(1.45rem, 1.1rem + 1vw, 2rem);
+}
+
+.luther-work-callout {
+  margin: 0 0 1.4rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba(213, 166, 41, 0.24);
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(213, 166, 41, 0.12), transparent 30%),
+    rgba(255, 248, 227, 0.035);
+}
+
+.luther-work-callout h3 {
+  margin: 0.35rem 0 0.65rem;
+}
+
+.luther-work-callout p {
+  margin: 0.55rem 0;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.98rem;
+  line-height: 1.68;
+  color: var(--text-soft);
+}
+
 .library-feature-grid {
   grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
   align-items: start;
@@ -4144,6 +4211,10 @@ textarea {
   }
 
   .luther-doc-nav {
+    grid-template-columns: 1fr;
+  }
+
+  .luther-feature-grid {
     grid-template-columns: 1fr;
   }
 

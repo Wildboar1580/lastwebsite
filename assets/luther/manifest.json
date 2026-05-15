@@ -3949,6 +3949,126 @@
     "https://www.lastchristian.com/luther/vol-23/20-passages-index/",
     "https://www.lastchristian.com/luther/vol-23/21-corrections-and-supplements/",
     "https://www.lastchristian.com/luther/vol-23/22-supplement-to-vol-xxia-574/",
-    "https://www.lastchristian.com/luther/vol-23/23-aids-for-resolving-dates/"
+    "https://www.lastchristian.com/luther/vol-23/23-aids-for-resolving-dates/",
+    "https://www.lastchristian.com/luther/",
+    "https://www.lastchristian.com/luther/genesis-pentateuch/",
+    "https://www.lastchristian.com/luther/old-testament-historical-books/",
+    "https://www.lastchristian.com/luther/psalms-wisdom/",
+    "https://www.lastchristian.com/luther/prophets/",
+    "https://www.lastchristian.com/luther/gospels-acts/",
+    "https://www.lastchristian.com/luther/epistles-galatians/",
+    "https://www.lastchristian.com/luther/catechism-prayer-sacraments/",
+    "https://www.lastchristian.com/luther/church-ministry-servants/",
+    "https://www.lastchristian.com/luther/postils-sermons/",
+    "https://www.lastchristian.com/luther/reformation-controversy/",
+    "https://www.lastchristian.com/luther/prefaces-history-philology/",
+    "https://www.lastchristian.com/luther/letters-documents/",
+    "https://www.lastchristian.com/luther/table-talk-indexes/"
+  ],
+  "collections": [
+    {
+      "slug": "genesis-pentateuch",
+      "title": "Genesis and the Pentateuch",
+      "eyebrow": "Books of Moses",
+      "description": "Luther's Genesis lectures and related Old Testament sermons gathered as Scripture reading rather than St. Louis volume browsing.",
+      "href": "/luther/genesis-pentateuch/",
+      "count": 74
+    },
+    {
+      "slug": "old-testament-historical-books",
+      "title": "Historical Books, Job, and Wisdom",
+      "eyebrow": "Old Testament",
+      "description": "Sermons and interpretations on Old Testament books after Genesis, including selected historical and wisdom-book material.",
+      "href": "/luther/old-testament-historical-books/",
+      "count": 146
+    },
+    {
+      "slug": "psalms-wisdom",
+      "title": "Psalms, Ecclesiastes, and Song of Solomon",
+      "eyebrow": "Psalms and Wisdom",
+      "description": "Luther's Psalm work and wisdom-book interpretation arranged under the biblical books themselves.",
+      "href": "/luther/psalms-wisdom/",
+      "count": 205
+    },
+    {
+      "slug": "prophets",
+      "title": "Isaiah, Daniel, Ezekiel, and the Prophets",
+      "eyebrow": "Prophets",
+      "description": "Major and minor prophet material, including the later prophet supplements otherwise hidden in St. Louis ordering.",
+      "href": "/luther/prophets/",
+      "count": 326
+    },
+    {
+      "slug": "gospels-acts",
+      "title": "Gospels and Acts",
+      "eyebrow": "New Testament",
+      "description": "Matthew, Luke, John, Acts, and related Gospel sermons collected for biblical study.",
+      "href": "/luther/gospels-acts/",
+      "count": 108
+    },
+    {
+      "slug": "epistles-galatians",
+      "title": "Epistles, Corinthians, and Galatians",
+      "eyebrow": "New Testament",
+      "description": "Luther on Galatians and other apostolic texts, separated from the old bound-volume sequence.",
+      "href": "/luther/epistles-galatians/",
+      "count": 109
+    },
+    {
+      "slug": "catechism-prayer-sacraments",
+      "title": "Catechism, Prayer, and Sacraments",
+      "eyebrow": "Catechesis",
+      "description": "The Small and Large Catechisms, prayer, baptism, the Supper, confession, marriage, consolation, and household teaching.",
+      "href": "/luther/catechism-prayer-sacraments/",
+      "count": 227
+    },
+    {
+      "slug": "church-ministry-servants",
+      "title": "Church, Ministry, and the Calling of Servants",
+      "eyebrow": "Church and Ministry",
+      "description": "Pastoral office, church servants, visitation, schools, ordination, and the care of congregations, with Luther's Prague treatise featured first.",
+      "href": "/luther/church-ministry-servants/",
+      "count": 628
+    },
+    {
+      "slug": "postils-sermons",
+      "title": "Postils and Sermons for the Church Year",
+      "eyebrow": "Sermons",
+      "description": "Church Postils, House Postils, Gospel sermons, Epistle sermons, festival sermons, and Sunday preaching by the church year.",
+      "href": "/luther/postils-sermons/",
+      "count": 1218
+    },
+    {
+      "slug": "reformation-controversy",
+      "title": "Reformation, Confession, and Controversy",
+      "eyebrow": "Reformation",
+      "description": "Luther's reforming writings, anti-papal works, sacramental controversies, and public theological disputes.",
+      "href": "/luther/reformation-controversy/",
+      "count": 547
+    },
+    {
+      "slug": "prefaces-history-philology",
+      "title": "Prefaces, History, Philology, and Editorial Works",
+      "eyebrow": "Prefaces and History",
+      "description": "Prefaces, historical notices, philological notes, and other works that sit outside a single biblical book.",
+      "href": "/luther/prefaces-history-philology/",
+      "count": 142
+    },
+    {
+      "slug": "letters-documents",
+      "title": "Letters and Documents",
+      "eyebrow": "Letters",
+      "description": "Luther's correspondence and documents addressed to rulers, pastors, friends, cities, and congregations.",
+      "href": "/luther/letters-documents/",
+      "count": 1142
+    },
+    {
+      "slug": "table-talk-indexes",
+      "title": "Table Talk, Indexes, and Reference",
+      "eyebrow": "Reference",
+      "description": "Luther's Table Talk and the reference material useful for finding related subjects across the library.",
+      "href": "/luther/table-talk-indexes/",
+      "count": 114
+    }
   ]
 }
