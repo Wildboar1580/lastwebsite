@@ -607,7 +607,7 @@ async function main() {
     { loc: "https://www.lastchristian.com/library", changefreq: "monthly", priority: "0.8" },
     { loc: "https://www.lastchristian.com/concord", changefreq: "monthly", priority: "0.8" },
     { loc: "https://www.lastchristian.com/luther", changefreq: "monthly", priority: "0.8" },
-    { loc: "https://www.lastchristian.com/elhb", changefreq: "monthly", priority: "0.8" },
+    { loc: "https://www.lastchristian.com/elhb/", changefreq: "monthly", priority: "0.8" },
     ...staticSitemapUrls,
     { loc: "https://www.lastchristian.com/podcast", changefreq: "daily", priority: "0.9" },
     ...Array.from({ length: Math.max(0, podcastArchiveTotalPages - 1) }, (_, index) => ({

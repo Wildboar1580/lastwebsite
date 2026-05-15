@@ -345,6 +345,32 @@ ${renderSiteFooter()}
 </html>`;
 }
 
+function buildSearchDescription({ title, sectionTitle, contentHtml }) {
+  const key = `${sectionTitle}::${title}`;
+  const overrides = new Map([
+    [
+      "Augsburg Confession::Article I. Of God.",
+      "Read Article I, Of God, from the Augsburg Confession in the Book of Concord. The text confesses the Holy Trinity and the Nicene faith."
+    ],
+    [
+      "Augsburg Confession::Article IV. Of Justification.",
+      "Read Article IV, Of Justification, from the Augsburg Confession in the Book of Concord. The text teaches justification by grace through faith in Christ."
+    ]
+  ]);
+
+  if (overrides.has(key)) {
+    return overrides.get(key);
+  }
+
+  const text = stripHtml(contentHtml).replace(/\s+/g, " ").trim();
+  if (text.length <= 155) {
+    return text;
+  }
+
+  const truncated = text.slice(0, 155);
+  return `${truncated.slice(0, truncated.lastIndexOf(" "))}...`;
+}
+
 function buildFormulaPage() {
   const canonicalUrl = "https://www.lastchristian.com/concord/formula-of-concord/";
   return `<!DOCTYPE html>
@@ -635,7 +661,7 @@ async function main() {
     const title = extractTitle(html);
     const contentHtml = extractMainContent(html);
     const sectionTitle = getSectionTitle(pathname);
-    const description = stripHtml(contentHtml).slice(0, 155);
+    const description = buildSearchDescription({ title, sectionTitle, contentHtml });
     const localUrl = localUrlFromPathname(pathname);
     entries.push({
       title,
