@@ -4,9 +4,9 @@ export const campaigns = [
   {
     slug: "help-100-children-in-uganda-return-to-school-with-dignity-and-hope",
     title: "Help 100 Children Return to School",
-    summary: "Give children in Uganda the books, shoes, backpacks, supplies, and school support they need to return to class with dignity and hope before the May 23 deadline.",
+    summary: "Give children in Uganda the books, shoes, backpacks, supplies, and school support they need to return to class with dignity and hope before the June 8 deadline.",
     goal: "Help 100 children in Uganda return to school with dignity and hope",
-    endDate: "2026-05-23T23:59:59-04:00",
+    endDate: "2026-06-08T23:59:59-04:00",
     donationUrl: "https://www.zeffy.com/en-US/donation-form/help-100-children-in-uganda-return-to-school-with-dignity-and-hope",
     thermometerUrl: "https://www.zeffy.com/embed/thermometer/help-100-children-in-uganda-return-to-school-with-dignity-and-hope",
     image: "/assets/images/books.jpeg",
@@ -15,14 +15,14 @@ export const campaigns = [
     story: [
       "This campaign is focused on helping 100 children in Uganda return to school with the basic dignity every child should have: books in hand, shoes on their feet, supplies for class, and the support needed to walk back into school without shame.",
       "The children in this photo are not posing with extras. They are holding the simple things that determine whether a poor child can attend class ready to learn or stay behind because the family cannot afford what school requires.",
-      "A gift to this campaign helps provide school books, notebooks, writing materials, backpacks, shoes, and direct school-related support for children connected to Kutesa Henry's ministry in Uganda. The goal is practical, urgent, and measurable: help 100 children return before the May 23 deadline.",
+      "A gift to this campaign helps provide school books, notebooks, writing materials, backpacks, shoes, and direct school-related support for children connected to Kutesa Henry's ministry in Uganda. The goal is practical, urgent, and measurable: help 100 children return before the June 8 deadline.",
       "Christian mercy does not only respond after a crisis. It also opens a door before a child loses another term, another year, or another chance. Your gift helps put children back in the classroom with hope."
     ],
     impact: [
       "Books, notebooks, and writing supplies for children returning to class",
       "Shoes, backpacks, and basic school necessities for children who lack them",
       "Direct help for 100 children connected to the Uganda mercy work",
-      "A focused push before the May 23 deadline so children can return with dignity"
+      "A focused push before the June 8 deadline so children can return with dignity"
     ]
   },
   {
