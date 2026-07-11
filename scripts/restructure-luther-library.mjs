@@ -236,7 +236,7 @@ function renderHeader() {
         <a href="/bible">Bible</a>
         <a href="/lectionary">Lectionary</a>
         <a href="/podcast">Podcast</a>
-        <a href="/campaigns/help-100-children-in-uganda-return-to-school-with-dignity-and-hope">Campaigns</a>
+        <a href="/campaigns/help-60-children-return-to-school-and-feed-100-families-this-september">Campaigns</a>
         <a href="/concord">Book of Concord</a>
         <a href="/luther">Luther's Works</a>
         <a href="/pieper">Pieper</a>
@@ -248,7 +248,7 @@ function renderHeader() {
         <a href="/faq">FAQ</a>
         <a href="/contact">Contact</a>
       </nav>
-      <a class="button button-red" href="/campaigns/help-100-children-in-uganda-return-to-school-with-dignity-and-hope">Give Now</a>
+      <a class="button button-red" href="/campaigns/help-60-children-return-to-school-and-feed-100-families-this-september">Give Now</a>
     </header>`;
 }
 
@@ -447,7 +447,7 @@ function cleanGeneratedHtml(html, filePath) {
     .replace(/\bI8I4\b/g, "1814")
     .replace(/\bI8I6\b/g, "1816")
     .replace(/\bThesis 2\b/g, "Thess. 2")
-    .replace(/<a class="button button-red" href="\/#campaigns">Give Now<\/a>/g, '<a class="button button-red" href="/campaigns/help-100-children-in-uganda-return-to-school-with-dignity-and-hope">Give Now</a>');
+    .replace(/<a class="button button-red" href="\/#campaigns">Give Now<\/a>/g, '<a class="button button-red" href="/campaigns/help-60-children-return-to-school-and-feed-100-families-this-september">Give Now</a>');
 
   next = next
     .split("\n")
