@@ -3999,7 +3999,8 @@ textarea {
 }
 
 .easter-hero-art img,
-.easter-video-frame video {
+.easter-video-frame video,
+.easter-video-frame iframe {
   width: 100%;
   display: block;
 }
@@ -4065,10 +4066,25 @@ textarea {
   justify-self: center;
 }
 
-.easter-video-frame video {
+.easter-video-frame video,
+.easter-video-frame iframe,
+.easter-video-frame .video-embed-button {
+  aspect-ratio: 4 / 5;
+  background: #000;
+}
+
+.easter-video-frame video,
+.easter-video-frame .video-embed-button img {
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  background: #000;
+}
+
+.easter-video-frame .video-embed-button img {
+  height: 100%;
+}
+
+.easter-video-frame iframe {
+  border: 0;
 }
 
 .easter-gallery-grid {
