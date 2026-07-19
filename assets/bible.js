@@ -1791,6 +1791,12 @@ function getSupplementalSermonLinks(title) {
         label: "Podcast Sermon: Rogate (John 16:23-30)",
         href: "/episodes/rogate-john-16-23-30-sermon-ask-and-you-will-receive-2809430.html"
       }
+    ],
+    "trinity-6": [
+      {
+        label: "Podcast Sermon: Trinity 6 (Matthew 5:20-26)",
+        href: "/episodes/a-righteousness-greater-than-the-pharisees-trinity-6-sermon-matthew-5-20-26-3003282.html"
+      }
     ]
   };
 
