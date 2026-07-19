@@ -759,6 +759,7 @@ async function initLectionaryPanels() {
       const oneYearData = await fetch("/assets/bible/lsb-1yr.json").then((response) => response.json());
       const oneYearPropers = loadPropers(oneYearData, today);
       oneYearRoot.innerHTML = renderOneYear(oneYearData, oneYearPropers, books, searchIndex, today);
+      initOneYearBrowser(oneYearRoot, oneYearData, books, searchIndex, today);
       hydrateLectionarySermonLinks(oneYearRoot);
       hydrateLectionaryPodcastPanels(oneYearRoot);
     } catch (error) {
@@ -945,8 +946,91 @@ function renderOneYear(data, propers, books, searchIndex, date) {
         ${renderOneYearCard(currentObservance, books, searchIndex, "Current Sunday or Major Feast in the Cycle", "lectionary-current", true)}
         ${nextObservance ? renderOneYearCard(nextObservance, books, searchIndex, "Next Sunday or Major Feast in the Cycle", "lectionary-next", true) : ""}
       </div>
+      ${renderOneYearBrowser(data, books, searchIndex, date)}
     </section>
   `;
+}
+
+function getOneYearObservances(data, date) {
+  const year = date.getFullYear();
+  const adventThisYear = getAdvent(year);
+  const cycleStart = date >= adventThisYear ? adventThisYear : getAdvent(year - 1);
+  const cycleEnd = getAdvent(cycleStart.getFullYear() + 1);
+  const observances = [];
+
+  for (let day = startOfDay(cycleStart); day < cycleEnd; day = addDays(day, 1)) {
+    const observance = getObservance(data, day);
+    if (observance) observances.push(observance);
+  }
+
+  return observances;
+}
+
+function formatDateValue(date) {
+  return [
+    date.getFullYear(),
+    String(date.getMonth() + 1).padStart(2, "0"),
+    String(date.getDate()).padStart(2, "0")
+  ].join("-");
+}
+
+function getRequestedObservance(observances, fallback) {
+  const requestedDate = new URLSearchParams(window.location.search).get("date");
+  return observances.find((observance) => formatDateValue(observance.date) === requestedDate)
+    || observances.find((observance) => observance.date >= startOfDay(fallback))
+    || observances[0];
+}
+
+function renderOneYearBrowser(data, books, searchIndex, date) {
+  const observances = getOneYearObservances(data, date);
+  const selected = getRequestedObservance(observances, date);
+  if (!selected) return "";
+
+  const options = observances.map((observance) => {
+    const value = formatDateValue(observance.date);
+    const label = `${observance.date.toLocaleDateString("en-US", { month: "short", day: "numeric" })} - ${observance.title}`;
+    return `<option value="${value}"${observance === selected ? " selected" : ""}>${escapeHtml(label)}</option>`;
+  }).join("");
+
+  return `
+    <section class="lectionary-browser" aria-labelledby="lectionary-browser-heading">
+      <div class="lectionary-browser-toolbar">
+        <div>
+          <p class="eyebrow">Complete Church Year</p>
+          <h3 id="lectionary-browser-heading">Browse every available observance</h3>
+          <p class="lectionary-empty">Choose from ${observances.length} Sundays, festivals, and commemorations in this church year.</p>
+        </div>
+        <label class="lectionary-day-select">
+          <span>Select an observance</span>
+          <select data-lectionary-day-select>${options}</select>
+        </label>
+      </div>
+      <div data-lectionary-selected>
+        ${renderOneYearCard(selected, books, searchIndex, "Selected Lectionary Day", "lectionary-selected", true)}
+      </div>
+    </section>
+  `;
+}
+
+function initOneYearBrowser(root, data, books, searchIndex, date) {
+  const select = root.querySelector("[data-lectionary-day-select]");
+  const selectedRoot = root.querySelector("[data-lectionary-selected]");
+  if (!select || !selectedRoot) return;
+
+  const observances = getOneYearObservances(data, date);
+  select.addEventListener("change", () => {
+    const selected = observances.find((observance) => formatDateValue(observance.date) === select.value);
+    if (!selected) return;
+
+    selectedRoot.innerHTML = renderOneYearCard(selected, books, searchIndex, "Selected Lectionary Day", "lectionary-selected", true);
+    hydrateLectionarySermonLinks(selectedRoot);
+    hydrateLectionaryPodcastPanels(selectedRoot);
+
+    const url = new URL(window.location.href);
+    url.searchParams.set("date", select.value);
+    window.history.replaceState({}, "", url);
+    selectedRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 }
 
 function renderOneYearCard(observance, books, searchIndex, eyebrow, sectionId, includeSermons) {
