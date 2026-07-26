@@ -1881,6 +1881,12 @@ function getSupplementalSermonLinks(title) {
         label: "Podcast Sermon: Trinity 6 (Matthew 5:20-26)",
         href: "/episodes/a-righteousness-greater-than-the-pharisees-trinity-6-sermon-matthew-5-20-26-3003282.html"
       }
+    ],
+    "trinity-8": [
+      {
+        label: "Podcast Sermon: Beware the Wolves (Matthew 7:15-23)",
+        href: "/episodes/beware-the-wolves-trinity-8-sermon-matthew-7-15-23-3022573.html"
+      }
     ]
   };
 
