@@ -1882,6 +1882,12 @@ function getSupplementalSermonLinks(title) {
         href: "/episodes/a-righteousness-greater-than-the-pharisees-trinity-6-sermon-matthew-5-20-26-3003282.html"
       }
     ],
+    "trinity-9": [
+      {
+        label: "Podcast Sermon: The Unjust Steward (Luke 16:1-9)",
+        href: "/episodes/the-unjust-steward-trinity-9-sermon-luke-16-1-9-3036913.html"
+      }
+    ],
     "trinity-8": [
       {
         label: "Podcast Sermon: Beware the Wolves (Matthew 7:15-23)",
