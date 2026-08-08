@@ -1888,6 +1888,12 @@ function getSupplementalSermonLinks(title) {
         href: "/episodes/the-unjust-steward-trinity-9-sermon-luke-16-1-9-3036913.html"
       }
     ],
+    "trinity-10": [
+      {
+        label: "Podcast Sermon: When God Comes to Visit (Luke 19:41-48)",
+        href: "/episodes/when-god-comes-to-visit-trinity-10-sermon-luke-19-41-48-3055156.html"
+      }
+    ],
     "trinity-8": [
       {
         label: "Podcast Sermon: Beware the Wolves (Matthew 7:15-23)",
