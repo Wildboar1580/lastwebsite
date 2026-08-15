@@ -1894,6 +1894,12 @@ function getSupplementalSermonLinks(title) {
         href: "/episodes/when-god-comes-to-visit-trinity-10-sermon-luke-19-41-48-3055156.html"
       }
     ],
+    "trinity-11": [
+      {
+        label: "Podcast Sermon: The Blood That Cries Out (Genesis 4:1-15)",
+        href: "/episodes/the-blood-that-cries-out-trinity-11-sermon-genesis-4-1-15-3070020.html"
+      }
+    ],
     "trinity-8": [
       {
         label: "Podcast Sermon: Beware the Wolves (Matthew 7:15-23)",
