@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.lastchristian.com/episodes/the-blood-that-cries-out-trinity-11-sermon-genesis-4-1-15-3070020</loc>
-    <lastmod>2026-08-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/episodes/when-god-comes-to-visit-trinity-10-sermon-luke-19-41-48-3055156</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/episodes/the-unjust-steward-trinity-9-sermon-luke-16-1-9-3036913</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.lastchristian.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -38,16 +22,6 @@
   </url>
   <url>
     <loc>https://www.lastchristian.com/kutesa</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/easter</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/tuition</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -125,11 +99,6 @@
     <loc>https://www.lastchristian.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/campaigns/help-60-children-return-to-school-and-feed-100-families-this-september</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.lastchristian.com/campaigns/bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry</loc>
@@ -26267,6 +26236,81 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.lastchristian.com/luther/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/genesis-pentateuch/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/old-testament-historical-books/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/psalms-wisdom/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/prophets/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/gospels-acts/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/epistles-galatians/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/catechism-prayer-sacraments/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/church-ministry-servants/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/postils-sermons/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/reformation-controversy/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/prefaces-history-philology/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/letters-documents/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/luther/table-talk-indexes/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/elhb</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.lastchristian.com/elhb/hymns/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -29282,6 +29326,31 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.lastchristian.com/episodes/paul-e-kretzmann-on-the-revelation-of-st-john-3071385</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/episodes/the-blood-that-cries-out-trinity-11-sermon-genesis-4-1-15-3070020</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/episodes/when-god-comes-to-visit-trinity-10-sermon-luke-19-41-48-3055156</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/episodes/the-unjust-steward-trinity-9-sermon-luke-16-1-9-3036913</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.lastchristian.com/episodes/beware-the-wolves-trinity-8-sermon-matthew-7-15-23-3022573</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.lastchristian.com/episodes/a-righteousness-greater-than-the-pharisees-trinity-6-sermon-matthew-5-20-26-3003282</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -30098,71 +30167,6 @@
   </url>
   <url>
     <loc>https://www.lastchristian.com/koestering/life-and-work-of-ernst-gerhard-wilhelm-keyl/chapter-10-keyls-last-days-and-blessed-end/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/genesis-pentateuch/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/old-testament-historical-books/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/psalms-wisdom/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/prophets/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/gospels-acts/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/epistles-galatians/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/catechism-prayer-sacraments/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/church-ministry-servants/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/postils-sermons/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/reformation-controversy/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/prefaces-history-philology/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/letters-documents/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.lastchristian.com/luther/table-talk-indexes/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
