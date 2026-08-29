@@ -1900,6 +1900,12 @@ function getSupplementalSermonLinks(title) {
         href: "/episodes/the-blood-that-cries-out-trinity-11-sermon-genesis-4-1-15-3070020.html"
       }
     ],
+    "trinity-13": [
+      {
+        label: "Podcast Sermon: Who Is My Neighbor? (Luke 10:21-37)",
+        href: "/episodes/who-is-my-neighbor-trinity-13-sermon-luke-10-21-37-3104818.html"
+      }
+    ],
     "trinity-8": [
       {
         label: "Podcast Sermon: Beware the Wolves (Matthew 7:15-23)",
