@@ -1906,6 +1906,12 @@ function getSupplementalSermonLinks(title) {
         href: "/episodes/who-is-my-neighbor-trinity-13-sermon-luke-10-21-37-3104818.html"
       }
     ],
+    "trinity-14": [
+      {
+        label: "Podcast Sermon: The One Who Came Back (Luke 17:11-19)",
+        href: "/episodes/title-the-one-who-came-back-trinity-14-sermon-luke-17-11-19-3125294.html"
+      }
+    ],
     "trinity-8": [
       {
         label: "Podcast Sermon: Beware the Wolves (Matthew 7:15-23)",
