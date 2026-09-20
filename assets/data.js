@@ -6,7 +6,7 @@ export const campaigns = [
     "title":  "Feed the Least of These: Food for Disabled Children in Uganda",
     "summary":  "Help provide nourishing meals for more than 30 children with disabilities in Uganda and support the families and caregivers working to meet their daily needs.",
     "goal":  "Provide food for more than 30 children with disabilities in Uganda",
-    "endDate":  "",
+    "endDate":  "2026-09-30T01:10:29-04:00",
     "donationUrl":  "https://www.zeffy.com/en-US/donation-form/feed-the-least-of-these-food-for-disabled-children-in-uganda",
     "thermometerUrl":  "https://www.zeffy.com/embed/thermometer/feed-the-least-of-these-food-for-disabled-children-in-uganda",
     "image":  "/assets/images/feed-the-least-of-these.jpg",
