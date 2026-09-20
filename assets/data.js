@@ -2,30 +2,6 @@ export const FEED_URL = "https://media.rss.com/last-christian-ministries/feed.xm
 
 export const campaigns = [
   {
-    slug: "help-60-children-return-to-school-and-feed-100-families-this-september",
-    title: "Help 60 Children Return to School and Feed 100 Families",
-    summary: "Help 60 children return to school and provide food for 100 families in Uganda before the September 7 deadline.",
-    goal: "Help 60 children return to school and feed 100 families this September",
-    endDate: "2026-09-07T23:59:59-04:00",
-    donationUrl: "https://www.zeffy.com/en-US/donation-form/help-60-children-return-to-school-and-feed-100-families-this-september",
-    thermometerUrl: "https://www.zeffy.com/embed/thermometer/help-60-children-return-to-school-and-feed-100-families-this-september",
-    image: "/assets/images/books.jpeg",
-    imageAlt: "Ugandan children holding school books, shoes, and backpacks outside a brick home.",
-    canonicalUrl: "https://www.lastchristian.com/campaigns/help-60-children-return-to-school-and-feed-100-families-this-september",
-    story: [
-      "This September campaign is focused on two urgent needs in Uganda: helping 60 children return to school and providing food for 100 families who need practical mercy.",
-      "The children in this photo are not posing with extras. They are holding the simple things that determine whether a poor child can attend class ready to learn or stay behind because the family cannot afford what school requires.",
-      "A gift to this campaign helps provide school books, notebooks, writing materials, backpacks, shoes, and direct school-related support for children connected to Kutesa Henry's ministry in Uganda. It also helps put food into the hands of families who are struggling.",
-      "Christian mercy does not only respond after a crisis. It also opens a door before a child loses another term and brings food before a family goes without. Your gift helps children return to the classroom and helps families meet September with hope."
-    ],
-    impact: [
-      "Books, notebooks, and writing supplies for children returning to class",
-      "Shoes, backpacks, and basic school necessities for children who lack them",
-      "Food relief for 100 families connected to the Uganda mercy work",
-      "A focused push before the September 7 deadline so children and families can receive help in time"
-    ]
-  },
-  {
     slug: "bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry",
     title: "Build a Medical Clinic in Uganda",
     summary: "Help build a medical clinic that can provide treatment, basic medicines, and steady Christian mercy to families who often go without care and sometimes survive on little more than dirt and greens.",
