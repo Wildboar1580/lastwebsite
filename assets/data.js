@@ -1,6 +1,31 @@
 export const FEED_URL = "https://media.rss.com/last-christian-ministries/feed.xml";
 
 export const campaigns = [
+{
+    "slug":  "feed-the-least-of-these-food-for-disabled-children-in-uganda",
+    "title":  "Feed the Least of These: Food for Disabled Children in Uganda",
+    "summary":  "Help provide nourishing meals for more than 30 children with disabilities in Uganda and support the families and caregivers working to meet their daily needs.",
+    "goal":  "Provide food for more than 30 children with disabilities in Uganda",
+    "endDate":  "",
+    "donationUrl":  "https://www.zeffy.com/en-US/donation-form/feed-the-least-of-these-food-for-disabled-children-in-uganda",
+    "thermometerUrl":  "https://www.zeffy.com/embed/thermometer/feed-the-least-of-these-food-for-disabled-children-in-uganda",
+    "image":  "/assets/images/feed-the-least-of-these.jpg",
+    "imageAlt":  "A child with a crutch standing with two adults beside food and household supplies outside a brick home in Uganda.",
+    "canonicalUrl":  "https://www.lastchristian.com/campaigns/feed-the-least-of-these-food-for-disabled-children-in-uganda",
+    "story":  [
+                  "More than 30 children with disabilities in Uganda need help with a basic necessity: food. Their families and caregivers face the daily work of caring for them while struggling to obtain enough to eat. This campaign seeks to provide nourishing meals and practical support through Last Christian Ministries.",
+                  "Each child is a neighbor to be loved, with a dignity that does not depend on physical strength, independence, or what others consider useful. Our Lord welcomed children and showed compassion to those who were sick and overlooked. His mercy teaches us to pay attention to the people He places before us.",
+                  "Christian generosity begins with the Gospel. Jesus Christ bore our sins on the cross and rose again for our salvation. We receive His forgiveness by grace through faith; a donation cannot purchase it. Because God has first loved us, we are free to share what He has entrusted to us.",
+                  "The campaign takes its name from Matthew 25:40, where Jesus identifies Himself with the least of His brothers. In 1 John 3:17–18, we are called to respond to a neighbor in need with deeds and truth. Providing food gives that love a concrete expression: something a hungry child can eat, and help a caregiver can use.",
+                  "Our aim is food for more than 30 children with disabilities in Uganda. Gifts to this campaign help their caregivers meet that need. The children may live far away from many who read this page, but distance does not prevent us from being neighbors to them.",
+                  "Please give as you are able. You can also share this campaign and pray for the children, their families, and those caring for them. We give thanks for every act of mercy and look to Christ, who has first given Himself for us."
+              ],
+    "impact":  [
+                   "Nourishing meals for children with disabilities in Uganda",
+                   "Practical help for families and caregivers facing food insecurity",
+                   "Christian love expressed through food and care"
+               ]
+},
   {
     slug: "bring-hope-food-and-education-to-children-and-families-in-uganda-through-kutesa-henrys-ministry",
     title: "Build a Medical Clinic in Uganda",
